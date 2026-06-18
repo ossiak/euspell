@@ -9,6 +9,7 @@
     "build:ext": "rollup -c",
     "gen:disambig": "node build/gen-disambig.js",
     "gen:icons": "node build/gen-icons.js",
+    "gen:wordlist": "node build/gen-wordlist.js",
     "watch": "rollup -c --watch"
   },
   "devDependencies": {

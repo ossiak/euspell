@@ -1,0 +1,111 @@
+SET UTF-8
+
+# Characters to try when generating suggestions (English letter frequency order)
+TRY esianrtolcdugmphbyfvkwzxjq'ESIANRTOLCDUGMPHBYFVKWZXJQ
+
+# Allow apostrophe inside words (contractions: 'bout, 'cause, it's etc.)
+WORDCHARS '
+
+# ---------------------------------------------------------------------------
+# REP rules — auto-derived from euspell_lexicon.csv (min frequency: 20)
+#
+# When the user types a traditional spelling that is NOT in the euspell dictionary,
+# these rules help Hunspell suggest the correct euspelling.
+# Patterns are end-of-word anchored ($ suffix).
+# ---------------------------------------------------------------------------
+REP 95
+REP s$ z
+REP ed$ d
+REP sed$ zed
+REP se$ ze
+REP sing$ zing
+REP ses$ zez
+REP ely$ ly
+REP es$ s
+REP sation$ zation
+REP eness$ ness
+REP ch$ qh
+REP ped$ d
+REP ad$ dd
+REP ght$ ht
+REP led$ d
+REP ched$ qhd
+REP es$ z
+REP ches$ qhes
+REP ching$ qhing
+REP ches$ qhez
+REP ads$ dds
+REP ling$ ing
+REP ser$ zer
+REP sers$ zers
+REP ged$ d
+REP ghts$ hts
+REP own$ uwn
+REP med$ d
+REP bed$ d
+REP ur$ r
+REP cher$ qher
+REP ower$ uwer
+REP chers$ qhers
+REP ned$ d
+REP ghting$ hting
+REP ues$ s
+REP ghted$ hted
+REP aded$ dded
+REP ghts$ htz
+REP re$ er
+REP owns$ uwns
+REP red$ d
+REP eable$ able
+REP sable$ zable
+REP omen$ imen
+REP urs$ rs
+REP owers$ uwers
+REP res$ ers
+REP ught$ ht
+REP aemia$ emia
+REP ind$ ynd
+REP ured$ rd
+REP ear$ aer
+REP ow$ uw
+REP ue$ e
+REP ler$ er
+REP ches$ shes
+REP ghter$ hter
+REP lk$ hk
+REP lers$ ers
+REP aemic$ emic
+REP ading$ dding
+REP inding$ ynding
+REP uring$ ring
+REP urs$ rz
+REP o$ u
+REP chy$ qhy
+REP x$ s
+REP ads$ ddz
+REP ghters$ hters
+REP gh$ h
+REP inds$ yndz
+REP s$ es
+REP it$ ht
+REP owed$ uwd
+REP ows$ uws
+REP mes$ s
+REP ues$ es
+REP lks$ hks
+REP owered$ uwerd
+REP its$ hts
+REP ue$ he
+REP t$ h
+REP che$ she
+REP chable$ qhable
+REP owers$ uwerz
+REP earted$ arted
+REP ved$ ovd
+REP owing$ uwing
+REP ows$ uwz
+REP chier$ qhier
+REP chiest$ qhiest
+REP ghtly$ htly
+REP ts$ hs
+REP eye$ iye
