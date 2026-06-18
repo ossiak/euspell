@@ -10,10 +10,12 @@
     "gen:disambig": "node build/gen-disambig.js",
     "gen:icons": "node build/gen-icons.js",
     "gen:wordlist": "node build/gen-wordlist.js",
+    "gen:oxt": "npm run gen:wordlist && node build/gen-oxt.js",
     "watch": "rollup -c --watch"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.0",
+    "adm-zip": "^0.5.17",
     "csv-parse": "^5.0.0",
     "rollup": "^4.0.0",
     "sharp": "^0.33.5"
