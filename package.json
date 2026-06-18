@@ -11,6 +11,7 @@
     "gen:icons": "node build/gen-icons.js",
     "gen:wordlist": "node build/gen-wordlist.js",
     "gen:oxt": "npm run gen:wordlist && node build/gen-oxt.js",
+    "gen:diatones": "node build/gen-diatones.js",
     "watch": "rollup -c --watch"
   },
   "devDependencies": {

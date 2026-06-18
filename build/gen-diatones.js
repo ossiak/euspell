@@ -1,0 +1,251 @@
+#!/usr/bin/env node
+/**
+ * Generates data/diatones.csv — a subset of euspell_lexicon.csv containing only
+ * entries with encoding 012 or 112 that are known English diatones (words where
+ * spoken stress shifts between the NN2 plural-noun and VVZ 3rd-sg-pres-verb readings).
+ *
+ * Run: node build/gen-diatones.js
+ */
+
+import { readFileSync, writeFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { parse } from 'csv-parse/sync';
+
+const ROOT = new URL('..', import.meta.url);
+const DATA = new URL('data/', ROOT);
+
+// Known English diatones — forms as they appear in the lexicon (NN2 / VVZ inflected forms).
+// Each word here has a noun reading with stress on the FIRST syllable and a verb reading
+// with stress on a LATER syllable (or vice-versa), e.g. RE-cord (n.) / re-CORD (v.).
+const DIATONES = new Set([
+  // A
+  'abstracts',    // AB-stracts (n.) / ab-STRACTS (v.)
+  'accents',      // AC-cents (n.) / ac-CENTS (v.)
+  'addicts',      // AD-dicts (n.) / ad-DICTS (v.)
+  'addresses',    // AD-dresses (n.) / ad-DRESSES (v.)
+  'adducts',      // AD-ducts (n.) / ad-DUCTS (v.)
+  'advocates',    // AD-vocates (n.) / ad-vo-CATES (v.)
+  'assays',       // AS-says (n.) / as-SAYS (v.)
+  'augments',     // AUG-ments (n. music theory) / aug-MENTS (v.)
+  'affects',      // AF-fects (n. psych.) / af-FECTS (v.)
+  'affixes',      // AF-fixes (n.) / af-FIXES (v.)
+  'affiliates',   // af-FIL-iates (n.) / af-fil-i-ATES (v.)
+  'aggregates',   // AG-gregates (n.) / ag-gre-GATES (v.)
+  'allies',       // AL-lies (n.) / al-LIES (v.)
+  'alternates',   // AL-ternates (n.) / al-TER-nates (v.)
+  'animates',     // AN-imates (n./adj.) / an-i-MATES (v.)
+  'annexes',      // AN-nexes (n.) / an-NEXES (v.)
+  'approximates', // ap-PROX-imates (n./adj.) / ap-prox-i-MATES (v.)
+  'associates',   // as-SO-ciates (n.) / as-so-ci-ATES (v.)
+  'attributes',   // AT-tributes (n.) / at-TRIB-utes (v.)
+  'augments',     // AUG-ments (n.) / aug-MENTS (v.)
+  // B
+  'bypasses',     // BY-passes (n.) / by-PASSES (v.)
+  // C
+  'capsules',     // CAP-sules (n.) / cap-SULES (v.)
+  'combats',      // COM-bats (n.) / com-BATS (v.)
+  'combines',     // COM-bines (n. harvester) / com-BINES (v.)
+  'communes',     // COM-munes (n.) / com-MUNES (v.)
+  'compacts',     // COM-pacts (n. compact car/disc/mirror) / com-PACTS (v.)
+  'comports',     // COM-ports (n. serving dish) / com-PORTS (v. to comport oneself)
+  'composts',     // COM-posts (n.) / com-POSTS (v.)
+  'compounds',    // COM-pounds (n.) / com-POUNDS (v.)
+  'compresses',   // COM-presses (n.) / com-PRESSES (v.)
+  'conserves',    // CON-serves (n. fruit preserves) / con-SERVES (v.)
+  'conducts',     // CON-ducts (n.) / con-DUCTS (v.)
+  'confects',     // CON-fects (n.) / con-FECTS (v.)
+  'confines',     // CON-fines (n.) / con-FINES (v.)
+  'conflicts',    // CON-flicts (n.) / con-FLICTS (v.)
+  'congresses',   // CON-gresses (n.) / con-GRESSES (v.)
+  'conscripts',   // CON-scripts (n.) / con-SCRIPTS (v.)
+  'consents',     // CON-sents (n.) / con-SENTS (v.)
+  'consoles',     // CON-soles (n.) / con-SOLES (v.)
+  'consorts',     // CON-sorts (n.) / con-SORTS (v.)
+  'constructs',   // CON-structs (n.) / con-STRUCTS (v.)
+  'consults',     // CON-sults (n.) / con-SULTS (v.)
+  'consummates',  // CON-summates (adj.) / con-SUM-mates (v.)
+  'contents',     // CON-tents (n.) / con-TENTS (v.)
+  'contests',     // CON-tests (n.) / con-TESTS (v.)
+  'contours',     // CON-tours (n.) / con-TOURS (v.)
+  'contracts',    // CON-tracts (n.) / con-TRACTS (v.)
+  'contrasts',    // CON-trasts (n.) / con-TRASTS (v.)
+  'converses',    // CON-verses (n.) / con-VERSES (v.)
+  'convicts',     // CON-victs (n.) / con-VICTS (v.)
+  'converts',     // CON-verts (n.) / con-VERTS (v.)
+  'coordinates',  // co-OR-dinates (n.) / co-or-di-NATES (v.)
+  'correlates',   // COR-relates (n.) / cor-re-LATES (v.)
+  'costumes',     // COS-tumes (n.) / cos-TUMES (v.)
+  'countercharges', // COUN-tercharges (n.) / coun-ter-CHARGES (v.)
+  'counterclaims',  // COUN-terclaims (n.) / coun-ter-CLAIMS (v.)
+  'countermands',   // COUN-termands (n.) / coun-ter-MANDS (v.)
+  // D
+  'decreases',    // DE-creases (n.) / de-CREASES (v.)
+  'defects',      // DE-fects (n.) / de-FECTS (v.)
+  'delegates',    // DEL-egates (n.) / del-e-GATES (v.)
+  'deliberates',  // de-LIB-erates (adj./n.) / de-lib-er-ATES (v.)
+  'defiles',      // DE-files (n. narrow pass) / de-FILES (v.)
+  'demurs',       // DE-murs (n.) / de-MURS (v.)
+  'designates',   // DES-ignates (n./adj.) / des-ig-NATES (v.)
+  'deserts',      // DES-erts (n. arid region) / de-SERTS (v. to abandon)
+  'details',      // DE-tails (n.) / de-TAILS (v.)
+  'detours',      // DE-tours (n.) / de-TOURS (v.)
+  'dictates',     // DIC-tates (n.) / dic-TATES (v.)
+  'digests',      // DI-gests (n.) / di-GESTS (v.)
+  'discharges',   // DIS-charges (n.) / dis-CHARGES (v.)
+  'discards',     // DIS-cards (n.) / dis-CARDS (v.)
+  'disconnects',  // DIS-connects (n.) / dis-con-NECTS (v.)
+  'discontents',  // DIS-contents (n.) / dis-con-TENTS (v.)
+  'discords',     // DIS-cords (n.) / dis-CORDS (v.)
+  'discounts',    // DIS-counts (n.) / dis-COUNTS (v.)
+  'discourses',   // DIS-courses (n.) / dis-COURSES (v.)
+  'dislikes',     // DIS-likes (n.) / dis-LIKES (v.)
+  'dispatches',   // DIS-patches (n.) / dis-PATCHES (v.)
+  'displays',     // DIS-plays (n.) / dis-PLAYS (v.)
+  'disregards',   // DIS-regards (n.) / dis-re-GARDS (v.)
+  'dissents',     // DIS-sents (n.) / dis-SENTS (v.)
+  'distastes',    // DIS-tastes (n.) / dis-TASTES (v.)
+  'distresses',   // DIS-tresses (n.) / dis-TRESSES (v.)
+  'districts',    // DIS-tricts (n.) / dis-TRICTS (v.)
+  'disputes',     // DIS-putes (n.) / dis-PUTES (v.)
+  'divorces',     // DI-vorces (n.) / di-VORCES (v.)
+  'documents',    // DOC-uments (n.) / doc-u-MENTS (v.)
+  'downloads',    // DOWN-loads (n.) / down-LOADS (v.)
+  'duplicates',   // DU-plicates (n.) / du-PLI-cates (v.)
+  // E
+  'elaborates',   // e-LAB-orates (adj./n.) / e-lab-or-ATES (v.)
+  'entails',      // EN-tails (n. legal estate) / en-TAILS (v.)
+  'escorts',      // ES-corts (n.) / es-CORTS (v.)
+  'essays',       // ES-says (n.) / es-SAYS (v.)
+  'estimates',    // ES-timates (n.) / es-ti-MATES (v.)
+  'exchanges',    // EX-changes (n.) / ex-CHANGES (v.)
+  'excerpts',     // EX-cerpts (n.) / ex-CERPTS (v.)
+  'excuses',      // EX-cuses (n.) / ex-CUSES (v.)
+  'excesses',     // EX-cesses (n.) / ex-CESSES (v.)
+  'excises',      // EX-cises (n. tax) / ex-CISES (v. to cut out)
+  'exhibits',     // EX-hibits (n.) / ex-HIBITS (v.)
+  'exiles',       // EX-iles (n.) / ex-ILES (v.)
+  'exploits',     // EX-ploits (n.) / ex-PLOITS (v.)
+  'exposes',      // EX-poses (n.) / ex-POSES (v.)
+  'exports',      // EX-ports (n.) / ex-PORTS (v.)
+  'extracts',     // EX-tracts (n.) / ex-TRACTS (v.)
+  // F
+  'ferments',     // FER-ments (n.) / fer-MENTS (v.)
+  'finances',     // FI-nances (n.) / fi-NANCES (v.)
+  'forecasts',    // FORE-casts (n.) / fore-CASTS (v.)
+  'foretastes',   // FORE-tastes (n.) / fore-TASTES (v.)
+  'formats',      // FOR-mats (n.) / for-MATS (v.)
+  // G
+  'graduates',    // GRAD-uates (n.) / grad-u-ATES (v.)
+  // I
+  'impacts',      // IM-pacts (n.) / im-PACTS (v.)
+  'implants',     // IM-plants (n.) / im-PLANTS (v.)
+  'imports',      // IM-ports (n.) / im-PORTS (v.)
+  'impounds',     // IM-pounds (n.) / im-POUNDS (v.)
+  'imprints',     // IM-prints (n.) / im-PRINTS (v.)
+  'incenses',     // IN-censes (n.) / in-CENSES (v. to anger)
+  'inclines',     // IN-clines (n.) / in-CLINES (v.)
+  'increases',    // IN-creases (n.) / in-CREASES (v.)
+  'inlays',       // IN-lays (n.) / in-LAYS (v.)
+  'inlets',       // IN-lets (n.) / in-LETS (v.)
+  'inserts',      // IN-serts (n.) / in-SERTS (v.)
+  'insults',      // IN-sults (n.) / in-SULTS (v.)
+  'intakes',      // IN-takes (n.) / in-TAKES (v.)
+  'interchanges', // IN-terchanges (n.) / in-ter-CHANGES (v.)
+  'intercepts',   // IN-tercepts (n.) / in-ter-CEPTS (v.)
+  'interdicts',   // IN-terdicts (n.) / in-ter-DICTS (v.)
+  'interlocks',   // IN-terlocks (n.) / in-ter-LOCKS (v.)
+  'interns',      // IN-terns (n.) / in-TERNS (v.)
+  'intimates',    // IN-timates (n./adj.) / in-ti-MATES (v.)
+  // M
+  'misconducts',  // MIS-conducts (n.) / mis-CON-ducts (v.)
+  'misprints',    // MIS-prints (n.) / mis-PRINTS (v.)
+  'moderates',    // MOD-erates (n./adj.) / mod-er-ATES (v.)
+  // O
+  'objects',      // OB-jects (n.) / ob-JECTS (v.)
+  'offsets',      // OFF-sets (n.) / off-SETS (v.)
+  'ornaments',    // OR-naments (n.) / or-na-MENTS (v.)
+  'outlays',      // OUT-lays (n.) / out-LAYS (v.)
+  'outlines',     // OUT-lines (n.) / out-LINES (v.)
+  'outputs',      // OUT-puts (n.) / out-PUTS (v.)
+  'overcharges',  // O-vercharges (n.) / o-ver-CHARGES (v.)
+  'overdoses',    // O-verdoses (n.) / o-ver-DOSES (v.)
+  'overflows',    // O-verflows (n.) / o-ver-FLOWS (v.)
+  'overhauls',    // O-verhauls (n.) / o-ver-HAULS (v.)
+  'overlaps',     // O-verlaps (n.) / o-ver-LAPS (v.)
+  'overlays',     // O-verlays (n.) / o-ver-LAYS (v.)
+  'overlooks',    // O-verlooks (n. scenic viewpoint) / o-ver-LOOKS (v.)
+  'overrides',    // O-verrides (n.) / o-ver-RIDES (v.)
+  'overruns',     // O-verruns (n.) / o-ver-RUNS (v.)
+  'overturns',    // O-verturns (n.) / o-ver-TURNS (v.)
+  // P
+  'perfects',     // PER-fects (n. grammatical perfect) / per-FECTS (v.)
+  'perfumes',     // PER-fumes (n.) / per-FUMES (v.)
+  'permits',      // PER-mits (n.) / per-MITS (v.)
+  'perverts',     // PER-verts (n.) / per-VERTS (v.)
+  'predicates',   // PRED-icates (n.) / pred-i-CATES (v.)
+  'prefixes',     // PRE-fixes (n.) / pre-FIXES (v.)
+  'preludes',     // PREL-udes (n.) / pre-LUDES (v.)
+  'premises',     // PREM-ises (n.) / pre-MISES (v.)
+  'presages',     // PRES-ages (n.) / pre-SAGES (v.)
+  'presents',     // PRE-sents (n.) / pre-SENTS (v.)
+  'proceeds',     // PRO-ceeds (n. money) / pro-CEEDS (v.)
+  'proffers',     // PROF-fers (n.) / pro-FFERS (v.)
+  'progresses',   // PRO-gresses (n.) / pro-GRESSES (v.)
+  'projects',     // PRO-jects (n.) / pro-JECTS (v.)
+  'prospects',    // PRO-spects (n.) / pro-SPECTS (v.)
+  'protests',     // PRO-tests (n.) / pro-TESTS (v.)
+  'purports',     // PUR-ports (n.) / pur-PORTS (v.)
+  // R
+  'rebels',       // RE-bels (n.) / re-BELS (v.)
+  'recalls',      // RE-calls (n.) / re-CALLS (v.)
+  'recasts',      // RE-casts (n.) / re-CASTS (v.)
+  'recesses',     // RE-cesses (n.) / re-CESSES (v.)
+  'recounts',     // RE-counts (n.) / re-COUNTS (v.)
+  'records',      // RE-cords (n.) / re-CORDS (v.)
+  'refills',      // RE-fills (n.) / re-FILLS (v.)
+  'refunds',      // RE-funds (n.) / re-FUNDS (v.)
+  'refuses',      // RE-fuses (n. rubbish) / re-FUSES (v.)
+  'regresses',    // RE-gresses (n.) / re-GRESSES (v.)
+  'rejects',      // RE-jects (n.) / re-JECTS (v.)
+  'relays',       // RE-lays (n.) / re-LAYS (v.)
+  'relapses',     // RE-lapses (n.) / re-LAPSES (v.)
+  'remakes',      // RE-makes (n.) / re-MAKES (v.)
+  'replays',      // RE-plays (n.) / re-PLAYS (v.)
+  'reruns',       // RE-runs (n.) / re-RUNS (v.)
+  // S
+  'separates',    // SEP-arates (n./adj.) / sep-a-RATES (v.)
+  'showcases',    // SHOW-cases (n.) / show-CASES (v.)
+  'subjects',     // SUB-jects (n.) / sub-JECTS (v.)
+  'subordinates', // sub-OR-dinates (n./adj.) / sub-or-di-NATES (v.)
+  'supplements',  // SUP-plements (n.) / sup-ple-MENTS (v.)
+  'surcharges',   // SUR-charges (n.) / sur-CHARGES (v.)
+  'surveys',      // SUR-veys (n.) / sur-VEYS (v.)
+  'suspects',     // SUS-pects (n.) / sus-PECTS (v.)
+  'syndicates',   // SYN-dicates (n.) / syn-di-CATES (v.)
+  // T
+  'torments',     // TOR-ments (n.) / tor-MENTS (v.)
+  'transfers',    // TRANS-fers (n.) / trans-FERS (v.)
+  'transplants',  // TRANS-plants (n.) / trans-PLANTS (v.)
+  'transports',   // TRANS-ports (n.) / trans-PORTS (v.)
+  // U
+  'underlines',   // UN-derlines (n.) / un-der-LINES (v.)
+  'updates',      // UP-dates (n.) / up-DATES (v.)
+  'upgrades',     // UP-grades (n.) / up-GRADES (v.)
+  'uplifts',      // UP-lifts (n.) / up-LIFTS (v.)
+  'upsets',       // UP-sets (n.) / up-SETS (v.)
+  'upturns',      // UP-turns (n.) / up-TURNS (v.)
+]);
+
+const raw = readFileSync(new URL('euspell_lexicon.csv', DATA), 'utf8');
+const rows = parse(raw, { columns: true, skip_empty_lines: true, trim: true });
+
+const hits = rows.filter(row => {
+  const enc = row.Encoding;
+  return (enc === '012' || enc === '112') && DIATONES.has(row.Word.toLowerCase());
+});
+
+const header = 'Word,PoS,Encoding,euspelling';
+const lines = hits.map(r => `${r.Word},${r.PoS},${r.Encoding},${r.euspelling}`);
+writeFileSync(new URL('diatones.csv', DATA), [header, ...lines].join('\n') + '\n');
+
+console.log(`Written ${hits.length} diatone entries to data/diatones.csv`);
