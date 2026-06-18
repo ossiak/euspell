@@ -1,0 +1,549 @@
+Phrase,PoS,Encoding,euspelling
+a bit,RR2,000,[]
+a capella,JJ2|RR2,000,[]
+a fortiori,RR2,000,[]
+a good deal,RR3,000,[]
+a great deal,RR3,000,[]
+a heck of a lot,RR5,101,a heck ov a lot
+a hell of a lot,RR5,101,a hell ov a lot
+a la carte,JJ3|RR3,000,[]
+a la mode,RR3,000,[]
+a la,II2,000,[]
+a little bit,RR3,000,[]
+a little,RR2,000,[]
+a lot,RR2,000,[]
+a posteriori,JJ2|RR2,000,[]
+a priori,JJ2|RR2,000,[]
+a propos,II2|RR2,701,a propoh
+ab initio,JJ2|RR2,000,[]
+according to,II2,101,according tu
+ad astra,RR2,000,[]
+ad hoc,JJ2|RR2,000,[]
+ad hominem,JJ2|RR2,000,[]
+ad infinitum,RR2,000,[]
+ad lib,JJ2|NN12|RR2,000,[]
+ad libs,NN22,000,[]
+ad nauseam,RR2,000,[]
+ad valorem,JJ2,000,[]
+adjacent to,II2,101,adjacent tu
+affaire de coeur,NN13,000,[]
+agent provocateur,NN12,000,[]
+agents provocateurs,NN22,000,[]
+agnus dei,NN12,000,[]
+ahead of,II2,101,ahedd ov
+aide de camp,NN13,000,[]
+aide memoire,NN12,000,[]
+aides de camp,NN23,000,[]
+al dente,JJ2|RR2,000,[]
+al fresco,JJ2|RR2,000,[]
+all at once,RR3,101,all at wunce
+all but,RR2,000,[]
+all of a sudden,RR4,101,all ov a sudden
+all right,JJ2|RR2,000,all riht
+all the same,RR3,000,[]
+alma mater,NN12,000,[]
+alma maters,NN22,000,[]
+along with,II2,000,[]
+alter ego,NN12,000,[]
+alter egos,NN22,000,[]
+an awful lot,RR3,000,[]
+ancien regime,NN12,000,[]
+and fro in,II31,000,[]
+and so forth,RR3,000,[]
+and so on,RR3,000,[]
+anno domini,RR2,000,[]
+annus mirabilis,NN12,000,[]
+ante meridiem,RR2,000,[]
+any longer,RR2,101,eny longer
+anything but,RR2,101,enything but
+apart from,II2,000,[]
+aqua vitae,NN12,000,[]
+art deco,NN12,000,[]
+art nouveau,NN12,000,[]
+as against,II2,000,[]
+as as long,CS32,000,[]
+as between,II2,000,[]
+as far as,CS3,000,[]
+as for,II2,000,[]
+as from,II2,000,[]
+as if,CS2,000,[]
+as in front,II32,000,[]
+as in terms,II32,000,[]
+as it were,RR3,101,as it wer
+as long as,CS3,000,[]
+as of,II2,101,as ov
+as opposed to,II3,101,as opposed tu
+as regards,II2,000,[]
+as soon as,CS3,000,[]
+as though,CS2,101,as thoh
+as to,II2,101,as tu
+as usual,RR2,000,[]
+as well as,II3,000,[]
+as well,RR2,000,[]
+as yet,RR2,000,[]
+aside from,II2,000,[]
+asti spumante,NN12,000,[]
+at all,RR2,000,[]
+at best,RR2,000,[]
+at first,RR2,000,[]
+at large,RR2,000,[]
+at last,RR2,000,[]
+at least,RR2,000,[]
+at length,RR2,000,[]
+at long last,RR3,000,[]
+at most,RR2,101,at moste
+at once,RR2,101,at wunce
+at present,RR2,000,[]
+at random,RR2,000,[]
+at worst,RR2,000,[]
+au contraire,RR2,000,[]
+au courant,JJ2,000,[]
+au fait,JJ2,701,au faih
+au naturel,JJ2|RR2,000,[]
+au pair,NN12,000,[]
+au pairs,NN22,000,[]
+au revoir,UH2,000,[]
+auf wiedersehen,UH2,000,[]
+aurora borealis,NN12,000,[]
+avant garde,JJ2|NN12,000,[]
+away from,II2,000,[]
+basso profundo,NN12,000,[]
+beau monde,NN12,000,[]
+because of,II2,101,because ov
+belles lettres,NN22,000,[]
+bete noir,NN12,000,[]
+billet doux,NN12,101,biyyeh dooh
+billets doux,NN22,101,biyyehs dooh
+bon appetit,UH2,000,[]
+bon jour,UH2,101,bon joor
+bon mot,NN12,101,bon moh
+bon soir,UH2,101,bon swar
+bon vivant,NN12,000,[]
+bon viveur,NN12,000,[]
+bon voyage,UH2,000,[]
+bona fide,JJ2,000,[]
+bona fides,NN22,000,[]
+bons mots,NN22,101,bon mohs
+bons viveurs,NN22,101,bon viveurs
+bouquet garni,NN12,101,booqeh garni
+brand new,JJ2,000,[]
+bric a brac,NN13,000,[]
+but for,II2,000,[]
+by and by,RR3,000,[]
+by and large,RR3,000,[]
+by far and away,RR4,000,[]
+by far,RR2,000,[]
+by means of,II3,101,by means ov
+by no means,RR3,000,[]
+by now,RT2,101,by nuw
+by reason of,II3,101,by reason ov
+by the by,RR3,000,[]
+by way of,II3,000,[]
+cafe au lait,NN13,101,cafeh au laih
+camera obscura,NN12,000,[]
+carpe diem,UH2,000,[]
+carte blanche,NN12,101,carte blanshe
+casus belli,NN12,000,[]
+cause celebre,NN12,000,[]
+caveat emptor,UH2,000,[]
+ceteris paribus,RR2,000,[]
+chaise longue,NN12,101,shaise long
+chaises longues,NN22,101,shaises long
+chez moi,RL2,101,sheh mwa
+chez nous,RL2,101,sheh nooh
+chez vous,RL2,101,sheh vooh
+comme il faut,RR3,101,comm il fauh
+compos mentis,JJ2,000,[]
+con brio,RR2,000,[]
+con fuoco,RR2,000,[]
+considering that,CS2,000,[]
+contrary to,II2,101,contrary tu
+cordon bleu,NN12,000,[]
+cordon sanitaire,NN12,000,[]
+corps de ballet,NN13,101,cor de balleh
+corpus delicti,NN12,000,[]
+corpus juris,NN12,000,[]
+coup de foudre,NN13,101,cooh de foodre
+coup de grace,NN13,101,cooh de grace
+coup de theatre,NN13,101,cooh de theatre
+coups de grace,NN23,101,coohs de grace
+creme brulee,NN12,101,crem bruleh
+creme de la creme,NN14,101,crem de la crem
+creme de menthe,NN13,101,crem de menthe
+crepe suzette,NN12,101,crep suzette
+cri de coeur,NN13,000,[]
+croix de guerre,NN3,101,crwah de gherr
+cul de sac,NN13,000,[]
+de facto,JJ2|RR2,000,[]
+de jure,JJ2|RR2,000,[]
+de luxe,JJ2,000,[]
+de profundis,RR2,000,[]
+de rigeur,JJ2|RR2,000,[]
+de trop,JJ2,101,de troh
+deal in terms,II32,000,[]
+dei gratia,RR2,000,[]
+deja vu,NN12,000,[]
+delirium tremens,NN12,000,[]
+depending on,II2,000,[]
+deus ex machina,NN13,000,[]
+double entendre,NN12,101,dubble entendre
+double entendres,NN22,101,dubble entendres
+dramatis personae,NN22,000,[]
+due to,II2,101,due tu
+each other,PPX22,101,eaqh other
+eau de cologne,NN13,101,eau de colone
+eminence grise,NN12,000,[]
+en bloc,RR2,000,[]
+en famille,RR2,000,[]
+en masse,RR2,000,[]
+en passant,RR2,000,[]
+en route,RR2,000,[]
+en suite,JJ2,000,[]
+enfant terrible,NN12,000,[]
+enfants terribles,NN22,000,[]
+esprit de corps,NN13,101,esprih de cor
+et al,RA2,000,[]
+et cetera,RR2,000,[]
+even if,CS2,000,[]
+even so,RR2,000,[]
+even though,CS2,101,even thoh
+ever so,RG2|RR2,000,[]
+every so often,RR3,101,evry so often
+ex army,JJ2,000,[]
+ex cathedra,JJ2|RR2,000,[]
+ex gratia,JJ2,000,[]
+ex libris,RR2,000,[]
+ex officio,JJ2|RR2,000,[]
+ex parte,JJ2|RR2,000,[]
+ex post facto,RR3,000,[]
+ex tempore,JJ2,000,[]
+except for,II2,000,[]
+except that,CS2,000,[]
+fait accompli,NN12,000,[]
+far from,RG2,000,[]
+far off,JJ2,000,[]
+faux pas,NN2,101,fauh pah
+fed up,JJ2,000,[]
+femme fatale,NN12,000,[]
+femmes fatales,NN22,000,[]
+film noir,NN12,101,film nwar
+fin de siecle,NNT13,000,[]
+fines herbes,NN22,000,[]
+foie gras,NN12,101,fwa grah
+for certain,RR2,101,for certan
+for ever,RR2,000,[]
+for example,REX2,000,[]
+for fear of,II3,101,for fear ov
+for good,RR2,000,[]
+for instance,REX2,000,[]
+for keeps,RR2,000,[]
+for long,RR2,000,[]
+for once,RR2,101,for wunce
+for sure,RR2,000,[]
+for the most part,RR4,101,for the moste part
+for the time being,RT4,000,[]
+force majeure,NN12,000,[]
+from now on,RT3,101,from nuw on
+from time to time,RR4,101,from time tu time
+gee whizz,UH2,000,[]
+genius loci,NN12,000,[]
+given that,CS2,000,[]
+grand mal,NN12,000,[]
+grand prix,NN12,000,[]
+grande dame,NN12,000,[]
+great deal in,II31,000,[]
+grown up,JJ2|NN12,000,[]
+grown ups,NN22,000,[]
+guardian ad litem,NN13,101,gardian ad litem
+gung ho,JJ2|RR2,000,[]
+habeas corpus,NN12,000,[]
+half way,RR2,101,haff way
+hara kiri,NN12,000,[]
+hard up,JJ2,000,[]
+hasta la vista,UH3,000,[]
+hasta luego,UH2,000,[]
+haute couture,NN12,000,[]
+haute cuisine,NN12,000,[]
+have nots,NN22,101,hav nots
+hey presto,UH2,000,[]
+hoi polloi,NN2,000,[]
+homo sapiens,NN12,000,[]
+id est,REX2,000,[]
+idee fixe,NN12,101,ideh fix
+ignis fatuus,NN12,000,[]
+in absentia,RR2,000,[]
+in accord with,II3,000,[]
+in accordance with,II3,000,[]
+in addition to,II3,101,in addition tu
+in addition,RR2,000,[]
+in aid of,II3,101,in aid ov
+in answer to,II3,000,in anser tu
+in association with,II3,000,[]
+in back of,II3,101,in back ov
+in between,II2|JJ2|RL2,000,[]
+in brief,RR2,000,[]
+in camera,RR2,000,[]
+in case of,II3,101,in case ov
+in case,CS2|RR2,000,[]
+in charge of,II3,000,[]
+in common with,II3,000,[]
+in common,RR2,000,[]
+in comparison with,II3,000,[]
+in conjunction with,II3,000,[]
+in connection with,II3,000,[]
+in consultation with,II3,000,[]
+in contact with,II3,000,[]
+in cooperation with,II3,000,[]
+in defence of,II3,101,in defense ov
+in defense of,II3,101,in defense ov
+in defiance of,II3,101,in defiance ov
+in excess of,II3,101,in excess ov
+in extremis,RR2,000,[]
+in face of,II3,101,in face ov
+in favor of,II3,101,in favor ov
+in favour of,II3,101,in favor ov
+in flagrante delicto,RR3,000,[]
+in front of,II3,101,in front ov
+in full,RR2,000,[]
+in general,RR2,000,[]
+in keeping with,II3,000,[]
+in lieu of,II3,101,in lieu ov
+in light of,II3,101,in liht of
+in line with,II3,000,[]
+in loco parentis,JJ3|RR3,000,[]
+in medias res,RR3,000,[]
+in memoriam,RR2,000,[]
+in need of,II3,101,in need ov
+in order,BCL2,000,[]
+in part,RR2,000,[]
+in particular,RR2,000,[]
+in place of,II3,101,in place ov
+in possession of,II3,101,in possession ov
+in private,RR2,101,in privat
+in proportion to,II3,101,in proportion tu
+in propria persona,RR3,000,[]
+in public,RR2,000,[]
+in pursuit of,II3,101,in pusuht ov
+in quest of,II3,101,in quest ov
+in receipt of,II3,101,in receet ov
+in regard to,II3,101,in regard tu
+in relation to,II3,101,in relation tu
+in reply to,II3,101,in reply tu
+in respect of,II3,101,in respect ov
+in response to,II3,101,in response tu
+in return for,II3,000,[]
+in search of,II3,101,in serqh ov
+in short,RR2,000,[]
+in situ,RR2,000,[]
+in so far as,CS4,000,[]
+in some way,RR3,101,in som way
+in spite of,II3,101,in spite ov
+in support of,II3,101,in support ov
+in terms of,II3,101,in terms ov
+in that,CS2,000,[]
+in the main,RR3,000,[]
+in the order of,RG4,101,in the order ov
+in toto,JJ2|RR2,000,[]
+in touch with,II3,101,in tuqh
+in vain,RR2,000,[]
+in view of,II3,101,in view ov
+in vino veritas,RR3,000,[]
+in vitro,JJ2|RR2,000,[]
+in vivo,JJ2|RR2,000,[]
+inasmuch as,CS2,101,inasmuqh as
+infra dig,JJ2,000,[]
+inside out,JJ2|RL2,000,[]
+insofar as,CS2,000,[]
+instead of,CS2|II2,101,instedd ov
+inter alia,RR2,000,[]
+into line with,II3,101,intu line with
+ipso facto,RR2,000,[]
+irrespective of,II2,701,irrespectiv ov
+je ne sais quoi,NN14,701,je ne saih qwa
+joie de vivre,NN13,701,jwa de vivre
+just about,RR2,000,[]
+kind of,RR2,101,kynd ov
+la dolce vita,NN13,000,[]
+laissez faire,NN12,701,laisseh faire
+le mot juste,NN13,701,le moh juste
+let alone,II2,000,[]
+lingua franca,NN2,000,[]
+lo and behold,UH3,000,[]
+locum tenens,NN12,000,[]
+locus classicus,NN12,000,[]
+magna carta,NN12,000,[]
+magna cum laude,JJ3|RR3,000,[]
+magnum opus,NN12,000,[]
+maitre d,NN12,000,[]
+mal de mer,NN13,000,[]
+mardi gras,NN12,701,mardi grah
+matter of fact,JJ3|NN13,101,matter ov fact
+mea culpa,NN12,000,[]
+menage a trois,NN13,701,menage a trwah
+mezzo soprano,NN12,000,[]
+modus operandi,NN12,000,[]
+modus vivendi,NN12,000,[]
+mot juste,NN12,101,moh juste
+mutatis mutandis,RR2,000,[]
+no doubt,RR2,101,no dout
+no longer,RR2,000,[]
+no matter how,RGQV3|RRQV3,101,no matter huw
+no matter what,DDQV3,000,[]
+no matter when,RRQV3,000,[]
+no matter where,RRQV3,000,[]
+no matter which,DDQV3,101,no matter whiqh
+no matter who,PNQS3,101,no matter hoo
+no matter whom,PNQV3,101,no matter hoom
+no matter whose,DDQGE3,101,no matter hoose
+no matter why,RRQV3,000,[]
+no one,PN12,101,nowun
+noblesse oblige,NN12,000,[]
+nom de guerre,NN13,701,nom de gherre
+nom de plume,NN13,000,[]
+noms de guerre,NN23,701,noms de gherre
+noms de plume,NN23,000,[]
+non compos mentis,JJ3,000,[]
+non sequitur,NN12,000,[]
+non sequiturs,NN22,000,[]
+none other,PN2,101,nonn other
+none the less,RR3,101,nonntheless
+nouveau riche,NN12,701,nooveau rishe
+nouveaux riches,NN22,701,nooveau rishes
+nouvelle cuisine,NN12,701,noovelle cuisine
+now that,CS2,101,nuw that
+of course,RR2,101,ov corse
+off guard,RR2,101,off gard
+off of,II2,101,off ov
+oft times,RR2,000,[]
+old fashioned,JJ2,101,old fashond
+on account of,II3,101,on account ov
+on as well,II3,000,[]
+on behalf of,II3,101,on behaff ov
+on board,II2|RL2,000,[]
+on the part of,II4,101,on the part ov
+on to,II2,101,on tu
+on top of,II3,101,on top ov
+once again,RR2,101,wunce again
+once and for all,RR4,101,wunce and for all
+once more,RR2,101,wunce more
+one another,PPX12,101,wun another
+other than,II2,000,[]
+out of date,JJ3,101,out ov date
+out of line with,II4,101,out ov line
+out of touch with,II4,101,out ov tuqh
+outside of,II2,101,outside ov
+over here,RL2,000,[]
+owing to,II2,101,owing tu
+papier mache,NN12,701,papieh masheh
+par excellence,JJ2,000,[]
+pari passu,RR2,000,[]
+pas de deux,NN3,701,pah de deuh
+pate de foie gras,NN14,701,pateh de fwa grah
+pax americana,NN12,000,[]
+pax britannica,NN12,000,[]
+pax romana,NN12,000,[]
+per annum,RA2,000,[]
+per capita,JJ2|RR2,000,[]
+per cent,NNU2,000,[]
+per diem,JJ2|NN12|RA2,000,[]
+per se,RR2,000,[]
+persona non grata,NN13,000,[]
+personae non gratae,NN23,000,[]
+pertaining to,II2,000,pertaining tu
+petit bourgeois,NN12,701,petih burgewa
+petit four,NN12,7011,petih foor
+petit mal,NN12,701,petih mal
+piece de resistance,NN13,000,[]
+pied a terre,NN13,000,[]
+pina colada,NN12,000,[]
+pina coladas,NN22,000,[]
+point blank,JJ2|RR2,000,[]
+post hoc,JJ2|RR2,000,[]
+post mortem,JJ2|NN12,000,[]
+post mortems,NN22,000,[]
+poste restante,NN12|RR2,000,[]
+pot pourri,NN12,701,poh poorri
+prima donna,NN12,000,[]
+prima donnas,NN22,000,[]
+prima facie,JJ2|RR2,000,[]
+primus inter pares,NN13,000,[]
+prior to,II2,101,prior tu
+pro forma,NN12,000,[]
+pro rata,JJ2|RR2,000,[]
+pro tem,RR2,000,[]
+provided that,CS2,000,[]
+providing that,CS2,000,[]
+pursuant to,II2,000,[]
+quid pro quo,NN13,000,[]
+rather than,CS2|II2,000,[]
+reductio ad absurdum,NN13,000,[]
+relative to,II2,101,relativ tu
+rigor mortis,NN12,000,[]
+save for,II2,000,[]
+save that,CS2,000,[]
+savoir faire,NN12,701,savwar faire
+savoir vivre,NN12,701,savwar vivre
+seeing as,CS2,000,[]
+seeing that,CS2,000,[]
+semper fidelis,JJ2,000,[]
+shish kebab,NN12,000,[]
+shish kebabs,NN22,000,[]
+sine die,RR2,000,[]
+sine qua non,NN13,000,[]
+so called,JJ2,000,[]
+so much as,RR3,101,so muqh as
+so that,CS2,000,[]
+son et lumiere,NN13,000,[]
+sort of,RR2,000,[]
+sotto voce,RR2,000,[]
+spina bifida,NN12,000,[]
+spot on,JJ2|RR2,000,[]
+status quo,NN12,000,[]
+straight away,RR2,101,straiht away
+sub judice,JJ2|RR2,000,[]
+sub rosa,JJ2|RR2,000,[]
+subject to,II2,101,subject tu
+subsequent to,II2,101,susequent tu
+such as,II2,101,suqh as
+such that,CS2,101,suqh that
+sui generis,JJ2,000,[]
+summa cum laude,JJ3|RR3,000,[]
+super duper,JJ2,000,[]
+supposing that,CS2,000,[]
+tabula rasa,NN12,000,[]
+terra firma,NN12,000,[]
+terra incognita,NN12,000,[]
+thanks to,II2,101,thanks tu
+that is to say,REX4,101,that iz tu say
+that is,REX2,101,that iz
+through thick and thin,RR4,101,thruh thick and thin
+time and again,RR3,000,[]
+to and fro,RL3,101,tu and fro
+tour de force,NN13,101,toor de force
+tout court,JJ2,101,tooh coor
+tout de suite,RR3,101,tooh de suite
+ultra vires,RR2,000,[]
+under way,RR2,000,[]
+up front,JJ2|RL2,000,[]
+up to date,JJ3,101,up tu date
+up to the minute,JJ4,101,up tu the minut
+up to,II2|RG2,101,up tu
+up until,II2,000,[]
+upside down,JJ2|RL2,101,upside duwn
+upward of,RG2,101,upward ov
+upwards of,RG2,101,upwards ov
+vice versa,RR2,000,[]
+vin de table,NN13,000,[]
+vin ordinaire,NN12,000,[]
+vis a vis,II3,701,vis a vih
+viva voce,JJ2,000,[]
+vol au vent,NN13,101,vol au venh
+volte face,NN12,000,[]
+vox populi,NN12,000,[]
+well off,JJ2,000,[]
+whether or not,CSW3,000,[]
+with a view to,II4,101,with a view tu
+with reference to,II3,101,with reference tu
+with regard to,II3,101,with regard tu
+with relation to,II3,101,with relation tu
+with respect to,II3,101,with respect tu

@@ -1,0 +1,45 @@
+aka,RR,000,also known as
+approx,RR,000,approximately
+apr,NP1,000,April
+asap,RR,000,as soon as possible
+aug,NP1,000,August
+ca,II,000,circa
+co,NNB,000,Company
+dec,NP1,000,December
+dept,NN1,000,department
+dr,NNB,000,Doctor
+ed,NN1,000,edition/editor
+eds,NN2,000,editions/editors
+eg,REX,000,exempli gratia
+etc,RR,000,et cetera
+feb,NP1,000,February
+fri,NP1,000,Friday
+gov,NNB,000,Governor
+hr,NN1,000,hour
+ie,REX,000,id est
+inc,NNB,000,Incorporated
+jan,NP1,000,January
+lbs,NN2,000,pounds
+ltd,NNB,000,Limited
+max,JJ,000,maximum
+min,JJ,000,minimum
+misc,JJ,000,miscellaneous
+mon,NP1,000,Monday
+mr,NNB,000,Mister
+mrs,NNB,000,Missus
+ms,NNB,000,Ms
+nov,NP1,000,November
+oct,NP1,000,October
+oz,NN1,000,ounce
+pp,NN2,000,pages
+prof,NNB,000,Professor
+rep,NNB,000,Representative
+sec,NN1,000,second
+sen,NNB,000,Senator
+sept,NP1,000,September
+st,NNB,000,Saint/Street
+thu,NP1,000,Thursday
+tue,NP1,000,Tuesday
+vol,NN1,000,volume
+vols,NN2,000,volumes
+vs,CC,000,versus

@@ -1,0 +1,159 @@
+Contraction,PoS,Encoding,euspelling,full form
+'bout,II|RG|RL|RP|RPK|RR22,000,[],about
+'cause,CS|II21,000,[],because
+'cept,CS|CS21|II|II21,000,[],except
+'em,PPHO2,000,[],them
+'s,GE|VBDZ|VBZ|VDZ|VHZ,102,'s|'z,is|has|does|was
+'til,CS|II|II22,000,[],until
+'tis,PPH1 VBZ,011,'tiz,it is
+'twas,PPH1 VBDZ,000,[],it was
+'tween,II|II22|JJ22|RL|RL22,000,[],between
+'twere,PPH1 VBDR,101,'twer,it were
+ain't,VBM XX|VBR XX|VBZ XX|VDD XX|VH0 XX|VHZ XX,000,[],am not|is not|are not|has not|have not|did not
+anybody's,PN1 GE|PN1 VBZ|PN1 VHZ,112,enybody's|enybody'z,anybody's|anybody has|anybody is
+anyone's,PN1 GE|PN1 VBZ|PN1 VHZ,112,enywun's|enywun'z,anyone's|anyone has|anyone is
+anything's,PN1 VBZ|PN1 VHZ,111,enything'z,anything has|anything is
+aren't,VBR XX,000,[],are not
+c'mon,UH,000,[],come on
+can't,VM XX,000,[],cannot
+could've,VM VHI,101,coodd'v,could have
+couldn't,VM XX,101,cooddn't,could not
+couldn't've,VM XX VHI,101,cooddn't'v,could not have
+cuppa,NN IO,000,[],cup of
+cuz,CS|II21,000,[],because
+d'ya,VD0 PPY,000,[],do you
+didn't,VDD XX,000,[],did not
+doesn't,VDZ XX,000,duzn't,does not
+don't,VD0 XX,101,[],do not
+dunno,VD0 XX VV0,000,[],do not know
+e'en,JJ|RR,000,[],even
+e'er,RR,000,[],ever
+everybody's,PN1 GE|PN1 VBZ|PN1 VHZ,112,evrybody's|evrybody'z,everybody's|everybody has|everybody is
+everyone's,PN1 GE|PN1 VBZ|PN1 VHZ,112,evrywun's|evrywun'z,everyone's|everyone has|everyone is
+everything's,PN1 VBZ|PN1 VHZ,112,evrything'z,everything has|everything is
+g'day,UH,000,[],good day
+gimme,NN,000,[],give me
+gotcha,NN|VVD PPY,000,[],got you
+gotta,VVD TO,000,[],got to
+hadn't,VHD XX,000,[],had not
+hasn't,VHZ XX,011,hazn't,has not
+haven't,VH0 XX,000,[],have not
+he'd,PPHS1 VHD|PPHS1 VM,000,[],he had|he would
+he'll,PPHS1 VM,000,[],he shall|he will
+he's,PPHS1 VBZ|PPHS1 VHZ,011,he'z,he has|he is
+helluva,RR,000,[],hell of a
+here's,RL VBZ,011,here'z,here is
+how'd,RRQ VVD|RRQ VM,101,huw'd,how did|how would
+how'll,RRQ VM,101,huw'll,how will|how shall
+how're,RRQ VBR,101,huw'r,how are
+how's,RRQ VBZ|RRQ VHZ|RRQ VVZ,111,huw'z,how has|how is|how does
+howdy,UH,101,huwdy,how do you do
+I'd've,PPIS1 VM VH0,101,ih'd'v,i would have
+I'd,PPIS1 VHD|PPIS1 VM,101,ih'd,i had|i would
+I'll,PPIS1 VM,101,ih'll,i shall|i will
+I'm,PPIS1 VBM,101,ih'm,i am
+I've,PPIS1 VH0,101,ih'v,i have
+Idunno,PPIS1 VD0 XX VV0,101,ihdunno,i do not know
+Imma,PPIS1 VBM VVGK TO,101,ihma,i am going to
+isn't,VBZ XX,011,izn't,is not
+it'd,PPH1 VM,000,[],it would
+it'll,PPH1 VM,000,[],it shall|it will
+it's,PPH1 VBZ|PPH1 VHZ,011,it'z,it has|it is
+kinda,RR,101,kynda,kind of
+lemme,VV0 PPIO1,000,[],let me
+let's,VV0 PPIO2,000,[],let us
+ma'am,NN1,000,[],madam
+may've,VM VH0,101,may'v,may have
+mayn't,VM XX,000,[],may not
+might've,VM VH0,101,miht'v,might have
+mightn't,VM XX,101,mihtn't,might not
+mine's,PPGE VBZ,011,mine'z,mine is
+must've,VM VH0,101,must'v,must have
+mustn't've,VM XX VH0,101,mustn't'v,must not have
+mustn't,VM XX,000,mustn't,must not
+ne'er,RR,000,[],never
+needn't,VM XX,000,[],need not
+no one's,,112,nowun's|nowun'z,no one's|no one is
+nobody's,,012,nobody's|nobody'z,nobody's|nobody is
+nothing's,,011,nothing'z,nothing has|nothing is
+o'clock,RA,000,[],of the clock
+o'er,II,000,[],over
+ol',JJ,000,[],old
+ought've,VM VH0,101,oht'v,ought have
+oughtn't've,VM XX VH0,101,ohtn't'v,ought not have
+oughtn't,VM XX,101,ohtn't,ought not
+shan't,VM XX,101,shan't,shall not
+she'd,PPHS1 VHD|PPHS1 VM,000,[],she had|she would
+she'll,PPHS1 VM,000,[],she shall|she will
+she's,PPHS1 VBZ|PPHS1 VHZ,011,she'z,she has|she is
+should've,,101,shoodd'v,should have
+shouldn't've,,101,shooddn't'v,should not have
+shouldn't,,101,shooddn't,should not
+so's,,011,so'z,so is|so has
+so've,,101,so'v,so have
+somebody's,,112,sombody's|sombody'z,somebody's|somebody has|somebody is
+someone's,,112,somwun's|somwun'z,somwun's|someone has|someone is
+something's,,111,somthing'z,something has|something is
+that'd,,000,[],that would|that had
+that'll,,000,[],that shall|that will
+that's,,011,that'z,that has|that is
+there'd,,000,[],there had|there would
+there'll,,000,[],there shall|there will
+there're,,101,there'r,there are
+there's,,011,there'z,there has|there is
+these're,,101,these'r,these are
+these've,,101,these'v,these have
+they'd've,,101,they'd'v,they would have
+they'd,,000,[],they had|they would
+they'll,,000,[],they shall|they will
+they're,,101,they'r,they are|they were
+they've,,101,they'v,they have
+this's,,011,this'z,this has|this is
+those're,,101,those'r,those are
+those've,,101,those'v,those have
+to've,,10,tu'v,to have
+wanna,,000,[],want to
+wasn't,,000,[],was not
+we'd've,,101,we'd'v,we would have
+we'd,,000,[],we had|we would|we did
+we'll,,000,[],we shall|we will
+we're,,101,we'r,we are
+we've,,101,we'v,we have
+weren't,,000,[],were not
+what'd,,000,[],what did
+what'll,,000,[],what shall|what will
+what're,,101,what'r,what are|what were
+what's,,011,what'z,what has|what is|what does
+what've,,101,what'v,what have
+whatcha,,000,[],what are you
+when'd,,000,[],when did
+when's,,011,when'z,when has|when is
+where'd,,000,[],where did
+where'll,,000,[],where shall|where will
+where're,,101,where'r,where are
+where's,,011,where'z,where has|where is|where does
+where've,,101,where'v,where have
+which'd,,101,whiqh'd,which had|which would
+which'll,,101,whiqh'll,which shall|which will
+which're,,101,whiqh'r,which are
+which's,,111,whiqh'z,which has|which is
+which've,,101,whiqh'v,which have
+who'd've,,101,hoo'd'v,who would have
+who'd,,101,hoo'd,who would|who had|who did
+who'll,,101,hoo'll,who shall|who will
+who're,,101,hoo'r,who are
+who's,,111,hoo'z,who has|who is|who does
+who've,,101,hoo'v,who have
+why're,,101,why'r,why are
+why's,,011,why'z,why has|why is|why does
+won't,,000,[],will not
+would've,,101,woodd'v,would have
+wouldn't've,,101,woodn't'v,would not have
+wouldn't,,101,wooddn't,would not
+y'all,,000,[],you all
+y'know,,000,[],you know
+yessir,,000,[],yes sir
+you'd,,101,yu'd,you had|you would
+you'll,,101,yu'll,you shall|you will
+you're,,101,yu'r,you are
+you've,,101,yu'v,you have

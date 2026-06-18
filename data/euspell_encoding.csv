@@ -1,0 +1,36 @@
+000,no new spelling,common word
+011,one new spelling,VVZ ending
+012,two spellings,NN2|VVZ ending
+021,one new spelling,JJ|VVD|VVN ending
+022,two spellings,JJ|VVD|VVN ending
+041,one new spelling,doubling consonant before ending
+101,one new spelling,stem
+102,two spellings,stem with one VV0
+103,three spellings,stem
+111,one new spelling,stem + NN2|VVZ ending
+112,two spellings,stem + NN2|VVZ ending
+113,three spellings,stem + NN2|VVZ ending
+114,four spellings,stem + NN2|VVZ ending
+121,one new spelling,stem + JJ|VVD|VVN ending
+123,three new spellings,stem + JJ|VVD|VVN ending
+131,one new spelling,stem + undoubling consonant before ending
+202,two spellings,stem - case-by-case
+500,no new spelling,rare or archaic word
+501,one new spelling,rare or archaic word
+511,one new spelling,VVZ - rare or archaic word
+521,one new spelling,rare or archaic word
+601,one new spelling,merges with exisiting word
+611,one new spelling,VVZ ending merges with exisiting word
+621,one new spelling,JJ|VVD|VVN ending merges with exisiting word
+631,one new spelling,merges with exisiting word + undoubling consonant before ending
+641,one new spelling,merges with exisiting word + doubling consonant before ending
+700,no new spelling,French pronunciation
+701,one new spelling,stem - French pronunciation
+702,two spellings,French pronunciation - all NN1|NN2
+711,one new spelling,VVZ ending - French pronunciation
+721,one new spelling,JJ|VVD|VVN ending - French pronunciation
+741,one new spelling,French pronunciation + doubling consonant before ending
+800,no new spelling,Scottish pronunciation
+801,one new spelling,stem - Scottish pronunciation
+811,one new spelling,NN2|VVZ ending - Scottish pronunciation
+821,one new spelling,JJ|VVD|VVN ending - Scottish pronunciation

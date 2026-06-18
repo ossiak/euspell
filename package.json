@@ -1,0 +1,23 @@
+{
+  "name": "euspell",
+  "version": "0.1.0",
+  "description": "Chrome extension for euspell English spelling reform",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build:lexicon && npm run build:ext",
+    "build:lexicon": "node build/compile-lexicon.js",
+    "build:ext": "rollup -c",
+    "gen:disambig": "node build/gen-disambig.js",
+    "watch": "rollup -c --watch"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "csv-parse": "^5.0.0",
+    "rollup": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ossiak/euspell.git"
+  },
+  "license": "GPL-3.0-or-later"
+}

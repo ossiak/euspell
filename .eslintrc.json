@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "es2023": true,
+    "webextensions": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2023,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-var": "error",
+    "prefer-const": "error",
+    "no-eval": "error",
+    "eqeqeq": ["error", "always"],
+    "no-console": "off",
+    "prefer-template": "error",
+    "object-shorthand": "error",
+    "prefer-destructuring": ["warn", { "array": false, "object": true }]
+  }
+}
