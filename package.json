@@ -8,12 +8,14 @@
     "build:lexicon": "node build/compile-lexicon.js",
     "build:ext": "rollup -c",
     "gen:disambig": "node build/gen-disambig.js",
+    "gen:icons": "node build/gen-icons.js",
     "watch": "rollup -c --watch"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.0",
     "csv-parse": "^5.0.0",
-    "rollup": "^4.0.0"
+    "rollup": "^4.0.0",
+    "sharp": "^0.33.5"
   },
   "repository": {
     "type": "git",
