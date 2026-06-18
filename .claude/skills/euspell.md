@@ -121,7 +121,7 @@ First digit = number of euspelings produced (0 = none/unchanged, 1–4 = count).
 | `202` | **Yes** | Case-by-case; semantic or POS |
 | `500`/`501`/`511` | No | Rare/archaic words |
 
-**Rule:** `encoding >= 200` requires a disambiguation function.
+**Rule:** `encoding % 10 >= 2` requires a disambiguation function.
 
 When there are two spellings, `spellings[0]` is the default (no-context fallback);
 the order matches the POS tags in the `pos` array of the entry.
