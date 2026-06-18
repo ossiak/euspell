@@ -12543,7 +12543,7 @@ aughts,NN2,101,auhts
 augite,NN|NN1,000,[]
 augites,NN2,000,[]
 augitic,JJ,000,[]
-augment,VV0,000,[]
+augment,NN1|VV0,000,[]
 augmentation,NN|NN1,000,[]
 augmentations,NN2,000,[]
 augmentative,JJ|NN1,101,augmentativ
@@ -12554,7 +12554,7 @@ augmenters,NN2,000,[]
 augmenting,VVG,000,[]
 augmentor,NN1,000,[]
 augmentors,NN2,000,[]
-augments,VVZ,011,augmentz
+augments,NN2|VVZ,012,augments|augmentz
 augsburg,NP,000,[]
 augur,NN1|VV0,000,[]
 augural,JJ|NN1,000,[]
@@ -34509,7 +34509,7 @@ compactly,RR,000,[]
 compactness,NN,000,[]
 compactor,NN1,000,[]
 compactors,NN2,000,[]
-compacts,VVZ,011,compactz
+compacts,NN2|VVZ,012,compacts|compactz
 compadre,NN1,000,[]
 compadres,NN2,000,[]
 companied,VVD|VVN,000,[]
@@ -88649,7 +88649,7 @@ imported,JJ|VVD|VVN,000,[]
 importer,NN1,000,[]
 importers,NN2,000,[]
 importing,NN|VVG,000,[]
-imports,NN2,000,[]
+imports,NN2|VVZ,012,imports|importz
 importunate,JJ,101,importunat
 importunately,RR,101,importunatly
 importunateness,NN,101,importunatness
@@ -124828,7 +124828,7 @@ ornamentation,NN|NN1,000,[]
 ornamentations,NN2,000,[]
 ornamented,JJ|VVD|VVN,000,[]
 ornamenting,VVG,000,[]
-ornaments,NN2,000,[]
+ornaments,NN2|VVZ,012,ornaments|ornamentz
 ornate,JJ,000,[]
 ornately,RR,000,[]
 ornateness,NN,000,[]
@@ -126019,7 +126019,7 @@ outline,NN1|VV0,000,[]
 outlined,JJ|VVD|VVN,000,[]
 outliner,NN1,000,[]
 outliners,NN2,000,[]
-outlines,NN2,000,[]
+outlines,NN2|VVZ,012,outlines|outlinez
 outlining,VVG,000,[]
 outlive,VV0,101,outliv
 outlived,VVD|VVN,121,outlivd
@@ -127749,10 +127749,10 @@ overloaded,JJ|VVD|VVN,000,[]
 overloading,NN|VVG,000,[]
 overloads,NN2|VVZ,012,overloads|overloadz
 overlong,JJ,000,[]
-overlook,VV0,000,[]
+overlook,NN1|VV0,000,[]
 overlooked,JJ|VVD|VVN,021,overlookd
 overlooking,NN|VVG,000,[]
-overlooks,VVZ,011,overlookz
+overlooks,NN2|VVZ,012,overlooks|overlookz
 overlord,NN1|VV0,000,[]
 overlorded,VVD|VVN,000,[]
 overlording,VVG,000,[]
@@ -128427,10 +128427,10 @@ overture,NN1|VV0,000,[]
 overtured,VVD|VVN,000,[]
 overtures,NN2|VVZ,012,overtures|overturez
 overturing,VVG,000,[]
-overturn,VV0,000,[]
+overturn,NN1|VV0,000,[]
 overturned,JJ|VVD|VVN,021,overturnd
 overturning,NN|VVG,000,[]
-overturns,VVZ,011,overturnz
+overturns,NN2|VVZ,012,overturns|overturnz
 overurge,VV0,000,[]
 overurged,VVD|VVN,000,[]
 overurges,VVZ,011,overurgez
