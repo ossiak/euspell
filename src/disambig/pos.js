@@ -4,8 +4,11 @@
  *
  * Each function receives the full token array for a sentence and the index of
  * the target word. Return true if the word matches the named part-of-speech.
+ * Obtain the fixed two-before / two-after view with `contextWindow(tokens, idx)`
+ * from ../content/context.js — out-of-range and cross-sentence slots arrive as
+ * the BOUNDARY sentinel (tag 'ZB'), so clause edges are signal, not absence.
  *
- * @typedef {{ word: string, tag: string }} Token
+ * @typedef {import('../content/context.js').Token} Token
  */
 
 /**

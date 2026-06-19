@@ -1,10 +1,9 @@
 import { data as lexicon } from '../../dist/lexicon.js';
 import { data as abbreviations } from '../../dist/abbreviations.js';
 import { data as contractions } from '../../dist/contractions.js';
+import { contextWindow } from './context.js';
 
-/**
- * @typedef {{ word: string, tag: string }} Token
- */
+/** @typedef {import('./context.js').Token} Token */
 
 /**
  * Converts a single word to its euspelling given surrounding token context.
@@ -32,7 +31,22 @@ export function convert(word, tokens, idx) {
  * @returns {number}
  */
 function disambiguate(entry, tokens, idx) {
-  // TODO: route to pos.js or semantic/*.js based on encoding
+  const ctx = contextWindow(tokens, idx);
+  return route(entry, ctx);
+}
+
+/**
+ * Maps a built context window to a spelling index. Dispatches on
+ * `entry.encoding` to the relevant pos.js / semantic rules; each rule reads
+ * positionally from the window, where `ctx[2]` is the target word.
+ * @param {import('../../dist/lexicon.js').LexiconEntry} entry
+ * @param {[Token, Token, Token, Token, Token]} ctx  [w-2, w-1, target, w+1, w+2]
+ * @returns {number}
+ */
+function route(entry, ctx) {
+  // TODO: dispatch on entry.encoding to pos.js / semantic rules.
+  // Until the PoS tagger populates token.tag, every tag is '' so no rule can
+  // fire — fall back to the default spelling (spellings[0]).
   return 0;
 }
 

@@ -45,7 +45,8 @@ euspell_ext/
 │   ├── content/
 │   │   ├── content.js          # Entry point — observer setup, init
 │   │   ├── converter.js        # word → euspelling (lexicon + disambig)
-│   │   ├── dom-walker.js       # Text node traversal
+│   │   ├── context.js          # Token type, BOUNDARY sentinel, contextWindow()
+│   │   ├── dom-walker.js       # Block-level tokenisation + writeback
 │   │   └── pdf-handler.js      # PDF.js hook via MAIN-world script injection
 │   ├── background/
 │   │   └── service-worker.js   # On/off toggle, storage init
@@ -212,6 +213,19 @@ function convert(word, tokens, idx) {
 
 `matchCase()` preserves ALL-CAPS, Title Case, and lowercase of the original word.
 
+### Token context & boundaries
+
+`dom-walker.js` tokenises text **per block-level element** (not per text node), so a
+sentence split across inline markup (`I <em>record</em> this`) is tagged as one stream.
+Each `Token` is `{ word, tag, breakAfter }`; `breakAfter` marks a sentence end (`.!?` or
+the block edge).
+
+`disambiguate()` builds a fixed two-before / two-after view with
+`contextWindow(tokens, idx)` from `context.js`. Slots past a text edge **or across a
+sentence boundary** arrive as the frozen `BOUNDARY` sentinel (tag `ZB`) — so a missing
+neighbour is a positive clause-edge signal, and every rule sees a uniform 5-slot shape
+`[w-2, w-1, target, w+1, w+2]` with `ctx[2]` as the target.
+
 ---
 
 ## PDF.js Integration
@@ -265,8 +279,8 @@ if (entry.encoding >= 200) { … }          // not: entry.encoding >= '200'
 // Lexicon lookup always lowercase
 const entry = lexicon.get(word.toLowerCase());
 
-// Shared Token type defined once in converter.js
-/** @typedef {{ word: string, tag: string }} Token */
+// Shared Token type defined once in src/content/context.js
+/** @typedef {{ word: string, tag: string, breakAfter: boolean }} Token */
 ```
 
 ---
