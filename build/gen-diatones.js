@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Generates data/diatones.csv — a subset of euspell_lexicon.csv containing only
- * entries with encoding 012 or 112 that are known English diatones (words where
- * spoken stress shifts between the NN2 plural-noun and VVZ 3rd-sg-pres-verb readings).
+ * Generates data/diatones.csv — a subset of euspell_lexicon.csv containing:
+ *  - All encoding 102 entries (NN1|VV0 pairs where stress shifts between noun and verb)
+ *  - Encoding 012/112 entries that are known English diatones (NN2|VVZ stress-shifting pairs)
  *
  * Run: node build/gen-diatones.js
  */
@@ -241,6 +241,7 @@ const rows = parse(raw, { columns: true, skip_empty_lines: true, trim: true });
 
 const hits = rows.filter(row => {
   const enc = row.Encoding;
+  if (enc === '102') return true;
   return (enc === '012' || enc === '112') && DIATONES.has(row.Word.toLowerCase());
 });
 
