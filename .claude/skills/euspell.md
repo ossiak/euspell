@@ -90,7 +90,7 @@ euspell_ext/
 
 ### euspell_lexicon_contractions.csv
 
-Same four columns plus a fifth: `full form` (e.g. `is|has|does|was`).
+Same four columns as the lexicon (`Contraction,PoS,Encoding,euspelling`).
 
 ### Compiled dist/ format
 

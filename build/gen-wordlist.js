@@ -104,7 +104,7 @@ for (const row of parseCsv('euspell_lexicon_abbreviations.csv', false)) {
 }
 
 // ---------------------------------------------------------------------------
-// Contractions  (header: Contraction,PoS,Encoding,euspelling,full form)
+// Contractions  (header: Contraction,PoS,Encoding,euspelling)
 // ---------------------------------------------------------------------------
 
 for (const row of parseCsv('euspell_lexicon_contractions.csv', true)) {
