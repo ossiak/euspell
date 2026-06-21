@@ -23,8 +23,8 @@ cuppa,NN IO,000,[]
 cuz,CS|II21,000,[]
 d'ya,VD0 PPY,000,[]
 didn't,VDD XX,000,[]
-doesn't,VDZ XX,000,duzn't
-don't,VD0 XX,101,[]
+doesn't,VDZ XX,101,duzn't
+don't,VD0 XX,000,[]
 dunno,VD0 XX VV0,000,[]
 e'en,JJ|RR,000,[]
 e'er,RR,000,[]
@@ -73,9 +73,9 @@ mustn't've,VM XX VH0,101,mustn't'v
 mustn't,VM XX,000,mustn't
 ne'er,RR,000,[]
 needn't,VM XX,000,[]
-no one's,,112,nowun's|nowun'z
-nobody's,,012,nobody's|nobody'z
-nothing's,,011,nothing'z
+no one's,PN1 GE|PN1 VBZ|PN1 VHZ,112,nowun's|nowun'z
+nobody's,PN1 GE|PN1 VBZ|PN1 VHZ,012,nobody's|nobody'z
+nothing's,PN1 VBZ|PN1 VHZ,011,nothing'z
 o'clock,RA,000,[]
 o'er,II,000,[]
 ol',JJ,000,[]
@@ -86,74 +86,74 @@ shan't,VM XX,101,shan't
 she'd,PPHS1 VHD|PPHS1 VM,000,[]
 she'll,PPHS1 VM,000,[]
 she's,PPHS1 VBZ|PPHS1 VHZ,011,she'z
-should've,,101,shoodd'v
-shouldn't've,,101,shooddn't'v
-shouldn't,,101,shooddn't
-so's,,011,so'z
-so've,,101,so'v
-somebody's,,112,sombody's|sombody'z
-someone's,,112,somwun's|somwun'z
-something's,,111,somthing'z
-that'd,,000,[]
-that'll,,000,[]
-that's,,011,that'z
-there'd,,000,[]
-there'll,,000,[]
-there're,,101,there'r
-there's,,011,there'z
-these're,,101,these'r
-these've,,101,these'v
-they'd've,,101,they'd'v
-they'd,,000,[]
-they'll,,000,[]
-they're,,101,they'r
-they've,,101,they'v
-this's,,011,this'z
-those're,,101,those'r
-those've,,101,those'v
-to've,,10,tu'v
-wanna,,000,[]
-wasn't,,000,[]
-we'd've,,101,we'd'v
-we'd,,000,[]
-we'll,,000,[]
-we're,,101,we'r
-we've,,101,we'v
-weren't,,000,[]
-what'd,,000,[]
-what'll,,000,[]
-what're,,101,what'r
-what's,,011,what'z
-what've,,101,what'v
-whatcha,,000,[]
-when'd,,000,[]
-when's,,011,when'z
-where'd,,000,[]
-where'll,,000,[]
-where're,,101,where'r
-where's,,011,where'z
-where've,,101,where'v
-which'd,,101,whiqh'd
-which'll,,101,whiqh'll
-which're,,101,whiqh'r
-which's,,111,whiqh'z
-which've,,101,whiqh'v
-who'd've,,101,hoo'd'v
-who'd,,101,hoo'd
-who'll,,101,hoo'll
-who're,,101,hoo'r
-who's,,111,hoo'z
-who've,,101,hoo'v
-why're,,101,why'r
-why's,,011,why'z
-won't,,000,[]
-would've,,101,woodd'v
-wouldn't've,,101,woodn't'v
-wouldn't,,101,wooddn't
-y'all,,000,[]
-y'know,,000,[]
-yessir,,000,[]
-you'd,,101,yu'd
-you'll,,101,yu'll
-you're,,101,yu'r
-you've,,101,yu'v
+should've,VM VHI,101,shoodd'v
+shouldn't've,VM XX VHI,101,shooddn't'v
+shouldn't,VM XX,101,shooddn't
+so's,RR VBZ|RR VHZ,011,so'z
+so've,RR VH0,101,so'v
+somebody's,PN1 GE|PN1 VBZ|PN1 VHZ,112,sombody's|sombody'z
+someone's,PN1 GE|PN1 VBZ|PN1 VHZ,112,somwun's|somwun'z
+something's,PN1 VBZ|PN1 VHZ,111,somthing'z
+that'd,DD1 VM|DD1 VHD,000,[]
+that'll,DD1 VM,000,[]
+that's,DD1 VBZ|DD1 VHZ,011,that'z
+there'd,EX VM|EX VHD,000,[]
+there'll,EX VM,000,[]
+there're,EX VBR,101,there'r
+there's,EX VBZ|EX VHZ,011,there'z
+these're,DD2 VBR,101,these'r
+these've,DD2 VH0,101,these'v
+they'd've,PPHS2 VM VHI,101,they'd'v
+they'd,PPHS2 VM|PPHS2 VHD,000,[]
+they'll,PPHS2 VM,000,[]
+they're,PPHS2 VBR,101,they'r
+they've,PPHS2 VH0,101,they'v
+this's,DD1 VBZ|DD1 VHZ,011,this'z
+those're,DD2 VBR,101,those'r
+those've,DD2 VH0,101,those'v
+to've,TO VHI,10,tu'v
+wanna,VV0 TO,000,[]
+wasn't,VBDZ XX,000,[]
+we'd've,PPIS2 VM VHI,101,we'd'v
+we'd,PPIS2 VM|PPIS2 VHD,000,[]
+we'll,PPIS2 VM,000,[]
+we're,PPIS2 VBR,101,we'r
+we've,PPIS2 VH0,101,we'v
+weren't,VBDR XX,000,[]
+what'd,DDQ VDD|DDQ VM,000,[]
+what'll,DDQ VM,000,[]
+what're,DDQ VBR,101,what'r
+what's,DDQ VBZ|DDQ VHZ,011,what'z
+what've,DDQ VH0,101,what'v
+whatcha,DDQ VBR PPY,000,[]
+when'd,RRQ VDD,000,[]
+when's,RRQ VBZ|RRQ VHZ,011,when'z
+where'd,RRQ VDD,000,[]
+where'll,RRQ VM,000,[]
+where're,RRQ VBR,101,where'r
+where's,RRQ VBZ|RRQ VHZ,011,where'z
+where've,RRQ VH0,101,where'v
+which'd,DDQ VM|DDQ VHD,101,whiqh'd
+which'll,DDQ VM,101,whiqh'll
+which're,DDQ VBR,101,whiqh'r
+which's,DDQ VBZ|DDQ VHZ,111,whiqh'z
+which've,DDQ VH0,101,whiqh'v
+who'd've,PNQS VM VHI,101,hoo'd'v
+who'd,PNQS VM|PNQS VHD,101,hoo'd
+who'll,PNQS VM,101,hoo'll
+who're,PNQS VBR,101,hoo'r
+who's,PNQS VBZ|PNQS VHZ,111,hoo'z
+who've,PNQS VH0,101,hoo'v
+why're,RRQ VBR,101,why'r
+why's,RRQ VBZ|RRQ VHZ,011,why'z
+won't,VM XX,000,[]
+would've,VM VHI,101,woodd'v
+wouldn't've,VM XX VHI,101,woodn't'v
+wouldn't,VM XX,101,wooddn't
+y'all,PPY DB,000,[]
+y'know,PPY VV0,000,[]
+yessir,UH NNB,000,[]
+you'd,PPY VM|PPY VHD,101,yu'd
+you'll,PPY VM,101,yu'll
+you're,PPY VBR,101,yu'r
+you've,PPY VH0,101,yu'v
