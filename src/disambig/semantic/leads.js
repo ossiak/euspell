@@ -3,7 +3,7 @@
  *   leads — /liːdz/ plural noun (a clue, a leash, a theatrical lead)
  *   ledds — /lɛdz/  plural noun of the metal/graphite 'lead'
  *   leadz — /liːdz/ 3rd-sg-pres verb ("she leads")
- * Corpus: disambig/lead.txt (base form)
+ * Corpus: disambig/leads.txt
  *
  * @typedef {import('../../content/context.js').Token} Token
  */
@@ -14,6 +14,6 @@
  * @returns {'leads' | 'ledds' | 'leadz' | null}  null = unable to determine
  */
 export function disambiguate_leads(tokens, idx) {
-  // TODO: implement using rules derived from disambig/lead.txt corpus
+  // TODO: implement using rules derived from disambig/leads.txt corpus
   return null;
 }
