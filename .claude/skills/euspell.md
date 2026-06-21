@@ -46,6 +46,7 @@ euspell_ext/
 │   │   ├── content.js          # Entry point — observer setup, init
 │   │   ├── converter.js        # word → euspelling (lexicon + disambig)
 │   │   ├── context.js          # Token type, BOUNDARY sentinel, contextWindow()
+│   │   ├── tagger.js           # tagWord() — lexical CLAWS7 tags from the lexicon
 │   │   ├── dom-walker.js       # Block-level tokenisation + writeback
 │   │   └── pdf-handler.js      # PDF.js hook via MAIN-world script injection
 │   ├── background/
@@ -201,10 +202,14 @@ and as regression fixtures.
 // src/content/converter.js  — high-level logic
 function convert(word, tokens, idx) {
   const key = word.toLowerCase();
-  const entry = lexicon.get(key) ?? abbreviations.get(key) ?? contractions.get(key);
+  // Abbreviations supply PoS only (via tagger.js), never replacements.
+  const entry = lexicon.get(key) ?? contractions.get(key);
+  if (!entry) return word;
 
-  if (!entry || entry.encoding === 0 || entry.spellings.length === 0) return word;
-  if (entry.spellings.length === 1) return matchCase(word, entry.spellings[0]);
+  // encoding % 10 is the euspelling count: 0 ⇒ unchanged, 1 ⇒ single, ≥2 ⇒ disambiguate.
+  const variants = entry.encoding % 10;
+  if (variants === 0) return word;
+  if (variants === 1) return matchCase(word, entry.spellings[0]);
 
   const spellingIdx = disambiguate(entry, tokens, idx);   // routes to pos.js or semantic/
   return matchCase(word, entry.spellings[spellingIdx] ?? word);
@@ -212,6 +217,8 @@ function convert(word, tokens, idx) {
 ```
 
 `matchCase()` preserves ALL-CAPS, Title Case, and lowercase of the original word.
+The "unchanged" test is `encoding % 10 === 0`, **not** an empty euspelling field — the
+encoding is authoritative.
 
 ### Token context & boundaries
 
@@ -220,11 +227,17 @@ sentence split across inline markup (`I <em>record</em> this`) is tagged as one 
 Each `Token` is `{ word, tag, breakAfter }`; `breakAfter` marks a sentence end (`.!?` or
 the block edge).
 
-`disambiguate()` builds a fixed two-before / two-after view with
-`contextWindow(tokens, idx)` from `context.js`. Slots past a text edge **or across a
-sentence boundary** arrive as the frozen `BOUNDARY` sentinel (tag `ZB`) — so a missing
-neighbour is a positive clause-edge signal, and every rule sees a uniform 5-slot shape
-`[w-2, w-1, target, w+1, w+2]` with `ctx[2]` as the target.
+`dom-walker.js` tags each token via `tagWord()` (`tagger.js`), which returns the word's
+full candidate CLAWS7 set from the lexicon as a pipe-joined string (e.g. `the` →
+`AT|AT1|…`, `records` → `NN2|VVZ`) — a *lexical* tag set, not a single resolved tag.
+
+A rule then builds its fixed two-before / two-after view with `contextWindow(tokens, idx)`
+from `context.js`. Slots past a text edge **or across a sentence boundary** arrive as the
+frozen `BOUNDARY` sentinel (tag `ZB`) — so a missing neighbour is a positive clause-edge
+signal, and the rule sees a uniform 5-slot shape `[w-2, w-1, target, w+1, w+2]`. Rules
+test candidate sets with prefix/exact matching (see `is_VVZ` in `disambig/pos.js`, which
+votes noun-vs-verb for `NN2|VVZ` diatones). `converter.js` `route()` dispatches on the
+entry's POS pair — currently `NN2|VVZ` → `is_VVZ` — and returns the spelling index.
 
 ---
 

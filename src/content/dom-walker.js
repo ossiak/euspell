@@ -1,4 +1,4 @@
-import { BOUNDARY } from './context.js';
+import { tagWord } from './tagger.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
@@ -90,7 +90,7 @@ function convertBlock(textNodes, convertFn) {
       if (fragment === '') continue;
       if (IS_WORD.test(fragment)) {
         pieces.push({ node, text: fragment, wordIdx: tokens.length });
-        tokens.push({ word: fragment, tag: '', breakAfter: false });
+        tokens.push({ word: fragment, tag: tagWord(fragment), breakAfter: false });
       } else {
         pieces.push({ node, text: fragment, wordIdx: -1 });
         // A separator carrying ./!/? ends the preceding word's sentence.

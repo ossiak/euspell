@@ -1,7 +1,6 @@
 import { data as lexicon } from '../../dist/lexicon.js';
-import { data as abbreviations } from '../../dist/abbreviations.js';
 import { data as contractions } from '../../dist/contractions.js';
-import { contextWindow } from './context.js';
+import { is_VVZ } from '../disambig/pos.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
@@ -14,10 +13,16 @@ import { contextWindow } from './context.js';
  */
 export function convert(word, tokens, idx) {
   const key = word.toLowerCase();
-  const entry = lexicon.get(key) ?? abbreviations.get(key) ?? contractions.get(key);
+  // Abbreviations are consulted only for their PoS (via tagger.js), never for
+  // replacement — so the spelling lookup uses the lexicon and contractions only.
+  const entry = lexicon.get(key) ?? contractions.get(key);
+  if (!entry) return word;
 
-  if (!entry || entry.encoding === 0 || entry.spellings.length === 0) return word;
-  if (entry.spellings.length === 1) return matchCase(word, entry.spellings[0]);
+  // The encoding's last digit is the euspelling count: 0 ⇒ word unchanged,
+  // 1 ⇒ one spelling, ≥2 ⇒ disambiguate between spellings.
+  const variants = entry.encoding % 10;
+  if (variants === 0) return word;
+  if (variants === 1) return matchCase(word, entry.spellings[0]);
 
   const spellingIdx = disambiguate(entry, tokens, idx);
   return matchCase(word, entry.spellings[spellingIdx] ?? word);
@@ -31,22 +36,25 @@ export function convert(word, tokens, idx) {
  * @returns {number}
  */
 function disambiguate(entry, tokens, idx) {
-  const ctx = contextWindow(tokens, idx);
-  return route(entry, ctx);
+  return route(entry, tokens, idx);
 }
 
 /**
- * Maps a built context window to a spelling index. Dispatches on
- * `entry.encoding` to the relevant pos.js / semantic rules; each rule reads
- * positionally from the window, where `ctx[2]` is the target word.
+ * Dispatches an ambiguous entry to the rule for its POS pair, returning the
+ * chosen spelling index. Each rule reads the two-before / two-after window it
+ * builds from the lexically-tagged token stream (dom-walker → tagger.js).
  * @param {import('../../dist/lexicon.js').LexiconEntry} entry
- * @param {[Token, Token, Token, Token, Token]} ctx  [w-2, w-1, target, w+1, w+2]
+ * @param {Token[]} tokens
+ * @param {number} idx
  * @returns {number}
  */
-function route(entry, ctx) {
-  // TODO: dispatch on entry.encoding to pos.js / semantic rules.
-  // Until the PoS tagger populates token.tag, every tag is '' so no rule can
-  // fire — fall back to the default spelling (spellings[0]).
+function route(entry, tokens, idx) {
+  const { pos } = entry;
+  // NN2|VVZ diatones (e.g. "records"): plural noun → spellings[0], verb → spellings[1].
+  if (pos.length === 2 && pos[0] === 'NN2' && pos[1] === 'VVZ') {
+    return is_VVZ(tokens, idx) ? 1 : 0;
+  }
+  // TODO: remaining POS pairs and the semantic/*.js words (encoding 202).
   return 0;
 }
 
