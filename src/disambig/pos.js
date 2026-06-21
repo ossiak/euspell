@@ -95,6 +95,29 @@ export function is_VVZ(tokens, idx) {
   return vote > 0;
 }
 
+// Subject pronouns — a preceding one marks the clitic 's as a contracted verb.
+const SUBJECT_PRON = ['PPHS1', 'PPH1', 'PPHS2', 'PPIS1', 'PPIS2', 'PPY'];
+
+/**
+ * For the clitic 's (lexicon tag `GE|VBZ|VHZ|…`): true when it is a contracted
+ * verb (is/has → 'z), false when it is the genitive marker ('s).
+ *
+ * Verbal 's attaches to a pronoun/clause subject ("he's") or precedes a
+ * participle ("the bus's arriving / arrived"); genitive 's links a noun to a
+ * following noun ("the cat's tail"). With neither signal it defaults to
+ * genitive, matching the lexicon's 's-first spelling order.
+ *
+ * @param {Token[]} tokens
+ * @param {number} idx
+ * @returns {boolean}
+ */
+export function is_verbal_s(tokens, idx) {
+  const [, w1b, , w1a] = contextWindow(tokens, idx);
+  if (anyExact(w1b, SUBJECT_PRON)) return true;        // "he 's …"
+  if (anyPrefix(w1a, ['VVN', 'VVG'])) return true;     // "'s gone / going"
+  return false;                                         // default: genitive
+}
+
 /**
  * Returns true if the token at `idx` is functioning as a past-tense verb (VVD).
  * @param {Token[]} tokens

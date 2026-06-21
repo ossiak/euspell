@@ -1,6 +1,6 @@
 import { data as lexicon } from '../../dist/lexicon.js';
-import { data as contractions } from '../../dist/contractions.js';
-import { is_VVZ } from '../disambig/pos.js';
+import { getContraction } from './contractions.js';
+import { is_VVZ, is_verbal_s } from '../disambig/pos.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
@@ -12,17 +12,18 @@ import { is_VVZ } from '../disambig/pos.js';
  * @returns {string}
  */
 export function convert(word, tokens, idx) {
-  const key = word.toLowerCase();
   // Abbreviations are consulted only for their PoS (via tagger.js), never for
   // replacement — so the spelling lookup uses the lexicon and contractions only.
-  const entry = lexicon.get(key) ?? contractions.get(key);
+  // getContraction() normalises case and apostrophe style (I'll, don’t).
+  const entry = lexicon.get(word.toLowerCase()) ?? getContraction(word);
   if (!entry) return word;
 
   // The encoding's last digit is the euspelling count: 0 ⇒ word unchanged,
-  // 1 ⇒ one spelling, ≥2 ⇒ disambiguate between spellings.
+  // 1 ⇒ one spelling, ≥2 ⇒ disambiguate between spellings. The ?? guards
+  // entries whose euspelling field is [] despite a non-zero last digit.
   const variants = entry.encoding % 10;
   if (variants === 0) return word;
-  if (variants === 1) return matchCase(word, entry.spellings[0]);
+  if (variants === 1) return matchCase(word, entry.spellings[0] ?? word);
 
   const spellingIdx = disambiguate(entry, tokens, idx);
   return matchCase(word, entry.spellings[spellingIdx] ?? word);
@@ -53,6 +54,10 @@ function route(entry, tokens, idx) {
   // NN2|VVZ diatones (e.g. "records"): plural noun → spellings[0], verb → spellings[1].
   if (pos.length === 2 && pos[0] === 'NN2' && pos[1] === 'VVZ') {
     return is_VVZ(tokens, idx) ? 1 : 0;
+  }
+  // The clitic 's: genitive ('s, spellings[0]) vs contracted is/has ('z, [1]).
+  if (pos.includes('GE')) {
+    return is_verbal_s(tokens, idx) ? 1 : 0;
   }
   // TODO: remaining POS pairs and the semantic/*.js words (encoding 202).
   return 0;

@@ -1,4 +1,5 @@
 import { tagWord } from './tagger.js';
+import { isContraction, contractionComponents } from './contractions.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
@@ -15,9 +16,12 @@ const BLOCK_TAGS = new Set([
   'SECTION', 'TABLE', 'TD', 'TH', 'TR', 'UL',
 ]);
 
-// Splits a string into alternating non-word / word fragments, keeping both.
-const WORD_SPLIT = /(\b\w+\b)/;
-const IS_WORD = /^\w+$/;
+// A "run" is a word that may carry apostrophes (contractions, clitics): an
+// optional leading apostrophe ('tis, 'em), word chars, and any number of
+// apostrophe-joined word chars (don't, couldn't've), plus an optional trailing
+// apostrophe (James'). Everything between runs is a separator.
+const RUN = /['’ʼ]?\w+(?:['’ʼ]\w+)*['’ʼ]?/g;
+const GENITIVE = /^(\w+)(['’ʼ]s)$/i;
 const SENTENCE_BREAK = /[.!?]/;
 
 /**
@@ -74,8 +78,52 @@ function nearestBlock(el, root) {
 }
 
 /**
+ * Splits text into ordered segments. A segment is a separator, a plain word, or
+ * a contraction surface form. A productive clitic ("cat's") is split into its
+ * stem plus the "'s" contraction; surrounding apostrophes on a non-contraction
+ * (quotes) are peeled off as separators.
+ *
+ * @param {string} text
+ * @returns {Generator<{ text: string, kind: 'sep' | 'word' | 'contraction' }>}
+ */
+export function* tokenize(text) {
+  let last = 0;
+  for (const m of text.matchAll(RUN)) {
+    if (m.index > last) yield { text: text.slice(last, m.index), kind: 'sep' };
+    yield* classifyRun(m[0]);
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) yield { text: text.slice(last), kind: 'sep' };
+}
+
+/** @param {string} run @returns {Generator<{ text: string, kind: string }>} */
+function* classifyRun(run) {
+  if (isContraction(run)) {
+    yield { text: run, kind: 'contraction' };
+    return;
+  }
+  // Productive genitive/verbal clitic, e.g. "cat's" -> "cat" + "'s".
+  const gen = GENITIVE.exec(run);
+  if (gen && isContraction("'s")) {
+    yield { text: gen[1], kind: 'word' };
+    yield { text: gen[2], kind: 'contraction' };
+    return;
+  }
+  // Otherwise peel surrounding apostrophes (quotes) off as separators.
+  const lead = run.match(/^['’ʼ]+/)?.[0] ?? '';
+  const trail = run.slice(lead.length).match(/['’ʼ]+$/)?.[0] ?? '';
+  const core = run.slice(lead.length, run.length - trail.length);
+  if (lead) yield { text: lead, kind: 'sep' };
+  if (core) yield { text: core, kind: 'word' };
+  if (trail) yield { text: trail, kind: 'sep' };
+}
+
+/**
  * Tokenises a block's text nodes into a single stream, converts each word with
  * full in-block context, then writes the result back to its originating node.
+ * Contractions occupy one surface piece but expand to one pseudo-token per PoS
+ * position, so neighbours see correct left/right adjacency.
+ *
  * @param {Text[]} textNodes
  * @param {(word: string, tokens: Token[], idx: number) => string} convertFn
  */
@@ -86,26 +134,36 @@ function convertBlock(textNodes, convertFn) {
   const tokens = [];
 
   for (const node of textNodes) {
-    for (const fragment of node.nodeValue.split(WORD_SPLIT)) {
-      if (fragment === '') continue;
-      if (IS_WORD.test(fragment)) {
-        pieces.push({ node, text: fragment, wordIdx: tokens.length });
-        tokens.push({ word: fragment, tag: tagWord(fragment), breakAfter: false });
-      } else {
-        pieces.push({ node, text: fragment, wordIdx: -1 });
+    for (const seg of tokenize(node.nodeValue)) {
+      if (seg.kind === 'sep') {
+        pieces.push({ node, text: seg.text, wordIdx: -1 });
         // A separator carrying ./!/? ends the preceding word's sentence.
-        if (tokens.length && SENTENCE_BREAK.test(fragment)) {
+        if (tokens.length && SENTENCE_BREAK.test(seg.text)) {
           tokens[tokens.length - 1].breakAfter = true;
         }
+      } else if (seg.kind === 'contraction') {
+        const components = contractionComponents(seg.text);
+        pieces.push({ node, text: seg.text, wordIdx: tokens.length });
+        if (components.length) {
+          // One pseudo-token per sequence position; identity rides on the first.
+          components.forEach((tag, i) =>
+            tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false }));
+        } else {
+          tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
+        }
+      } else {
+        pieces.push({ node, text: seg.text, wordIdx: tokens.length });
+        tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
       }
     }
   }
   if (tokens.length === 0) return;
   tokens[tokens.length - 1].breakAfter = true; // end of block === end of sentence
 
+  // Convert each word/contraction piece from its surface text at its token slot.
   for (const piece of pieces) {
     if (piece.wordIdx !== -1) {
-      piece.text = convertFn(tokens[piece.wordIdx].word, tokens, piece.wordIdx);
+      piece.text = convertFn(piece.text, tokens, piece.wordIdx);
     }
   }
 

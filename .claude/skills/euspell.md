@@ -47,6 +47,7 @@ euspell_ext/
 │   │   ├── converter.js        # word → euspelling (lexicon + disambig)
 │   │   ├── context.js          # Token type, BOUNDARY sentinel, contextWindow()
 │   │   ├── tagger.js           # tagWord() — lexical CLAWS7 tags from the lexicon
+│   │   ├── contractions.js     # contraction lookup + component PoS expansion
 │   │   ├── dom-walker.js       # Block-level tokenisation + writeback
 │   │   └── pdf-handler.js      # PDF.js hook via MAIN-world script injection
 │   ├── background/
@@ -237,7 +238,23 @@ frozen `BOUNDARY` sentinel (tag `ZB`) — so a missing neighbour is a positive c
 signal, and the rule sees a uniform 5-slot shape `[w-2, w-1, target, w+1, w+2]`. Rules
 test candidate sets with prefix/exact matching (see `is_VVZ` in `disambig/pos.js`, which
 votes noun-vs-verb for `NN2|VVZ` diatones). `converter.js` `route()` dispatches on the
-entry's POS pair — currently `NN2|VVZ` → `is_VVZ` — and returns the spelling index.
+entry's POS pair — `NN2|VVZ` → `is_VVZ`, and the clitic `'s` (`GE|VBZ|…`) → `is_verbal_s`
+(genitive `'s` vs contracted is/has `'z`) — and returns the spelling index.
+
+### Contractions (multi-PoS)
+
+`dom-walker.js`'s tokeniser is contraction-aware (`contractions.js`): runs may carry
+apostrophes (`don't`, `'tis`, `couldn't've`), a productive clitic is split (`cat's` →
+`cat` + `'s`), and lookups are case/curly-apostrophe-insensitive (`I'll`, `don’t`).
+
+A contraction is **one surface piece** (replaced once via its euspelling) but the
+`PoS` field encodes a *sequence* of grammatical words — spaces separate sequence
+positions, pipes separate alternative analyses (`anybody's` = `PN1 GE|PN1 VBZ|PN1 VHZ`).
+`contractionComponents()` collapses that to per-position tag unions (`['PN1', 'GE|VBZ|VHZ']`),
+and the tokeniser pushes **one pseudo-token per position** into the stream. So a neighbour
+to the left of `he's` sees `PPHS1` and one to the right sees `VBZ|VHZ` — correct adjacency,
+with `contextWindow` and the rules unchanged. Untagged contractions (empty `PoS`, e.g.
+`that's`) degrade to a single empty-tag token.
 
 ---
 
