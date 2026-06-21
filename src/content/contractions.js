@@ -1,11 +1,11 @@
 import { data as contractions } from '../../dist/contractions.js';
 
-/** Normalises curly apostrophes to straight so lookups match the data keys. */
+/** Normalizes curly apostrophes to straight so lookups match the data keys. */
 export function normalizeApostrophes(word) {
   return word.replace(/[’ʼ]/g, "'");
 }
 
-// Case- and apostrophe-normalised view of the contractions map, so surface
+// Case- and apostrophe-normalized view of the contractions map, so surface
 // forms like "I'll" or curly "don’t" still resolve.
 const byKey = new Map();
 for (const [key, entry] of contractions) {

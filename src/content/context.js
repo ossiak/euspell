@@ -11,7 +11,7 @@
 /**
  * Sentinel used for context slots that fall past a text edge or across a
  * sentence boundary. Its non-CLAWS7 tag ('ZB') lets a rule treat the absence of
- * a real neighbour as a positive signal (e.g. clause-initial position) rather
+ * a real neighbor as a positive signal (e.g. clause-initial position) rather
  * than as missing data it has to guard against.
  * @type {Readonly<Token>}
  */

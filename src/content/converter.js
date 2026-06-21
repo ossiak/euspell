@@ -14,7 +14,7 @@ import { is_VVZ, is_verbal_s } from '../disambig/pos.js';
 export function convert(word, tokens, idx) {
   // Abbreviations are consulted only for their PoS (via tagger.js), never for
   // replacement — so the spelling lookup uses the lexicon and contractions only.
-  // getContraction() normalises case and apostrophe style (I'll, don’t).
+  // getContraction() normalizes case and apostrophe style (I'll, don’t).
   const entry = lexicon.get(word.toLowerCase()) ?? getContraction(word);
   if (!entry) return word;
 

@@ -6,7 +6,7 @@ import { isContraction, contractionComponents } from './contractions.js';
 const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'CODE', 'PRE']);
 
 // Tags that start a new block-level context. Text under different blocks is
-// tokenised independently so a sentence never draws context across a structural
+// tokenized independently so a sentence never draws context across a structural
 // boundary; inline elements (SPAN, EM, A, B, …) are deliberately absent so a
 // sentence split by markup is still tagged as one stream.
 const BLOCK_TAGS = new Set([
@@ -119,10 +119,10 @@ function* classifyRun(run) {
 }
 
 /**
- * Tokenises a block's text nodes into a single stream, converts each word with
+ * Tokenizes a block's text nodes into a single stream, converts each word with
  * full in-block context, then writes the result back to its originating node.
  * Contractions occupy one surface piece but expand to one pseudo-token per PoS
- * position, so neighbours see correct left/right adjacency.
+ * position, so neighbors see correct left/right adjacency.
  *
  * @param {Text[]} textNodes
  * @param {(word: string, tokens: Token[], idx: number) => string} convertFn
