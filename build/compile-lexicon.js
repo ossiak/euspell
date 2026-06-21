@@ -36,6 +36,20 @@ function rowToEntry(row) {
   return { pos, encoding, spellings };
 }
 
+/**
+ * Reduces a phrase entry's PoS to standard CLAWS7 tags. The phrase file appends
+ * a word-count digit to each tag (NN2 plural noun in a 2-word phrase -> "NN22",
+ * RR adverb in a 3-word phrase -> "RR3"); that count is redundant with the key
+ * and is not part of the tagger's vocabulary, so it is stripped. The resulting
+ * tags drive the collapsed phrase token's context for its neighbors.
+ * @param {LexiconEntry} entry
+ * @returns {LexiconEntry}
+ */
+function reducePhraseEntry(entry) {
+  const pos = [...new Set(entry.pos.map((tag) => tag.replace(/\d$/, '')))];
+  return { ...entry, pos };
+}
+
 function writeModule(filename, entries) {
   const lines = entries.map(([key, entry]) => {
     const posJson = JSON.stringify(entry.pos);
@@ -64,5 +78,5 @@ writeModule('contractions.js', contractionEntries);
 
 // Phrases
 const phraseRows = parseCsv('euspell_lexicon_phrase.csv');
-const phraseEntries = phraseRows.map((row) => [row.Phrase, rowToEntry(row)]);
+const phraseEntries = phraseRows.map((row) => [row.Phrase, reducePhraseEntry(rowToEntry(row))]);
 writeModule('phrases.js', phraseEntries);

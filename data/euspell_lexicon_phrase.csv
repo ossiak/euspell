@@ -48,7 +48,6 @@ alter ego,NN12,000,[]
 alter egos,NN22,000,[]
 an awful lot,RR3,000,[]
 ancien regime,NN12,000,[]
-and fro in,II31,000,[]
 and so forth,RR3,000,[]
 and so on,RR3,000,[]
 anno domini,RR2,000,[]
@@ -61,14 +60,11 @@ aqua vitae,NN12,000,[]
 art deco,NN12,000,[]
 art nouveau,NN12,000,[]
 as against,II2,000,[]
-as as long,CS32,000,[]
 as between,II2,000,[]
 as far as,CS3,000,[]
 as for,II2,000,[]
 as from,II2,000,[]
 as if,CS2,000,[]
-as in front,II32,000,[]
-as in terms,II32,000,[]
 as it were,RR3,101,as it wer
 as long as,CS3,000,[]
 as of,II2,101,as ov
@@ -180,7 +176,6 @@ de luxe,JJ2,000,[]
 de profundis,RR2,000,[]
 de rigeur,JJ2|RR2,000,[]
 de trop,JJ2,101,de troh
-deal in terms,II32,000,[]
 dei gratia,RR2,000,[]
 deja vu,NN12,000,[]
 delirium tremens,NN12,000,[]
@@ -251,7 +246,6 @@ given that,CS2,000,[]
 grand mal,NN12,000,[]
 grand prix,NN12,000,[]
 grande dame,NN12,000,[]
-great deal in,II31,000,[]
 grown up,JJ2|NN12,000,[]
 grown ups,NN22,000,[]
 guardian ad litem,NN13,101,gardian ad litem
@@ -308,7 +302,7 @@ in full,RR2,000,[]
 in general,RR2,000,[]
 in keeping with,II3,000,[]
 in lieu of,II3,101,in lieu ov
-in light of,II3,101,in liht of
+in light of,II3,101,in liht ov
 in line with,II3,000,[]
 in loco parentis,JJ3|RR3,000,[]
 in medias res,RR3,000,[]
@@ -451,7 +445,7 @@ persona non grata,NN13,000,[]
 personae non gratae,NN23,000,[]
 pertaining to,II2,000,pertaining tu
 petit bourgeois,NN12,701,petih burgewa
-petit four,NN12,7011,petih foor
+petit four,NN12,701,petih foor
 petit mal,NN12,701,petih mal
 piece de resistance,NN13,000,[]
 pied a terre,NN13,000,[]

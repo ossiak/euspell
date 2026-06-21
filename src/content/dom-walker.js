@@ -1,5 +1,6 @@
 import { tagWord } from './tagger.js';
 import { isContraction, contractionComponents } from './contractions.js';
+import { getPhrase, MAX_PHRASE_WORDS } from './phrases.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
@@ -132,6 +133,10 @@ function convertBlock(textNodes, convertFn) {
   const pieces = [];
   /** @type {Token[]} */
   const tokens = [];
+  // Source piece index for each token's primary slot (-1 for a contraction's
+  // continuation pseudo-tokens, which have no piece of their own).
+  /** @type {number[]} */
+  const pieceOfToken = [];
 
   for (const node of textNodes) {
     for (const seg of tokenize(node.nodeValue)) {
@@ -142,17 +147,21 @@ function convertBlock(textNodes, convertFn) {
           tokens[tokens.length - 1].breakAfter = true;
         }
       } else if (seg.kind === 'contraction') {
+        const pieceIdx = pieces.push({ node, text: seg.text, wordIdx: tokens.length }) - 1;
         const components = contractionComponents(seg.text);
-        pieces.push({ node, text: seg.text, wordIdx: tokens.length });
         if (components.length) {
           // One pseudo-token per sequence position; identity rides on the first.
-          components.forEach((tag, i) =>
-            tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false }));
+          components.forEach((tag, i) => {
+            pieceOfToken.push(i === 0 ? pieceIdx : -1);
+            tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false });
+          });
         } else {
+          pieceOfToken.push(pieceIdx);
           tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
         }
       } else {
-        pieces.push({ node, text: seg.text, wordIdx: tokens.length });
+        const pieceIdx = pieces.push({ node, text: seg.text, wordIdx: tokens.length }) - 1;
+        pieceOfToken.push(pieceIdx);
         tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
       }
     }
@@ -160,10 +169,19 @@ function convertBlock(textNodes, convertFn) {
   if (tokens.length === 0) return;
   tokens[tokens.length - 1].breakAfter = true; // end of block === end of sentence
 
-  // Convert each word/contraction piece from its surface text at its token slot.
+  // Match multi-word phrases as a greedy longest-match override pass, then build
+  // a collapsed token stream where each phrase is one token. Neighbors thus see
+  // a phrase's reduced PoS, and its component words are converted as a unit.
+  const spans = collectPhraseSpans(tokens, pieces, pieceOfToken);
+  const { collapsed, collapsedOf } = collapseTokens(tokens, spans);
+  renderPhraseSpans(pieces, tokens, pieceOfToken, spans);
+
+  // Convert each remaining word/contraction piece from its surface text, using
+  // its slot in the collapsed stream (phrase pieces were handled above and now
+  // carry wordIdx -1, so they are skipped).
   for (const piece of pieces) {
     if (piece.wordIdx !== -1) {
-      piece.text = convertFn(piece.text, tokens, piece.wordIdx);
+      piece.text = convertFn(piece.text, collapsed, collapsedOf[piece.wordIdx]);
     }
   }
 
@@ -179,4 +197,163 @@ function convertBlock(textNodes, convertFn) {
     const joined = parts.join('');
     if (joined !== node.nodeValue) node.nodeValue = joined;
   }
+}
+
+/**
+ * @typedef {{ start: number, end: number, entry: import('./phrases.js').LexiconEntry }} PhraseSpan
+ *   Inclusive token-index range [start, end] covered by a matched phrase.
+ */
+
+/**
+ * Finds the non-overlapping, greedy-longest phrase matches over the token
+ * stream. A candidate span matches only when every token in it is a primary
+ * word token and the separators between those words are whitespace-only — so a
+ * comma or sentence break inside the run blocks the match and is never deleted.
+ *
+ * @param {Token[]} tokens
+ * @param {{ text: string }[]} pieces
+ * @param {number[]} pieceOfToken
+ * @returns {PhraseSpan[]}
+ */
+function collectPhraseSpans(tokens, pieces, pieceOfToken) {
+  /** @type {PhraseSpan[]} */
+  const spans = [];
+  let i = 0;
+  while (i < tokens.length) {
+    const span = longestPhraseAt(tokens, pieces, pieceOfToken, i);
+    if (span) {
+      spans.push(span);
+      i = span.end + 1;
+    } else {
+      i++;
+    }
+  }
+  return spans;
+}
+
+/**
+ * Longest phrase starting at token `start`, or null.
+ * @param {Token[]} tokens
+ * @param {{ text: string }[]} pieces
+ * @param {number[]} pieceOfToken
+ * @param {number} start
+ * @returns {PhraseSpan | null}
+ */
+function longestPhraseAt(tokens, pieces, pieceOfToken, start) {
+  const maxLen = Math.min(MAX_PHRASE_WORDS, tokens.length - start);
+  for (let len = maxLen; len >= 2; len--) {
+    const end = start + len - 1;
+    const words = [];
+    let ok = true;
+    for (let k = start; k <= end; k++) {
+      if (pieceOfToken[k] === -1 || tokens[k].word === '') {
+        ok = false;
+        break;
+      }
+      words.push(tokens[k].word.toLowerCase());
+    }
+    if (!ok) continue;
+    const entry = getPhrase(words.join(' '));
+    if (!entry) continue;
+    if (!innerSepsBlank(pieces, pieceOfToken, start, end)) continue;
+    return { start, end, entry };
+  }
+  return null;
+}
+
+/**
+ * True when every separator piece sitting between the words of span
+ * [start, end] is whitespace-only.
+ * @param {{ text: string }[]} pieces
+ * @param {number[]} pieceOfToken
+ * @param {number} start
+ * @param {number} end
+ * @returns {boolean}
+ */
+function innerSepsBlank(pieces, pieceOfToken, start, end) {
+  for (let k = start; k < end; k++) {
+    for (let p = pieceOfToken[k] + 1; p < pieceOfToken[k + 1]; p++) {
+      if (!/^\s+$/.test(pieces[p].text)) return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Builds the collapsed token stream (each phrase span -> one token carrying its
+ * reduced PoS) plus a map from each original token index to its collapsed slot.
+ * @param {Token[]} tokens
+ * @param {PhraseSpan[]} spans
+ * @returns {{ collapsed: Token[], collapsedOf: number[] }}
+ */
+function collapseTokens(tokens, spans) {
+  /** @type {(PhraseSpan | null)[]} */
+  const spanAt = new Array(tokens.length).fill(null);
+  for (const s of spans) {
+    for (let k = s.start; k <= s.end; k++) spanAt[k] = s;
+  }
+
+  /** @type {Token[]} */
+  const collapsed = [];
+  /** @type {number[]} */
+  const collapsedOf = new Array(tokens.length);
+  for (let k = 0; k < tokens.length; k++) {
+    const s = spanAt[k];
+    if (s && k === s.start) {
+      const word = tokens.slice(s.start, s.end + 1).map((t) => t.word).join(' ');
+      collapsed.push({ word, tag: s.entry.pos.join('|'), breakAfter: tokens[s.end].breakAfter });
+      for (let j = s.start; j <= s.end; j++) collapsedOf[j] = collapsed.length - 1;
+    } else if (!s) {
+      collapsed.push(tokens[k]);
+      collapsedOf[k] = collapsed.length - 1;
+    }
+  }
+  return { collapsed, collapsedOf };
+}
+
+/**
+ * Writes each matched phrase's output onto the first piece of its span and
+ * blanks the rest (inner separators included), marking them wordIdx -1 so the
+ * per-word loop skips them. Encoding 000 phrases keep their original surface;
+ * single-variant phrases use the phrase euspelling with the span's leading
+ * capitalization preserved.
+ * @param {{ text: string, wordIdx: number }[]} pieces
+ * @param {Token[]} tokens
+ * @param {number[]} pieceOfToken
+ * @param {PhraseSpan[]} spans
+ */
+function renderPhraseSpans(pieces, tokens, pieceOfToken, spans) {
+  for (const s of spans) {
+    const first = pieceOfToken[s.start];
+    const last = pieceOfToken[s.end];
+    const original = pieces.slice(first, last + 1).map((p) => p.text).join('');
+    pieces[first].text =
+      s.entry.encoding === 0
+        ? original
+        : matchPhraseCase(tokens[s.start].word, s.entry.spellings[0] ?? original);
+    pieces[first].wordIdx = -1;
+    for (let p = first + 1; p <= last; p++) {
+      pieces[p].text = '';
+      pieces[p].wordIdx = -1;
+    }
+  }
+}
+
+/**
+ * Applies the span's leading capitalization to a phrase replacement: ALL-CAPS
+ * first word uppercases the whole phrase; a Title-cased first word capitalizes
+ * the replacement's first letter. A single uppercase letter (e.g. "A") counts
+ * as Title, not ALL-CAPS.
+ * @param {string} firstWord  original first word of the span
+ * @param {string} replacement
+ * @returns {string}
+ */
+function matchPhraseCase(firstWord, replacement) {
+  if (firstWord.length > 1 && firstWord === firstWord.toUpperCase()) {
+    return replacement.toUpperCase();
+  }
+  if (firstWord[0] === firstWord[0].toUpperCase()) {
+    return replacement[0].toUpperCase() + replacement.slice(1);
+  }
+  return replacement;
 }
