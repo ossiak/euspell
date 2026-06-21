@@ -12,6 +12,14 @@ import { is_VVZ, is_verbal_s } from '../disambig/pos.js';
  * @returns {string}
  */
 export function convert(word, tokens, idx) {
+  // The pronoun "I" reforms to "ih". It is the one word whose case is NOT taken
+  // from the source: written English always capitalizes "I", but "ih" is a
+  // common word, so it follows normal capitalization — lowercase mid-sentence,
+  // capitalized only at the start of a sentence.
+  if (word === 'I') {
+    return isSentenceStart(tokens, idx) ? 'Ih' : 'ih';
+  }
+
   // Abbreviations are consulted only for their PoS (via tagger.js), never for
   // replacement — so the spelling lookup uses the lexicon and contractions only.
   // getContraction() normalizes case and apostrophe style (I'll, don’t).
@@ -61,6 +69,17 @@ function route(entry, tokens, idx) {
   }
   // TODO: remaining POS pairs and the semantic/*.js words (encoding 202).
   return 0;
+}
+
+/**
+ * True when the token at `idx` begins a sentence — the first token of the block,
+ * or the first token after one whose `breakAfter` marks a sentence boundary.
+ * @param {Token[]} tokens
+ * @param {number} idx
+ * @returns {boolean}
+ */
+function isSentenceStart(tokens, idx) {
+  return idx === 0 || tokens[idx - 1]?.breakAfter === true;
 }
 
 /**
