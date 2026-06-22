@@ -10,6 +10,20 @@ import { SEMANTIC } from '../disambig/semantic/index.js';
 // the original surface form is kept regardless of context.
 const KEEP_UNCHANGED = new Set(['bach', 'chis', 'conch', 'ravined']);
 
+// Words whose lexicon entry keeps two possible spellings, but where one is far
+// more common — so they are treated as a single (101) spelling: disambiguation
+// is skipped and the common form is always applied. Both spellings stay in the
+// lexicon; this just fixes the choice. Keyed by lowercase word → chosen spelling.
+const FORCE_SPELLING = new Map([
+  ['are', 'ar'],
+  ['barred', 'barrd'],
+  ['bowings', 'buwings'],
+  ['longed', 'longd'],
+  ['unbowed', 'unbuwd'],
+  ['unbowing', 'unbuwing'],
+  ['uncleanly', 'unclenly'],
+]);
+
 /**
  * Converts a single word to its euspelling given surrounding token context.
  * @param {string} word
@@ -31,6 +45,8 @@ export function convert(word, tokens, idx) {
   // getContraction() normalizes case and apostrophe style (I'll, don’t).
   const key = word.toLowerCase();
   if (KEEP_UNCHANGED.has(key)) return word;
+  const forced = FORCE_SPELLING.get(key);
+  if (forced !== undefined) return matchCase(word, forced);
   const entry = lexicon.get(key) ?? getContraction(word);
   if (!entry) return word;
 
