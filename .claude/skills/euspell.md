@@ -239,7 +239,14 @@ signal, and the rule sees a uniform 5-slot shape `[w-2, w-1, target, w+1, w+2]`.
 test candidate sets with prefix/exact matching (see `is_VVZ` in `disambig/pos.js`, which
 votes noun-vs-verb for `NN2|VVZ` diatones). `converter.js` `route()` dispatches on the
 entry's POS pair — `NN2|VVZ` → `is_VVZ`, and the clitic `'s` (`GE|VBZ|…`) → `is_verbal_s`
-(genitive `'s` vs contracted is/has `'z`) — and returns the spelling index.
+(genitive `'s` vs contracted is/has `'z`) — returning a spelling index. Encoding-202
+semantic words dispatch by surface word through the `disambig/semantic/index.js` registry:
+each rule returns a euspelling (e.g. `read` → `'read'`/`'redd'`/`null`) which `route()` maps
+back to its index, falling back to the default on `null`. The `read` heteronym family
+(`read`, `reread`, `misread`, `proofread`, `copyread`, `foreread`, `outread`, `sightread`)
+shares one context engine, `disambig/semantic/read-verb.js` (`readVerbReading` → base/past/null);
+each word maps the result to its own euspellings, and `reread` defaults its ambiguous
+residual to past.
 
 ### Contractions (multi-PoS)
 

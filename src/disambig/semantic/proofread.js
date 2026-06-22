@@ -1,18 +1,20 @@
 /**
- * Disambiguates 'proofread' (encoding 202, JJ|VV0|VVD|VVN) two ways:
- *   proofread — /ˈpruːfriːd/ base/present verb or adjective ("please proofread")
- *   proofredd — /ˈpruːfrɛd/ past tense / past participle ("he proofread it")
+ * Disambiguates 'proofread': /riːd/ (present/base/infinitive → 'proofread') vs /rɛd/
+ * (past tense/participle, incl. attributive → 'proofredd').
  * Corpus: disambig/proofread.txt
+ *
+ * Shares the context rules with the 'read' family via read-verb.js.
  *
  * @typedef {import('../../content/context.js').Token} Token
  */
+import { readVerbReading } from './read-verb.js';
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'proofread' | 'proofredd' | null}  null = unable to determine
+ * @returns {'proofread' | 'proofredd' | null}  null = unable to determine (use default)
  */
 export function disambiguate_proofread(tokens, idx) {
-  // TODO: implement using rules derived from disambig/proofread.txt corpus
-  return null;
+  const r = readVerbReading(tokens, idx);
+  return r === 'past' ? 'proofredd' : r === 'base' ? 'proofread' : null;
 }
