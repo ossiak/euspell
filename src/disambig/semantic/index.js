@@ -14,6 +14,7 @@ import { disambiguate_bowing } from './bowing.js';
 import { disambiguate_bowman } from './bowman.js';
 import { disambiguate_bowmen } from './bowmen.js';
 import { disambiguate_chi } from './chi.js';
+import { disambiguate_cleanly } from './cleanly.js';
 import { disambiguate_close } from './close.js';
 import { disambiguate_closer } from './closer.js';
 import { disambiguate_copyread } from './copyread.js';
@@ -52,6 +53,7 @@ export const SEMANTIC = new Map([
   ['bowman', disambiguate_bowman],
   ['bowmen', disambiguate_bowmen],
   ['chi', disambiguate_chi],
+  ['cleanly', disambiguate_cleanly],
   ['close', disambiguate_close],
   ['closer', disambiguate_closer],
   ['copyread', disambiguate_copyread],
