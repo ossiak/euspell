@@ -5,6 +5,11 @@ import { SEMANTIC } from '../disambig/semantic/index.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
+// Words carrying a 202 (disambiguation) encoding that should nonetheless be left
+// exactly as written — their euspellings aren't worth choosing between, so the
+// original surface form is kept regardless of context.
+const KEEP_UNCHANGED = new Set(['bach', 'chis', 'conch']);
+
 /**
  * Converts a single word to its euspelling given surrounding token context.
  * @param {string} word
@@ -25,6 +30,7 @@ export function convert(word, tokens, idx) {
   // replacement — so the spelling lookup uses the lexicon and contractions only.
   // getContraction() normalizes case and apostrophe style (I'll, don’t).
   const key = word.toLowerCase();
+  if (KEEP_UNCHANGED.has(key)) return word;
   const entry = lexicon.get(key) ?? getContraction(word);
   if (!entry) return word;
 
