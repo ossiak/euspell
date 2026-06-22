@@ -54,3 +54,23 @@ export function edAdjOrVerb(tokens, idx) {
 
   return null;
 }
+
+/**
+ * Conservative active-transitive test for *adjective-dominant* '-ed' heteronyms
+ * (jagged, wicked, ragged, aged) whose verb is archaic/rare. True only for an
+ * unambiguous active transitive use — a pronoun/proper-noun subject immediately
+ * before AND an object right after ("he jagged his thumb"); everything else is
+ * the adjective. The fuller edAdjOrVerb engine over-fires on these words
+ * (e.g. "were jagged peaks", attributive "[noun] jagged [noun]"), so they stay
+ * adjective unless this clear pattern holds.
+ *
+ * @param {Token[]} tokens
+ * @param {number} idx
+ * @returns {boolean}
+ */
+export function edActiveTransitive(tokens, idx) {
+  // Subject must be in the subjective case (he/she/they/I/we/you/it, or a proper
+  // noun) — not an object pronoun like "me" in "from me wicked angels".
+  return isPre(tokens[idx - 1], ['PPHS', 'PPIS', 'PPY', 'PPH1', 'NP1']) &&
+    isPre(tokens[idx + 1], ['AT', 'DD', 'APPGE', 'PP', 'NN', 'NP']);
+}

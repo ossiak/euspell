@@ -19,6 +19,7 @@ import { disambiguate_closer } from './closer.js';
 import { disambiguate_copyread } from './copyread.js';
 import { disambiguate_dogged } from './dogged.js';
 import { disambiguate_foreread } from './foreread.js';
+import { disambiguate_jagged } from './jagged.js';
 import { disambiguate_lead } from './lead.js';
 import { disambiguate_learned } from './learned.js';
 import { disambiguate_misread } from './misread.js';
@@ -35,6 +36,7 @@ import { disambiguate_secreting } from './secreting.js';
 import { disambiguate_sightread } from './sightread.js';
 import { disambiguate_tear } from './tear.js';
 import { disambiguate_tearing } from './tearing.js';
+import { disambiguate_wicked } from './wicked.js';
 import { disambiguate_wind } from './wind.js';
 import { disambiguate_winding } from './winding.js';
 import { disambiguate_wound } from './wound.js';
@@ -55,6 +57,7 @@ export const SEMANTIC = new Map([
   ['copyread', disambiguate_copyread],
   ['dogged', disambiguate_dogged],
   ['foreread', disambiguate_foreread],
+  ['jagged', disambiguate_jagged],
   ['lead', disambiguate_lead],
   ['learned', disambiguate_learned],
   ['misread', disambiguate_misread],
@@ -71,6 +74,7 @@ export const SEMANTIC = new Map([
   ['sightread', disambiguate_sightread],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],
+  ['wicked', disambiguate_wicked],
   ['wind', disambiguate_wind],
   ['winding', disambiguate_winding],
   ['wound', disambiguate_wound],
