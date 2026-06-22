@@ -7,6 +7,7 @@
  */
 import { disambiguate_bass } from './bass.js';
 import { disambiguate_beloved } from './beloved.js';
+import { disambiguate_blessed } from './blessed.js';
 import { disambiguate_bow } from './bow.js';
 import { disambiguate_bowed } from './bowed.js';
 import { disambiguate_bowing } from './bowing.js';
@@ -41,6 +42,7 @@ import { disambiguate_wound } from './wound.js';
 export const SEMANTIC = new Map([
   ['bass', disambiguate_bass],
   ['beloved', disambiguate_beloved],
+  ['blessed', disambiguate_blessed],
   ['bow', disambiguate_bow],
   ['bowed', disambiguate_bowed],
   ['bowing', disambiguate_bowing],
