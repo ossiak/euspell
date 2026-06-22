@@ -25,6 +25,7 @@ import { disambiguate_foreread } from './foreread.js';
 import { disambiguate_jagged } from './jagged.js';
 import { disambiguate_lead } from './lead.js';
 import { disambiguate_learned } from './learned.js';
+import { disambiguate_minute } from './minute.js';
 import { disambiguate_misread } from './misread.js';
 import { disambiguate_outread } from './outread.js';
 import { disambiguate_primate } from './primate.js';
@@ -66,6 +67,7 @@ export const SEMANTIC = new Map([
   ['jagged', disambiguate_jagged],
   ['lead', disambiguate_lead],
   ['learned', disambiguate_learned],
+  ['minute', disambiguate_minute],
   ['misread', disambiguate_misread],
   ['outread', disambiguate_outread],
   ['primate', disambiguate_primate],
