@@ -18,7 +18,9 @@ import { disambiguate_cleanly } from './cleanly.js';
 import { disambiguate_close } from './close.js';
 import { disambiguate_closer } from './closer.js';
 import { disambiguate_copyread } from './copyread.js';
+import { disambiguate_does } from './does.js';
 import { disambiguate_dogged } from './dogged.js';
+import { disambiguate_dove } from './dove.js';
 import { disambiguate_foreread } from './foreread.js';
 import { disambiguate_jagged } from './jagged.js';
 import { disambiguate_lead } from './lead.js';
@@ -57,7 +59,9 @@ export const SEMANTIC = new Map([
   ['close', disambiguate_close],
   ['closer', disambiguate_closer],
   ['copyread', disambiguate_copyread],
+  ['does', disambiguate_does],
   ['dogged', disambiguate_dogged],
+  ['dove', disambiguate_dove],
   ['foreread', disambiguate_foreread],
   ['jagged', disambiguate_jagged],
   ['lead', disambiguate_lead],
