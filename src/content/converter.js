@@ -5,10 +5,10 @@ import { SEMANTIC } from '../disambig/semantic/index.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
-// Words carrying a 202 (disambiguation) encoding that should nonetheless be left
-// exactly as written — their euspellings aren't worth choosing between, so the
-// original surface form is kept regardless of context.
-const KEEP_UNCHANGED = new Set(['bach', 'chis', 'conch']);
+// Words carrying a disambiguation encoding (202/022) that should nonetheless be
+// left exactly as written — their euspellings aren't worth choosing between, so
+// the original surface form is kept regardless of context.
+const KEEP_UNCHANGED = new Set(['bach', 'chis', 'conch', 'ravined']);
 
 /**
  * Converts a single word to its euspelling given surrounding token context.
