@@ -28417,7 +28417,7 @@ chagall,NP,000,[]
 chagres,NP,000,[]
 chagrin,NN|NN1|VV0,701,shagrin
 chagrined,JJ|VVD|VVN,721,shagrind
-chagrining,VVG,741,shagrinning
+chagrining,VVG,701,shagrinning
 chagrinned,JJ|VVD|VVN,721,shagrind
 chagrinning,VVG,701,shagrinning
 chagrins,NN2|VVZ,112,shagrins|shagrinz
@@ -28442,7 +28442,7 @@ chairlift,NN1,101,qhairlift
 chairlifts,NN2,101,qhairlifts
 chairman,NN1|VV0,101,qhairman
 chairmaned,VVD|VVN,121,qhairmand
-chairmaning,VVG,141,qhairmanning
+chairmaning,VVG,101,qhairmaning
 chairmanned,VVD|VVN,121,qhairmand
 chairmanning,VVG,101,qhairmanning
 chairmans,VVZ,111,qhairmanz
