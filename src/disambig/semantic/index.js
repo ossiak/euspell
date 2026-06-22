@@ -17,6 +17,7 @@ import { disambiguate_chi } from './chi.js';
 import { disambiguate_close } from './close.js';
 import { disambiguate_closer } from './closer.js';
 import { disambiguate_copyread } from './copyread.js';
+import { disambiguate_dogged } from './dogged.js';
 import { disambiguate_foreread } from './foreread.js';
 import { disambiguate_lead } from './lead.js';
 import { disambiguate_learned } from './learned.js';
@@ -52,6 +53,7 @@ export const SEMANTIC = new Map([
   ['close', disambiguate_close],
   ['closer', disambiguate_closer],
   ['copyread', disambiguate_copyread],
+  ['dogged', disambiguate_dogged],
   ['foreread', disambiguate_foreread],
   ['lead', disambiguate_lead],
   ['learned', disambiguate_learned],
