@@ -51,6 +51,7 @@ import { disambiguate_sloughiness } from './sloughiness.js';
 import { disambiguate_sloughy } from './sloughy.js';
 import { disambiguate_tear } from './tear.js';
 import { disambiguate_tearing } from './tearing.js';
+import { disambiguate_tears } from './tears.js';
 import { disambiguate_wicked } from './wicked.js';
 import { disambiguate_wind } from './wind.js';
 import { disambiguate_winding } from './winding.js';
@@ -105,6 +106,7 @@ export const SEMANTIC = new Map([
   ['sloughy', disambiguate_sloughy],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],
+  ['tears', disambiguate_tears],
   ['wicked', disambiguate_wicked],
   ['wind', disambiguate_wind],
   ['winding', disambiguate_winding],
