@@ -16,15 +16,19 @@
 const wordOf = (tok) => (tok?.word ?? '').toLowerCase().replace(/[.,!?;:'"]+$/, '');
 
 // /boʊ/ vocabulary — archery, ribbon/knot, violin, the "Cupid's bow" of lips.
-const BOW = new Set([
+export const BOW = new Set([
   // archery
   'arrow', 'arrows', 'quiver', 'quivers', 'bowstring', 'string', 'strings', 'strung',
   'slung', 'nock', 'nocked', 'shaft', 'shafts', 'shoot', 'shoots', 'shot', 'shooting',
   'fire', 'fired', 'firing', 'aim', 'aimed', 'arrowhead', 'archer', 'archers', 'archery',
-  'yew', 'ash', 'longbow', 'crossbow', 'quarrel', 'fletching', 'unlimbering', 'unlimbered',
+  'yew', 'ash', 'longbow', 'longbows', 'crossbow', 'crossbows', 'shortbow', 'shortbows',
+  'quarrel', 'fletching', 'unlimbering', 'unlimbered',
   'drew', 'draw', 'drawn', 'notch', 'notched', 'tension', 'range', 'weapon', 'weapons',
   'tulwar', 'six-foot', 'seven-foot', 'curved', 'stubby', 'bigger', 'broken',
-  'ordinary', 'tuchuk', 'zen', 'chakra', 'recurve', 'shoulder',
+  'ordinary', 'tuchuk', 'zen', 'chakra', 'recurve', 'recurved', 'shoulder',
+  // bow types / materials (mainly to read plural compounds like "horn bows")
+  'compound', 'composite', 'horn', 'hornbacked', 'bone', 'bamboo', 'wooden',
+  'oaken', 'iron', 'steel', 'saddlebow', 'saddlebows',
   // ribbon / knot
   'ribbon', 'ribbons', 'satin', 'silk', 'lace', 'velvet', 'tie', 'ties', 'tied', 'knot',
   'bowtie', 'floppy', 'hair', 'lipstick',
