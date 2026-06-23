@@ -33,10 +33,12 @@ import { disambiguate_primates } from './primates.js';
 import { disambiguate_proofread } from './proofread.js';
 import { disambiguate_read } from './read.js';
 import { disambiguate_reread } from './reread.js';
+import { disambiguate_row } from './row.js';
 import { disambiguate_rowed } from './rowed.js';
 import { disambiguate_rowing } from './rowing.js';
 import { disambiguate_secreted } from './secreted.js';
 import { disambiguate_secreting } from './secreting.js';
+import { disambiguate_shower } from './shower.js';
 import { disambiguate_sightread } from './sightread.js';
 import { disambiguate_tear } from './tear.js';
 import { disambiguate_tearing } from './tearing.js';
@@ -75,10 +77,12 @@ export const SEMANTIC = new Map([
   ['proofread', disambiguate_proofread],
   ['read', disambiguate_read],
   ['reread', disambiguate_reread],
+  ['row', disambiguate_row],
   ['rowed', disambiguate_rowed],
   ['rowing', disambiguate_rowing],
   ['secreted', disambiguate_secreted],
   ['secreting', disambiguate_secreting],
+  ['shower', disambiguate_shower],
   ['sightread', disambiguate_sightread],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],

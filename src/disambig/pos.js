@@ -118,6 +118,62 @@ export function is_verbal_s(tokens, idx) {
   return false;                                         // default: genitive
 }
 
+// Nominative pronouns that take a VV0 (base-form) verb: I, we, you, they.
+// (he/she/it would force the -s form VVZ, so they are not VV0 subjects.)
+const VV0_SUBJECT_PRON = ['PPIS1', 'PPIS2', 'PPHS2', 'PPY'];
+// Degree adverbs (very/more/most/quite/too/so) — these pre-modify an adjective.
+const DEGREE_ADVERB = ['RG', 'RGR', 'RGT', 'RGQ'];
+
+/**
+ * Returns true if the token at `idx` is functioning as a base-form verb (VV0)
+ * rather than a noun or adjective.
+ *
+ * Scoped to the encoding-102 heteronyms whose verb and noun/adjective readings
+ * differ only in pronunciation (mostly the "-ate" stress pair, e.g. "separate"
+ * /eɪt/ verb vs /ət/ adjective, plus the /s/~/z/ pairs "use", "house"): the verb
+ * takes the full-vowel spelling, the noun/adjective the reduced one. The
+ * target's own JJ|NN1|VV0 tag cannot decide this, so the decision rests on the
+ * neighbours. Votes over the two-before / two-after window, looking through one
+ * intervening adverb — an infinitive "to", a modal/do, a base-form subject
+ * pronoun (I/we/you/they), or a following object NP argues for the verb; a
+ * determiner, possessive, degree adverb, copula, preposition, or numeral before
+ * argues for the noun/adjective. With no net evidence (and for the ambiguous
+ * "…ate + bare noun" frame) it returns false, matching the lexicon's
+ * noun/adjective-first spelling order.
+ *
+ * @param {Token[]} tokens
+ * @param {number} idx
+ * @returns {boolean}
+ */
+export function is_verb_VV0(tokens, idx) {
+  const [w2b, w1b, , w1a] = contextWindow(tokens, idx);
+  // Look through a single intervening adverb to the real pre-modifier
+  // ("they carefully separate", "the largely separate systems").
+  const left = anyPrefix(w1b, ADVERB) ? w2b : w1b;
+  let vote = 0; // > 0 ⇒ VV0 (verb); ≤ 0 ⇒ noun / adjective
+
+  // --- Pre-modifier: verb cues -------------------------------------------
+  if (anyExact(left, ['TO'])) vote += 4;            // "to separate"
+  if (anyPrefix(left, ['VM'])) vote += 4;           // "will / can separate"
+  if (anyPrefix(left, ['VD'])) vote += 3;           // "do / does / did separate"
+  if (anyExact(left, VV0_SUBJECT_PRON)) vote += 3;  // "I / we / you / they separate"
+  if (anyPrefix(left, REL_SUBJECT)) vote += 2;      // "rules that separate"
+
+  // --- Pre-modifier: noun / adjective cues -------------------------------
+  if (anyExact(left, DETERMINER)) vote -= 4;        // "a / the / this estimate"
+  if (anyPrefix(left, ['APPGE'])) vote -= 4;        // "his estimate"
+  if (anyPrefix(left, ['VB'])) vote -= 3;           // "is / are separate" (predicate adjective)
+  if (anyPrefix(left, PREPOSITION)) vote -= 3;      // "in separate", "of the estimate"
+  if (anyPrefix(left, ['MC', 'MD', 'MF'])) vote -= 2; // "two separate", "first estimate"
+  if (anyExact(w1b, DEGREE_ADVERB)) vote -= 3;      // "very deliberate", "more appropriate"
+
+  // --- Post-modifier: a following object NP argues for the verb ----------
+  if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "separate the / his X"
+  if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 2;    // "separate them"
+
+  return vote > 0;
+}
+
 /**
  * Returns true if the token at `idx` is functioning as a past-tense verb (VVD).
  * @param {Token[]} tokens

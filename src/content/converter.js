@@ -1,6 +1,6 @@
 import { data as lexicon } from '../../dist/lexicon.js';
 import { getContraction } from './contractions.js';
-import { is_VVZ, is_verbal_s, is_plural_noun } from '../disambig/pos.js';
+import { is_VVZ, is_verbal_s, is_plural_noun, is_verb_VV0 } from '../disambig/pos.js';
 import { SEMANTIC } from '../disambig/semantic/index.js';
 
 /** @typedef {import('./context.js').Token} Token */
@@ -88,6 +88,14 @@ function route(key, entry, tokens, idx) {
   // JJ|NN, not a number pair, so it has no NN2 and keeps the default spelling.)
   if (entry.encoding === 702 && pos.includes('NN2')) {
     return is_plural_noun(tokens, idx) ? 1 : 0;
+  }
+  // Heteronyms split by part of speech (encoding 102): the verb reading takes
+  // the full-vowel spelling (spellings[1], e.g. "separate" /eɪt/, "use" /juːz/),
+  // the noun/adjective reading the reduced one (spellings[0]). A handful (row,
+  // shower) split by sense rather than POS — those carry a semantic rule, so
+  // they are skipped here and fall through to the SEMANTIC dispatch below.
+  if (entry.encoding === 102 && pos.includes('VV0') && !SEMANTIC.has(key)) {
+    return is_verb_VV0(tokens, idx) ? 1 : 0;
   }
   // Semantic (pronunciation) words, encoding 202 (e.g. "read"): the rule returns
   // a euspelling; map it back to its index, falling back to the default on null.
