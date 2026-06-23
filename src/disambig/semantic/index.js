@@ -24,6 +24,7 @@ import { disambiguate_dove } from './dove.js';
 import { disambiguate_foreread } from './foreread.js';
 import { disambiguate_jagged } from './jagged.js';
 import { disambiguate_lead } from './lead.js';
+import { disambiguate_leads } from './leads.js';
 import { disambiguate_learned } from './learned.js';
 import { disambiguate_minute } from './minute.js';
 import { disambiguate_misread } from './misread.js';
@@ -74,6 +75,7 @@ export const SEMANTIC = new Map([
   ['foreread', disambiguate_foreread],
   ['jagged', disambiguate_jagged],
   ['lead', disambiguate_lead],
+  ['leads', disambiguate_leads],
   ['learned', disambiguate_learned],
   ['minute', disambiguate_minute],
   ['misread', disambiguate_misread],

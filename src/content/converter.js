@@ -75,7 +75,9 @@ export function convert(word, tokens, idx) {
 function route(key, entry, tokens, idx) {
   const { pos } = entry;
   // NN2|VVZ diatones (e.g. "records"): plural noun → spellings[0], verb → spellings[1].
-  if (pos.length === 2 && pos[0] === 'NN2' && pos[1] === 'VVZ') {
+  // A few (e.g. "leads") split three ways and carry a semantic rule, so they are
+  // skipped here and fall through to the SEMANTIC dispatch below.
+  if (pos.length === 2 && pos[0] === 'NN2' && pos[1] === 'VVZ' && !SEMANTIC.has(key)) {
     return is_VVZ(tokens, idx) ? 1 : 0;
   }
   // The clitic 's: genitive ('s, spellings[0]) vs contracted is/has ('z, [1]).
