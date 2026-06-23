@@ -17,15 +17,16 @@
 const wordOf = (tok) => (tok?.word ?? '').toLowerCase().replace(/[.,!?;:'"]+$/, '');
 
 // Animals one "shows" competitively — a preceding one can mark the agent noun.
-const EXHIBIT = new Set([
+export const EXHIBIT = new Set([
   'dog', 'dogs', 'cat', 'cats', 'cattle', 'livestock', 'poultry', 'pigeon',
   'pigeons', 'horse', 'horses', 'pony', 'ponies', 'rabbit', 'rabbits',
 ]);
 // Show / competition vocabulary that confirms the "one who shows" sense.
-const SHOW_FIELD = new Set([
+export const SHOW_FIELD = new Set([
   'show', 'shows', 'showed', 'showing', 'exhibitor', 'exhibitors', 'exhibit',
   'exhibition', 'judge', 'judges', 'judging', 'breed', 'breeds', 'pedigree',
-  'championship', 'kennel', 'handler', 'ribbon',
+  'championship', 'kennel', 'handler', 'ribbon', 'ribbons', 'rosette', 'rosettes',
+  'ring',
 ]);
 
 /**
