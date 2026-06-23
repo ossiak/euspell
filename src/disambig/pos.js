@@ -140,15 +140,54 @@ export function is_past_participle(tokens, idx) {
   return false;
 }
 
+// Determiners/pre-modifiers that force a PLURAL head noun.
+const PLURAL_DET = ['DD2', 'DA2', 'DB2']; // these/those, many/several/few, both
+// Cardinal numerals two and up (CLAWS gives "one" the separate tag MC1).
+const CARDINAL = ['MC', 'MC2'];
+// Determiners/pre-modifiers that force a SINGULAR head noun.
+const SINGULAR_DET = ['AT1', 'DD1', 'MC1', 'DA1']; // a/an/every, this/that, one, much/little
+// Finite verbs that agree with a PLURAL subject ("corps were", "corps have").
+const PLURAL_AGREE = ['VBR', 'VBDR', 'VH0', 'VD0'];
+// Finite verbs that agree with a SINGULAR subject ("chassis is", "chassis has").
+const SINGULAR_AGREE = ['VBZ', 'VBDZ', 'VHZ', 'VDZ', 'VVZ'];
+
 /**
- * Returns true if the token at `idx` is functioning as a plural noun (NN2).
+ * Returns true if the token at `idx` is functioning as a plural noun (NN2)
+ * rather than a singular noun (NN1).
+ *
+ * Scoped to nouns whose singular and plural share one surface form (the French
+ * loanwords of encoding 702, e.g. "chassis", "corps", "travois"): the only
+ * question is grammatical number, which the target's own NN1|NN2 tag cannot
+ * answer, so the decision rests on the neighbours. Votes over the two-before /
+ * two-after window — a plural determiner or cardinal numeral before, or a
+ * plural-agreeing verb after, argues for NN2; a singular determiner before, or
+ * a singular-agreeing verb after, argues for NN1. With no net evidence it
+ * returns false, matching the singular-first lexicon spelling order.
+ *
  * @param {Token[]} tokens
  * @param {number} idx
  * @returns {boolean}
  */
 export function is_plural_noun(tokens, idx) {
-  // TODO: implement
-  return false;
+  const [w2b, w1b, , w1a] = contextWindow(tokens, idx);
+  let vote = 0; // > 0 ⇒ NN2 (plural); ≤ 0 ⇒ NN1 (singular)
+
+  // --- Determiner / pre-modifier immediately BEFORE the target -------------
+  if (anyExact(w1b, PLURAL_DET) || anyExact(w1b, CARDINAL)) vote += 3; // "these / two chassis"
+  if (anyExact(w1b, SINGULAR_DET)) vote -= 3;                          // "a chassis", "one corps"
+
+  // An adjective can sit between the determiner and the noun: look one further
+  // back. "the two grey chassis", "a single corps".
+  if (anyPrefix(w1b, ['JJ'])) {
+    if (anyExact(w2b, PLURAL_DET) || anyExact(w2b, CARDINAL)) vote += 2;
+    if (anyExact(w2b, SINGULAR_DET)) vote -= 2;
+  }
+
+  // --- Finite verb immediately AFTER the target agrees in number -----------
+  if (anyExact(w1a, PLURAL_AGREE)) vote += 3;   // "chassis are / were / have"
+  if (anyExact(w1a, SINGULAR_AGREE)) vote -= 3; // "chassis is / was / has"
+
+  return vote > 0;
 }
 
 /**

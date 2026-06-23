@@ -1,6 +1,6 @@
 import { data as lexicon } from '../../dist/lexicon.js';
 import { getContraction } from './contractions.js';
-import { is_VVZ, is_verbal_s } from '../disambig/pos.js';
+import { is_VVZ, is_verbal_s, is_plural_noun } from '../disambig/pos.js';
 import { SEMANTIC } from '../disambig/semantic/index.js';
 
 /** @typedef {import('./context.js').Token} Token */
@@ -81,6 +81,13 @@ function route(key, entry, tokens, idx) {
   // The clitic 's: genitive ('s, spellings[0]) vs contracted is/has ('z, [1]).
   if (pos.includes('GE')) {
     return is_verbal_s(tokens, idx) ? 1 : 0;
+  }
+  // French loanwords (encoding 702) whose singular and plural share one current
+  // spelling (e.g. "chassis", "corps", "travois"): the reform gives the plural a
+  // trailing -s, so spellings[0] = singular, spellings[1] = plural. ("manque" is
+  // JJ|NN, not a number pair, so it has no NN2 and keeps the default spelling.)
+  if (entry.encoding === 702 && pos.includes('NN2')) {
+    return is_plural_noun(tokens, idx) ? 1 : 0;
   }
   // Semantic (pronunciation) words, encoding 202 (e.g. "read"): the rule returns
   // a euspelling; map it back to its index, falling back to the default on null.
