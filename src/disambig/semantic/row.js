@@ -18,7 +18,7 @@
 const wordOf = (tok) => (tok?.word ?? '').toLowerCase().replace(/[.,!?;:'"]+$/, '');
 
 // Adjectives that pick out the noisy-quarrel sense (/raʊ/).
-const QUARREL_ADJ = new Set([
+export const QUARREL_ADJ = new Set([
   'blazing', 'blistering', 'furious', 'almighty', 'slanging', 'screaming',
   'ferocious', 'raging', 'heated', 'almighty', 'blistering',
 ]);
@@ -28,12 +28,12 @@ const HAVE = new Set([
   'starts', 'provoke', 'provoked', 'cause', 'caused', 'pick', 'picked',
 ]);
 // Verbs that follow "row" when a quarrel erupts.
-const ERUPT = new Set([
+export const ERUPT = new Set([
   'broke', 'erupted', 'ensued', 'flared', 'raged', 'developed', 'blew',
   'escalated', 'ignited', 'started',
 ]);
 // Quarrel / din vocabulary anywhere in the clause.
-const QUARREL_FIELD = new Set([
+export const QUARREL_FIELD = new Set([
   'argue', 'argued', 'argues', 'arguing', 'argument', 'arguments', 'quarrel',
   'quarrelled', 'quarreled', 'quarrelling', 'quarreling', 'dispute', 'disputed',
   'disagreement', 'squabble', 'squabbled', 'bicker', 'bickered', 'spat', 'feud',

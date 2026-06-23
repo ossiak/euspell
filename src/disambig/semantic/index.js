@@ -37,6 +37,7 @@ import { disambiguate_read } from './read.js';
 import { disambiguate_reread } from './reread.js';
 import { disambiguate_row } from './row.js';
 import { disambiguate_rowed } from './rowed.js';
+import { disambiguate_rows } from './rows.js';
 import { disambiguate_rowing } from './rowing.js';
 import { disambiguate_secreted } from './secreted.js';
 import { disambiguate_secreting } from './secreting.js';
@@ -92,6 +93,7 @@ export const SEMANTIC = new Map([
   ['reread', disambiguate_reread],
   ['row', disambiguate_row],
   ['rowed', disambiguate_rowed],
+  ['rows', disambiguate_rows],
   ['rowing', disambiguate_rowing],
   ['secreted', disambiguate_secreted],
   ['secreting', disambiguate_secreting],
