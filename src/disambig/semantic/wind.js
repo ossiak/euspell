@@ -21,7 +21,7 @@ const wordOf = (tok) => (tok?.word ?? '').toLowerCase().replace(/[.,!?;:'"]+$/, 
 // Premodifiers that mark "wind" as a (premodified) noun head — the moving-air
 // /wɪnd/. When one of these precedes, the verb rules are suppressed so idioms
 // like "got the wind up" and "a cold wind" stay the noun.
-const NOUN_MARKER = new Set([
+export const NOUN_MARKER = new Set([
   'a', 'an', 'the', 'this', 'that', 'these', 'those',
   'my', 'your', 'his', 'her', 'its', 'their', 'our',
   'some', 'any', 'no', 'much', 'more', 'less', 'every', 'each', 'another', 'enough',
@@ -33,6 +33,11 @@ const NOUN_MARKER = new Set([
   'north', 'south', 'east', 'west', 'northern', 'southern', 'eastern', 'western',
   'sea', 'night', 'winter', 'summer', 'autumn', 'morning', 'evening', 'desert',
   'polar', 'arctic', 'ocean', 'mountain', 'hurricane', 'gale', 'good', 'nasty',
+  // further air-noun modifiers (mainly for the plural "winds")
+  'trade', 'monsoon', 'following', 'favoring', 'favouring', 'favorable',
+  'favourable', 'northerly', 'southerly', 'easterly', 'westerly', 'scattered',
+  'gusting', 'southwest', 'northeast', 'southeast', 'northwest', 'crosswinds',
+  'tail', 'head', 'cross', 'galeforce', 'storm', 'tropical', 'chilly', 'warm',
 ]);
 
 // Particles that form the phrasal verbs "wind up / down / back" → /waɪnd/.
@@ -46,7 +51,7 @@ const OBJECT_DET = new Set([
 ]);
 
 // Concrete things one winds (coils) — for "wind the clock", "wind their way".
-const COIL_OBJECT = new Set([
+export const COIL_OBJECT = new Set([
   'clock', 'clocks', 'watch', 'watches', 'spring', 'springs', 'thread', 'threads',
   'yarn', 'string', 'strings', 'wool', 'rope', 'ropes', 'cord', 'cords', 'wire',
   'wires', 'bandage', 'bandages', 'handle', 'crank', 'key', 'reel', 'reels', 'tape',

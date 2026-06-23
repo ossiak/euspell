@@ -53,6 +53,7 @@ import { disambiguate_tearing } from './tearing.js';
 import { disambiguate_wicked } from './wicked.js';
 import { disambiguate_wind } from './wind.js';
 import { disambiguate_winding } from './winding.js';
+import { disambiguate_winds } from './winds.js';
 import { disambiguate_wound } from './wound.js';
 
 /** @type {Map<string, (tokens: import('../../content/context.js').Token[], idx: number) => (string | null)>} */
@@ -105,5 +106,6 @@ export const SEMANTIC = new Map([
   ['wicked', disambiguate_wicked],
   ['wind', disambiguate_wind],
   ['winding', disambiguate_winding],
+  ['winds', disambiguate_winds],
   ['wound', disambiguate_wound],
 ]);
