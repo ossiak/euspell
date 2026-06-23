@@ -41,6 +41,11 @@ import { disambiguate_secreting } from './secreting.js';
 import { disambiguate_shower } from './shower.js';
 import { disambiguate_sightread } from './sightread.js';
 import { disambiguate_slough } from './slough.js';
+import { disambiguate_sloughed } from './sloughed.js';
+import { disambiguate_sloughier } from './sloughier.js';
+import { disambiguate_sloughiest } from './sloughiest.js';
+import { disambiguate_sloughiness } from './sloughiness.js';
+import { disambiguate_sloughy } from './sloughy.js';
 import { disambiguate_tear } from './tear.js';
 import { disambiguate_tearing } from './tearing.js';
 import { disambiguate_wicked } from './wicked.js';
@@ -86,6 +91,11 @@ export const SEMANTIC = new Map([
   ['shower', disambiguate_shower],
   ['sightread', disambiguate_sightread],
   ['slough', disambiguate_slough],
+  ['sloughed', disambiguate_sloughed],
+  ['sloughier', disambiguate_sloughier],
+  ['sloughiest', disambiguate_sloughiest],
+  ['sloughiness', disambiguate_sloughiness],
+  ['sloughy', disambiguate_sloughy],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],
   ['wicked', disambiguate_wicked],
