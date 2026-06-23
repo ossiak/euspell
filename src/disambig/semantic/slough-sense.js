@@ -47,11 +47,17 @@ export const MIRE = new Set([
 
 // A slough that holds navigable water → /sluː/.
 export const BACKWATER = new Set([
-  'tidal', 'backwater', 'channel', 'channels', 'inlet', 'estuary', 'bayou',
-  'levee', 'levees', 'delta', 'paddle', 'paddled', 'canoe', 'canoed', 'kayak',
-  'boat', 'boated', 'wade', 'waded', 'ford', 'duck', 'ducks', 'waterfowl',
-  'heron', 'herons', 'cattails', 'cattail', 'reeds', 'reedy', 'mudflat',
-  'mudflats', 'marsh', 'marshy', 'sloughs',
+  'tidal', 'backwater', 'backwaters', 'channel', 'channels', 'inlet', 'inlets',
+  'estuary', 'estuaries', 'bayou', 'bayous', 'levee', 'levees', 'delta', 'deltas',
+  'paddle', 'paddled', 'canoe', 'canoed', 'canoes', 'kayak', 'boat', 'boats',
+  'boated', 'wade', 'waded', 'ford', 'duck', 'ducks', 'waterfowl', 'heron',
+  'herons', 'cattails', 'cattail', 'reeds', 'reedy', 'mudflat', 'mudflats',
+  'marsh', 'marshy', 'marshes', 'marshland', 'marshlands', 'swamp', 'swamps',
+  'swampy', 'wetland', 'wetlands', 'pond', 'ponds', 'lake', 'lakes', 'creek',
+  'creeks', 'lagoon', 'lagoons', 'oxbow', 'oxbows', 'canal', 'canals', 'ditch',
+  'ditches', 'slackwater', 'slackwaters', 'watercourse', 'watercourses',
+  'distributary', 'distributaries', 'shoal', 'shoals', 'sandbar', 'sandbars',
+  'tidewater', 'brackish', 'tule', 'tules', 'sloughs',
 ]);
 
 // Terrain nouns that, beside a "sloughy"-type adjective, mark boggy ground →

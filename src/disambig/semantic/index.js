@@ -46,6 +46,7 @@ import { disambiguate_showers } from './showers.js';
 import { disambiguate_sightread } from './sightread.js';
 import { disambiguate_slough } from './slough.js';
 import { disambiguate_sloughed } from './sloughed.js';
+import { disambiguate_sloughs } from './sloughs.js';
 import { disambiguate_sloughier } from './sloughier.js';
 import { disambiguate_sloughiest } from './sloughiest.js';
 import { disambiguate_sloughiness } from './sloughiness.js';
@@ -105,6 +106,7 @@ export const SEMANTIC = new Map([
   ['sloughier', disambiguate_sloughier],
   ['sloughiest', disambiguate_sloughiest],
   ['sloughiness', disambiguate_sloughiness],
+  ['sloughs', disambiguate_sloughs],
   ['sloughy', disambiguate_sloughy],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],
