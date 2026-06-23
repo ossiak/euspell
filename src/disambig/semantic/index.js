@@ -40,6 +40,7 @@ import { disambiguate_secreted } from './secreted.js';
 import { disambiguate_secreting } from './secreting.js';
 import { disambiguate_shower } from './shower.js';
 import { disambiguate_sightread } from './sightread.js';
+import { disambiguate_slough } from './slough.js';
 import { disambiguate_tear } from './tear.js';
 import { disambiguate_tearing } from './tearing.js';
 import { disambiguate_wicked } from './wicked.js';
@@ -84,6 +85,7 @@ export const SEMANTIC = new Map([
   ['secreting', disambiguate_secreting],
   ['shower', disambiguate_shower],
   ['sightread', disambiguate_sightread],
+  ['slough', disambiguate_slough],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],
   ['wicked', disambiguate_wicked],
