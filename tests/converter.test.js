@@ -70,6 +70,11 @@ test('twinges resolves both ways (regression for the missing-noun-spelling fix)'
   assert.equal(conv([['it', 'PPH1'], ['twinges', ''], ['sharply', 'RR']], 'twinges'), 'twingez');
 });
 
+test('"is" reforms to "iz" (single spelling), preserving case', () => {
+  assert.equal(conv([['this', 'DD1'], ['is', ''], ['a', 'AT1'], ['test', 'NN1']], 'is'), 'iz');
+  assert.equal(conv([['Is', ''], ['it', 'PPH1'], ['here', 'RL']], 'Is'), 'Iz');
+});
+
 test('the pronoun I reforms to ih, capitalized only at sentence start', () => {
   assert.equal(convert('I', [t('I', '')], 0), 'Ih');
   assert.equal(convert('I', [t('and', 'CC'), t('I', '')], 1), 'ih');

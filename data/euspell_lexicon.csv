@@ -93767,7 +93767,7 @@ irvin,NP,000,[]
 irvine,NP,000,[]
 irving,NP,000,[]
 irwin,NP,000,[]
-is,REX22|REX42|VBZ,000,[]
+is,REX22|REX42|VBZ,011,iz
 isa,NP,000,[]
 isaac,NP,000,[]
 isabel,NP,000,[]
