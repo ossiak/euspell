@@ -107,6 +107,10 @@ async function main() {
       // Where the bundled WebAssembly image/colour decoders live (trailing slash
       // required) — without this PDF.js can't decode JBIG2/JPEG2000 images.
       wasmUrl: chrome.runtime.getURL('dist/pdfjs/wasm/'),
+      // Where the bundled standard substitute fonts live (trailing slash
+      // required) — lets PDF.js render non-embedded fonts (e.g. Goudy-Bold) with
+      // a matching Foxit/Liberation face instead of warning and falling back.
+      standardFontDataUrl: chrome.runtime.getURL('dist/pdfjs/standard_fonts/'),
     }).promise;
   } catch (e) {
     setStatus(`Couldn’t open this PDF (${e?.message ?? e}). You can open the original instead.`);
