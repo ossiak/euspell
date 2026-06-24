@@ -45,7 +45,8 @@
         "src/pdf/viewer.css",
         "dist/pdf-viewer.js",
         "dist/pdf-viewer.js.map",
-        "dist/pdfjs/pdf.worker.min.mjs"
+        "dist/pdfjs/pdf.worker.min.mjs",
+        "dist/pdfjs/wasm/*"
       ],
       "matches": ["<all_urls>"]
     }

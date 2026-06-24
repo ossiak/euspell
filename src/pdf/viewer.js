@@ -88,7 +88,12 @@ async function main() {
 
   let pdf;
   try {
-    pdf = await pdfjsLib.getDocument({ url: fileUrl }).promise;
+    pdf = await pdfjsLib.getDocument({
+      url: fileUrl,
+      // Where the bundled WebAssembly image/colour decoders live (trailing slash
+      // required) — without this PDF.js can't decode JBIG2/JPEG2000 images.
+      wasmUrl: chrome.runtime.getURL('dist/pdfjs/wasm/'),
+    }).promise;
   } catch (e) {
     setStatus(`Couldn’t open this PDF (${e?.message ?? e}). You can open the original instead.`);
     return;
