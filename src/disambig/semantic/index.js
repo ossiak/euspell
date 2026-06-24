@@ -6,7 +6,6 @@
  * Used by converter.js route() to dispatch encoding-202 words.
  */
 import { disambiguate_are } from './are.js';
-import { disambiguate_bach } from './bach.js';
 import { disambiguate_barred } from './barred.js';
 import { disambiguate_bass } from './bass.js';
 import { disambiguate_beloved } from './beloved.js';
@@ -19,7 +18,6 @@ import { disambiguate_bowings } from './bowings.js';
 import { disambiguate_bowmen } from './bowmen.js';
 import { disambiguate_bows } from './bows.js';
 import { disambiguate_chi } from './chi.js';
-import { disambiguate_chis } from './chis.js';
 import { disambiguate_cleanly } from './cleanly.js';
 import { disambiguate_close } from './close.js';
 import { disambiguate_closer } from './closer.js';
@@ -41,7 +39,6 @@ import { disambiguate_primate } from './primate.js';
 import { disambiguate_primates } from './primates.js';
 import { disambiguate_proofread } from './proofread.js';
 import { disambiguate_ragged } from './ragged.js';
-import { disambiguate_ravined } from './ravined.js';
 import { disambiguate_read } from './read.js';
 import { disambiguate_reread } from './reread.js';
 import { disambiguate_row } from './row.js';
@@ -75,7 +72,6 @@ import { disambiguate_wound } from './wound.js';
 /** @type {Map<string, (tokens: import('../../content/context.js').Token[], idx: number) => (string | null)>} */
 export const SEMANTIC = new Map([
   ['are', disambiguate_are],
-  ['bach', disambiguate_bach],
   ['barred', disambiguate_barred],
   ['bass', disambiguate_bass],
   ['beloved', disambiguate_beloved],
@@ -88,7 +84,6 @@ export const SEMANTIC = new Map([
   ['bowmen', disambiguate_bowmen],
   ['bows', disambiguate_bows],
   ['chi', disambiguate_chi],
-  ['chis', disambiguate_chis],
   ['cleanly', disambiguate_cleanly],
   ['close', disambiguate_close],
   ['closer', disambiguate_closer],
@@ -110,7 +105,6 @@ export const SEMANTIC = new Map([
   ['primates', disambiguate_primates],
   ['proofread', disambiguate_proofread],
   ['ragged', disambiguate_ragged],
-  ['ravined', disambiguate_ravined],
   ['read', disambiguate_read],
   ['reread', disambiguate_reread],
   ['row', disambiguate_row],

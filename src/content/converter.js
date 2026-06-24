@@ -5,6 +5,12 @@ import { SEMANTIC } from '../disambig/semantic/index.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
+// Words carrying a disambiguation encoding (202/022) that are nonetheless left
+// exactly as written — their euspellings aren't worth choosing between (a
+// surname, the Greek-letter plural, an archaic disyllabic), so the original
+// surface form is kept regardless of context.
+const KEEP_UNCHANGED = new Set(['bach', 'chis', 'ravined']);
+
 /**
  * Converts a single word to its euspelling given surrounding token context.
  * @param {string} word
@@ -25,6 +31,7 @@ export function convert(word, tokens, idx) {
   // replacement — so the spelling lookup uses the lexicon and contractions only.
   // getContraction() normalizes case and apostrophe style (I'll, don’t).
   const key = word.toLowerCase();
+  if (KEEP_UNCHANGED.has(key)) return word;
   const entry = lexicon.get(key) ?? getContraction(word);
   if (!entry) return word;
 
