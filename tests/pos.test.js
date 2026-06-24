@@ -31,6 +31,17 @@ test('is_VVZ: a confirmed subject still marks the verb', () => {
   assert.equal(is_VVZ([t('the', 'AT'), t('mucosa', 'NN1'), t('sloughs', ''), t('off', 'RP')], 2), true);
 });
 
+test('is_VVZ: wider window — adverb look-through and determiner across an adjective', () => {
+  // adverb between subject and verb: "John regularly records his notes"
+  assert.equal(is_VVZ([t('John', 'NP1'), t('regularly', 'RR'), t('records', ''), t('his', 'APPGE'), t('notes', 'NN2')], 2), true);
+  // determiner two words ahead of the subject noun: "the new machine records the data"
+  assert.equal(is_VVZ([t('the', 'AT'), t('new', 'JJ'), t('machine', 'NN1'), t('records', ''), t('the', 'AT'), t('data', 'NN1')], 3), true);
+  // plural verb after an adverb keeps the noun: "the records also show errors"
+  assert.equal(is_VVZ([t('the', 'AT'), t('records', ''), t('also', 'RR'), t('show', 'VV0'), t('errors', 'NN2')], 1), false);
+  // still a compound noun, not a verb: "the computer functions list"
+  assert.equal(is_VVZ([t('the', 'AT'), t('computer', 'NN1'), t('functions', ''), t('list', 'NN1')], 2), false);
+});
+
 test('is_verb_VV0: subject pronoun + object marks a verb', () => {
   // "they use it" -> verb
   assert.equal(is_verb_VV0([t('they', 'PPHS2'), t('use', ''), t('it', 'PPH1')], 1), true);

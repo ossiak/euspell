@@ -4,7 +4,7 @@
  *
  * Each function receives the full token array for a sentence and the index of
  * the target word. Return true if the word matches the named part-of-speech.
- * Obtain the fixed two-before / two-after view with `contextWindow(tokens, idx)`
+ * Obtain the fixed three-before / three-after view with `contextWindow(tokens, idx)`
  * from ../content/context.js — out-of-range and cross-sentence slots arrive as
  * the BOUNDARY sentinel (tag 'ZB'), so clause edges are signal, not absence.
  *
@@ -65,46 +65,60 @@ const ADVERB = ['RR', 'RG', 'RP', 'RL', 'RT', 'RA'];
  * naively looks like a subject. Such a preceding common noun argues for the
  * compound noun, not the verb.
  *
- * VVZ is confirmed by: an unambiguous 3rd-sg subject immediately before (a
- * pronoun "it/he/she", or a relativiser "which/who/that"); a complement only a
- * finite verb takes immediately after (an object pronoun "records them", or an
- * object NP "records the data"); or a clear subject NP — a proper noun, or a
- * determiner + common-noun — followed by such a complement ("John records his
- * notes", "the mucosa sloughs off"). A preceding determiner/preposition/noun,
- * or a following plural-agreeing verb, argues for the noun. With no net
- * evidence it returns false (NN2), the lexicon's noun-first default.
+ * VVZ is confirmed by: an unambiguous 3rd-sg subject before (a pronoun
+ * "it/he/she", or a relativiser "which/who/that"); a complement only a finite
+ * verb takes after (an object pronoun "records them", or an object NP "records
+ * the data"); or a clear subject NP — a proper noun, or a determiner +
+ * (optional adjective) + common noun — followed by such a complement ("John
+ * records his notes", "the new machine records the data", "the mucosa sloughs
+ * off"). A preceding determiner/preposition/noun, or a following plural-agreeing
+ * verb, argues for the noun. With no net evidence it returns false (NN2), the
+ * lexicon's noun-first default.
+ *
+ * Reads the three-before / three-after window so a single intervening adverb is
+ * looked through on each side ("John regularly records his notes", "the tools
+ * clearly are old") and a determiner can sit two words ahead of the subject noun
+ * ("the new machine records").
  *
  * @param {Token[]} tokens
  * @param {number} idx
  * @returns {boolean}
  */
 export function is_VVZ(tokens, idx) {
-  const [w2b, w1b, , w1a] = contextWindow(tokens, idx);
+  const [w3b, w2b, w1b, , w1a, w2a] = contextWindow(tokens, idx);
+  // Look through a single intervening adverb to the real neighbour on each side.
+  const beforeAdv = anyPrefix(w1b, ADVERB);
+  const left = beforeAdv ? w2b : w1b;        // nearest non-adverb before
+  const leftBack = beforeAdv ? w3b : w2b;    // the word before `left`
   let vote = 0; // > 0 ⇒ VVZ (verb); ≤ 0 ⇒ NN2 (noun)
 
   // --- BEFORE: only an unambiguous 3rd-sg subject argues for the verb. ------
-  if (anyExact(w1b, SUBJECT_3SG)) vote += 3;                  // "it records"
-  else if (anyPrefix(w1b, REL_SUBJECT)) vote += 2;           // "device which records"
+  if (anyExact(left, SUBJECT_3SG)) vote += 3;                 // "it records"
+  else if (anyPrefix(left, REL_SUBJECT)) vote += 2;          // "device which records"
 
   // Noun-phrase context before → the plural-noun reading (the default).
-  if (anyExact(w1b, DETERMINER) || anyPrefix(w1b, PREMODIFIER)) vote -= 3; // "the/old/two tools"
-  if (anyPrefix(w1b, PREPOSITION)) vote -= 3;                 // "of tools"
-  if (anyPrefix(w1b, ['NN'])) vote -= 2;                      // "learning tools" — compound modifier
-  if (anyExact(w1b, ['VM', 'TO'])) vote -= 3;                 // "will/to tool(s)" — never VVZ
-  else if (anyPrefix(w1b, VERB_ANY) && !anyExact(w1b, SUBJECT_3SG)) vote -= 1; // "plays records" (object)
+  if (anyExact(left, DETERMINER) || anyPrefix(left, PREMODIFIER)) vote -= 3; // "the/old/two tools"
+  if (anyPrefix(left, PREPOSITION)) vote -= 3;               // "of tools"
+  if (anyPrefix(left, ['NN'])) vote -= 2;                    // "learning tools" — compound modifier
+  if (anyExact(left, ['VM', 'TO'])) vote -= 3;               // "will/to tool(s)" — never VVZ
+  else if (anyPrefix(left, VERB_ANY) && !anyExact(left, SUBJECT_3SG)) vote -= 1; // "plays records"
 
   // --- AFTER: a complement only a finite verb takes argues for the verb. ----
-  if (anyExact(w1a, PLURAL_VERB)) vote -= 3;                  // "tools are / show" — noun subject
-  if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;             // "records them"
+  // A plural-agreeing verb after (through an adverb) marks the noun subject:
+  // "records show", "records also show".
+  const afterVerb = anyPrefix(w1a, ADVERB) ? w2a : w1a;
+  if (anyExact(afterVerb, PLURAL_VERB)) vote -= 3;
+  if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;            // "records them"
   if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "records the / his X"
-  if (anyPrefix(w1a, ['RR'])) vote += 1;                     // "functions well"
+  if (anyPrefix(w1a, ['RR'])) vote += 1;                    // "functions well"
 
-  // A clear subject NP + target + verb complement → a finite verb: a proper-noun
-  // subject ("John records his notes"), or a determiner + common-noun subject
-  // ("the mucosa sloughs off"). The trailing complement is what separates this
-  // from a bare "[det] noun noun" compound ("the computer functions list").
-  const subjectNoun = anyPrefix(w1b, ['NP']) ||
-    (anyExact(w1b, SINGULAR_NOUN) && anyExact(w2b, DETERMINER));
+  // A clear subject NP + target + verb complement → a finite verb. The subject
+  // is a proper noun, or a determiner + (optionally one adjective/numeral) +
+  // common noun; the trailing complement is what separates this from a bare
+  // "[det] noun noun" compound ("the computer functions list").
+  const detSubject = anyExact(leftBack, DETERMINER) ||
+    (!beforeAdv && anyPrefix(w2b, ['JJ', 'MC', 'MD', 'MF']) && anyExact(w3b, DETERMINER));
+  const subjectNoun = anyPrefix(left, ['NP']) || (anyExact(left, SINGULAR_NOUN) && detSubject);
   const verbComplement = anyPrefix(w1a, OBJECT_PRONOUN) || anyExact(w1a, DETERMINER) ||
     anyPrefix(w1a, ['APPGE', 'RR', 'RP']);
   if (subjectNoun && verbComplement) vote += 3;
@@ -133,7 +147,7 @@ const SUBJECT_PRON = ['PPHS1', 'PPH1', 'PPHS2', 'PPIS1', 'PPIS2', 'PPY'];
  * @returns {boolean}
  */
 export function is_verbal_s(tokens, idx) {
-  const [, w1b, , w1a, w2a] = contextWindow(tokens, idx);
+  const [, , w1b, , w1a, w2a] = contextWindow(tokens, idx);
   if (anyExact(w1b, SUBJECT_PRON)) return true;        // "he 's …" — contracted verb
   // "'s" + participle: contracted is/has ("bus's arriving", "author's published a
   // book") — unless the participle is attributive (a noun follows it), making the
@@ -170,7 +184,7 @@ const DEGREE_ADVERB = ['RG', 'RGR', 'RGT', 'RGQ'];
  * @returns {boolean}
  */
 export function is_verb_VV0(tokens, idx) {
-  const [w2b, w1b, , w1a] = contextWindow(tokens, idx);
+  const [, w2b, w1b, , w1a] = contextWindow(tokens, idx);
   // Look through a single intervening adverb to the real pre-modifier
   // ("they carefully separate", "the largely separate systems").
   const left = anyPrefix(w1b, ADVERB) ? w2b : w1b;
@@ -249,7 +263,7 @@ const SINGULAR_AGREE = ['VBZ', 'VBDZ', 'VHZ', 'VDZ', 'VVZ'];
  * @returns {boolean}
  */
 export function is_plural_noun(tokens, idx) {
-  const [w2b, w1b, , w1a] = contextWindow(tokens, idx);
+  const [, w2b, w1b, , w1a] = contextWindow(tokens, idx);
   let vote = 0; // > 0 ⇒ NN2 (plural); ≤ 0 ⇒ NN1 (singular)
 
   // --- Determiner / pre-modifier immediately BEFORE the target -------------

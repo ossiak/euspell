@@ -18,21 +18,21 @@
 export const BOUNDARY = Object.freeze({ word: '', tag: 'ZB', breakAfter: true });
 
 /**
- * Builds the fixed `[w-2, w-1, target, w+1, w+2]` context window around `idx`.
- * Slots beyond the token array, or separated from the target by a sentence
+ * Builds the fixed `[w-3, w-2, w-1, target, w+1, w+2, w+3]` context window around
+ * `idx`. Slots beyond the token array, or separated from the target by a sentence
  * break, are filled with {@link BOUNDARY} so every rule sees a uniform shape
  * regardless of how much real context is available.
  *
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {[Token, Token, Token, Token, Token]}
+ * @returns {[Token, Token, Token, Token, Token, Token, Token]}
  */
 export function contextWindow(tokens, idx) {
   const at = (i) =>
     i < 0 || i >= tokens.length || crossesSentenceBreak(tokens, idx, i)
       ? BOUNDARY
       : tokens[i];
-  return [at(idx - 2), at(idx - 1), tokens[idx], at(idx + 1), at(idx + 2)];
+  return [at(idx - 3), at(idx - 2), at(idx - 1), tokens[idx], at(idx + 1), at(idx + 2), at(idx + 3)];
 }
 
 /**
