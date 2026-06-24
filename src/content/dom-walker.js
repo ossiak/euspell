@@ -25,6 +25,28 @@ const RUN = /['’ʼ]?\w+(?:['’ʼ]\w+)*['’ʼ]?/g;
 const GENITIVE = /^(\w+)(['’ʼ]s)$/i;
 const SENTENCE_BREAK = /[.!?]/;
 
+// Per text node, the original source text we tokenized and the euspelled string
+// we wrote back. On a re-walk (the MutationObserver re-applying after a page
+// re-render), a node still holding exactly our output is reconverted from its
+// ORIGINAL source, not from the euspelled text. This keeps neighbour context
+// correct (euspellings aren't in the lexicon, so re-tagging them would corrupt
+// the window) and makes conversion idempotent — without it the few non-idempotent
+// words ("cached"→"cashed"→"cashd") would drift on every pass. A node the page
+// has since edited (value no longer our output) is treated as fresh source.
+/** @type {WeakMap<Text, { src: string, out: string }>} */
+const memory = new WeakMap();
+
+/**
+ * The text to tokenize for `node`: its remembered original source if the node
+ * still holds our last output, otherwise the node's current (page-set) value.
+ * @param {Text} node
+ * @returns {string}
+ */
+function sourceOf(node) {
+  const rec = memory.get(node);
+  return rec && rec.out === node.nodeValue ? rec.src : node.nodeValue;
+}
+
 /**
  * Walks all text under `root`, grouping it into block-level units and converting
  * each unit as one token stream so disambiguation has cross-text-node context.
@@ -137,9 +159,15 @@ function convertBlock(textNodes, convertFn) {
   // continuation pseudo-tokens, which have no piece of their own).
   /** @type {number[]} */
   const pieceOfToken = [];
+  // The text each node was tokenized from (its original source on a re-walk),
+  // so the write-back can record the source→output mapping for next time.
+  /** @type {Map<Text, string>} */
+  const sourceByNode = new Map();
 
   for (const node of textNodes) {
-    for (const seg of tokenize(node.nodeValue)) {
+    const source = sourceOf(node);
+    sourceByNode.set(node, source);
+    for (const seg of tokenize(source)) {
       if (seg.kind === 'sep') {
         pieces.push({ node, text: seg.text, wordIdx: -1 });
         // A separator carrying ./!/? ends the preceding word's sentence.
@@ -196,6 +224,9 @@ function convertBlock(textNodes, convertFn) {
   for (const [node, parts] of byNode) {
     const joined = parts.join('');
     if (joined !== node.nodeValue) node.nodeValue = joined;
+    // Remember source→output so a later re-walk reconverts from source, not from
+    // this (euspelled) output. ?? guards nodes that produced no piece of their own.
+    memory.set(node, { src: sourceByNode.get(node) ?? node.nodeValue, out: joined });
   }
 }
 
