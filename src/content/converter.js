@@ -9,7 +9,7 @@ import { SEMANTIC } from '../disambig/semantic/index.js';
 // exactly as written — their euspellings aren't worth choosing between (a
 // surname, the Greek-letter plural, an archaic disyllabic), so the original
 // surface form is kept regardless of context.
-const KEEP_UNCHANGED = new Set(['bach', 'chis', 'ravined']);
+export const KEEP_UNCHANGED = new Set(['bach', 'chis', 'ravined']);
 
 /**
  * Converts a single word to its euspelling given surrounding token context.
