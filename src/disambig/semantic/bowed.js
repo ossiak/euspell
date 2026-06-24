@@ -18,7 +18,7 @@ const wordOf = (tok) => (tok?.word ?? '').toLowerCase().replace(/[.,!?;:'"]+$/, 
 
 // Immediately after "bowed": a noun naming a curved physical shape (bandy legs,
 // a curved edge/window) or a bowed string instrument — the /boʊd/ sense.
-const CURVED_HEAD = new Set([
+export const CURVED_HEAD = new Set([
   'legs', 'leg', 'limbs', 'plank', 'planks', 'board', 'boards', 'slat', 'slats',
   'stave', 'staves', 'rib', 'ribs', 'edge', 'edges', 'window', 'windows', 'wall',
   'walls', 'ceiling', 'arch', 'arches', 'instrument', 'instruments', 'string',

@@ -17,7 +17,7 @@ const wordOf = (tok) => (tok?.word ?? '').toLowerCase().replace(/[.,!?;:'"]+$/, 
 
 // Anywhere in the clause window: a bowed string instrument being played, which
 // makes "bowing" the violin technique → /boʊ/ ("his bowing", "bowing the cello").
-const INSTRUMENT_FIELD = new Set([
+export const INSTRUMENT_FIELD = new Set([
   'violin', 'violins', 'cello', 'cellos', 'fiddle', 'fiddles', 'viol', 'viola',
   'violinist', 'cellist', 'bowstring', 'arco', 'staccato', 'legato', 'vibrato',
 ]);
