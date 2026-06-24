@@ -4,3 +4,6 @@ node_modules/
 Thumbs.db
 *.log
 *.map
+
+# Large generated disambiguation corpora (regenerable from Euspell/all_VVZ_f.txt)
+disambig/_corpus_*.txt
