@@ -74,10 +74,16 @@ export function convert(word, tokens, idx) {
  */
 function route(key, entry, tokens, idx) {
   const { pos } = entry;
-  // NN2|VVZ diatones (e.g. "records"): plural noun → spellings[0], verb → spellings[1].
-  // A few (e.g. "leads") split three ways and carry a semantic rule, so they are
-  // skipped here and fall through to the SEMANTIC dispatch below.
-  if (pos.length === 2 && pos[0] === 'NN2' && pos[1] === 'VVZ' && !SEMANTIC.has(key)) {
+  // NN2|VVZ diatones (encodings 012 and 112, e.g. "records", "anchors"): a plural
+  // noun (spellings[0], the -s ending) vs a 3rd-sg-present verb (spellings[1], the
+  // -z ending). 012 keeps the stem and changes only the ending; 112 also respells
+  // the stem — either way the choice is the same noun-vs-verb test. The VVZ tag is
+  // always final, paired with one or more nominal/other tags (NN2, NN, NNT2, UH,
+  // …), so dispatch on the encoding rather than an exact NN2|VVZ pattern, which
+  // would miss shapes like "aids" (NN|NN2|VVZ) or "dawns" (NNT2|VVZ). The rare
+  // 3-/4-way splits (encodings 113/114: leads, bows, …) carry a semantic rule and
+  // fall through to the SEMANTIC dispatch below.
+  if ((entry.encoding === 12 || entry.encoding === 112) && pos.includes('VVZ') && !SEMANTIC.has(key)) {
     return is_VVZ(tokens, idx) ? 1 : 0;
   }
   // The clitic 's: genitive ('s, spellings[0]) vs contracted is/has ('z, [1]).
