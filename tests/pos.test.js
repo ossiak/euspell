@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { is_VVZ, is_verb_VV0, is_plural_noun } from '../src/disambig/pos.js';
+import { is_VVZ, is_verb_VV0, is_plural_noun, is_verbal_s } from '../src/disambig/pos.js';
 import { t } from './helpers.js';
 
 test('is_VVZ: subject pronoun before marks a verb', () => {
@@ -39,6 +39,22 @@ test('is_verb_VV0: subject pronoun + object marks a verb', () => {
 test('is_verb_VV0: determiner before marks a noun', () => {
   // "the use of" -> noun
   assert.equal(is_verb_VV0([t('the', 'AT'), t('use', ''), t('of', 'IO')], 1), false);
+});
+
+test('is_verbal_s: an attributive participle + noun keeps the genitive', () => {
+  // "today's featured article" — 's is genitive; "featured" modifies "article"
+  assert.equal(is_verbal_s([t('today', 'NNT1'), t("'s", 'GE'), t('featured', 'VVN'), t('article', 'NN1')], 1), false);
+  // "the author's published works" — genitive (the published works of the author)
+  assert.equal(is_verbal_s([t('the', 'AT'), t('author', 'NN1'), t("'s", 'GE'), t('published', 'VVN'), t('works', 'NN2')], 2), false);
+});
+
+test('is_verbal_s: a predicative participle or pronoun marks the contracted verb', () => {
+  // "he's gone" — contracted has
+  assert.equal(is_verbal_s([t('he', 'PPHS1'), t("'s", 'GE'), t('gone', 'VVN')], 1), true);
+  // "the bus's arriving late" — contracted is (no noun after the participle)
+  assert.equal(is_verbal_s([t('the', 'AT'), t('bus', 'NN1'), t("'s", 'GE'), t('arriving', 'VVG'), t('late', 'RR')], 2), true);
+  // "the author's published a book" — contracted has (article, not noun, after)
+  assert.equal(is_verbal_s([t('author', 'NN1'), t("'s", 'GE'), t('published', 'VVN'), t('a', 'AT1'), t('book', 'NN1')], 1), true);
 });
 
 test('is_plural_noun: a cardinal before marks a plural', () => {

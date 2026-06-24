@@ -119,19 +119,26 @@ const SUBJECT_PRON = ['PPHS1', 'PPH1', 'PPHS2', 'PPIS1', 'PPIS2', 'PPY'];
  * For the clitic 's (lexicon tag `GE|VBZ|VHZ|…`): true when it is a contracted
  * verb (is/has → 'z), false when it is the genitive marker ('s).
  *
- * Verbal 's attaches to a pronoun/clause subject ("he's") or precedes a
- * participle ("the bus's arriving / arrived"); genitive 's links a noun to a
- * following noun ("the cat's tail"). With neither signal it defaults to
- * genitive, matching the lexicon's 's-first spelling order.
+ * Verbal 's attaches to a pronoun subject ("he's") or precedes a predicative
+ * participle ("the bus's arriving", "she's gone"); genitive 's links a noun to a
+ * following noun phrase ("the cat's tail"). The participle cue alone is
+ * ambiguous, because a participle right after the 's can instead be ATTRIBUTIVE,
+ * modifying a following noun — which makes the 's a genitive ("today's featured
+ * article", "the author's published works"). So the two-after slot is consulted:
+ * a noun after the participle means attributive, hence genitive. With no verbal
+ * signal it defaults to genitive, matching the lexicon's 's-first spelling order.
  *
  * @param {Token[]} tokens
  * @param {number} idx
  * @returns {boolean}
  */
 export function is_verbal_s(tokens, idx) {
-  const [, w1b, , w1a] = contextWindow(tokens, idx);
-  if (anyExact(w1b, SUBJECT_PRON)) return true;        // "he 's …"
-  if (anyPrefix(w1a, ['VVN', 'VVG'])) return true;     // "'s gone / going"
+  const [, w1b, , w1a, w2a] = contextWindow(tokens, idx);
+  if (anyExact(w1b, SUBJECT_PRON)) return true;        // "he 's …" — contracted verb
+  // "'s" + participle: contracted is/has ("bus's arriving", "author's published a
+  // book") — unless the participle is attributive (a noun follows it), making the
+  // 's a genitive ("today's featured article", "author's published works").
+  if (anyPrefix(w1a, ['VVN', 'VVG'])) return !anyPrefix(w2a, ['NN', 'NP']);
   return false;                                         // default: genitive
 }
 
