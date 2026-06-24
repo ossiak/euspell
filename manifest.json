@@ -4,8 +4,12 @@
   "version": "0.1.0",
   "description": "Converts English webpages to reformed euspell spelling",
 
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "webNavigation"],
   "host_permissions": ["<all_urls>"],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
 
   "background": {
     "service_worker": "src/background/service-worker.js",
@@ -33,6 +37,19 @@
     "page": "src/options/options.html",
     "open_in_tab": false
   },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/pdf/viewer.html",
+        "src/pdf/viewer.css",
+        "dist/pdf-viewer.js",
+        "dist/pdf-viewer.js.map",
+        "dist/pdfjs/pdf.worker.min.mjs"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
 
   "icons": {
     "16": "icons/16.png",
