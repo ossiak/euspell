@@ -63,14 +63,14 @@ body {
 }
 
 /* The text overlay. PDF.js positions each span absolutely (inline left/top/
-   font-size/transform); we make it visible so the reformed words are what the
-   reader sees, sitting over the painted-out original glyphs. */
+   font-size/transform). It is transparent by default — the canvas underneath
+   shows the original PDF text and fonts — and only spans whose text was actually
+   reformed are made visible, sitting over the painted-out original glyphs. */
 .textLayer {
   position: absolute;
   inset: 0;
   overflow: hidden;
   line-height: 1;
-  color: #000;
 }
 
 .textLayer span {
@@ -78,6 +78,11 @@ body {
   white-space: pre;
   transform-origin: 0 0;
   cursor: text;
+  color: transparent;
+}
+
+.textLayer span.euspell-changed {
+  color: #000;
 }
 
 .textLayer ::selection {

@@ -52,20 +52,34 @@ async function renderPage(pdf, n, dpr) {
 
   await page.render({ canvasContext: ctx, viewport }).promise;
 
-  // Build the selectable text layer (positions/sizes the spans over the glyphs).
+  // Build the selectable text layer (positions/sizes a span over each glyph run).
+  // It stays transparent over the canvas, so unchanged text keeps the original
+  // PDF rendering — and its fonts — exactly as PDF.js drew it.
   const textContent = await page.getTextContent();
   const layer = new pdfjsLib.TextLayer({ textContentSource: textContent, container: textLayerDiv, viewport });
   await layer.render();
 
-  // Paint over the original glyphs on the canvas using the spans' laid-out boxes,
-  // then reform the (now visible) overlay text in place.
-  ctx.fillStyle = '#ffffff';
-  for (const span of layer.textDivs) {
-    const w = span.offsetWidth;
-    const h = span.offsetHeight;
-    if (w > 0 && h > 0) ctx.fillRect(span.offsetLeft - 1, span.offsetTop - 1, w + 2, h + 2);
-  }
+  // Record each span's original text and laid-out box, then reform the overlay.
+  const spans = layer.textDivs;
+  const originals = spans.map((s) => ({
+    text: s.textContent,
+    x: s.offsetLeft,
+    y: s.offsetTop,
+    w: s.offsetWidth,
+    h: s.offsetHeight,
+  }));
   walkTextNodes(textLayerDiv, convert);
+
+  // Only where the text actually changed: paint over the original glyphs (using
+  // the recorded original box, so coverage doesn't depend on the new word's
+  // width) and reveal the reformed span. Everything else is left untouched.
+  ctx.fillStyle = '#ffffff';
+  spans.forEach((span, i) => {
+    const o = originals[i];
+    if (span.textContent === o.text) return;
+    if (o.w > 0 && o.h > 0) ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
+    span.classList.add('euspell-changed');
+  });
 
   page.cleanup();
 }
