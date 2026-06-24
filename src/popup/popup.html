@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../../icons/48.png" alt="" width="22" height="22" />
+      <h1>Euspell</h1>
+    </header>
+
+    <label class="row">
+      <span>Convert pages</span>
+      <input type="checkbox" id="enabled" />
+    </label>
+
+    <label class="row" id="siteRow" hidden>
+      <span>On <strong id="host"></strong></span>
+      <input type="checkbox" id="site" />
+    </label>
+
+    <p class="hint" id="hint"></p>
+
+    <footer>
+      <button type="button" id="options" class="link">Options</button>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="../../icons/48.png" alt="" width="28" height="28" />
+        <h1>Euspell options</h1>
+      </header>
+
+      <section>
+        <label class="row">
+          <span>
+            Convert pages
+            <small>Turn the whole extension on or off.</small>
+          </span>
+          <input type="checkbox" id="enabled" />
+        </label>
+      </section>
+
+      <section>
+        <h2>Sites turned off</h2>
+        <p class="muted" id="empty">No sites turned off. Use the popup’s “On this
+          site” switch, or add one below.</p>
+        <ul id="sites"></ul>
+        <form id="addForm">
+          <input type="text" id="addInput" placeholder="example.com" autocomplete="off" />
+          <button type="submit">Add</button>
+        </form>
+      </section>
+
+      <p class="muted note">
+        Euspell converts text entirely on your device — it sends nothing to any
+        server.
+      </p>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>

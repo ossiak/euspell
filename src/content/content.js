@@ -8,8 +8,8 @@ import { walkTextNodes } from './dom-walker.js';
   if (window.__euspellLoaded) return;
   window.__euspellLoaded = true;
 
-  const { enabled = true } = await chrome.storage.sync.get('enabled');
-  if (!enabled) return;
+  const { enabled = true, disabledSites = [] } = await chrome.storage.sync.get(['enabled', 'disabledSites']);
+  if (!enabled || disabledSites.includes(location.hostname)) return;
 
   walkTextNodes(document.body, convert);
 
