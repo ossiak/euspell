@@ -34,6 +34,22 @@ test('sloughs: sense-first (mire/backwater/shed)', () => {
   assert.equal(conv([['the', 'AT'], ['mucosa', 'NN1'], ['sloughs', ''], ['off', 'RP']], 'sloughs'), 'sloffz');
 });
 
+test('light-verb stubs (202): verb-default, noun on a noun-phrase cue', () => {
+  // verb reading is the default for these high-frequency intransitives
+  assert.equal(conv([['she', 'PPHS1'], ['looks', ''], ['tired', 'JJ']], 'looks'), 'lookz');
+  assert.equal(conv([['he', 'PPHS1'], ['wants', ''], ['it', 'PPH1']], 'wants'), 'wantz');
+  assert.equal(conv([['that', 'DD1'], ['sounds', ''], ['good', 'JJ']], 'sounds'), 'soundz');
+  assert.equal(conv([['it', 'PPH1'], ['means', ''], ['nothing', 'PN1']], 'means'), 'meanz');
+  // noun reading only on a clear noun-phrase cue before the target
+  assert.equal(conv([['her', 'APPGE'], ['looks', ''], ['faded', 'VVD']], 'looks'), 'looks');
+  assert.equal(conv([['good', 'JJ'], ['looks', ''], ['fade', 'VV0']], 'looks'), 'looks');
+  assert.equal(conv([['his', 'APPGE'], ['wants', ''], ['and', 'CC']], 'wants'), 'wants');
+  assert.equal(conv([['strange', 'JJ'], ['sounds', ''], ['echoed', 'VVD']], 'sounds'), 'sounds');
+  // "means" idioms: "by means of" (II32 after a preposition), "the means"
+  assert.equal(conv([['by', 'II31'], ['means', 'II32'], ['of', 'II33']], 'means'), 'means');
+  assert.equal(conv([['the', 'AT'], ['means', ''], ['justify', 'VV0']], 'means'), 'means');
+});
+
 test('two-way semantic words (tear, wound)', () => {
   assert.equal(conv([['a', 'AT1'], ['tear', ''], ['rolled', 'VVD'], ['down', 'RP']], 'tear'), 'tear');   // teardrop
   assert.equal(conv([['a', 'AT1'], ['ragged', 'JJ'], ['tear', ''], ['in', 'II'], ['the', 'AT'], ['cloth', 'NN1']], 'tear'), 'taer'); // rip

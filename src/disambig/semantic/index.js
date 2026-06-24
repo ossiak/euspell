@@ -27,11 +27,15 @@ import { disambiguate_does } from './does.js';
 import { disambiguate_dogged } from './dogged.js';
 import { disambiguate_dove } from './dove.js';
 import { disambiguate_foreread } from './foreread.js';
+import { disambiguate_gets } from './gets.js';
 import { disambiguate_jagged } from './jagged.js';
 import { disambiguate_lead } from './lead.js';
 import { disambiguate_leads } from './leads.js';
 import { disambiguate_learned } from './learned.js';
 import { disambiguate_longed } from './longed.js';
+import { disambiguate_looks } from './looks.js';
+import { disambiguate_makes } from './makes.js';
+import { disambiguate_means } from './means.js';
 import { disambiguate_minute } from './minute.js';
 import { disambiguate_misread } from './misread.js';
 import { disambiguate_outread } from './outread.js';
@@ -52,6 +56,9 @@ import { disambiguate_showers } from './showers.js';
 import { disambiguate_sightread } from './sightread.js';
 import { disambiguate_slough } from './slough.js';
 import { disambiguate_sloughed } from './sloughed.js';
+import { disambiguate_sounds } from './sounds.js';
+import { disambiguate_thinks } from './thinks.js';
+import { disambiguate_wants } from './wants.js';
 import { disambiguate_sloughs } from './sloughs.js';
 import { disambiguate_sloughier } from './sloughier.js';
 import { disambiguate_sloughiest } from './sloughiest.js';
@@ -93,11 +100,15 @@ export const SEMANTIC = new Map([
   ['dogged', disambiguate_dogged],
   ['dove', disambiguate_dove],
   ['foreread', disambiguate_foreread],
+  ['gets', disambiguate_gets],
   ['jagged', disambiguate_jagged],
   ['lead', disambiguate_lead],
   ['leads', disambiguate_leads],
   ['learned', disambiguate_learned],
   ['longed', disambiguate_longed],
+  ['looks', disambiguate_looks],
+  ['makes', disambiguate_makes],
+  ['means', disambiguate_means],
   ['minute', disambiguate_minute],
   ['misread', disambiguate_misread],
   ['outread', disambiguate_outread],
@@ -123,12 +134,15 @@ export const SEMANTIC = new Map([
   ['sloughiness', disambiguate_sloughiness],
   ['sloughs', disambiguate_sloughs],
   ['sloughy', disambiguate_sloughy],
+  ['sounds', disambiguate_sounds],
   ['tear', disambiguate_tear],
   ['tearing', disambiguate_tearing],
   ['tears', disambiguate_tears],
+  ['thinks', disambiguate_thinks],
   ['unbowed', disambiguate_unbowed],
   ['unbowing', disambiguate_unbowing],
   ['uncleanly', disambiguate_uncleanly],
+  ['wants', disambiguate_wants],
   ['wicked', disambiguate_wicked],
   ['wind', disambiguate_wind],
   ['winding', disambiguate_winding],

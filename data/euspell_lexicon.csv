@@ -72771,7 +72771,7 @@ gether,VV0,500,[]
 gethered,VVD|VVN,521,getherd
 gethering,VVG,500,[]
 gethers,VVZ,511,getherz
-gets,NN2|VVZ,012,gets|getz
+gets,NN2|VVZ,202,gets|getz
 gettable,JJ,000,[]
 getter,NN1|V0,000,[]
 gettered,VVD|VVN,021,getterd
@@ -74609,7 +74609,7 @@ goemin,NN,000,[]
 goer,NN1,000,[]
 goering,NP,000,[]
 goers,NN2,000,[]
-goes,NN2|VVZ,012,goes|goez
+goes,VVZ,011,goez
 goethals,NP,000,[]
 goethe,NP,000,[]
 goethite,NN,000,[]
@@ -104296,7 +104296,7 @@ lookers,NN2,000,[]
 looking,JJ|VVG,000,[]
 lookout,NN1,000,[]
 lookouts,NN2,000,[]
-looks,NN2|VVZ,012,looks|lookz
+looks,NN2|VVZ,202,looks|lookz
 lookup,NN1,000,[]
 lookups,NN2,000,[]
 loom,NN1|VV0,000,[]
@@ -106368,7 +106368,7 @@ maker,NN1,000,[]
 makereadies,NN2,101,makereddies
 makeready,NN1,101,makereddy
 makers,NN2,000,[]
-makes,NN2|VVZ,012,makes|makez
+makes,NN2|VVZ,202,makes|makez
 makeshift,JJ|NN1,000,[]
 makeshifts,NN2,000,[]
 makeup,NN|NN1,000,[]
@@ -108527,7 +108527,7 @@ meaningly,RR,000,[]
 meanings,NN2,000,[]
 meanly,RR,000,[]
 meanness,NN,000,[]
-means,II32|NN|NN2|RR33|VVZ,012,means|meanz
+means,II32|NN|NN2|RR33|VVZ,202,means|meanz
 meanspirited,JJ,000,[]
 meant,VVD|VVN|VVNK,601,ment
 meantime,NN|NNT1,000,[]
@@ -170453,7 +170453,7 @@ soundproof,JJ|VV0,000,[]
 soundproofed,JJ|VVD|VVN,021,soundproofd
 soundproofing,JJ|NN|VVG,000,[]
 soundproofs,VVZ,011,soundproofz
-sounds,NN2|VVZ,012,sounds|soundz
+sounds,NN2|VVZ,202,sounds|soundz
 soundstage,NN1,000,[]
 soundstages,NN2,000,[]
 soundtrack,NN1,000,[]
@@ -182879,7 +182879,7 @@ thinker,NN1,000,[]
 thinkers,NN2,000,[]
 thinking,JJ|NN|VVG,000,[]
 thinko,NN1,000,[]
-thinks,NN2|VVZ,012,thinks|thinkz
+thinks,NN2|VVZ,202,thinks|thinkz
 thinly,RR,000,[]
 thinned,JJ|VVD|VVN,021,thind
 thinner,JJR|NN|NN1,000,[]
@@ -200205,7 +200205,7 @@ wantonly,RR,000,[]
 wantonness,NN,000,[]
 wantons,NN2,000,[]
 wantrust,NN,500,[]
-wants,NN2|VVZ,012,wants|wantz
+wants,NN2|VVZ,202,wants|wantz
 wantwit,NN1,000,[]
 wantwits,NN2,000,[]
 wanty,NN1,000,[]
