@@ -12,36 +12,33 @@ import { createRateGuard } from './reapply-guard.js';
   const { enabled = true, disabledSites = [] } = await chrome.storage.sync.get(['enabled', 'disabledSites']);
   if (!enabled || disabledSites.includes(location.hostname)) return;
 
-  // characterData is watched (not just childList) so reformed text survives a
-  // page that rewrites existing nodes in place (SPA re-renders, live regions).
-  // That is also what makes a naive observer loop — see the safeguards below.
+  // childList catches inserted content (SPA renders); characterData catches text
+  // rewritten in place (live regions, re-renders). Watching characterData is what
+  // lets reformed text survive a re-render — and what makes a naive observer loop,
+  // hence the safeguards below.
   const OBSERVE = { childList: true, subtree: true, characterData: true };
   const observer = new MutationObserver(onMutations);
 
   walkTextNodes(document.body, convert);
   observer.observe(document.body, OBSERVE);
 
-  // Element subtrees needing (re)conversion, coalesced and flushed once per
-  // animation frame so a burst of mutations is handled in a single pass.
+  // Element subtrees needing (re)conversion, coalesced and flushed on a macrotask
+  // so a burst of mutations is handled in one pass. setTimeout (not rAF) so a
+  // page loading in a background tab is still converted.
   const pending = new Set();
   let scheduled = false;
 
-  // Bound the work a hostile or pathological page can cause:
-  //  - per text node: a page that reverts our edit re-triggers conversion; the
-  //    guard allows a few rounds then freezes that node, so the ping-pong can't
-  //    spin forever (a slow-updating node stays under the limit and keeps going).
-  //  - global: if we end up flushing on many consecutive frames, the page is
-  //    churning faster than we can settle — stop observing entirely.
+  // Per text node guard: a page that reverts our edit re-triggers conversion;
+  // allow a few rounds, then freeze that node so a tight revert loop can't spin
+  // forever. A slowly updating node (a clock) stays under the limit and keeps
+  // converting — only runaway churn on one node is cut, never the whole observer.
   const allow = createRateGuard({ windowMs: 1000, maxPerWindow: 12 });
-  const MAX_STREAK = 300; // ~5s of back-to-back frames
-  let streak = 0;
-  let lastFlush = 0;
 
   function onMutations(mutations) {
     for (const m of mutations) {
       if (m.type === 'characterData') {
-        const tn = m.target;
-        if (tn.parentElement && allow(tn)) pending.add(tn.parentElement);
+        const el = m.target.parentElement;
+        if (el && allow(m.target)) pending.add(el);
       } else {
         for (const node of m.addedNodes) {
           if (node.nodeType === Node.ELEMENT_NODE) pending.add(node);
@@ -51,24 +48,15 @@ import { createRateGuard } from './reapply-guard.js';
     }
     if (pending.size && !scheduled) {
       scheduled = true;
-      requestAnimationFrame(flush);
+      setTimeout(flush, 0);
     }
   }
 
   function flush() {
     scheduled = false;
-    const now = performance.now();
-    streak = now - lastFlush < 50 ? streak + 1 : 0;
-    lastFlush = now;
-    if (streak > MAX_STREAK) {
-      observer.disconnect();
-      pending.clear();
-      return;
-    }
-
     const roots = [...pending];
     pending.clear();
-    // Disconnect across our writes so they are never re-observed (no
+    // Disconnect across our own writes so they are not re-observed (no
     // self-trigger). dom-walker reconverts each node from its remembered original
     // source, so already-reformed siblings in a re-walked block are left as-is.
     // JS is single-threaded, so no page mutation can slip in during this pass.
@@ -79,6 +67,4 @@ import { createRateGuard } from './reapply-guard.js';
       observer.observe(document.body, OBSERVE);
     }
   }
-
-  chrome.runtime.connect().onDisconnect.addListener(() => observer.disconnect());
 })();
