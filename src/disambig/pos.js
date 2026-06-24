@@ -58,11 +58,21 @@ const ADVERB = ['RR', 'RG', 'RP', 'RL', 'RT', 'RA'];
  * present-tense verb (CLAWS7: VVZ) rather than a plural noun (NN2).
  *
  * Scoped to words tagged exactly `NN2|VVZ` in the lexicon (diatones such as
- * "records"): the only question is noun-subject/object vs. finite verb. Votes
- * over the two-before / two-after window — a 3rd-sg subject or a following
- * object NP argues for VVZ; a determiner/preposition before, or a
- * plural-agreeing verb after, argues for the NN2 subject reading. With no net
- * evidence it returns false, matching the noun-first lexicon fallback.
+ * "records", "tools", "functions"). The plural noun is the unmarked default —
+ * the verb is taken only when the context confirms it — because the commonest
+ * source of error is a noun-modifier compound ("learning tools", "computer
+ * functions", "bank accounts"), where a noun sits right before the target and
+ * naively looks like a subject. Such a preceding common noun argues for the
+ * compound noun, not the verb.
+ *
+ * VVZ is confirmed by: an unambiguous 3rd-sg subject immediately before (a
+ * pronoun "it/he/she", or a relativiser "which/who/that"); a complement only a
+ * finite verb takes immediately after (an object pronoun "records them", or an
+ * object NP "records the data"); or a clear subject NP — a proper noun, or a
+ * determiner + common-noun — followed by such a complement ("John records his
+ * notes", "the mucosa sloughs off"). A preceding determiner/preposition/noun,
+ * or a following plural-agreeing verb, argues for the noun. With no net
+ * evidence it returns false (NN2), the lexicon's noun-first default.
  *
  * @param {Token[]} tokens
  * @param {number} idx
@@ -72,25 +82,32 @@ export function is_VVZ(tokens, idx) {
   const [w2b, w1b, , w1a] = contextWindow(tokens, idx);
   let vote = 0; // > 0 ⇒ VVZ (verb); ≤ 0 ⇒ NN2 (noun)
 
-  // --- Word immediately BEFORE the target ----------------------------------
-  if (anyExact(w1b, SUBJECT_3SG)) vote += 3;                   // "it records"
-  else if (anyPrefix(w1b, REL_SUBJECT)) vote += 2;            // "device which records"
-  if (anyExact(w1b, DETERMINER) || anyPrefix(w1b, PREMODIFIER)) vote -= 3; // "the/old/two records"
-  if (anyPrefix(w1b, PREPOSITION)) vote -= 3;                 // "of records"
-  if (anyExact(w1b, ['VM', 'TO'])) vote -= 2;                 // "will/to record(s)" — not VVZ
+  // --- BEFORE: only an unambiguous 3rd-sg subject argues for the verb. ------
+  if (anyExact(w1b, SUBJECT_3SG)) vote += 3;                  // "it records"
+  else if (anyPrefix(w1b, REL_SUBJECT)) vote += 2;           // "device which records"
+
+  // Noun-phrase context before → the plural-noun reading (the default).
+  if (anyExact(w1b, DETERMINER) || anyPrefix(w1b, PREMODIFIER)) vote -= 3; // "the/old/two tools"
+  if (anyPrefix(w1b, PREPOSITION)) vote -= 3;                 // "of tools"
+  if (anyPrefix(w1b, ['NN'])) vote -= 2;                      // "learning tools" — compound modifier
+  if (anyExact(w1b, ['VM', 'TO'])) vote -= 3;                 // "will/to tool(s)" — never VVZ
   else if (anyPrefix(w1b, VERB_ANY) && !anyExact(w1b, SUBJECT_3SG)) vote -= 1; // "plays records" (object)
-  if (anyPrefix(w1b, ADVERB)) vote += 1;                      // "regularly records"
 
-  // Subject pattern: (determiner) + singular noun + target → the target is the verb.
-  if (anyExact(w1b, SINGULAR_NOUN) &&
-      (anyExact(w2b, DETERMINER) || anyPrefix(w2b, PREMODIFIER))) vote += 2; // "the machine records"
+  // --- AFTER: a complement only a finite verb takes argues for the verb. ----
+  if (anyExact(w1a, PLURAL_VERB)) vote -= 3;                  // "tools are / show" — noun subject
+  if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;             // "records them"
+  if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "records the / his X"
+  if (anyPrefix(w1a, ['RR'])) vote += 1;                     // "functions well"
 
-  // --- Word immediately AFTER the target -----------------------------------
-  if (anyExact(w1a, PLURAL_VERB)) vote -= 3;                  // "records are / records show"
-  if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "records the / his meeting"
-  if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 2;             // "records them"
-  if (anyPrefix(w1a, ['NN', 'NP'])) vote += 1;               // "records data" (bare object)
-  if (anyPrefix(w1a, ADVERB)) vote += 1;                     // "records quickly"
+  // A clear subject NP + target + verb complement → a finite verb: a proper-noun
+  // subject ("John records his notes"), or a determiner + common-noun subject
+  // ("the mucosa sloughs off"). The trailing complement is what separates this
+  // from a bare "[det] noun noun" compound ("the computer functions list").
+  const subjectNoun = anyPrefix(w1b, ['NP']) ||
+    (anyExact(w1b, SINGULAR_NOUN) && anyExact(w2b, DETERMINER));
+  const verbComplement = anyPrefix(w1a, OBJECT_PRONOUN) || anyExact(w1a, DETERMINER) ||
+    anyPrefix(w1a, ['APPGE', 'RR', 'RP']);
+  if (subjectNoun && verbComplement) vote += 3;
 
   return vote > 0;
 }
