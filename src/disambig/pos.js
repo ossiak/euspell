@@ -54,6 +54,28 @@ const SINGULAR_NOUN = ['NN1', 'NNU1', 'NNL1', 'NNT1', 'NNO1', 'NNB', 'NP1'];
 const ADVERB = ['RR', 'RG', 'RP', 'RL', 'RT', 'RA'];
 
 /**
+ * True when `token` can ONLY be an adverb — every candidate tag in its set is an
+ * adverb tag. Only such a word is looked through as an intervening adverb ("John
+ * regularly records", "records also show").
+ *
+ * The strict, all-tags test is deliberate. The tagger is lexical (tagger.js): it
+ * reports a word's full CLAWS7 candidate set, and ordinary determiners,
+ * prepositions, and adjectives carry stray ditto-adverb tags ("the" AT|…|RR22,
+ * "on" II|…|RP|RR22, "large" JJ|…|RR22|RR33). A loose "has an adverb tag" test
+ * would treat those as adverbs and skip them — discarding the very determiner,
+ * preposition, or adjective cue that settles the noun reading ("large bumps on
+ * the edge" wrongly read as a verb). On a cleanly single-tagged token this is
+ * identical to a plain adverb test.
+ *
+ * @param {Token} token
+ * @returns {boolean}
+ */
+function isPureAdverb(token) {
+  const tags = tagsOf(token);
+  return tags.length > 0 && tags.every((t) => ADVERB.some((p) => t.startsWith(p)));
+}
+
+/**
  * Returns true if the token at `idx` is functioning as a 3rd-person-singular
  * present-tense verb (CLAWS7: VVZ) rather than a plural noun (NN2).
  *
@@ -87,7 +109,10 @@ const ADVERB = ['RR', 'RG', 'RP', 'RL', 'RT', 'RA'];
 export function is_VVZ(tokens, idx) {
   const [w3b, w2b, w1b, , w1a, w2a] = contextWindow(tokens, idx);
   // Look through a single intervening adverb to the real neighbour on each side.
-  const beforeAdv = anyPrefix(w1b, ADVERB);
+  // Only a word that can exclusively be an adverb is skipped (see isPureAdverb),
+  // so a determiner/preposition/adjective carrying a stray ditto-adverb tag keeps
+  // its role and its decisive noun cue is not discarded ("large bumps on …").
+  const beforeAdv = isPureAdverb(w1b);
   const left = beforeAdv ? w2b : w1b;        // nearest non-adverb before
   const leftBack = beforeAdv ? w3b : w2b;    // the word before `left`
   let vote = 0; // > 0 ⇒ VVZ (verb); ≤ 0 ⇒ NN2 (noun)
@@ -106,7 +131,7 @@ export function is_VVZ(tokens, idx) {
   // --- AFTER: a complement only a finite verb takes argues for the verb. ----
   // A plural-agreeing verb after (through an adverb) marks the noun subject:
   // "records show", "records also show".
-  const afterVerb = anyPrefix(w1a, ADVERB) ? w2a : w1a;
+  const afterVerb = isPureAdverb(w1a) ? w2a : w1a;
   if (anyExact(afterVerb, PLURAL_VERB)) vote -= 3;
   if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;            // "records them"
   if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "records the / his X"

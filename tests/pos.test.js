@@ -42,6 +42,22 @@ test('is_VVZ: wider window — adverb look-through and determiner across an adje
   assert.equal(is_VVZ([t('the', 'AT'), t('computer', 'NN1'), t('functions', ''), t('list', 'NN1')], 2), false);
 });
 
+test('is_VVZ: a determiner/adjective with a stray adverb tag is not skipped (lexical tags)', () => {
+  // The tagger is lexical: it reports every candidate tag, so "large" carries
+  // ditto-adverb tags (RR22/RR33) and "on"/"the" carry RP/RR. The adverb
+  // look-through must NOT treat those as adverbs and skip past them, or the
+  // adjective/determiner cue is lost. "large 'bumps' on the edge" -> NN2.
+  const bumps = [
+    t('tubercles', 'NN2'), t('or', 'CC'), t('large', 'JJ|NN1|RR22|RR33'),
+    t('bumps', ''), t('on', 'II|II21|RP|RR22|RR33'), t('the', 'AT|RR22'), t('edge', 'NN1|VV0'),
+  ];
+  assert.equal(is_VVZ(bumps, 3), false);
+  // A determiner carrying a ditto-adverb tag still blocks the verb: "the records".
+  assert.equal(is_VVZ([t('the', 'AT|RR22'), t('records', ''), t('show', 'VV0|NN1')], 1), false);
+  // A genuinely pure adverb is still looked through: "it never records the data".
+  assert.equal(is_VVZ([t('it', 'PPH1'), t('never', 'RR'), t('records', ''), t('the', 'AT'), t('data', 'NN1')], 2), true);
+});
+
 test('is_verb_VV0: subject pronoun + object marks a verb', () => {
   // "they use it" -> verb
   assert.equal(is_verb_VV0([t('they', 'PPHS2'), t('use', ''), t('it', 'PPH1')], 1), true);
