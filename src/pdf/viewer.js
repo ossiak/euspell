@@ -34,6 +34,28 @@ function setStatus(msg) {
   if (status) status.textContent = msg;
 }
 
+/**
+ * Bold/italic of a PDF.js font, mirroring how its own canvas renderer builds
+ * ctx.font (black -> 900, bold -> bold, italic -> italic). PDF.js bakes weight
+ * and slant into the font face rather than a CSS weight on the span, so we read
+ * them from the font object in commonObjs. Defaults to normal if unresolved.
+ *
+ * @param {import('pdfjs-dist').PDFPageProxy} page
+ * @param {string} fontName  the item's loaded font name (commonObjs key)
+ * @returns {{ weight: string, style: string }}
+ */
+function fontFlags(page, fontName) {
+  try {
+    const f = page.commonObjs.get(fontName);
+    return {
+      weight: f.black ? '900' : f.bold ? 'bold' : 'normal',
+      style: f.italic ? 'italic' : 'normal',
+    };
+  } catch {
+    return { weight: 'normal', style: 'normal' };
+  }
+}
+
 async function renderPage(pdf, n, dpr) {
   const page = await pdf.getPage(n);
   const viewport = page.getViewport({ scale: RENDER_SCALE });
@@ -75,15 +97,28 @@ async function renderPage(pdf, n, dpr) {
   // Make sure the embedded fonts PDF.js registered are ready for canvas drawing.
   await document.fonts.ready;
 
+  // Each str-bearing text item produces one span, in order; map the item's font
+  // bold/italic flags onto its span (skipping marked-content boundary items,
+  // which produce no span).
+  const flagsBySpan = [];
+  let spanIdx = 0;
+  for (const it of textContent.items) {
+    if (it.str === undefined) continue;
+    flagsBySpan[spanIdx++] = fontFlags(page, it.fontName);
+  }
+
   // Record each span's original text, laid-out box, and resolved font BEFORE
-  // reforming (which changes the span's text and measured width).
+  // reforming (which changes the span's text and measured width). The font keeps
+  // the original size/family and the detected weight/slant, so a reformed word
+  // drawn in a bold or italic run stays bold or italic.
   const spans = layer.textDivs;
-  const originals = spans.map((s) => {
+  const originals = spans.map((s, i) => {
     const cs = getComputedStyle(s);
+    const fl = flagsBySpan[i] || { weight: 'normal', style: 'normal' };
     return {
       text: s.textContent,
       x: s.offsetLeft, y: s.offsetTop, w: s.offsetWidth, h: s.offsetHeight,
-      font: `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`,
+      font: `${fl.style} ${fl.weight} ${cs.fontSize} ${cs.fontFamily}`,
     };
   });
   walkTextNodes(textLayerDiv, convert);
