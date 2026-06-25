@@ -115,9 +115,14 @@ async function renderPage(pdf, n, dpr) {
   const originals = spans.map((s, i) => {
     const cs = getComputedStyle(s);
     const fl = flagsBySpan[i] || { weight: 'normal', style: 'normal' };
+    // PDF.js stretches each span's glyphs to the PDF's advance width via --scale-x
+    // (it doesn't change offsetWidth, which stays the natural width). The real
+    // width the original text occupies is offsetWidth * scale-x — use that so the
+    // reformed text fills the same extent and lines keep their length.
+    const sx = parseFloat(cs.getPropertyValue('--scale-x')) || 1;
     return {
       text: s.textContent,
-      x: s.offsetLeft, y: s.offsetTop, w: s.offsetWidth, h: s.offsetHeight,
+      x: s.offsetLeft, y: s.offsetTop, w: s.offsetWidth * sx, h: s.offsetHeight,
       font: `${fl.style} ${fl.weight} ${cs.fontSize} ${cs.fontFamily}`,
     };
   });
@@ -143,22 +148,19 @@ async function renderPage(pdf, n, dpr) {
     ctx.fillStyle = paper;
     ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
 
-    // Draw the reformed word in the original ink colour with the original font.
-    // Compress to the original slot only when the reformed word is wider, so it
-    // never overruns the next word; otherwise keep the font's natural width.
+    // Draw the reformed word in the original ink colour with the original font,
+    // fitting it to the original word's box width. A shorter or longer reform then
+    // keeps the same horizontal extent, so lines don't shrink or overrun — the
+    // same way PDF.js fits the original glyphs to the PDF's advance width.
     ctx.fillStyle = ink;
     ctx.font = o.font;
     const m = ctx.measureText(text);
     const baseline = o.y + m.fontBoundingBoxAscent;
-    if (m.width > o.w) {
-      ctx.save();
-      ctx.translate(o.x, baseline);
-      ctx.scale(o.w / m.width, 1);
-      ctx.fillText(text, 0, 0);
-      ctx.restore();
-    } else {
-      ctx.fillText(text, o.x, baseline);
-    }
+    ctx.save();
+    ctx.translate(o.x, baseline);
+    if (m.width > 0) ctx.scale(o.w / m.width, 1);
+    ctx.fillText(text, 0, 0);
+    ctx.restore();
   }
 
   page.cleanup();
