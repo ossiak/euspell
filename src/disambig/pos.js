@@ -87,15 +87,15 @@ function isPureAdverb(token) {
  * naively looks like a subject. Such a preceding common noun argues for the
  * compound noun, not the verb.
  *
- * VVZ is confirmed by: an unambiguous 3rd-sg subject before (a pronoun
- * "it/he/she", or a relativiser "which/who/that"); a complement only a finite
- * verb takes after (an object pronoun "records them", or an object NP "records
- * the data"); or a clear subject NP — a proper noun, or a determiner +
- * (optional adjective) + common noun — followed by such a complement ("John
- * records his notes", "the new machine records the data", "the mucosa sloughs
- * off"). A preceding determiner/preposition/noun, or a following plural-agreeing
- * verb, argues for the noun. With no net evidence it returns false (NN2), the
- * lexicon's noun-first default.
+ * VVZ is confirmed by: an unambiguous subject before — a 3rd-sg pronoun
+ * "it/he/she", a relativiser "which/who/that", or a proper noun ("John records",
+ * "Mary speaks"); a complement only a finite verb takes after (an object pronoun
+ * "records them", or an object NP "records the data"); or a determiner +
+ * (optional adjective) + common-noun subject followed by such a complement ("the
+ * new machine records the data", "the mucosa sloughs off"). A preceding
+ * determiner/preposition/common-noun, or a following plural-agreeing verb, argues
+ * for the noun ("John records show errors" → noun). With no net evidence it
+ * returns false (NN2), the lexicon's noun-first default.
  *
  * Reads the three-before / three-after window so a single intervening adverb is
  * looked through on each side ("John regularly records his notes", "the tools
@@ -117,9 +117,10 @@ export function is_VVZ(tokens, idx) {
   const leftBack = beforeAdv ? w3b : w2b;    // the word before `left`
   let vote = 0; // > 0 ⇒ VVZ (verb); ≤ 0 ⇒ NN2 (noun)
 
-  // --- BEFORE: only an unambiguous 3rd-sg subject argues for the verb. ------
+  // --- BEFORE: an unambiguous subject before argues for the verb. ----------
   if (anyExact(left, SUBJECT_3SG)) vote += 3;                 // "it records"
   else if (anyPrefix(left, REL_SUBJECT)) vote += 2;          // "device which records"
+  else if (anyPrefix(left, ['NP'])) vote += 2;              // "John records" — proper-noun subject
 
   // Noun-phrase context before → the plural-noun reading (the default).
   if (anyExact(left, DETERMINER) || anyPrefix(left, PREMODIFIER)) vote -= 3; // "the/old/two tools"

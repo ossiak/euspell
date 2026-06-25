@@ -31,6 +31,17 @@ test('is_VVZ: a confirmed subject still marks the verb', () => {
   assert.equal(is_VVZ([t('the', 'AT'), t('mucosa', 'NN1'), t('sloughs', ''), t('off', 'RP')], 2), true);
 });
 
+test('is_VVZ: a proper-noun subject marks the verb without needing a complement', () => {
+  // "John runs" / "Mary walks" — proper noun subject, nothing after
+  assert.equal(is_VVZ([t('John', 'NP1'), t('runs', '')], 1), true);
+  assert.equal(is_VVZ([t('Mary', 'NP1'), t('walks', ''), t('.', '.')], 1), true);
+  // through an adverb: "John regularly speaks"
+  assert.equal(is_VVZ([t('John', 'NP1'), t('regularly', 'RR'), t('speaks', '')], 2), true);
+  // ...but a following plural-agreeing verb still marks the noun:
+  // "John records show errors" — "John records" is the subject NP of "show"
+  assert.equal(is_VVZ([t('John', 'NP1'), t('records', ''), t('show', 'VV0'), t('errors', 'NN2')], 1), false);
+});
+
 test('is_VVZ: wider window — adverb look-through and determiner across an adjective', () => {
   // adverb between subject and verb: "John regularly records his notes"
   assert.equal(is_VVZ([t('John', 'NP1'), t('regularly', 'RR'), t('records', ''), t('his', 'APPGE'), t('notes', 'NN2')], 2), true);
