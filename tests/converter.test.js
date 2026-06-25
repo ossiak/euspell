@@ -1,12 +1,22 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { convert } from '../src/content/converter.js';
+import { tagWord } from '../src/content/tagger.js';
 import { t, sentence } from './helpers.js';
 
-/** convert the target word in a `[word, tag]` sentence. */
+/**
+ * Convert the target word in a `[word, tag]` sentence. Context words are tagged
+ * by tagWord (the full lexicon candidate set), exactly as the runtime does —
+ * the hand-written tags in each pair are ignored for context, so a test can't
+ * accidentally feed a single tag where production sees a ditto-tag set (e.g.
+ * "the" is AT|AT1|II42|JJ43|RR22|… , not bare AT). The target word is left
+ * untagged, as it is when convert() is called.
+ */
 function conv(pairs, target) {
   const { tokens, idx } = sentence(pairs, target);
-  tokens[idx] = t(tokens[idx].word, ''); // the word under conversion is untagged
+  for (let i = 0; i < tokens.length; i++) {
+    tokens[i] = t(tokens[i].word, i === idx ? '' : tagWord(tokens[i].word));
+  }
   return convert(tokens[idx].word, tokens, idx);
 }
 

@@ -17,5 +17,12 @@ import { data as contractions } from '../../dist/contractions.js';
 export function tagWord(word) {
   const key = word.toLowerCase();
   const entry = lexicon.get(key) ?? abbreviations.get(key) ?? contractions.get(key);
-  return entry ? entry.pos.join('|') : '';
+  if (entry) return entry.pos.join('|');
+  // A digit-initial token ("3", "1999", "2nd") is a cardinal numeral. The
+  // lexicon holds only spelled-out numbers ("three"), so without this a numeric
+  // neighbor would tag as unknown and lose its determiner-like noun cue ("the 3
+  // records" vs "the three records"). CLAWS7 MC; ordinals fold to the same
+  // pre-modifier family downstream, so MC suffices.
+  if (/^\d/.test(key)) return 'MC';
+  return '';
 }

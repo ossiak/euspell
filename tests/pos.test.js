@@ -1,25 +1,20 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { is_VVZ, is_VVZ_resolved, vvzScore, is_verb_VV0, is_plural_noun, is_verbal_s } from '../src/disambig/pos.js';
-import { VVZ_PRIOR } from '../src/disambig/vvz-prior.js';
+import { is_VVZ, is_VVZ_svm, is_verb_VV0, is_plural_noun, is_verbal_s } from '../src/disambig/pos.js';
 import { t } from './helpers.js';
 
-test('is_VVZ_resolved adds the per-word prior to the context vote', () => {
-  // A word with a verb-leaning prior, in a neutral context (no cues -> score 0):
-  const [verbWord] = [...VVZ_PRIOR].find(([, s]) => s > 0);
-  const [nounWord] = [...VVZ_PRIOR].find(([, s]) => s < 0);
-  assert.equal(vvzScore([t(verbWord, '')], 0), 0);            // context is neutral
-  assert.equal(is_VVZ([t(verbWord, '')], 0), false);          // pure context: noun default
-  assert.equal(is_VVZ_resolved([t(verbWord, '')], 0), true);  // prior flips it to verb
-  assert.equal(is_VVZ_resolved([t(nounWord, '')], 0), false); // noun prior stays noun
-  // A word with no prior falls back to context-only.
-  assert.equal(is_VVZ_resolved([t('zzqq', '')], 0), is_VVZ([t('zzqq', '')], 0));
-});
-
-test('is_VVZ_resolved: strong context still overrides the prior', () => {
-  // determiner immediately before (-3) overrides a moderate verb prior
-  const [w] = [...VVZ_PRIOR].find(([, s]) => s >= 1 && s <= 3);
-  assert.equal(is_VVZ_resolved([t('the', 'AT'), t(w, ''), t('of', 'IO')], 1), false);
+test('is_VVZ_svm: the production linear-SVM decision (vvz-svm.js)', () => {
+  // Verb readings: a 3rd-sg subject before, or a verb complement after.
+  assert.equal(is_VVZ_svm([t('it', 'PPH1'), t('records', ''), t('the', 'AT'), t('data', 'NN1')], 1), true);
+  assert.equal(is_VVZ_svm([t('she', 'PPHS1'), t('tracks', ''), t('them', 'PPHO2')], 1), true);
+  assert.equal(is_VVZ_svm([t('he', 'PPHS1'), t('loves', ''), t('anything', 'PN1')], 1), true);
+  // Noun readings: a determiner/quantifier or a compound-noun modifier before.
+  assert.equal(is_VVZ_svm([t('the', 'AT'), t('records', ''), t('of', 'IO')], 1), false);
+  assert.equal(is_VVZ_svm([t('two', 'MC'), t('records', ''), t('exist', 'VV0')], 1), false);
+  assert.equal(is_VVZ_svm([t('learning', 'NN1'), t('tools', ''), t('for', 'IF')], 1), false);
+  // Robust at array boundaries and always boolean.
+  assert.equal(typeof is_VVZ_svm([t('records', '')], 0), 'boolean');
+  assert.doesNotThrow(() => is_VVZ_svm([t('records', '')], 0));
 });
 
 test('is_VVZ: subject pronoun before marks a verb', () => {

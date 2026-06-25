@@ -12,7 +12,7 @@
  */
 
 import { contextWindow } from '../content/context.js';
-import { VVZ_PRIOR } from './vvz-prior.js';
+import { VVZ_SVM } from './vvz-svm.js';
 
 // --- Tag-class helpers -------------------------------------------------------
 // Context tokens carry the candidate CLAWS7 tag set imported from the lexicon,
@@ -104,9 +104,10 @@ function isPureAdverb(token) {
  * clearly are old") and a determiner can sit two words ahead of the subject noun
  * ("the new machine records").
  *
- * Returns the signed context vote (> 0 ⇒ VVZ); {@link is_VVZ} thresholds it and
- * {@link is_VVZ_resolved} adds the per-word prior. Kept separate so the context
- * rules can be tested in isolation.
+ * Returns the signed context vote (> 0 ⇒ VVZ); {@link is_VVZ} thresholds it.
+ * This is the interpretable hand-written rule; production routes the decision
+ * through the learned {@link is_VVZ_svm} instead. Kept separate so the context
+ * rules can be read and tested in isolation.
  *
  * @param {Token[]} tokens
  * @param {number} idx
@@ -160,8 +161,10 @@ export function vvzScore(tokens, idx) {
 }
 
 /**
- * True if the token at `idx` is a 3rd-sg-present verb (VVZ) by CONTEXT alone —
- * the unseeded {@link vvzScore}. Used by the unit tests and by {@link is_VVZ_resolved}.
+ * True if the token at `idx` is a 3rd-sg-present verb (VVZ) by the hand-written
+ * context vote alone — the unseeded {@link vvzScore}. This is the interpretable
+ * rule used by the unit tests; production routes through the linear SVM
+ * {@link is_VVZ_svm}, which learned weights over the same context families.
  * @param {Token[]} tokens @param {number} idx @returns {boolean}
  */
 export function is_VVZ(tokens, idx) {
@@ -169,16 +172,74 @@ export function is_VVZ(tokens, idx) {
 }
 
 /**
- * The production decision for an NN2|VVZ diatone: the context vote plus the
- * word's noun/verb prior (vvz-prior.js, encodings 012/112). The prior sets the
- * default reading for the specific word; a strong enough context cue still
- * overrides it. Falls back to context-only for a word with no prior.
+ * Coarsens a single CLAWS7 tag to the feature family used by the SVM. Mirrors
+ * the families the rule predicates test (subject pronoun, determiner, object
+ * pronoun, …) so each neighbor candidate tag maps to one stable feature key.
+ * MUST stay byte-identical to fam() in build/gen-vvz-svm.py — the weights are
+ * keyed on these strings.
+ * @param {string} tag @returns {string}
+ */
+function svmFamily(tag) {
+  if (tag.startsWith('NP')) return 'NP';
+  if (tag.startsWith('NN')) return 'NN';
+  if (tag === 'PPHS1' || tag === 'PPH1') return 'SUBJ3SG';
+  if (tag.startsWith('PPHO') || tag.startsWith('PPIO') || tag.startsWith('PPX') || tag.startsWith('PPY')) return 'OBJPRON';
+  if (tag === 'AT' || tag === 'AT1' || tag.startsWith('DD') || tag.startsWith('DA') || tag.startsWith('DB')) return 'DET';
+  if (tag.startsWith('APPGE')) return 'POSS';
+  if (tag.startsWith('II') || tag.startsWith('IO') || tag.startsWith('IF') || tag.startsWith('IW')) return 'PREP';
+  if (tag.startsWith('JJ') || tag.startsWith('MC') || tag.startsWith('MD') || tag.startsWith('MF')) return 'PREMOD';
+  if (tag === 'VV0' || tag === 'VBR' || tag === 'VBDR' || tag === 'VH0' || tag === 'VD0') return 'PLVERB';
+  if (tag.startsWith('VV') || tag.startsWith('VB') || tag.startsWith('VH') || tag.startsWith('VD') || tag.startsWith('VM')) return 'VERB';
+  if (tag.startsWith('RR') || tag.startsWith('RG') || tag.startsWith('RP') || tag.startsWith('RL') || tag.startsWith('RT') || tag.startsWith('RA')) return 'ADV';
+  if (tag === 'PNQS' || tag === 'DDQ' || tag === 'CST') return 'RELSUBJ';
+  return tag.slice(0, 2);
+}
+
+// The six context-window slots paired with their signed offset, in the order
+// contextWindow returns them: [w-3, w-2, w-1, target, w+1, w+2, w+3].
+const SVM_SLOTS = [[0, -3], [1, -2], [2, -1], [4, 1], [5, 2], [6, 3]];
+
+/**
+ * Builds the SVM feature keys for the target at `idx`, identically to
+ * featurize() in build/gen-vvz-svm.py. Each neighbor fires one
+ * "<offset>=<family>" per candidate tag (multi-hot), or "<offset>=UNK" for a
+ * word the lexicon doesn't know. A boundary slot (past a sentence edge, tag
+ * 'ZB') fires nothing — absence of context is not evidence; the bias carries
+ * the base rate. Plus the bias, a capitalization flag, and the lexical
+ * "w=<word>" identity (the per-word prior).
+ * @param {Token[]} tokens @param {number} idx @returns {string[]}
+ */
+function svmFeatures(tokens, idx) {
+  const win = contextWindow(tokens, idx);
+  const word = tokens[idx]?.word ?? '';
+  const feats = ['bias', 'w=' + word.toLowerCase()];
+  if (/^\p{Lu}/u.test(word)) feats.push('cap');
+  for (const [slot, off] of SVM_SLOTS) {
+    const tok = win[slot];
+    if (tok.tag === 'ZB') continue;                  // boundary: no feature
+    if (tok.tag === '') { feats.push(off + '=UNK'); continue; }
+    const fams = new Set();
+    for (const t of tok.tag.split('|')) fams.add(svmFamily(t));
+    for (const f of fams) feats.push(off + '=' + f);
+  }
+  return feats;
+}
+
+/**
+ * The production decision for an NN2|VVZ diatone via the linear SVM
+ * (vvz-svm.js, trained on the fiction + non-fiction _corpus_012_112*.txt by
+ * build/gen-vvz-svm.py). Sums the learned weights of the word's active
+ * features; > 0 ⇒ VVZ (verb). Replaces the earlier hand-tuned
+ * rule-vote-plus-prior: measured 94.0% accuracy on a held-out split (94.1%
+ * fiction, 93.8% non-fiction) vs the rule's 88.5%, with much higher verb
+ * recall. A diatone unseen in training has no "w=" weight and falls back to the
+ * learned context weights.
  * @param {Token[]} tokens @param {number} idx @returns {boolean}
  */
-export function is_VVZ_resolved(tokens, idx) {
-  const word = tokens[idx]?.word?.toLowerCase();
-  const seed = word ? VVZ_PRIOR.get(word) ?? 0 : 0;
-  return vvzScore(tokens, idx) + seed > 0;
+export function is_VVZ_svm(tokens, idx) {
+  let score = 0;
+  for (const f of svmFeatures(tokens, idx)) score += VVZ_SVM.get(f) ?? 0;
+  return score > 0;
 }
 
 // Subject pronouns — a preceding one marks the clitic 's as a contracted verb.

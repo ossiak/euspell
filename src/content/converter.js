@@ -1,6 +1,6 @@
 import { data as lexicon } from '../../dist/lexicon.js';
 import { getContraction } from './contractions.js';
-import { is_VVZ_resolved, is_verbal_s, is_plural_noun, is_verb_VV0 } from '../disambig/pos.js';
+import { is_VVZ_svm, is_verbal_s, is_plural_noun, is_verb_VV0 } from '../disambig/pos.js';
 import { SEMANTIC } from '../disambig/semantic/index.js';
 
 /** @typedef {import('./context.js').Token} Token */
@@ -69,7 +69,7 @@ function route(key, entry, tokens, idx) {
   // 3-/4-way splits (encodings 113/114: leads, bows, …) carry a semantic rule and
   // fall through to the SEMANTIC dispatch below.
   if ((entry.encoding === 12 || entry.encoding === 112) && pos.includes('VVZ') && !SEMANTIC.has(key)) {
-    return is_VVZ_resolved(tokens, idx) ? 1 : 0;
+    return is_VVZ_svm(tokens, idx) ? 1 : 0;
   }
   // The clitic 's: genitive ('s, spellings[0]) vs contracted is/has ('z, [1]).
   if (pos.includes('GE')) {
