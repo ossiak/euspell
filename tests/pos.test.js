@@ -61,6 +61,15 @@ test('is_VVZ: a proper-noun subject marks the verb without needing a complement'
   assert.equal(is_VVZ([t('John', 'NP1'), t('records', ''), t('show', 'VV0'), t('errors', 'NN2')], 1), false);
 });
 
+test('is_VVZ: a proper-noun object marks the verb', () => {
+  // bare verb + proper-noun object: "calls Mary"
+  assert.equal(is_VVZ([t('calls', ''), t('Mary', 'NP1')], 0), true);
+  // common-noun subject + verb + proper-noun object: "the device tracks Bob"
+  assert.equal(is_VVZ([t('the', 'AT'), t('device', 'NN1'), t('tracks', ''), t('Bob', 'NP1')], 2), true);
+  // ...but a determiner before still wins: "the records Smith kept" -> noun
+  assert.equal(is_VVZ([t('the', 'AT'), t('records', ''), t('Smith', 'NP1'), t('kept', 'VVD')], 1), false);
+});
+
 test('is_VVZ: wider window — adverb look-through and determiner across an adjective', () => {
   // adverb between subject and verb: "John regularly records his notes"
   assert.equal(is_VVZ([t('John', 'NP1'), t('regularly', 'RR'), t('records', ''), t('his', 'APPGE'), t('notes', 'NN2')], 2), true);

@@ -91,7 +91,8 @@ function isPureAdverb(token) {
  * VVZ is confirmed by: an unambiguous subject before — a 3rd-sg pronoun
  * "it/he/she", a relativiser "which/who/that", or a proper noun ("John records",
  * "Mary speaks"); a complement only a finite verb takes after (an object pronoun
- * "records them", or an object NP "records the data"); or a determiner +
+ * "records them", an object NP "records the data", or a proper-noun object "meets
+ * Mary"); or a determiner +
  * (optional adjective) + common-noun subject followed by such a complement ("the
  * new machine records the data", "the mucosa sloughs off"). A preceding
  * determiner/preposition/common-noun, or a following plural-agreeing verb, argues
@@ -141,6 +142,7 @@ export function vvzScore(tokens, idx) {
   if (anyExact(afterVerb, PLURAL_VERB)) vote -= 3;
   if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;            // "records them"
   if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "records the / his X"
+  if (anyPrefix(w1a, ['NP'])) vote += 2;                    // "meets Mary" — proper-noun object
   if (anyPrefix(w1a, ['RR'])) vote += 1;                    // "functions well"
 
   // A clear subject NP + target + verb complement → a finite verb. The subject
@@ -151,7 +153,7 @@ export function vvzScore(tokens, idx) {
     (!beforeAdv && anyPrefix(w2b, ['JJ', 'MC', 'MD', 'MF']) && anyExact(w3b, DETERMINER));
   const subjectNoun = anyPrefix(left, ['NP']) || (anyExact(left, SINGULAR_NOUN) && detSubject);
   const verbComplement = anyPrefix(w1a, OBJECT_PRONOUN) || anyExact(w1a, DETERMINER) ||
-    anyPrefix(w1a, ['APPGE', 'RR', 'RP']);
+    anyPrefix(w1a, ['APPGE', 'RR', 'RP', 'NP']);
   if (subjectNoun && verbComplement) vote += 3;
 
   return vote;
