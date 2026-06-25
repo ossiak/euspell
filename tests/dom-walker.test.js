@@ -9,10 +9,13 @@ class TextNode {
   constructor(value) { this.nodeType = 3; this.nodeValue = value; this.parentElement = null; }
 }
 class ElementNode {
-  constructor(tag) { this.nodeType = 1; this.tagName = tag.toUpperCase(); this.childNodes = []; this.parentElement = null; }
+  constructor(tag) { this.nodeType = 1; this.tagName = tag.toUpperCase(); this.childNodes = []; this.parentElement = null; this._editable = false; }
   append(...kids) { for (const k of kids) { k.parentElement = this; this.childNodes.push(k); } return this; }
+  // Mirror the DOM: contenteditable is inherited by descendants.
+  get isContentEditable() { return this._editable || (this.parentElement?.isContentEditable ?? false); }
 }
 const el = (tag, ...kids) => new ElementNode(tag).append(...kids);
+const editable = (elem) => { elem._editable = true; return elem; };
 const tx = (v) => new TextNode(v);
 
 function createTreeWalker(root, _show, filter) {
@@ -40,6 +43,17 @@ test('walkTextNodes converts text in place', () => {
   walkTextNodes(el('p', node), convert);
   assert.notEqual(node.nodeValue, 'this is a test'); // something changed
   assert.match(node.nodeValue, /\biz\b/);            // "is" -> "iz"
+});
+
+test('walkTextNodes leaves contenteditable text untouched (user input)', () => {
+  // text directly inside a contenteditable host
+  const direct = tx('this is a test');
+  walkTextNodes(editable(el('div', direct)), convert);
+  assert.equal(direct.nodeValue, 'this is a test');
+  // text nested under the editable host (contenteditable is inherited)
+  const nested = tx('this is a test');
+  walkTextNodes(editable(el('div', el('span', nested))), convert);
+  assert.equal(nested.nodeValue, 'this is a test');
 });
 
 test('walkTextNodes is idempotent on a normal re-walk', () => {

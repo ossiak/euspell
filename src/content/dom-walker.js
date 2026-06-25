@@ -6,6 +6,19 @@ import { getPhrase, MAX_PHRASE_WORDS } from './phrases.js';
 
 const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'CODE', 'PRE']);
 
+/**
+ * True when text under `el` is user-editable — inside a contenteditable region
+ * (isContentEditable is true for any descendant and respects nested
+ * contenteditable="false"), or in a design-mode document. Such text is the user's
+ * input: reforming it would corrupt what they type and collapse the caret, so it
+ * is left untouched. (Plain <input>/<textarea> are already in SKIP_TAGS.)
+ * @param {Element} el
+ * @returns {boolean}
+ */
+function isEditable(el) {
+  return el.isContentEditable === true || document.designMode === 'on';
+}
+
 // Tags that start a new block-level context. Text under different blocks is
 // tokenized independently so a sentence never draws context across a structural
 // boundary; inline elements (SPAN, EM, A, B, …) are deliberately absent so a
@@ -69,7 +82,7 @@ function collectBlocks(root) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
       const parent = node.parentElement;
-      if (!parent || SKIP_TAGS.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+      if (!parent || SKIP_TAGS.has(parent.tagName) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
       if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
       return NodeFilter.FILTER_ACCEPT;
     },

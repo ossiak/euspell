@@ -34,6 +34,13 @@ import { createRateGuard } from './reapply-guard.js';
   // converting — only runaway churn on one node is cut, never the whole observer.
   const allow = createRateGuard({ windowMs: 1000, maxPerWindow: 12 });
 
+  // Hold re-application while an IME composition is in progress, so a mutation we
+  // didn't cause isn't reconverted mid-edit (editable regions are skipped by the
+  // walker already; this also covers exotic editors). Resume when it ends.
+  let composing = false;
+  addEventListener('compositionstart', () => { composing = true; }, true);
+  addEventListener('compositionend', () => { composing = false; schedule(); }, true);
+
   function onMutations(mutations) {
     for (const m of mutations) {
       if (m.type === 'characterData') {
@@ -46,7 +53,11 @@ import { createRateGuard } from './reapply-guard.js';
         }
       }
     }
-    if (pending.size && !scheduled) {
+    schedule();
+  }
+
+  function schedule() {
+    if (pending.size && !scheduled && !composing) {
       scheduled = true;
       setTimeout(flush, 0);
     }
