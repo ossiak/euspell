@@ -12,6 +12,7 @@
  */
 
 import { contextWindow } from '../content/context.js';
+import { VVZ_PRIOR } from './vvz-prior.js';
 
 // --- Tag-class helpers -------------------------------------------------------
 // Context tokens carry the candidate CLAWS7 tag set imported from the lexicon,
@@ -102,11 +103,15 @@ function isPureAdverb(token) {
  * clearly are old") and a determiner can sit two words ahead of the subject noun
  * ("the new machine records").
  *
+ * Returns the signed context vote (> 0 ⇒ VVZ); {@link is_VVZ} thresholds it and
+ * {@link is_VVZ_resolved} adds the per-word prior. Kept separate so the context
+ * rules can be tested in isolation.
+ *
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {boolean}
+ * @returns {number}
  */
-export function is_VVZ(tokens, idx) {
+export function vvzScore(tokens, idx) {
   const [w3b, w2b, w1b, , w1a, w2a] = contextWindow(tokens, idx);
   // Look through a single intervening adverb to the real neighbour on each side.
   // Only a word that can exclusively be an adverb is skipped (see isPureAdverb),
@@ -149,7 +154,29 @@ export function is_VVZ(tokens, idx) {
     anyPrefix(w1a, ['APPGE', 'RR', 'RP']);
   if (subjectNoun && verbComplement) vote += 3;
 
-  return vote > 0;
+  return vote;
+}
+
+/**
+ * True if the token at `idx` is a 3rd-sg-present verb (VVZ) by CONTEXT alone —
+ * the unseeded {@link vvzScore}. Used by the unit tests and by {@link is_VVZ_resolved}.
+ * @param {Token[]} tokens @param {number} idx @returns {boolean}
+ */
+export function is_VVZ(tokens, idx) {
+  return vvzScore(tokens, idx) > 0;
+}
+
+/**
+ * The production decision for an NN2|VVZ diatone: the context vote plus the
+ * word's noun/verb prior (vvz-prior.js, encodings 012/112). The prior sets the
+ * default reading for the specific word; a strong enough context cue still
+ * overrides it. Falls back to context-only for a word with no prior.
+ * @param {Token[]} tokens @param {number} idx @returns {boolean}
+ */
+export function is_VVZ_resolved(tokens, idx) {
+  const word = tokens[idx]?.word?.toLowerCase();
+  const seed = word ? VVZ_PRIOR.get(word) ?? 0 : 0;
+  return vvzScore(tokens, idx) + seed > 0;
 }
 
 // Subject pronouns — a preceding one marks the clitic 's as a contracted verb.

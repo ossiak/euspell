@@ -1,7 +1,26 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { is_VVZ, is_verb_VV0, is_plural_noun, is_verbal_s } from '../src/disambig/pos.js';
+import { is_VVZ, is_VVZ_resolved, vvzScore, is_verb_VV0, is_plural_noun, is_verbal_s } from '../src/disambig/pos.js';
+import { VVZ_PRIOR } from '../src/disambig/vvz-prior.js';
 import { t } from './helpers.js';
+
+test('is_VVZ_resolved adds the per-word prior to the context vote', () => {
+  // A word with a verb-leaning prior, in a neutral context (no cues -> score 0):
+  const [verbWord] = [...VVZ_PRIOR].find(([, s]) => s > 0);
+  const [nounWord] = [...VVZ_PRIOR].find(([, s]) => s < 0);
+  assert.equal(vvzScore([t(verbWord, '')], 0), 0);            // context is neutral
+  assert.equal(is_VVZ([t(verbWord, '')], 0), false);          // pure context: noun default
+  assert.equal(is_VVZ_resolved([t(verbWord, '')], 0), true);  // prior flips it to verb
+  assert.equal(is_VVZ_resolved([t(nounWord, '')], 0), false); // noun prior stays noun
+  // A word with no prior falls back to context-only.
+  assert.equal(is_VVZ_resolved([t('zzqq', '')], 0), is_VVZ([t('zzqq', '')], 0));
+});
+
+test('is_VVZ_resolved: strong context still overrides the prior', () => {
+  // determiner immediately before (-3) overrides a moderate verb prior
+  const [w] = [...VVZ_PRIOR].find(([, s]) => s >= 1 && s <= 3);
+  assert.equal(is_VVZ_resolved([t('the', 'AT'), t(w, ''), t('of', 'IO')], 1), false);
+});
 
 test('is_VVZ: subject pronoun before marks a verb', () => {
   // "she records" -> verb
