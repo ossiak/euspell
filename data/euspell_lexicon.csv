@@ -102080,7 +102080,15 @@ levelers,NN2,000,[]
 levelheaded,JJ,101,levelhedded
 levelheadedness,NN,101,levelheddedness
 leveling,JJ|NN|VVG,000,[]
+levelise,VV0,601,levelize
+levelised,JJ|VVD|VVN,601,levelized
+levelises,VVZ,011,levelizez
+levelising,VVG,601,levelizing
 levelism,NN,000,[]
+levelize,VV0,000,[]
+levelized,JJ|VVD|VVN,000,[]
+levelizes,VVZ,011,levelizez
+levelizing,VVG,000,[]
 levelled,JJ|VVD|VVN,021,leveld
 leveller,NN1,631,leveler
 levellers,NN2,631,levelers
