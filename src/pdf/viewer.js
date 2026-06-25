@@ -1,19 +1,27 @@
 /**
  * Euspell PDF viewer. The service worker redirects top-level navigations to a
  * .pdf onto this page (?file=<original url>). We render each page with PDF.js to
- * a canvas (full visual fidelity: graphics, images, background), then overlay a
- * VISIBLE text layer whose words have been run through the same euspell
- * converter the rest of the extension uses — so the reader sees reformed text.
+ * a canvas (full visual fidelity: graphics, images, background), then run each
+ * word of the (invisible) text layer through the same euspell converter the rest
+ * of the extension uses.
  *
- * The original glyphs baked into the canvas are painted over (using the exact
- * geometry PDF.js gives the text spans) so they don't show through. This assumes
- * a light page background; coloured/dark backgrounds are a known limitation.
+ * For every word whose spelling actually changed we redraw it ONTO THE CANVAS:
+ * the original glyphs are painted over with the page's own background colour, and
+ * the reformed word is drawn in the original ink colour using the SAME font
+ * PDF.js loaded and drew the rest of the page with. Because changed and unchanged
+ * words are then rendered by one engine with one font, they stay visually
+ * consistent — instead of the reformed words showing in a substitute web font.
+ * The text layer is kept transparent (it carries the reformed text, so selection
+ * and copy still work). Ink/paper are sampled per word, so coloured text and
+ * non-white backgrounds are handled; heavily textured backgrounds remain a
+ * known limitation.
  */
 
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
 import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam } from './pdf-url.js';
+import { sampleColors } from './sample-colors.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = chrome.runtime.getURL('dist/pdfjs/pdf.worker.min.mjs');
 
@@ -50,36 +58,69 @@ async function renderPage(pdf, n, dpr) {
   wrap.append(canvas, textLayerDiv);
   root.append(wrap);
 
-  await page.render({ canvasContext: ctx, viewport }).promise;
+  // Opaque white background so blank areas are sampled as paper, not transparent.
+  await page.render({ canvasContext: ctx, viewport, background: '#ffffff' }).promise;
 
-  // Build the selectable text layer (positions/sizes a span over each glyph run).
-  // It stays transparent over the canvas, so unchanged text keeps the original
-  // PDF rendering — and its fonts — exactly as PDF.js drew it.
+  // Build the (transparent) text layer: one span per glyph run, with the font and
+  // box PDF.js laid out. We read its text/geometry, reform it, then redraw the
+  // changed words on the canvas. The spans stay invisible but hold the reformed
+  // text, so selection and copy return the reformed spelling.
   const textContent = await page.getTextContent();
   const layer = new pdfjsLib.TextLayer({ textContentSource: textContent, container: textLayerDiv, viewport });
   await layer.render();
+  // Make sure the embedded fonts PDF.js registered are ready for canvas drawing.
+  await document.fonts.ready;
 
-  // Record each span's original text and laid-out box, then reform the overlay.
+  // Record each span's original text, laid-out box, and resolved font BEFORE
+  // reforming (which changes the span's text and measured width).
   const spans = layer.textDivs;
-  const originals = spans.map((s) => ({
-    text: s.textContent,
-    x: s.offsetLeft,
-    y: s.offsetTop,
-    w: s.offsetWidth,
-    h: s.offsetHeight,
-  }));
+  const originals = spans.map((s) => {
+    const cs = getComputedStyle(s);
+    return {
+      text: s.textContent,
+      x: s.offsetLeft, y: s.offsetTop, w: s.offsetWidth, h: s.offsetHeight,
+      font: `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`,
+    };
+  });
   walkTextNodes(textLayerDiv, convert);
 
-  // Only where the text actually changed: paint over the original glyphs (using
-  // the recorded original box, so coverage doesn't depend on the new word's
-  // width) and reveal the reformed span. Everything else is left untouched.
-  ctx.fillStyle = '#ffffff';
-  spans.forEach((span, i) => {
+  // Snapshot the pristine raster once so each changed word's ink/paper colours are
+  // sampled from the original glyphs, before any are painted over.
+  const snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  ctx.textBaseline = 'alphabetic';
+  for (let i = 0; i < spans.length; i++) {
     const o = originals[i];
-    if (span.textContent === o.text) return;
-    if (o.w > 0 && o.h > 0) ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
-    span.classList.add('euspell-changed');
-  });
+    const text = spans[i].textContent;
+    if (text === o.text || o.w <= 0 || o.h <= 0) continue;
+
+    const { ink, paper } = sampleColors(
+      snapshot.data, canvas.width, canvas.height,
+      Math.round(o.x * dpr), Math.round(o.y * dpr),
+      Math.round(o.w * dpr), Math.round(o.h * dpr),
+    );
+
+    // Paint over the original glyphs with the page's own background colour.
+    ctx.fillStyle = paper;
+    ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
+
+    // Draw the reformed word in the original ink colour with the original font.
+    // Compress to the original slot only when the reformed word is wider, so it
+    // never overruns the next word; otherwise keep the font's natural width.
+    ctx.fillStyle = ink;
+    ctx.font = o.font;
+    const m = ctx.measureText(text);
+    const baseline = o.y + m.fontBoundingBoxAscent;
+    if (m.width > o.w) {
+      ctx.save();
+      ctx.translate(o.x, baseline);
+      ctx.scale(o.w / m.width, 1);
+      ctx.fillText(text, 0, 0);
+      ctx.restore();
+    } else {
+      ctx.fillText(text, o.x, baseline);
+    }
+  }
 
   page.cleanup();
 }

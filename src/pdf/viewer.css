@@ -62,10 +62,10 @@ body {
   display: block;
 }
 
-/* The text overlay. PDF.js positions each span absolutely (inline left/top/
-   font-size/transform). It is transparent by default — the canvas underneath
-   shows the original PDF text and fonts — and only spans whose text was actually
-   reformed are made visible, sitting over the painted-out original glyphs. */
+/* The text layer. PDF.js positions one span per glyph run (inline left/top/
+   font-size/transform). It stays fully transparent — the reformed words are drawn
+   onto the canvas, not shown here — but the spans carry the reformed text, so the
+   reader can still select and copy it. */
 .textLayer {
   position: absolute;
   inset: 0;
@@ -79,17 +79,6 @@ body {
   transform-origin: 0 0;
   cursor: text;
   color: transparent;
-}
-
-.textLayer span.euspell-changed {
-  color: #000;
-  /* PDF.js scales each span horizontally (transform: scaleX) to fit the ORIGINAL
-     word's width. The reformed word has a different width, so that scale stretches
-     it — making the font look the wrong size. Render at the font's natural width
-     instead; the original glyphs underneath were painted out, so there is nothing
-     to stay aligned to. (Trade-off: rotated text loses its rotation here.) */
-  transform: none !important;
-  letter-spacing: normal !important;
 }
 
 .textLayer ::selection {
