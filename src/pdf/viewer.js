@@ -149,6 +149,10 @@ async function main() {
   try {
     pdf = await pdfjsLib.getDocument({
       url: fileUrl,
+      // Errors only: real-world PDFs routinely trip PDF.js's spec-compliance
+      // warnings (over-long /Name tokens, malformed objects, …) which it recovers
+      // from. They are noise for a reader, so keep just genuine errors.
+      verbosity: pdfjsLib.VerbosityLevel.ERRORS,
       // Where the bundled WebAssembly image/colour decoders live (trailing slash
       // required) — without this PDF.js can't decode JBIG2/JPEG2000 images.
       wasmUrl: chrome.runtime.getURL('dist/pdfjs/wasm/'),
