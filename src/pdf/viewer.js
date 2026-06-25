@@ -148,18 +148,25 @@ async function renderPage(pdf, n, dpr) {
     ctx.fillStyle = paper;
     ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
 
+    // When the reform is two or three letters shorter, pad it with a leading and
+    // trailing space: the word then keeps near its natural proportions (the
+    // surrounding spaces take up the slack) instead of being stretched to fill the
+    // slot. Larger differences fall through to plain width-fitting.
+    const drop = o.text.length - text.length;
+    const drawText = drop === 2 || drop === 3 ? ` ${text} ` : text;
+
     // Draw the reformed word in the original ink colour with the original font,
     // fitting it to the original word's box width. A shorter or longer reform then
     // keeps the same horizontal extent, so lines don't shrink or overrun — the
     // same way PDF.js fits the original glyphs to the PDF's advance width.
     ctx.fillStyle = ink;
     ctx.font = o.font;
-    const m = ctx.measureText(text);
+    const m = ctx.measureText(drawText);
     const baseline = o.y + m.fontBoundingBoxAscent;
     ctx.save();
     ctx.translate(o.x, baseline);
     if (m.width > 0) ctx.scale(o.w / m.width, 1);
-    ctx.fillText(text, 0, 0);
+    ctx.fillText(drawText, 0, 0);
     ctx.restore();
   }
 
