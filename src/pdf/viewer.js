@@ -53,7 +53,11 @@ async function renderPage(pdf, n, dpr) {
 
   const textLayerDiv = document.createElement('div');
   textLayerDiv.className = 'textLayer';
+  // PDF.js stores each span's font height in the --font-height variable and
+  // expects the stylesheet to turn it into font-size via the scale factor (see
+  // viewer.css). It uses --total-scale-factor; we set both names for safety.
   textLayerDiv.style.setProperty('--scale-factor', String(RENDER_SCALE));
+  textLayerDiv.style.setProperty('--total-scale-factor', String(RENDER_SCALE));
 
   wrap.append(canvas, textLayerDiv);
   root.append(wrap);

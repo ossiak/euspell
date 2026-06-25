@@ -79,6 +79,11 @@ body {
   transform-origin: 0 0;
   cursor: text;
   color: transparent;
+  /* PDF.js sets each span's --font-height (the unscaled glyph height, in px) but
+     leaves font-size to the stylesheet. Without this rule spans fall back to the
+     default size, so both getComputedStyle().fontSize and offsetWidth are wrong,
+     and the reformed words we draw from them are mis-sized. */
+  font-size: calc(var(--font-height, 0) * var(--total-scale-factor, 1));
 }
 
 .textLayer ::selection {
