@@ -13285,7 +13285,7 @@ awed,JJ|VVD|VVN,121,awd
 awee,JJ|RR,000,[]
 aweigh,JJ,101,aweih
 aweing,VVG,101,awing
-aweless,JJ,101,awless
+aweless,JJ,601,awless
 awes,NN2|VVZ,112,aws|awz
 awesome,JJ,101,awsom
 awesomely,RR,101,awsomly
@@ -15122,7 +15122,7 @@ barrators,NN2,000,[]
 barratries,NN2,000,[]
 barratry,NN|NN1,000,[]
 barre,NN1|VV0,102,barre|barreh
-barred,JJ|VVD|VVN,202,barrd|barrehd
+barred,JJ|VVD|VVN,202,bardd|barrehd
 barreing,VVG,101,barrehing
 barrel,NN1|VV0,000,[]
 barrelage,NN|NN1,000,[]
@@ -33558,7 +33558,7 @@ collarbone,NN1,000,[]
 collarbones,NN2,000,[]
 collard,NN1,000,[]
 collards,NN2,000,[]
-collared,JJ|VVD|VVN,021,collard
+collared,JJ|VVD|VVN,021,collardd
 collaret,NN1,000,[]
 collarets,NN2,000,[]
 collaring,JJ|NN|VVG,000,[]
@@ -38089,7 +38089,7 @@ costal,JJ,000,[]
 costar,NN1|VV0,000,[]
 costard,NN1,000,[]
 costards,NN2,000,[]
-costarred,VVD|VVN,021,costarrd
+costarred,VVD|VVN,021,costardd
 costarring,VVG,000,[]
 costars,NN2|VVZ,012,costars|costarz
 costas,NN2,000,[]
@@ -40054,7 +40054,7 @@ crossbanding,NN1|VVG,000,[]
 crossbandings,NN2,000,[]
 crossbands,NN2|VVZ,012,crossbands|crossbandz
 crossbar,NN1|VV0,000,[]
-crossbarred,JJ|VVD|VVN,021,crossbarrd
+crossbarred,JJ|VVD|VVN,021,crossbardd
 crossbarring,NN|VVG,000,[]
 crossbars,NN2|VVZ,012,crossbars|crossbarz
 crossbeam,NN1,000,[]
@@ -40177,7 +40177,7 @@ crouton,NN1,701,crooton
 croutons,NN2,701,crootons
 crow,NN1|VV0,000,[]
 crowbar,NN1|VV0,000,[]
-crowbarred,VVD|VVN,021,crowbarrd
+crowbarred,VVD|VVN,021,crowbard
 crowbarring,NN|VVG,000,[]
 crowbars,NN2|VVZ,012,crowbars|crowbarz
 crowberries,NN2,000,[]
@@ -41174,7 +41174,7 @@ curtailing,NN|VVG,000,[]
 curtailment,NN1,000,[]
 curtailments,NN2,000,[]
 curtails,NN2|VVZ,012,curtails|curtailz
-curtain,NN1|VV0,101,curtin
+curtain,NN1|VV0,601,curtin
 curtained,JJ|VVD|VVN,121,curtind
 curtaining,NN|VVG,101,curtining
 curtainless,JJ,101,curtinless
@@ -42902,7 +42902,7 @@ debarking,JJ|VVG,000,[]
 debarks,VVZ,011,debarkz
 debarment,NN|NN1,000,[]
 debarments,NN2,000,[]
-debarred,VVD|VVN,021,debarrd
+debarred,VVD|VVN,021,debard
 debarring,VVG,000,[]
 debars,VVZ,011,debarz
 debase,VV0,000,[]
@@ -48868,7 +48868,7 @@ disbands,VVZ,011,disbandz
 disbar,VV0,000,[]
 disbarment,NN|NN1,000,[]
 disbarments,NN2,000,[]
-disbarred,JJ|VVD|VVN,021,disbarrd
+disbarred,JJ|VVD|VVN,021,disbard
 disbarring,JJ|VVG,000,[]
 disbars,VVZ,011,disbarz
 disbelief,NN,000,[]
@@ -55349,7 +55349,7 @@ embarrassing,JJ|VVG,000,[]
 embarrassingly,RR,000,[]
 embarrassment,NN|NN1,000,[]
 embarrassments,NN2,000,[]
-embarred,VVD|VVN,521,embarrd
+embarred,VVD|VVN,521,embard
 embarring,VVG,500,[]
 embars,VVZ,511,embarz
 embassade,NN1,500,[]
@@ -67155,7 +67155,7 @@ forehands,NN2,000,[]
 forehead,NN1,101,forehedd
 foreheads,NN2,101,forehedds
 forehear,VV0,000,[]
-foreheard,JJ|VVD|VVN,101,foreherrd
+foreheard,JJ|VVD|VVN,101,foreherdd
 forehearing,VVG,000,[]
 forehears,VVZ,011,forehearz
 forehearth,NN1,101,foreharth
@@ -80401,7 +80401,7 @@ heaps,NN2|VVZ,012,heaps|heapz
 heapy,JJ,000,[]
 hear,UH|VV0,000,[]
 hearable,JJ,000,[]
-heard,VVD|VVN,101,herrd
+heard,VVD|VVN,101,herdd
 hearer,NN1,000,[]
 hearers,NN2,000,[]
 hearing,NN|NN1|VVG,000,[]
@@ -110647,6 +110647,7 @@ microkernel,NN1,000,[]
 microkernels,NN2,000,[]
 microlepidoptera,NN2,000,[]
 microlepidopterous,JJ,000,[]
+microlight,JJ,101,microliht
 microliter,NN1,000,[]
 microliters,NN2,000,[]
 microlith,NN1,000,[]
@@ -112434,7 +112435,7 @@ mishanters,NN2,000,[]
 mishap,NN1,000,[]
 mishaps,NN2,000,[]
 mishear,VV0,000,[]
-misheard,JJ|VVD|VVN,101,misherrd
+misheard,JJ|VVD|VVN,101,misherdd
 mishearing,JJ|NN|VVG,000,[]
 mishears,VVZ,011,mishearz
 mishmash,NN1,000,[]
@@ -125919,7 +125920,7 @@ outhauled,VVD|VVN,021,outhauld
 outhauling,VVG,000,[]
 outhauls,NN2|VVZ,012,outhauls|outhaulz
 outhear,VV0,000,[]
-outheard,VVD|VVN,101,outherrd
+outheard,VVD|VVN,101,outherdd
 outhearing,VVG,000,[]
 outhears,VVZ,011,outhearz
 outhit,VV0|VVD|VVN,000,[]
@@ -127563,7 +127564,7 @@ overheaped,VVD|VVN,000,[]
 overheaping,VVG,000,[]
 overheaps,VVZ,011,overheapz
 overhear,VV0,000,[]
-overheard,JJ|VVD|VVN,101,overherrd
+overheard,JJ|VVD|VVN,101,overherdd
 overhearing,NN|VVG,000,[]
 overhears,VVZ,011,overhearz
 overheat,VV0,000,[]
@@ -150546,7 +150547,7 @@ rehashed,JJ|VVD|VVN,021,rehashd
 rehashes,NN2|VVZ,012,rehashes|rehashez
 rehashing,NN|VVG,000,[]
 rehear,VV0,000,[]
-reheard,JJ|VVD|VVN,121,reherrd
+reheard,JJ|VVD|VVN,121,reherdd
 rehearing,NN1|VVG,000,[]
 rehearings,NN2,000,[]
 rehears,VVZ,011,rehearz
@@ -150938,7 +150939,7 @@ reinterpretations,NN2,000,[]
 reinterpreted,JJ|VVD|VVN,000,[]
 reinterpreting,VVG,000,[]
 reinterprets,VVZ,011,reinterpretz
-reinterred,VVD|VVN,021,reinterrd
+reinterred,VVD|VVN,021,reinterd
 reinterring,VVG,000,[]
 reinterrogate,VV0,000,[]
 reinterrogated,JJ|VVD|VVN,000,[]
@@ -192201,7 +192202,7 @@ unhealthiest,JJT,101,unhelthiest
 unhealthily,RR,101,unhelthily
 unhealthiness,NN,101,unhelthiness
 unhealthy,JJ,101,unhelthy
-unheard,JJ,101,unherrd
+unheard,JJ,101,unherdd
 unhearing,JJ,000,[]
 unheart,VV0,101,unhart
 unhearted,JJ|VVD|VVN,101,unharted
@@ -200398,7 +200399,7 @@ warrantor,NN1,000,[]
 warrantors,NN2,000,[]
 warrants,NN2|VVZ,012,warrants|warrantz
 warranty,NN|NN1,000,[]
-warred,JJ|VVD|VVN,121,warrd
+warred,JJ|VVD|VVN,121,wardd
 warren,NN1|NP,000,[]
 warrener,NN1,000,[]
 warreners,NN2,000,[]
