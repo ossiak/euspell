@@ -10,6 +10,7 @@
     "build:pdfjs": "node build/copy-pdfjs.js",
     "build:ext": "rollup -c",
     "gen:svm": "python build/gen-vvz-svm.py",
+    "gen:pls": "node build/gen-pls.js",
     "gen:disambig": "node build/gen-disambig.js",
     "gen:icons": "node build/gen-icons.js",
     "gen:wordlist": "node build/gen-wordlist.js",

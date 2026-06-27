@@ -1,0 +1,16 @@
+grapheme,ipa,gloss
+# IPA for euspell graphemes, General American (see docs/ssml-lexicon.md).
+# Built one encoding category at a time; see euspell_ipa_<enc>.csv for each stage
+# (e.g. euspell_ipa_101.csv). This file holds the code-level function-word reforms
+# that are not a single lexicon encoding category.
+#
+# The stress-shifting NN2|VVZ diatones (records/recordz, imports/importz, …)
+# belong to the 012 stage and will be built there from CMUdict's noun/verb stress
+# variants — they were previously seeded here in RP and have been deferred so the
+# lexicon stays one consistent dialect (General American).
+#
+# --- high-frequency function-word reforms (dialect-neutral) -------------------
+iz,ɪz,is
+Iz,ɪz,is (sentence-initial)
+ih,aɪ,I (pronoun)
+Ih,aɪ,I (pronoun, sentence-initial)
