@@ -71,9 +71,11 @@ def parse(line):
             out.append((w, m.group(2), w in BREAK))  # (word, goldtag, breakAfter)
     return out
 
-# contextWindow(idx): the 6 neighbor slots at offsets (-3,-2,-1,1,2,3),
-# stopping at a sentence break (mirrors context.js).
-OFFS = (-3, -2, -1, 1, 2, 3)
+# Neighbor slots at offsets -W..-1, 1..W, stopping at a sentence break (mirrors
+# context.js). WINDOW=3 matches the runtime contextWindow; raise it to study a
+# wider context (the runtime would need a matching change to deploy).
+WINDOW = int(os.environ.get("WINDOW", 3))
+OFFS = tuple(range(-WINDOW, 0)) + tuple(range(1, WINDOW + 1))
 def neighbor(toks, idx, off):
     step = 1 if off > 0 else -1
     j = idx
