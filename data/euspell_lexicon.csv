@@ -39850,7 +39850,7 @@ cripples,NN2|VVZ,012,cripples|cripplez
 crippling,JJ|VVG,000,[]
 cripplingly,RR,000,[]
 crips,NN2,000,[]
-cris,NN231,000,[]
+cris,NN231,701,crih
 crises,NN2,000,[]
 criseyde,NP,000,[]
 crisic,JJ,000,[]
@@ -41379,7 +41379,7 @@ cutinized,VVD|VVN,000,[]
 cutinizer,NN1,000,[]
 cutinizers,NN2,000,[]
 cutinizes,VVZ,011,cutinizez
-cutinizing,JJVVG,000,[]
+cutinizing,JJ|VVG,000,[]
 cutins,NN2,000,[]
 cutis,NN1,000,[]
 cutises,NN2,000,[]
@@ -72773,7 +72773,7 @@ gethering,VVG,500,[]
 gethers,VVZ,511,getherz
 gets,NN2|VVZ,202,gets|getz
 gettable,JJ,000,[]
-getter,NN1|V0,000,[]
+getter,NN1|VV0,000,[]
 gettered,VVD|VVN,021,getterd
 gettering,VVG,000,[]
 getters,NN2|VVZ,012,getters|getterz
@@ -75885,7 +75885,7 @@ graptolites,NN2,000,[]
 graptolithina,NP,000,[]
 graptolitic,JJ,000,[]
 grapy,JJ,000,[]
-gras,NN122|NN144,701,gra
+gras,NN122|NN144,701,grah
 grasmere,NP,000,[]
 grasp,NN1|VV0,000,[]
 graspable,JJ,000,[]
@@ -78726,7 +78726,7 @@ hallidome,NN,500,[]
 hallie,NP,000,[]
 hallier,NN1,000,[]
 halliers,NN2,000,[]
-hallmark,NN1|V0,000,[]
+hallmark,NN1|VV0,000,[]
 hallmarked,JJ|VVD|VVN,021,hallmarkd
 hallmarking,VVG,000,[]
 hallmarks,NN2|VVZ,012,hallmarks|hallmarkz
@@ -141915,7 +141915,7 @@ profusions,NN2,000,[]
 progenies,NN2,000,[]
 progenitor,NN1,000,[]
 progenitors,NN2,000,[]
-progeny,NN\NN1,000,[]
+progeny,NN|NN1,000,[]
 progeria,NN,000,[]
 progestagen,NN,000,[]
 progestational,JJ,000,[]
@@ -168724,7 +168724,7 @@ smoggiest,JJT,000,[]
 smoggy,JJ,000,[]
 smogless,JJ,000,[]
 smokable,JJ|NN1,000,[]
-smokables,|NN2,000,[]
+smokables,NN2,000,[]
 smoke,NN|NN1|VV0,000,[]
 smokeable,JJ|NN1,601,smokable
 smokeables,NN2,601,smokables
@@ -169942,7 +169942,7 @@ solutes,NN2,000,[]
 solution,NN|NN1,000,[]
 solutions,NN2,000,[]
 solutrean,JJ|NP1,000,[]
-solutreans,|NP2,000,[]
+solutreans,NP2,000,[]
 solvabilities,NN2,000,[]
 solvability,NN|NN1,000,[]
 solvable,JJ,000,[]
@@ -176710,7 +176710,7 @@ sulfitic,JJ,000,[]
 sulfonal,NN,000,[]
 sulfonamide,NN1,000,[]
 sulfonamides,NN2,000,[]
-sulfonate,NN1VV0,000,[]
+sulfonate,NN1|VV0,000,[]
 sulfonated,JJ|VVD|VVN,000,[]
 sulfonates,NN2|VVZ,012,sulfonates|sulfonatez
 sulfonating,VVG,000,[]
@@ -183049,7 +183049,7 @@ thorvaldsen,NP,000,[]
 those,DD2,000,[]
 thoth,NP,000,[]
 thou,PPY|VV0,000,[]
-thoued,VVD|VVN,000,[]
+thoued,VVD|VVN,021,thoud
 though,CS|CS22|RR,101,thoh
 thought,NN|NN1|VVD|VVN,101,thoht
 thoughtful,JJ,101,thohtful
@@ -193404,7 +193404,7 @@ unplumbs,VVZ,011,unplumbz
 unplume,VV0,000,[]
 unplumed,JJ|VVD|VVN,000,[]
 unplumes,VVZ,011,unplumez
-unpluming,NNVVG,000,[]
+unpluming,NN|VVG,000,[]
 unpoetic,JJ,000,[]
 unpoised,JJ,000,[]
 unpoison,VV0,000,[]
@@ -193906,7 +193906,7 @@ unroughly,RR,101,unruffly
 unround,JJ|VV0,000,[]
 unrounded,JJ|VVD|VVN,000,[]
 unrounding,NN|VVG,000,[]
-unrounds,|VVZ,011,unroundz
+unrounds,VVZ,011,unroundz
 unrove,VV0,000,[]
 unroved,JJ|VVD|VVN,000,[]
 unroven,JJ,000,[]
@@ -198863,7 +198863,7 @@ vis,II31|II33|NN1,000,[]
 visa,NN1|VV0,000,[]
 visaed,JJ|VVD|VVN,021,visad
 visage,NN1,000,[]
-visaged,J,000,[]
+visaged,JJ,000,[]
 visages,NN2,000,[]
 visaing,NN|VVG,000,[]
 visard,NN1|VV0,000,[]
