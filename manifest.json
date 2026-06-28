@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "description": "Converts English webpages to reformed euspell spelling",
 
-  "permissions": ["storage", "activeTab", "webNavigation"],
+  "permissions": ["storage", "activeTab", "webNavigation", "webRequest"],
   "host_permissions": ["<all_urls>"],
 
   "content_security_policy": {
