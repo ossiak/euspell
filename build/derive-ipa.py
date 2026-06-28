@@ -16,8 +16,8 @@ from nltk.corpus import cmudict
 # ARPABET -> IPA (General American). Vowels carry a stress digit (0/1/2).
 VOWEL = {
     "AA": "ɑ", "AE": "æ", "AH": "ʌ", "AO": "ɔ", "AW": "aʊ", "AY": "aɪ",
-    "EH": "ɛ", "ER": "ɝ", "EY": "eɪ", "IH": "ɪ", "IY": "i", "OW": "oʊ",
-    "OY": "ɔɪ", "UH": "ʊ", "UW": "u",
+    "EH": "ɛ", "ER": "ɝ", "EY": "eɪ", "IH": "ɪ", "IY": "iː", "OW": "oʊ",
+    "OY": "ɔɪ", "UH": "ʊ", "UW": "uː",
 }
 CONS = {
     "B": "b", "CH": "tʃ", "D": "d", "DH": "ð", "F": "f", "G": "ɡ", "HH": "h",
