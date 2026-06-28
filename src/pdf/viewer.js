@@ -148,12 +148,14 @@ async function renderPage(pdf, n, dpr) {
     ctx.fillStyle = paper;
     ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
 
-    // When the reform is two or three letters shorter, pad it with a leading and
-    // trailing space: the word then keeps near its natural proportions (the
-    // surrounding spaces take up the slack) instead of being stretched to fill the
-    // slot. Larger differences fall through to plain width-fitting.
+    // When the reform is a little shorter, pad it with spaces so it keeps near
+    // its natural proportions (the spaces take up the slack) instead of being
+    // stretched to fill the slot: one letter shorter gets a single leading space;
+    // two or three shorter get a leading and trailing space. Larger differences
+    // fall through to plain width-fitting.
     const drop = o.text.length - text.length;
-    const drawText = drop === 2 || drop === 3 ? ` ${text} ` : text;
+    const drawText =
+      drop === 1 ? ` ${text}` : drop === 2 || drop === 3 ? ` ${text} ` : text;
 
     // Draw the reformed word in the original ink colour with the original font,
     // fitting it to the original word's box width. A shorter or longer reform then
