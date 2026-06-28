@@ -16,7 +16,9 @@ from nltk.corpus import cmudict
 # ARPABET -> IPA (General American). Vowels carry a stress digit (0/1/2).
 VOWEL = {
     "AA": "ɑ", "AE": "æ", "AH": "ʌ", "AO": "ɔ", "AW": "aʊ", "AY": "aɪ",
-    "EH": "ɛ", "ER": "ɝ", "EY": "eɪ", "IH": "ɪ", "IY": "iː", "OW": "oʊ",
+    # ER is written as an explicit vowel + rhotic (ɜɹ stressed, əɹ unstressed)
+    # rather than the r-coloured ɝ/ɚ, so the American /r/ is visible.
+    "EH": "ɛ", "ER": "ɜɹ", "EY": "eɪ", "IH": "ɪ", "IY": "iː", "OW": "oʊ",
     "OY": "ɔɪ", "UH": "ʊ", "UW": "uː",
 }
 CONS = {
@@ -73,7 +75,7 @@ def to_ipa(pron, mark_stress):
             stress, base = ph[-1], ph[:-1]
             ipa = VOWEL.get(base, "")
             if base == "AH" and stress == "0": ipa = "ə"
-            if base == "ER" and stress == "0": ipa = "ɚ"
+            if base == "ER" and stress == "0": ipa = "əɹ"  # unstressed lettER
             out.append(ipa)
         else:
             out.append(CONS.get(ph, ""))
