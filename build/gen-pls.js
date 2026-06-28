@@ -8,7 +8,7 @@
 // each grapheme is validated against the lexicon's headwords and new spellings.
 //
 // Run: npm run gen:pls
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -17,10 +17,14 @@ const LEXICON = join(root, 'data/euspell_lexicon.csv');
 const DATA = join(root, 'data');
 // All IPA category files: data/euspell_ipa.csv (seed) + euspell_ipa_<enc>.csv
 // (per-encoding stages). The lexicon grows one category at a time.
+// euspell_ipa_overrides.csv is handled separately: it is applied LAST and wins
+// over the generated files (curated fixes for dedup "wrong winners").
+const OVERRIDES_FILE = 'euspell_ipa_overrides.csv';
 const IPA_FILES = readdirSync(DATA)
-  .filter((f) => /^euspell_ipa.*\.csv$/.test(f))
+  .filter((f) => /^euspell_ipa.*\.csv$/.test(f) && f !== OVERRIDES_FILE)
   .sort()
   .map((f) => join(DATA, f));
+const OVERRIDES = join(DATA, OVERRIDES_FILE);
 const OUT = join(root, 'dict/euspell.pls');
 
 // Graphemes that euspell produces in code rather than the lexicon (converter.js
@@ -38,12 +42,12 @@ for (const line of readFileSync(LEXICON, 'utf8').split('\n')) {
   if (c[3] && c[3] !== '[]') for (const sp of c[3].split('|')) valid.add(sp);
 }
 
-// Parse every IPA category file (skip the header row and # comment lines).
+// Parse one IPA CSV (skip header row and # comment lines) into `byGrapheme`.
+// mode 'keep'     -> first file to define a grapheme wins (conflicts warned);
+// mode 'override' -> overwrite unconditionally (curated corrections win).
 const byGrapheme = new Map();
-for (const file of IPA_FILES) {
-  let lineNo = 0;
+function readIpa(file, mode) {
   for (const raw of readFileSync(file, 'utf8').split('\n')) {
-    lineNo++;
     const line = raw.replace(/\r$/, '');
     if (!line || line.startsWith('#')) continue;
     // Split on the first two commas only; the gloss may itself contain commas.
@@ -61,13 +65,15 @@ for (const file of IPA_FILES) {
       continue;
     }
     const prev = byGrapheme.get(grapheme);
-    if (prev && prev.ipa !== ipa) {
+    if (mode === 'keep' && prev && prev.ipa !== ipa) {
       console.warn(`[gen-pls] conflict: "${grapheme}" has ${prev.ipa} and ${ipa}; keeping the first`);
       continue;
     }
     byGrapheme.set(grapheme, { grapheme, ipa, gloss });
   }
 }
+for (const file of IPA_FILES) readIpa(file, 'keep');
+if (existsSync(OVERRIDES)) readIpa(OVERRIDES, 'override'); // applied last; wins
 const entries = [...byGrapheme.values()];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

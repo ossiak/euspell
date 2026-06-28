@@ -1,0 +1,58 @@
+grapheme,ipa,gloss
+# Curated overrides: always win over the generated category files
+# (gen-pls.js applies this file last).
+#
+# --- seez family: the seize reading, /siːz/ in the seez syllable ---------------
+# Long iː, /s/ onset, /z/ coda (/siːʒ/ before -ure). Covers prefixed forms
+# (reseeze, disseeze, redisseeze, foreseez, overseez, antiseezure, ...).
+antiseezure,ˌæntiˈsiːʒɚ,antiseizure
+disseeze,dɪsˈsiːz,disseise
+disseezed,dɪsˈsiːzd,disseised
+disseezez,dɪsˈsiːzɪz,disseises
+disseezin,dɪsˈsiːzɪn,disseisin
+disseezing,dɪsˈsiːzɪŋ,disseising
+disseezins,dɪsˈsiːzɪnz,disseisins
+disseezor,dɪsˈsiːzɚ,disseisor
+disseezors,dɪsˈsiːzɚz,disseisors
+foreseez,fɔɹˈsiːz,foresees
+foreseeze,fɔɹˈsiːz,foreseize
+foreseezed,fɔɹˈsiːzd,foreseized
+foreseezez,fɔɹˈsiːzɪz,foreseizes
+foreseezing,fɔɹˈsiːzɪŋ,foreseizing
+fricasseez,ˌfɹɪkəˈsiːz,fricassees
+outseez,ˌaʊtˈsiːz,outsees
+overseez,ˌoʊvɚˈsiːz,oversees
+redisseeze,ˌɹiːdɪsˈsiːz,redisseize
+redisseezed,ˌɹiːdɪsˈsiːzd,redisseized
+redisseezez,ˌɹiːdɪsˈsiːzɪz,redisseizes
+redisseezin,ˌɹiːdɪsˈsiːzɪn,redisseizin
+redisseezing,ˌɹiːdɪsˈsiːzɪŋ,redisseizing
+redisseezor,ˌɹiːdɪsˈsiːzɚ,redisseizor
+redisseezors,ˌɹiːdɪsˈsiːzɚz,redisseizors
+reseez,ɹiˈsiːz,resees
+reseeze,ɹiˈsiːz,reseize
+reseezed,ɹiˈsiːzd,reseized
+reseezer,ɹiˈsiːzɚ,reseizer
+reseezers,ɹiˈsiːzɚz,reseizers
+reseezez,ɹiˈsiːzɪz,reseizes
+reseezing,ɹiˈsiːzɪŋ,reseizing
+reseezure,ɹiˈsiːʒɚ,reseizure
+seez,ˈsiːz,sees
+seezable,ˈsiːzəbəl,seizable
+seeze,ˈsiːz,seise
+seezed,ˈsiːzd,seised
+seezer,ˈsiːzɚ,seiser
+seezers,ˈsiːzɚz,seisers
+seezez,ˈsiːzɪz,seises
+seezin,ˈsiːzɪn,seisin
+seezing,ˈsiːzɪŋ,seising
+seezings,ˈsiːzɪŋz,seisings
+seezins,ˈsiːzɪnz,seisins
+seezor,ˈsiːzɚ,seisor
+seezors,ˈsiːzɚz,seisors
+seezure,ˈsiːʒɚ,seisure
+seezures,ˈsiːʒɚz,seisures
+sihtseez,ˈsaɪtˌsiːz,sightsees
+subseezure,sʌbˈsiːʒɚ,subseizure
+subseezures,sʌbˈsiːʒɚz,subseizures
+unseezed,ʌnˈsiːzd,unseized
