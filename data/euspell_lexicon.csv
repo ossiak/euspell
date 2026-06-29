@@ -50790,7 +50790,7 @@ diving,JJ|NN|VVG,000,[]
 divining,JJ|NN|VVG,000,[]
 divinise,VV0,601,divinize
 divinised,JJ|VVD|VVN,601,divinized
-divinises,VVZ,611,divinizez
+divinises,VVZ,111,divinizez
 divinising,VVG,601,divinizing
 divinities,NN2,000,[]
 divinity,NN|NN1,000,[]
@@ -109692,7 +109692,7 @@ mescaline,NN,000,[]
 mescals,NN2,000,[]
 meseemed,RR,521,meseemd
 meseemeth,RR,500,[]
-meseems,RR,611,meseemz
+meseems,RR,011,meseemz
 mesembryanthemum,NN1|NP,000,[]
 mesembryanthemums,NN2,000,[]
 mesencephala,NN2,000,[]
@@ -113822,7 +113822,7 @@ moniliform,JJ,000,[]
 monique,NP,000,[]
 monish,VV0,500,[]
 monished,VVD|VVN,521,monishd
-monishes,VVZ,611,monishez
+monishes,VVZ,011,monishez
 monishing,VVG,500,[]
 monism,NN|NN1,000,[]
 monisms,NN2,000,[]
@@ -115507,7 +115507,7 @@ multicolored,JJ,021,multicolord
 multicolors,NN2,000,[]
 multicolour,JJ,601,multicolor
 multicoloured,JJ,121,multicolord
-multicolours,NN2,621,multicolors
+multicolours,NN2,601,multicolors
 multicolumn,JJ,000,[]
 multicomponent,JJ,000,[]
 multiconductor,JJ,000,[]
@@ -120142,7 +120142,7 @@ noncolored,JJ,021,noncolord
 noncolorfast,JJ,000,[]
 noncolors,NN2,000,[]
 noncolour,NN1,601,noncolor
-noncoloured,JJ,621,noncolord
+noncoloured,JJ,121,noncolord
 noncolourfast,JJ,601,noncolorfast
 noncolours,NN2,601,noncolors
 noncom,NN1,000,[]
@@ -137981,7 +137981,7 @@ polymerisation,NN|NN1,601,polymerization
 polymerisations,NN2,601,polymerizations
 polymerise,VV0,601,polymerize
 polymerised,JJ|VVD|VVN,601,polymerized
-polymerises,VVZ,611,polymerizez
+polymerises,VVZ,111,polymerizez
 polymerising,VVG,601,polymerizing
 polymerism,NN,000,[]
 polymerization,NN|NN1,000,[]
@@ -139175,10 +139175,10 @@ pouchiest,JJT,101,pouqhiest
 pouching,JJ|VVG,101,pouqhing
 pouchy,JJ,101,pouqhy
 pouf,NN1,601,poof
-poufed,JJ,621,poofd
+poufed,JJ,121,poofd
 pouff,NN1,601,poof
 pouffe,NN1,601,poof
-pouffed,JJ,621,poofd
+pouffed,JJ,121,poofd
 pouffes,NN2,601,poofs
 pouffs,NN2,601,poof
 poufs,NN2,601,poofs
@@ -142048,7 +142048,7 @@ proletarianisation,NN|NN1,601,proletarianization
 proletarianisations,NN2,601,proletarianizations
 proletarianise,NN1,601,proletarianize
 proletarianised,JJ|VVD|VVN,601,proletarianized
-proletarianises,VVZ,611,proletarianizez
+proletarianises,VVZ,111,proletarianizez
 proletarianising,VVG,601,proletarianizing
 proletarianization,NN|NN1,000,[]
 proletarianizations,NN2,000,[]
@@ -146291,7 +146291,7 @@ rancorous,JJ,000,[]
 rancorously,RR,000,[]
 rancors,NN2,000,[]
 rancour,NN,601,rancor
-rancoured,JJ,621,rancord
+rancoured,JJ,121,rancord
 rancourous,JJ,601,rancorous
 rancourously,RR,601,rancorously
 rancours,NN2,601,rancors
@@ -169397,7 +169397,7 @@ sobered,VVD|VVN,021,soberd
 sobering,JJ|VVG,000,[]
 soberise,VV0,601,soberize
 soberised,VVD|VVN,601,soberized
-soberises,VVZ,611,soberizez
+soberises,VVZ,111,soberizez
 soberising,VVG,601,soberizing
 soberize,VV0,500,[]
 soberized,VVD|VVN,500,[]
@@ -189532,7 +189532,7 @@ unarm,VV0,000,[]
 unarmed,JJ|VVD|VVN,021,unarmd
 unarming,VVG,000,[]
 unarmored,JJ,021,unarmord
-unarmoured,JJ,621,unarmord
+unarmoured,JJ,121,unarmord
 unarms,VVZ,011,unarmz
 unarrogant,JJ,000,[]
 unarted,JJ,000,[]
@@ -189991,7 +189991,7 @@ uncastled,JJ|VVD|VVN,000,[]
 uncastles,VVZ,011,uncastlez
 uncastling,NN|VVG,000,[]
 uncataloged,JJ,021,uncatalogd
-uncatalogued,JJ,621,uncatalogd
+uncatalogued,JJ,121,uncatalogd
 uncatchable,JJ,000,[]
 uncatchy,JJ,000,[]
 uncategorisable,JJ,601,uncategorizable
@@ -192696,7 +192696,7 @@ unkard,JJ,000,[]
 unke,NN1,000,[]
 unked,JJ,000,[]
 unkempt,JJ,000,[]
-unkenned,JJ,621,unkend
+unkenned,JJ,121,unkend
 unkennel,VV0,000,[]
 unkenneled,VVD|VVN,021,unkenneld
 unkenneling,VVG,000,[]
@@ -193034,7 +193034,7 @@ unmitigated,JJ,000,[]
 unmitigatedly,RR,000,[]
 unmitigatedness,NN,000,[]
 unmitre,VV0,601,unmiter
-unmitred,JJ|VVF|VVN,621,unmiterd
+unmitred,JJ|VVF|VVN,121,unmiterd
 unmitres,VVZ,111,unmiterz
 unmitring,NN|VVG,601,unmitering
 unmix,VV0,000,[]
@@ -193987,7 +193987,7 @@ unscathed,JJ,000,[]
 unscattered,JJ,021,unscatterd
 unscented,JJ,000,[]
 unsceptered,JJ,021,unscepterd
-unsceptred,JJ,621,unscepterd
+unsceptred,JJ,121,unscepterd
 unscheduled,JJ,000,[]
 unscholarly,JJ,000,[]
 unschooled,JJ,021,unschoold
@@ -196510,7 +196510,7 @@ valorisation,NN|NN1,601,valorization
 valorisations,NN2,601,valorizations
 valorise,VV0,601,valorize
 valorised,JJ|VVD|VVN,601,valorized
-valorises,VVZ,611,valorizez
+valorises,VVZ,111,valorizez
 valorising,JJ|VVG,601,valorizing
 valorization,NN|NN1,000,[]
 valorizations,NN2,000,[]
@@ -196526,7 +196526,7 @@ valourisation,NN|NN1,601,valorization
 valourisations,NN2,601,valorizations
 valourise,VV0,601,valorize
 valourised,JJ|VVD|VVN,601,valorized
-valourises,VVZ,611,valorizez
+valourises,VVZ,111,valorizez
 valourising,JJ|VVG,601,valorizing
 valourous,JJ,601,valorous
 valours,NN2,601,valors
@@ -197917,7 +197917,7 @@ versicles,NN2,000,[]
 versicolor,JJ,000,[]
 versicolored,JJ,021,versicolord
 versicolour,JJ,601,versicolor
-versicoloured,JJ,621,versicolord
+versicoloured,JJ,121,versicolord
 versicular,JJ,000,[]
 versification,NN|NN1,000,[]
 versifications,NN2,000,[]
