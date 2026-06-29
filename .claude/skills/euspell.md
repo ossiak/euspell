@@ -5,7 +5,7 @@ description: >
   lexicon lookup, disambiguation functions, DOM walking, PDF.js integration, or the build
   pipeline. Triggers include: euspell_lexicon, euspell_encoding, CLAWS7, VVZ, VVD, VVN,
   PoS disambiguation, is_VVZ, is_past_tense, converter.js, dom-walker.js, pdf-handler.js,
-  compile-lexicon, gen-disambig, euspelling, or any of the encoding codes (011, 012, 021,
+  compile-lexicon, euspelling, or any of the encoding codes (011, 012, 021,
   022, 041, 101–114, 121, 123, 131, 202, 500–511). Also loads the [[chrome-extension]]
   skill for MV3, ES2023, and Chrome API patterns.
 ---
@@ -67,7 +67,7 @@ euspell_ext/
 │   └── euspell_lexicon_phrase.csv
 ├── build/
 │   ├── compile-lexicon.js      # CSV → dist/ Map modules
-│   └── gen-disambig.js         # Generates skeleton stubs in src/disambig/pos.js
+│   └── gen-vvz-svm.py          # trains the NN2|VVZ SVM → src/disambig/vvz-svm.js
 ├── dist/                       # Compiled output — gitignored
 ├── disambig/                   # CLAWS7-tagged corpus .txt files (one per ambiguous word)
 ├── tests/
@@ -155,27 +155,30 @@ Full tagset reference: https://ucrel.lancs.ac.uk/claws7tags.html
 
 ### POS Disambiguation (`src/disambig/pos.js`)
 
-Covers ~6 000 lexicon entries where the correct euspelling depends on whether the word is
-acting as a noun, verb, adjective, etc.
-
-**Do not hand-write 6 000 stubs.** Instead:
-1. Run `npm run gen:disambig` to generate skeletons for all entries with `encoding >= 200`.
-2. Implement each function body using context heuristics (surrounding tags, syntax patterns).
-3. Re-running `gen:disambig` is safe — it skips functions already present in the file.
+Words whose euspelling depends on grammatical role (noun vs verb, plural-s vs verbal-s, …)
+are resolved by a **small set of hand-written, general predicates** — not one function per
+word. `converter.js` `route()` dispatches to them by the entry's encoding/PoS:
 
 ```js
-// src/disambig/pos.js signature pattern
+// src/disambig/pos.js — general predicates over the token window
 /**
  * @param {Token[]} tokens  — full sentence token array
  * @param {number} idx      — index of the target word
  * @returns {boolean}
  */
-export function is_VVZ(tokens, idx) { … }
+export function is_VVZ_svm(tokens, idx) { … }   // NN2|VVZ via the trained SVM (vvz-svm.js)
+export function is_verbal_s(tokens, idx) { … }  // genitive 's vs contracted is/has 'z
+export function is_verb_VV0(tokens, idx) { … }  // heteronym noun/adj vs verb reading
+export function is_plural_noun(tokens, idx) { … }
 export function is_past_tense(tokens, idx) { … }
 export function is_past_participle(tokens, idx) { … }
-export function is_plural_noun(tokens, idx) { … }
 export function is_adjective(tokens, idx) { … }
 ```
+
+The dominant case — the NN2|VVZ diatone decision — is a learned linear model: retrain it with
+`npm run gen:svm` (writes `src/disambig/vvz-svm.js`, consumed by `is_VVZ_svm`/`vvzScore`).
+Add a new general predicate only when a whole grammatical class needs one; per-word sense
+splits go in `semantic/` (below).
 
 ### Semantic Disambiguation (`src/disambig/semantic/*.js`)
 
@@ -288,7 +291,7 @@ Only activate `pdf-handler.js` when `document.contentType === 'application/pdf'`
 npm run build          # full build: compile CSVs + Rollup bundle
 npm run build:lexicon  # recompile data/*.csv → dist/*.js only
 npm run build:ext      # Rollup only (after lexicon is already compiled)
-npm run gen:disambig   # add new stubs to src/disambig/pos.js
+npm run gen:svm        # retrain the NN2|VVZ SVM → src/disambig/vvz-svm.js
 npm run watch          # Rollup watch mode for development
 ```
 

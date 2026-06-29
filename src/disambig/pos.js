@@ -1,6 +1,5 @@
 /**
  * POS disambiguation utilities.
- * Generated stubs are produced by: node build/gen-disambig.js
  *
  * Each function receives the full token array for a sentence and the index of
  * the target word. Return true if the word matches the named part-of-speech.
