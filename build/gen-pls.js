@@ -1,94 +1,103 @@
 // Generates dict/euspell.pls: a W3C Pronunciation Lexicon (PLS 1.0) mapping
 // euspell graphemes to IPA, for reading already-converted euspell text aloud.
 //
-// Because conversion has already split every homograph into a distinct grapheme
-// (records -> records|recordz, wind -> wind|wynd), the lexicon is purely
-// grapheme -> phoneme: one role-free <lexeme> per spelling, one <phoneme>. See
-// docs/ssml-lexicon.md. Input is data/euspell_ipa.csv (grapheme,ipa,gloss);
-// each grapheme is validated against the lexicon's headwords and new spellings.
+// Input: data/changed_words_IPA.csv (traditional_word,IPA) lists every
+// traditional word that gains a new spelling (or splits into 2-4 spellings).
+// The new spellings come from the lexicon (data/euspell_lexicon.csv, column 4,
+// "euspelling", pipe-separated). For each traditional word we emit one <lexeme>
+// per NEW spelling (a euspelling that differs from the traditional headword);
+// a reading that keeps the traditional spelling is not emitted. So a word with
+// a single new spelling yields one lexeme; "bear" -> bair|baer (both new)
+// yields two; a 3-4 way split yields one lexeme per new spelling.
+//
+// Every new spelling of a word shares that word's IPA from the CSV. For true
+// homographs (tears, bows, ...) the distinct spellings really need distinct
+// phonemes; those are adjusted by hand afterward. The traditional spelling is
+// preserved in a trailing comment on each lexeme.
 //
 // Run: npm run gen:pls
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LEXICON = join(root, 'data/euspell_lexicon.csv');
-const DATA = join(root, 'data');
-// All IPA category files: data/euspell_ipa.csv (seed) + euspell_ipa_<enc>.csv
-// (per-encoding stages). The lexicon grows one category at a time.
-// euspell_ipa_overrides.csv is handled separately: it is applied LAST and wins
-// over the generated files (curated fixes for dedup "wrong winners").
-const OVERRIDES_FILE = 'euspell_ipa_overrides.csv';
-const IPA_FILES = readdirSync(DATA)
-  .filter((f) => /^euspell_ipa.*\.csv$/.test(f) && f !== OVERRIDES_FILE)
-  .sort()
-  .map((f) => join(DATA, f));
-const OVERRIDES = join(DATA, OVERRIDES_FILE);
+const IPA_CSV = join(root, 'data/changed_words_IPA.csv');
 const OUT = join(root, 'dict/euspell.pls');
 
-// Graphemes that euspell produces in code rather than the lexicon (converter.js
-// special-cases the pronoun I -> ih/Ih), so they won't appear as lexicon rows.
-const CODE_REFORMS = new Set(['ih', 'Ih']);
-
-// Valid euspell graphemes = every lexicon headword plus every new spelling.
-// (The unchanged headword is a legitimate grapheme too — it is the spelling the
-// converted text keeps for the default reading, e.g. the noun "records".)
-const valid = new Set(CODE_REFORMS);
-for (const line of readFileSync(LEXICON, 'utf8').split('\n')) {
-  const c = line.split(',');
-  if (c.length < 4 || Number.isNaN(+c[2])) continue;
-  valid.add(c[0]);
-  if (c[3] && c[3] !== '[]') for (const sp of c[3].split('|')) valid.add(sp);
+// traditional headword -> its euspellings (lexicon column 4, pipe-separated).
+const spellings = new Map();
+for (const raw of readFileSync(LEXICON, 'utf8').split('\n')) {
+  const c = raw.replace(/\r$/, '').split(',');
+  if (c.length < 4 || Number.isNaN(+c[2])) continue; // skip header / blank rows
+  const sp = c[3];
+  if (!sp || sp === '[]') continue;
+  spellings.set(c[0], sp.split('|'));
 }
 
-// Parse one IPA CSV (skip header row and # comment lines) into `byGrapheme`.
-// mode 'keep'     -> first file to define a grapheme wins (conflicts warned);
-// mode 'override' -> overwrite unconditionally (curated corrections win).
-const byGrapheme = new Map();
-function readIpa(file, mode) {
-  for (const raw of readFileSync(file, 'utf8').split('\n')) {
-    const line = raw.replace(/\r$/, '');
-    if (!line || line.startsWith('#')) continue;
-    // Split on the first two commas only; the gloss may itself contain commas.
-    const i1 = line.indexOf(',');
-    const i2 = line.indexOf(',', i1 + 1);
-    if (i1 < 0 || i2 < 0) continue;
-    const grapheme = line.slice(0, i1);
-    const ipa = line.slice(i1 + 1, i2);
-    const gloss = line.slice(i2 + 1);
-    if (grapheme === 'grapheme' || !grapheme || !ipa) continue; // header / blank
-    // Accept a sentence-initial capitalized form whose lowercase is a valid
-    // grapheme ("Iz" from "iz"), as produced by the converter's case matching.
-    if (!valid.has(grapheme) && !valid.has(grapheme.toLowerCase())) {
-      console.warn(`[gen-pls] warning: "${grapheme}" is not a euspell grapheme (skipped)`);
+// Most CSV rows are "word,IPA", but homographs carry several pronunciations
+// with sense labels (read,riːd,(present),or,rɛd,(past)), some rows use "-" as a
+// placeholder (stopgapped,-,ˈstɑpˌɡæpt), and a few hold stray editorial tokens
+// (sermonizes,alignment,ˈsɜːrməˌlaɪzəz / synthesises,...,alignment,with,GA,...).
+// Extract the pronunciation field(s) per row:
+//   1. drop fields that are empty, "-", "or", or a parenthetical sense label;
+//   2. if any survivor carries a non-ASCII char (stress/length mark or phonetic
+//      vowel) it is a real IPA -- prefer those, which also discards the stray
+//      ASCII editorial words that only ever sit beside a diacritic-bearing IPA;
+//   3. otherwise the row is a pure-ASCII IPA ("bjut", "strikt") -- the survivor
+//      is the IPA. (Pure-ASCII rows are only "word,IPA" or "word,-,IPA".)
+// The FIRST surviving reading is attached to every new spelling; homographs
+// with a second reading (records, read, tears, ...) are reported for hand-tuning.
+const ipasOf = (fields) => {
+  const kept = fields.slice(1).map((f) => f.trim())
+    .filter((f) => f && f !== '-' && f !== 'or' && !/[()]/.test(f));
+  const phon = kept.filter((f) => /[^\x00-\x7f]/.test(f));
+  return phon.length ? phon : kept;
+};
+
+// Walk the changed-words list. For each traditional word, look up its
+// euspellings and emit a lexeme for each one that differs from the headword.
+const entries = new Map(); // grapheme -> { grapheme, ipa, word }
+const multiIpa = []; // [{ word, ipas: [...] }] homographs needing manual tuning
+let missing = 0;
+let noIpa = 0;
+let conflicts = 0;
+for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
+  const fields = raw.replace(/\r$/, '').split(',');
+  const word = fields[0];
+  if (!word || word === 'Word') continue; // blank / header guard
+  const ipas = ipasOf(fields);
+  if (!ipas.length) { noIpa++; continue; }
+  if (ipas.length > 1) multiIpa.push({ word, ipas });
+  const ipa = ipas[0]; // primary reading
+  const sp = spellings.get(word) || spellings.get(word.toLowerCase());
+  if (!sp) { missing++; continue; }
+  const news = sp.filter((s) => s !== word); // new spellings only
+  for (const grapheme of news) {
+    const prev = entries.get(grapheme);
+    if (prev) {
+      if (prev.ipa !== ipa) {
+        console.warn(`[gen-pls] conflict: "${grapheme}" has ${prev.ipa} (${prev.word}) and ${ipa} (${word}); keeping the first`);
+        conflicts++;
+      }
       continue;
     }
-    const prev = byGrapheme.get(grapheme);
-    if (mode === 'keep' && prev && prev.ipa !== ipa) {
-      console.warn(`[gen-pls] conflict: "${grapheme}" has ${prev.ipa} and ${ipa}; keeping the first`);
-      continue;
-    }
-    byGrapheme.set(grapheme, { grapheme, ipa, gloss });
+    entries.set(grapheme, { grapheme, ipa, word });
   }
 }
-for (const file of IPA_FILES) readIpa(file, 'keep');
-if (existsSync(OVERRIDES)) readIpa(OVERRIDES, 'override'); // applied last; wins
-const entries = [...byGrapheme.values()];
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const lexeme = ({ grapheme, ipa, gloss }) =>
-  `  <lexeme><grapheme>${esc(grapheme)}</grapheme><phoneme>${esc(ipa)}</phoneme></lexeme>` +
-  (gloss ? ` <!-- ${esc(gloss)} -->` : '');
+const lexeme = ({ grapheme, ipa, word }) =>
+  `  <lexeme><grapheme>${esc(grapheme)}</grapheme><phoneme>${esc(ipa)}</phoneme></lexeme> <!-- ${esc(word)} -->`;
 
-const body = entries
+const body = [...entries.values()]
   .sort((a, b) => a.grapheme.localeCompare(b.grapheme))
   .map(lexeme)
   .join('\n');
 
 const pls = `<?xml version="1.0" encoding="UTF-8"?>
-<!-- GENERATED by build/gen-pls.js from data/euspell_ipa.csv. Do not edit by hand. -->
-<!-- Pronunciation lexicon for reading euspell-converted text aloud. IPA, RP/British. -->
+<!-- GENERATED by build/gen-pls.js from data/changed_words_IPA.csv + the lexicon. -->
+<!-- Pronunciation lexicon for reading euspell-converted text aloud. IPA. -->
 <lexicon version="1.0"
     xmlns="http://www.w3.org/2005/01/pronunciation-lexicon"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -100,4 +109,6 @@ ${body}
 `;
 
 writeFileSync(OUT, pls, 'utf8');
-console.log(`[gen-pls] wrote ${OUT} (${entries.length} lexemes)`);
+console.log(`[gen-pls] wrote ${OUT} (${entries.size} lexemes)`);
+console.log(`[gen-pls]   ${multiIpa.length} words have multiple readings (primary used; tune by hand)`);
+console.log(`[gen-pls]   ${missing} CSV words absent from lexicon; ${noIpa} rows with no IPA; ${conflicts} grapheme conflicts`);

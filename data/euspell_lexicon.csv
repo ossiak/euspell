@@ -559,7 +559,7 @@ aborigines,NN2,500,[]
 aborn,JJ|VVN,000,[]
 aborning,JJ,000,[]
 aborsement,NN,500,[]
-aborsive,JJ,601,aborsiv
+aborsive,JJ,101,aborsiv
 abort,NN1|VV0,000,[]
 aborted,JJ|VVD|VVN,000,[]
 aborter,NN1,000,[]
@@ -1374,8 +1374,8 @@ accosting,JJ|NN|VVG,000,[]
 accosts,VVZ,011,accostz
 accouchement,NN1,701,accooshment
 accouchements,NN2,701,accooshments
-accoucheur,NN1,701,accoosher
-accoucheurs,NN2,701,accooshers
+accoucheur,NN1,701,accoosheur
+accoucheurs,NN2,701,accoosheurs
 accoucheuse,NN1,701,accoosheuse
 accoucheuses,NN2,701,accoosheuses
 account,II32|NN|NN1|VV0,000,[]
@@ -3188,7 +3188,7 @@ advancer,NN1,000,[]
 advancers,NN2,000,[]
 advances,NN2|VVZ,012,advances|advancez
 advancing,JJ|VVG,000,[]
-advancive,JJ,601,advanciv
+advancive,JJ,101,advanciv
 advantage,NN1|VV0,000,[]
 advantageable,JJ,000,[]
 advantaged,JJ|VVD|VVN,000,[]
@@ -3626,7 +3626,7 @@ aether,NN|NN1,601,ether
 aethereal,JJ,601,ethereal
 aetherial,JJ,601,etherial
 aetheric,JJ,601,etheric
-aethers,NN1,601,ethers
+aethers,NN2,601,ethers
 aethia,NP,000,[]
 aethogen,NN1,601,ethogen
 aethrioscope,NN1,601,ethrioscope
@@ -3956,7 +3956,7 @@ africanisations,NN2,601,africanizations
 africanise,VV0,601,africanize
 africanised,JJ|VVD|VVN,601,africanized
 africanises,VVZ,111,africanizez
-africanising,VVG,601,africanzsing
+africanising,VVG,601,africanizing
 africanism,NP|NP1,000,[]
 africanisms,NP2,000,[]
 africanist,NP1,000,[]
@@ -7964,7 +7964,7 @@ animalculum,NN1,000,[]
 animalic,JJ,500,[]
 animalier,NN1,000,[]
 animaliers,NN2,000,[]
-animalisation,NN|NN1,601,animalzsation
+animalisation,NN|NN1,601,animalization
 animalisations,NN2,601,animalizations
 animalise,VV0,601,animalize
 animalised,JJ|VVD|VVN,601,animalized
@@ -20745,8 +20745,8 @@ boron,NN,000,[]
 boronic,JJ,000,[]
 borosilicate,NN1,000,[]
 borosilicates,NN2,000,[]
-borough,NN1,601,boroh
-boroughs,NN2,601,borohs
+borough,NN1,101,boroh
+boroughs,NN2,101,borohs
 borrow,VV0,000,[]
 borrowed,JJ|VVD|VVN,021,borrowd
 borrower,NN1,000,[]
@@ -28046,7 +28046,7 @@ centralizing,JJ|NN|VVG,000,[]
 centrally,RR,000,[]
 centrarchidae,NP,000,[]
 centre,NN1|VV0,601,center
-centred,JJ|VVD|VVN,601,centerd
+centred,JJ|VVD|VVN,121,centerd
 centrefold,NN1,601,centerfold
 centrefolds,NN2,601,centerfolds
 centrepiece,NN1,601,centerpiece
@@ -52176,8 +52176,8 @@ draughts,NN2|VVZ,012,drafts|draftz
 draughtsman,NN1,601,draftsman
 draughtsmanship,NN,601,draftsmanship
 draughtsmen,NN2,601,draftsmen
-draughtswoman,NN1,601,draftswoman
-draughtswomen,NN2,601,draftswimen
+draughtswoman,NN1,101,draftswoman
+draughtswomen,NN2,101,draftswimen
 draughty,JJ,601,drafty
 drava,NP,000,[]
 drave,VVD,500,[]
@@ -57719,7 +57719,7 @@ epiloguise,VV0,601,epilogize
 epiloguised,JJ|VVD|VVN,601,epilogized
 epiloguises,VVZ,111,epilogizez
 epiloguising,VVG,601,epilogizing
-epiloguize,VV0,601,epilogzize
+epiloguize,VV0,601,epilogize
 epiloguized,JJ|VVD|VVN,601,epilogized
 epiloguizes,VVZ,111,epilogizez
 epiloguizing,VVG,601,epilogizing
@@ -80661,7 +80661,7 @@ hectocotylized,JJ,000,[]
 hectocotylus,NN1,000,[]
 hectogram,NNU1,000,[]
 hectogramme,NNU1,601,hectogram
-hectogrammes,NNU2,601,hectograes
+hectogrammes,NNU2,601,hectograms
 hectograms,NNU2,000,[]
 hectograph,NN1|VV0,000,[]
 hectographed,JJ|VVD|VVN,021,hectographd
@@ -81517,7 +81517,7 @@ hempweeds,NN2,000,[]
 hempy,JJ,000,[]
 hems,NN2|VVZ,012,hems|hemz
 hemstitch,NN1|VV0,000,[]
-hemstitched,JJ|VVD|VVN,021, hemstitchd
+hemstitched,JJ|VVD|VVN,021,hemstitchd
 hemstitcher,NN1,000,[]
 hemstitchers,NN2,000,[]
 hemstitches,NN2|VVZ,012,hemstitches|hemstitchez
@@ -91828,7 +91828,7 @@ interbehaviors,NN2,000,[]
 interbehaviour,NN|NN1,601,interbehavior
 interbehavioural,JJ,601,interbehavioral
 interbehaviours,NN2,601,interbehaviors
-interborough,JJ|NN1,601,interboroh
+interborough,JJ|NN1,101,interboroh
 interboroughs,NN2,101,interborohs
 interbranch,JJ,101,interbranqh
 interbred,JJ|VVD|VVN,000,[]
@@ -101981,7 +101981,7 @@ leucorrhinia,NP,000,[]
 leucorrhoea,NN|NN1,601,leukorrhoea
 leucorrhoeal,JJ,601,leukorrhoeal
 leucorrhoeas,NN2,601,leukorrhoeas
-leucoryx,NN1,601,leuckryx
+leucoryx,NN1|NN2,000,[]
 leucoscope,NN1,601,leukoscope
 leucoses,NN2,601,leukoses
 leucosiidae,NP,000,[]
@@ -115110,10 +115110,10 @@ movableness,NN,101,moovableness
 movables,NN2,101,moovables
 movably,RR,101,moovably
 move,NN1|VV0,101,moov
-moveable,JJ,601,moovable
-moveableness,NN,601,moovableness
-moveables,NN2,601,moovables
-moveably,RR,601,moovably
+moveable,JJ,101,moovable
+moveableness,NN,101,moovableness
+moveables,NN2,101,moovables
+moveably,RR,101,moovably
 moved,JJ|VVD|VVN,101,moovd
 moveless,JJ,101,moovless
 movelessly,RR,101,moovlessly
@@ -174952,7 +174952,7 @@ structuralisations,NN2,601,structuralizations
 structuralise,VV0,601,structuralize
 structuralised,JJ|VVD|VVN,601,structuralized
 structuralises,VVZ,111,structuralizez
-structuralising,VVG,601,structuralizsing
+structuralising,VVG,601,structuralizing
 structuralism,NN,000,[]
 structuralist,JJ|NN1,000,[]
 structuralists,NN2,000,[]
@@ -201369,7 +201369,7 @@ were,RR33|VBDR,101,wer
 weregild,NN|NN1,101,wergild
 weregilds,NN2,101,wergilds
 werewolf,NN1,601,werwolf
-werewolves,NN2,601,werwolvs
+werewolves,NN2,101,werwolvs
 wergeld,NN|NN1,000,[]
 wergelds,NN2,000,[]
 wergelt,NN|NN1,000,[]
