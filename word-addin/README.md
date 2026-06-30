@@ -75,5 +75,11 @@ URL by hand.
 | Paragraphs with inline images/objects | text replace would drop the object — best on plain text |
 | Inline character formatting | replacing a paragraph resets it to default run formatting |
 
-Notes: **run once** (a few reforms aren't idempotent); the first conversion in a
-session loads ~5 MB of dictionary data, so it takes a few seconds before acting.
+Notes:
+- **Spell check:** converted text is marked "do not check spelling or grammar"
+  (`Range.hasNoProofing`), so Word doesn't flag euspell words as mistakes. This
+  needs WordApiDesktop 1.3, i.e. **Word desktop**; on Word for the web the text
+  still converts but stays underlined.
+- **Run once** — a few reforms aren't idempotent.
+- The first conversion in a session loads ~5 MB of dictionary data, so it takes a
+  few seconds before acting.

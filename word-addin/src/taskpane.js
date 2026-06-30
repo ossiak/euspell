@@ -38,7 +38,7 @@ async function convert(scope) {
   await Word.run(async (context) => {
     const rootRange = scope === 'selection'
       ? context.document.getSelection()
-      : context.document.body;
+      : context.document.body.getRange();
 
     const paragraphs = rootRange.paragraphs;
     paragraphs.load('items');
@@ -55,6 +55,16 @@ async function convert(scope) {
       }
     });
     await context.sync();
+
+    // Stop Word's spell/grammar checker flagging euspell words as mistakes:
+    // mark the converted range "do not check spelling or grammar". This both
+    // clears existing squiggles and prevents new ones. (Add-ins can't add to
+    // Word's dictionary.) WordApiDesktop 1.3 is desktop-only, so on Word for the
+    // web this is skipped — the conversion still happens, just still underlined.
+    if (Office.context.requirements.isSetSupported('WordApiDesktop', '1.3')) {
+      rootRange.hasNoProofing = true;
+      await context.sync();
+    }
   });
   return changed;
 }
