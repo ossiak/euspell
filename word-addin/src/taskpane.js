@@ -56,12 +56,14 @@ async function convert(scope) {
     });
     await context.sync();
 
-    // Stop Word's spell/grammar checker flagging euspell words as mistakes:
-    // mark the converted range "do not check spelling or grammar". This both
-    // clears existing squiggles and prevents new ones. (Add-ins can't add to
-    // Word's dictionary.) WordApiDesktop 1.3 is desktop-only, so on Word for the
-    // web this is skipped — the conversion still happens, just still underlined.
-    if (Office.context.requirements.isSetSupported('WordApiDesktop', '1.3')) {
+    // Optionally stop Word's spell/grammar checker flagging euspell words: mark
+    // the converted range "do not check spelling or grammar" (clears existing
+    // squiggles and prevents new ones). The alternative is installing the
+    // euspell custom dictionary, which keeps real typo checking on — users who
+    // do that uncheck this box. WordApiDesktop 1.3 is desktop-only, so this is
+    // skipped on Word for the web (the conversion still happens).
+    const noProof = document.getElementById('no-proof').checked;
+    if (noProof && Office.context.requirements.isSetSupported('WordApiDesktop', '1.3')) {
       rootRange.hasNoProofing = true;
       await context.sync();
     }

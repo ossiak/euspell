@@ -19,6 +19,8 @@
     button.secondary { background: #fff; color: #0078d4; }
     button:disabled { opacity: 0.5; cursor: default; }
     #status { font-size: 13px; color: #333; min-height: 18px; margin-top: 8px; }
+    .opt { display: flex; align-items: flex-start; gap: 6px; font-size: 12px; color: #444; margin: 2px 0 12px; }
+    .opt input { margin-top: 2px; }
     .note { font-size: 11px; color: #777; margin-top: 18px; line-height: 1.5; }
   </style>
 </head>
@@ -28,6 +30,11 @@
     <p class="lead">Convert text to euspell reformed spelling.</p>
     <button id="convert-doc" disabled>Convert document</button>
     <button id="convert-sel" class="secondary" disabled>Convert selection</button>
+    <label class="opt">
+      <input type="checkbox" id="no-proof" checked />
+      Turn off spell-check on the converted text (so Word won't flag euspell
+      words). Uncheck if you've installed the euspell custom dictionary.
+    </label>
     <p id="status"></p>
     <p class="note">One-pass conversion. The first run loads the dictionary, so it
       may take a few seconds. Run once — a few reforms aren't idempotent.</p>

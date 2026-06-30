@@ -76,10 +76,26 @@ URL by hand.
 | Inline character formatting | replacing a paragraph resets it to default run formatting |
 
 Notes:
-- **Spell check:** converted text is marked "do not check spelling or grammar"
-  (`Range.hasNoProofing`), so Word doesn't flag euspell words as mistakes. This
-  needs WordApiDesktop 1.3, i.e. **Word desktop**; on Word for the web the text
-  still converts but stays underlined.
 - **Run once** — a few reforms aren't idempotent.
 - The first conversion in a session loads ~5 MB of dictionary data, so it takes a
   few seconds before acting.
+
+## Keeping Word from flagging euspell words
+
+Euspell words aren't in Word's dictionary, so the spell checker underlines them.
+Two ways to stop that — pick one:
+
+1. **Turn off proofing on the converted text (default, zero setup).** The
+   taskpane's checkbox sets `Range.hasNoProofing` on what it converts, so Word
+   stops checking it. Simple, but blunt: it disables *all* spell/grammar checking
+   on that text, so real typos there aren't caught either. Desktop only
+   (WordApiDesktop 1.3); on Word for the web the text still converts but stays
+   underlined.
+
+2. **Install the euspell custom dictionary (keeps real typo checking).** Build it
+   with `npm run gen:word-dict` → `dict/euspell-word.dic` (40k reformed spellings),
+   then in Word: **File ▸ Options ▸ Proofing ▸ Custom Dictionaries ▸ Add…** and
+   pick that file. Word then treats euspell words as correctly spelled in every
+   document while still flagging genuine mistakes. One-time, global, and
+   independent of the add-in — **uncheck** the taskpane box if you use this.
+   (Custom dictionaries are a desktop feature; Word on the web doesn't use them.)
