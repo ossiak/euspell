@@ -14,6 +14,10 @@
     "gen:icons": "node build/gen-icons.js",
     "gen:wordlist": "node build/gen-wordlist.js",
     "gen:oxt": "npm run gen:wordlist && node build/gen-oxt.js",
+    "gen:lo": "node build/gen-lo.js",
+    "gen:lo:fixtures": "node build/gen-lo-fixtures.mjs",
+    "gen:lo:oxt": "npm run gen:lo && node build/gen-lo-oxt.js",
+    "test:lo": "node build/gen-lo-fixtures.mjs && python libreoffice/tests/test_engine.py",
     "gen:diatones": "node build/gen-diatones.js",
     "watch": "rollup -c --watch"
   },

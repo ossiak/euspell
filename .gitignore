@@ -9,3 +9,6 @@ __pycache__/
 
 # Large generated disambiguation corpora (regenerable from Euspell/all_VVZ_f.txt)
 disambig/_corpus_*.txt
+
+# LibreOffice extension data: copied/exported from the lexicon by `npm run gen:lo`
+libreoffice/euspell/data/
