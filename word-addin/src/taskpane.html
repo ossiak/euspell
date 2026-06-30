@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Euspell</title>
+  <!-- The Office JavaScript API must be loaded from Microsoft's CDN. -->
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: "Segoe UI", system-ui, sans-serif; margin: 0; padding: 16px; }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    p.lead { color: #555; margin: 0 0 16px; font-size: 13px; }
+    button {
+      display: block; width: 100%; box-sizing: border-box; margin: 0 0 10px;
+      padding: 10px 12px; font-size: 14px; border-radius: 6px; cursor: pointer;
+      border: 1px solid #0078d4; background: #0078d4; color: #fff;
+    }
+    button.secondary { background: #fff; color: #0078d4; }
+    button:disabled { opacity: 0.5; cursor: default; }
+    #status { font-size: 13px; color: #333; min-height: 18px; margin-top: 8px; }
+    .note { font-size: 11px; color: #777; margin-top: 18px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Euspell</h1>
+    <p class="lead">Convert text to euspell reformed spelling.</p>
+    <button id="convert-doc" disabled>Convert document</button>
+    <button id="convert-sel" class="secondary" disabled>Convert selection</button>
+    <p id="status"></p>
+    <p class="note">One-pass conversion. The first run loads the dictionary, so it
+      may take a few seconds. Run once — a few reforms aren't idempotent.</p>
+  </main>
+
+  <!-- Dictionary data must load before the engine (it reads the globals). -->
+  <script src="euspell-data.js"></script>
+  <script src="euspell-engine.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>

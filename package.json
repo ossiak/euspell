@@ -20,6 +20,8 @@
     "test:lo": "node build/gen-lo-fixtures.mjs && python libreoffice/tests/test_engine.py",
     "gen:gas": "npm run gen:lo && node build/gen-gas.js",
     "test:gas": "node build/gen-lo-fixtures.mjs && node build/test-gas.mjs",
+    "gen:word": "npm run gen:lo && node build/gen-word.js",
+    "word:serve": "node word-addin/server.js",
     "gen:diatones": "node build/gen-diatones.js",
     "watch": "rollup -c --watch"
   },
