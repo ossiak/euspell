@@ -42,7 +42,7 @@ _KEEP_UNCHANGED = {"bach", "chis", "ravined"}
 # (pronunciation) rule in the JS engine. Not ported in v1: route() defaults
 # them, and the proofreader offers their spellings as choices.
 _SEMANTIC_WORDS = {
-    "are", "barred", "bass", "beloved", "blessed", "bow", "bowed", "bowing",
+    "barred", "bass", "beloved", "blessed", "bow", "bowed", "bowing",
     "bowman", "bowings", "bowmen", "bows", "chi", "cleanly", "close", "closer",
     "conch", "copyread", "does", "dogged", "dove", "foreread", "gets", "jagged",
     "lead", "leads", "learned", "longed", "looks", "makes", "means", "minute",

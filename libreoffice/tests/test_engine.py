@@ -44,9 +44,11 @@ def main():
     assert engine.word_candidates("Above") == ["Abov"], engine.word_candidates("Above")
     # Semantic homographs are left unchanged by auto-conversion but offered as
     # choices (the components surface these for the user to pick).
-    assert engine.convert_text("They are here.") == "They are here.", "semantic left unchanged"
-    assert engine.word_candidates("are") == ["are", "ar"], engine.word_candidates("are")
+    assert engine.convert_text("They read it.") == "They read it.", "semantic left unchanged"
     assert engine.word_candidates("read") == ["read", "redd"], engine.word_candidates("read")
+    # "are" is now a plain single-spelling verb (encoding 101), not a homograph.
+    assert engine.convert_text("They are here.") == "They ar here.", engine.convert_text("They are here.")
+    assert engine.word_candidates("are") == ["ar"], engine.word_candidates("are")
 
     print()
     print(f"engine fixtures: {len(fixtures) - len(fails)}/{len(fixtures)} pass; "

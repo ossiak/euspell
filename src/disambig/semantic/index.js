@@ -5,7 +5,6 @@
  *
  * Used by converter.js route() to dispatch encoding-202 words.
  */
-import { disambiguate_are } from './are.js';
 import { disambiguate_barred } from './barred.js';
 import { disambiguate_bass } from './bass.js';
 import { disambiguate_beloved } from './beloved.js';
@@ -78,7 +77,6 @@ import { disambiguate_wound } from './wound.js';
 
 /** @type {Map<string, (tokens: import('../../content/context.js').Token[], idx: number) => (string | null)>} */
 export const SEMANTIC = new Map([
-  ['are', disambiguate_are],
   ['barred', disambiguate_barred],
   ['bass', disambiguate_bass],
   ['beloved', disambiguate_beloved],

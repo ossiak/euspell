@@ -24,7 +24,7 @@ var Euspell = (function () {
 
   // Surface words whose multi-spelling choice needs a semantic rule (not ported).
   var SEMANTIC_WORDS = {};
-  ('are barred bass beloved blessed bow bowed bowing bowman bowings bowmen bows ' +
+  ('barred bass beloved blessed bow bowed bowing bowman bowings bowmen bows ' +
    'chi cleanly close closer conch copyread does dogged dove foreread gets jagged ' +
    'lead leads learned longed looks makes means minute misread outread primate ' +
    'primates proofread ragged read reread row rowed rows rowing secreted secreting ' +

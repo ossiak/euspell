@@ -34,11 +34,14 @@ for (const [src, expected] of fixtures) {
 const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const checks = [
   ['above', ['abov']], ['records', ['records', 'recordz']], ['cat', []],
-  ['Above', ['Abov']], ['are', ['are', 'ar']], ['read', ['read', 'redd']],
+  ['Above', ['Abov']], ['are', ['ar']], ['read', ['read', 'redd']],
 ];
 let cfail = 0;
 for (const [w, exp] of checks) if (!eq(Euspell.wordCandidates(w), exp)) { cfail++; console.log('CAND FAIL', w, Euspell.wordCandidates(w)); }
-if (Euspell.convertText('They are here.') !== 'They are here.') { cfail++; console.log('semantic-unchanged FAIL'); }
+// "read" stays a semantic homograph (left unchanged); "are" is now a plain
+// single-spelling verb (encoding 101) and converts to "ar".
+if (Euspell.convertText('They read it.') !== 'They read it.') { cfail++; console.log('semantic-unchanged FAIL'); }
+if (Euspell.convertText('They are here.') !== 'They ar here.') { cfail++; console.log('are-conversion FAIL'); }
 
 console.log(`\nGAS engine: ${fixtures.length - fail}/${fixtures.length} fixtures pass; candidate checks ${cfail ? cfail + ' FAILED' : 'pass'}`);
 process.exit(fail || cfail ? 1 : 0);
