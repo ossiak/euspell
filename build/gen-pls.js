@@ -25,11 +25,14 @@ const LEXICON = join(root, 'data/euspell_lexicon.csv');
 const IPA_CSV = join(root, 'data/changed_words_IPA.csv');
 const OUT = join(root, 'dict/euspell.pls');
 
-// traditional headword -> its euspellings (lexicon column 4, pipe-separated).
+// traditional headword -> its euspellings (lexicon column 4, pipe-separated),
+// plus the set of every headword (a "primary" / standard dictionary word).
 const spellings = new Map();
+const headwords = new Set();
 for (const raw of readFileSync(LEXICON, 'utf8').split('\n')) {
   const c = raw.replace(/\r$/, '').split(',');
   if (c.length < 4 || Number.isNaN(+c[2])) continue; // skip header / blank rows
+  headwords.add(c[0]);
   const sp = c[3];
   if (!sp || sp === '[]') continue;
   spellings.set(c[0], sp.split('|'));
@@ -62,6 +65,7 @@ const multiIpa = []; // [{ word, ipas: [...] }] homographs needing manual tuning
 let missing = 0;
 let noIpa = 0;
 let conflicts = 0;
+let primary = 0;
 for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const fields = raw.replace(/\r$/, '').split(',');
   const word = fields[0];
@@ -72,7 +76,15 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const ipa = ipas[0]; // primary reading
   const sp = spellings.get(word) || spellings.get(word.toLowerCase());
   if (!sp) { missing++; continue; }
-  const news = sp.filter((s) => s !== word); // new spellings only
+  // New spellings only, and never a "primary" word: a grapheme that is itself a
+  // lexicon headword (e.g. "programs", the standard form, from British
+  // "programmes") is an existing word, not a euspell reform, so it needs no
+  // pronunciation entry. Only the genuine novel spelling (e.g. "programz") is kept.
+  const news = sp.filter((s) => {
+    if (s === word) return false;
+    if (headwords.has(s)) { primary++; return false; }
+    return true;
+  });
   for (const grapheme of news) {
     const prev = entries.get(grapheme);
     if (prev) {
@@ -111,4 +123,5 @@ ${body}
 writeFileSync(OUT, pls, 'utf8');
 console.log(`[gen-pls] wrote ${OUT} (${entries.size} lexemes)`);
 console.log(`[gen-pls]   ${multiIpa.length} words have multiple readings (primary used; tune by hand)`);
+console.log(`[gen-pls]   ${primary} primary-word graphemes dropped (grapheme is a lexicon headword)`);
 console.log(`[gen-pls]   ${missing} CSV words absent from lexicon; ${noIpa} rows with no IPA; ${conflicts} grapheme conflicts`);
