@@ -1,0 +1,63 @@
+# Builds the Word add-in (regenerating the gitignored engine/data/icons from the
+# committed lexicon) and publishes word-addin/ to GitHub Pages, with the manifest
+# URLs rewritten from the localhost dev server to the Pages origin. The published
+# site then hosts the add-in for Word on the web (and a shareable manifest).
+#
+# One-time setup: repo Settings ▸ Pages ▸ Source = "GitHub Actions".
+# Add-in lives at  https://<owner>.github.io/<repo>/src/taskpane.html
+# Hosted manifest: https://<owner>.github.io/<repo>/manifest.xml
+name: Deploy Word add-in to Pages
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'word-addin/**'
+      - 'build/gen-word.js'
+      - 'build/gen-lo.js'
+      - 'data/euspell_lexicon*.csv'
+      - 'src/disambig/vvz-svm.js'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run gen:word
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Point the manifest at the Pages origin
+        env:
+          BASE: ${{ steps.pages.outputs.base_url }}
+        run: |
+          node -e "const fs=require('fs');const base=process.env.BASE.replace(/\/+$/,'');let m=fs.readFileSync('word-addin/manifest.xml','utf8');m=m.split('https://localhost:3000').join(base);fs.writeFileSync('word-addin/manifest.xml',m);console.log('manifest base ->',base);"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: word-addin
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

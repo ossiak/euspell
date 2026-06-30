@@ -44,12 +44,25 @@ Leave the server running, then **sideload** `manifest.xml` into Word:
 Then on the **Home** tab click **Euspell** to open the taskpane, and use
 **Convert document** / **Convert selection**.
 
-## Sharing it (hosting)
+## Sharing it (hosting) — and Word on the web
 
-For others to use it without your dev server, host the `word-addin/` folder on
-any static **HTTPS** host (GitHub Pages, Azure Static Web Apps, …) and replace
-`https://localhost:3000` throughout `manifest.xml` with that URL. Distribute the
-edited manifest (sideload, or AppSource / Microsoft 365 admin center).
+For others to use it without your dev server — and to work reliably in **Word on
+the web** (where a `localhost` taskpane is often blocked) — host the add-in on a
+static **HTTPS** origin.
+
+A GitHub Actions workflow does this automatically: [.github/workflows/pages.yml](../.github/workflows/pages.yml)
+rebuilds `word-addin/` (regenerating the engine/data/icons from the committed
+lexicon) and publishes it to **GitHub Pages**, rewriting the manifest URLs from
+`https://localhost:3000` to the Pages origin. One-time: repo **Settings ▸ Pages ▸
+Source = "GitHub Actions"**. After it runs:
+
+- add-in taskpane: `https://<owner>.github.io/<repo>/src/taskpane.html`
+- shareable manifest: `https://<owner>.github.io/<repo>/manifest.xml`
+  (download it, then **Insert ▸ Add-ins ▸ Upload My Add-in** in Word).
+
+For a different host (Azure Static Web Apps, etc.), serve `word-addin/` over
+HTTPS and replace `https://localhost:3000` throughout `manifest.xml` with that
+URL by hand.
 
 ## What is and isn't handled
 
