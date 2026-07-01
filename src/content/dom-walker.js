@@ -89,6 +89,27 @@ export function restoreOriginals(root) {
 }
 
 /**
+ * Converts a plain string through the exact same block pipeline the reader uses
+ * on the page — tokenization, tagging, phrase matching, contraction handling and
+ * context-aware disambiguation — by running it through a detached container.
+ *
+ * Dictation has a recognized utterance (text), not page nodes, but wants
+ * identical spelling behaviour; routing through a throwaway <div> reuses the
+ * whole engine with no duplicated logic. The node is discarded on return, so its
+ * transient `memory` entry is released with it.
+ *
+ * @param {string} text
+ * @param {(word: string, tokens: Token[], idx: number) => string} convertFn
+ * @returns {string}
+ */
+export function convertText(text, convertFn) {
+  const holder = document.createElement('div');
+  holder.textContent = text;
+  walkTextNodes(holder, convertFn);
+  return holder.textContent;
+}
+
+/**
  * Groups the convertible text nodes under `root` by their nearest block-level
  * ancestor, preserving document order within each group.
  * @param {Node} root

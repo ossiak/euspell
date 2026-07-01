@@ -10,6 +10,8 @@ const hostEl = document.getElementById('host');
 const hint = document.getElementById('hint');
 const viewRow = document.getElementById('viewRow');
 const showOriginalBox = document.getElementById('showOriginal');
+const dictateRow = document.getElementById('dictateRow');
+const dictateBtn = document.getElementById('dictate');
 
 /** Ask the active tab's content script for its view mode; null if not converting. */
 async function tabMode(tab) {
@@ -17,6 +19,16 @@ async function tabMode(tab) {
   try {
     const res = await chrome.tabs.sendMessage(tab.id, { type: 'euspell:getMode' });
     return res && res.mode ? res.mode : null;
+  } catch {
+    return null; // no content script on this page
+  }
+}
+
+/** Ask the active tab's content script whether dictation is supported/active. */
+async function dictationStatus(tab) {
+  if (tab?.id == null) return null;
+  try {
+    return await chrome.tabs.sendMessage(tab.id, { type: 'euspell:dictation:status' });
   } catch {
     return null; // no content script on this page
   }
@@ -62,7 +74,31 @@ async function load() {
   } else {
     viewRow.hidden = true;
   }
+
+  // Dictation: shown when the content script is present and the browser supports
+  // speech recognition. Independent of the conversion toggle above.
+  const dict = await dictationStatus(tab);
+  if (dict?.supported) {
+    dictateBtn.textContent = dict.active ? 'Stop' : 'Start';
+    dictateRow.hidden = false;
+  } else {
+    dictateRow.hidden = true;
+  }
 }
+
+dictateBtn.addEventListener('click', async () => {
+  const tab = await activeTab();
+  if (tab?.id == null) return;
+  try {
+    const res = await chrome.tabs.sendMessage(tab.id, { type: 'euspell:dictation:toggle' });
+    dictateBtn.textContent = res?.active ? 'Stop' : 'Start';
+    // Closing the popup returns focus to the page, so the caret is in the field
+    // the user means to dictate into.
+    if (res?.active) window.close();
+  } catch {
+    dictateRow.hidden = true; // content script went away
+  }
+});
 
 showOriginalBox.addEventListener('change', async () => {
   const tab = await activeTab();

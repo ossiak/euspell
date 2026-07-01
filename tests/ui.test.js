@@ -16,7 +16,7 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'viewRow', 'showOriginal'])
+  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'viewRow', 'showOriginal', 'dictateRow', 'dictate'])
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };

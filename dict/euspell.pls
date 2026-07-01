@@ -58,13 +58,13 @@
   <lexeme><grapheme>ablativs</grapheme><phoneme>ˈæblətɪvz</phoneme></lexeme> <!-- ablatives -->
   <lexeme><grapheme>ablegatez</grapheme><phoneme>ˈæblɪˌɡeɪts</phoneme></lexeme> <!-- ablegates -->
   <lexeme><grapheme>abligatez</grapheme><phoneme>ˈæblɪˌɡeɪts</phoneme></lexeme> <!-- abligates -->
-  <lexeme><grapheme>abludez</grapheme><phoneme>əˈbludz</phoneme></lexeme> <!-- abludes -->
-  <lexeme><grapheme>ablutez</grapheme><phoneme>əˈbluts</phoneme></lexeme> <!-- ablutes -->
+  <lexeme><grapheme>abludez</grapheme><phoneme>əˈbluːdz</phoneme></lexeme> <!-- abludes -->
+  <lexeme><grapheme>ablutez</grapheme><phoneme>əˈbluːts</phoneme></lexeme> <!-- ablutes -->
   <lexeme><grapheme>abnegatez</grapheme><phoneme>ˈæbnɪˌɡeɪts</phoneme></lexeme> <!-- abnegates -->
   <lexeme><grapheme>abnegativ</grapheme><phoneme>æbˈnɛɡətɪv</phoneme></lexeme> <!-- abnegative -->
-  <lexeme><grapheme>abodeau</grapheme><phoneme>æbˈwɑdoʊ</phoneme></lexeme> <!-- aboideau -->
-  <lexeme><grapheme>abodeaus</grapheme><phoneme>æbˈwɑdoʊz</phoneme></lexeme> <!-- aboideaus -->
-  <lexeme><grapheme>aboht</grapheme><phoneme>əˈbɔt</phoneme></lexeme> <!-- abought -->
+  <lexeme><grapheme>abodeau</grapheme><phoneme>ˈæbədoʊ</phoneme></lexeme> <!-- aboideau -->
+  <lexeme><grapheme>abodeaus</grapheme><phoneme>ˈæbədoʊz</phoneme></lexeme> <!-- aboideaus -->
+  <lexeme><grapheme>aboht</grapheme><phoneme>əˈbɔːt</phoneme></lexeme> <!-- abought -->
   <lexeme><grapheme>abolishd</grapheme><phoneme>əˈbɑlɪʃt</phoneme></lexeme> <!-- abolished -->
   <lexeme><grapheme>abolishez</grapheme><phoneme>əˈbɑlɪʃɪz</phoneme></lexeme> <!-- abolishes -->
   <lexeme><grapheme>abolitionizez</grapheme><phoneme>ˌæbəˈlɪʃəˌnaɪzɪz</phoneme></lexeme> <!-- abolitionises -->
@@ -75,8 +75,8 @@
   <lexeme><grapheme>abortivly</grapheme><phoneme>əˈbɔrtɪvli</phoneme></lexeme> <!-- abortively -->
   <lexeme><grapheme>abortivness</grapheme><phoneme>əˈbɔrtɪvnəs</phoneme></lexeme> <!-- abortiveness -->
   <lexeme><grapheme>abortz</grapheme><phoneme>əˈbɔrts</phoneme></lexeme> <!-- aborts -->
-  <lexeme><grapheme>aboteau</grapheme><phoneme>æbˈwɑtoʊ</phoneme></lexeme> <!-- aboiteau -->
-  <lexeme><grapheme>aboteaus</grapheme><phoneme>æbˈwɑtoʊz</phoneme></lexeme> <!-- aboiteaus -->
+  <lexeme><grapheme>aboteau</grapheme><phoneme>ˈæbətoʊ</phoneme></lexeme> <!-- aboiteau -->
+  <lexeme><grapheme>aboteaus</grapheme><phoneme>ˈæbətoʊz</phoneme></lexeme> <!-- aboiteaus -->
   <lexeme><grapheme>aboundz</grapheme><phoneme>əˈbaʊndz</phoneme></lexeme> <!-- abounds -->
   <lexeme><grapheme>abov</grapheme><phoneme>əˈbʌv</phoneme></lexeme> <!-- above -->
   <lexeme><grapheme>abovboard</grapheme><phoneme>əˈbʌvˌbɔrd</phoneme></lexeme> <!-- aboveboard -->
@@ -93,7 +93,7 @@
   <lexeme><grapheme>abrasivness</grapheme><phoneme>əˈbreɪsɪvnəs</phoneme></lexeme> <!-- abrasiveness -->
   <lexeme><grapheme>abrasivs</grapheme><phoneme>əˈbreɪsɪvz</phoneme></lexeme> <!-- abrasives -->
   <lexeme><grapheme>abreactz</grapheme><phoneme>ˌæbriˈækts</phoneme></lexeme> <!-- abreacts -->
-  <lexeme><grapheme>abrenouncez</grapheme><phoneme>ˌeɪbrɪˈnaʊnsɪz</phoneme></lexeme> <!-- abrenounces -->
+  <lexeme><grapheme>abrenouncez</grapheme><phoneme>ˌæbrɪˈnaʊnsɪz</phoneme></lexeme> <!-- abrenounces -->
   <lexeme><grapheme>abrest</grapheme><phoneme>əˈbrɛst</phoneme></lexeme> <!-- abreast -->
   <lexeme><grapheme>abrevwar</grapheme><phoneme>ˌæbrəˈvwɑr</phoneme></lexeme> <!-- abreuvoir -->
   <lexeme><grapheme>abrevwars</grapheme><phoneme>ˌæbrəˈvwɑrz</phoneme></lexeme> <!-- abreuvoirs -->
@@ -121,13 +121,13 @@
   <lexeme><grapheme>absistz</grapheme><phoneme>æbˈsɪsts</phoneme></lexeme> <!-- absists -->
   <lexeme><grapheme>absolutiv</grapheme><phoneme>æbˈsɑlətɪv</phoneme></lexeme> <!-- absolutive -->
   <lexeme><grapheme>absolutizez</grapheme><phoneme>ˈæbsəluˌtaɪzɪz</phoneme></lexeme> <!-- absolutizes -->
-  <lexeme><grapheme>absolv</grapheme><phoneme>æbˈsɑlv</phoneme></lexeme> <!-- absolve -->
-  <lexeme><grapheme>absolvd</grapheme><phoneme>æbˈsɑlvd</phoneme></lexeme> <!-- absolved -->
-  <lexeme><grapheme>absolvz</grapheme><phoneme>æbˈsɑlvz</phoneme></lexeme> <!-- absolves -->
-  <lexeme><grapheme>absorbd</grapheme><phoneme>æbˈsɔrbd</phoneme></lexeme> <!-- absorbed -->
-  <lexeme><grapheme>absorbz</grapheme><phoneme>æbˈsɔrbz</phoneme></lexeme> <!-- absorbs -->
-  <lexeme><grapheme>absorptiv</grapheme><phoneme>æbˈsɔrptɪv</phoneme></lexeme> <!-- absorptive -->
-  <lexeme><grapheme>absorptivness</grapheme><phoneme>æbˈsɔrptɪvnəs</phoneme></lexeme> <!-- absorptiveness -->
+  <lexeme><grapheme>absolv</grapheme><phoneme>æbˈzɑlv</phoneme></lexeme> <!-- absolve -->
+  <lexeme><grapheme>absolvd</grapheme><phoneme>æbˈzɑlvd</phoneme></lexeme> <!-- absolved -->
+  <lexeme><grapheme>absolvz</grapheme><phoneme>æbˈzɑlvz</phoneme></lexeme> <!-- absolves -->
+  <lexeme><grapheme>absorbd</grapheme><phoneme>æbˈzɔrbd</phoneme></lexeme> <!-- absorbed -->
+  <lexeme><grapheme>absorbz</grapheme><phoneme>æbˈzɔrbz</phoneme></lexeme> <!-- absorbs -->
+  <lexeme><grapheme>absorptiv</grapheme><phoneme>æbˈzɔrptɪv</phoneme></lexeme> <!-- absorptive -->
+  <lexeme><grapheme>absorptivness</grapheme><phoneme>æbˈzɔrptɪvnəs</phoneme></lexeme> <!-- absorptiveness -->
   <lexeme><grapheme>absquatulatez</grapheme><phoneme>æbˈskwætʃəˌleɪts</phoneme></lexeme> <!-- absquatulates -->
   <lexeme><grapheme>abstaind</grapheme><phoneme>æbˈsteɪnd</phoneme></lexeme> <!-- abstained -->
   <lexeme><grapheme>abstainz</grapheme><phoneme>æbˈsteɪnz</phoneme></lexeme> <!-- abstains -->
@@ -143,27 +143,27 @@
   <lexeme><grapheme>abstrictz</grapheme><phoneme>æbˈstrɪkts</phoneme></lexeme> <!-- abstricts -->
   <lexeme><grapheme>abstringez</grapheme><phoneme>æbˈstrɪndʒɪz</phoneme></lexeme> <!-- abstringes -->
   <lexeme><grapheme>abstrudez</grapheme><phoneme>æbˈstrudz</phoneme></lexeme> <!-- abstrudes -->
-  <lexeme><grapheme>absumez</grapheme><phoneme>æbˈsumz</phoneme></lexeme> <!-- absumes -->
-  <lexeme><grapheme>abusiv</grapheme><phoneme>əˈbjusɪv</phoneme></lexeme> <!-- abusive -->
-  <lexeme><grapheme>abusivly</grapheme><phoneme>əˈbjusɪvli</phoneme></lexeme> <!-- abusively -->
-  <lexeme><grapheme>abusivness</grapheme><phoneme>əˈbjusɪvnəs</phoneme></lexeme> <!-- abusiveness -->
+  <lexeme><grapheme>absumez</grapheme><phoneme>æbˈsuːmz</phoneme></lexeme> <!-- absumes -->
+  <lexeme><grapheme>abusiv</grapheme><phoneme>əˈbjuːsɪv</phoneme></lexeme> <!-- abusive -->
+  <lexeme><grapheme>abusivly</grapheme><phoneme>əˈbjuːsɪvli</phoneme></lexeme> <!-- abusively -->
+  <lexeme><grapheme>abusivness</grapheme><phoneme>əˈbjuːsɪvnəs</phoneme></lexeme> <!-- abusiveness -->
   <lexeme><grapheme>abutz</grapheme><phoneme>əˈbʌts</phoneme></lexeme> <!-- abuts -->
-  <lexeme><grapheme>abuzable</grapheme><phoneme>əˈbjusəbəl</phoneme></lexeme> <!-- abusable -->
-  <lexeme><grapheme>abuzage</grapheme><phoneme>əˈbjusɪdʒ</phoneme></lexeme> <!-- abusage -->
-  <lexeme><grapheme>abuzages</grapheme><phoneme>əˈbjusɪdʒɪz</phoneme></lexeme> <!-- abusages -->
-  <lexeme><grapheme>abuze</grapheme><phoneme>əˈbjuz</phoneme></lexeme> <!-- abuse -->
-  <lexeme><grapheme>abuzed</grapheme><phoneme>əˈbjuzd</phoneme></lexeme> <!-- abused -->
-  <lexeme><grapheme>abuzer</grapheme><phoneme>əˈbjuzər</phoneme></lexeme> <!-- abuser -->
-  <lexeme><grapheme>abuzers</grapheme><phoneme>əˈbjuzərz</phoneme></lexeme> <!-- abusers -->
-  <lexeme><grapheme>abuzez</grapheme><phoneme>əˈbjusɪz</phoneme></lexeme> <!-- abuses -->
-  <lexeme><grapheme>abuzing</grapheme><phoneme>əˈbjuzɪŋ</phoneme></lexeme> <!-- abusing -->
+  <lexeme><grapheme>abuzable</grapheme><phoneme>əˈbjuːzəbəl</phoneme></lexeme> <!-- abusable -->
+  <lexeme><grapheme>abuzage</grapheme><phoneme>əˈbjuːzɪdʒ</phoneme></lexeme> <!-- abusage -->
+  <lexeme><grapheme>abuzages</grapheme><phoneme>əˈbjuːzɪdʒɪz</phoneme></lexeme> <!-- abusages -->
+  <lexeme><grapheme>abuze</grapheme><phoneme>əˈbjuːz</phoneme></lexeme> <!-- abuse -->
+  <lexeme><grapheme>abuzed</grapheme><phoneme>əˈbjuːzd</phoneme></lexeme> <!-- abused -->
+  <lexeme><grapheme>abuzer</grapheme><phoneme>əˈbjuːzər</phoneme></lexeme> <!-- abuser -->
+  <lexeme><grapheme>abuzers</grapheme><phoneme>əˈbjuːzərz</phoneme></lexeme> <!-- abusers -->
+  <lexeme><grapheme>abuzez</grapheme><phoneme>əˈbjuːzɪz</phoneme></lexeme> <!-- abuses -->
+  <lexeme><grapheme>abuzing</grapheme><phoneme>əˈbjuːzɪŋ</phoneme></lexeme> <!-- abusing -->
   <lexeme><grapheme>abyez</grapheme><phoneme>əˈbaɪz</phoneme></lexeme> <!-- abyes -->
   <lexeme><grapheme>acaju</grapheme><phoneme>ˈækəˌʒu</phoneme></lexeme> <!-- acajou -->
   <lexeme><grapheme>acajus</grapheme><phoneme>ˈækəˌʒuz</phoneme></lexeme> <!-- acajous -->
   <lexeme><grapheme>accedez</grapheme><phoneme>ækˈsidz</phoneme></lexeme> <!-- accedes -->
   <lexeme><grapheme>acceleratez</grapheme><phoneme>ækˈsɛləˌreɪts</phoneme></lexeme> <!-- accelerates -->
   <lexeme><grapheme>accelerativ</grapheme><phoneme>ækˈsɛləˌreɪtɪv</phoneme></lexeme> <!-- accelerative -->
-  <lexeme><grapheme>accendz</grapheme><phoneme>æˈsɛndz</phoneme></lexeme> <!-- accends -->
+  <lexeme><grapheme>accendz</grapheme><phoneme>æˈksɛndz</phoneme></lexeme> <!-- accends -->
   <lexeme><grapheme>accentuatez</grapheme><phoneme>ækˈsɛntʃuˌeɪts</phoneme></lexeme> <!-- accentuates -->
   <lexeme><grapheme>accentz</grapheme><phoneme>ˈæksɛnts</phoneme></lexeme> <!-- accents -->
   <lexeme><grapheme>acceptilatez</grapheme><phoneme>ækˈsɛptəˌleɪts</phoneme></lexeme> <!-- acceptilates -->
@@ -192,25 +192,25 @@
   <lexeme><grapheme>accompletiv</grapheme><phoneme>əˈkɑmplətɪv</phoneme></lexeme> <!-- accompletive -->
   <lexeme><grapheme>accomplishd</grapheme><phoneme>əˈkɑmplɪʃt</phoneme></lexeme> <!-- accomplished -->
   <lexeme><grapheme>accomplishez</grapheme><phoneme>əˈkɑmplɪʃɪz</phoneme></lexeme> <!-- accomplishes -->
-  <lexeme><grapheme>accoosheur</grapheme><phoneme>ˌækʊˈʃɜr</phoneme></lexeme> <!-- accoucheur -->
-  <lexeme><grapheme>accoosheurs</grapheme><phoneme>ˌækʊˈʃɜrz</phoneme></lexeme> <!-- accoucheurs -->
-  <lexeme><grapheme>accoosheuse</grapheme><phoneme>ˌækʊˈʃɜz</phoneme></lexeme> <!-- accoucheuse -->
-  <lexeme><grapheme>accoosheuses</grapheme><phoneme>ˌækʊˈʃɜzɪz</phoneme></lexeme> <!-- accoucheuses -->
-  <lexeme><grapheme>accooshment</grapheme><phoneme>əˈkuʃmɑnt</phoneme></lexeme> <!-- accouchement -->
-  <lexeme><grapheme>accooshments</grapheme><phoneme>əˈkuʃmɑnts</phoneme></lexeme> <!-- accouchements -->
-  <lexeme><grapheme>accooter</grapheme><phoneme>əˈkutər</phoneme></lexeme> <!-- accouter -->
-  <lexeme><grapheme>accooterd</grapheme><phoneme>əˈkutərd</phoneme></lexeme> <!-- accoutered -->
-  <lexeme><grapheme>accootering</grapheme><phoneme>əˈkutərɪŋ</phoneme></lexeme> <!-- accoutering -->
-  <lexeme><grapheme>accooterment</grapheme><phoneme>əˈkutərmənt</phoneme></lexeme> <!-- accouterment -->
-  <lexeme><grapheme>accooterments</grapheme><phoneme>əˈkutərmənts</phoneme></lexeme> <!-- accouterments -->
-  <lexeme><grapheme>accooterz</grapheme><phoneme>əˈkutərz</phoneme></lexeme> <!-- accouters -->
+  <lexeme><grapheme>accoosheur</grapheme><phoneme>ˌækuˈʃɜr</phoneme></lexeme> <!-- accoucheur -->
+  <lexeme><grapheme>accoosheurs</grapheme><phoneme>ˌækuˈʃɜrz</phoneme></lexeme> <!-- accoucheurs -->
+  <lexeme><grapheme>accoosheuse</grapheme><phoneme>ˌækuˈʃɜz</phoneme></lexeme> <!-- accoucheuse -->
+  <lexeme><grapheme>accoosheuses</grapheme><phoneme>ˌækuˈʃɜzɪz</phoneme></lexeme> <!-- accoucheuses -->
+  <lexeme><grapheme>accooshment</grapheme><phoneme>əˈkuːʃmənt</phoneme></lexeme> <!-- accouchement -->
+  <lexeme><grapheme>accooshments</grapheme><phoneme>əˈkuːʃmənts</phoneme></lexeme> <!-- accouchements -->
+  <lexeme><grapheme>accooter</grapheme><phoneme>əˈkuːtər</phoneme></lexeme> <!-- accouter -->
+  <lexeme><grapheme>accooterd</grapheme><phoneme>əˈkuːtərd</phoneme></lexeme> <!-- accoutered -->
+  <lexeme><grapheme>accootering</grapheme><phoneme>əˈkuːtərɪŋ</phoneme></lexeme> <!-- accoutering -->
+  <lexeme><grapheme>accooterment</grapheme><phoneme>əˈkuːtərmənt</phoneme></lexeme> <!-- accouterment -->
+  <lexeme><grapheme>accooterments</grapheme><phoneme>əˈkuːtərmənts</phoneme></lexeme> <!-- accouterments -->
+  <lexeme><grapheme>accooterz</grapheme><phoneme>əˈkuːtərz</phoneme></lexeme> <!-- accouters -->
   <lexeme><grapheme>accordz</grapheme><phoneme>əˈkɔrdz</phoneme></lexeme> <!-- accords -->
   <lexeme><grapheme>accorporatez</grapheme><phoneme>əˈkɔrpəˌreɪts</phoneme></lexeme> <!-- accorporates -->
   <lexeme><grapheme>accort</grapheme><phoneme>əˈkɔrt</phoneme></lexeme> <!-- accourt -->
   <lexeme><grapheme>accorted</grapheme><phoneme>əˈkɔrtɪd</phoneme></lexeme> <!-- accourted -->
   <lexeme><grapheme>accorting</grapheme><phoneme>əˈkɔrtɪŋ</phoneme></lexeme> <!-- accourting -->
   <lexeme><grapheme>accortz</grapheme><phoneme>əˈkɔrts</phoneme></lexeme> <!-- accourts -->
-  <lexeme><grapheme>accostz</grapheme><phoneme>əˈkɔsts</phoneme></lexeme> <!-- accosts -->
+  <lexeme><grapheme>accostz</grapheme><phoneme>əˈkɑsts</phoneme></lexeme> <!-- accosts -->
   <lexeme><grapheme>accountz</grapheme><phoneme>əˈkaʊnts</phoneme></lexeme> <!-- accounts -->
   <lexeme><grapheme>accoyd</grapheme><phoneme>əˈkɔɪd</phoneme></lexeme> <!-- accoyed -->
   <lexeme><grapheme>accoyz</grapheme><phoneme>əˈkɔɪz</phoneme></lexeme> <!-- accoys -->
@@ -224,7 +224,7 @@
   <lexeme><grapheme>accroaqhing</grapheme><phoneme>əˈkroʊtʃɪŋ</phoneme></lexeme> <!-- accroaching -->
   <lexeme><grapheme>accroaqhment</grapheme><phoneme>əˈkroʊtʃmənt</phoneme></lexeme> <!-- accroachment -->
   <lexeme><grapheme>accroaqhments</grapheme><phoneme>əˈkroʊtʃmənts</phoneme></lexeme> <!-- accroachments -->
-  <lexeme><grapheme>accruez</grapheme><phoneme>əˈkruz</phoneme></lexeme> <!-- accrues -->
+  <lexeme><grapheme>accruez</grapheme><phoneme>əˈkruːz</phoneme></lexeme> <!-- accrues -->
   <lexeme><grapheme>acculturatez</grapheme><phoneme>əˈkʌltʃəˌreɪts</phoneme></lexeme> <!-- acculturates -->
   <lexeme><grapheme>acculturativ</grapheme><phoneme>əˈkʌltʃəˌreɪtɪv</phoneme></lexeme> <!-- acculturative -->
   <lexeme><grapheme>accumbd</grapheme><phoneme>əˈkʌmbd</phoneme></lexeme> <!-- accumbed -->
@@ -261,7 +261,7 @@
   <lexeme><grapheme>acetylatez</grapheme><phoneme>əˈsɛtəˌleɪts</phoneme></lexeme> <!-- acetylates -->
   <lexeme><grapheme>acetylativ</grapheme><phoneme>əˈsɛtəˌleɪtɪv</phoneme></lexeme> <!-- acetylative -->
   <lexeme><grapheme>acez</grapheme><phoneme>ˈeɪsɪz</phoneme></lexeme> <!-- aces -->
-  <lexeme><grapheme>achez</grapheme><phoneme>ˈeɪks</phoneme></lexeme> <!-- aches -->
+  <lexeme><grapheme>achez</grapheme><phoneme>eɪks</phoneme></lexeme> <!-- aches -->
   <lexeme><grapheme>achromatizez</grapheme><phoneme>əˈkroʊmətˌaɪzɪz</phoneme></lexeme> <!-- achromatises -->
   <lexeme><grapheme>aciculat</grapheme><phoneme>əˈsɪkjəlɪt</phoneme></lexeme> <!-- aciculate -->
   <lexeme><grapheme>acidhedd</grapheme><phoneme>ˈæsɪdˌhɛd</phoneme></lexeme> <!-- acidhead -->
@@ -271,30 +271,30 @@
   <lexeme><grapheme>acieratez</grapheme><phoneme>ˈæsiəˌreɪts</phoneme></lexeme> <!-- acierates -->
   <lexeme><grapheme>acknoledge</grapheme><phoneme>əkˈnɑlɪdʒ</phoneme></lexeme> <!-- acknowledge -->
   <lexeme><grapheme>acknoledged</grapheme><phoneme>əkˈnɑlɪdʒd</phoneme></lexeme> <!-- acknowledged -->
-  <lexeme><grapheme>acknoledgedly</grapheme><phoneme>əkˈnɑlɪdʒdli</phoneme></lexeme> <!-- acknowledgedly -->
+  <lexeme><grapheme>acknoledgedly</grapheme><phoneme>əkˈnɑlɪdʒɪdli</phoneme></lexeme> <!-- acknowledgedly -->
   <lexeme><grapheme>acknoledger</grapheme><phoneme>əkˈnɑlɪdʒər</phoneme></lexeme> <!-- acknowledger -->
   <lexeme><grapheme>acknoledgers</grapheme><phoneme>əkˈnɑlɪdʒərz</phoneme></lexeme> <!-- acknowledgers -->
   <lexeme><grapheme>acknoledgez</grapheme><phoneme>əkˈnɑlɪdʒɪz</phoneme></lexeme> <!-- acknowledges -->
   <lexeme><grapheme>acknoledging</grapheme><phoneme>əkˈnɑlɪdʒɪŋ</phoneme></lexeme> <!-- acknowledging -->
   <lexeme><grapheme>acknoledgment</grapheme><phoneme>əkˈnɑlɪdʒmənt</phoneme></lexeme> <!-- acknowledgement -->
   <lexeme><grapheme>acknoledgments</grapheme><phoneme>əkˈnɑlɪdʒmənts</phoneme></lexeme> <!-- acknowledgements -->
-  <lexeme><grapheme>acooshi</grapheme><phoneme>əˈkuʃi</phoneme></lexeme> <!-- acouchi -->
-  <lexeme><grapheme>acooshis</grapheme><phoneme>əˈkuʃiz</phoneme></lexeme> <!-- acouchies -->
-  <lexeme><grapheme>acoostic</grapheme><phoneme>əˈkustɪk</phoneme></lexeme> <!-- acoustic -->
-  <lexeme><grapheme>acoostical</grapheme><phoneme>əˈkustɪkəl</phoneme></lexeme> <!-- acoustical -->
-  <lexeme><grapheme>acoostically</grapheme><phoneme>əˈkustɪkli</phoneme></lexeme> <!-- acoustically -->
-  <lexeme><grapheme>acoostician</grapheme><phoneme>ˌakaʊˈstɪʃən</phoneme></lexeme> <!-- acoustician -->
-  <lexeme><grapheme>acoosticians</grapheme><phoneme>ˌakaʊˈstɪʃənz</phoneme></lexeme> <!-- acousticians -->
-  <lexeme><grapheme>acoostics</grapheme><phoneme>əˈkustɪks</phoneme></lexeme> <!-- acoustics -->
+  <lexeme><grapheme>acooshi</grapheme><phoneme>əˈkuːʃi</phoneme></lexeme> <!-- acouchi -->
+  <lexeme><grapheme>acooshis</grapheme><phoneme>əˈkuːʃiz</phoneme></lexeme> <!-- acouchies -->
+  <lexeme><grapheme>acoostic</grapheme><phoneme>əˈkuːstɪk</phoneme></lexeme> <!-- acoustic -->
+  <lexeme><grapheme>acoostical</grapheme><phoneme>əˈkuːstɪkəl</phoneme></lexeme> <!-- acoustical -->
+  <lexeme><grapheme>acoostically</grapheme><phoneme>əˈkuːstɪkəli</phoneme></lexeme> <!-- acoustically -->
+  <lexeme><grapheme>acoostician</grapheme><phoneme>ˌakuˈstɪʃən</phoneme></lexeme> <!-- acoustician -->
+  <lexeme><grapheme>acoosticians</grapheme><phoneme>ˌakuˈstɪʃənz</phoneme></lexeme> <!-- acousticians -->
+  <lexeme><grapheme>acoostics</grapheme><phoneme>əˈkuːstɪks</phoneme></lexeme> <!-- acoustics -->
   <lexeme><grapheme>acornd</grapheme><phoneme>ˈeɪkɔrnd</phoneme></lexeme> <!-- acorned -->
   <lexeme><grapheme>acquaintz</grapheme><phoneme>əˈkweɪnts</phoneme></lexeme> <!-- acquaints -->
   <lexeme><grapheme>acquiescez</grapheme><phoneme>ˌækwiˈɛsɪz</phoneme></lexeme> <!-- acquiesces -->
   <lexeme><grapheme>acquietz</grapheme><phoneme>əˈkwaɪɪts</phoneme></lexeme> <!-- acquiets -->
   <lexeme><grapheme>acquirez</grapheme><phoneme>əˈkwaɪərz</phoneme></lexeme> <!-- acquires -->
   <lexeme><grapheme>acquisit</grapheme><phoneme>ˈækwəzɪt</phoneme></lexeme> <!-- acquisite -->
-  <lexeme><grapheme>acquisitiv</grapheme><phoneme>əˈkwɪzətɪv</phoneme></lexeme> <!-- acquisitive -->
-  <lexeme><grapheme>acquisitivly</grapheme><phoneme>əˈkwɪzətɪvli</phoneme></lexeme> <!-- acquisitively -->
-  <lexeme><grapheme>acquisitivness</grapheme><phoneme>əˈkwɪzətɪvnəs</phoneme></lexeme> <!-- acquisitiveness -->
+  <lexeme><grapheme>acquisitiv</grapheme><phoneme>əˈkwɪzɪtɪv</phoneme></lexeme> <!-- acquisitive -->
+  <lexeme><grapheme>acquisitivly</grapheme><phoneme>əˈkwɪzɪtɪvli</phoneme></lexeme> <!-- acquisitively -->
+  <lexeme><grapheme>acquisitivness</grapheme><phoneme>əˈkwɪzɪtɪvnəs</phoneme></lexeme> <!-- acquisitiveness -->
   <lexeme><grapheme>acquitz</grapheme><phoneme>əˈkwɪts</phoneme></lexeme> <!-- acquits -->
   <lexeme><grapheme>acrasez</grapheme><phoneme>əˈkreɪsɪz</phoneme></lexeme> <!-- acrases -->
   <lexeme><grapheme>acrazez</grapheme><phoneme>əˈkreɪzɪz</phoneme></lexeme> <!-- acrazes -->
@@ -305,12 +305,12 @@
   <lexeme><grapheme>activness</grapheme><phoneme>ˈæktɪvnəs</phoneme></lexeme> <!-- activeness -->
   <lexeme><grapheme>actualizez</grapheme><phoneme>ˈæktʃuəˌlaɪzɪz</phoneme></lexeme> <!-- actualises -->
   <lexeme><grapheme>actuatez</grapheme><phoneme>ˈæktʃuˌeɪts</phoneme></lexeme> <!-- actuates -->
-  <lexeme><grapheme>actz</grapheme><phoneme>ˈækts</phoneme></lexeme> <!-- acts -->
+  <lexeme><grapheme>actz</grapheme><phoneme>ækts</phoneme></lexeme> <!-- acts -->
   <lexeme><grapheme>acuat</grapheme><phoneme>ˈækjuɪt</phoneme></lexeme> <!-- acuate -->
-  <lexeme><grapheme>acuatez</grapheme><phoneme>ˈækjuɪts</phoneme></lexeme> <!-- acuates -->
+  <lexeme><grapheme>acuatez</grapheme><phoneme>ˈækjuˌeɪts</phoneme></lexeme> <!-- acuates -->
   <lexeme><grapheme>aculeat</grapheme><phoneme>əˈkjuliɪt</phoneme></lexeme> <!-- aculeate -->
   <lexeme><grapheme>aculeats</grapheme><phoneme>əˈkjuliɪts</phoneme></lexeme> <!-- aculeates -->
-  <lexeme><grapheme>aculeolat</grapheme><phoneme>əˈkjuliəˌleɪt</phoneme></lexeme> <!-- aculeolate -->
+  <lexeme><grapheme>aculeolat</grapheme><phoneme>əˈkjuliəˌlɪt</phoneme></lexeme> <!-- aculeolate @ -->
   <lexeme><grapheme>acumeter</grapheme><phoneme>əˈkuːmɪtər</phoneme></lexeme> <!-- acoumeter -->
   <lexeme><grapheme>acumeters</grapheme><phoneme>əˈkuːmɪtərz</phoneme></lexeme> <!-- acoumeters -->
   <lexeme><grapheme>acumetry</grapheme><phoneme>əˈkuːmɪtri</phoneme></lexeme> <!-- acoumetry -->
@@ -325,11 +325,11 @@
   <lexeme><grapheme>adaptivly</grapheme><phoneme>əˈdæptɪvli</phoneme></lexeme> <!-- adaptively -->
   <lexeme><grapheme>adaptivness</grapheme><phoneme>əˈdæptɪvnəs</phoneme></lexeme> <!-- adaptiveness -->
   <lexeme><grapheme>adaptz</grapheme><phoneme>əˈdæpts</phoneme></lexeme> <!-- adapts -->
-  <lexeme><grapheme>adauntz</grapheme><phoneme>əˈdɔnts</phoneme></lexeme> <!-- adaunts -->
-  <lexeme><grapheme>adawd</grapheme><phoneme>əˈdɔd</phoneme></lexeme> <!-- adawed -->
-  <lexeme><grapheme>adawz</grapheme><phoneme>əˈdɔz</phoneme></lexeme> <!-- adaws -->
-  <lexeme><grapheme>addeemd</grapheme><phoneme>əˈdimd</phoneme></lexeme> <!-- addeemed -->
-  <lexeme><grapheme>addeemz</grapheme><phoneme>əˈdimz</phoneme></lexeme> <!-- addeems -->
+  <lexeme><grapheme>adauntz</grapheme><phoneme>əˈdɔːnts</phoneme></lexeme> <!-- adaunts -->
+  <lexeme><grapheme>adawd</grapheme><phoneme>əˈdɔːd</phoneme></lexeme> <!-- adawed -->
+  <lexeme><grapheme>adawz</grapheme><phoneme>əˈdɔːz</phoneme></lexeme> <!-- adaws -->
+  <lexeme><grapheme>addeemd</grapheme><phoneme>əˈdiːmd</phoneme></lexeme> <!-- addeemed -->
+  <lexeme><grapheme>addeemz</grapheme><phoneme>əˈdiːmz</phoneme></lexeme> <!-- addeems -->
   <lexeme><grapheme>addictiv</grapheme><phoneme>əˈdɪktɪv</phoneme></lexeme> <!-- addictive -->
   <lexeme><grapheme>addictivly</grapheme><phoneme>əˈdɪktɪvli</phoneme></lexeme> <!-- addictively -->
   <lexeme><grapheme>addictivness</grapheme><phoneme>əˈdɪktɪvnəs</phoneme></lexeme> <!-- addictiveness -->

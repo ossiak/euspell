@@ -16,6 +16,21 @@ chrome.runtime.onInstalled.addListener(async () => {
   });
 });
 
+// Keyboard shortcut (chrome://extensions/shortcuts) toggles dictation in the
+// active tab. The content script owns the recognizer and inserts at the caret,
+// so we just forward the toggle; a page with no content script (chrome://, the
+// web store) simply has no receiver and the send is ignored.
+chrome.commands.onCommand.addListener(async (command) => {
+  if (command !== 'toggle-dictation') return;
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (tab?.id == null) return;
+  try {
+    await chrome.tabs.sendMessage(tab.id, { type: 'euspell:dictation:toggle' });
+  } catch {
+    /* no content script on this page */
+  }
+});
+
 // We render PDFs in our own PDF.js viewer (reformed text). Chrome's built-in
 // viewer is a native plugin a content script can't touch, so redirecting the tab
 // is the only way in. Both detection paths below honour the same enabled/

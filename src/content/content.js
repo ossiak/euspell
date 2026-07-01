@@ -1,6 +1,7 @@
 import { convert } from './converter.js';
 import { walkTextNodes, restoreOriginals } from './dom-walker.js';
 import { createRateGuard } from './reapply-guard.js';
+import { initDictation } from '../dictation/index.js';
 
 // Wrapped in an async IIFE: the content bundle is emitted as an iife (classic
 // content script), which forbids top-level await — so the storage read lives
@@ -8,6 +9,11 @@ import { createRateGuard } from './reapply-guard.js';
 (async () => {
   if (window.__euspellLoaded) return;
   window.__euspellLoaded = true;
+
+  // Dictation is an authoring feature independent of page conversion, so it is
+  // wired up before the reader's enable/disable gate — a user can dictate euspell
+  // on a site whose pages they don't want reformed.
+  initDictation();
 
   const { enabled = true, disabledSites = [] } = await chrome.storage.sync.get(['enabled', 'disabledSites']);
   if (!enabled || disabledSites.includes(location.hostname)) return;

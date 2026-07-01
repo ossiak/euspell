@@ -38,6 +38,16 @@
     "open_in_tab": false
   },
 
+  "commands": {
+    "toggle-dictation": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Start or stop euspell dictation"
+    }
+  },
+
   "web_accessible_resources": [
     {
       "resources": [
