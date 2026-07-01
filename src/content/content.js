@@ -1,5 +1,5 @@
 import { convert } from './converter.js';
-import { walkTextNodes } from './dom-walker.js';
+import { walkTextNodes, restoreOriginals } from './dom-walker.js';
 import { createRateGuard } from './reapply-guard.js';
 
 // Wrapped in an async IIFE: the content bundle is emitted as an iife (classic
@@ -21,6 +21,28 @@ import { createRateGuard } from './reapply-guard.js';
 
   walkTextNodes(document.body, convert);
   observer.observe(document.body, OBSERVE);
+
+  // Live view toggle from the popup: 'original' restores the remembered source
+  // text (lossless) and stops re-converting; 'euspell' re-applies conversion.
+  // Only registered on active pages, so the popup treats "no responder" as "this
+  // page isn't converting".
+  let viewMode = 'euspell';
+  chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+    if (!msg || typeof msg.type !== 'string') return;
+    if (msg.type === 'euspell:getMode') { sendResponse({ mode: viewMode }); return; }
+    if (msg.type === 'euspell:setMode') {
+      if (msg.mode === 'original' && viewMode === 'euspell') {
+        observer.disconnect();
+        restoreOriginals(document.body);
+        viewMode = 'original';
+      } else if (msg.mode === 'euspell' && viewMode === 'original') {
+        walkTextNodes(document.body, convert);
+        observer.observe(document.body, OBSERVE);
+        viewMode = 'euspell';
+      }
+      sendResponse({ mode: viewMode });
+    }
+  });
 
   // Element subtrees needing (re)conversion, coalesced and flushed on a macrotask
   // so a burst of mutations is handled in one pass. setTimeout (not rAF) so a

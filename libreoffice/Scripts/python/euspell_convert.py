@@ -70,20 +70,21 @@ def _paragraphs(text_obj):
     return out
 
 
-def convert_document(*args):
+def _transform_document(method):
     eng = _load_engine()
     doc = _text_doc()
     if doc is None:
         return
+    fn = getattr(eng, method)
     for par in _paragraphs(doc.getText()):  # collect first, then mutate
         s = par.getString()
         if s.strip():
-            out = eng.convert_text(s)
+            out = fn(s)
             if out != s:
                 par.setString(out)
 
 
-def convert_selection(*args):
+def _transform_selection(method):
     eng = _load_engine()
     doc = _text_doc()
     if doc is None:
@@ -91,14 +92,31 @@ def convert_selection(*args):
     sel = doc.getCurrentController().getSelection()
     if sel is None or not hasattr(sel, "getCount"):
         return
+    fn = getattr(eng, method)
     for i in range(sel.getCount()):
         rng = sel.getByIndex(i)
         s = rng.getString()
         if s.strip():
-            out = eng.convert_text(s)
+            out = fn(s)
             if out != s:
                 rng.setString(out)
 
 
+def convert_document(*args):
+    _transform_document("convert_text")
+
+
+def convert_selection(*args):
+    _transform_selection("convert_text")
+
+
+def revert_document(*args):
+    _transform_document("revert_text")
+
+
+def revert_selection(*args):
+    _transform_selection("revert_text")
+
+
 # Exposed to LibreOffice's Python script provider.
-g_exportedScripts = (convert_document, convert_selection)
+g_exportedScripts = (convert_document, convert_selection, revert_document, revert_selection)

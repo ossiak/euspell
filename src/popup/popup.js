@@ -8,6 +8,19 @@ const siteRow = document.getElementById('siteRow');
 const siteBox = document.getElementById('site');
 const hostEl = document.getElementById('host');
 const hint = document.getElementById('hint');
+const viewRow = document.getElementById('viewRow');
+const showOriginalBox = document.getElementById('showOriginal');
+
+/** Ask the active tab's content script for its view mode; null if not converting. */
+async function tabMode(tab) {
+  if (tab?.id == null) return null;
+  try {
+    const res = await chrome.tabs.sendMessage(tab.id, { type: 'euspell:getMode' });
+    return res && res.mode ? res.mode : null;
+  } catch {
+    return null; // no content script on this page
+  }
+}
 
 /** The active tab's hostname, or null for restricted pages (chrome://, files…). */
 function hostnameOf(tab) {
@@ -40,7 +53,27 @@ async function load() {
     siteRow.hidden = true;
     hint.textContent = 'This page can’t be converted.';
   }
+
+  // Live view toggle: only shown when this tab is actually converting.
+  const mode = await tabMode(tab);
+  if (mode) {
+    showOriginalBox.checked = mode === 'original';
+    viewRow.hidden = false;
+  } else {
+    viewRow.hidden = true;
+  }
 }
+
+showOriginalBox.addEventListener('change', async () => {
+  const tab = await activeTab();
+  if (tab?.id == null) return;
+  const mode = showOriginalBox.checked ? 'original' : 'euspell';
+  try {
+    await chrome.tabs.sendMessage(tab.id, { type: 'euspell:setMode', mode });
+  } catch {
+    viewRow.hidden = true; // page stopped converting
+  }
+});
 
 /** Reload the active tab so the new setting takes effect. */
 async function applyAndReload() {

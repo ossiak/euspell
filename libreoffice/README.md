@@ -33,7 +33,8 @@ never touches LibreOffice's Writing Aids machinery.
    unopkg add --force .\dict\euspell-libreoffice.oxt
    ```
 
-   Restart, then use **Euspell ▸ Convert Document** / **Convert Selection**.
+   Restart, then use **Euspell ▸ Convert Document** / **Convert Selection**, or
+   **Revert Document / Selection to English** to go back (lexicon-based reverse).
 
 The menu deliberately invokes the script via `location=user` (the user-profile
 copy), because LibreOffice 26.2's script provider fails to register scripts

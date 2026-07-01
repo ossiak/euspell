@@ -19,6 +19,7 @@ var Euspell = (function () {
   var ABBR = null;
   var CONTR = null;     // apostrophe-normalized, lowercased key
   var SVM = null;       // feature -> weight
+  var REVERSE = null;   // euspell reformed form -> traditional word (for revert)
 
   var KEEP_UNCHANGED = { bach: 1, chis: 1, ravined: 1 };
 
@@ -66,6 +67,39 @@ var Euspell = (function () {
       var t = ln.indexOf('\t');
       if (t < 0) continue;
       SVM[ln.slice(0, t)] = parseFloat(ln.slice(t + 1));
+    }
+    buildReverse();
+  }
+
+  // Reverse map for revert (euspell -> traditional). A reformed spelling maps
+  // back to its headword; the first source wins for variant pairs. A phonetic
+  // reform that happens to coincide with a real word (ruff, dorr, putz) is still
+  // reverted, since in euspell text it is almost always the reform. The one
+  // exclusion is a British->American normalization (encoding 601) whose target
+  // is itself a standard word (abolitionize, acknowledgment): those are left as
+  // the valid word rather than reverted to the British spelling. Contraction
+  // clitics ('z -> 's) are included.
+  function buildReverse() {
+    REVERSE = {};
+    function addFrom(map) {
+      for (var key in map) {
+        var entry = map[key];
+        var sp = entry.spellings;
+        for (var i = 0; i < sp.length; i++) {
+          var e = sp[i];
+          if (e === key) continue;
+          if (LEXICON[e] && entry.encoding === 601) continue; // British->American target
+          if (!(e in REVERSE)) REVERSE[e] = key;
+        }
+      }
+    }
+    addFrom(LEXICON);
+    for (var ck in CONTR) {
+      var csp = CONTR[ck].spellings;
+      for (var j = 0; j < csp.length; j++) {
+        var ce = csp[j];
+        if (ce !== ck && !(ce in REVERSE)) REVERSE[ce] = ck;
+      }
     }
   }
 
@@ -343,6 +377,32 @@ var Euspell = (function () {
     return out;
   }
 
+  // --- revert (euspell -> traditional) -------------------------------------
+  var CLITIC = /^(.+)(['’ʼ][zs])$/;
+  function revertWord(w) {
+    if (w.toLowerCase() === 'ih') return 'I'; // pronoun: ih/Ih -> I
+    var t = REVERSE[w.toLowerCase()];
+    if (t) return matchCase(w, t);
+    var m = CLITIC.exec(w); // "he'z" -> "he" + "'s"
+    if (m) {
+      var st = REVERSE[m[1].toLowerCase()];
+      var stem = st ? matchCase(m[1], st) : m[1];
+      var cl = REVERSE[normApos(m[2]).toLowerCase()];
+      return stem + (cl != null ? cl : m[2]);
+    }
+    return w;
+  }
+
+  function revertText(text) {
+    ensureLoaded();
+    var segs = tokenize(text);
+    var out = '';
+    for (var i = 0; i < segs.length; i++) {
+      out += (segs[i].kind === 'sep') ? segs[i].text : revertWord(segs[i].text);
+    }
+    return out;
+  }
+
   function wordCandidates(word) {
     ensureLoaded();
     if (word === 'I') return ['ih'];
@@ -358,5 +418,5 @@ var Euspell = (function () {
     return seen;
   }
 
-  return { convertText: convertText, wordCandidates: wordCandidates };
+  return { convertText: convertText, revertText: revertText, wordCandidates: wordCandidates };
 })();

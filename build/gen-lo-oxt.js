@@ -90,6 +90,19 @@ const ADDONS = `<?xml version="1.0" encoding="UTF-8"?>
             <prop oor:name="Title" oor:type="xs:string"><value xml:lang="en-US">Convert Selection to Euspell</value></prop>
             <prop oor:name="Context" oor:type="xs:string"><value>com.sun.star.text.TextDocument</value></prop>
           </node>
+          <node oor:name="m3" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string"><value>private:separator</value></prop>
+          </node>
+          <node oor:name="m4" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string"><value>${SCRIPT}revert_document${LOC}</value></prop>
+            <prop oor:name="Title" oor:type="xs:string"><value xml:lang="en-US">Revert Document to English</value></prop>
+            <prop oor:name="Context" oor:type="xs:string"><value>com.sun.star.text.TextDocument</value></prop>
+          </node>
+          <node oor:name="m5" oor:op="replace">
+            <prop oor:name="URL" oor:type="xs:string"><value>${SCRIPT}revert_selection${LOC}</value></prop>
+            <prop oor:name="Title" oor:type="xs:string"><value xml:lang="en-US">Revert Selection to English</value></prop>
+            <prop oor:name="Context" oor:type="xs:string"><value>com.sun.star.text.TextDocument</value></prop>
+          </node>
         </node>
       </node>
     </node>

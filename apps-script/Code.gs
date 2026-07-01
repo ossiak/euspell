@@ -13,40 +13,45 @@ function onOpen() {
     .createMenu('Euspell')
     .addItem('Convert Document', 'convertDocument')
     .addItem('Convert Selection', 'convertSelection')
+    .addSeparator()
+    .addItem('Revert Document to English', 'revertDocument')
+    .addItem('Revert Selection to English', 'revertSelection')
     .addToUi();
 }
 
-function convertDocument() {
-  var doc = DocumentApp.getActiveDocument();
+function convertDocument() { transformDocument_(Euspell.convertText, 'converted'); }
+function revertDocument() { transformDocument_(Euspell.revertText, 'reverted'); }
+function convertSelection() { transformSelection_(Euspell.convertText, 'converted'); }
+function revertSelection() { transformSelection_(Euspell.revertText, 'reverted'); }
+
+function transformDocument_(fn, verb) {
+  var body = DocumentApp.getActiveDocument().getBody();
   var n = 0;
-  var paras = doc.getBody().getParagraphs();
-  for (var i = 0; i < paras.length; i++) n += convertParagraph_(paras[i]);
-  var items = doc.getBody().getListItems();
-  for (var j = 0; j < items.length; j++) n += convertParagraph_(items[j]);
-  toast_('Euspell: converted ' + n + (n === 1 ? ' paragraph.' : ' paragraphs.'));
+  var paras = body.getParagraphs();
+  for (var i = 0; i < paras.length; i++) n += transformParagraph_(paras[i], fn);
+  var items = body.getListItems();
+  for (var j = 0; j < items.length; j++) n += transformParagraph_(items[j], fn);
+  toast_('Euspell: ' + verb + ' ' + n + (n === 1 ? ' paragraph.' : ' paragraphs.'));
 }
 
-function convertSelection() {
-  var doc = DocumentApp.getActiveDocument();
-  var sel = doc.getSelection();
+function transformSelection_(fn, verb) {
+  var sel = DocumentApp.getActiveDocument().getSelection();
   if (!sel) {
-    DocumentApp.getUi().alert('Select some text first, or use Euspell ▸ Convert Document.');
+    DocumentApp.getUi().alert('Select some text first, or use the whole-document command.');
     return;
   }
-  // Convert the whole paragraph/list-item containing each selected element. A
-  // paragraph usually appears once in the range; a partial selection converts
-  // its containing paragraph whole.
+  // Transform the whole paragraph/list-item containing each selected element.
   var elements = sel.getRangeElements();
   var n = 0;
   for (var i = 0; i < elements.length; i++) {
     var para = ancestorParagraph_(elements[i].getElement());
-    if (para) n += convertParagraph_(para);
+    if (para) n += transformParagraph_(para, fn);
   }
-  toast_('Euspell: converted ' + n + (n === 1 ? ' paragraph.' : ' paragraphs.'));
+  toast_('Euspell: ' + verb + ' ' + n + (n === 1 ? ' paragraph.' : ' paragraphs.'));
 }
 
-/** Convert one Paragraph/ListItem in place; returns 1 if changed, else 0. */
-function convertParagraph_(para) {
+/** Apply fn (convertText or revertText) to one Paragraph/ListItem in place. */
+function transformParagraph_(para, fn) {
   // Skip if the paragraph contains a non-text child (image, footnote, …), so we
   // never delete inline objects via setText.
   var kids = para.getNumChildren();
@@ -55,7 +60,7 @@ function convertParagraph_(para) {
   }
   var s = para.getText();
   if (!s || !s.replace(/\s+/g, '')) return 0;
-  var out = Euspell.convertText(s);
+  var out = fn(s);
   if (out === s) return 0;
   para.setText(out);
   return 1;

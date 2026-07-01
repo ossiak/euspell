@@ -37,6 +37,14 @@ def main():
             print(f"      expected: {expected}")
             print(f"      got     : {got}")
 
+    # Round-trip: revert(euspell) recovers the original.
+    rfails = []
+    for src, expected in fixtures:
+        back = engine.revert_text(expected)
+        if back != src:
+            rfails.append((expected, src, back))
+            print(f"REVERT FAIL  {expected}\n      expected: {src}\n      got     : {back}")
+
     # Word-level candidate API (spell checker surface).
     assert engine.word_candidates("above") == ["abov"], engine.word_candidates("above")
     assert engine.word_candidates("records") == ["records", "recordz"], engine.word_candidates("records")
@@ -49,11 +57,14 @@ def main():
     # "are" is now a plain single-spelling verb (encoding 101), not a homograph.
     assert engine.convert_text("They are here.") == "They ar here.", engine.convert_text("They are here.")
     assert engine.word_candidates("are") == ["ar"], engine.word_candidates("are")
+    # revert is the inverse of convert.
+    assert engine.revert_text("The niht was ruff.") == "The night was rough.", engine.revert_text("The niht was ruff.")
 
     print()
     print(f"engine fixtures: {len(fixtures) - len(fails)}/{len(fixtures)} pass; "
           f"word_candidates checks pass")
-    if fails:
+    print(f"round-trip revert: {len(fixtures) - len(rfails)}/{len(fixtures)} recover the original")
+    if fails or rfails:
         print("SOME FAILED")
         sys.exit(1)
     print("ALL PASS")

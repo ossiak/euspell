@@ -73,6 +73,22 @@ export function walkTextNodes(root, convertFn) {
 }
 
 /**
+ * Restores every converted text node under `root` to its remembered original
+ * source — a lossless "show original" (the euspell view is re-applied by calling
+ * walkTextNodes again). Only nodes that still hold exactly our output are
+ * touched, so page-edited nodes are left alone.
+ * @param {Node} root
+ */
+export function restoreOriginals(root) {
+  for (const textNodes of collectBlocks(root)) {
+    for (const node of textNodes) {
+      const rec = memory.get(node);
+      if (rec && rec.out === node.nodeValue) node.nodeValue = rec.src;
+    }
+  }
+}
+
+/**
  * Groups the convertible text nodes under `root` by their nearest block-level
  * ancestor, preserving document order within each group.
  * @param {Node} root

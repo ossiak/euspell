@@ -33,6 +33,7 @@ _LEXICON = {}
 _ABBR = {}
 _CONTRACTIONS = {}   # keyed by apostrophe-normalized lowercase surface form
 _SVM = {}            # feature key -> weight
+_REVERSE = {}        # euspell reformed form -> traditional word (for revert)
 
 # Words carrying a disambiguation encoding that are nonetheless left exactly as
 # written (KEEP_UNCHANGED in converter.js).
@@ -98,6 +99,26 @@ def _load():
                 continue
             feat, _, weight = line.partition("\t")
             _SVM[feat] = float(weight)
+    _build_reverse()
+
+
+def _build_reverse():
+    """euspell reformed form -> traditional word. A reform that coincides with a
+    real word (ruff, dorr, putz) is still reverted; only a British->American
+    normalization (encoding 601) whose target is itself a standard word is left
+    as-is. Contraction clitics ('z -> 's) included. First source wins for variants."""
+    for key, entry in _LEXICON.items():
+        for e in entry["spellings"]:
+            if e == key:
+                continue
+            if e in _LEXICON and entry["encoding"] == 601:
+                continue
+            if e not in _REVERSE:
+                _REVERSE[e] = key
+    for key, entry in _CONTRACTIONS.items():
+        for e in entry["spellings"]:
+            if e != key and e not in _REVERSE:
+                _REVERSE[e] = key
 
 
 # --- contractions -----------------------------------------------------------
@@ -466,6 +487,34 @@ def convert_text(text):
             out.append(_convert(p["text"], tokens, p["wordIdx"]))
         else:
             out.append(p["text"])
+    return "".join(out)
+
+
+_CLITIC = re.compile(r"^(.+)(['’ʼ][zs])$")
+
+
+def _revert_word(w):
+    if w.lower() == "ih":
+        return "I"  # pronoun ih/Ih -> I
+    t = _REVERSE.get(w.lower())
+    if t:
+        return _match_case(w, t)
+    m = _CLITIC.match(w)  # "he'z" -> "he" + "'s"
+    if m:
+        st = _REVERSE.get(m.group(1).lower())
+        stem = _match_case(m.group(1), st) if st else m.group(1)
+        cl = _REVERSE.get(_normalize_apostrophes(m.group(2)).lower())
+        return stem + (cl if cl is not None else m.group(2))
+    return w
+
+
+def revert_text(text):
+    """Convert euspell text back to traditional English (the inverse of
+    convert_text). Word-level lexicon lookup, no context needed."""
+    _load()
+    out = []
+    for kind, seg in _tokenize(text):
+        out.append(seg if kind == "sep" else _revert_word(seg))
     return "".join(out)
 
 

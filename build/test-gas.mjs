@@ -30,6 +30,15 @@ for (const [src, expected] of fixtures) {
   if (!ok) { fail++; console.log('FAIL', JSON.stringify(src), '\n   expected', JSON.stringify(expected), '\n   got     ', JSON.stringify(got)); }
 }
 
+// Round-trip: reverting the euspell output recovers the original text. (These
+// curated fixtures avoid the British/American variants where reverse normalizes.)
+let rfail = 0;
+for (const [src, expected] of fixtures) {
+  const back = Euspell.revertText(expected);
+  if (back !== src) { rfail++; console.log('REVERT FAIL', JSON.stringify(expected), '\n   expected', JSON.stringify(src), '\n   got     ', JSON.stringify(back)); }
+}
+console.log(`round-trip revert: ${fixtures.length - rfail}/${fixtures.length} recover the original`);
+
 // Word-level candidates (parity with the Python port's checks).
 const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const checks = [

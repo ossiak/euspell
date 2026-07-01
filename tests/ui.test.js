@@ -16,7 +16,7 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options'])
+  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'viewRow', 'showOriginal'])
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
@@ -31,7 +31,11 @@ function makeEnv(store, tab) {
       },
       onChanged: { addListener() {} },
     },
-    tabs: { async query() { return tab ? [tab] : []; }, async reload(id) { reloaded.push(id); } },
+    tabs: {
+      async query() { return tab ? [tab] : []; },
+      async reload(id) { reloaded.push(id); },
+      async sendMessage() { return undefined; }, // no content script in the popup test
+    },
     runtime: { openOptionsPage() {} },
   };
   return { els, document, chrome, reloaded };
