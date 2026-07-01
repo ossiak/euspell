@@ -51,9 +51,11 @@ build-script exercise, not new linguistics.
 | Target | Can consume a POS lexicon? | Verdict |
 | --- | --- | --- |
 | **LanguageTool** | Yes — its tagger *is* a Morfologik `fullform → lemma → POStag` dictionary you can build | **The real "yes."** |
+| **Harper** (Rust, offline) | Uses per-word `WordMetadata` (noun/verb/… + sub-features) | **Yes, in principle** — needs a metadata converter, not the Morfologik file |
+| nlprule (Rust) | Reimplements LanguageTool rules on LT's tagger data | Yes, via LT's pipeline — but largely unmaintained |
 | Hunspell (LO/Firefox spell) | No POS — spelling only | Stops false spell-flags on euspell words, but doesn't help *grammar* |
 | LibreOffice Lightproof | Limited rule engine over the dictionary's tags | Marginal |
-| **Word Editor, Google Docs** | Closed; no custom POS injection | **No** — can't be helped this way |
+| **Word Editor, Google Docs, Grammarly** | Closed; no custom POS injection | **No** — can't be helped this way |
 
 **LanguageTool is the one that makes this worthwhile.** You would:
 
@@ -147,6 +149,45 @@ Remaining limits:
 Because only new spellings are emitted, the dictionary purely *adds* tags for words
 LanguageTool doesn't know — a clean supplement, never an attempted override of its
 own dictionary.
+
+## Build — the same derivation → Harper metadata
+
+Harper (the Rust, offline grammar checker) does not use a Morfologik tagger
+dictionary; it carries structured per-word `WordMetadata` (noun/verb/adjective/…
+with sub-features like number, tense, degree) and runs POS-aware rules locally. The
+disambiguation euspell provides maps cleanly onto that model — `recordz` is a verb,
+not a noun — so it is worth a second emitter.
+
+`build/gen-harper-metadata.js` (`npm run gen:harper`) reuses the **same** derivation
+module (`build/lib/euspell-pos.js`, shared with the LanguageTool emitter) and
+reshapes each new spelling's CLAWS7 tags into a Harper-style `WordMetadata` object,
+writing `dict/euspell-harper.json` keyed by spelling:
+
+```json
+{
+  "recordz":   { "verb": { "forms": ["third_person_singular"] } },
+  "uze":       { "verb": { "forms": ["present"] } },
+  "separat":   { "adjective": {}, "noun": {} },
+  "aardwolvs": { "noun": { "plural": true } },
+  "ment":      { "verb": { "forms": ["past", "past_participle"] } }
+}
+```
+
+A verb accumulates every form its readings carry (`ment` = *meant* is past **and**
+past-participle); a spelling that is several parts of speech gets one object with
+each (`separat` = adjective and noun). Current run: **34,111 spellings** (duplicate
+spellings across headwords merge to one key), no unmapped tags.
+
+Two caveats specific to Harper:
+
+- **Format is a prototype.** Harper's exact `WordMetadata` schema and its dictionary
+  ingestion path evolve; this JSON is a reviewable, Harper-shaped intermediate whose
+  field names must be adapted to the targeted Harper version. The linguistic content
+  (which spelling is a plural noun, a 3rd-sing verb) is the durable part.
+- **Deepest benefit likely means upstreaming.** Harper's richest metadata lives in
+  its curated built-in dictionary; user/custom dictionaries historically get thinner
+  metadata (often just "valid word"). Full POS benefit may require contributing
+  euspell forms upstream rather than shipping a sidecar file.
 
 ## Bottom line
 

@@ -12,6 +12,7 @@
     "gen:svm": "python build/gen-vvz-svm.py",
     "gen:pls": "node build/gen-pls.js",
     "gen:pos": "node build/gen-pos-lexicon.js",
+    "gen:harper": "node build/gen-harper-metadata.js",
     "gen:icons": "node build/gen-icons.js",
     "gen:wordlist": "node build/gen-wordlist.js",
     "gen:oxt": "npm run gen:wordlist && node build/gen-oxt.js",
