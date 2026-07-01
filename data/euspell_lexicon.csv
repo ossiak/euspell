@@ -21010,7 +21010,7 @@ bounciness,NN,000,[]
 bouncing,JJ|VVG,000,[]
 bouncingly,RR,000,[]
 bouncy,JJ,000,[]
-bound,JJ|NN1|VV0|VVD|VVN|VVNK,000,[]
+bound,JJ|NN1|VV0|VVD|VVN,000,[]
 boundaries,NN2,000,[]
 boundary,NN1,000,[]
 bounded,JJ|VVD|VVN,000,[]
@@ -108537,7 +108537,7 @@ meanly,RR,000,[]
 meanness,NN,000,[]
 means,II32|NN|NN2|RR33|VVZ,202,means|meanz
 meanspirited,JJ,000,[]
-meant,VVD|VVN|VVNK,601,ment
+meant,VVD|VVN,601,ment
 meantime,NN|NNT1,000,[]
 meantimes,NNT2,000,[]
 meanwhile,NNT1|RR,000,[]
@@ -173238,7 +173238,7 @@ steadies,NN2|VVZ,112,steddies|steddiez
 steadiest,JJT,101,steddiest
 steadily,RR,101,steddily
 steadiness,NN,101,steddiness
-steading,JJ|NN|1VVG,101,stedding
+steading,JJ|NN1|VVG,101,stedding
 steadings,NN2,101,steddings
 steads,NN2,101,stedds
 steady,JJ|NN1|RR|VV0,101,steddy
@@ -183287,7 +183287,7 @@ thrown,VVN,000,[]
 throws,NN2|VVZ,012,throws|throwz
 throwster,NN1,500,[]
 throwsters,NN2,500,[]
-thru,III|JJ|RP|RR41,101,thruh
+thru,II|JJ|RP|RR41,101,thruh
 thrum,NN1|VV0,000,[]
 thrummed,JJ|VVD|VVN,021,thrumd
 thrummer,NN1,000,[]
@@ -190077,7 +190077,7 @@ unchaste,JJ,101,unqhaste
 unchastely,RR,101,unqhastely
 unchasteness,NN,101,unqhasteness
 unchastities,NN2,101,unqhastities
-unchastity,NN|N1,101,unqhastity
+unchastity,NN|NN1,101,unqhastity
 unchauvinistic,JJ,701,unshauvinistic
 uncheckable,JJ,101,unqheckable
 unchecked,JJ,121,unqheckd
@@ -191302,7 +191302,7 @@ undertreasurers,NN2,101,undertresurers
 undertrick,NN1,000,[]
 undertricks,NN2,000,[]
 underturn,VV0,000,[]
-underturned,JJ|VVF|VVN,021,underturnd
+underturned,JJ|VVD|VVN,021,underturnd
 underturning,NN|VVG,000,[]
 underturns,VVZ,011,underturnz
 underuse,VV0,101,underuze
@@ -193034,7 +193034,7 @@ unmitigated,JJ,000,[]
 unmitigatedly,RR,000,[]
 unmitigatedness,NN,000,[]
 unmitre,VV0,601,unmiter
-unmitred,JJ|VVF|VVN,121,unmiterd
+unmitred,JJ|VVD|VVN,121,unmiterd
 unmitres,VVZ,111,unmiterz
 unmitring,NN|VVG,601,unmitering
 unmix,VV0,000,[]
