@@ -102,18 +102,54 @@ def _load():
     _build_reverse()
 
 
+def _americanize(w):
+    """Reduce a British spelling to its American form across the common variant
+    classes. Only ever consulted between two sources of the same euspell form (or
+    a source and a standard headword), so it can't mis-fire on an unrelated word
+    even where a rule is broad (re$ -> er also rewrites "acre")."""
+    w = re.sub(r"our(s?)$", r"or\1", w)                                     # colour -> color
+    w = re.sub(r"isation(s?)$", r"ization\1", w)                           # organisation -> organization
+    w = re.sub(r"ise(s|d)?$", lambda m: "ize" + (m.group(1) or ""), w)     # organise(s|d) -> organize
+    w = re.sub(r"ising$", "izing", w)
+    w = re.sub(r"yse(s|d)?$", lambda m: "yze" + (m.group(1) or ""), w)     # analyse -> analyze
+    w = re.sub(r"ysing$", "yzing", w)
+    w = re.sub(r"ence(s?)$", r"ense\1", w)                                 # defence -> defense
+    w = re.sub(r"re$", "er", w)                                            # centre -> center, metre -> meter
+    w = re.sub(r"ogue(s?)$", r"og\1", w)                                   # catalogue -> catalog
+    w = re.sub(r"gramme(s?)$", r"gram\1", w)                               # programme -> program
+    w = re.sub(r"dgement(s?)$", r"dgment\1", w)                            # judgement -> judgment
+    return w
+
+
+def _more_american(a, b):
+    """Prefer the American spelling, matching the forward British->American
+    normalization: two sources of one euspell form that reduce to the same
+    American spelling -> keep whichever is already American. Non-variant pairs
+    (night/nite) reduce differently, so the first-seen source is kept."""
+    if a == b:
+        return False
+    am_a, am_b = _americanize(a), _americanize(b)
+    return am_a == am_b and a == am_a
+
+
 def _build_reverse():
     """euspell reformed form -> traditional word. A reform that coincides with a
-    real word (ruff, dorr, putz) is still reverted; only a British->American
-    normalization (encoding 601) whose target is itself a standard word is left
-    as-is. Contraction clitics ('z -> 's) included. First source wins for variants."""
+    real word (ruff, dorr, putz) is still reverted; a British->American
+    normalization (encoding 601) whose target is a standard word, or a form that
+    maps to itself (colors), is left as-is. Among variant sources the American
+    spelling wins. Contraction clitics ('z -> 's) included."""
     for key, entry in _LEXICON.items():
         for e in entry["spellings"]:
             if e == key:
                 continue
-            if e in _LEXICON and entry["encoding"] == 601:
-                continue
-            if e not in _REVERSE:
+            if e in _LEXICON:
+                if entry["encoding"] == 601:
+                    continue
+                if e in _LEXICON[e]["spellings"]:
+                    continue
+                if _americanize(key) == e:  # key is British-longer of e (judgement->judgment)
+                    continue
+            if e not in _REVERSE or _more_american(key, _REVERSE[e]):
                 _REVERSE[e] = key
     for key, entry in _CONTRACTIONS.items():
         for e in entry["spellings"]:

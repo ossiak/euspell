@@ -79,6 +79,33 @@ var Euspell = (function () {
   // is itself a standard word (abolitionize, acknowledgment): those are left as
   // the valid word rather than reverted to the British spelling. Contraction
   // clitics ('z -> 's) are included.
+  // Reduce a British spelling to its American form across the common variant
+  // classes. Only ever consulted between two sources of the same euspell form
+  // (or a source and a standard headword), so it can't mis-fire on an unrelated
+  // word even where a rule is broad (e.g. re$ -> er also rewrites "acre").
+  function americanize(w) {
+    return w
+      .replace(/our(s?)$/, 'or$1')                                            // colour -> color
+      .replace(/isation(s?)$/, 'ization$1')                                   // organisation -> organization
+      .replace(/ise(s|d)?$/, function (m, s) { return 'ize' + (s || ''); })   // organise(s|d) -> organize
+      .replace(/ising$/, 'izing')
+      .replace(/yse(s|d)?$/, function (m, s) { return 'yze' + (s || ''); })   // analyse -> analyze
+      .replace(/ysing$/, 'yzing')
+      .replace(/ence(s?)$/, 'ense$1')                                         // defence -> defense
+      .replace(/re$/, 'er')                                                   // centre -> center, metre -> meter
+      .replace(/ogue(s?)$/, 'og$1')                                           // catalogue -> catalog
+      .replace(/gramme(s?)$/, 'gram$1')                                       // programme -> program
+      .replace(/dgement(s?)$/, 'dgment$1');                                   // judgement -> judgment
+  }
+  // Prefer the American spelling, matching the forward British->American
+  // normalization: two sources of one euspell form that reduce to the same
+  // American spelling -> keep whichever is already American. Non-variant pairs
+  // (night/nite) reduce differently, so the first-seen source is kept.
+  function moreAmerican(a, b) {
+    if (a === b) return false;
+    var amA = americanize(a), amB = americanize(b);
+    return amA === amB && a === amA;
+  }
   function buildReverse() {
     REVERSE = {};
     function addFrom(map) {
@@ -88,8 +115,12 @@ var Euspell = (function () {
         for (var i = 0; i < sp.length; i++) {
           var e = sp[i];
           if (e === key) continue;
-          if (LEXICON[e] && entry.encoding === 601) continue; // British->American target
-          if (!(e in REVERSE)) REVERSE[e] = key;
+          if (LEXICON[e]) {
+            if (entry.encoding === 601) continue;                    // British -> American target
+            if (LEXICON[e].spellings.indexOf(e) !== -1) continue;    // e maps to itself (colors): leave American
+            if (americanize(key) === e) continue;                    // key is British-longer of e (judgement->judgment): keep American e
+          }
+          if (!(e in REVERSE) || moreAmerican(key, REVERSE[e])) REVERSE[e] = key;
         }
       }
     }

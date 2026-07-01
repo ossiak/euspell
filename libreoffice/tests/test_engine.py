@@ -59,6 +59,12 @@ def main():
     assert engine.word_candidates("are") == ["ar"], engine.word_candidates("are")
     # revert is the inverse of convert.
     assert engine.revert_text("The niht was ruff.") == "The night was rough.", engine.revert_text("The niht was ruff.")
+    # revert stays American (never flips to British), and phonetic reforms that
+    # coincide with real words still revert.
+    for w in ("organizes", "colors", "acknowledgment", "judgment", "defenses", "center", "theater"):
+        assert engine.revert_text(engine.convert_text(w)) == w, (w, engine.revert_text(engine.convert_text(w)))
+    assert engine.revert_text("ruff") == "rough"
+    assert engine.revert_text("dorr") == "door"
 
     print()
     print(f"engine fixtures: {len(fixtures) - len(fails)}/{len(fixtures)} pass; "
