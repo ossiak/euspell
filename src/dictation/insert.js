@@ -5,8 +5,11 @@
 // Dictation is an authoring path: it writes *into* the field the user is editing.
 // A single <input>/<textarea> or a contenteditable region are the valid targets.
 
+// Free-text input types dictation may target. 'number' is deliberately absent
+// (prose is never a valid value, and number inputs reject the selection API);
+// 'email' is kept for address fields but needs the selection-API guard below.
 const TEXT_INPUT_TYPES = new Set([
-  'text', 'search', 'url', 'tel', 'email', 'password', 'number', '', undefined,
+  'text', 'search', 'url', 'tel', 'email', 'password', '', undefined,
 ]);
 
 /**
@@ -50,11 +53,24 @@ export function insertText(target, text) {
 
 /** Manual fallback for <input>/<textarea>: splice at the selection and fire input. */
 function insertIntoInput(el, text) {
-  const start = el.selectionStart ?? el.value.length;
-  const end = el.selectionEnd ?? el.value.length;
+  // Types like 'email' don't support the selection API — reading selectionStart
+  // or calling setSelectionRange throws InvalidStateError. Fall back to
+  // appending at the end for those.
+  let start;
+  let end;
+  try {
+    start = el.selectionStart ?? el.value.length;
+    end = el.selectionEnd ?? el.value.length;
+  } catch {
+    start = end = el.value.length;
+  }
   el.value = el.value.slice(0, start) + text + el.value.slice(end);
-  const caret = start + text.length;
-  el.setSelectionRange(caret, caret);
+  try {
+    const caret = start + text.length;
+    el.setSelectionRange(caret, caret);
+  } catch {
+    /* selection API unsupported for this type — value is already updated */
+  }
   el.dispatchEvent(new InputEvent('input', { bubbles: true, inputType: 'insertText', data: text }));
   return true;
 }

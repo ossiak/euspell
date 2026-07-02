@@ -38,6 +38,8 @@ document.addEventListener(
 
 let active = false;
 let stoppedByUser = false;
+/** Delayed overlay-hide from a failOut, cancelled if a new session starts. */
+let hideTimer = 0;
 /** @type {ReturnType<typeof createRecognizer> | null} */
 let recognizer = null;
 /** @type {ReturnType<typeof createOverlay> | null} */
@@ -76,23 +78,39 @@ function start() {
   }
 
   stoppedByUser = false;
+  clearTimeout(hideTimer); // a pending failOut hide must not kill this session's pill
+  // Circuit breaker for the restart-on-end loop below: a persistent failure
+  // (e.g. 'network' while offline) otherwise cycles error → end → restart
+  // forever. Consecutive errors trip it; any successful result resets it.
+  // 'no-speech' is just Chrome's silence timeout, so it never counts.
+  let consecutiveErrors = 0;
   recognizer = createRecognizer({
-    onInterim: (text) => ui().show(text),
-    onFinal: handleFinal,
+    onInterim: (text) => {
+      consecutiveErrors = 0;
+      ui().show(text);
+    },
+    onFinal: (transcript) => {
+      consecutiveErrors = 0;
+      handleFinal(transcript);
+    },
     onError: (error) => {
       if (error === 'aborted') return; // our own stop()
+      if (error !== 'no-speech') consecutiveErrors++;
       if (ERROR_MESSAGE[error]) ui().error(ERROR_MESSAGE[error]);
-      if (FATAL.has(error)) stop();
+      if (FATAL.has(error)) failOut();
     },
     onEnd: () => {
       // Chrome ends a session after silence or its own time limit; keep the
-      // mic open while the user still wants it, unless a fatal error stopped us.
-      if (active && !stoppedByUser) {
+      // mic open while the user still wants it, unless a fatal error stopped
+      // us or errors keep recurring with no successful result between them.
+      if (active && !stoppedByUser && consecutiveErrors < 3) {
         try {
           recognizer.start();
         } catch {
           finish();
         }
+      } else if (active) {
+        failOut();
       }
     },
   });
@@ -124,6 +142,23 @@ function finish() {
   active = false;
   recognizer = null;
   overlay?.hide();
+}
+
+/**
+ * Stop because of an error, leaving the error pill visible long enough to read
+ * (a user-initiated stop hides it immediately via finish()).
+ */
+function failOut() {
+  stoppedByUser = true;
+  try {
+    recognizer?.stop();
+  } catch {
+    /* already stopped */
+  }
+  active = false;
+  recognizer = null;
+  clearTimeout(hideTimer);
+  hideTimer = setTimeout(() => overlay?.hide(), 4000);
 }
 
 function toggle() {

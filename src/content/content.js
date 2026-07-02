@@ -39,6 +39,10 @@ import { initDictation } from '../dictation/index.js';
     if (msg.type === 'euspell:setMode') {
       if (msg.mode === 'original' && viewMode === 'euspell') {
         observer.disconnect();
+        // Drop any queued re-conversion: a flush scheduled before the toggle
+        // would otherwise re-reform those subtrees and re-observe (its timeout
+        // still fires — flush() itself also checks viewMode as a backstop).
+        pending.clear();
         restoreOriginals(document.body);
         viewMode = 'original';
       } else if (msg.mode === 'euspell' && viewMode === 'original') {
@@ -85,7 +89,7 @@ import { initDictation } from '../dictation/index.js';
   }
 
   function schedule() {
-    if (pending.size && !scheduled && !composing) {
+    if (pending.size && !scheduled && !composing && viewMode === 'euspell') {
       scheduled = true;
       setTimeout(flush, 0);
     }
@@ -93,6 +97,10 @@ import { initDictation } from '../dictation/index.js';
 
   function flush() {
     scheduled = false;
+    // The toggle to 'original' disconnects the observer, but a flush queued
+    // before the toggle still fires; converting now (and re-observing below)
+    // would drag restored text back to euspell.
+    if (viewMode !== 'euspell') return;
     const roots = [...pending];
     pending.clear();
     // Disconnect across our own writes so they are not re-observed (no

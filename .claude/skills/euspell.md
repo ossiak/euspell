@@ -4,7 +4,7 @@ description: >
   Use this skill for any work on the euspell Chrome extension — spelling conversion logic,
   lexicon lookup, disambiguation functions, DOM walking, PDF.js integration, or the build
   pipeline. Triggers include: euspell_lexicon, euspell_encoding, CLAWS7, VVZ, VVD, VVN,
-  PoS disambiguation, is_VVZ, is_past_tense, converter.js, dom-walker.js, pdf-handler.js,
+  PoS disambiguation, is_VVZ, is_past_tense, converter.js, dom-walker.js, pdf/viewer.js,
   compile-lexicon, euspelling, or any of the encoding codes (011, 012, 021,
   022, 041, 101–114, 121, 123, 131, 202, 500–511). Also loads the [[chrome-extension]]
   skill for MV3, ES2023, and Chrome API patterns.
@@ -48,10 +48,13 @@ euspell_ext/
 │   │   ├── context.js          # Token type, BOUNDARY sentinel, contextWindow()
 │   │   ├── tagger.js           # tagWord() — lexical CLAWS7 tags from the lexicon
 │   │   ├── contractions.js     # contraction lookup + component PoS expansion
-│   │   ├── dom-walker.js       # Block-level tokenisation + writeback
-│   │   └── pdf-handler.js      # PDF.js hook via MAIN-world script injection
+│   │   └── dom-walker.js       # Block-level tokenisation + writeback
+│   ├── pdf/                    # Own PDF.js viewer (service worker redirects to it)
+│   │   ├── viewer.js           # Render pages, reform text layer, redraw on canvas
+│   │   ├── pdf-url.js          # URL/header/byte-sniff helpers (unit-tested)
+│   │   └── sample-colors.js    # Per-word ink/paper colour sampling
 │   ├── background/
-│   │   └── service-worker.js   # On/off toggle, storage init
+│   │   └── service-worker.js   # Storage init + PDF navigation redirect
 │   ├── disambig/
 │   │   ├── pos.js              # is_VVZ(), is_past_tense() etc. (~6 000-word coverage)
 │   │   └── semantic/           # One file per semantically ambiguous word (~30 total)
@@ -268,20 +271,21 @@ with `contextWindow` and the rules unchanged. Untagged contractions (empty `PoS`
 
 ---
 
-## PDF.js Integration
+## PDF Integration
 
-Chrome's built-in PDF viewer embeds PDF.js. The text layer runs in the MAIN world;
-content scripts run in an ISOLATED world. Bridge the gap by injecting a small script
-into the MAIN world via `chrome.runtime.getURL('dist/pdf-hook.js')`.
+Chrome's built-in PDF viewer is a native plugin content scripts can't touch, so the
+extension ships its OWN PDF.js viewer instead. The service worker
+(`src/background/service-worker.js`) detects PDF navigations — by `.pdf` URL suffix
+(`webNavigation.onBeforeNavigate`), by `Content-Type` / `Content-Disposition`
+headers, or by sniffing the leading bytes for `%PDF-`
+(`webRequest.onHeadersReceived`) — and redirects the tab to
+`src/pdf/viewer.html?file=<original url>`.
 
-```js
-// dist/pdf-hook.js runs in MAIN world — hooks PDFViewerApplication.eventBus
-window.PDFViewerApplication.eventBus.on('textlayerrendered', (event) => {
-  // event.source.textLayer.textItems contains the rendered spans
-});
-```
-
-Only activate `pdf-handler.js` when `document.contentType === 'application/pdf'`.
+The viewer (`src/pdf/viewer.js`, bundled to `dist/pdf-viewer.js`) renders each page
+with PDF.js to a canvas, runs the invisible text layer through the same
+`walkTextNodes(textLayerDiv, convert)` as page conversion, and redraws each changed
+word onto the canvas in the page's own font/ink/paper colours (`sample-colors.js`).
+URL helpers live in `src/pdf/pdf-url.js` (unit-tested in `tests/pdf.test.js`).
 
 ---
 
