@@ -184,8 +184,11 @@ async function main() {
 
   // "Open original" escape hatch — the redirect captures every PDF, so the
   // unconverted file must stay one click away.
-  const name = decodeURIComponent(fileUrl.split('/').pop() || 'PDF');
-  document.title = `${name} — Euspell`;
+  const name = decodeURIComponent((fileUrl.split('/').pop() || 'PDF').replace(/[?#].*$/, ''));
+  // The tab title doubles as the default filename when the page is printed or
+  // saved as PDF, so title it "<base>.eu" — a Save-as-PDF then yields
+  // "<base>.eu.pdf" (e.g. report.pdf → report.eu.pdf).
+  document.title = `${name.replace(/\.pdf$/i, '')}.eu`;
   const filenameEl = document.getElementById('filename');
   if (filenameEl) filenameEl.textContent = name;
   const originalEl = document.getElementById('original');
