@@ -8179,7 +8179,7 @@ annuitant,NN1,000,[]
 annuitants,NN2,000,[]
 annuities,NN2,000,[]
 annuity,NN1,000,[]
-annul,VV0,000,[]
+annul,VV0,101,annull
 annular,JJ,000,[]
 annularity,NN,000,[]
 annulate,JJ|VV0,102,annulat|annulate
@@ -8193,10 +8193,10 @@ annulets,NN2,000,[]
 annuli,NN2,000,[]
 annulled,JJ|VVD|VVN,021,annulld
 annulling,JJ|VVG,000,[]
-annulment,NN|NN1,000,[]
-annulments,NN2,000,[]
+annulment,NN|NN1,101,annullment
+annulments,NN2,101,annullments
 annulose,JJ,000,[]
-annuls,VVZ,011,annulz
+annulls,VVZ,011,annullz
 annulus,NN1,000,[]
 annuluses,NN2,000,[]
 annum,NN1|RA22,000,[]

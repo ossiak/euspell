@@ -1148,10 +1148,13 @@ annoyz	annoyz	VBZ
 annualizez	annualizez	VBZ
 annulat	annulat	JJ
 annulatez	annulatez	VBZ
+annull	annulld	VB
 annulld	annulld	JJ
 annulld	annulld	VBD
 annulld	annulld	VBN
-annulz	annulz	VBZ
+annullment	annullment	NN
+annullments	annullments	NNS
+annullz	annullz	VBZ
 annunciatez	annunciatez	VBZ
 anodizez	anodizez	VBZ
 anointz	anointz	VBZ
