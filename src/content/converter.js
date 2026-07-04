@@ -1,4 +1,4 @@
-import { data as lexicon } from '../../dist/lexicon.js';
+import { lookupEntry } from './lexicon-source.js';
 import { getContraction } from './contractions.js';
 import { is_VVZ_svm, is_verbal_s, is_plural_noun, is_verb_VV0 } from '../disambig/pos.js';
 import { SEMANTIC } from '../disambig/semantic/index.js';
@@ -32,7 +32,7 @@ export function convert(word, tokens, idx) {
   // getContraction() normalizes case and apostrophe style (I'll, don’t).
   const key = word.toLowerCase();
   if (KEEP_UNCHANGED.has(key)) return word;
-  const entry = lexicon.get(key) ?? getContraction(word);
+  const entry = lookupEntry(key) ?? getContraction(word);
   if (!entry) return word;
 
   // The encoding's last digit is the euspelling count: 0 ⇒ word unchanged,

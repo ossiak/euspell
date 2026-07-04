@@ -1,4 +1,4 @@
-import { data as lexicon } from '../../dist/lexicon.js';
+import { lookupEntry } from './lexicon-source.js';
 import { data as abbreviations } from '../../dist/abbreviations.js';
 import { data as contractions } from '../../dist/contractions.js';
 
@@ -16,7 +16,7 @@ import { data as contractions } from '../../dist/contractions.js';
  */
 export function tagWord(word) {
   const key = word.toLowerCase();
-  const entry = lexicon.get(key) ?? abbreviations.get(key) ?? contractions.get(key);
+  const entry = lookupEntry(key) ?? abbreviations.get(key) ?? contractions.get(key);
   if (entry) return entry.pos.join('|');
   // A digit-initial token ("3", "1999", "2nd") is a cardinal numeral. The
   // lexicon holds only spelled-out numbers ("three"), so without this a numeric
