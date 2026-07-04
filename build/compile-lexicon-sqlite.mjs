@@ -18,10 +18,15 @@
 import { DatabaseSync } from 'node:sqlite';
 import { fileURLToPath } from 'node:url';
 import fs from 'node:fs';
+import path from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { data as lexicon } from '../dist/lexicon.js';
 
-const OUT = fileURLToPath(new URL('../dist/lexicon.db', import.meta.url));
+// Output path: process.argv[2] (resolved against the caller's cwd) if given, so
+// another project can emit the DB into its own dist; else euspell_ext/dist.
+const OUT = process.argv[2]
+  ? path.resolve(process.argv[2])
+  : fileURLToPath(new URL('../dist/lexicon.db', import.meta.url));
 
 try { fs.unlinkSync(OUT); } catch { /* first run */ }
 
