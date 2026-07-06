@@ -3,7 +3,7 @@
  * Generates icons/16.png, icons/48.png, icons/128.png from the SVG source.
  * Run: node build/gen-icons.js
  *
- * Source: Logo/Euspell2_medium.svg (square circular-badge design — best at all sizes).
+ * Source: Logo/Euspell3_medium.svg (circular-badge design, doubled ring + centered glyph).
  * Requires: npm install sharp (devDependency)
  */
 
@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
 const ROOT = new URL('..', import.meta.url);
-const SVG_SRC = new URL('../Logo/Euspell2_medium.svg', ROOT);
+const SVG_SRC = new URL('../Logo/Euspell3_medium.svg', ROOT);
 const ICONS_DIR = new URL('icons/', ROOT);
 
 mkdirSync(fileURLToPath(ICONS_DIR), { recursive: true });
