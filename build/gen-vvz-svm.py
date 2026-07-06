@@ -9,11 +9,19 @@ gold tag — gold tags are used only to label the target word. Features:
 
   bias, cap (target capitalized), w=<lowercased target word>  [the prior],
   and, for each of the 6 window slots (+/-3, sentence-bounded), one
-  "<offset>=<tag-family>" per candidate tag of that neighbor (multi-hot), or
-  "<offset>=BOUND" past a sentence edge.
+  "<offset>=<tag-family>" per non-ditto candidate tag of that neighbor
+  (multi-hot; a boundary slot fires nothing). Structural extras: an adjacent
+  (+/-1) closed-class word also fires its identity ("1w=of" -- post-nominal PP
+  vs phrasal-verb complement), and the (-2,-1) family pair fires as a
+  conjunction ("p=DET~NN" -- subject frame vs noun-compound frame).
 
 Train/eval split is BY LINE (index % 5 == 0 -> held-out test), matching the
 companion rule_vvz.mjs harness so the two methods score identical targets.
+
+The runtime decision (is_VVZ_svm in pos.js) is NOT the raw SVM sign: it blends
+the score with the hand rule's negative votes (svm + 0.16*min(0, vvzScore)),
+so the rule's categorical noun evidence can veto a weak learned verb call.
+The probes below check the raw SVM only.
 
 Usage:  python build/gen-vvz-svm.py        (needs disambig/_corpus_012_112.txt)
 """
@@ -45,7 +53,13 @@ for line in open(LEX, encoding="utf-8"):
     if len(p) >= 3 and p[2] in ("012", "112"):
         vocab.add(p[0].lower())
 
+DITTO = re.compile(r"\d\d$")
 def fam(tag):
+    # CLAWS7 ditto tags (II22, JJ21, NN132, ...) mark "word k of an n-word
+    # multiword expression" -- as candidate readings of an isolated word they
+    # smear function words across families ("between" II|II22|JJ22|RL|RL22
+    # would fire PREP+PREMOD+ADV). Only ditto tags end in two digits.
+    if DITTO.search(tag): return None
     if tag.startswith("NP"): return "NP"
     if tag.startswith("NN"): return "NN"
     if tag in ("PPHS1", "PPH1"): return "SUBJ3SG"
@@ -55,6 +69,7 @@ def fam(tag):
     if tag.startswith(("II", "IO", "IF", "IW")): return "PREP"
     if tag.startswith(("JJ", "MC", "MD", "MF")): return "PREMOD"
     if tag in ("VV0", "VBR", "VBDR", "VH0", "VD0"): return "PLVERB"
+    if tag == "VVD": return "VPAST"
     if tag.startswith(("VV", "VB", "VH", "VD", "VM")): return "VERB"
     if tag.startswith(("RR", "RG", "RP", "RL", "RT", "RA")): return "ADV"
     if tag in ("PNQS", "DDQ", "CST"): return "RELSUBJ"
@@ -114,28 +129,61 @@ print(f"LAMBDA={LAMBDA} EPOCHS={EPOCHS} WORD_SCALE={WORD_SCALE} "
 feat_idx = {}
 def fid(s): return feat_idx.setdefault(s, len(feat_idx))
 
+def slot_fams(toks, i, off):
+    """Family set for the neighbor at `off`, or None past a sentence edge."""
+    nb = neighbor(toks, i, off)
+    if nb is None:
+        return None
+    nbl = nb[0].lower()
+    # Mirror tagWord: a digit-initial neighbor is a cardinal numeral (MC).
+    tags = "MC" if (DIGIT_MC and nbl[:1].isdigit()) else wordtags.get(nbl, "")
+    if not tags:
+        return {"NN"} if MAP_UNK_TO_NN else {"UNK"}
+    fams = {f for f in (fam(t) for t in tags.split("|")) if f is not None}
+    if not fams:
+        # every reading was a ditto tag: the word only exists inside a
+        # multiword expression -- no usable family, treat as unknown
+        return {"NN"} if MAP_UNK_TO_NN else {"UNK"}
+    return fams
+
 def featurize(toks, i):
     """Returns (word_col, context_cols). The word column is scored at WORD_SCALE."""
     w = toks[i][0]
     wcol = fid("w=" + w.lower())
     ctx = [fid("bias")]
     if w[:1].isupper(): ctx.append(fid("cap"))
+    per_off = {}
     for off in OFFS:
-        nb = neighbor(toks, i, off)
-        if nb is None:
+        fams = slot_fams(toks, i, off)
+        per_off[off] = fams
+        # Lexicalize an adjacent closed-class word (preposition/conjunction/TO):
+        # the family alone cannot tell a post-nominal PP ("records BETWEEN the
+        # dates", "anchors OF ships" -> noun) from a phrasal-verb complement
+        # ("calls FOR backup" -> verb). Closed class, so the vocabulary is tiny.
+        if off in (-1, 1):
+            nb = neighbor(toks, i, off)
+            if nb is not None:
+                nbl = nb[0].lower()
+                nbtags = wordtags.get(nbl, "")
+                if any(t.startswith(("II", "IO", "IF", "IW", "CC", "CS", "TO"))
+                       for t in nbtags.split("|") if not DITTO.search(t)):
+                    ctx.append(fid(f"{off}w={nbl}"))
+        if fams is None:
             # A boundary slot is ABSENCE of context, not evidence. Firing a
             # feature for it lets the model learn a sentence-position prior
             # (a verb-leaning "nothing after" weight) that swamps the real cues
             # in short sentences. So an empty slot contributes nothing; the bias
             # term carries the overall base rate.
             continue
-        nbl = nb[0].lower()
-        # Mirror tagWord: a digit-initial neighbor is a cardinal numeral (MC).
-        tags = "MC" if (DIGIT_MC and nbl[:1].isdigit()) else wordtags.get(nbl, "")
-        if not tags:
-            ctx.append(fid(f"{off}=NN" if MAP_UNK_TO_NN else f"{off}=UNK")); continue
-        for fm in {fam(t) for t in tags.split("|")}:
+        for fm in fams:
             ctx.append(fid(f"{off}={fm}"))
+    # (-2,-1) family-pair conjunction: separates a subject frame (DET~NN ->
+    # verb) from a noun-compound frame (NN~NN, PREMOD~NN -> noun), which the
+    # single-slot features cannot represent in a linear model.
+    if per_off.get(-2) and per_off.get(-1):
+        for fa in per_off[-2]:
+            for fb in per_off[-1]:
+                ctx.append(fid(f"p={fa}~{fb}"))
     return wcol, ctx
 
 if os.environ.get("CORPORA"):

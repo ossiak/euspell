@@ -65,6 +65,8 @@ const SENTENCES = [
   'The new machine records the data.',
   'John records his notes.',
   'Learning tools are useful.',
+  'They handed over all domestic call records between those dates.',
+  'The phone calls stopped at midnight.',
   'The chassis is broken.',
   'Two chassis were delivered.',
   'They separate the papers.',

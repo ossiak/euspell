@@ -245,8 +245,47 @@ var Euspell = (function () {
     });
   }
 
+  // --- NN2|VVZ hand rule (mirrors vvzScore in pos.js) -------------------------
+  // Signed context vote (> 0 => VVZ); its negative (noun) votes veto weak SVM
+  // verb calls in isVvzSvm below.
+  function vvzScore(tokens, idx) {
+    var win = contextWindow(tokens, idx);
+    var w3b = win[0], w2b = win[1], w1b = win[2], w1a = win[4], w2a = win[5];
+    var beforeAdv = isPureAdverb(w1b);
+    var left = beforeAdv ? w2b : w1b;
+    var leftBack = beforeAdv ? w3b : w2b;
+    var vote = 0;
+    if (anyExact(left, SUBJECT_3SG)) vote += 3;              // "it records"
+    else if (anyPrefix(left, REL_SUBJECT)) vote += 2;        // "device which records"
+    else if (anyPrefix(left, ['NP'])) vote += 2;             // "John records"
+    if (anyExact(left, DETERMINER) || anyPrefix(left, PREMODIFIER)) vote -= 3;
+    if (anyPrefix(left, PREPOSITION)) vote -= 3;             // "of tools"
+    if (anyPrefix(left, ['NN'])) vote -= 2;                  // "learning tools"
+    if (anyExact(left, ['VM', 'TO'])) vote -= 3;             // "will/to tool(s)"
+    else if (anyPrefix(left, VERB_ANY) && !anyExact(left, SUBJECT_3SG)) vote -= 1;
+    var afterVerb = isPureAdverb(w1a) ? w2a : w1a;
+    if (anyExact(afterVerb, PLURAL_VERB)) vote -= 3;         // "records show"
+    else if (anyExact(afterVerb, ['VVD']) && !anyPrefix(afterVerb, ['NN'])) vote -= 3; // "calls stopped"
+    if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;           // "records them"
+    if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2;
+    if (anyPrefix(w1a, ['NP'])) vote += 2;                   // "meets Mary"
+    if (anyPrefix(w1a, ['RR'])) vote += 1;                   // "functions well"
+    var detSubject = anyExact(leftBack, DETERMINER) ||
+      (!beforeAdv && anyPrefix(w2b, ['JJ', 'MC', 'MD', 'MF']) && anyExact(w3b, DETERMINER));
+    var subjectNoun = anyPrefix(left, ['NP']) || (anyExact(left, SINGULAR_NOUN) && detSubject);
+    var verbComplement = anyPrefix(w1a, OBJECT_PRONOUN) || anyExact(w1a, DETERMINER) ||
+      anyPrefix(w1a, ['APPGE', 'RR', 'RP', 'NP']);
+    if (subjectNoun && verbComplement) vote += 3;
+    return vote;
+  }
+
   // --- NN2|VVZ SVM ----------------------------------------------------------
+  // CLAWS7 ditto tags (II22, JJ21, NN132, ...) mark "word k of an n-word
+  // multiword expression"; as candidate readings they are noise -> no family.
+  var DITTO = /\d\d$/;
   function svmFamily(tag) {
+    if (DITTO.test(tag)) return null;
+    if (tag === 'VVD') return 'VPAST';
     if (tag.indexOf('NP') === 0) return 'NP';
     if (tag.indexOf('NN') === 0) return 'NN';
     if (tag === 'PPHS1' || tag === 'PPH1') return 'SUBJ3SG';
@@ -262,27 +301,56 @@ var Euspell = (function () {
     return tag.slice(0, 2);
   }
   var SVM_SLOTS = [[0, -3], [1, -2], [2, -1], [4, 1], [5, 2], [6, 3]];
+  // Closed-class candidate tags that lexicalize an adjacent neighbor.
+  var CLOSED_CLASS = /^(II|IO|IF|IW|CC|CS|TO)/;
+  // Family set for one context token: {} keyed set, UNK for an unknown word (or
+  // one whose every reading is a ditto tag), or null for a boundary slot.
+  function slotFams(tok) {
+    if (tok.tag === 'ZB') return null;
+    if (tok.tag === '') return { UNK: 1 };
+    var fams = {}, any = false;
+    tok.tag.split('|').forEach(function (t) {
+      var f = svmFamily(t);
+      if (f !== null) { fams[f] = 1; any = true; }
+    });
+    return any ? fams : { UNK: 1 };
+  }
+  // Mirrors svmFeatures in pos.js: per-slot non-ditto families, an adjacent
+  // (+/-1) closed-class word's identity ("1w=of"), and the (-2,-1) family pair
+  // ("p=DET~NN"). Boundary slots fire nothing.
   function svmFeatures(tokens, idx) {
     var win = contextWindow(tokens, idx);
     var word = tokens[idx] ? tokens[idx].word : '';
     var feats = ['bias', 'w=' + word.toLowerCase()];
     if (/^\p{Lu}/u.test(word)) feats.push('cap');
+    var perOff = {};
     for (var s = 0; s < SVM_SLOTS.length; s++) {
       var slot = SVM_SLOTS[s][0], off = SVM_SLOTS[s][1];
       var tok = win[slot];
-      if (tok.tag === 'ZB') continue;
-      if (tok.tag === '') { feats.push(off + '=UNK'); continue; }
-      var fams = {};
-      tok.tag.split('|').forEach(function (t) { fams[svmFamily(t)] = 1; });
+      var fams = slotFams(tok);
+      perOff[off] = fams;
+      if ((off === -1 || off === 1) && tok.tag !== 'ZB' && tok.tag !== '') {
+        var closed = tok.tag.split('|').some(function (t) {
+          return !DITTO.test(t) && CLOSED_CLASS.test(t);
+        });
+        if (closed) feats.push(off + 'w=' + tok.word.toLowerCase());
+      }
+      if (fams === null) continue;
       for (var f in fams) feats.push(off + '=' + f);
+    }
+    if (perOff[-2] && perOff[-1]) {
+      for (var fa in perOff[-2]) for (var fb in perOff[-1]) feats.push('p=' + fa + '~' + fb);
     }
     return feats;
   }
+  // How much one hand-rule vote point counts against the SVM score (mirrors
+  // RULE_VETO in pos.js): categorical noun evidence vetoes a weak verb call.
+  var RULE_VETO = 0.16;
   function isVvzSvm(tokens, idx) {
     var feats = svmFeatures(tokens, idx);
     var score = 0;
     for (var i = 0; i < feats.length; i++) { var w = SVM[feats[i]]; if (w) score += w; }
-    return score > 0;
+    return score + RULE_VETO * Math.min(0, vvzScore(tokens, idx)) > 0;
   }
 
   // --- POS predicates -------------------------------------------------------

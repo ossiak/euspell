@@ -140,6 +140,14 @@ export function vvzScore(tokens, idx) {
   // "records show", "records also show".
   const afterVerb = isPureAdverb(w1a) ? w2a : w1a;
   if (anyExact(afterVerb, PLURAL_VERB)) vote -= 3;
+  // A past-tense verb after does too ("the phone calls stopped"): a finite verb
+  // cannot immediately follow a finite VVZ, so the target must be its subject.
+  // Only when the word cannot be a noun ("calls last" JJ|NN1|RR|VV0 stays open —
+  // "calls last week" is a verb frame with a noun complement, not a subject). A
+  // JJ candidate does NOT block the cue: regular -ed forms all carry one
+  // ("stopped" JJ|VVD|VVN), and an attributive reading needs a noun after
+  // anyway, which the verb complement rules below credit separately.
+  else if (anyExact(afterVerb, ['VVD']) && !anyPrefix(afterVerb, ['NN'])) vote -= 3;
   if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 3;            // "records them"
   if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "records the / his X"
   if (anyPrefix(w1a, ['NP'])) vote += 2;                    // "meets Mary" — proper-noun object
@@ -170,15 +178,23 @@ export function is_VVZ(tokens, idx) {
   return vvzScore(tokens, idx) > 0;
 }
 
+// CLAWS7 ditto tags (II22, JJ21, NN132, …) mark "word k of an n-word multiword
+// expression". Only a ditto tag ends in two digits.
+const DITTO = /\d\d$/;
+
 /**
- * Coarsens a single CLAWS7 tag to the feature family used by the SVM. Mirrors
+ * Coarsens a single CLAWS7 tag to the feature family used by the SVM, or null
+ * for a ditto tag. As candidate readings of an isolated word, ditto tags are
+ * noise that smears function words across families ("between" II|II22|JJ22|RL|
+ * RL22 would fire PREP+PREMOD+ADV at once), so they map to no family. Mirrors
  * the families the rule predicates test (subject pronoun, determiner, object
  * pronoun, …) so each neighbor candidate tag maps to one stable feature key.
  * MUST stay byte-identical to fam() in build/gen-vvz-svm.py — the weights are
  * keyed on these strings.
- * @param {string} tag @returns {string}
+ * @param {string} tag @returns {string | null}
  */
 function svmFamily(tag) {
+  if (DITTO.test(tag)) return null;
   if (tag.startsWith('NP')) return 'NP';
   if (tag.startsWith('NN')) return 'NN';
   if (tag === 'PPHS1' || tag === 'PPH1') return 'SUBJ3SG';
@@ -188,6 +204,10 @@ function svmFamily(tag) {
   if (tag.startsWith('II') || tag.startsWith('IO') || tag.startsWith('IF') || tag.startsWith('IW')) return 'PREP';
   if (tag.startsWith('JJ') || tag.startsWith('MC') || tag.startsWith('MD') || tag.startsWith('MF')) return 'PREMOD';
   if (tag === 'VV0' || tag === 'VBR' || tag === 'VBDR' || tag === 'VH0' || tag === 'VD0') return 'PLVERB';
+  // Past tense is its own family: a finite past verb right after the target
+  // ("the phone calls VPAST…") marks the target as its subject noun, a signal
+  // the generic VERB family (infinitives, participles) dilutes.
+  if (tag === 'VVD') return 'VPAST';
   if (tag.startsWith('VV') || tag.startsWith('VB') || tag.startsWith('VH') || tag.startsWith('VD') || tag.startsWith('VM')) return 'VERB';
   if (tag.startsWith('RR') || tag.startsWith('RG') || tag.startsWith('RP') || tag.startsWith('RL') || tag.startsWith('RT') || tag.startsWith('RA')) return 'ADV';
   if (tag === 'PNQS' || tag === 'DDQ' || tag === 'CST') return 'RELSUBJ';
@@ -198,14 +218,46 @@ function svmFamily(tag) {
 // contextWindow returns them: [w-3, w-2, w-1, target, w+1, w+2, w+3].
 const SVM_SLOTS = [[0, -3], [1, -2], [2, -1], [4, 1], [5, 2], [6, 3]];
 
+// Closed-class candidate tags (preposition / conjunction / infinitival to) that
+// lexicalize an adjacent neighbor — see svmFeatures.
+const CLOSED_CLASS = /^(II|IO|IF|IW|CC|CS|TO)/;
+
+/**
+ * Family set for one context token: one family per non-ditto candidate tag, or
+ * UNK for a word the lexicon doesn't know (or whose every reading is a ditto
+ * tag), or null for a boundary slot (past a sentence edge, tag 'ZB').
+ * @param {Token} tok @returns {Set<string> | null}
+ */
+function slotFams(tok) {
+  if (tok.tag === 'ZB') return null;
+  if (tok.tag === '') return new Set(['UNK']);
+  const fams = new Set();
+  for (const t of tok.tag.split('|')) {
+    const f = svmFamily(t);
+    if (f !== null) fams.add(f);
+  }
+  return fams.size ? fams : new Set(['UNK']);
+}
+
 /**
  * Builds the SVM feature keys for the target at `idx`, identically to
  * featurize() in build/gen-vvz-svm.py. Each neighbor fires one
- * "<offset>=<family>" per candidate tag (multi-hot), or "<offset>=UNK" for a
- * word the lexicon doesn't know. A boundary slot (past a sentence edge, tag
- * 'ZB') fires nothing — absence of context is not evidence; the bias carries
- * the base rate. Plus the bias, a capitalization flag, and the lexical
- * "w=<word>" identity (the per-word prior).
+ * "<offset>=<family>" per candidate tag (multi-hot, ditto tags dropped), or
+ * "<offset>=UNK" for a word the lexicon doesn't know. A boundary slot fires
+ * nothing — absence of context is not evidence; the bias carries the base
+ * rate. Plus the bias, a capitalization flag, and the lexical "w=<word>"
+ * identity (the per-word prior).
+ *
+ * Two structural feature groups beyond the per-slot families:
+ * - An adjacent (±1) closed-class word (preposition/conjunction/to) also fires
+ *   its identity ("1w=of"): the family alone cannot tell a post-nominal PP
+ *   ("records OF the meeting" → noun) from a phrasal-verb complement ("calls
+ *   FOR backup" → verb). Closed class, so the vocabulary stays tiny.
+ * - The (-2,-1) family pair fires as a conjunction ("p=DET~NN"): it separates
+ *   a subject frame ("the machine records…" → verb) from a noun-compound
+ *   frame ("the call records…" → noun), which single-slot features cannot
+ *   represent in a linear model.
+ *
  * @param {Token[]} tokens @param {number} idx @returns {string[]}
  */
 function svmFeatures(tokens, idx) {
@@ -213,32 +265,57 @@ function svmFeatures(tokens, idx) {
   const word = tokens[idx]?.word ?? '';
   const feats = ['bias', 'w=' + word.toLowerCase()];
   if (/^\p{Lu}/u.test(word)) feats.push('cap');
+  /** @type {Map<number, Set<string> | null>} */
+  const perOff = new Map();
   for (const [slot, off] of SVM_SLOTS) {
     const tok = win[slot];
-    if (tok.tag === 'ZB') continue;                  // boundary: no feature
-    if (tok.tag === '') { feats.push(off + '=UNK'); continue; }
-    const fams = new Set();
-    for (const t of tok.tag.split('|')) fams.add(svmFamily(t));
+    const fams = slotFams(tok);
+    perOff.set(off, fams);
+    if ((off === -1 || off === 1) && tok.tag !== 'ZB' && tok.tag !== '') {
+      const closed = tok.tag.split('|').some((t) => !DITTO.test(t) && CLOSED_CLASS.test(t));
+      if (closed) feats.push(off + 'w=' + tok.word.toLowerCase());
+    }
+    if (fams === null) continue;
     for (const f of fams) feats.push(off + '=' + f);
+  }
+  const before2 = perOff.get(-2);
+  const before1 = perOff.get(-1);
+  if (before2 && before1) {
+    for (const fa of before2) for (const fb of before1) feats.push('p=' + fa + '~' + fb);
   }
   return feats;
 }
 
+// How much one hand-rule vote point counts against the SVM score in the
+// blended decision below. Rule cues come in ±3 steps, so one strong noun cue
+// (a determiner or preposition before, a finite past verb after) can veto
+// about half a unit of SVM confidence; two cues about a full unit.
+const RULE_VETO = 0.16;
+
 /**
- * The production decision for an NN2|VVZ diatone via the linear SVM
+ * The production decision for an NN2|VVZ diatone: the linear SVM score
  * (vvz-svm.js, trained on the fiction + non-fiction _corpus_012_112*.txt by
- * build/gen-vvz-svm.py). Sums the learned weights of the word's active
- * features; > 0 ⇒ VVZ (verb). Replaces the earlier hand-tuned
- * rule-vote-plus-prior: measured 94.0% accuracy on a held-out split (94.1%
- * fiction, 93.8% non-fiction) vs the rule's 88.5%, with much higher verb
- * recall. A diatone unseen in training has no "w=" weight and falls back to the
+ * build/gen-vvz-svm.py) blended with the hand rule's NEGATIVE (noun) votes:
+ *
+ *   svm(tokens, idx) + RULE_VETO · min(0, vvzScore(tokens, idx)) > 0  ⇒ VVZ
+ *
+ * The SVM carries the decision — 94.6% held-out accuracy alone vs the rule's
+ * 88.5% — but its rare false verbs are weak positives on noun-compound frames
+ * the corpus under-represents ("the call records between…" +0.3), where the
+ * rule has categorical noun evidence (vote ≤ −3). Letting only the rule's
+ * negative votes count keeps its role to that veto: the SVM's verb recall is
+ * already high, so positive rule votes would add nothing but noise. Measured
+ * on the held-out split: 94.5% accuracy with precision 93.3% → 95.2% vs the
+ * SVM alone — the false-verb rate nearly halves for a ~0.1pt accuracy cost,
+ * the right trade for a converter whose noun spelling is the safe default.
+ * A diatone unseen in training has no "w=" weight and falls back to the
  * learned context weights.
  * @param {Token[]} tokens @param {number} idx @returns {boolean}
  */
 export function is_VVZ_svm(tokens, idx) {
   let score = 0;
   for (const f of svmFeatures(tokens, idx)) score += VVZ_SVM.get(f) ?? 0;
-  return score > 0;
+  return score + RULE_VETO * Math.min(0, vvzScore(tokens, idx)) > 0;
 }
 
 // Subject pronouns — a preceding one marks the clitic 's as a contracted verb.

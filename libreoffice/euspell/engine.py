@@ -300,9 +300,75 @@ def _is_pure_adverb(token):
     return len(tags) > 0 and all(any(t.startswith(p) for p in _ADVERB) for t in tags)
 
 
+def _vvz_score(tokens, idx):
+    """Signed hand-rule context vote for the NN2|VVZ decision (> 0 => VVZ).
+    Mirrors vvzScore in pos.js; its negative (noun) votes veto weak SVM verb
+    calls in _is_vvz_svm."""
+    win = _context_window(tokens, idx)
+    w3b, w2b, w1b, w1a, w2a = win[0], win[1], win[2], win[4], win[5]
+    before_adv = _is_pure_adverb(w1b)
+    left = w2b if before_adv else w1b
+    left_back = w3b if before_adv else w2b
+    vote = 0
+
+    # BEFORE: an unambiguous subject argues for the verb.
+    if _any_exact(left, _SUBJECT_3SG):
+        vote += 3                                      # "it records"
+    elif _any_prefix(left, _REL_SUBJECT):
+        vote += 2                                      # "device which records"
+    elif _any_prefix(left, ["NP"]):
+        vote += 2                                      # "John records"
+
+    # Noun-phrase context before -> the plural-noun reading (the default).
+    if _any_exact(left, _DETERMINER) or _any_prefix(left, _PREMODIFIER):
+        vote -= 3                                      # "the/old/two tools"
+    if _any_prefix(left, _PREPOSITION):
+        vote -= 3                                      # "of tools"
+    if _any_prefix(left, ["NN"]):
+        vote -= 2                                      # "learning tools"
+    if _any_exact(left, ["VM", "TO"]):
+        vote -= 3                                      # "will/to tool(s)"
+    elif _any_prefix(left, _VERB_ANY) and not _any_exact(left, _SUBJECT_3SG):
+        vote -= 1                                      # "plays records"
+
+    # AFTER: a complement only a finite verb takes argues for the verb.
+    after_verb = w2a if _is_pure_adverb(w1a) else w1a
+    if _any_exact(after_verb, _PLURAL_VERB):
+        vote -= 3                                      # "records show"
+    elif _any_exact(after_verb, ["VVD"]) and not _any_prefix(after_verb, ["NN"]):
+        vote -= 3                                      # "the phone calls stopped"
+    if _any_prefix(w1a, _OBJECT_PRONOUN):
+        vote += 3                                      # "records them"
+    if _any_exact(w1a, _DETERMINER) or _any_prefix(w1a, ["APPGE"]):
+        vote += 2                                      # "records the / his X"
+    if _any_prefix(w1a, ["NP"]):
+        vote += 2                                      # "meets Mary"
+    if _any_prefix(w1a, ["RR"]):
+        vote += 1                                      # "functions well"
+
+    # A clear subject NP + target + verb complement -> a finite verb.
+    det_subject = _any_exact(left_back, _DETERMINER) or (
+        not before_adv and _any_prefix(w2b, ["JJ", "MC", "MD", "MF"]) and _any_exact(w3b, _DETERMINER))
+    subject_noun = _any_prefix(left, ["NP"]) or (_any_exact(left, _SINGULAR_NOUN) and det_subject)
+    verb_complement = (_any_prefix(w1a, _OBJECT_PRONOUN) or _any_exact(w1a, _DETERMINER)
+                       or _any_prefix(w1a, ["APPGE", "RR", "RP", "NP"]))
+    if subject_noun and verb_complement:
+        vote += 3
+
+    return vote
+
+
 # --- NN2|VVZ SVM ------------------------------------------------------------
 
+# CLAWS7 ditto tags (II22, JJ21, NN132, ...) mark "word k of an n-word multiword
+# expression"; as candidate readings of an isolated word they are noise, so they
+# map to no family (mirrors pos.js svmFamily).
+_DITTO = re.compile(r"\d\d$")
+
+
 def _svm_family(tag):
+    if _DITTO.search(tag):
+        return None
     if tag.startswith("NP"):
         return "NP"
     if tag.startswith("NN"):
@@ -321,6 +387,8 @@ def _svm_family(tag):
         return "PREMOD"
     if tag in ("VV0", "VBR", "VBDR", "VH0", "VD0"):
         return "PLVERB"
+    if tag == "VVD":
+        return "VPAST"
     if tag.startswith("VV") or tag.startswith("VB") or tag.startswith("VH") or tag.startswith("VD") or tag.startswith("VM"):
         return "VERB"
     if tag.startswith("RR") or tag.startswith("RG") or tag.startswith("RP") or tag.startswith("RL") or tag.startswith("RT") or tag.startswith("RA"):
@@ -332,33 +400,66 @@ def _svm_family(tag):
 
 _SVM_SLOTS = [(0, -3), (1, -2), (2, -1), (4, 1), (5, 2), (6, 3)]
 
+# Closed-class candidate tags (preposition/conjunction/infinitival to) that
+# lexicalize an adjacent neighbor -- see _svm_features.
+_CLOSED_CLASS = ("II", "IO", "IF", "IW", "CC", "CS", "TO")
+
+
+def _slot_fams(tok):
+    """Family set for one context token, UNK for an unknown word (or one whose
+    every reading is a ditto tag), or None for a boundary slot."""
+    if tok["tag"] == "ZB":
+        return None
+    if tok["tag"] == "":
+        return {"UNK"}
+    fams = set()
+    for t in tok["tag"].split("|"):
+        f = _svm_family(t)
+        if f is not None:
+            fams.add(f)
+    return fams if fams else {"UNK"}
+
 
 def _svm_features(tokens, idx):
+    # Mirrors svmFeatures in pos.js: per-slot non-ditto families, an adjacent
+    # (+/-1) closed-class word's identity ("1w=of"), and the (-2,-1) family
+    # pair ("p=DET~NN"). Boundary slots fire nothing.
     win = _context_window(tokens, idx)
     word = tokens[idx]["word"] if idx < len(tokens) else ""
     feats = ["bias", "w=" + word.lower()]
     if word[:1].isupper():
         feats.append("cap")
+    per_off = {}
     for slot, off in _SVM_SLOTS:
         tok = win[slot]
-        if tok["tag"] == "ZB":
+        fams = _slot_fams(tok)
+        per_off[off] = fams
+        if off in (-1, 1) and tok["tag"] not in ("ZB", ""):
+            if any(t.startswith(_CLOSED_CLASS) and not _DITTO.search(t)
+                   for t in tok["tag"].split("|")):
+                feats.append(str(off) + "w=" + tok["word"].lower())
+        if fams is None:
             continue
-        if tok["tag"] == "":
-            feats.append(str(off) + "=UNK")
-            continue
-        fams = set()
-        for t in tok["tag"].split("|"):
-            fams.add(_svm_family(t))
         for f in fams:
             feats.append(str(off) + "=" + f)
+    if per_off.get(-2) and per_off.get(-1):
+        for fa in per_off[-2]:
+            for fb in per_off[-1]:
+                feats.append("p=" + fa + "~" + fb)
     return feats
+
+
+# How much one hand-rule vote point counts against the SVM score (mirrors
+# RULE_VETO in pos.js): the rule's categorical noun evidence can veto a weak
+# learned verb call ("the call records between ..." stays a noun).
+_RULE_VETO = 0.16
 
 
 def _is_vvz_svm(tokens, idx):
     score = 0.0
     for f in _svm_features(tokens, idx):
         score += _SVM.get(f, 0.0)
-    return score > 0
+    return score + _RULE_VETO * min(0, _vvz_score(tokens, idx)) > 0
 
 
 # --- POS predicates ---------------------------------------------------------

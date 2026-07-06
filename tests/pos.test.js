@@ -1,7 +1,11 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { is_VVZ, is_VVZ_svm, is_verb_VV0, is_plural_noun, is_verbal_s } from '../src/disambig/pos.js';
+import { tagWord } from '../src/content/tagger.js';
 import { t } from './helpers.js';
+
+/** Tokens with the REAL lexicon candidate tags (what the page pipeline sees). */
+const tagged = (words) => words.map((w) => t(w, tagWord(w)));
 
 test('is_VVZ_svm: the production linear-SVM decision (vvz-svm.js)', () => {
   // Verb readings: a 3rd-sg subject before, or a verb complement after.
@@ -15,6 +19,28 @@ test('is_VVZ_svm: the production linear-SVM decision (vvz-svm.js)', () => {
   // Robust at array boundaries and always boolean.
   assert.equal(typeof is_VVZ_svm([t('records', '')], 0), 'boolean');
   assert.doesNotThrow(() => is_VVZ_svm([t('records', '')], 0));
+});
+
+test('is_VVZ_svm: noun-compound frames with real lexicon tags (regression)', () => {
+  // These use the full candidate tag sets the page pipeline sees — the messy
+  // multi-tag neighbors ("all" DB|JJ21|RR|…, "between" II|II22|JJ22|RL|RL22)
+  // are what made these frames misresolve to the verb ("…domestic call
+  // recordz…" in the Snowden book). The rule-veto blend must keep the noun.
+  const verizon = tagged(['to', 'hand', 'over', 'all', 'domestic', 'call', 'records',
+    'between', 'the', 'dates', 'of', 'April', '25', 'to', 'July', '19']);
+  assert.equal(is_VVZ_svm(verizon, 6), false); // "call records" — compound noun
+  const domestic = tagged(['The', 'order', 'covered', 'all', 'domestic', 'calls',
+    'between', 'April', '25', 'and', 'July', '19']);
+  assert.equal(is_VVZ_svm(domestic, 5), false); // "domestic calls" — NP head
+  const stopped = tagged(['The', 'phone', 'calls', 'stopped', 'at', 'midnight']);
+  assert.equal(is_VVZ_svm(stopped, 2), false); // "calls stopped" — subject of VVD
+  const govt = tagged(['Government', 'records', 'between', '2001', 'and', '2013', 'were', 'released']);
+  assert.equal(is_VVZ_svm(govt, 1), false); // "government records" — NP head
+  // Verb readings with the same words must survive the veto:
+  assert.equal(is_VVZ_svm(tagged(['she', 'records', 'the', 'song']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['he', 'calls', 'his', 'mother', 'every', 'day']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['the', 'device', 'records', 'everything']), 2), true);
+  assert.equal(is_VVZ_svm(tagged(['every', 'morning', 'she', 'calls', 'for', 'backup']), 3), true);
 });
 
 test('is_VVZ: subject pronoun before marks a verb', () => {
