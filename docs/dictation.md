@@ -195,7 +195,7 @@ Implemented for the browser extension.
   → insert`, with the editable-target capture and restart-on-silence logic.
 - **Wiring** — `content.js` calls `initDictation()` before the conversion gate (so
   dictation works even where page conversion is off); a `toggle-dictation` command
-  in `manifest.json` (default `Ctrl+Shift+U`) handled in the service worker; and a
+  in `manifest.json` (default `Ctrl+Shift+9`) handled in the service worker; and a
   **Dictate euspell** Start/Stop button in the popup.
 
 Not done: the Word add-in path (would reuse `normalize.js` in its webview), and any

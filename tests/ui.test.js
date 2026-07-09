@@ -20,7 +20,7 @@ function makeEnv(store, tab) {
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
-  const chrome = {
+  const browser = {
     storage: {
       sync: {
         async get(keys) {
@@ -38,13 +38,17 @@ function makeEnv(store, tab) {
     },
     runtime: { openOptionsPage() {} },
   };
-  return { els, document, chrome, reloaded };
+  return { els, document, browser, reloaded };
 }
 
 async function runScript(relPath, env) {
-  const src = fs.readFileSync(new URL(relPath, import.meta.url), 'utf8');
+  let src = fs.readFileSync(new URL(relPath, import.meta.url), 'utf8');
+  // These pages are ES modules that import the cross-browser `browser` shim
+  // (src/lib/browser.js). We can't resolve that import inside new Function, so
+  // strip it and inject the mock as `browser` — the same handle the shim exports.
+  src = src.replace(/^\s*import\b.*$/gm, '');
   // eslint-disable-next-line no-new-func
-  new Function('document', 'chrome', 'URL', 'console', src)(env.document, env.chrome, URL, console);
+  new Function('document', 'browser', 'URL', 'console', src)(env.document, env.browser, URL, console);
   await flush();
   await flush();
 }

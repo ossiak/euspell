@@ -1,5 +1,5 @@
 // Seed default settings on install. The enable/disable controls live in the
-// popup (src/popup) and options page (src/options) — chrome.action.onClicked is
+// popup (src/popup) and options page (src/options) — browser.action.onClicked is
 // intentionally NOT used, because it never fires while a default_popup is set.
 import {
   isPdfUrl,
@@ -7,10 +7,11 @@ import {
   isPdfDisposition,
   looksLikePdfBytes,
 } from '../pdf/pdf-url.js';
+import { browser } from '../lib/browser.js';
 
-chrome.runtime.onInstalled.addListener(async () => {
-  const current = await chrome.storage.sync.get(['enabled', 'disabledSites']);
-  await chrome.storage.sync.set({
+browser.runtime.onInstalled.addListener(async () => {
+  const current = await browser.storage.sync.get(['enabled', 'disabledSites']);
+  await browser.storage.sync.set({
     enabled: current.enabled ?? true,
     disabledSites: current.disabledSites ?? [],
   });
@@ -20,12 +21,12 @@ chrome.runtime.onInstalled.addListener(async () => {
 // active tab. The content script owns the recognizer and inserts at the caret,
 // so we just forward the toggle; a page with no content script (chrome://, the
 // web store) simply has no receiver and the send is ignored.
-chrome.commands.onCommand.addListener(async (command) => {
+browser.commands.onCommand.addListener(async (command) => {
   if (command !== 'toggle-dictation') return;
-  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  const [tab] = await browser.tabs.query({ active: true, currentWindow: true });
   if (tab?.id == null) return;
   try {
-    await chrome.tabs.sendMessage(tab.id, { type: 'euspell:dictation:toggle' });
+    await browser.tabs.sendMessage(tab.id, { type: 'euspell:dictation:toggle' });
   } catch {
     /* no content script on this page */
   }
@@ -35,11 +36,11 @@ chrome.commands.onCommand.addListener(async (command) => {
 // viewer is a native plugin a content script can't touch, so redirecting the tab
 // is the only way in. Both detection paths below honour the same enabled/
 // disabledSites settings as page conversion, and skip our own viewer.
-const VIEWER_URL = chrome.runtime.getURL('src/pdf/viewer.html');
+const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 
 /** Whether the global toggle / per-site opt-out allow converting this URL. */
 async function shouldConvert(url) {
-  const { enabled = true, disabledSites = [] } = await chrome.storage.sync.get([
+  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get([
     'enabled',
     'disabledSites',
   ]);
@@ -54,12 +55,12 @@ async function shouldConvert(url) {
 
 /** Send the tab to our viewer with the original PDF URL in `?file=`. */
 function redirectToViewer(tabId, url) {
-  chrome.tabs.update(tabId, { url: `${VIEWER_URL}?file=${encodeURIComponent(url)}` });
+  browser.tabs.update(tabId, { url: `${VIEWER_URL}?file=${encodeURIComponent(url)}` });
 }
 
 // Path 1: URL ends in .pdf. onBeforeNavigate fires before any request goes out,
 // so this catches the common case with no network cost and no viewer flash.
-chrome.webNavigation.onBeforeNavigate.addListener(
+browser.webNavigation.onBeforeNavigate.addListener(
   async (details) => {
     if (details.frameId !== 0) return; // top-level only
     if (!isPdfUrl(details.url) || details.url.startsWith(VIEWER_URL)) return;
@@ -106,7 +107,7 @@ async function sniffPdfMagic(url) {
 // Content-Disposition (an attachment filename) are the reliable signals; when the
 // type is an ambiguous binary blob, fall back to sniffing the leading bytes for
 // the %PDF- structure. Any hit promotes the page to our viewer.
-chrome.webRequest.onHeadersReceived.addListener(
+browser.webRequest.onHeadersReceived.addListener(
   async (details) => {
     if (details.type !== 'main_frame') return;
     if (details.url.startsWith(VIEWER_URL)) return;

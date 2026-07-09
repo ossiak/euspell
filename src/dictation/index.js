@@ -12,6 +12,7 @@ import { normalize } from './normalize.js';
 import { insertText, isEditableTarget } from './insert.js';
 import { createRecognizer, isSupported } from './recognizer.js';
 import { createOverlay } from './overlay.js';
+import { browser } from '../lib/browser.js';
 
 // Recognizer errors that mean "can't listen at all" — stop rather than restart.
 const FATAL = new Set(['not-allowed', 'service-not-allowed', 'audio-capture']);
@@ -173,7 +174,7 @@ function toggle() {
  * per content-script load; independent of the page-conversion state.
  */
 export function initDictation() {
-  chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     if (!msg || typeof msg.type !== 'string') return;
     if (msg.type === 'euspell:dictation:toggle') {
       sendResponse({ active: toggle(), supported: isSupported() });

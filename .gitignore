@@ -1,6 +1,11 @@
 dist/
 .next/
 node_modules/
+
+# Firefox build staging + packaged xpi/zip (regenerable via `npm run build:firefox`)
+build/firefox/
+build/euspell-firefox.zip
+web-ext-artifacts/
 .DS_Store
 Thumbs.db
 desktop.ini

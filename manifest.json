@@ -41,8 +41,8 @@
   "commands": {
     "toggle-dictation": {
       "suggested_key": {
-        "default": "Ctrl+Shift+U",
-        "mac": "Command+Shift+U"
+        "default": "Ctrl+Shift+9",
+        "mac": "Command+Shift+9"
       },
       "description": "Start or stop euspell dictation"
     }
@@ -51,6 +51,7 @@
   "web_accessible_resources": [
     {
       "resources": [
+        "dist/lexicon.data",
         "src/pdf/viewer.html",
         "src/pdf/viewer.css",
         "dist/pdf-viewer.js",

@@ -4,7 +4,14 @@
  * Run: node build/compile-lexicon.js
  *
  * Output files (auto-generated — do not edit):
- *   dist/lexicon.js        — 205k-entry word map
+ *   dist/lexicon.js        — 205k-entry word map (ES module; used by the Eupub
+ *                            desktop reader and the sqlite compiler)
+ *   dist/lexicon.data      — the same map as a JSON [key, entry] array, shipped
+ *                            once as a web-accessible resource and fetched at
+ *                            runtime by the browser extension + PDF viewer, so
+ *                            neither bundle inlines its own ~14 MB copy. A
+ *                            non-.js/.json extension keeps addons-linter from
+ *                            trying (and failing) to parse it as oversized code.
  *   dist/abbreviations.js
  *   dist/contractions.js
  *   dist/phrases.js
@@ -61,10 +68,21 @@ function writeModule(filename, entries) {
   console.log(`[euspell-build] Wrote dist/${filename} (${entries.length} entries)`);
 }
 
+/**
+ * Writes entries as a compact JSON [key, entry] array — the argument shape
+ * `new Map(...)` takes — for hosts that load the lexicon at runtime rather than
+ * bundling the Map literal (see the header note on dist/lexicon.data).
+ */
+function writeData(filename, entries) {
+  writeFileSync(new URL(filename, DIST), JSON.stringify(entries), 'utf8');
+  console.log(`[euspell-build] Wrote dist/${filename} (${entries.length} entries)`);
+}
+
 // Lexicon
 const lexiconRows = parseCsv('euspell_lexicon.csv');
 const lexiconEntries = lexiconRows.map((row) => [row.Word, rowToEntry(row)]);
 writeModule('lexicon.js', lexiconEntries);
+writeData('lexicon.data', lexiconEntries);
 
 // Abbreviations
 const abbrevRows = parseCsv('euspell_lexicon_abbreviations.csv');

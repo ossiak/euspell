@@ -1,0 +1,64 @@
+# Builds, stages, and submits the Firefox package to addons.mozilla.org (AMO)
+# via `web-ext sign`. Runs when a GitHub release is published, or on demand.
+#
+# One-time setup:
+#   1. Create the add-on's AMO API credentials at
+#      https://addons.mozilla.org/developers/addon/api/key/ and add them as repo
+#      secrets (Settings ▸ Secrets and variables ▸ Actions):
+#        AMO_JWT_ISSUER  — the "JWT issuer"
+#        AMO_JWT_SECRET  — the "JWT secret"
+#   2. Set your own gecko id in build/gen-firefox.js (the placeholder
+#      euspell@euspell.org must match your AMO listing).
+#   3. Bump "version" in manifest.json before each run — AMO rejects a version
+#      that already exists.
+#
+# Channels:
+#   listed   — submits a new version to the public AMO listing (goes to review;
+#              AMO signs it after approval). Best for reaching KDE/Firefox users.
+#   unlisted — self-distribution: AMO signs immediately and web-ext downloads the
+#              signed .xpi (uploaded as a build artifact below) for you to host.
+name: Sign Firefox add-on
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: AMO channel
+        type: choice
+        options: [listed, unlisted]
+        default: listed
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: node build/gen-firefox.js
+      - name: Sign & submit to AMO
+        run: >
+          npx web-ext sign
+          --source-dir build/firefox
+          --channel ${{ github.event.inputs.channel || 'listed' }}
+          --api-key "$AMO_JWT_ISSUER"
+          --api-secret "$AMO_JWT_SECRET"
+          --artifacts-dir web-ext-artifacts
+        env:
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+      # unlisted signing yields a downloadable .xpi; listed submissions don't, so
+      # tolerate its absence.
+      - name: Upload signed .xpi
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: firefox-xpi
+          path: web-ext-artifacts/*.xpi
+          if-no-files-found: ignore

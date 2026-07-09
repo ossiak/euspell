@@ -1,5 +1,7 @@
-// Options page. Mirrors the same chrome.storage.sync state the popup uses
+// Options page. Mirrors the same browser.storage.sync state the popup uses
 // ({ enabled, disabledSites }) and stays in sync live via storage.onChanged.
+
+import { browser } from '../lib/browser.js';
 
 const enabledBox = document.getElementById('enabled');
 const sitesList = document.getElementById('sites');
@@ -20,7 +22,7 @@ function normalizeHost(value) {
 }
 
 async function getState() {
-  return chrome.storage.sync.get(['enabled', 'disabledSites']);
+  return browser.storage.sync.get(['enabled', 'disabledSites']);
 }
 
 function render({ enabled = true, disabledSites = [] }) {
@@ -44,27 +46,27 @@ function render({ enabled = true, disabledSites = [] }) {
 }
 
 async function removeSite(host) {
-  const { disabledSites = [] } = await chrome.storage.sync.get('disabledSites');
-  await chrome.storage.sync.set({ disabledSites: disabledSites.filter((h) => h !== host) });
+  const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
+  await browser.storage.sync.set({ disabledSites: disabledSites.filter((h) => h !== host) });
 }
 
 enabledBox.addEventListener('change', () => {
-  chrome.storage.sync.set({ enabled: enabledBox.checked });
+  browser.storage.sync.set({ enabled: enabledBox.checked });
 });
 
 addForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const host = normalizeHost(addInput.value);
   if (!host) return;
-  const { disabledSites = [] } = await chrome.storage.sync.get('disabledSites');
+  const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
   if (!disabledSites.includes(host)) {
-    await chrome.storage.sync.set({ disabledSites: [...disabledSites, host] });
+    await browser.storage.sync.set({ disabledSites: [...disabledSites, host] });
   }
   addInput.value = '';
 });
 
 // Keep the page current if the popup (or another options tab) changes settings.
-chrome.storage.onChanged.addListener((changes, area) => {
+browser.storage.onChanged.addListener((changes, area) => {
   if (area === 'sync' && ('enabled' in changes || 'disabledSites' in changes)) {
     getState().then(render);
   }
