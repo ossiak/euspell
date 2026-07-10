@@ -3045,7 +3045,7 @@
   <lexeme><grapheme>bowlderd</grapheme><phoneme>ˈboʊldərd</phoneme></lexeme> <!-- bouldered -->
   <lexeme><grapheme>bowldery</grapheme><phoneme>ˈboʊldəri</phoneme></lexeme> <!-- bouldery -->
   <lexeme><grapheme>bowlz</grapheme><phoneme>boʊlz</phoneme></lexeme> <!-- bowls -->
-  <lexeme><grapheme>bowz</grapheme><phoneme>baʊz</phoneme></lexeme> <!-- bows -->
+  <lexeme><grapheme>bowz</grapheme><phoneme>boʊz</phoneme></lexeme> <!-- bows -->
   <lexeme><grapheme>boxd</grapheme><phoneme>bɒkst</phoneme></lexeme> <!-- boxed -->
   <lexeme><grapheme>boxez</grapheme><phoneme>ˈbɒksɪz</phoneme></lexeme> <!-- boxes -->
   <lexeme><grapheme>boxhauld</grapheme><phoneme>ˈbɒksˌhɔːld</phoneme></lexeme> <!-- boxhauled -->
@@ -21411,7 +21411,7 @@
   <lexeme><grapheme>preselectz</grapheme><phoneme>priːsɪˈlɛkts</phoneme></lexeme> <!-- preselects -->
   <lexeme><grapheme>presentativ</grapheme><phoneme>prɪˈzɛntətɪv</phoneme></lexeme> <!-- presentative -->
   <lexeme><grapheme>presentencez</grapheme><phoneme>priˈsɛntənsɪz</phoneme></lexeme> <!-- presentences -->
-  <lexeme><grapheme>presentz</grapheme><phoneme>ˈprɛzənts</phoneme></lexeme> <!-- presents -->
+  <lexeme><grapheme>presentz</grapheme><phoneme>prɪzˈɛnts</phoneme></lexeme> <!-- presents -->
   <lexeme><grapheme>preserv</grapheme><phoneme>prɪˈzɜːrv</phoneme></lexeme> <!-- preserve -->
   <lexeme><grapheme>preservativ</grapheme><phoneme>prɪˈzɜːrvətɪv</phoneme></lexeme> <!-- preservative -->
   <lexeme><grapheme>preservativs</grapheme><phoneme>prɪˈzɜːrvətɪvz</phoneme></lexeme> <!-- preservatives -->
@@ -21421,7 +21421,7 @@
   <lexeme><grapheme>presetz</grapheme><phoneme>ˈpriːsɛts</phoneme></lexeme> <!-- presets -->
   <lexeme><grapheme>preshapez</grapheme><phoneme>priˈʃeɪps</phoneme></lexeme> <!-- preshapes -->
   <lexeme><grapheme>preshowd</grapheme><phoneme>priˈʃoʊd</phoneme></lexeme> <!-- preshowed -->
-  <lexeme><grapheme>preshowz</grapheme><phoneme>ˈpriːʃoʊz</phoneme></lexeme> <!-- preshows -->
+  <lexeme><grapheme>preshowz</grapheme><phoneme>priˈʃoʊz</phoneme></lexeme> <!-- preshows -->
   <lexeme><grapheme>preshrinkz</grapheme><phoneme>priˈʃrɪŋks</phoneme></lexeme> <!-- preshrinks -->
   <lexeme><grapheme>presidez</grapheme><phoneme>prɪˈzaɪdz</phoneme></lexeme> <!-- presides -->
   <lexeme><grapheme>presiftz</grapheme><phoneme>priˈsɪfts</phoneme></lexeme> <!-- presifts -->

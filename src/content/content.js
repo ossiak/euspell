@@ -2,6 +2,8 @@ import { convert } from './converter.js';
 import { walkTextNodes, restoreOriginals } from './dom-walker.js';
 import { createRateGuard } from './reapply-guard.js';
 import { initDictation } from '../dictation/index.js';
+import { ensureLexicon } from './lexicon-load.js';
+import { browser } from '../lib/browser.js';
 
 // Wrapped in an async IIFE: the content bundle is emitted as an iife (classic
 // content script), which forbids top-level await — so the storage read lives
@@ -15,7 +17,12 @@ import { initDictation } from '../dictation/index.js';
   // on a site whose pages they don't want reformed.
   initDictation();
 
-  const { enabled = true, disabledSites = [] } = await chrome.storage.sync.get(['enabled', 'disabledSites']);
+  // The lexicon is fetched at runtime (dist/lexicon.data) rather than inlined
+  // into this bundle. Load it before any conversion — and before the enable gate,
+  // so dictation on a disabled page still reforms what it hears.
+  await ensureLexicon();
+
+  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get(['enabled', 'disabledSites']);
   if (!enabled || disabledSites.includes(location.hostname)) return;
 
   // childList catches inserted content (SPA renders); characterData catches text
@@ -33,7 +40,7 @@ import { initDictation } from '../dictation/index.js';
   // Only registered on active pages, so the popup treats "no responder" as "this
   // page isn't converting".
   let viewMode = 'euspell';
-  chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     if (!msg || typeof msg.type !== 'string') return;
     if (msg.type === 'euspell:getMode') { sendResponse({ mode: viewMode }); return; }
     if (msg.type === 'euspell:setMode') {

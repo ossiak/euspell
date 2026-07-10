@@ -22,8 +22,10 @@ import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
+import { ensureLexicon } from '../content/lexicon-load.js';
+import { browser } from '../lib/browser.js';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = chrome.runtime.getURL('dist/pdfjs/pdf.worker.min.mjs');
+pdfjsLib.GlobalWorkerOptions.workerSrc = browser.runtime.getURL('dist/pdfjs/pdf.worker.min.mjs');
 
 const RENDER_SCALE = 1.5;
 
@@ -204,16 +206,20 @@ async function main() {
       verbosity: pdfjsLib.VerbosityLevel.ERRORS,
       // Where the bundled WebAssembly image/colour decoders live (trailing slash
       // required) — without this PDF.js can't decode JBIG2/JPEG2000 images.
-      wasmUrl: chrome.runtime.getURL('dist/pdfjs/wasm/'),
+      wasmUrl: browser.runtime.getURL('dist/pdfjs/wasm/'),
       // Where the bundled standard substitute fonts live (trailing slash
       // required) — lets PDF.js render non-embedded fonts (e.g. Goudy-Bold) with
       // a matching Foxit/Liberation face instead of warning and falling back.
-      standardFontDataUrl: chrome.runtime.getURL('dist/pdfjs/standard_fonts/'),
+      standardFontDataUrl: browser.runtime.getURL('dist/pdfjs/standard_fonts/'),
     }).promise;
   } catch (e) {
     setStatus(`Couldn’t open this PDF (${e?.message ?? e}). You can open the original instead.`);
     return;
   }
+
+  // The lexicon is fetched at runtime (dist/lexicon.data) rather than inlined
+  // into this bundle; load it before reforming any page's text layer.
+  await ensureLexicon();
 
   if (status) status.remove();
   const dpr = window.devicePixelRatio || 1;

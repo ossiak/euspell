@@ -42,6 +42,55 @@ bundled *inside* an extension (`location=user:uno_packages` →
 `mapPackageName2Path` KeyError). So the user-profile install in step 1 is a
 prerequisite for the menu in step 2.
 
+### Install on Linux / KDE Plasma
+
+One command handles both native and Flatpak LibreOffice. It does the same two
+parts — copy the macro + engine into the user profile, then `unopkg add` the
+menu — choosing the right profile path and `unopkg` invocation for your setup:
+
+```bash
+npm run gen:lo && npm run gen:lo:oxt   # build the engine data + the .oxt (once)
+libreoffice/install-linux.sh           # auto-detects native vs Flatpak
+```
+
+Close LibreOffice first (the install writes to its profile). Re-run any time to
+update; `libreoffice/install-linux.sh --uninstall` removes it. If both flavors
+are installed, pass `--native` or `--flatpak`.
+
+| Flavor | Profile it targets |
+|---|---|
+| native (apt/dnf/zypper/pacman) | `~/.config/libreoffice/4/user` |
+| Flatpak (`org.libreoffice.LibreOffice`) | `~/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user` |
+
+**Native LibreOffice needs the Python script provider** (Flatpak bundles it). If
+the Euspell menu doesn't appear after restarting, install it:
+
+- Debian / Ubuntu / KDE neon: `sudo apt install libreoffice-script-provider-python`
+- Fedora KDE: `sudo dnf install libreoffice-pyuno`
+- openSUSE: `sudo zypper install libreoffice-pyuno`
+- Arch: already included in `libreoffice-fresh` / `-still`
+
+Prefer to do it by hand? The steps mirror the Windows two-part install above with
+the Linux profile path — e.g. native:
+
+```bash
+dst=~/.config/libreoffice/4/user/Scripts/python
+mkdir -p "$dst"
+cp libreoffice/Scripts/python/euspell_convert.py "$dst"/
+cp -r libreoffice/euspell "$dst"/
+unopkg add --force dict/euspell-libreoffice.oxt
+```
+
+For Flatpak, use the `~/.var/app/…` profile path and run unopkg through the
+sandbox: `flatpak run --command=unopkg org.libreoffice.LibreOffice add --force
+dict/euspell-libreoffice.oxt` (if that can't read the file, grant access with
+`flatpak override --user --filesystem=host org.libreoffice.LibreOffice`).
+
+Under Plasma the top-level **Euspell** menu also shows in the global-menu applet
+if you use one; menus and dialogs render through LibreOffice's KDE (kf5/kf6)
+integration with no extra setup. If a dialog ever misbehaves, launch once with
+`SAL_USE_VCLPLUGIN=gtk3 libreoffice` as a fallback.
+
 ## Build
 
 ```
