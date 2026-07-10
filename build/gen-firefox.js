@@ -46,16 +46,15 @@ function toFirefox(manifest) {
     gecko: {
       // Placeholder id — change to your own AMO listing id before publishing.
       id: 'euspell@euspell.org',
-      // 140 is the current ESR baseline and the first version to support the
-      // data_collection_permissions key below.
-      strict_min_version: '140.0',
-      // Euspell reads/writes only its own settings (chrome.storage) and sends no
-      // data anywhere; declare no data collection (required by AMO for new
-      // listings). See https://mzl.la/firefox-builtin-data-consent.
-      data_collection_permissions: { required: ['none'] },
+      // Broad floor so the add-on loads on current ESR and older releases.
+      strict_min_version: '115.0',
+      // NOTE: `data_collection_permissions` is intentionally omitted. It only
+      // exists in the manifest schema from Firefox 140+, so including it makes
+      // the add-on fail to load on anything older ("unexpected property
+      // data_collection_permissions"). AMO wants that key for new listings, so
+      // add it back — and raise strict_min_version to 140 — when you publish,
+      // building against a 140+ baseline. See https://mzl.la/firefox-builtin-data-consent.
     },
-    // Firefox for Android gained the data_collection_permissions key in 142.
-    gecko_android: { strict_min_version: '142.0' },
   };
   // Firefox has no extension service worker; it runs the MV3 background as a
   // non-persistent ES-module event page. Chrome keeps using the root manifest's
