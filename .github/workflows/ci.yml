@@ -13,7 +13,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          # 22 (LTS), not 20: the test script's `node --test "tests/**/*.test.js"`
+          # relies on glob expansion for --test, which landed in Node 21.
+          node-version: 22
           cache: npm
       - run: npm ci
       # dist/ is gitignored, so build first: several tests import dist/lexicon.js,
