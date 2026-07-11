@@ -5,6 +5,7 @@ import {
   isPdfUrl,
   isPdfContentType,
   isPdfDisposition,
+  isAttachmentDisposition,
   looksLikePdfBytes,
 } from '../pdf/pdf-url.js';
 import { browser } from '../lib/browser.js';
@@ -107,9 +108,20 @@ async function sniffPdfMagic(url) {
 // Content-Disposition (an attachment filename) are the reliable signals; when the
 // type is an ambiguous binary blob, fall back to sniffing the leading bytes for
 // the %PDF- structure. Any hit promotes the page to our viewer.
+//
+// Known tradeoff: detecting this way means the original response is already
+// in flight (headers, then body) by the time we redirect, and the viewer then
+// fetches the same URL again via PDF.js — up to three requests total for one
+// document (the original navigation, an optional small sniff Range request,
+// and the viewer's real fetch), with the original body's bytes discarded.
+// That's wasted bandwidth for large files and can break one-time-use/signed
+// download links outright if a later fetch is rejected as already-consumed.
+// There's no way to detect an extensionless PDF without letting at least the
+// headers of one real request through, so this is accepted rather than fixed.
 browser.webRequest.onHeadersReceived.addListener(
   async (details) => {
     if (details.type !== 'main_frame') return;
+    if (details.method !== 'GET') return; // a re-fetched GET can't reproduce a POST's response
     if (details.url.startsWith(VIEWER_URL)) return;
     if (isPdfUrl(details.url)) return; // already handled by onBeforeNavigate
 
@@ -117,9 +129,15 @@ browser.webRequest.onHeadersReceived.addListener(
     const header = (name) =>
       headers.find((h) => h.name.toLowerCase() === name)?.value;
     const contentType = header('content-type');
+    const disposition = header('content-disposition');
 
-    let isPdf =
-      isPdfContentType(contentType) || isPdfDisposition(header('content-disposition'));
+    // An attachment response is already being saved to disk by the browser's
+    // own download manager, which onHeadersReceived can't cancel in MV3 —
+    // redirecting here would just fetch a second copy into our viewer on top
+    // of the file the browser is downloading, so leave it alone.
+    if (isAttachmentDisposition(disposition)) return;
+
+    let isPdf = isPdfContentType(contentType) || isPdfDisposition(disposition);
     if (!isPdf && isAmbiguousType(contentType)) {
       isPdf = await sniffPdfMagic(details.url);
     }

@@ -43,6 +43,20 @@ export function isPdfDisposition(value) {
 }
 
 /**
+ * True when a Content-Disposition header's disposition-type is `attachment`
+ * (vs. `inline` or absent). An attachment response is one the browser's own
+ * download manager will save to disk on its own, regardless of what an
+ * extension does in `onHeadersReceived` (MV3 that listener can't cancel or
+ * block it) — the caller uses this to skip redirecting to our viewer for such
+ * a response, since doing so would just fetch a second copy of a file the
+ * browser is already saving.
+ */
+export function isAttachmentDisposition(value) {
+  if (!value) return false;
+  return /^\s*attachment\b/i.test(value);
+}
+
+/**
  * True when a document's leading bytes carry the PDF signature `%PDF-`. The spec
  * allows a little junk (a BOM, stray whitespace) before the header and real
  * files exploit that, so scan a short prefix instead of requiring offset 0. Used

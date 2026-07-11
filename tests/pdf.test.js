@@ -5,6 +5,7 @@ import {
   fileParam,
   isPdfContentType,
   isPdfDisposition,
+  isAttachmentDisposition,
   looksLikePdfBytes,
 } from '../src/pdf/pdf-url.js';
 
@@ -42,6 +43,16 @@ test('isPdfDisposition: detects a .pdf attachment filename', () => {
   assert.equal(isPdfDisposition('attachment; filename="data.csv"'), false);
   assert.equal(isPdfDisposition('attachment'), false);
   assert.equal(isPdfDisposition(undefined), false);
+});
+
+test('isAttachmentDisposition: detects the attachment disposition-type', () => {
+  assert.equal(isAttachmentDisposition('attachment; filename="report.pdf"'), true);
+  assert.equal(isAttachmentDisposition('Attachment; filename=report.pdf'), true);
+  assert.equal(isAttachmentDisposition('attachment'), true);
+  assert.equal(isAttachmentDisposition('inline; filename="report.pdf"'), false);
+  assert.equal(isAttachmentDisposition('inline'), false);
+  assert.equal(isAttachmentDisposition(undefined), false);
+  assert.equal(isAttachmentDisposition(''), false);
 });
 
 test('looksLikePdfBytes: finds the %PDF- signature in a leading prefix', () => {
