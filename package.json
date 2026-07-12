@@ -4,7 +4,7 @@
   "description": "Chrome extension for euspell English spelling reform",
   "type": "module",
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test \"tests/**/*.test.js\"",
     "build": "npm run build:lexicon && npm run build:pdfjs && npm run build:ext",
     "build:lexicon": "node build/compile-lexicon.js",
     "build:pdfjs": "node build/copy-pdfjs.js",
