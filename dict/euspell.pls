@@ -3757,6 +3757,8 @@
   <lexeme><grapheme>caffskin</grapheme><phoneme>ˈkæfˌskɪn</phoneme></lexeme> <!-- calfskin -->
   <lexeme><grapheme>caffskins</grapheme><phoneme>ˈkæfˌskɪnz</phoneme></lexeme> <!-- calfskins -->
   <lexeme><grapheme>cagez</grapheme><phoneme>ˈkeɪdʒɪz</phoneme></lexeme> <!-- cages -->
+  <lexeme><grapheme>cahieh</grapheme><phoneme>kɑːˈjeɪ</phoneme></lexeme> <!-- cahier -->
+  <lexeme><grapheme>cahiehs</grapheme><phoneme>kɑːˈjeɪz</phoneme></lexeme> <!-- cahiers -->
   <lexeme><grapheme>cahk</grapheme><phoneme>kɔːk</phoneme></lexeme> <!-- calk -->
   <lexeme><grapheme>cahkd</grapheme><phoneme>kɔːkt</phoneme></lexeme> <!-- calked -->
   <lexeme><grapheme>cahker</grapheme><phoneme>ˈkɔːkər</phoneme></lexeme> <!-- calker -->
@@ -5325,10 +5327,10 @@
   <lexeme><grapheme>cooteaus</grapheme><phoneme>kuːˈtoʊz</phoneme></lexeme> <!-- couteaux -->
   <lexeme><grapheme>cooture</grapheme><phoneme>kuːˈtʊər</phoneme></lexeme> <!-- couture -->
   <lexeme><grapheme>cootures</grapheme><phoneme>kuːˈtʊərz</phoneme></lexeme> <!-- coutures -->
-  <lexeme><grapheme>cooturier</grapheme><phoneme>kuːˈtʊriər</phoneme></lexeme> <!-- couturier -->
+  <lexeme><grapheme>cooturieh</grapheme><phoneme>kuːˈtʊriər</phoneme></lexeme> <!-- couturier -->
+  <lexeme><grapheme>cooturiehs</grapheme><phoneme>kuːˈtʊriərz</phoneme></lexeme> <!-- couturiers -->
   <lexeme><grapheme>cooturiere</grapheme><phoneme>kuːˈtʊriər</phoneme></lexeme> <!-- couturiere -->
   <lexeme><grapheme>cooturieres</grapheme><phoneme>kuːˈtʊriərz</phoneme></lexeme> <!-- couturieres -->
-  <lexeme><grapheme>cooturiers</grapheme><phoneme>kuːˈtʊriərz</phoneme></lexeme> <!-- couturiers -->
   <lexeme><grapheme>coovade</grapheme><phoneme>kuːˈvɑːd</phoneme></lexeme> <!-- couvade -->
   <lexeme><grapheme>coovades</grapheme><phoneme>kuːˈvɑːdz</phoneme></lexeme> <!-- couvades -->
   <lexeme><grapheme>cooz</grapheme><phoneme>kuːz</phoneme></lexeme> <!-- coos -->
@@ -6124,6 +6126,8 @@
   <lexeme><grapheme>cutz</grapheme><phoneme>kʌts</phoneme></lexeme> <!-- cuts -->
   <lexeme><grapheme>cuvett</grapheme><phoneme>kjuːˈvɛt</phoneme></lexeme> <!-- cuvette -->
   <lexeme><grapheme>cuvetts</grapheme><phoneme>kjuːˈvɛts</phoneme></lexeme> <!-- cuvettes -->
+  <lexeme><grapheme>cuvieh</grapheme><phoneme>ˈkuːvieɪ</phoneme></lexeme> <!-- cuvier -->
+  <lexeme><grapheme>cuviehs</grapheme><phoneme>ˈkuːvieɪz</phoneme></lexeme> <!-- cuviers -->
   <lexeme><grapheme>cuw</grapheme><phoneme>kaʊ</phoneme></lexeme> <!-- cow -->
   <lexeme><grapheme>cuwage</grapheme><phoneme>ˈkaʊɪdʒ</phoneme></lexeme> <!-- cowage -->
   <lexeme><grapheme>cuwages</grapheme><phoneme>ˈkaʊɪdʒəz</phoneme></lexeme> <!-- cowages -->
@@ -8045,6 +8049,8 @@
   <lexeme><grapheme>dosez</grapheme><phoneme>ˈdoʊsəz</phoneme></lexeme> <!-- doses -->
   <lexeme><grapheme>dossd</grapheme><phoneme>dɑst</phoneme></lexeme> <!-- dossed -->
   <lexeme><grapheme>dossez</grapheme><phoneme>ˈdɑsəz</phoneme></lexeme> <!-- dosses -->
+  <lexeme><grapheme>dossieh</grapheme><phoneme>ˈdɒsieɪ</phoneme></lexeme> <!-- dossier -->
+  <lexeme><grapheme>dossiehs</grapheme><phoneme>ˈdɒsieɪz</phoneme></lexeme> <!-- dossiers -->
   <lexeme><grapheme>dotez</grapheme><phoneme>doʊts</phoneme></lexeme> <!-- dotes -->
   <lexeme><grapheme>douht</grapheme><phoneme>dɔt</phoneme></lexeme> <!-- dought -->
   <lexeme><grapheme>douhtier</grapheme><phoneme>ˈdɔtiər</phoneme></lexeme> <!-- doughtier -->
@@ -19951,7 +19957,6 @@
   <lexeme><grapheme>paralleld</grapheme><phoneme>ˈpærəlɛld</phoneme></lexeme> <!-- paralleled -->
   <lexeme><grapheme>parallelizez</grapheme><phoneme>ˈpærəlɛlaɪzɪz</phoneme></lexeme> <!-- parallelises -->
   <lexeme><grapheme>parallelz</grapheme><phoneme>ˈpærəlɛlz</phoneme></lexeme> <!-- parallels -->
-  <lexeme><grapheme>paralysez</grapheme><phoneme>pəˈræləsiːz</phoneme></lexeme> <!-- paralyses -->
   <lexeme><grapheme>paralyzez</grapheme><phoneme>ˈpærəlaɪzɪz</phoneme></lexeme> <!-- paralyzes -->
   <lexeme><grapheme>parametrizez</grapheme><phoneme>pəˈræmɪtəraɪzɪz</phoneme></lexeme> <!-- parameterises -->
   <lexeme><grapheme>paraphrasez</grapheme><phoneme>ˈpærəfreɪzɪz</phoneme></lexeme> <!-- paraphrases -->
@@ -20079,6 +20084,8 @@
   <lexeme><grapheme>patinatez</grapheme><phoneme>ˈpætɪneɪts</phoneme></lexeme> <!-- patinates -->
   <lexeme><grapheme>patinez</grapheme><phoneme>ˈpætɪnz</phoneme></lexeme> <!-- patines -->
   <lexeme><grapheme>patinizez</grapheme><phoneme>ˈpætɪnaɪzɪz</phoneme></lexeme> <!-- patinises -->
+  <lexeme><grapheme>patissieh</grapheme><phoneme>pəˌtiːsiˈeɪ</phoneme></lexeme> <!-- patissier -->
+  <lexeme><grapheme>patissiehs</grapheme><phoneme>pəˌtiːsiˈeɪz</phoneme></lexeme> <!-- patissiers -->
   <lexeme><grapheme>patriciat</grapheme><phoneme>pəˈtrɪʃiət</phoneme></lexeme> <!-- patriciate -->
   <lexeme><grapheme>patriciats</grapheme><phoneme>pəˈtrɪʃiəts</phoneme></lexeme> <!-- patriciates -->
   <lexeme><grapheme>patrold</grapheme><phoneme>pəˈtroʊld</phoneme></lexeme> <!-- patrolled -->
@@ -20088,6 +20095,7 @@
   <lexeme><grapheme>patternd</grapheme><phoneme>ˈpætərnd</phoneme></lexeme> <!-- patterned -->
   <lexeme><grapheme>patternz</grapheme><phoneme>ˈpætərnz</phoneme></lexeme> <!-- patterns -->
   <lexeme><grapheme>patterz</grapheme><phoneme>ˈpætərz</phoneme></lexeme> <!-- patters -->
+  <lexeme><grapheme>pattio</grapheme><phoneme>ˈpætioʊ</phoneme></lexeme> <!-- patio -->
   <lexeme><grapheme>patz</grapheme><phoneme>pæts</phoneme></lexeme> <!-- pats -->
   <lexeme><grapheme>paunqh</grapheme><phoneme>pɔːntʃ</phoneme></lexeme> <!-- paunch -->
   <lexeme><grapheme>paunqhd</grapheme><phoneme>pɔːntʃt</phoneme></lexeme> <!-- paunched -->
@@ -23868,6 +23876,8 @@
   <lexeme><grapheme>recalibratez</grapheme><phoneme>riːˈkælɪbreɪts</phoneme></lexeme> <!-- recalibrates -->
   <lexeme><grapheme>recalld</grapheme><phoneme>rɪˈkɔːld</phoneme></lexeme> <!-- recalled -->
   <lexeme><grapheme>recallz</grapheme><phoneme>rɪˈkɔːlz</phoneme></lexeme> <!-- recalls -->
+  <lexeme><grapheme>recamieh</grapheme><phoneme>reɪˈkæmieɪ</phoneme></lexeme> <!-- recamier -->
+  <lexeme><grapheme>recamiehs</grapheme><phoneme>reɪˈkæmieɪz</phoneme></lexeme> <!-- recamiers -->
   <lexeme><grapheme>recanalizez</grapheme><phoneme>riːˈkænəlaɪzɪz</phoneme></lexeme> <!-- recanalises -->
   <lexeme><grapheme>recanez</grapheme><phoneme>riːˈkeɪnz</phoneme></lexeme> <!-- recanes -->
   <lexeme><grapheme>recantz</grapheme><phoneme>rɪˈkænts</phoneme></lexeme> <!-- recants -->
@@ -26903,8 +26913,10 @@
   <lexeme><grapheme>shankz</grapheme><phoneme>ʃæŋks</phoneme></lexeme> <!-- shanks -->
   <lexeme><grapheme>shanleveh</grapheme><phoneme>ʃæmpləˈveɪ</phoneme></lexeme> <!-- champleve -->
   <lexeme><grapheme>shanson</grapheme><phoneme>ˈʃænsɒn</phoneme></lexeme> <!-- chanson -->
-  <lexeme><grapheme>shansonnier</grapheme><phoneme>ˌʃænsɒˈnieɪ</phoneme></lexeme> <!-- chansonnier -->
-  <lexeme><grapheme>shansonniers</grapheme><phoneme>ˌʃænsɒˈnieɪz</phoneme></lexeme> <!-- chansonniers -->
+  <lexeme><grapheme>shansonnett</grapheme><phoneme>ˌʃɑːsəˈnɛt</phoneme></lexeme> <!-- chansonnette -->
+  <lexeme><grapheme>shansonnetts</grapheme><phoneme>ˌʃɑːsəˈnɛts</phoneme></lexeme> <!-- chansonnettes -->
+  <lexeme><grapheme>shansonnieh</grapheme><phoneme>ˌʃænsɒˈnieɪ</phoneme></lexeme> <!-- chansonnier -->
+  <lexeme><grapheme>shansonniehs</grapheme><phoneme>ˌʃænsɒˈnieɪz</phoneme></lexeme> <!-- chansonniers -->
   <lexeme><grapheme>shansons</grapheme><phoneme>ˈʃænsɒnz</phoneme></lexeme> <!-- chansons -->
   <lexeme><grapheme>shantage</grapheme><phoneme>ˈʃɑːntɪdʒ</phoneme></lexeme> <!-- chantage -->
   <lexeme><grapheme>shantages</grapheme><phoneme>ˈʃɑːntɪdʒɪz</phoneme></lexeme> <!-- chantages -->

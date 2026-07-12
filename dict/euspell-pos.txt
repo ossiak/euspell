@@ -5055,6 +5055,8 @@ caffs	caffs	NNS
 caffskin	caffskin	NN
 caffskins	caffskins	NNS
 cagez	cagez	VBZ
+cahieh	cahieh	NN
+cahiehs	cahiehs	NNS
 cahk	cahk	NN
 cahk	cahk	VB
 cahk	cahk	VBP
@@ -7132,10 +7134,10 @@ cooteau	cooteau	NN
 cooteaus	cooteaus	NNS
 cooture	cooture	NN
 cootures	cootures	NNS
-cooturier	cooturier	NN
+cooturieh	cooturieh	NN
+cooturiehs	cooturiehs	NNS
 cooturiere	cooturiere	NN
 cooturieres	cooturieres	NNS
-cooturiers	cooturiers	NNS
 coovade	coovade	NN
 coovades	coovades	NNS
 cooz	cooz	VBZ
@@ -8241,6 +8243,8 @@ cuttlez	cuttlez	VBZ
 cutz	cutz	VBZ
 cuvett	cuvett	NN
 cuvetts	cuvetts	NNS
+cuvieh	cuvieh	NN
+cuviehs	cuviehs	NNS
 cuw	cuw	NN
 cuw	cuw	VB
 cuw	cuw	VBP
@@ -10883,6 +10887,8 @@ dosez	dosez	VBZ
 dossd	dossd	VBD
 dossd	dossd	VBN
 dossez	dossez	VBZ
+dossieh	dossieh	NN
+dossiehs	dossiehs	NNS
 dotez	dotez	VBZ
 douht	douht	NN
 douhtier	douhtier	JJR
@@ -26858,7 +26864,6 @@ paralleld	paralleld	VBD
 paralleld	paralleld	VBN
 parallelizez	parallelizez	VBZ
 parallelz	parallelz	VBZ
-paralysez	paralysez	VBZ
 paralyzez	paralyzez	VBZ
 parametrizez	parametrizez	VBZ
 paraphrasez	paraphrasez	VBZ
@@ -27026,6 +27031,8 @@ pathfyndings	pathfyndings	NNS
 patinatez	patinatez	VBZ
 patinez	patinez	VBZ
 patinizez	patinizez	VBZ
+patissieh	patissieh	NN
+patissiehs	patissiehs	NNS
 patriciat	patriciat	NN
 patriciats	patriciats	NNS
 patrold	patrold	JJ
@@ -27040,6 +27047,8 @@ patternd	patternd	VBD
 patternd	patternd	VBN
 patternz	patternz	VBZ
 patterz	patterz	VBZ
+pattio	pattio	NN
+pattio	pattio	NNS
 patz	patz	VBZ
 paunqh	paunqh	NN
 paunqh	paunqh	VB
@@ -32249,6 +32258,8 @@ recalld	recalld	JJ
 recalld	recalld	VBD
 recalld	recalld	VBN
 recallz	recallz	VBZ
+recamieh	recamieh	NN
+recamiehs	recamiehs	NNS
 recanalizez	recanalizez	VBZ
 recanez	recanez	VBZ
 recantz	recantz	VBZ
@@ -36445,8 +36456,10 @@ shankd	shankd	VBN
 shankz	shankz	VBZ
 shanleveh	shanleveh	JJ
 shanson	shanson	NN
-shansonnier	shansonnier	NN
-shansonniers	shansonniers	NNS
+shansonnett	shansonnett	NN
+shansonnetts	shansonnetts	NNS
+shansonnieh	shansonnieh	NN
+shansonniehs	shansonniehs	NNS
 shansons	shansons	NNS
 shantage	shantage	NN
 shantages	shantages	NNS
