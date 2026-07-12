@@ -35,8 +35,26 @@ globalThis.NodeFilter = NodeFilter;
 globalThis.Node = Node;
 globalThis.document = { createTreeWalker };
 
-const { walkTextNodes } = await import('../src/content/dom-walker.js');
+const { walkTextNodes, tokenize } = await import('../src/content/dom-walker.js');
 const { convert } = await import('../src/content/converter.js');
+
+test('tokenize keeps accented words whole (no ASCII-fragment splitting)', () => {
+  const words = (s) => [...tokenize(s)].filter((t) => t.kind !== 'sep').map((t) => t.text);
+  assert.deepEqual(words('a naïve café'), ['a', 'naïve', 'café']);
+  assert.deepEqual(words('señor Álvarez preëmpts'), ['señor', 'Álvarez', 'preëmpts']);
+  // ASCII behaviour is unchanged ("don't" is one contraction token; the trailing
+  // apostrophe on "James'" peels off as a separator).
+  assert.deepEqual(words("don't read James' book"), ["don't", 'read', 'James', 'book']);
+});
+
+test('walkTextNodes leaves accented words unconverted as whole tokens', () => {
+  // Whole accented words miss the (ASCII) lexicon and must pass through — never
+  // converted piecemeal because an ASCII fragment happened to be English.
+  const node = tx('the naïve café owner');
+  walkTextNodes(el('p', node), convert);
+  assert.match(node.nodeValue, /naïve/);
+  assert.match(node.nodeValue, /café/);
+});
 
 test('walkTextNodes converts text in place', () => {
   const node = tx('this is a test');
@@ -54,6 +72,26 @@ test('walkTextNodes leaves contenteditable text untouched (user input)', () => {
   const nested = tx('this is a test');
   walkTextNodes(editable(el('div', el('span', nested))), convert);
   assert.equal(nested.nodeValue, 'this is a test');
+});
+
+test('walkTextNodes skips text nested inside skip tags (syntax-highlighted code)', () => {
+  // Direct child of a skip tag.
+  const direct = tx('this is a test');
+  walkTextNodes(el('pre', direct), convert);
+  assert.equal(direct.nodeValue, 'this is a test');
+  // Span-wrapped, the shape every highlighter produces: <pre><span>…</span></pre>.
+  const nested = tx('this is a test');
+  walkTextNodes(el('pre', el('span', nested)), convert);
+  assert.equal(nested.nodeValue, 'this is a test');
+  const inCode = tx('const is = require("x")');
+  walkTextNodes(el('code', el('span', el('span', inCode))), convert);
+  assert.equal(inCode.nodeValue, 'const is = require("x")');
+  // Re-walking a subtree that lives INSIDE a skipped region (the observer sees
+  // the span, not the <pre>) must stay skipped — the climb passes the walk root.
+  const span = el('span', tx('this is a test'));
+  el('pre', span);
+  walkTextNodes(span, convert);
+  assert.equal(span.childNodes[0].nodeValue, 'this is a test');
 });
 
 test('walkTextNodes is idempotent on a normal re-walk', () => {

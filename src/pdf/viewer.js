@@ -20,7 +20,7 @@
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
 import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
-import { fileParam } from './pdf-url.js';
+import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
 import { ensureLexicon } from '../content/lexicon-load.js';
 import { browser } from '../lib/browser.js';
@@ -58,12 +58,11 @@ function fontFlags(page, fontName) {
   }
 }
 
-async function renderPage(pdf, n, dpr) {
+async function renderPage(pdf, n, dpr, wrap) {
   const page = await pdf.getPage(n);
   const viewport = page.getViewport({ scale: RENDER_SCALE });
 
-  const wrap = document.createElement('div');
-  wrap.className = 'page';
+  // Correct the placeholder's estimated size (page 1's) to this page's real one.
   wrap.style.width = `${viewport.width}px`;
   wrap.style.height = `${viewport.height}px`;
 
@@ -84,7 +83,6 @@ async function renderPage(pdf, n, dpr) {
   textLayerDiv.style.setProperty('--total-scale-factor', String(RENDER_SCALE));
 
   wrap.append(canvas, textLayerDiv);
-  root.append(wrap);
 
   // Opaque white background so blank areas are sampled as paper, not transparent.
   await page.render({ canvasContext: ctx, viewport, background: '#ffffff' }).promise;
@@ -183,10 +181,20 @@ async function main() {
     setStatus('No PDF was specified.');
     return;
   }
+  if (!isAllowedViewerUrl(fileUrl)) {
+    setStatus('This isn’t a fetchable PDF address.');
+    return;
+  }
 
   // "Open original" escape hatch — the redirect captures every PDF, so the
   // unconverted file must stay one click away.
-  const name = decodeURIComponent((fileUrl.split('/').pop() || 'PDF').replace(/[?#].*$/, ''));
+  let name = (fileUrl.split('/').pop() || 'PDF').replace(/[?#].*$/, '');
+  try {
+    name = decodeURIComponent(name);
+  } catch {
+    /* a literal % in the filename — keep it as-is rather than die before the
+       escape-hatch link below is wired up */
+  }
   // The tab title doubles as the default filename when the page is printed or
   // saved as PDF, so title it "<base>.eu" — a Save-as-PDF then yields
   // "<base>.eu.pdf" (e.g. report.pdf → report.eu.pdf).
@@ -223,16 +231,52 @@ async function main() {
 
   if (status) status.remove();
   const dpr = window.devicePixelRatio || 1;
+
+  // Lazy rendering: a placeholder per page (sized from page 1, corrected when
+  // the page really renders), rasterized only as it approaches the viewport.
+  // Rendering everything up front made a long PDF pay its whole rasterization
+  // cost — canvas, text layer, and a full-page getImageData snapshot per page —
+  // before the reader got past page 1.
+  const firstPage = await pdf.getPage(1);
+  const estimate = firstPage.getViewport({ scale: RENDER_SCALE });
+  const wraps = [];
   for (let n = 1; n <= pdf.numPages; n++) {
-    try {
-      await renderPage(pdf, n, dpr);
-    } catch (e) {
-      const err = document.createElement('div');
-      err.className = 'page-error';
-      err.textContent = `Page ${n} could not be rendered (${e?.message ?? e}).`;
-      root.append(err);
-    }
+    const wrap = document.createElement('div');
+    wrap.className = 'page';
+    wrap.style.width = `${estimate.width}px`;
+    wrap.style.height = `${estimate.height}px`;
+    root.append(wrap);
+    wraps.push(wrap);
   }
+
+  // Serialize renders so a fast scroll queues pages instead of rasterizing many
+  // at once (each render holds a full-page snapshot while it works).
+  let queue = Promise.resolve();
+  function enqueueRender(wrap, n) {
+    queue = queue.then(async () => {
+      try {
+        await renderPage(pdf, n, dpr, wrap);
+      } catch (e) {
+        const err = document.createElement('div');
+        err.className = 'page-error';
+        err.textContent = `Page ${n} could not be rendered (${e?.message ?? e}).`;
+        wrap.replaceChildren(err);
+      }
+    });
+  }
+
+  // ~2 estimated pages of lookahead, so reading pace never catches the renderer.
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        io.unobserve(entry.target);
+        enqueueRender(entry.target, wraps.indexOf(entry.target) + 1);
+      }
+    },
+    { rootMargin: `${Math.ceil(estimate.height * 2)}px 0px` },
+  );
+  for (const wrap of wraps) io.observe(wrap);
 }
 
 main();

@@ -39,15 +39,17 @@ function render({ enabled = true, disabledSites = [] }) {
     const remove = document.createElement('button');
     remove.type = 'button';
     remove.textContent = 'Remove';
-    remove.addEventListener('click', () => removeSite(host));
+    remove.addEventListener('click', () => setSiteDisabled(host, false));
     li.append(name, remove);
     sitesList.append(li);
   }
 }
 
-async function removeSite(host) {
-  const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
-  await browser.storage.sync.set({ disabledSites: disabledSites.filter((h) => h !== host) });
+// All disabledSites edits go through the service worker — the single writer —
+// so an edit here can't interleave with one from the popup and drop it. The
+// storage.onChanged listener below re-renders once the write lands.
+function setSiteDisabled(host, disabled) {
+  return browser.runtime.sendMessage({ type: 'euspell:setSiteDisabled', host, disabled });
 }
 
 enabledBox.addEventListener('change', () => {
@@ -58,10 +60,7 @@ addForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const host = normalizeHost(addInput.value);
   if (!host) return;
-  const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
-  if (!disabledSites.includes(host)) {
-    await browser.storage.sync.set({ disabledSites: [...disabledSites, host] });
-  }
+  await setSiteDisabled(host, true); // the worker's Set dedupes a repeat add
   addInput.value = '';
 });
 

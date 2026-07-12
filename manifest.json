@@ -50,16 +50,7 @@
 
   "web_accessible_resources": [
     {
-      "resources": [
-        "dist/lexicon.data",
-        "src/pdf/viewer.html",
-        "src/pdf/viewer.css",
-        "dist/pdf-viewer.js",
-        "dist/pdf-viewer.js.map",
-        "dist/pdfjs/pdf.worker.min.mjs",
-        "dist/pdfjs/wasm/*",
-        "dist/pdfjs/standard_fonts/*"
-      ],
+      "resources": ["dist/lexicon.data"],
       "matches": ["<all_urls>"]
     }
   ],

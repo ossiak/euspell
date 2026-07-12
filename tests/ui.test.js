@@ -16,7 +16,7 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'viewRow', 'showOriginal', 'dictateRow', 'dictate'])
+  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'viewRow', 'showOriginal', 'dictateRow', 'dictate', 'permRow', 'grant'])
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
@@ -36,7 +36,27 @@ function makeEnv(store, tab) {
       async reload(id) { reloaded.push(id); },
       async sendMessage() { return undefined; }, // no content script in the popup test
     },
-    runtime: { openOptionsPage() {} },
+    permissions: {
+      // store.__hostAccess === false emulates the user revoking site access.
+      async contains() { return store.__hostAccess !== false; },
+      async request() { store.__hostAccess = true; return true; },
+    },
+    runtime: {
+      openOptionsPage() {},
+      // Emulates the service worker's single-writer disabledSites handler
+      // (popup/options send their edits there rather than read-modify-writing
+      // storage themselves — see service-worker.js).
+      async sendMessage(msg) {
+        if (msg?.type === 'euspell:setSiteDisabled') {
+          const set = new Set(store.disabledSites ?? []);
+          if (msg.disabled) set.add(msg.host);
+          else set.delete(msg.host);
+          store.disabledSites = [...set];
+          return { ok: true, disabledSites: store.disabledSites };
+        }
+        return undefined;
+      },
+    },
   };
   return { els, document, browser, reloaded };
 }
@@ -77,6 +97,23 @@ test('popup: toggling global off disables the site row', async () => {
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
   assert.equal(env.els.siteRow._attr['aria-disabled'], 'true');
+});
+
+test('popup: revoked host access shows the notice; granting hides it and reloads', async () => {
+  const store = { enabled: true, disabledSites: [], __hostAccess: false };
+  const env = makeEnv(store, { id: 4, url: 'https://a.com/' });
+  await runScript('../src/popup/popup.js', env);
+  assert.equal(env.els.permRow.hidden, false); // notice visible
+  await env.els.grant.dispatch('click');
+  assert.equal(store.__hostAccess, true);      // permission re-requested
+  assert.equal(env.els.permRow.hidden, true);  // notice gone
+  assert.ok(env.reloaded.includes(4));         // page reloaded to convert
+});
+
+test('popup: with host access granted the notice stays hidden', async () => {
+  const env = makeEnv({ enabled: true, disabledSites: [] }, { id: 5, url: 'https://a.com/' });
+  await runScript('../src/popup/popup.js', env);
+  assert.equal(env.els.permRow.hidden, true);
 });
 
 test('popup: restricted pages hide the site row', async () => {

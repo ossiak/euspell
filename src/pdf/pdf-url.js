@@ -82,3 +82,19 @@ export function looksLikePdfBytes(bytes) {
 export function fileParam(search) {
   return new URLSearchParams(search).get('file');
 }
+
+/**
+ * True when a viewer `?file=` target is a scheme the viewer may fetch and link
+ * to. viewer.html is web-accessible, so any page can open it with an arbitrary
+ * value — this keeps `javascript:`/`data:`/extension URLs out of both the
+ * PDF.js fetch and the "Open original" anchor (the extension CSP would block a
+ * javascript: link's execution anyway, but the URL should never get that far).
+ */
+export function isAllowedViewerUrl(url) {
+  try {
+    const p = new URL(url).protocol;
+    return p === 'http:' || p === 'https:' || p === 'file:';
+  } catch {
+    return false;
+  }
+}

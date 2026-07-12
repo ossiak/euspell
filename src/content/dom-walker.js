@@ -19,6 +19,22 @@ function isEditable(el) {
   return el.isContentEditable === true || document.designMode === 'on';
 }
 
+/**
+ * True when `el` or any ancestor is a skipped tag. The direct parent alone is
+ * not enough: syntax-highlighted code is `<pre><span>…</span></pre>` (every
+ * Prism/highlight.js page), and reforming span-wrapped code would corrupt what
+ * a reader copies. Climbs the full chain — past the walk root too, so re-walking
+ * a subtree that lives inside a skipped region stays skipped.
+ * @param {Element} el
+ * @returns {boolean}
+ */
+function inSkippedTag(el) {
+  for (let cur = el; cur; cur = cur.parentElement) {
+    if (SKIP_TAGS.has(cur.tagName)) return true;
+  }
+  return false;
+}
+
 // Tags that start a new block-level context. Text under different blocks is
 // tokenized independently so a sentence never draws context across a structural
 // boundary; inline elements (SPAN, EM, A, B, …) are deliberately absent so a
@@ -33,9 +49,13 @@ const BLOCK_TAGS = new Set([
 // A "run" is a word that may carry apostrophes (contractions, clitics): an
 // optional leading apostrophe ('tis, 'em), word chars, and any number of
 // apostrophe-joined word chars (don't, couldn't've), plus an optional trailing
-// apostrophe (James'). Everything between runs is a separator.
-const RUN = /['’ʼ]?\w+(?:['’ʼ]\w+)*['’ʼ]?/g;
-const GENITIVE = /^(\w+)(['’ʼ]s)$/i;
+// apostrophe (James'). Everything between runs is a separator. Word chars are
+// Unicode letters/digits (not \w, which is ASCII-only): an accented word must
+// tokenize whole ("naïve", not "na"+"ïve"), so it misses the ASCII lexicon and
+// passes through unchanged by design — never converted piecemeal because an
+// ASCII fragment of it happened to be an English word.
+const RUN = /['’ʼ]?[\p{L}\p{N}_]+(?:['’ʼ][\p{L}\p{N}_]+)*['’ʼ]?/gu;
+const GENITIVE = /^([\p{L}\p{N}_]+)(['’ʼ]s)$/iu;
 const SENTENCE_BREAK = /[.!?]/;
 
 // Per text node, the original source text we tokenized and the euspelled string
@@ -119,7 +139,7 @@ function collectBlocks(root) {
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
       const parent = node.parentElement;
-      if (!parent || SKIP_TAGS.has(parent.tagName) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
+      if (!parent || inSkippedTag(parent) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
       if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
       return NodeFilter.FILTER_ACCEPT;
     },

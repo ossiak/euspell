@@ -10,6 +10,14 @@
       <h1>Euspell</h1>
     </header>
 
+    <!-- Shown when the extension's host access has been revoked (Firefox lets
+         users toggle "Access your data for all websites" off per add-on), in
+         which case nothing converts and the controls below would look dead. -->
+    <div class="notice" id="permRow" hidden>
+      <span>Euspell can’t read pages — site access is turned off.</span>
+      <button type="button" id="grant" class="link">Grant access</button>
+    </div>
+
     <label class="row">
       <span>Convert pages</span>
       <input type="checkbox" id="enabled" />

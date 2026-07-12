@@ -46,8 +46,11 @@ function toFirefox(manifest) {
     gecko: {
       // Placeholder id — change to your own AMO listing id before publishing.
       id: 'euspell@euspell.org',
-      // Broad floor so the add-on loads on current ESR and older releases.
-      strict_min_version: '115.0',
+      // 128 (the current ESR line) is the real floor, for two reasons: the
+      // bundled PDF.js v6 uses Promise.withResolvers (Firefox 121+), and
+      // before 128 Firefox treated MV3 host_permissions as opt-in — an AMO
+      // install there would never run the content script and look dead.
+      strict_min_version: '128.0',
       // NOTE: `data_collection_permissions` is intentionally omitted. It only
       // exists in the manifest schema from Firefox 140+, so including it makes
       // the add-on fail to load on anything older ("unexpected property

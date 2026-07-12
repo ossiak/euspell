@@ -36,18 +36,25 @@ export function createOverlay() {
   const pill = root.querySelector('.pill');
   const textEl = root.querySelector('.text');
 
+  // SVG/XML documents have no <body>; fall back to the document element so
+  // attaching the pill never throws (it may not render there, but dictation
+  // into such a document is a dead end anyway).
+  function attach() {
+    if (!host.isConnected) (document.body ?? document.documentElement)?.appendChild(host);
+  }
+
   return {
     /** @param {string} message */
     show(message) {
       pill.classList.remove('error');
       textEl.textContent = message;
-      if (!host.isConnected) document.body.appendChild(host);
+      attach();
     },
     /** @param {string} message */
     error(message) {
       pill.classList.add('error');
       textEl.textContent = message;
-      if (!host.isConnected) document.body.appendChild(host);
+      attach();
     },
     hide() {
       host.remove();

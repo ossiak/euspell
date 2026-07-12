@@ -14,6 +14,21 @@ const viewRow = document.getElementById('viewRow');
 const showOriginalBox = document.getElementById('showOriginal');
 const dictateRow = document.getElementById('dictateRow');
 const dictateBtn = document.getElementById('dictate');
+const permRow = document.getElementById('permRow');
+const grantBtn = document.getElementById('grant');
+
+/** Whether the extension can actually read pages. Firefox (and Chrome's "site
+ * access" menu) lets the user revoke host access after install, in which case
+ * nothing converts and the popup's controls would just look dead — the notice
+ * row explains why and offers to re-request. Assume granted if the API is
+ * missing rather than nag. */
+async function hasHostAccess() {
+  try {
+    return await browser.permissions.contains({ origins: ['<all_urls>'] });
+  } catch {
+    return true;
+  }
+}
 
 /** Ask the active tab's content script for its view mode; null if not converting. */
 async function tabMode(tab) {
@@ -57,11 +72,15 @@ async function load() {
   const host = tab ? hostnameOf(tab) : null;
 
   enabledBox.checked = enabled;
+  permRow.hidden = await hasHostAccess();
 
   if (host) {
     hostEl.textContent = host;
     siteBox.checked = !disabledSites.includes(host);
     siteRow.hidden = false;
+    // Disable the control itself, not just the ARIA state — a per-site toggle
+    // means nothing while the extension is off globally.
+    siteBox.disabled = !enabled;
     siteRow.setAttribute('aria-disabled', String(!enabled));
   } else {
     siteRow.hidden = true;
@@ -122,6 +141,7 @@ async function applyAndReload() {
 
 enabledBox.addEventListener('change', async () => {
   await browser.storage.sync.set({ enabled: enabledBox.checked });
+  siteBox.disabled = !enabledBox.checked;
   siteRow.setAttribute('aria-disabled', String(!enabledBox.checked));
   await applyAndReload();
 });
@@ -130,12 +150,25 @@ siteBox.addEventListener('change', async () => {
   const tab = await activeTab();
   const host = tab ? hostnameOf(tab) : null;
   if (!host) return;
-  const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
-  const set = new Set(disabledSites);
-  if (siteBox.checked) set.delete(host);
-  else set.add(host);
-  await browser.storage.sync.set({ disabledSites: [...set] });
+  // The service worker is the single writer for disabledSites (concurrent edits
+  // from the options page can't be interleaved away).
+  await browser.runtime.sendMessage({ type: 'euspell:setSiteDisabled', host, disabled: !siteBox.checked });
   await applyAndReload();
+});
+
+grantBtn.addEventListener('click', async () => {
+  let granted = false;
+  try {
+    // Re-requesting a host permission listed in host_permissions is allowed
+    // and shows the browser's own grant prompt (needs this click's gesture).
+    granted = await browser.permissions.request({ origins: ['<all_urls>'] });
+  } catch {
+    /* prompt unavailable — the user can grant it from the add-on's settings */
+  }
+  if (granted) {
+    permRow.hidden = true;
+    await applyAndReload();
+  }
 });
 
 document.getElementById('options').addEventListener('click', () => {

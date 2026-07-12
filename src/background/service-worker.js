@@ -18,6 +18,30 @@ browser.runtime.onInstalled.addListener(async () => {
   });
 });
 
+// Single writer for disabledSites. The popup and options page used to each do
+// their own read-modify-write on the array; two near-simultaneous edits (both
+// surfaces open) could interleave and silently drop one. They now send their
+// edit here, where a promise queue serializes the read→mutate→write cycles.
+let sitesQueue = Promise.resolve();
+browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (!msg || msg.type !== 'euspell:setSiteDisabled' || typeof msg.host !== 'string') return;
+  const run = sitesQueue.then(async () => {
+    const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
+    const set = new Set(disabledSites);
+    if (msg.disabled) set.add(msg.host);
+    else set.delete(msg.host);
+    const sites = [...set];
+    await browser.storage.sync.set({ disabledSites: sites });
+    return sites;
+  });
+  sitesQueue = run.catch(() => {}); // a failed write must not wedge the queue
+  run.then(
+    (sites) => sendResponse({ ok: true, disabledSites: sites }),
+    (e) => sendResponse({ ok: false, error: String(e) }),
+  );
+  return true; // sendResponse is async (cross-browser: Chrome ignores a returned Promise)
+});
+
 // Keyboard shortcut (chrome://extensions/shortcuts) toggles dictation in the
 // active tab. The content script owns the recognizer and inserts at the caret,
 // so we just forward the toggle; a page with no content script (chrome://, the
@@ -39,6 +63,14 @@ browser.commands.onCommand.addListener(async (command) => {
 // disabledSites settings as page conversion, and skip our own viewer.
 const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 
+// Whether this browser lets our viewer read file:// PDFs. Firefox never allows
+// extensions to fetch file:// URLs, so redirecting a local PDF there would
+// replace Firefox's native viewer with an error page the user can't even
+// escape (moz-extension pages may not navigate to file: links). On Chrome a
+// file: navigation only reaches us when the user has explicitly enabled
+// "Allow access to file URLs", and the viewer can then fetch it.
+const CAN_VIEW_FILE_URLS = !VIEWER_URL.startsWith('moz-extension:');
+
 /** Whether the global toggle / per-site opt-out allow converting this URL. */
 async function shouldConvert(url) {
   const { enabled = true, disabledSites = [] } = await browser.storage.sync.get([
@@ -49,7 +81,8 @@ async function shouldConvert(url) {
   try {
     if (disabledSites.includes(new URL(url).hostname)) return false;
   } catch {
-    /* file:// has no hostname — fall through and convert */
+    /* unparsable URL — nothing to match against the site list; convert.
+       (file:// parses fine, with an empty hostname that's never listed.) */
   }
   return true;
 }
@@ -65,6 +98,7 @@ browser.webNavigation.onBeforeNavigate.addListener(
   async (details) => {
     if (details.frameId !== 0) return; // top-level only
     if (!isPdfUrl(details.url) || details.url.startsWith(VIEWER_URL)) return;
+    if (/^file:/i.test(details.url) && !CAN_VIEW_FILE_URLS) return; // leave local PDFs to Firefox
     if (await shouldConvert(details.url)) redirectToViewer(details.tabId, details.url);
   },
   { url: [{ pathSuffix: '.pdf' }, { pathSuffix: '.PDF' }] },

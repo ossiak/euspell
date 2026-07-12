@@ -7,7 +7,23 @@ import {
   isPdfDisposition,
   isAttachmentDisposition,
   looksLikePdfBytes,
+  isAllowedViewerUrl,
 } from '../src/pdf/pdf-url.js';
+
+test('isAllowedViewerUrl: accepts fetchable document schemes only', () => {
+  assert.equal(isAllowedViewerUrl('https://example.com/report'), true);
+  assert.equal(isAllowedViewerUrl('http://example.com/doc.pdf'), true);
+  assert.equal(isAllowedViewerUrl('file:///home/u/manual.pdf'), true);
+});
+
+test('isAllowedViewerUrl: rejects script/data/extension URLs and junk (?file= is page-controlled)', () => {
+  assert.equal(isAllowedViewerUrl('javascript:alert(1)'), false);
+  assert.equal(isAllowedViewerUrl('data:application/pdf;base64,JVBERi0='), false);
+  assert.equal(isAllowedViewerUrl('chrome-extension://abcdef/page.html'), false);
+  assert.equal(isAllowedViewerUrl('blob:https://example.com/uuid'), false);
+  assert.equal(isAllowedViewerUrl('not a url'), false);
+  assert.equal(isAllowedViewerUrl(''), false);
+});
 
 test('isPdfUrl: matches http(s) and file PDFs by path', () => {
   assert.equal(isPdfUrl('https://example.com/doc.pdf'), true);

@@ -25,6 +25,10 @@ import { browser } from '../lib/browser.js';
   const { enabled = true, disabledSites = [] } = await browser.storage.sync.get(['enabled', 'disabledSites']);
   if (!enabled || disabledSites.includes(location.hostname)) return;
 
+  // <all_urls> also matches SVG/XML documents, which have no <body> — nothing
+  // to convert or observe (and walkTextNodes/observe would throw on null).
+  if (!document.body) return;
+
   // childList catches inserted content (SPA renders); characterData catches text
   // rewritten in place (live regions, re-renders). Watching characterData is what
   // lets reformed text survive a re-render — and what makes a naive observer loop,
