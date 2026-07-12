@@ -20096,6 +20096,7 @@
   <lexeme><grapheme>patternz</grapheme><phoneme>ˈpætərnz</phoneme></lexeme> <!-- patterns -->
   <lexeme><grapheme>patterz</grapheme><phoneme>ˈpætərz</phoneme></lexeme> <!-- patters -->
   <lexeme><grapheme>pattio</grapheme><phoneme>ˈpætioʊ</phoneme></lexeme> <!-- patio -->
+  <lexeme><grapheme>pattios</grapheme><phoneme>ˈpætioʊz</phoneme></lexeme> <!-- patios -->
   <lexeme><grapheme>patz</grapheme><phoneme>pæts</phoneme></lexeme> <!-- pats -->
   <lexeme><grapheme>paunqh</grapheme><phoneme>pɔːntʃ</phoneme></lexeme> <!-- paunch -->
   <lexeme><grapheme>paunqhd</grapheme><phoneme>pɔːntʃt</phoneme></lexeme> <!-- paunched -->

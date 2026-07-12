@@ -27048,7 +27048,7 @@ patternd	patternd	VBN
 patternz	patternz	VBZ
 patterz	patterz	VBZ
 pattio	pattio	NN
-pattio	pattio	NNS
+pattios	pattios	NNS
 patz	patz	VBZ
 paunqh	paunqh	NN
 paunqh	paunqh	VB
