@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Chrome extension for euspell English spelling reform",
   "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
   "scripts": {
     "test": "node --test \"tests/**/*.test.js\"",
     "build": "npm run build:lexicon && npm run build:pdfjs && npm run build:ext",
