@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="onboarding.css" />
+  </head>
+  <body>
+    <main>
+      <img src="../../icons/128.png" alt="" width="72" height="72" />
+      <h1>Welcome to Euspell</h1>
+      <p>Euspell rewrites English web pages (and PDFs) into reformed spelling —
+        entirely on your device. Nothing is sent to any server.</p>
+
+      <!-- Shown when the extension doesn't yet have access to read pages. On a
+           fresh Firefox install host access is opt-in, so this is where the user
+           grants it; on Chrome it's usually granted at install and this stays
+           hidden. -->
+      <section id="grantSection" hidden>
+        <p>To read and convert the pages you visit, Euspell needs permission to
+          access websites.</p>
+        <button type="button" id="grant">Grant access</button>
+      </section>
+
+      <section id="readySection" hidden>
+        <p class="ok">You’re all set — open any English page and it’ll appear in
+          euspell.</p>
+      </section>
+
+      <p class="muted">You can change site access any time from the extension’s
+        Options page.</p>
+    </main>
+
+    <script type="module" src="onboarding.js"></script>
+  </body>
+</html>

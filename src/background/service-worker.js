@@ -10,12 +10,17 @@ import {
 } from '../pdf/pdf-url.js';
 import { browser } from '../lib/browser.js';
 
-browser.runtime.onInstalled.addListener(async () => {
+browser.runtime.onInstalled.addListener(async (details) => {
   const current = await browser.storage.sync.get(['enabled', 'disabledSites']);
   await browser.storage.sync.set({
     enabled: current.enabled ?? true,
     disabledSites: current.disabledSites ?? [],
   });
+  // On a fresh install, open the welcome page — it requests host access, which
+  // needs a user gesture and so can't be granted from here. (Not on update.)
+  if (details.reason === 'install') {
+    browser.tabs.create({ url: browser.runtime.getURL('src/onboarding/onboarding.html') });
+  }
 });
 
 // Single writer for disabledSites. The popup and options page used to each do

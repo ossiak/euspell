@@ -34,6 +34,7 @@ const FILES = [
   'src/pdf/pdf-url.js', 'src/pdf/viewer.html', 'src/pdf/viewer.css',
   'src/popup/popup.html', 'src/popup/popup.js', 'src/popup/popup.css',
   'src/options/options.html', 'src/options/options.js', 'src/options/options.css',
+  'src/onboarding/onboarding.html', 'src/onboarding/onboarding.js', 'src/onboarding/onboarding.css',
 ];
 
 // Directory trees copied whole (the PDF.js worker, wasm decoders, and fonts).
