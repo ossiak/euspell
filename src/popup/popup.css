@@ -20,6 +20,14 @@
   box-sizing: border-box;
 }
 
+/* The hidden attribute must win over the display:flex on .row/.notice below —
+ * an author display rule otherwise overrides the UA's [hidden]{display:none},
+ * so a row toggled off with el.hidden=true would still render. !important keeps
+ * it hidden regardless of any later display rule. */
+[hidden] {
+  display: none !important;
+}
+
 body {
   width: 260px;
   margin: 0;

@@ -34,11 +34,20 @@ function makeEnv(store, tab) {
     tabs: {
       async query() { return tab ? [tab] : []; },
       async reload(id) { reloaded.push(id); },
-      async sendMessage() { return undefined; }, // no content script in the popup test
+      // Mirrors real Chrome/Firefox: a message to a tab with no content script
+      // REJECTS ("Could not establish connection"). store.__contentScript === true
+      // simulates the script being present (it replies to the status ping).
+      async sendMessage(_id, msg) {
+        if (store.__contentScript && msg?.type === 'euspell:dictation:status') {
+          return { active: false, supported: false };
+        }
+        throw new Error('Could not establish connection.');
+      },
     },
     permissions: {
-      // store.__hostAccess === false emulates the user revoking site access.
-      async contains() { return store.__hostAccess !== false; },
+      // store.__hostAccess === false emulates the user revoking site access:
+      // getAll then reports no granted origins (the real signal the popup uses).
+      async getAll() { return { origins: store.__hostAccess === false ? [] : ['<all_urls>'] }; },
       async request() { store.__hostAccess = true; return true; },
     },
     runtime: {
@@ -116,6 +125,15 @@ test('popup: with host access granted the notice stays hidden', async () => {
   assert.equal(env.els.permRow.hidden, true);
 });
 
+test('popup: a responding content script hides the notice even if contains() lies', async () => {
+  // The Chrome bug: permissions.contains() answers false despite full access.
+  // The content script replying proves access, so the notice must stay hidden.
+  const store = { enabled: true, disabledSites: [], __hostAccess: false, __contentScript: true };
+  const env = makeEnv(store, { id: 6, url: 'https://a.com/' });
+  await runScript('../src/popup/popup.js', env);
+  assert.equal(env.els.permRow.hidden, true);
+});
+
 test('popup: restricted pages hide the site row', async () => {
   const env = makeEnv({ enabled: true, disabledSites: [] }, { id: 1, url: 'chrome://extensions' });
   await runScript('../src/popup/popup.js', env);
@@ -139,4 +157,12 @@ test('options: global toggle persists', async () => {
   env.els.enabled.checked = false;
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
+});
+
+test('popup.css: [hidden] beats the display:flex rows (else toggled-off rows still render)', () => {
+  const css = fs.readFileSync(new URL('../src/popup/popup.css', import.meta.url), 'utf8');
+  // A bare `.row{display:flex}` overrides the UA [hidden]{display:none}, so a
+  // global [hidden]{display:none!important} is required for el.hidden to work.
+  const m = css.match(/\[hidden\]\s*\{[^}]*display\s*:\s*none\s*!important/i);
+  assert.ok(m, 'popup.css must force [hidden] { display: none !important }');
 });
