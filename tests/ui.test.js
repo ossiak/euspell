@@ -16,7 +16,7 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'dictateRow', 'dictate', 'permRow', 'grant'])
+  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint'])
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
@@ -108,30 +108,20 @@ test('popup: toggling global off disables the site row', async () => {
   assert.equal(env.els.siteRow._attr['aria-disabled'], 'true');
 });
 
-test('popup: revoked host access shows the notice; granting hides it and reloads', async () => {
+test('options: offers the grant button when host access is missing; granting hides it', async () => {
   const store = { enabled: true, disabledSites: [], __hostAccess: false };
-  const env = makeEnv(store, { id: 4, url: 'https://a.com/' });
-  await runScript('../src/popup/popup.js', env);
-  assert.equal(env.els.permRow.hidden, false); // notice visible
+  const env = makeEnv(store, null);
+  await runScript('../src/options/options.js', env);
+  assert.equal(env.els.grant.hidden, false);   // grant offered
   await env.els.grant.dispatch('click');
-  assert.equal(store.__hostAccess, true);      // permission re-requested
-  assert.equal(env.els.permRow.hidden, true);  // notice gone
-  assert.ok(env.reloaded.includes(4));         // page reloaded to convert
+  assert.equal(store.__hostAccess, true);       // permission requested
+  assert.equal(env.els.grant.hidden, true);     // grant hidden once granted
 });
 
-test('popup: with host access granted the notice stays hidden', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] }, { id: 5, url: 'https://a.com/' });
-  await runScript('../src/popup/popup.js', env);
-  assert.equal(env.els.permRow.hidden, true);
-});
-
-test('popup: a responding content script hides the notice even if contains() lies', async () => {
-  // The Chrome bug: permissions.contains() answers false despite full access.
-  // The content script replying proves access, so the notice must stay hidden.
-  const store = { enabled: true, disabledSites: [], __hostAccess: false, __contentScript: true };
-  const env = makeEnv(store, { id: 6, url: 'https://a.com/' });
-  await runScript('../src/popup/popup.js', env);
-  assert.equal(env.els.permRow.hidden, true);
+test('options: with host access granted the grant button stays hidden', async () => {
+  const env = makeEnv({ enabled: true, disabledSites: [] }, null);
+  await runScript('../src/options/options.js', env);
+  assert.equal(env.els.grant.hidden, true);
 });
 
 test('popup: restricted pages hide the site row', async () => {
