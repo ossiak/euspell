@@ -1,7 +1,8 @@
 // Popup control surface. The enable/disable state lives in browser.storage.sync
-// ({ enabled, disabledSites }); changes are written there and the active tab is
-// reloaded so the content script re-evaluates (it converts on load, so undoing
-// a conversion needs a fresh page).
+// ({ enabled, disabledSites }). Toggling the global or per-site control writes the
+// setting and switches the active tab live — no reload — by messaging the content
+// script's view mode. Only re-granting host access reloads (the content script has
+// to be injected before it can convert).
 
 import { browser } from '../lib/browser.js';
 
@@ -10,8 +11,6 @@ const siteRow = document.getElementById('siteRow');
 const siteBox = document.getElementById('site');
 const hostEl = document.getElementById('host');
 const hint = document.getElementById('hint');
-const viewRow = document.getElementById('viewRow');
-const showOriginalBox = document.getElementById('showOriginal');
 const dictateRow = document.getElementById('dictateRow');
 const dictateBtn = document.getElementById('dictate');
 const permRow = document.getElementById('permRow');
@@ -35,17 +34,6 @@ async function hasBroadHostAccess() {
     return origins.some((o) => BROAD_HOST.has(o));
   } catch {
     return true;
-  }
-}
-
-/** Ask the active tab's content script for its view mode; null if not converting. */
-async function tabMode(tab) {
-  if (tab?.id == null) return null;
-  try {
-    const res = await browser.tabs.sendMessage(tab.id, { type: 'euspell:getMode' });
-    return res && res.mode ? res.mode : null;
-  } catch {
-    return null; // no content script on this page
   }
 }
 
@@ -85,7 +73,7 @@ async function load() {
   // proves the extension has host access to this page — the authoritative
   // signal, since permissions.contains() is unreliable on Chrome. The listener
   // is registered before the enable/disable gate, so it answers even on a
-  // disabled or "show original" page.
+  // disabled page.
   const dict = await dictationStatus(tab);
   const contentScriptPresent = dict != null;
 
@@ -110,24 +98,39 @@ async function load() {
     hint.textContent = 'This page can’t be converted.';
   }
 
-  // Live view toggle: only shown when this tab is actually converting.
-  const mode = await tabMode(tab);
-  if (mode) {
-    showOriginalBox.checked = mode === 'original';
-    viewRow.hidden = false;
-  } else {
-    viewRow.hidden = true;
-  }
-
   // Dictation: shown when the content script is present and the browser supports
-  // speech recognition. Independent of the conversion toggle above. Reuses the
-  // dict status fetched for the access check.
+  // speech recognition. Independent of the conversion toggle. Reuses the dict
+  // status fetched for the access check.
   if (dict?.supported) {
     dictateBtn.textContent = dict.active ? 'Stop' : 'Start';
     dictateRow.hidden = false;
   } else {
     dictateRow.hidden = true;
   }
+}
+
+/** Switch the active tab's conversion live (no reload) to match the stored
+ *  settings, reusing the content script's view-mode machinery. Silently ignored
+ *  where there's no content script (a restricted page or the PDF viewer). */
+async function applyLive() {
+  const tab = await activeTab();
+  if (tab?.id == null) return;
+  const host = hostnameOf(tab);
+  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get(['enabled', 'disabledSites']);
+  const converting = enabled && !!host && !disabledSites.includes(host);
+  try {
+    await browser.tabs.sendMessage(tab.id, { type: 'euspell:setMode', mode: converting ? 'euspell' : 'original' });
+  } catch {
+    /* no content script on this page */
+  }
+}
+
+/** Reload the active tab — used only after (re)granting host access, so the
+ *  content script gets injected and can start converting. */
+async function reloadActiveTab() {
+  const tab = await activeTab();
+  if (tab?.id != null) await browser.tabs.reload(tab.id);
+  hint.textContent = 'Reloading…';
 }
 
 dictateBtn.addEventListener('click', async () => {
@@ -144,29 +147,11 @@ dictateBtn.addEventListener('click', async () => {
   }
 });
 
-showOriginalBox.addEventListener('change', async () => {
-  const tab = await activeTab();
-  if (tab?.id == null) return;
-  const mode = showOriginalBox.checked ? 'original' : 'euspell';
-  try {
-    await browser.tabs.sendMessage(tab.id, { type: 'euspell:setMode', mode });
-  } catch {
-    viewRow.hidden = true; // page stopped converting
-  }
-});
-
-/** Reload the active tab so the new setting takes effect. */
-async function applyAndReload() {
-  const tab = await activeTab();
-  if (tab?.id != null) await browser.tabs.reload(tab.id);
-  hint.textContent = 'Reloading…';
-}
-
 enabledBox.addEventListener('change', async () => {
   await browser.storage.sync.set({ enabled: enabledBox.checked });
   siteBox.disabled = !enabledBox.checked;
   siteRow.setAttribute('aria-disabled', String(!enabledBox.checked));
-  await applyAndReload();
+  await applyLive();
 });
 
 siteBox.addEventListener('change', async () => {
@@ -176,7 +161,7 @@ siteBox.addEventListener('change', async () => {
   // The service worker is the single writer for disabledSites (concurrent edits
   // from the options page can't be interleaved away).
   await browser.runtime.sendMessage({ type: 'euspell:setSiteDisabled', host, disabled: !siteBox.checked });
-  await applyAndReload();
+  await applyLive();
 });
 
 grantBtn.addEventListener('click', async () => {
@@ -190,7 +175,7 @@ grantBtn.addEventListener('click', async () => {
   }
   if (granted) {
     permRow.hidden = true;
-    await applyAndReload();
+    await reloadActiveTab();
   }
 });
 

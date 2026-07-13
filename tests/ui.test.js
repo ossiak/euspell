@@ -16,7 +16,7 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'viewRow', 'showOriginal', 'dictateRow', 'dictate', 'permRow', 'grant'])
+  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'dictateRow', 'dictate', 'permRow', 'grant'])
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
@@ -82,7 +82,7 @@ async function runScript(relPath, env) {
   await flush();
 }
 
-test('popup: reflects state and toggles the per-site setting', async () => {
+test('popup: reflects state and toggles the per-site setting live (no reload)', async () => {
   const store = { enabled: true, disabledSites: ['blocked.com'] };
   const env = makeEnv(store, { id: 7, url: 'https://example.com/page' });
   await runScript('../src/popup/popup.js', env);
@@ -94,8 +94,8 @@ test('popup: reflects state and toggles the per-site setting', async () => {
 
   env.els.site.checked = false;
   await env.els.site.dispatch('change');
-  assert.ok(store.disabledSites.includes('example.com'));
-  assert.ok(env.reloaded.includes(7));
+  assert.ok(store.disabledSites.includes('example.com')); // opt-out persisted
+  assert.equal(env.reloaded.length, 0);                    // switched live, not reloaded
 });
 
 test('popup: toggling global off disables the site row', async () => {

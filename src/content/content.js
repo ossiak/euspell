@@ -7,27 +7,28 @@ import { browser } from '../lib/browser.js';
 
 // Wrapped in an async IIFE: the content bundle is emitted as an iife (classic
 // content script), which forbids top-level await — so the storage read lives
-// inside this function. Re-injection or a disabled page returns early.
+// inside this function. A re-injection returns early.
 (async () => {
   if (window.__euspellLoaded) return;
   window.__euspellLoaded = true;
 
   // Dictation is an authoring feature independent of page conversion, so it is
-  // wired up before the reader's enable/disable gate — a user can dictate euspell
-  // on a site whose pages they don't want reformed.
+  // wired up first — a user can dictate euspell on a site whose pages they don't
+  // want reformed.
   initDictation();
 
   // The lexicon is fetched at runtime (dist/lexicon.data) rather than inlined
-  // into this bundle. Load it before any conversion — and before the enable gate,
-  // so dictation on a disabled page still reforms what it hears.
+  // into this bundle. Load it before any conversion.
   await ensureLexicon();
 
-  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get(['enabled', 'disabledSites']);
-  if (!enabled || disabledSites.includes(location.hostname)) return;
-
-  // <all_urls> also matches SVG/XML documents, which have no <body> — nothing
-  // to convert or observe (and walkTextNodes/observe would throw on null).
+  // <all_urls> also matches SVG/XML documents, which have no <body> — nothing to
+  // convert or observe (and walkTextNodes/observe would throw on null).
   if (!document.body) return;
+
+  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get([
+    'enabled',
+    'disabledSites',
+  ]);
 
   // childList catches inserted content (SPA renders); characterData catches text
   // rewritten in place (live regions, re-renders). Watching characterData is what
@@ -35,35 +36,6 @@ import { browser } from '../lib/browser.js';
   // hence the safeguards below.
   const OBSERVE = { childList: true, subtree: true, characterData: true };
   const observer = new MutationObserver(onMutations);
-
-  walkTextNodes(document.body, convert);
-  observer.observe(document.body, OBSERVE);
-
-  // Live view toggle from the popup: 'original' restores the remembered source
-  // text (lossless) and stops re-converting; 'euspell' re-applies conversion.
-  // Only registered on active pages, so the popup treats "no responder" as "this
-  // page isn't converting".
-  let viewMode = 'euspell';
-  browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
-    if (!msg || typeof msg.type !== 'string') return;
-    if (msg.type === 'euspell:getMode') { sendResponse({ mode: viewMode }); return; }
-    if (msg.type === 'euspell:setMode') {
-      if (msg.mode === 'original' && viewMode === 'euspell') {
-        observer.disconnect();
-        // Drop any queued re-conversion: a flush scheduled before the toggle
-        // would otherwise re-reform those subtrees and re-observe (its timeout
-        // still fires — flush() itself also checks viewMode as a backstop).
-        pending.clear();
-        restoreOriginals(document.body);
-        viewMode = 'original';
-      } else if (msg.mode === 'euspell' && viewMode === 'original') {
-        walkTextNodes(document.body, convert);
-        observer.observe(document.body, OBSERVE);
-        viewMode = 'euspell';
-      }
-      sendResponse({ mode: viewMode });
-    }
-  });
 
   // Element subtrees needing (re)conversion, coalesced and flushed on a macrotask
   // so a burst of mutations is handled in one pass. setTimeout (not rAF) so a
@@ -83,6 +55,44 @@ import { browser } from '../lib/browser.js';
   let composing = false;
   addEventListener('compositionstart', () => { composing = true; }, true);
   addEventListener('compositionend', () => { composing = false; schedule(); }, true);
+
+  // Whether the page is currently showing euspell. It starts converting unless
+  // the reader is off globally or this site is opted out — but the machinery is
+  // always set up, so the popup's per-site (and global) toggle can flip it live,
+  // with no reload, via the setMode message below.
+  let viewMode = 'original';
+
+  /** Convert the page now and start watching it for changes. */
+  function convertPage() {
+    walkTextNodes(document.body, convert);
+    observer.observe(document.body, OBSERVE);
+    viewMode = 'euspell';
+  }
+
+  /** Restore the remembered original text (lossless) and stop converting. */
+  function restorePage() {
+    observer.disconnect();
+    // Drop any queued re-conversion: a flush scheduled before the toggle would
+    // otherwise re-reform those subtrees and re-observe (its timeout still fires
+    // — flush() also checks viewMode as a backstop).
+    pending.clear();
+    restoreOriginals(document.body);
+    viewMode = 'original';
+  }
+
+  if (enabled && !disabledSites.includes(location.hostname)) convertPage();
+
+  // Live conversion toggle from the popup. The per-site checkbox (and the global
+  // one) send 'euspell:setMode' so a site can be switched on/off without reloading
+  // the tab. The listener is always registered — even on a page that loaded
+  // un-converted — so conversion can be turned on live. A missing responder tells
+  // the popup this page has no content script (a restricted page or the viewer).
+  browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+    if (!msg || msg.type !== 'euspell:setMode') return;
+    if (msg.mode === 'original' && viewMode === 'euspell') restorePage();
+    else if (msg.mode === 'euspell' && viewMode === 'original') convertPage();
+    sendResponse({ mode: viewMode });
+  });
 
   function onMutations(mutations) {
     for (const m of mutations) {
