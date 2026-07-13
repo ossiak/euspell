@@ -94,6 +94,26 @@ import { browser } from '../lib/browser.js';
     sendResponse({ mode: viewMode });
   });
 
+  // If the extension is disabled or removed, this already-injected content script
+  // is orphaned: its observer keeps converting and the page stays reformed until
+  // the tab reloads. Chrome invalidates the runtime of an orphaned script
+  // (runtime.id goes undefined; API calls throw), so poll for that and undo
+  // ourselves — restore the original text and stop observing. A poll (rather than
+  // a runtime port that disconnects on unload) avoids keeping the MV3 service
+  // worker alive and the false "removed" signal its idle shutdown would trigger.
+  const lifecheck = setInterval(() => {
+    let alive = false;
+    try {
+      alive = !!browser.runtime?.id;
+    } catch {
+      /* context invalidated */
+    }
+    if (!alive) {
+      clearInterval(lifecheck);
+      restorePage();
+    }
+  }, 3000);
+
   function onMutations(mutations) {
     for (const m of mutations) {
       if (m.type === 'characterData') {
