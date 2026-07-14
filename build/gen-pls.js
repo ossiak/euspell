@@ -1,4 +1,4 @@
-// Generates dict/euspell.pls: a W3C Pronunciation Lexicon (PLS 1.0) mapping
+// Generates dict/euspell_tts.pls: a W3C Pronunciation Lexicon (PLS 1.0) mapping
 // euspell graphemes to IPA, for reading already-converted euspell text aloud.
 //
 // Input: data/changed_words_IPA.csv (traditional_word,IPA) lists every
@@ -23,7 +23,7 @@ import { dirname, join } from 'node:path';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LEXICON = join(root, 'data/euspell_lexicon.csv');
 const IPA_CSV = join(root, 'data/changed_words_IPA.csv');
-const OUT = join(root, 'dict/euspell.pls');
+const OUT = join(root, 'dict/euspell_tts.pls');
 
 // traditional headword -> its euspellings (lexicon column 4, pipe-separated),
 // plus the set of every headword (a "primary" / standard dictionary word).

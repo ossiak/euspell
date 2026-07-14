@@ -1,4 +1,4 @@
-// Generates dict/euspell-pos.txt: a LanguageTool tagger-dictionary source that
+// Generates dict/euspell_pos.tsv: a LanguageTool tagger-dictionary source that
 // gives every *new* euspell spelling a part of speech.
 //
 // Why this helps an existing grammar checker: a euspell respelling is a non-word
@@ -22,7 +22,7 @@ import { dirname, join } from 'node:path';
 import { newSpellings, resolveTag } from './lib/euspell-pos.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const OUT = join(root, 'dict/euspell-pos.txt');
+const OUT = join(root, 'dict/euspell_pos.tsv');
 
 // CLAWS7 -> LanguageTool (Penn-Treebank-style) tag crosswalk. LanguageTool's
 // English rules match on these tags. A CLAWS7 tag maps to one or more LT tags

@@ -81,7 +81,7 @@ Two honest limits even with LanguageTool:
 ## Build — the whole lexicon → LanguageTool tagger dictionary
 
 `build/gen-pos-lexicon.js` (`npm run gen:pos`) reads `data/euspell_lexicon.csv` and
-emits `dict/euspell-pos.txt` in LanguageTool's Morfologik tagger-dictionary source
+emits `dict/euspell_pos.tsv` in LanguageTool's Morfologik tagger-dictionary source
 format (`form<TAB>lemma<TAB>POStag`). One line per (new spelling, LanguageTool tag).
 
 **New spellings only.** The reading that keeps its traditional spelling is excluded:
@@ -133,7 +133,7 @@ tagger-dictionary `.info` at it, e.g.
 
 ```sh
 java -jar morfologik-tools.jar fsa_compile \
-  -i dict/euspell-pos.txt -o euspell-pos.dict
+  -i dict/euspell_pos.tsv -o euspell_pos.dict
 ```
 
 Remaining limits:

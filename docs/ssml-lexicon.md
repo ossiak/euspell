@@ -122,7 +122,7 @@ A `gen-pls.js` reads the lexicon plus the IPA column and emits a single `.pls`
 ```
 
 The reader (a euspell-document TTS, or any SSML pipeline) references it via
-`<lexicon uri="euspell.pls"/>` and feeds it the converted text. Because the
+`<lexicon uri="euspell_tts.pls"/>` and feeds it the converted text. Because the
 lexicon is context-free, **engine support is also much better** — the patchy
 `role`-based homograph handling that varies across Polly / Azure / Google is
 never used here, since there are no roles.
@@ -173,8 +173,8 @@ The lexicon is built **one encoding category at a time**, in **General American*
 - **`build/gen-pls.js`** (`npm run gen:pls`) — reads every `data/euspell_ipa*.csv`
   category file, dedups, validates each grapheme against the lexicon's headwords
   and new spellings (allowing sentence-initial capitals), and emits
-  **`dict/euspell.pls`** (W3C PLS 1.0, one role-free `<lexeme>` per grapheme).
-- **`dict/euspell.pls`** — the generated lexicon (currently 572 lexemes).
+  **`dict/euspell_tts.pls`** (W3C PLS 1.0, one role-free `<lexeme>` per grapheme).
+- **`dict/euspell_tts.pls`** — the generated lexicon (currently 572 lexemes).
 
 Known gaps in stage 1: **286 one-syllable `101` euspellings are missing from
 CMUdict** — obscure/archaic stems (`chough`, `gowk`, `qualm`) and inflected forms
