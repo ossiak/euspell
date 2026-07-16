@@ -15262,7 +15262,7 @@
   <lexeme><grapheme>kynd</grapheme><phoneme>kaɪnd</phoneme></lexeme> <!-- kind -->
   <lexeme><grapheme>kynda</grapheme><phoneme>ˈkaɪndə</phoneme></lexeme> <!-- kinda -->
   <lexeme><grapheme>kynder</grapheme><phoneme>ˈkaɪndɚ</phoneme></lexeme> <!-- kinder -->
-  <lexeme><grapheme>kyndest</grapheme><phoneme>ˈaɪndəst</phoneme></lexeme> <!-- kindest -->
+  <lexeme><grapheme>kyndest</grapheme><phoneme>ˈkaɪndəst</phoneme></lexeme> <!-- kindest -->
   <lexeme><grapheme>kyndharted</grapheme><phoneme>ˈkaɪndˈhɑɹtəd</phoneme></lexeme> <!-- kindhearted -->
   <lexeme><grapheme>kyndhartedly</grapheme><phoneme>ˈkaɪndˈhɑɹtədli</phoneme></lexeme> <!-- kindheartedly -->
   <lexeme><grapheme>kyndhartedness</grapheme><phoneme>ˈkaɪndˈhɑɹtədnəs</phoneme></lexeme> <!-- kindheartedness -->
@@ -19069,7 +19069,7 @@
   <lexeme><grapheme>outyelpz</grapheme><phoneme>ˌaʊtˈjɛlps</phoneme></lexeme> <!-- outyelps -->
   <lexeme><grapheme>outyieldz</grapheme><phoneme>ˌaʊtˈjildz</phoneme></lexeme> <!-- outyields -->
   <lexeme><grapheme>outz</grapheme><phoneme>ˈaʊts</phoneme></lexeme> <!-- outs -->
-  <lexeme><grapheme>ov</grapheme><phoneme>ʌw</phoneme></lexeme> <!-- of -->
+  <lexeme><grapheme>ov</grapheme><phoneme>ʌv</phoneme></lexeme> <!-- of -->
   <lexeme><grapheme>ovariectomizez</grapheme><phoneme>oʊˌværiˈɛktəˌmaɪzɪz</phoneme></lexeme> <!-- ovariectomises -->
   <lexeme><grapheme>overabstractz</grapheme><phoneme>ˌoʊvərəbˈstrækts</phoneme></lexeme> <!-- overabstracts -->
   <lexeme><grapheme>overaccentuatez</grapheme><phoneme>ˌoʊvərækˈtsɛntʃuˌeɪts</phoneme></lexeme> <!-- overaccentuates -->
@@ -20290,8 +20290,8 @@
   <lexeme><grapheme>picaresqs</grapheme><phoneme>ˌpɪkəˈrɛsks</phoneme></lexeme> <!-- picaresques -->
   <lexeme><grapheme>picaroond</grapheme><phoneme>ˌpɪkəˈruːnd</phoneme></lexeme> <!-- picarooned -->
   <lexeme><grapheme>picaroonz</grapheme><phoneme>ˌpɪkəˈruːnz</phoneme></lexeme> <!-- picaroons -->
-  <lexeme><grapheme>pickabackd</grapheme><phoneme>ˈpɪɡibækt</phoneme></lexeme> <!-- pickabacked -->
-  <lexeme><grapheme>pickabackz</grapheme><phoneme>ˈpɪɡibæks</phoneme></lexeme> <!-- pickabacks -->
+  <lexeme><grapheme>pickabackd</grapheme><phoneme>ˈpɪkibækt</phoneme></lexeme> <!-- pickabacked -->
+  <lexeme><grapheme>pickabackz</grapheme><phoneme>ˈpɪkibæks</phoneme></lexeme> <!-- pickabacks -->
   <lexeme><grapheme>pickaxd</grapheme><phoneme>ˈpɪkækst</phoneme></lexeme> <!-- pickaxed -->
   <lexeme><grapheme>pickaxez</grapheme><phoneme>ˈpɪkæksɪz</phoneme></lexeme> <!-- pickaxes -->
   <lexeme><grapheme>pickd</grapheme><phoneme>pɪkt</phoneme></lexeme> <!-- picked -->
@@ -20571,8 +20571,8 @@
   <lexeme><grapheme>plesure</grapheme><phoneme>ˈplɛʒər</phoneme></lexeme> <!-- pleasure -->
   <lexeme><grapheme>plesured</grapheme><phoneme>ˈplɛʒərd</phoneme></lexeme> <!-- pleasured -->
   <lexeme><grapheme>plesureless</grapheme><phoneme>ˈplɛʒərləs</phoneme></lexeme> <!-- pleasureless -->
-  <lexeme><grapheme>plesures</grapheme><phoneme>ˈɛʒərz</phoneme></lexeme> <!-- pleasures -->
-  <lexeme><grapheme>plesurez</grapheme><phoneme>ˈɛʒərz</phoneme></lexeme> <!-- pleasures -->
+  <lexeme><grapheme>plesures</grapheme><phoneme>ˈplɛʒərz</phoneme></lexeme> <!-- pleasures -->
+  <lexeme><grapheme>plesurez</grapheme><phoneme>ˈplɛʒərz</phoneme></lexeme> <!-- pleasures -->
   <lexeme><grapheme>plesuring</grapheme><phoneme>ˈplɛʒərɪŋ</phoneme></lexeme> <!-- pleasuring -->
   <lexeme><grapheme>pliht</grapheme><phoneme>plaɪt</phoneme></lexeme> <!-- plight -->
   <lexeme><grapheme>plihted</grapheme><phoneme>ˈplaɪtɪd</phoneme></lexeme> <!-- plighted -->
@@ -21302,8 +21302,8 @@
   <lexeme><grapheme>prevaild</grapheme><phoneme>prɪˈveɪld</phoneme></lexeme> <!-- prevailed -->
   <lexeme><grapheme>prevailz</grapheme><phoneme>prɪˈveɪldz</phoneme></lexeme> <!-- prevails -->
   <lexeme><grapheme>prevaricatez</grapheme><phoneme>prɪˈværɪkeɪts</phoneme></lexeme> <!-- prevaricates -->
-  <lexeme><grapheme>preventativ</grapheme><phoneme>rɪˈvɛntətɪv</phoneme></lexeme> <!-- preventative -->
-  <lexeme><grapheme>preventativs</grapheme><phoneme>rɪˈvɛntətɪvz</phoneme></lexeme> <!-- preventatives -->
+  <lexeme><grapheme>preventativ</grapheme><phoneme>prɪˈvɛntətɪv</phoneme></lexeme> <!-- preventative -->
+  <lexeme><grapheme>preventativs</grapheme><phoneme>prɪˈvɛntətɪvz</phoneme></lexeme> <!-- preventatives -->
   <lexeme><grapheme>preventiv</grapheme><phoneme>prɪˈvɛntɪv</phoneme></lexeme> <!-- preventive -->
   <lexeme><grapheme>preventivly</grapheme><phoneme>prɪˈvɛntɪvli</phoneme></lexeme> <!-- preventively -->
   <lexeme><grapheme>preventivness</grapheme><phoneme>prɪˈvɛntɪvnəs</phoneme></lexeme> <!-- preventiveness -->
@@ -24151,7 +24151,7 @@
   <lexeme><grapheme>reexpelz</grapheme><phoneme>riːɪksˈpɛlz</phoneme></lexeme> <!-- reexpels -->
   <lexeme><grapheme>reexperiencez</grapheme><phoneme>riːɪkˈspɪriənsɪz</phoneme></lexeme> <!-- reexperiences -->
   <lexeme><grapheme>reexplorez</grapheme><phoneme>riːɪkˈsplɔːrz</phoneme></lexeme> <!-- reexplores -->
-  <lexeme><grapheme>reexportz</grapheme><phoneme>riːˈɛksbɔːrts</phoneme></lexeme> <!-- reexports -->
+  <lexeme><grapheme>reexportz</grapheme><phoneme>riːˈɛkspɔːrts</phoneme></lexeme> <!-- reexports -->
   <lexeme><grapheme>reexposez</grapheme><phoneme>riːɪkˈspoʊzɪz</phoneme></lexeme> <!-- reexposes -->
   <lexeme><grapheme>reexpressd</grapheme><phoneme>riːɪkˈsprɛst</phoneme></lexeme> <!-- reexpressed -->
   <lexeme><grapheme>reexpressez</grapheme><phoneme>riːɪkˈsprɛsɪz</phoneme></lexeme> <!-- reexpresses -->
@@ -24254,7 +24254,7 @@
   <lexeme><grapheme>refractiv</grapheme><phoneme>rɪˈfræktɪv</phoneme></lexeme> <!-- refractive -->
   <lexeme><grapheme>refractivly</grapheme><phoneme>rɪˈfræktɪvli</phoneme></lexeme> <!-- refractively -->
   <lexeme><grapheme>refractivness</grapheme><phoneme>rɪˈfræktɪvnəs</phoneme></lexeme> <!-- refractiveness -->
-  <lexeme><grapheme>refracturez</grapheme><phoneme>riːˈræktʃərz</phoneme></lexeme> <!-- refractures -->
+  <lexeme><grapheme>refracturez</grapheme><phoneme>riːˈfræktʃərz</phoneme></lexeme> <!-- refractures -->
   <lexeme><grapheme>refractz</grapheme><phoneme>rɪˈfrækts</phoneme></lexeme> <!-- refracts -->
   <lexeme><grapheme>refragatez</grapheme><phoneme>ˈrɛfrəɡeɪts</phoneme></lexeme> <!-- refragates -->
   <lexeme><grapheme>refraind</grapheme><phoneme>rɪˈfreɪnd</phoneme></lexeme> <!-- refrained -->
@@ -26170,7 +26170,7 @@
   <lexeme><grapheme>scalpd</grapheme><phoneme>skˈælpt</phoneme></lexeme> <!-- scalped -->
   <lexeme><grapheme>scamd</grapheme><phoneme>skˈæmd</phoneme></lexeme> <!-- scammed -->
   <lexeme><grapheme>scammoniat</grapheme><phoneme>skæmˈoʊnɪət</phoneme></lexeme> <!-- scammoniate -->
-  <lexeme><grapheme>scampd</grapheme><phoneme>skˈæmt</phoneme></lexeme> <!-- scamped -->
+  <lexeme><grapheme>scampd</grapheme><phoneme>skˈæmpt</phoneme></lexeme> <!-- scamped -->
   <lexeme><grapheme>scamperd</grapheme><phoneme>skˈæmpərd</phoneme></lexeme> <!-- scampered -->
   <lexeme><grapheme>scamperz</grapheme><phoneme>skˈæmpərz</phoneme></lexeme> <!-- scampers -->
   <lexeme><grapheme>scampz</grapheme><phoneme>skˈæmps</phoneme></lexeme> <!-- scamps -->
@@ -26222,7 +26222,7 @@
   <lexeme><grapheme>schismatizez</grapheme><phoneme>sˈɪzmətˌaɪzɪz</phoneme></lexeme> <!-- schismatises -->
   <lexeme><grapheme>schleppd</grapheme><phoneme>ʃlˈɛpt</phoneme></lexeme> <!-- schlepped -->
   <lexeme><grapheme>schleppz</grapheme><phoneme>ʃlˈɛps</phoneme></lexeme> <!-- schlepps -->
-  <lexeme><grapheme>schlumpd</grapheme><phoneme>ʃlˈʌmt</phoneme></lexeme> <!-- schlumped -->
+  <lexeme><grapheme>schlumpd</grapheme><phoneme>ʃlˈʌmpt</phoneme></lexeme> <!-- schlumped -->
   <lexeme><grapheme>schlumpz</grapheme><phoneme>ʃlˈʌmps</phoneme></lexeme> <!-- schlumps -->
   <lexeme><grapheme>schmeard</grapheme><phoneme>ʃmˈɪərd</phoneme></lexeme> <!-- schmeared -->
   <lexeme><grapheme>schmearz</grapheme><phoneme>ʃmˈɪərz</phoneme></lexeme> <!-- schmears -->
@@ -26342,7 +26342,7 @@
   <lexeme><grapheme>scrievz</grapheme><phoneme>skrˈiːvz</phoneme></lexeme> <!-- scrieves -->
   <lexeme><grapheme>scriez</grapheme><phoneme>skrˈaɪz</phoneme></lexeme> <!-- scries -->
   <lexeme><grapheme>scrimmagez</grapheme><phoneme>skˈrɪmɪdʒɪz</phoneme></lexeme> <!-- scrimmages -->
-  <lexeme><grapheme>scrimpd</grapheme><phoneme>skrˈɪmt</phoneme></lexeme> <!-- scrimped -->
+  <lexeme><grapheme>scrimpd</grapheme><phoneme>skrˈɪmpt</phoneme></lexeme> <!-- scrimped -->
   <lexeme><grapheme>scrimpz</grapheme><phoneme>skrˈɪmps</phoneme></lexeme> <!-- scrimps -->
   <lexeme><grapheme>scrimshawd</grapheme><phoneme>skˈrɪmʃɔːd</phoneme></lexeme> <!-- scrimshawed -->
   <lexeme><grapheme>scrimshawz</grapheme><phoneme>skˈrɪmʃɔːz</phoneme></lexeme> <!-- scrimshaws -->
@@ -28037,7 +28037,7 @@
   <lexeme><grapheme>spitballd</grapheme><phoneme>ˈspɪtˌbɔːld</phoneme></lexeme> <!-- spitballed -->
   <lexeme><grapheme>spitballz</grapheme><phoneme>ˈspɪtˌbɔːlz</phoneme></lexeme> <!-- spitballs -->
   <lexeme><grapheme>spitez</grapheme><phoneme>spaɪts</phoneme></lexeme> <!-- spites -->
-  <lexeme><grapheme>splashd</grapheme><phoneme>slæʃt</phoneme></lexeme> <!-- splashed -->
+  <lexeme><grapheme>splashd</grapheme><phoneme>splæʃt</phoneme></lexeme> <!-- splashed -->
   <lexeme><grapheme>splashduwn</grapheme><phoneme>ˈsplæʃˌdaʊn</phoneme></lexeme> <!-- splashdown -->
   <lexeme><grapheme>splashduwns</grapheme><phoneme>ˈsplæʃˌdaʊnz</phoneme></lexeme> <!-- splashdowns -->
   <lexeme><grapheme>splashez</grapheme><phoneme>ˈsplæʃəz</phoneme></lexeme> <!-- splashes -->
@@ -28094,7 +28094,7 @@
   <lexeme><grapheme>spotlihting</grapheme><phoneme>ˈspɑːtˌlaɪtɪŋ</phoneme></lexeme> <!-- spotlighting -->
   <lexeme><grapheme>spotlihts</grapheme><phoneme>ˈspɑːtˌlaɪts</phoneme></lexeme> <!-- spotlights -->
   <lexeme><grapheme>spotlihtz</grapheme><phoneme>ˈspɑːtˌlaɪts</phoneme></lexeme> <!-- spotlights -->
-  <lexeme><grapheme>spotz</grapheme><phoneme>sɑːts</phoneme></lexeme> <!-- spots -->
+  <lexeme><grapheme>spotz</grapheme><phoneme>spɑːts</phoneme></lexeme> <!-- spots -->
   <lexeme><grapheme>spousez</grapheme><phoneme>ˈspaʊsəz</phoneme></lexeme> <!-- spouses -->
   <lexeme><grapheme>spoutz</grapheme><phoneme>spaʊts</phoneme></lexeme> <!-- spouts -->
   <lexeme><grapheme>spraddlez</grapheme><phoneme>ˈsprædəlz</phoneme></lexeme> <!-- spraddles -->
