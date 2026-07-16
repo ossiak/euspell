@@ -10,7 +10,7 @@
  * @typedef {import('../content/context.js').Token} Token
  */
 
-import { contextWindow } from '../content/context.js';
+import { contextWindow, crossesSentenceBreak } from '../content/context.js';
 import { VVZ_SVM } from './vvz-svm.js';
 
 // --- Tag-class helpers -------------------------------------------------------
@@ -292,6 +292,38 @@ function svmFeatures(tokens, idx) {
 // about half a unit of SVM confidence; two cues about a full unit.
 const RULE_VETO = 0.16;
 
+// Heads that can anchor a clause subject before the target: a determiner or
+// possessive opens a subject NP, a subject pronoun or relativiser is one
+// outright, an existential fills the slot, and a proper noun can stand alone as
+// one ("John records."). A bare common noun or adjective cannot open a subject
+// NP in English, so a run of them is a noun compound, not a subject.
+const SUBJECT_HEAD = [
+  ...DETERMINER, 'APPGE', 'EX',
+  'PPHS1', 'PPH1', 'PPHS2', 'PPIS1', 'PPIS2', 'PPY', // subject pronouns
+  ...REL_SUBJECT,
+];
+
+/**
+ * True when the target ends a block that cannot be a clause, so it heads a noun
+ * phrase: a heading, title, table cell, button or list label ("Notes",
+ * "Release Notes", "Software Release Notes", "Phone Calls").
+ *
+ * Two conditions, both required. Nothing follows the target within its block —
+ * a finite VVZ almost always takes a complement, and a heading's head word is
+ * final. And nothing before it can head a subject — without one there is no
+ * clause for the target to be the verb of. "The machine records." and
+ * "He records." keep a subject, so they stay with the SVM.
+ *
+ * @param {Token[]} tokens @param {number} idx @returns {boolean}
+ */
+function endsIsolatedNounPhrase(tokens, idx) {
+  if (idx + 1 < tokens.length && !crossesSentenceBreak(tokens, idx, idx + 1)) return false;
+  for (let k = idx - 1; k >= 0 && !crossesSentenceBreak(tokens, k, idx); k--) {
+    if (anyExact(tokens[k], SUBJECT_HEAD) || anyPrefix(tokens[k], ['NP'])) return false;
+  }
+  return true;
+}
+
 /**
  * The production decision for an NN2|VVZ diatone: the linear SVM score
  * (vvz-svm.js, trained on the fiction + non-fiction _corpus_012_112*.txt by
@@ -310,9 +342,22 @@ const RULE_VETO = 0.16;
  * the right trade for a converter whose noun spelling is the safe default.
  * A diatone unseen in training has no "w=" weight and falls back to the
  * learned context weights.
+ *
+ * A target heading an isolated noun phrase (a heading, title, cell or label)
+ * short-circuits to the noun — see {@link endsIsolatedNounPhrase}. The corpus
+ * is running prose, so these shapes are absent from training and the model
+ * reads them out-of-distribution: with no complement the boundary slots fire
+ * nothing, leaving the "w=" weight — a residual fitted *alongside* context
+ * features, not a standalone base rate — to decide, and it can contradict the
+ * counts it was trained on (lone "notes" scores +0.40 = verb, though the corpus
+ * holds 628 NN2 vs 553 VVZ). A heading is also exactly where the pair feature
+ * that separates a compound from a subject frame ("p=DET~NN") cannot fire, for
+ * want of a determiner. Falling back to the lexicon's noun-first default suits
+ * a converter whose noun spelling is the safe choice.
  * @param {Token[]} tokens @param {number} idx @returns {boolean}
  */
 export function is_VVZ_svm(tokens, idx) {
+  if (endsIsolatedNounPhrase(tokens, idx)) return false;
   let score = 0;
   for (const f of svmFeatures(tokens, idx)) score += VVZ_SVM.get(f) ?? 0;
   return score + RULE_VETO * Math.min(0, vvzScore(tokens, idx)) > 0;

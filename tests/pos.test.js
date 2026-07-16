@@ -21,6 +21,38 @@ test('is_VVZ_svm: the production linear-SVM decision (vvz-svm.js)', () => {
   assert.doesNotThrow(() => is_VVZ_svm([t('records', '')], 0));
 });
 
+test('is_VVZ_svm: a target heading an isolated noun phrase resolves to the noun', () => {
+  // Headings/titles/labels are absent from the prose corpus, so the model reads
+  // them out-of-distribution: with no complement the boundary slots fire
+  // nothing, leaving the "w=" residual to decide (lone "notes" scores +0.40 =
+  // verb, though the corpus holds 628 NN2 vs 553 VVZ). A block that cannot be a
+  // clause — nothing after, no subject-capable head before — takes the noun.
+  assert.equal(is_VVZ_svm(tagged(['Notes']), 0), false); // reported: header "Notes" -> "Notez"
+  assert.equal(is_VVZ_svm(tagged(['notes']), 0), false);
+  assert.equal(is_VVZ_svm(tagged(['Records']), 0), false);
+  // Multi-word headings: a bare noun compound cannot open a subject NP. These
+  // are also where "p=DET~NN" cannot fire, for want of a determiner.
+  assert.equal(is_VVZ_svm(tagged(['Release', 'Notes']), 1), false);
+  assert.equal(is_VVZ_svm(tagged(['Show', 'Notes']), 1), false);
+  assert.equal(is_VVZ_svm(tagged(['Phone', 'Calls']), 1), false);
+  assert.equal(is_VVZ_svm(tagged(['Software', 'Release', 'Notes']), 2), false);
+  assert.equal(is_VVZ_svm(tagged(['Read', 'Notes']), 1), false); // imperative + object
+  // Isolated by sentence breaks rather than by the array edge — same thing.
+  const loneSentence = [t('end', 'NN1', true), t('Notes', tagWord('Notes'), true), t('Then', 'RT')];
+  assert.equal(is_VVZ_svm(loneSentence, 1), false);
+
+  // A subject before the target means the block CAN be a clause: leave it to the
+  // SVM. Pronoun, proper noun, and relativiser subjects all keep the verb.
+  assert.equal(is_VVZ_svm(tagged(['He', 'records']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['John', 'records']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['She', 'notes']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['which', 'records', 'the', 'data']), 1), true);
+  // A following complement also keeps real context in play, both ways.
+  assert.equal(is_VVZ_svm(tagged(['he', 'notes', 'that', 'it', 'works']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['she', 'records', 'the', 'song']), 1), true);
+  assert.equal(is_VVZ_svm(tagged(['the', 'notes', 'of', 'the', 'meeting']), 1), false);
+});
+
 test('is_VVZ_svm: noun-compound frames with real lexicon tags (regression)', () => {
   // These use the full candidate tag sets the page pipeline sees — the messy
   // multi-tag neighbors ("all" DB|JJ21|RR|…, "between" II|II22|JJ22|RL|RL22)
