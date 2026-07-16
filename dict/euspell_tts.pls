@@ -16291,7 +16291,7 @@
   <lexeme><grapheme>manipulatez</grapheme><phoneme>məˈnɪpjʊleɪts</phoneme></lexeme> <!-- manipulates -->
   <lexeme><grapheme>manipulativ</grapheme><phoneme>məˈnɪpjʊleɪtɪv</phoneme></lexeme> <!-- manipulative -->
   <lexeme><grapheme>manipulativly</grapheme><phoneme>məˈnɪpjʊleɪtɪvli</phoneme></lexeme> <!-- manipulatively -->
-  <lexeme><grapheme>manipulativness</grapheme><phoneme>v</phoneme></lexeme> <!-- manipulativeness -->
+  <lexeme><grapheme>manipulativness</grapheme><phoneme>məˈnɪpjəˌleɪtɪvnəs</phoneme></lexeme> <!-- manipulativeness -->
   <lexeme><grapheme>mankynd</grapheme><phoneme>mænˈkaɪnd</phoneme></lexeme> <!-- mankind -->
   <lexeme><grapheme>mannekin</grapheme><phoneme>ˈmænɪkɪn</phoneme></lexeme> <!-- mannequin -->
   <lexeme><grapheme>mannekins</grapheme><phoneme>ˈmænɪkɪnz</phoneme></lexeme> <!-- mannequins -->
@@ -16316,7 +16316,7 @@
   <lexeme><grapheme>mantlez</grapheme><phoneme>ˈmæntəlz</phoneme></lexeme> <!-- mantles -->
   <lexeme><grapheme>manufacturez</grapheme><phoneme>ˌmænjʊˈfæktʃərz</phoneme></lexeme> <!-- manufactures -->
   <lexeme><grapheme>manumitz</grapheme><phoneme>ˌmænjʊˈmɪts</phoneme></lexeme> <!-- manumits -->
-  <lexeme><grapheme>manurez</grapheme><phoneme>v</phoneme></lexeme> <!-- manures -->
+  <lexeme><grapheme>manurez</grapheme><phoneme>məˈnʊrz</phoneme></lexeme> <!-- manures -->
   <lexeme><grapheme>manxwimen</grapheme><phoneme>ˈmæŋkswɪmɪn</phoneme></lexeme> <!-- manxwomen -->
   <lexeme><grapheme>manz</grapheme><phoneme>ˈmænz</phoneme></lexeme> <!-- mans -->
   <lexeme><grapheme>mapd</grapheme><phoneme>ˈmæpt</phoneme></lexeme> <!-- mapped -->
@@ -16428,20 +16428,20 @@
   <lexeme><grapheme>mashez</grapheme><phoneme>ˈmæʃɪz</phoneme></lexeme> <!-- mashes -->
   <lexeme><grapheme>mashinabilities</grapheme><phoneme>məˌʃiːnəˈbɪlɪtiz</phoneme></lexeme> <!-- machinabilities -->
   <lexeme><grapheme>mashinability</grapheme><phoneme>məˌʃiːnəˈbɪlɪti</phoneme></lexeme> <!-- machinability -->
-  <lexeme><grapheme>mashinable</grapheme><phoneme>v</phoneme></lexeme> <!-- machinable -->
+  <lexeme><grapheme>mashinable</grapheme><phoneme>məˈʃiːnəbəl</phoneme></lexeme> <!-- machinable -->
   <lexeme><grapheme>mashinal</grapheme><phoneme>məˈʃiːnəl</phoneme></lexeme> <!-- machinal -->
-  <lexeme><grapheme>mashine</grapheme><phoneme>v</phoneme></lexeme> <!-- machine -->
-  <lexeme><grapheme>mashined</grapheme><phoneme>v</phoneme></lexeme> <!-- machined -->
+  <lexeme><grapheme>mashine</grapheme><phoneme>məˈʃiːn</phoneme></lexeme> <!-- machine -->
+  <lexeme><grapheme>mashined</grapheme><phoneme>məˈʃiːnd</phoneme></lexeme> <!-- machined -->
   <lexeme><grapheme>mashinelike</grapheme><phoneme>ˈmæʃiːnlaɪk</phoneme></lexeme> <!-- machinelike -->
-  <lexeme><grapheme>mashiner</grapheme><phoneme>v</phoneme></lexeme> <!-- machiner -->
-  <lexeme><grapheme>mashineries</grapheme><phoneme>v</phoneme></lexeme> <!-- machineries -->
-  <lexeme><grapheme>mashiners</grapheme><phoneme>v</phoneme></lexeme> <!-- machiners -->
-  <lexeme><grapheme>mashinery</grapheme><phoneme>v</phoneme></lexeme> <!-- machinery -->
-  <lexeme><grapheme>mashines</grapheme><phoneme>v</phoneme></lexeme> <!-- machines -->
-  <lexeme><grapheme>mashinez</grapheme><phoneme>v</phoneme></lexeme> <!-- machines -->
-  <lexeme><grapheme>mashining</grapheme><phoneme>v</phoneme></lexeme> <!-- machining -->
-  <lexeme><grapheme>mashinist</grapheme><phoneme>v</phoneme></lexeme> <!-- machinist -->
-  <lexeme><grapheme>mashinists</grapheme><phoneme>v</phoneme></lexeme> <!-- machinists -->
+  <lexeme><grapheme>mashiner</grapheme><phoneme>məˈʃiːnər</phoneme></lexeme> <!-- machiner -->
+  <lexeme><grapheme>mashineries</grapheme><phoneme>məˈʃiːnəriːz</phoneme></lexeme> <!-- machineries -->
+  <lexeme><grapheme>mashiners</grapheme><phoneme>məˈʃiːnərz</phoneme></lexeme> <!-- machiners -->
+  <lexeme><grapheme>mashinery</grapheme><phoneme>məˈʃiːnəriː</phoneme></lexeme> <!-- machinery -->
+  <lexeme><grapheme>mashines</grapheme><phoneme>məˈʃiːnz</phoneme></lexeme> <!-- machines -->
+  <lexeme><grapheme>mashinez</grapheme><phoneme>məˈʃiːnz</phoneme></lexeme> <!-- machines -->
+  <lexeme><grapheme>mashining</grapheme><phoneme>məˈʃiːnɪŋ</phoneme></lexeme> <!-- machining -->
+  <lexeme><grapheme>mashinist</grapheme><phoneme>məˈʃiːnəst</phoneme></lexeme> <!-- machinist -->
+  <lexeme><grapheme>mashinists</grapheme><phoneme>məˈʃiːnɪsts</phoneme></lexeme> <!-- machinists -->
   <lexeme><grapheme>maskd</grapheme><phoneme>ˈmæskt</phoneme></lexeme> <!-- masked -->
   <lexeme><grapheme>maskz</grapheme><phoneme>ˈmæsks</phoneme></lexeme> <!-- masks -->
   <lexeme><grapheme>masond</grapheme><phoneme>ˈmeɪsənd</phoneme></lexeme> <!-- masoned -->
@@ -16492,16 +16492,16 @@
   <lexeme><grapheme>matterd</grapheme><phoneme>ˈmætərd</phoneme></lexeme> <!-- mattered -->
   <lexeme><grapheme>matterz</grapheme><phoneme>ˈmætərz</phoneme></lexeme> <!-- matters -->
   <lexeme><grapheme>maturatez</grapheme><phoneme>ˈmætʃʊreɪts</phoneme></lexeme> <!-- maturates -->
-  <lexeme><grapheme>maturez</grapheme><phoneme>v</phoneme></lexeme> <!-- matures -->
+  <lexeme><grapheme>maturez</grapheme><phoneme>məˈtʃʊrz</phoneme></lexeme> <!-- matures -->
   <lexeme><grapheme>matz</grapheme><phoneme>ˈmæts</phoneme></lexeme> <!-- mats -->
   <lexeme><grapheme>mauld</grapheme><phoneme>ˈmɔːld</phoneme></lexeme> <!-- mauled -->
   <lexeme><grapheme>maulz</grapheme><phoneme>ˈmɔːlz</phoneme></lexeme> <!-- mauls -->
   <lexeme><grapheme>maunderd</grapheme><phoneme>ˈmɔːndərd</phoneme></lexeme> <!-- maundered -->
   <lexeme><grapheme>maunderz</grapheme><phoneme>ˈmɔːndərz</phoneme></lexeme> <!-- maunders -->
   <lexeme><grapheme>mavurneen</grapheme><phoneme>məˈvʊərniːn</phoneme></lexeme> <!-- mavourneen -->
-  <lexeme><grapheme>mavurneens</grapheme><phoneme>v</phoneme></lexeme> <!-- mavourneens -->
-  <lexeme><grapheme>mavurnin</grapheme><phoneme>v</phoneme></lexeme> <!-- mavournin -->
-  <lexeme><grapheme>mavurnins</grapheme><phoneme>v</phoneme></lexeme> <!-- mavournins -->
+  <lexeme><grapheme>mavurneens</grapheme><phoneme>ˌmævʊrˈniːnz</phoneme></lexeme> <!-- mavourneens -->
+  <lexeme><grapheme>mavurnin</grapheme><phoneme>məˈvʊrnɪn</phoneme></lexeme> <!-- mavournin -->
+  <lexeme><grapheme>mavurnins</grapheme><phoneme>məˈvʊrnɪnz</phoneme></lexeme> <!-- mavournins -->
   <lexeme><grapheme>mawd</grapheme><phoneme>ˈmɔːd</phoneme></lexeme> <!-- mawed -->
   <lexeme><grapheme>maxd</grapheme><phoneme>ˈmækst</phoneme></lexeme> <!-- maxed -->
   <lexeme><grapheme>maxez</grapheme><phoneme>ˈmæksɪz</phoneme></lexeme> <!-- maxes -->
@@ -16534,18 +16534,18 @@
   <lexeme><grapheme>meddowy</grapheme><phoneme>ˈmɛdoʊi</phoneme></lexeme> <!-- meadowy -->
   <lexeme><grapheme>medevacd</grapheme><phoneme>ˈmɛdɪvækt</phoneme></lexeme> <!-- medevacked -->
   <lexeme><grapheme>medevacz</grapheme><phoneme>ˈmɛdɪvæks</phoneme></lexeme> <!-- medevacs -->
-  <lexeme><grapheme>mediat</grapheme><phoneme>v</phoneme></lexeme> <!-- mediate -->
+  <lexeme><grapheme>mediat</grapheme><phoneme>ˈmiːdiːˌeɪt</phoneme></lexeme> <!-- mediate -->
   <lexeme><grapheme>mediativ</grapheme><phoneme>ˈmiːdiətɪv</phoneme></lexeme> <!-- mediative -->
   <lexeme><grapheme>mediatizez</grapheme><phoneme>ˈmiːdiətaɪzɪz</phoneme></lexeme> <!-- mediatises -->
-  <lexeme><grapheme>mediatly</grapheme><phoneme>v</phoneme></lexeme> <!-- mediately -->
-  <lexeme><grapheme>mediatz</grapheme><phoneme>v</phoneme></lexeme> <!-- mediates -->
+  <lexeme><grapheme>mediatly</grapheme><phoneme>ˈmiːdiːˌeɪtli</phoneme></lexeme> <!-- mediately -->
+  <lexeme><grapheme>mediatz</grapheme><phoneme>ˈmiːdiːˌeɪts</phoneme></lexeme> <!-- mediates -->
   <lexeme><grapheme>medicatez</grapheme><phoneme>ˈmɛdɪkeɪts</phoneme></lexeme> <!-- medicates -->
-  <lexeme><grapheme>medicin</grapheme><phoneme>v</phoneme></lexeme> <!-- medicine -->
-  <lexeme><grapheme>medicins</grapheme><phoneme>v</phoneme></lexeme> <!-- medicines -->
+  <lexeme><grapheme>medicin</grapheme><phoneme>ˈmɛdəsən</phoneme></lexeme> <!-- medicine -->
+  <lexeme><grapheme>medicins</grapheme><phoneme>ˈmɛdəsənz</phoneme></lexeme> <!-- medicines -->
   <lexeme><grapheme>meditatez</grapheme><phoneme>ˈmɛdɪteɪts</phoneme></lexeme> <!-- meditates -->
   <lexeme><grapheme>meditativ</grapheme><phoneme>ˈmɛdɪteɪtɪv</phoneme></lexeme> <!-- meditative -->
   <lexeme><grapheme>meditativly</grapheme><phoneme>ˈmɛdɪteɪtɪvli</phoneme></lexeme> <!-- meditatively -->
-  <lexeme><grapheme>meditativness</grapheme><phoneme>v</phoneme></lexeme> <!-- meditativeness -->
+  <lexeme><grapheme>meditativness</grapheme><phoneme>ˈmɛdəˌteɪtɪvnəs</phoneme></lexeme> <!-- meditativeness -->
   <lexeme><grapheme>medivacd</grapheme><phoneme>ˈmɛdɪvækt</phoneme></lexeme> <!-- medivacked -->
   <lexeme><grapheme>medivacz</grapheme><phoneme>ˈmɛdɪvæks</phoneme></lexeme> <!-- medivacs -->
   <lexeme><grapheme>meetz</grapheme><phoneme>ˈmiːts</phoneme></lexeme> <!-- meets -->
@@ -16583,34 +16583,34 @@
   <lexeme><grapheme>mentorz</grapheme><phoneme>ˈmɛntɔːrz</phoneme></lexeme> <!-- mentors -->
   <lexeme><grapheme>meoud</grapheme><phoneme>miˈaʊd</phoneme></lexeme> <!-- meoued -->
   <lexeme><grapheme>meouz</grapheme><phoneme>miˈaʊz</phoneme></lexeme> <!-- meous -->
-  <lexeme><grapheme>merang</grapheme><phoneme>v</phoneme></lexeme> <!-- meringue -->
-  <lexeme><grapheme>merangs</grapheme><phoneme>v</phoneme></lexeme> <!-- meringues -->
+  <lexeme><grapheme>merang</grapheme><phoneme>məˈræŋ</phoneme></lexeme> <!-- meringue -->
+  <lexeme><grapheme>merangs</grapheme><phoneme>məˈræŋz</phoneme></lexeme> <!-- meringues -->
   <lexeme><grapheme>mercerizez</grapheme><phoneme>ˈmɜːrsəraɪzɪz</phoneme></lexeme> <!-- mercerises -->
   <lexeme><grapheme>mercuratez</grapheme><phoneme>ˈmɜːrkjʊreɪts</phoneme></lexeme> <!-- mercurates -->
   <lexeme><grapheme>mercurizez</grapheme><phoneme>ˈmɜːrkjʊraɪzɪz</phoneme></lexeme> <!-- mercurizes -->
   <lexeme><grapheme>merenghe</grapheme><phoneme>məˈrɛŋɡeɪ</phoneme></lexeme> <!-- merengue -->
-  <lexeme><grapheme>mergez</grapheme><phoneme>v</phoneme></lexeme> <!-- merges -->
-  <lexeme><grapheme>meritz</grapheme><phoneme>v</phoneme></lexeme> <!-- merits -->
+  <lexeme><grapheme>mergez</grapheme><phoneme>ˈmɜːrdʒɪz</phoneme></lexeme> <!-- merges -->
+  <lexeme><grapheme>meritz</grapheme><phoneme>ˈmɛrəts</phoneme></lexeme> <!-- merits -->
   <lexeme><grapheme>merloh</grapheme><phoneme>mɛrˈloʊ</phoneme></lexeme> <!-- merlot -->
   <lexeme><grapheme>merlohs</grapheme><phoneme>mɛrˈloʊz</phoneme></lexeme> <!-- merlots -->
   <lexeme><grapheme>merqh</grapheme><phoneme>ˈmɜːrtʃ</phoneme></lexeme> <!-- merch -->
-  <lexeme><grapheme>merqhandise</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandise -->
-  <lexeme><grapheme>merqhandised</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandised -->
-  <lexeme><grapheme>merqhandiser</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandiser -->
-  <lexeme><grapheme>merqhandisers</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandisers -->
-  <lexeme><grapheme>merqhandises</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandises -->
-  <lexeme><grapheme>merqhandisez</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandises -->
-  <lexeme><grapheme>merqhandising</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandising -->
-  <lexeme><grapheme>merqhandisings</grapheme><phoneme>v</phoneme></lexeme> <!-- merchandisings -->
-  <lexeme><grapheme>merqhant</grapheme><phoneme>v</phoneme></lexeme> <!-- merchant -->
-  <lexeme><grapheme>merqhantability</grapheme><phoneme>v</phoneme></lexeme> <!-- merchantability -->
-  <lexeme><grapheme>merqhantable</grapheme><phoneme>v</phoneme></lexeme> <!-- merchantable -->
-  <lexeme><grapheme>merqhanted</grapheme><phoneme>v</phoneme></lexeme> <!-- merchanted -->
-  <lexeme><grapheme>merqhanting</grapheme><phoneme>v</phoneme></lexeme> <!-- merchanting -->
-  <lexeme><grapheme>merqhantman</grapheme><phoneme>v</phoneme></lexeme> <!-- merchantman -->
-  <lexeme><grapheme>merqhantmen</grapheme><phoneme>v</phoneme></lexeme> <!-- merchantmen -->
-  <lexeme><grapheme>merqhants</grapheme><phoneme>v</phoneme></lexeme> <!-- merchants -->
-  <lexeme><grapheme>merqhantz</grapheme><phoneme>v</phoneme></lexeme> <!-- merchants -->
+  <lexeme><grapheme>merqhandise</grapheme><phoneme>ˈmɜːrtʃənˌdaɪz</phoneme></lexeme> <!-- merchandise -->
+  <lexeme><grapheme>merqhandised</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzd</phoneme></lexeme> <!-- merchandised -->
+  <lexeme><grapheme>merqhandiser</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzər</phoneme></lexeme> <!-- merchandiser -->
+  <lexeme><grapheme>merqhandisers</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzərz</phoneme></lexeme> <!-- merchandisers -->
+  <lexeme><grapheme>merqhandises</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzɪz</phoneme></lexeme> <!-- merchandises -->
+  <lexeme><grapheme>merqhandisez</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzɪz</phoneme></lexeme> <!-- merchandises -->
+  <lexeme><grapheme>merqhandising</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzɪŋ</phoneme></lexeme> <!-- merchandising -->
+  <lexeme><grapheme>merqhandisings</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzɪŋz</phoneme></lexeme> <!-- merchandisings -->
+  <lexeme><grapheme>merqhant</grapheme><phoneme>ˈmɜːrtʃənt</phoneme></lexeme> <!-- merchant -->
+  <lexeme><grapheme>merqhantability</grapheme><phoneme>ˌmɜːrtʃəntəˈbɪlɪtiː</phoneme></lexeme> <!-- merchantability -->
+  <lexeme><grapheme>merqhantable</grapheme><phoneme>ˈmɜːrtʃəntəbəl</phoneme></lexeme> <!-- merchantable -->
+  <lexeme><grapheme>merqhanted</grapheme><phoneme>ˈmɜːrtʃəntɪd</phoneme></lexeme> <!-- merchanted -->
+  <lexeme><grapheme>merqhanting</grapheme><phoneme>ˈmɜːrtʃəntɪŋ</phoneme></lexeme> <!-- merchanting -->
+  <lexeme><grapheme>merqhantman</grapheme><phoneme>ˈmɜːrtʃəntmən</phoneme></lexeme> <!-- merchantman -->
+  <lexeme><grapheme>merqhantmen</grapheme><phoneme>ˈmɜːrtʃəntmɪn</phoneme></lexeme> <!-- merchantmen -->
+  <lexeme><grapheme>merqhants</grapheme><phoneme>ˈmɜːrtʃənts</phoneme></lexeme> <!-- merchants -->
+  <lexeme><grapheme>merqhantz</grapheme><phoneme>ˈmɜːrtʃənts</phoneme></lexeme> <!-- merchants -->
   <lexeme><grapheme>merrythoht</grapheme><phoneme>ˈmɛriθɔːt</phoneme></lexeme> <!-- merrythought -->
   <lexeme><grapheme>merrythohts</grapheme><phoneme>ˈmɛriθɔːts</phoneme></lexeme> <!-- merrythoughts -->
   <lexeme><grapheme>meseemd</grapheme><phoneme>mɪˈsiːmd</phoneme></lexeme> <!-- meseemed -->
@@ -16619,27 +16619,27 @@
   <lexeme><grapheme>meshez</grapheme><phoneme>ˈmɛʃɪz</phoneme></lexeme> <!-- meshes -->
   <lexeme><grapheme>mesmerizez</grapheme><phoneme>ˈmɛzməraɪzɪz</phoneme></lexeme> <!-- mesmerises -->
   <lexeme><grapheme>mesqit</grapheme><phoneme>ˈmɛskiːt</phoneme></lexeme> <!-- mesquit -->
-  <lexeme><grapheme>mesqite</grapheme><phoneme>v</phoneme></lexeme> <!-- mesquite -->
-  <lexeme><grapheme>mesqites</grapheme><phoneme>v</phoneme></lexeme> <!-- mesquites -->
+  <lexeme><grapheme>mesqite</grapheme><phoneme>ˈmɛˌskiːt</phoneme></lexeme> <!-- mesquite -->
+  <lexeme><grapheme>mesqites</grapheme><phoneme>ˈmɛˌskiːts</phoneme></lexeme> <!-- mesquites -->
   <lexeme><grapheme>mesqits</grapheme><phoneme>ˈmɛskiːts</phoneme></lexeme> <!-- mesquits -->
-  <lexeme><grapheme>messagez</grapheme><phoneme>v</phoneme></lexeme> <!-- messages -->
+  <lexeme><grapheme>messagez</grapheme><phoneme>ˈmɛsədʒəz</phoneme></lexeme> <!-- messages -->
   <lexeme><grapheme>messd</grapheme><phoneme>ˈmɛst</phoneme></lexeme> <!-- messed -->
   <lexeme><grapheme>messez</grapheme><phoneme>ˈmɛsɪz</phoneme></lexeme> <!-- messes -->
   <lexeme><grapheme>mesurabilities</grapheme><phoneme>ˌmɛʒərəˈbɪlɪtiz</phoneme></lexeme> <!-- measurabilities -->
-  <lexeme><grapheme>mesurability</grapheme><phoneme>v</phoneme></lexeme> <!-- measurability -->
-  <lexeme><grapheme>mesurable</grapheme><phoneme>v</phoneme></lexeme> <!-- measurable -->
-  <lexeme><grapheme>mesurably</grapheme><phoneme>v</phoneme></lexeme> <!-- measurably -->
-  <lexeme><grapheme>mesure</grapheme><phoneme>v</phoneme></lexeme> <!-- measure -->
-  <lexeme><grapheme>mesured</grapheme><phoneme>v</phoneme></lexeme> <!-- measured -->
-  <lexeme><grapheme>mesuredly</grapheme><phoneme>v</phoneme></lexeme> <!-- measuredly -->
-  <lexeme><grapheme>mesureless</grapheme><phoneme>v</phoneme></lexeme> <!-- measureless -->
-  <lexeme><grapheme>mesurement</grapheme><phoneme>v</phoneme></lexeme> <!-- measurement -->
-  <lexeme><grapheme>mesurements</grapheme><phoneme>v</phoneme></lexeme> <!-- measurements -->
-  <lexeme><grapheme>mesurer</grapheme><phoneme>v</phoneme></lexeme> <!-- measurer -->
-  <lexeme><grapheme>mesurers</grapheme><phoneme>v</phoneme></lexeme> <!-- measurers -->
-  <lexeme><grapheme>mesures</grapheme><phoneme>v</phoneme></lexeme> <!-- measures -->
-  <lexeme><grapheme>mesurez</grapheme><phoneme>v</phoneme></lexeme> <!-- measures -->
-  <lexeme><grapheme>mesuring</grapheme><phoneme>v</phoneme></lexeme> <!-- measuring -->
+  <lexeme><grapheme>mesurability</grapheme><phoneme>ˌmɛʒərəˈbɪlɪtiː</phoneme></lexeme> <!-- measurability -->
+  <lexeme><grapheme>mesurable</grapheme><phoneme>ˈmɛʒərəbəl</phoneme></lexeme> <!-- measurable -->
+  <lexeme><grapheme>mesurably</grapheme><phoneme>ˈmɛʒərəbliː</phoneme></lexeme> <!-- measurably -->
+  <lexeme><grapheme>mesure</grapheme><phoneme>ˈmɛʒər</phoneme></lexeme> <!-- measure -->
+  <lexeme><grapheme>mesured</grapheme><phoneme>ˈmɛʒərd</phoneme></lexeme> <!-- measured -->
+  <lexeme><grapheme>mesuredly</grapheme><phoneme>ˈmɛʒərdli</phoneme></lexeme> <!-- measuredly -->
+  <lexeme><grapheme>mesureless</grapheme><phoneme>ˈmɛʒərləs</phoneme></lexeme> <!-- measureless -->
+  <lexeme><grapheme>mesurement</grapheme><phoneme>ˈmɛʒərmənt</phoneme></lexeme> <!-- measurement -->
+  <lexeme><grapheme>mesurements</grapheme><phoneme>ˈmɛʒərmənts</phoneme></lexeme> <!-- measurements -->
+  <lexeme><grapheme>mesurer</grapheme><phoneme>ˈmɛʒərər</phoneme></lexeme> <!-- measurer -->
+  <lexeme><grapheme>mesurers</grapheme><phoneme>ˈmɛʒərərz</phoneme></lexeme> <!-- measurers -->
+  <lexeme><grapheme>mesures</grapheme><phoneme>ˈmɛʒərz</phoneme></lexeme> <!-- measures -->
+  <lexeme><grapheme>mesurez</grapheme><phoneme>ˈmɛʒərz</phoneme></lexeme> <!-- measures -->
+  <lexeme><grapheme>mesuring</grapheme><phoneme>ˈmɛʒərɪŋ</phoneme></lexeme> <!-- measuring -->
   <lexeme><grapheme>metabolizez</grapheme><phoneme>mɪˈtæbəlaɪzɪz</phoneme></lexeme> <!-- metabolises -->
   <lexeme><grapheme>metald</grapheme><phoneme>ˈmɛtəld</phoneme></lexeme> <!-- metaled -->
   <lexeme><grapheme>metalhedd</grapheme><phoneme>ˈmɛtəlhɛd</phoneme></lexeme> <!-- metalhead -->
@@ -16648,11 +16648,11 @@
   <lexeme><grapheme>metalz</grapheme><phoneme>ˈmɛtəlz</phoneme></lexeme> <!-- metals -->
   <lexeme><grapheme>metamorphosez</grapheme><phoneme>ˌmɛtəˈmɔːrfoʊsiːz</phoneme></lexeme> <!-- metamorphoses -->
   <lexeme><grapheme>metastasizez</grapheme><phoneme>mɪˈtæstəsaɪzɪz</phoneme></lexeme> <!-- metastasises -->
-  <lexeme><grapheme>meterd</grapheme><phoneme>v</phoneme></lexeme> <!-- metered -->
-  <lexeme><grapheme>meterz</grapheme><phoneme>v</phoneme></lexeme> <!-- meters -->
-  <lexeme><grapheme>metez</grapheme><phoneme>v</phoneme></lexeme> <!-- metes -->
+  <lexeme><grapheme>meterd</grapheme><phoneme>ˈmiːtərd</phoneme></lexeme> <!-- metered -->
+  <lexeme><grapheme>meterz</grapheme><phoneme>ˈmiːtərz</phoneme></lexeme> <!-- meters -->
+  <lexeme><grapheme>metez</grapheme><phoneme>miːts</phoneme></lexeme> <!-- metes -->
   <lexeme><grapheme>methodizez</grapheme><phoneme>ˈmɛθədaɪzɪz</phoneme></lexeme> <!-- methodises -->
-  <lexeme><grapheme>methodz</grapheme><phoneme>v</phoneme></lexeme> <!-- methods -->
+  <lexeme><grapheme>methodz</grapheme><phoneme>ˈmɛθədz</phoneme></lexeme> <!-- methods -->
   <lexeme><grapheme>methylatez</grapheme><phoneme>ˈmɛθəleɪts</phoneme></lexeme> <!-- methylates -->
   <lexeme><grapheme>metieh</grapheme><phoneme>ˈmɛtieɪ</phoneme></lexeme> <!-- metier -->
   <lexeme><grapheme>metiehs</grapheme><phoneme>ˈmɛtieɪz</phoneme></lexeme> <!-- metiers -->
@@ -16761,11 +16761,11 @@
   <lexeme><grapheme>minord</grapheme><phoneme>ˈmaɪnərd</phoneme></lexeme> <!-- minored -->
   <lexeme><grapheme>minorz</grapheme><phoneme>ˈmaɪnərz</phoneme></lexeme> <!-- minors -->
   <lexeme><grapheme>mintz</grapheme><phoneme>ˈmɪnts</phoneme></lexeme> <!-- mints -->
-  <lexeme><grapheme>minut</grapheme><phoneme>v</phoneme></lexeme> <!-- minute -->
+  <lexeme><grapheme>minut</grapheme><phoneme>ˈmɪnət</phoneme></lexeme> <!-- minute -->
   <lexeme><grapheme>minutman</grapheme><phoneme>ˈmɪnɪtmæn</phoneme></lexeme> <!-- minuteman -->
   <lexeme><grapheme>minutmen</grapheme><phoneme>ˈmɪnɪtmɛn</phoneme></lexeme> <!-- minutemen -->
-  <lexeme><grapheme>minuts</grapheme><phoneme>v</phoneme></lexeme> <!-- minutes -->
-  <lexeme><grapheme>minutz</grapheme><phoneme>v</phoneme></lexeme> <!-- minutes -->
+  <lexeme><grapheme>minuts</grapheme><phoneme>ˈmɪnəts</phoneme></lexeme> <!-- minutes -->
+  <lexeme><grapheme>minutz</grapheme><phoneme>ˈmɪnəts</phoneme></lexeme> <!-- minutes -->
   <lexeme><grapheme>minyon</grapheme><phoneme>mɪnˈjɔːn</phoneme></lexeme> <!-- mignon -->
   <lexeme><grapheme>minyonett</grapheme><phoneme>ˌmɪnjəˈnɛt</phoneme></lexeme> <!-- mignonette -->
   <lexeme><grapheme>minyonetts</grapheme><phoneme>ˌmɪnjəˈnɛts</phoneme></lexeme> <!-- mignonettes -->
@@ -16833,7 +16833,7 @@
   <lexeme><grapheme>miscarriez</grapheme><phoneme>ˌmɪsˈmæriz</phoneme></lexeme> <!-- miscarries -->
   <lexeme><grapheme>miscastz</grapheme><phoneme>ˌmɪsˈkæsts</phoneme></lexeme> <!-- miscasts -->
   <lexeme><grapheme>miscatalogd</grapheme><phoneme>ˌmɪsˈkætəlɔːɡd</phoneme></lexeme> <!-- miscataloged -->
-  <lexeme><grapheme>mischaracterizez</grapheme><phoneme>v</phoneme></lexeme> <!-- mischaracterizes -->
+  <lexeme><grapheme>mischaracterizez</grapheme><phoneme>mɪˈskærəktərˌaɪzɪz</phoneme></lexeme> <!-- mischaracterizes -->
   <lexeme><grapheme>miscitez</grapheme><phoneme>ˌmɪsˈsaɪts</phoneme></lexeme> <!-- miscites -->
   <lexeme><grapheme>misclaimd</grapheme><phoneme>ˌmɪsˈkleɪmd</phoneme></lexeme> <!-- misclaimed -->
   <lexeme><grapheme>misclaimz</grapheme><phoneme>ˌmɪsˈkleɪmz</phoneme></lexeme> <!-- misclaims -->
@@ -16904,9 +16904,9 @@
   <lexeme><grapheme>misenterz</grapheme><phoneme>ˌmɪsˈɛntərz</phoneme></lexeme> <!-- misenters -->
   <lexeme><grapheme>misesteemd</grapheme><phoneme>ˌmɪsɛsˈtiːmd</phoneme></lexeme> <!-- misesteemed -->
   <lexeme><grapheme>misesteemz</grapheme><phoneme>ˌmɪsɛsˈtiːmz</phoneme></lexeme> <!-- misesteems -->
-  <lexeme><grapheme>misestimat</grapheme><phoneme>v</phoneme></lexeme> <!-- misestimate -->
-  <lexeme><grapheme>misestimatez</grapheme><phoneme>v</phoneme></lexeme> <!-- misestimates -->
-  <lexeme><grapheme>misestimats</grapheme><phoneme>v</phoneme></lexeme> <!-- misestimates -->
+  <lexeme><grapheme>misestimat</grapheme><phoneme>mɪsˈɛstəmət</phoneme></lexeme> <!-- misestimate -->
+  <lexeme><grapheme>misestimatez</grapheme><phoneme>mɪsˈɛstəməts</phoneme></lexeme> <!-- misestimates -->
+  <lexeme><grapheme>misestimats</grapheme><phoneme>mɪsˈɛstəməts</phoneme></lexeme> <!-- misestimates -->
   <lexeme><grapheme>misevaluatez</grapheme><phoneme>ˌmɪsɪˈvæljʊeɪts</phoneme></lexeme> <!-- misevaluates -->
   <lexeme><grapheme>misfieldz</grapheme><phoneme>ˌmɪsˈfiːldz</phoneme></lexeme> <!-- misfields -->
   <lexeme><grapheme>misfilez</grapheme><phoneme>ˌmɪsˈfaɪlz</phoneme></lexeme> <!-- misfiles -->
@@ -16933,9 +16933,9 @@
   <lexeme><grapheme>misghide</grapheme><phoneme>ˌmɪsˈɡaɪd</phoneme></lexeme> <!-- misguide -->
   <lexeme><grapheme>misghided</grapheme><phoneme>ˌmɪsˈɡaɪdɪd</phoneme></lexeme> <!-- misguided -->
   <lexeme><grapheme>misghidedly</grapheme><phoneme>ˌmɪsˈɡaɪdɪdli</phoneme></lexeme> <!-- misguidedly -->
-  <lexeme><grapheme>misghidedness</grapheme><phoneme>v</phoneme></lexeme> <!-- misguidedness -->
-  <lexeme><grapheme>misghider</grapheme><phoneme>v</phoneme></lexeme> <!-- misguider -->
-  <lexeme><grapheme>misghiders</grapheme><phoneme>v</phoneme></lexeme> <!-- misguiders -->
+  <lexeme><grapheme>misghidedness</grapheme><phoneme>mɪsˈɡaɪdɪdnəs</phoneme></lexeme> <!-- misguidedness -->
+  <lexeme><grapheme>misghider</grapheme><phoneme>mɪsˈɡaɪdər</phoneme></lexeme> <!-- misguider -->
+  <lexeme><grapheme>misghiders</grapheme><phoneme>mɪsˈɡaɪdərz</phoneme></lexeme> <!-- misguiders -->
   <lexeme><grapheme>misghidez</grapheme><phoneme>ˌmɪsˈɡaɪdz</phoneme></lexeme> <!-- misguides -->
   <lexeme><grapheme>misghiding</grapheme><phoneme>ˌmɪsˈɡaɪdɪŋ</phoneme></lexeme> <!-- misguiding -->
   <lexeme><grapheme>misgiv</grapheme><phoneme>ˌmɪsˈɡɪv</phoneme></lexeme> <!-- misgive -->
@@ -16991,20 +16991,20 @@
   <lexeme><grapheme>mismatchez</grapheme><phoneme>ˌmɪsˈmætʃɪz</phoneme></lexeme> <!-- mismatches -->
   <lexeme><grapheme>mismatez</grapheme><phoneme>ˌmɪsˈmeɪts</phoneme></lexeme> <!-- mismates -->
   <lexeme><grapheme>mismeetz</grapheme><phoneme>ˌmɪsˈmiːts</phoneme></lexeme> <!-- mismeets -->
-  <lexeme><grapheme>mismesure</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasure -->
-  <lexeme><grapheme>mismesured</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasured -->
-  <lexeme><grapheme>mismesurement</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasurement -->
-  <lexeme><grapheme>mismesurements</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasurements -->
-  <lexeme><grapheme>mismesures</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasures -->
-  <lexeme><grapheme>mismesurez</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasures -->
-  <lexeme><grapheme>mismesuring</grapheme><phoneme>v</phoneme></lexeme> <!-- mismeasuring -->
+  <lexeme><grapheme>mismesure</grapheme><phoneme>mɪsˈmɛʒər</phoneme></lexeme> <!-- mismeasure -->
+  <lexeme><grapheme>mismesured</grapheme><phoneme>mɪsˈmɛʒərd</phoneme></lexeme> <!-- mismeasured -->
+  <lexeme><grapheme>mismesurement</grapheme><phoneme>mɪsˈmɛʒərmənt</phoneme></lexeme> <!-- mismeasurement -->
+  <lexeme><grapheme>mismesurements</grapheme><phoneme>mɪsˈmɛʒərmənts</phoneme></lexeme> <!-- mismeasurements -->
+  <lexeme><grapheme>mismesures</grapheme><phoneme>mɪsˈmɛʒərz</phoneme></lexeme> <!-- mismeasures -->
+  <lexeme><grapheme>mismesurez</grapheme><phoneme>mɪsˈmɛʒərz</phoneme></lexeme> <!-- mismeasures -->
+  <lexeme><grapheme>mismesuring</grapheme><phoneme>mɪsˈmɛʒərɪŋ</phoneme></lexeme> <!-- mismeasuring -->
   <lexeme><grapheme>mismoov</grapheme><phoneme>ˌmɪsˈmuːv</phoneme></lexeme> <!-- mismove -->
   <lexeme><grapheme>mismoovd</grapheme><phoneme>ˌmɪsˈmuːvd</phoneme></lexeme> <!-- mismoved -->
   <lexeme><grapheme>mismooving</grapheme><phoneme>ˌmɪsˈmuːvɪŋ</phoneme></lexeme> <!-- mismoving -->
   <lexeme><grapheme>mismoovz</grapheme><phoneme>ˌmɪsˈmuːvz</phoneme></lexeme> <!-- mismoves -->
   <lexeme><grapheme>misnamez</grapheme><phoneme>ˌmɪsˈneɪmz</phoneme></lexeme> <!-- misnames -->
   <lexeme><grapheme>misnomerd</grapheme><phoneme>ˌmɪsˈnoʊmərd</phoneme></lexeme> <!-- misnomered -->
-  <lexeme><grapheme>misnomerz</grapheme><phoneme>v</phoneme></lexeme> <!-- misnomers -->
+  <lexeme><grapheme>misnomerz</grapheme><phoneme>mɪˈsnoʊmərz</phoneme></lexeme> <!-- misnomers -->
   <lexeme><grapheme>misorderd</grapheme><phoneme>ˌmɪsˈɔːrdərd</phoneme></lexeme> <!-- misordered -->
   <lexeme><grapheme>misorderz</grapheme><phoneme>ˌmɪsˈɔːrdərz</phoneme></lexeme> <!-- misorders -->
   <lexeme><grapheme>misorientz</grapheme><phoneme>ˌmɪsˈɔːriɛnts</phoneme></lexeme> <!-- misorients -->
@@ -17036,7 +17036,7 @@
   <lexeme><grapheme>misprintz</grapheme><phoneme>ˈmɪsprɪnts</phoneme></lexeme> <!-- misprints -->
   <lexeme><grapheme>misprizez</grapheme><phoneme>ˌmɪsˈpraɪzɪz</phoneme></lexeme> <!-- misprizes -->
   <lexeme><grapheme>misprogramd</grapheme><phoneme>ˌmɪsˈproʊɡræmd</phoneme></lexeme> <!-- misprogramed -->
-  <lexeme><grapheme>misprogramz</grapheme><phoneme>v</phoneme></lexeme> <!-- misprogrammes -->
+  <lexeme><grapheme>misprogramz</grapheme><phoneme>mɪsˈproʊˌɡræmz</phoneme></lexeme> <!-- misprogrammes -->
   <lexeme><grapheme>mispronouncez</grapheme><phoneme>ˌmɪsprəˈnaʊnsɪz</phoneme></lexeme> <!-- mispronounces -->
   <lexeme><grapheme>misqhance</grapheme><phoneme>mɪsˈtʃæns</phoneme></lexeme> <!-- mischance -->
   <lexeme><grapheme>misqhanced</grapheme><phoneme>mɪsˈtʃænst</phoneme></lexeme> <!-- mischanced -->
@@ -17061,11 +17061,11 @@
   <lexeme><grapheme>misquotez</grapheme><phoneme>ˌmɪsˈkwoʊts</phoneme></lexeme> <!-- misquotes -->
   <lexeme><grapheme>misraisez</grapheme><phoneme>ˌmɪsˈreɪzɪz</phoneme></lexeme> <!-- misraises -->
   <lexeme><grapheme>misratez</grapheme><phoneme>ˌmɪsˈreɪts</phoneme></lexeme> <!-- misrates -->
-  <lexeme><grapheme>misreadz</grapheme><phoneme>v</phoneme></lexeme> <!-- misreads -->
+  <lexeme><grapheme>misreadz</grapheme><phoneme>mɪsˈriːdz</phoneme></lexeme> <!-- misreads -->
   <lexeme><grapheme>misreckond</grapheme><phoneme>ˌmɪsˈrɛkənd</phoneme></lexeme> <!-- misreckoned -->
   <lexeme><grapheme>misreckonz</grapheme><phoneme>ˌmɪsˈrɛkənz</phoneme></lexeme> <!-- misreckons -->
   <lexeme><grapheme>misrecordz</grapheme><phoneme>ˌmɪsrɪˈkɔːrdz</phoneme></lexeme> <!-- misrecords -->
-  <lexeme><grapheme>misredd</grapheme><phoneme>v</phoneme></lexeme> <!-- misread -->
+  <lexeme><grapheme>misredd</grapheme><phoneme>mɪsˈriːd</phoneme></lexeme> <!-- misread -->
   <lexeme><grapheme>misreferd</grapheme><phoneme>ˌmɪsrɪˈfɜːrd</phoneme></lexeme> <!-- misreferred -->
   <lexeme><grapheme>misreferz</grapheme><phoneme>ˌmɪsrɪˈfɜːrz</phoneme></lexeme> <!-- misrefers -->
   <lexeme><grapheme>misregisterd</grapheme><phoneme>ˌmɪsˈrɛdʒɪstərd</phoneme></lexeme> <!-- misregistered -->
@@ -17146,12 +17146,12 @@
   <lexeme><grapheme>mistypez</grapheme><phoneme>ˌmɪsˈtaɪps</phoneme></lexeme> <!-- mistypes -->
   <lexeme><grapheme>mistz</grapheme><phoneme>ˈmɪsts</phoneme></lexeme> <!-- mists -->
   <lexeme><grapheme>misunderstandz</grapheme><phoneme>ˌmɪsʌndərˈstændz</phoneme></lexeme> <!-- misunderstands -->
-  <lexeme><grapheme>misuze</grapheme><phoneme>v</phoneme></lexeme> <!-- misuse -->
-  <lexeme><grapheme>misuzed</grapheme><phoneme>v</phoneme></lexeme> <!-- misused -->
-  <lexeme><grapheme>misuzer</grapheme><phoneme>v</phoneme></lexeme> <!-- misuser -->
-  <lexeme><grapheme>misuzers</grapheme><phoneme>v</phoneme></lexeme> <!-- misusers -->
-  <lexeme><grapheme>misuzez</grapheme><phoneme>v</phoneme></lexeme> <!-- misuses -->
-  <lexeme><grapheme>misuzing</grapheme><phoneme>v</phoneme></lexeme> <!-- misusing -->
+  <lexeme><grapheme>misuze</grapheme><phoneme>mɪˈsjuːz</phoneme></lexeme> <!-- misuse -->
+  <lexeme><grapheme>misuzed</grapheme><phoneme>mɪˈsjuːzd</phoneme></lexeme> <!-- misused -->
+  <lexeme><grapheme>misuzer</grapheme><phoneme>mɪˈsjuːzər</phoneme></lexeme> <!-- misuser -->
+  <lexeme><grapheme>misuzers</grapheme><phoneme>mɪˈsjuːzərz</phoneme></lexeme> <!-- misusers -->
+  <lexeme><grapheme>misuzez</grapheme><phoneme>mɪˈsjuːzɪz</phoneme></lexeme> <!-- misuses -->
+  <lexeme><grapheme>misuzing</grapheme><phoneme>mɪˈsjuːzɪŋ</phoneme></lexeme> <!-- misusing -->
   <lexeme><grapheme>misvaluez</grapheme><phoneme>ˌmɪsˈvæljuːz</phoneme></lexeme> <!-- misvalues -->
   <lexeme><grapheme>miswordz</grapheme><phoneme>ˌmɪsˈwɜːrdz</phoneme></lexeme> <!-- miswords -->
   <lexeme><grapheme>miswritez</grapheme><phoneme>ˌmɪsˈraɪts</phoneme></lexeme> <!-- miswrites -->
@@ -17180,11 +17180,11 @@
   <lexeme><grapheme>mockz</grapheme><phoneme>ˈmɑːks</phoneme></lexeme> <!-- mocks -->
   <lexeme><grapheme>modeld</grapheme><phoneme>ˈmɑːdəld</phoneme></lexeme> <!-- modeled -->
   <lexeme><grapheme>modelz</grapheme><phoneme>ˈmɑːdəlz</phoneme></lexeme> <!-- models -->
-  <lexeme><grapheme>moderat</grapheme><phoneme>v</phoneme></lexeme> <!-- moderate -->
-  <lexeme><grapheme>moderatez</grapheme><phoneme>v</phoneme></lexeme> <!-- moderates -->
-  <lexeme><grapheme>moderatly</grapheme><phoneme>v</phoneme></lexeme> <!-- moderately -->
-  <lexeme><grapheme>moderatness</grapheme><phoneme>v</phoneme></lexeme> <!-- moderateness -->
-  <lexeme><grapheme>moderats</grapheme><phoneme>v</phoneme></lexeme> <!-- moderates -->
+  <lexeme><grapheme>moderat</grapheme><phoneme>ˈmɑːdərət</phoneme></lexeme> <!-- moderate -->
+  <lexeme><grapheme>moderatez</grapheme><phoneme>ˈmɑːdərəts</phoneme></lexeme> <!-- moderates -->
+  <lexeme><grapheme>moderatly</grapheme><phoneme>ˈmɑːdərətliː</phoneme></lexeme> <!-- moderately -->
+  <lexeme><grapheme>moderatness</grapheme><phoneme>ˈmɑːdərətnəs</phoneme></lexeme> <!-- moderateness -->
+  <lexeme><grapheme>moderats</grapheme><phoneme>ˈmɑːdərəts</phoneme></lexeme> <!-- moderates -->
   <lexeme><grapheme>modernizez</grapheme><phoneme>ˈmɑːdərnaɪzɪz</phoneme></lexeme> <!-- modernises -->
   <lexeme><grapheme>modifiez</grapheme><phoneme>ˈmɑːdəfaɪz</phoneme></lexeme> <!-- modifies -->
   <lexeme><grapheme>modularizez</grapheme><phoneme>ˈmɑːdʒʊləraɪzɪz</phoneme></lexeme> <!-- modularises -->
@@ -17244,16 +17244,16 @@
   <lexeme><grapheme>mononucleat</grapheme><phoneme>ˌmɑːnoʊˈnuːkliət</phoneme></lexeme> <!-- mononucleate -->
   <lexeme><grapheme>monopolizez</grapheme><phoneme>məˈnɑːpəlaɪzɪz</phoneme></lexeme> <!-- monopolises -->
   <lexeme><grapheme>monounsaturat</grapheme><phoneme>ˌmɑːnoʊʌnˈsætʃəreɪt</phoneme></lexeme> <!-- monounsaturate -->
-  <lexeme><grapheme>monounsaturats</grapheme><phoneme>v</phoneme></lexeme> <!-- monounsaturates -->
+  <lexeme><grapheme>monounsaturats</grapheme><phoneme>ˌmɑːnoʊʌnˈsætʃəˌreɪts</phoneme></lexeme> <!-- monounsaturates -->
   <lexeme><grapheme>monsenyeur</grapheme><phoneme>ˌmɔːnsiːnˈjɜːr</phoneme></lexeme> <!-- monseigneur -->
-  <lexeme><grapheme>monsenyeurs</grapheme><phoneme>v</phoneme></lexeme> <!-- monseigneurs -->
+  <lexeme><grapheme>monsenyeurs</grapheme><phoneme>ˌmɑːnseɪnˈjɜːrz</phoneme></lexeme> <!-- monseigneurs -->
   <lexeme><grapheme>monsterz</grapheme><phoneme>ˈmɑːnstərz</phoneme></lexeme> <!-- monsters -->
   <lexeme><grapheme>montagez</grapheme><phoneme>mɔːnˈtɑːʒɪz</phoneme></lexeme> <!-- montages -->
   <lexeme><grapheme>monumentalizez</grapheme><phoneme>ˌmɑːnjʊˈmɛntəlaɪzɪz</phoneme></lexeme> <!-- monumentalises -->
   <lexeme><grapheme>mooflon</grapheme><phoneme>ˈmuːflɑːn</phoneme></lexeme> <!-- moufflon -->
-  <lexeme><grapheme>mooflons</grapheme><phoneme>v</phoneme></lexeme> <!-- moufflons -->
+  <lexeme><grapheme>mooflons</grapheme><phoneme>ˈmuːflɑːnz</phoneme></lexeme> <!-- moufflons -->
   <lexeme><grapheme>moolage</grapheme><phoneme>muːˈlɑːʒ</phoneme></lexeme> <!-- moulage -->
-  <lexeme><grapheme>moolages</grapheme><phoneme>v</phoneme></lexeme> <!-- moulages -->
+  <lexeme><grapheme>moolages</grapheme><phoneme>muːˈlɑːʒɪz</phoneme></lexeme> <!-- moulages -->
   <lexeme><grapheme>mooncaff</grapheme><phoneme>ˈmuːnkæf</phoneme></lexeme> <!-- mooncalf -->
   <lexeme><grapheme>mooncavvs</grapheme><phoneme>ˈmuːnkævz</phoneme></lexeme> <!-- mooncalves -->
   <lexeme><grapheme>moond</grapheme><phoneme>ˈmuːnd</phoneme></lexeme> <!-- mooned -->
@@ -17288,7 +17288,7 @@
   <lexeme><grapheme>moorfuwls</grapheme><phoneme>ˈmʊərfaʊlz</phoneme></lexeme> <!-- moorfowls -->
   <lexeme><grapheme>moorz</grapheme><phoneme>ˈmʊərz</phoneme></lexeme> <!-- moors -->
   <lexeme><grapheme>mooshwar</grapheme><phoneme>muːˈʃwɑːr</phoneme></lexeme> <!-- mouchoir -->
-  <lexeme><grapheme>mooshwars</grapheme><phoneme>v</phoneme></lexeme> <!-- mouchoirs -->
+  <lexeme><grapheme>mooshwars</grapheme><phoneme>muːˈʃwɑːrz</phoneme></lexeme> <!-- mouchoirs -->
   <lexeme><grapheme>moosse</grapheme><phoneme>ˈmus</phoneme></lexeme> <!-- mousse -->
   <lexeme><grapheme>moossed</grapheme><phoneme>ˈmust</phoneme></lexeme> <!-- moussed -->
   <lexeme><grapheme>moosseline</grapheme><phoneme>ˌmusəˈlin</phoneme></lexeme> <!-- mousseline -->
@@ -17335,36 +17335,36 @@
   <lexeme><grapheme>moqett</grapheme><phoneme>moʊˈkɛt</phoneme></lexeme> <!-- moquette -->
   <lexeme><grapheme>moqetts</grapheme><phoneme>moʊˈkɛts</phoneme></lexeme> <!-- moquettes -->
   <lexeme><grapheme>moqhila</grapheme><phoneme>moʊˈtʃiːlə</phoneme></lexeme> <!-- mochila -->
-  <lexeme><grapheme>moqhilas</grapheme><phoneme>v</phoneme></lexeme> <!-- mochilas -->
+  <lexeme><grapheme>moqhilas</grapheme><phoneme>moʊˈtʃiːləz</phoneme></lexeme> <!-- mochilas -->
   <lexeme><grapheme>moralizez</grapheme><phoneme>ˈmɔːrəlaɪzɪz</phoneme></lexeme> <!-- moralises -->
   <lexeme><grapheme>morceaus</grapheme><phoneme>mɔːrˈsoʊz</phoneme></lexeme> <!-- morceaux -->
   <lexeme><grapheme>mordantz</grapheme><phoneme>ˈmɔːrdənts</phoneme></lexeme> <!-- mordants -->
   <lexeme><grapheme>moresq</grapheme><phoneme>məˈrɛsk</phoneme></lexeme> <!-- moresque -->
-  <lexeme><grapheme>moresqs</grapheme><phoneme>v</phoneme></lexeme> <!-- moresques -->
+  <lexeme><grapheme>moresqs</grapheme><phoneme>məˈrɛsks</phoneme></lexeme> <!-- moresques -->
   <lexeme><grapheme>morg</grapheme><phoneme>ˈmɔːrɡ</phoneme></lexeme> <!-- morgue -->
-  <lexeme><grapheme>morgage</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgage -->
-  <lexeme><grapheme>morgaged</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgaged -->
+  <lexeme><grapheme>morgage</grapheme><phoneme>ˈmɔːrɡədʒ</phoneme></lexeme> <!-- mortgage -->
+  <lexeme><grapheme>morgaged</grapheme><phoneme>ˈmɔːrɡɪdʒd</phoneme></lexeme> <!-- mortgaged -->
   <lexeme><grapheme>morgagee</grapheme><phoneme>ˌmɔːrɡəˈdʒiː</phoneme></lexeme> <!-- mortgagee -->
-  <lexeme><grapheme>morgagees</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgagees -->
+  <lexeme><grapheme>morgagees</grapheme><phoneme>ˌmɔːrɡəˈdʒiːz</phoneme></lexeme> <!-- mortgagees -->
   <lexeme><grapheme>morgager</grapheme><phoneme>ˈmɔːrɡədʒər</phoneme></lexeme> <!-- mortgager -->
-  <lexeme><grapheme>morgagers</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgagers -->
-  <lexeme><grapheme>morgages</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgages -->
-  <lexeme><grapheme>morgagez</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgages -->
-  <lexeme><grapheme>morgaging</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgaging -->
+  <lexeme><grapheme>morgagers</grapheme><phoneme>ˈmɔːrɡədʒərz</phoneme></lexeme> <!-- mortgagers -->
+  <lexeme><grapheme>morgages</grapheme><phoneme>ˈmɔːrɡədʒəz</phoneme></lexeme> <!-- mortgages -->
+  <lexeme><grapheme>morgagez</grapheme><phoneme>ˈmɔːrɡədʒəz</phoneme></lexeme> <!-- mortgages -->
+  <lexeme><grapheme>morgaging</grapheme><phoneme>ˈmɔːrɡɪdʒɪŋ</phoneme></lexeme> <!-- mortgaging -->
   <lexeme><grapheme>morgagor</grapheme><phoneme>ˈmɔːrɡədʒɔːr</phoneme></lexeme> <!-- mortgagor -->
-  <lexeme><grapheme>morgagors</grapheme><phoneme>v</phoneme></lexeme> <!-- mortgagors -->
+  <lexeme><grapheme>morgagors</grapheme><phoneme>ˈmɔːrɡədʒərz</phoneme></lexeme> <!-- mortgagors -->
   <lexeme><grapheme>morgs</grapheme><phoneme>ˈmɔːrɡz</phoneme></lexeme> <!-- morgues -->
   <lexeme><grapheme>morrn</grapheme><phoneme>ˈmɔːrn</phoneme></lexeme> <!-- mourn -->
   <lexeme><grapheme>morrnd</grapheme><phoneme>ˈmɔːrnd</phoneme></lexeme> <!-- mourned -->
   <lexeme><grapheme>morrner</grapheme><phoneme>ˈmɔːrnər</phoneme></lexeme> <!-- mourner -->
   <lexeme><grapheme>morrners</grapheme><phoneme>ˈmɔːrnərz</phoneme></lexeme> <!-- mourners -->
   <lexeme><grapheme>morrnful</grapheme><phoneme>ˈmɔːrnfʊl</phoneme></lexeme> <!-- mournful -->
-  <lexeme><grapheme>morrnfuller</grapheme><phoneme>v</phoneme></lexeme> <!-- mournfuller -->
-  <lexeme><grapheme>morrnfullest</grapheme><phoneme>v</phoneme></lexeme> <!-- mournfullest -->
-  <lexeme><grapheme>morrnfully</grapheme><phoneme>v</phoneme></lexeme> <!-- mournfully -->
-  <lexeme><grapheme>morrnfulness</grapheme><phoneme>v</phoneme></lexeme> <!-- mournfulness -->
+  <lexeme><grapheme>morrnfuller</grapheme><phoneme>ˈmɔːrnfələr</phoneme></lexeme> <!-- mournfuller -->
+  <lexeme><grapheme>morrnfullest</grapheme><phoneme>ˈmɔːrnfələst</phoneme></lexeme> <!-- mournfullest -->
+  <lexeme><grapheme>morrnfully</grapheme><phoneme>ˈmɔːrnfəli</phoneme></lexeme> <!-- mournfully -->
+  <lexeme><grapheme>morrnfulness</grapheme><phoneme>ˈmɔːrnfəlnəs</phoneme></lexeme> <!-- mournfulness -->
   <lexeme><grapheme>morrning</grapheme><phoneme>ˈmɔːrnɪŋ</phoneme></lexeme> <!-- mourning -->
-  <lexeme><grapheme>morrningly</grapheme><phoneme>v</phoneme></lexeme> <!-- mourningly -->
+  <lexeme><grapheme>morrningly</grapheme><phoneme>ˈmɔːrnɪŋli</phoneme></lexeme> <!-- mourningly -->
   <lexeme><grapheme>morrnings</grapheme><phoneme>ˈmɔrnɪŋz</phoneme></lexeme> <!-- mournings -->
   <lexeme><grapheme>morrnz</grapheme><phoneme>ˈmɔrnz</phoneme></lexeme> <!-- mourns -->
   <lexeme><grapheme>morseld</grapheme><phoneme>ˈmɔːrsəld</phoneme></lexeme> <!-- morseled -->
@@ -17381,11 +17381,11 @@
   <lexeme><grapheme>moshez</grapheme><phoneme>ˈmɑːʃɪz</phoneme></lexeme> <!-- moshes -->
   <lexeme><grapheme>mosq</grapheme><phoneme>ˈmɑːsk</phoneme></lexeme> <!-- mosque -->
   <lexeme><grapheme>mosqito</grapheme><phoneme>məˈskiːtoʊ</phoneme></lexeme> <!-- mosquito -->
-  <lexeme><grapheme>mosqitoes</grapheme><phoneme>v</phoneme></lexeme> <!-- mosquitoes -->
-  <lexeme><grapheme>mosqitoey</grapheme><phoneme>v</phoneme></lexeme> <!-- mosquitoey -->
-  <lexeme><grapheme>mosqitofish</grapheme><phoneme>v</phoneme></lexeme> <!-- mosquitofish -->
-  <lexeme><grapheme>mosqitofishes</grapheme><phoneme>v</phoneme></lexeme> <!-- mosquitofishes -->
-  <lexeme><grapheme>mosqitos</grapheme><phoneme>v</phoneme></lexeme> <!-- mosquitos -->
+  <lexeme><grapheme>mosqitoes</grapheme><phoneme>məˈskiːtoʊz</phoneme></lexeme> <!-- mosquitoes -->
+  <lexeme><grapheme>mosqitoey</grapheme><phoneme>məˈskiːtoʊi</phoneme></lexeme> <!-- mosquitoey -->
+  <lexeme><grapheme>mosqitofish</grapheme><phoneme>məˈskiːtoʊˌfɪʃ</phoneme></lexeme> <!-- mosquitofish -->
+  <lexeme><grapheme>mosqitofishes</grapheme><phoneme>məˈskiːtoʊˌfɪʃɪz</phoneme></lexeme> <!-- mosquitofishes -->
+  <lexeme><grapheme>mosqitos</grapheme><phoneme>məˈskiːtoʊz</phoneme></lexeme> <!-- mosquitos -->
   <lexeme><grapheme>mosqs</grapheme><phoneme>ˈmɑːsks</phoneme></lexeme> <!-- mosques -->
   <lexeme><grapheme>mossbackd</grapheme><phoneme>ˈmɔːsbækt</phoneme></lexeme> <!-- mossbacked -->
   <lexeme><grapheme>mossd</grapheme><phoneme>ˈmɔːst</phoneme></lexeme> <!-- mossed -->
@@ -17402,9 +17402,9 @@
   <lexeme><grapheme>motiv</grapheme><phoneme>ˈmoʊtɪv</phoneme></lexeme> <!-- motive -->
   <lexeme><grapheme>motivatez</grapheme><phoneme>ˈmoʊtɪveɪts</phoneme></lexeme> <!-- motivates -->
   <lexeme><grapheme>motivativ</grapheme><phoneme>ˈmoʊtɪveɪtɪv</phoneme></lexeme> <!-- motivative -->
-  <lexeme><grapheme>motivd</grapheme><phoneme>v</phoneme></lexeme> <!-- motived -->
+  <lexeme><grapheme>motivd</grapheme><phoneme>ˈmoʊtɪvd</phoneme></lexeme> <!-- motived -->
   <lexeme><grapheme>motivless</grapheme><phoneme>ˈmoʊtɪvləs</phoneme></lexeme> <!-- motiveless -->
-  <lexeme><grapheme>motivlessly</grapheme><phoneme>v</phoneme></lexeme> <!-- motivelessly -->
+  <lexeme><grapheme>motivlessly</grapheme><phoneme>ˈmoʊtɪvləsli</phoneme></lexeme> <!-- motivelessly -->
   <lexeme><grapheme>motivs</grapheme><phoneme>ˈmoʊtɪvz</phoneme></lexeme> <!-- motives -->
   <lexeme><grapheme>motivz</grapheme><phoneme>ˈmoʊtɪvz</phoneme></lexeme> <!-- motives -->
   <lexeme><grapheme>motorbikez</grapheme><phoneme>ˈmoʊtərbaɪks</phoneme></lexeme> <!-- motorbikes -->
@@ -17418,18 +17418,18 @@
   <lexeme><grapheme>moundz</grapheme><phoneme>ˈmaʊndz</phoneme></lexeme> <!-- mounds -->
   <lexeme><grapheme>mountan</grapheme><phoneme>ˈmaʊntən</phoneme></lexeme> <!-- mountain -->
   <lexeme><grapheme>mountaneer</grapheme><phoneme>ˌmaʊntəˈnɪər</phoneme></lexeme> <!-- mountaineer -->
-  <lexeme><grapheme>mountaneerd</grapheme><phoneme>v</phoneme></lexeme> <!-- mountaineered -->
-  <lexeme><grapheme>mountaneering</grapheme><phoneme>v</phoneme></lexeme> <!-- mountaineering -->
-  <lexeme><grapheme>mountaneers</grapheme><phoneme>v</phoneme></lexeme> <!-- mountaineers -->
-  <lexeme><grapheme>mountaneerz</grapheme><phoneme>v</phoneme></lexeme> <!-- mountaineers -->
+  <lexeme><grapheme>mountaneerd</grapheme><phoneme>ˈmaʊntɪˌnɪrd</phoneme></lexeme> <!-- mountaineered -->
+  <lexeme><grapheme>mountaneering</grapheme><phoneme>ˈmaʊntɪˌnɪrɪŋ</phoneme></lexeme> <!-- mountaineering -->
+  <lexeme><grapheme>mountaneers</grapheme><phoneme>ˈmaʊntɪˌnɪrz</phoneme></lexeme> <!-- mountaineers -->
+  <lexeme><grapheme>mountaneerz</grapheme><phoneme>ˈmaʊntɪˌnɪrz</phoneme></lexeme> <!-- mountaineers -->
   <lexeme><grapheme>mountanous</grapheme><phoneme>ˈmaʊntənəs</phoneme></lexeme> <!-- mountainous -->
-  <lexeme><grapheme>mountanously</grapheme><phoneme>v</phoneme></lexeme> <!-- mountainously -->
-  <lexeme><grapheme>mountanousness</grapheme><phoneme>v</phoneme></lexeme> <!-- mountainousness -->
+  <lexeme><grapheme>mountanously</grapheme><phoneme>ˈmaʊntənəsli</phoneme></lexeme> <!-- mountainously -->
+  <lexeme><grapheme>mountanousness</grapheme><phoneme>ˈmaʊntənəsnəs</phoneme></lexeme> <!-- mountainousness -->
   <lexeme><grapheme>mountans</grapheme><phoneme>ˈmaʊntənz</phoneme></lexeme> <!-- mountains -->
   <lexeme><grapheme>mountanside</grapheme><phoneme>ˈmaʊntənsaɪd</phoneme></lexeme> <!-- mountainside -->
-  <lexeme><grapheme>mountansides</grapheme><phoneme>v</phoneme></lexeme> <!-- mountainsides -->
+  <lexeme><grapheme>mountansides</grapheme><phoneme>ˈmaʊntənˌsaɪdz</phoneme></lexeme> <!-- mountainsides -->
   <lexeme><grapheme>mountantop</grapheme><phoneme>ˈmaʊntəntɑːp</phoneme></lexeme> <!-- mountaintop -->
-  <lexeme><grapheme>mountantops</grapheme><phoneme>v</phoneme></lexeme> <!-- mountaintops -->
+  <lexeme><grapheme>mountantops</grapheme><phoneme>ˈmaʊntənˌtɑːps</phoneme></lexeme> <!-- mountaintops -->
   <lexeme><grapheme>mountany</grapheme><phoneme>ˈmaʊntəni</phoneme></lexeme> <!-- mountainy -->
   <lexeme><grapheme>mountebankd</grapheme><phoneme>ˈmaʊntɪbæŋkt</phoneme></lexeme> <!-- mountebanked -->
   <lexeme><grapheme>mountz</grapheme><phoneme>ˈmaʊnts</phoneme></lexeme> <!-- mounts -->
@@ -17469,7 +17469,7 @@
   <lexeme><grapheme>mulctz</grapheme><phoneme>ˈmʌlkts</phoneme></lexeme> <!-- mulcts -->
   <lexeme><grapheme>mulez</grapheme><phoneme>ˈmjulz</phoneme></lexeme> <!-- mules -->
   <lexeme><grapheme>mulin</grapheme><phoneme>muːˈlæn</phoneme></lexeme> <!-- moulin -->
-  <lexeme><grapheme>mulins</grapheme><phoneme>v</phoneme></lexeme> <!-- moulins -->
+  <lexeme><grapheme>mulins</grapheme><phoneme>muːˈlænz</phoneme></lexeme> <!-- moulins -->
   <lexeme><grapheme>mulld</grapheme><phoneme>ˈmʌld</phoneme></lexeme> <!-- mulled -->
   <lexeme><grapheme>mulliond</grapheme><phoneme>ˈmʌljənd</phoneme></lexeme> <!-- mullioned -->
   <lexeme><grapheme>mullionz</grapheme><phoneme>ˈmʌljənz</phoneme></lexeme> <!-- mullions -->
