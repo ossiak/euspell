@@ -261,7 +261,7 @@
   <lexeme><grapheme>acetylatez</grapheme><phoneme>əˈsɛtəˌleɪts</phoneme></lexeme> <!-- acetylates -->
   <lexeme><grapheme>acetylativ</grapheme><phoneme>əˈsɛtəˌleɪtɪv</phoneme></lexeme> <!-- acetylative -->
   <lexeme><grapheme>acez</grapheme><phoneme>ˈeɪsɪz</phoneme></lexeme> <!-- aces -->
-  <lexeme><grapheme>achez</grapheme><phoneme>ˈeɪks</phoneme></lexeme> <!-- aches -->
+  <lexeme><grapheme>achez</grapheme><phoneme>eɪks</phoneme></lexeme> <!-- aches -->
   <lexeme><grapheme>achromatizez</grapheme><phoneme>əˈkroʊmətˌaɪzɪz</phoneme></lexeme> <!-- achromatises -->
   <lexeme><grapheme>aciculat</grapheme><phoneme>əˈsɪkjəlɪt</phoneme></lexeme> <!-- aciculate -->
   <lexeme><grapheme>acidhedd</grapheme><phoneme>ˈæsɪdˌhɛd</phoneme></lexeme> <!-- acidhead -->
@@ -305,7 +305,7 @@
   <lexeme><grapheme>activness</grapheme><phoneme>ˈæktɪvnəs</phoneme></lexeme> <!-- activeness -->
   <lexeme><grapheme>actualizez</grapheme><phoneme>ˈæktʃuəˌlaɪzɪz</phoneme></lexeme> <!-- actualises -->
   <lexeme><grapheme>actuatez</grapheme><phoneme>ˈæktʃuˌeɪts</phoneme></lexeme> <!-- actuates -->
-  <lexeme><grapheme>actz</grapheme><phoneme>ˈækts</phoneme></lexeme> <!-- acts -->
+  <lexeme><grapheme>actz</grapheme><phoneme>ækts</phoneme></lexeme> <!-- acts -->
   <lexeme><grapheme>acuat</grapheme><phoneme>ˈækjuɪt</phoneme></lexeme> <!-- acuate -->
   <lexeme><grapheme>acuatez</grapheme><phoneme>ˈækjuɪts</phoneme></lexeme> <!-- acuates -->
   <lexeme><grapheme>aculeat</grapheme><phoneme>əˈkjuliɪt</phoneme></lexeme> <!-- aculeate -->
@@ -349,7 +349,7 @@
   <lexeme><grapheme>adductivly</grapheme><phoneme>əˈdʌktɪvli</phoneme></lexeme> <!-- adductively -->
   <lexeme><grapheme>adductz</grapheme><phoneme>əˈdʌkts</phoneme></lexeme> <!-- adducts -->
   <lexeme><grapheme>addulcez</grapheme><phoneme>əˈdʌlsɪz</phoneme></lexeme> <!-- addulces -->
-  <lexeme><grapheme>addz</grapheme><phoneme>ˈædz</phoneme></lexeme> <!-- adds -->
+  <lexeme><grapheme>addz</grapheme><phoneme>ædz</phoneme></lexeme> <!-- adds -->
   <lexeme><grapheme>adeemd</grapheme><phoneme>əˈdimd</phoneme></lexeme> <!-- adeemed -->
   <lexeme><grapheme>adeemz</grapheme><phoneme>əˈdimz</phoneme></lexeme> <!-- adeems -->
   <lexeme><grapheme>ademptz</grapheme><phoneme>əˈdɛmpts</phoneme></lexeme> <!-- adempts -->
@@ -3564,7 +3564,7 @@
   <lexeme><grapheme>burjening</grapheme><phoneme>ˈbʊərdʒənɪŋ</phoneme></lexeme> <!-- bourgeoning -->
   <lexeme><grapheme>burjenz</grapheme><phoneme>ˈbʊərdʒənz</phoneme></lexeme> <!-- bourgeons -->
   <lexeme><grapheme>burkd</grapheme><phoneme>bɜːrkt</phoneme></lexeme> <!-- burked -->
-  <lexeme><grapheme>burkez</grapheme><phoneme>ˈbɜːrks</phoneme></lexeme> <!-- burkes -->
+  <lexeme><grapheme>burkez</grapheme><phoneme>bɜːrks</phoneme></lexeme> <!-- burkes -->
   <lexeme><grapheme>burld</grapheme><phoneme>bɜːrld</phoneme></lexeme> <!-- burled -->
   <lexeme><grapheme>burlesq</grapheme><phoneme>bɜːrˈlɛsk</phoneme></lexeme> <!-- burlesque -->
   <lexeme><grapheme>burlesqer</grapheme><phoneme>bɜːrˈlɛskər</phoneme></lexeme> <!-- burlesquer -->
@@ -5623,7 +5623,7 @@
   <lexeme><grapheme>counterweihting</grapheme><phoneme>ˈkaʊntərˌweɪtɪŋ</phoneme></lexeme> <!-- counterweighting -->
   <lexeme><grapheme>counterweihts</grapheme><phoneme>ˈkaʊntərˌweɪts</phoneme></lexeme> <!-- counterweights -->
   <lexeme><grapheme>counterz</grapheme><phoneme>ˈkaʊntərz</phoneme></lexeme> <!-- counters -->
-  <lexeme><grapheme>countz</grapheme><phoneme>ˈkaʊnts</phoneme></lexeme> <!-- counts -->
+  <lexeme><grapheme>countz</grapheme><phoneme>kaʊnts</phoneme></lexeme> <!-- counts -->
   <lexeme><grapheme>couqh</grapheme><phoneme>kaʊtʃ</phoneme></lexeme> <!-- couch -->
   <lexeme><grapheme>couqhant</grapheme><phoneme>ˈkaʊtʃənt</phoneme></lexeme> <!-- couchant -->
   <lexeme><grapheme>couqhd</grapheme><phoneme>kaʊtʃt</phoneme></lexeme> <!-- couched -->
@@ -5839,7 +5839,7 @@
   <lexeme><grapheme>crosstuwn</grapheme><phoneme>ˈkrɔːsˌtaʊn</phoneme></lexeme> <!-- crosstown -->
   <lexeme><grapheme>crosswahk</grapheme><phoneme>ˈkrɔːsˌwɔːk</phoneme></lexeme> <!-- crosswalk -->
   <lexeme><grapheme>crosswahks</grapheme><phoneme>ˈkrɔːsˌwɔːks</phoneme></lexeme> <!-- crosswalks -->
-  <lexeme><grapheme>crotchd</grapheme><phoneme>ˈkrɑːtʃt</phoneme></lexeme> <!-- crotched -->
+  <lexeme><grapheme>crotchd</grapheme><phoneme>krɑːtʃt</phoneme></lexeme> <!-- crotched -->
   <lexeme><grapheme>crouqh</grapheme><phoneme>kraʊtʃ</phoneme></lexeme> <!-- crouch -->
   <lexeme><grapheme>crouqhd</grapheme><phoneme>kraʊtʃt</phoneme></lexeme> <!-- crouched -->
   <lexeme><grapheme>crouqhes</grapheme><phoneme>ˈkraʊtʃəz</phoneme></lexeme> <!-- crouches -->
@@ -5884,7 +5884,7 @@
   <lexeme><grapheme>crusing</grapheme><phoneme>ˈkruːzɪŋ</phoneme></lexeme> <!-- cruising -->
   <lexeme><grapheme>crusings</grapheme><phoneme>ˈkruːzɪŋz</phoneme></lexeme> <!-- cruisings -->
   <lexeme><grapheme>crustz</grapheme><phoneme>krʌsts</phoneme></lexeme> <!-- crusts -->
-  <lexeme><grapheme>crutchd</grapheme><phoneme>ˈkrʌtʃt</phoneme></lexeme> <!-- crutched -->
+  <lexeme><grapheme>crutchd</grapheme><phoneme>krʌtʃt</phoneme></lexeme> <!-- crutched -->
   <lexeme><grapheme>crutchez</grapheme><phoneme>ˈkrʌtʃəz</phoneme></lexeme> <!-- crutches -->
   <lexeme><grapheme>cruwd</grapheme><phoneme>kraʊd</phoneme></lexeme> <!-- crowd -->
   <lexeme><grapheme>cruwded</grapheme><phoneme>ˈkraʊdɪd</phoneme></lexeme> <!-- crowded -->
@@ -8280,7 +8280,7 @@
   <lexeme><grapheme>duqhy</grapheme><phoneme>ˈdʌtʃi</phoneme></lexeme> <!-- duchy -->
   <lexeme><grapheme>durativ</grapheme><phoneme>ˈdʊrətɪv</phoneme></lexeme> <!-- durative -->
   <lexeme><grapheme>durativs</grapheme><phoneme>ˈdʊrətɪvz</phoneme></lexeme> <!-- duratives -->
-  <lexeme><grapheme>durez</grapheme><phoneme>ˈdjʊrz</phoneme></lexeme> <!-- dures -->
+  <lexeme><grapheme>durez</grapheme><phoneme>djʊrz</phoneme></lexeme> <!-- dures -->
   <lexeme><grapheme>durnd</grapheme><phoneme>dɜrnd</phoneme></lexeme> <!-- durned -->
   <lexeme><grapheme>durnz</grapheme><phoneme>dɜrnz</phoneme></lexeme> <!-- durns -->
   <lexeme><grapheme>duruculi</grapheme><phoneme>ˌdʊruˈkuli</phoneme></lexeme> <!-- douroucouli -->
@@ -9772,7 +9772,7 @@
   <lexeme><grapheme>feasez</grapheme><phoneme>ˈfiːzɪz</phoneme></lexeme> <!-- feases -->
   <lexeme><grapheme>feastz</grapheme><phoneme>fiːsts</phoneme></lexeme> <!-- feasts -->
   <lexeme><grapheme>featurez</grapheme><phoneme>ˈfiːtʃərz</phoneme></lexeme> <!-- features -->
-  <lexeme><grapheme>feazd</grapheme><phoneme>ˈfiːzd</phoneme></lexeme> <!-- feazed -->
+  <lexeme><grapheme>feazd</grapheme><phoneme>fiːzd</phoneme></lexeme> <!-- feazed -->
   <lexeme><grapheme>feazez</grapheme><phoneme>ˈfiːzɪz</phoneme></lexeme> <!-- feazes -->
   <lexeme><grapheme>fecundatez</grapheme><phoneme>ˈfɛkəndˌeɪts</phoneme></lexeme> <!-- fecundates -->
   <lexeme><grapheme>fecundifiez</grapheme><phoneme>fɪˈkʌndɪˌfaɪz</phoneme></lexeme> <!-- fecundifies -->
@@ -10986,7 +10986,7 @@
   <lexeme><grapheme>frontierd</grapheme><phoneme>frʌnˈtɪərd</phoneme></lexeme> <!-- frontiered -->
   <lexeme><grapheme>frontz</grapheme><phoneme>frʌnts</phoneme></lexeme> <!-- fronts -->
   <lexeme><grapheme>frostbitez</grapheme><phoneme>ˈfrɔstˌbaɪts</phoneme></lexeme> <!-- frostbites -->
-  <lexeme><grapheme>frostz</grapheme><phoneme>ˈfrɔsts</phoneme></lexeme> <!-- frosts -->
+  <lexeme><grapheme>frostz</grapheme><phoneme>frɔsts</phoneme></lexeme> <!-- frosts -->
   <lexeme><grapheme>frotez</grapheme><phoneme>froʊts</phoneme></lexeme> <!-- frotes -->
   <lexeme><grapheme>frothd</grapheme><phoneme>frɑθt</phoneme></lexeme> <!-- frothed -->
   <lexeme><grapheme>frothz</grapheme><phoneme>frɑθs</phoneme></lexeme> <!-- froths -->
@@ -11330,12 +11330,12 @@
   <lexeme><grapheme>gardrails</grapheme><phoneme>ˈɡɑrdˌreɪlz</phoneme></lexeme> <!-- guardrails -->
   <lexeme><grapheme>gardroom</grapheme><phoneme>ˈɡɑrdˌrum</phoneme></lexeme> <!-- guardroom -->
   <lexeme><grapheme>gardrooms</grapheme><phoneme>ˈɡɑrdˌrumz</phoneme></lexeme> <!-- guardrooms -->
-  <lexeme><grapheme>gards</grapheme><phoneme>ˈɡɑrdz</phoneme></lexeme> <!-- guards -->
+  <lexeme><grapheme>gards</grapheme><phoneme>ɡɑrdz</phoneme></lexeme> <!-- guards -->
   <lexeme><grapheme>gardship</grapheme><phoneme>ˈɡɑrdˌʃɪp</phoneme></lexeme> <!-- guardship -->
   <lexeme><grapheme>gardships</grapheme><phoneme>ˈɡɑrdˌʃɪps</phoneme></lexeme> <!-- guardships -->
   <lexeme><grapheme>gardsman</grapheme><phoneme>ˈɡɑrdzmən</phoneme></lexeme> <!-- guardsman -->
   <lexeme><grapheme>gardsmen</grapheme><phoneme>ˈɡɑrdzmən</phoneme></lexeme> <!-- guardsmen -->
-  <lexeme><grapheme>gardz</grapheme><phoneme>ˈɡɑrdz</phoneme></lexeme> <!-- guards -->
+  <lexeme><grapheme>gardz</grapheme><phoneme>ɡɑrdz</phoneme></lexeme> <!-- guards -->
   <lexeme><grapheme>garefuwl</grapheme><phoneme>ˈɡɛərˌfaʊl</phoneme></lexeme> <!-- garefowl -->
   <lexeme><grapheme>garefuwls</grapheme><phoneme>ˈɡɛərˌfaʊlz</phoneme></lexeme> <!-- garefowls -->
   <lexeme><grapheme>gargalizez</grapheme><phoneme>ˈɡɑrɡəˌlaɪzɪz</phoneme></lexeme> <!-- gargalizes -->
@@ -12072,7 +12072,7 @@
   <lexeme><grapheme>groundbraeking</grapheme><phoneme>ˈɡraʊndˌbreɪkɪŋ</phoneme></lexeme> <!-- groundbreaking -->
   <lexeme><grapheme>groundfishd</grapheme><phoneme>ˈɡraʊndˌfɪʃt</phoneme></lexeme> <!-- groundfished -->
   <lexeme><grapheme>groundfishez</grapheme><phoneme>ˈɡraʊndˌfɪʃɪz</phoneme></lexeme> <!-- groundfishes -->
-  <lexeme><grapheme>groundz</grapheme><phoneme>ˈɡraʊndz</phoneme></lexeme> <!-- grounds -->
+  <lexeme><grapheme>groundz</grapheme><phoneme>ɡraʊndz</phoneme></lexeme> <!-- grounds -->
   <lexeme><grapheme>groupd</grapheme><phoneme>ɡruːpt</phoneme></lexeme> <!-- grouped -->
   <lexeme><grapheme>groupz</grapheme><phoneme>ɡruːps</phoneme></lexeme> <!-- groups -->
   <lexeme><grapheme>grouqh</grapheme><phoneme>ɡraʊtʃ</phoneme></lexeme> <!-- grouch -->
@@ -13372,7 +13372,7 @@
   <lexeme><grapheme>hotpressez</grapheme><phoneme>ˈhɒtˌprɛsəz</phoneme></lexeme> <!-- hotpresses -->
   <lexeme><grapheme>hotwirez</grapheme><phoneme>ˈhɒtˌwaɪərz</phoneme></lexeme> <!-- hotwires -->
   <lexeme><grapheme>hotz</grapheme><phoneme>hɒts</phoneme></lexeme> <!-- hots -->
-  <lexeme><grapheme>houndz</grapheme><phoneme>ˈhaʊndz</phoneme></lexeme> <!-- hounds -->
+  <lexeme><grapheme>houndz</grapheme><phoneme>haʊndz</phoneme></lexeme> <!-- hounds -->
   <lexeme><grapheme>housebilder</grapheme><phoneme>ˈhaʊsˌbɪldər</phoneme></lexeme> <!-- housebuilder -->
   <lexeme><grapheme>housebilders</grapheme><phoneme>ˈhaʊsˌbɪldərz</phoneme></lexeme> <!-- housebuilders -->
   <lexeme><grapheme>housebilding</grapheme><phoneme>ˈhaʊsˌbɪldɪŋ</phoneme></lexeme> <!-- housebuilding -->
@@ -14906,7 +14906,7 @@
   <lexeme><grapheme>joltz</grapheme><phoneme>dʒoʊlts</phoneme></lexeme> <!-- jolts -->
   <lexeme><grapheme>jookd</grapheme><phoneme>dʒʊkt</phoneme></lexeme> <!-- jooked -->
   <lexeme><grapheme>jookz</grapheme><phoneme>dʒʊks</phoneme></lexeme> <!-- jooks -->
-  <lexeme><grapheme>joor</grapheme><phoneme>ˈʒʊɹ</phoneme></lexeme> <!-- jour -->
+  <lexeme><grapheme>joor</grapheme><phoneme>ʒʊɹ</phoneme></lexeme> <!-- jour -->
   <lexeme><grapheme>joshd</grapheme><phoneme>dʒɑʃt</phoneme></lexeme> <!-- joshed -->
   <lexeme><grapheme>joshez</grapheme><phoneme>ˈdʒɑʃɪz</phoneme></lexeme> <!-- joshes -->
   <lexeme><grapheme>jossle</grapheme><phoneme>ˈdʒɑsəl</phoneme></lexeme> <!-- jostle -->
@@ -15564,13 +15564,13 @@
   <lexeme><grapheme>leard</grapheme><phoneme>lɪɹd</phoneme></lexeme> <!-- leared -->
   <lexeme><grapheme>learz</grapheme><phoneme>ˈlɪərz</phoneme></lexeme> <!-- lears -->
   <lexeme><grapheme>leasez</grapheme><phoneme>ˈliːsɪz</phoneme></lexeme> <!-- leases -->
-  <lexeme><grapheme>leashd</grapheme><phoneme>ˈliːʃt</phoneme></lexeme> <!-- leashed -->
+  <lexeme><grapheme>leashd</grapheme><phoneme>liːʃt</phoneme></lexeme> <!-- leashed -->
   <lexeme><grapheme>leashez</grapheme><phoneme>ˈliːʃɪz</phoneme></lexeme> <!-- leashes -->
-  <lexeme><grapheme>leav</grapheme><phoneme>ˈliːv</phoneme></lexeme> <!-- leave -->
-  <lexeme><grapheme>leavd</grapheme><phoneme>ˈliːvd</phoneme></lexeme> <!-- leaved -->
+  <lexeme><grapheme>leav</grapheme><phoneme>liːv</phoneme></lexeme> <!-- leave -->
+  <lexeme><grapheme>leavd</grapheme><phoneme>liːvd</phoneme></lexeme> <!-- leaved -->
   <lexeme><grapheme>leavless</grapheme><phoneme>ˈliːvləs</phoneme></lexeme> <!-- leaveless -->
-  <lexeme><grapheme>leavs</grapheme><phoneme>ˈliːvz</phoneme></lexeme> <!-- leaves -->
-  <lexeme><grapheme>leavz</grapheme><phoneme>ˈliːvz</phoneme></lexeme> <!-- leaves -->
+  <lexeme><grapheme>leavs</grapheme><phoneme>liːvz</phoneme></lexeme> <!-- leaves -->
+  <lexeme><grapheme>leavz</grapheme><phoneme>liːvz</phoneme></lexeme> <!-- leaves -->
   <lexeme><grapheme>lecturez</grapheme><phoneme>ˈlɛktʃərz</phoneme></lexeme> <!-- lectures -->
   <lexeme><grapheme>ledd</grapheme><phoneme>lid</phoneme></lexeme> <!-- lead -->
   <lexeme><grapheme>ledded</grapheme><phoneme>ˈlɛdəd</phoneme></lexeme> <!-- leaded -->
@@ -15589,11 +15589,11 @@
   <lexeme><grapheme>leddwort</grapheme><phoneme>ˈlɛdˌwɝt</phoneme></lexeme> <!-- leadwort -->
   <lexeme><grapheme>leddworts</grapheme><phoneme>ˈlɛdˌwɝts</phoneme></lexeme> <!-- leadworts -->
   <lexeme><grapheme>leddy</grapheme><phoneme>ˈlɛdi</phoneme></lexeme> <!-- leady -->
-  <lexeme><grapheme>leepd</grapheme><phoneme>ˈliːpt</phoneme></lexeme> <!-- leeped -->
-  <lexeme><grapheme>leepz</grapheme><phoneme>ˈliːps</phoneme></lexeme> <!-- leeps -->
-  <lexeme><grapheme>leeqh</grapheme><phoneme>ˈliːtʃ</phoneme></lexeme> <!-- leech -->
+  <lexeme><grapheme>leepd</grapheme><phoneme>liːpt</phoneme></lexeme> <!-- leeped -->
+  <lexeme><grapheme>leepz</grapheme><phoneme>liːps</phoneme></lexeme> <!-- leeps -->
+  <lexeme><grapheme>leeqh</grapheme><phoneme>liːtʃ</phoneme></lexeme> <!-- leech -->
   <lexeme><grapheme>leeqhcraft</grapheme><phoneme>ˈliːtʃkræft</phoneme></lexeme> <!-- leechcraft -->
-  <lexeme><grapheme>leeqhd</grapheme><phoneme>ˈliːtʃt</phoneme></lexeme> <!-- leeched -->
+  <lexeme><grapheme>leeqhd</grapheme><phoneme>liːtʃt</phoneme></lexeme> <!-- leeched -->
   <lexeme><grapheme>leeqhes</grapheme><phoneme>ˈliːtʃɪz</phoneme></lexeme> <!-- leeches -->
   <lexeme><grapheme>leeqhez</grapheme><phoneme>ˈliːtʃɪz</phoneme></lexeme> <!-- leeches -->
   <lexeme><grapheme>leeqhing</grapheme><phoneme>ˈliːtʃɪŋ</phoneme></lexeme> <!-- leeching -->
@@ -15624,10 +15624,10 @@
   <lexeme><grapheme>legitimatness</grapheme><phoneme>lɪˈdʒɪtəmətnəs</phoneme></lexeme> <!-- legitimateness -->
   <lexeme><grapheme>legitimats</grapheme><phoneme>lɪˈdʒɪtəmeɪts</phoneme></lexeme> <!-- legitimates -->
   <lexeme><grapheme>legitimizez</grapheme><phoneme>lɪˈdʒɪtəmaɪzɪz</phoneme></lexeme> <!-- legitimises -->
-  <lexeme><grapheme>legz</grapheme><phoneme>ˈlɛɡz</phoneme></lexeme> <!-- legs -->
+  <lexeme><grapheme>legz</grapheme><phoneme>lɛɡz</phoneme></lexeme> <!-- legs -->
   <lexeme><grapheme>lemniscat</grapheme><phoneme>lɛmˈnɪskət</phoneme></lexeme> <!-- lemniscate -->
   <lexeme><grapheme>lemniscats</grapheme><phoneme>lɛmˈnɪskəts</phoneme></lexeme> <!-- lemniscates -->
-  <lexeme><grapheme>lendz</grapheme><phoneme>ˈlɛndz</phoneme></lexeme> <!-- lends -->
+  <lexeme><grapheme>lendz</grapheme><phoneme>lɛndz</phoneme></lexeme> <!-- lends -->
   <lexeme><grapheme>lengthend</grapheme><phoneme>ˈlɛŋθənd</phoneme></lexeme> <!-- lengthened -->
   <lexeme><grapheme>lengthenz</grapheme><phoneme>ˈlɛŋθənz</phoneme></lexeme> <!-- lengthens -->
   <lexeme><grapheme>lenifiez</grapheme><phoneme>ˈlɛnəfaɪz</phoneme></lexeme> <!-- lenifies -->
@@ -15635,7 +15635,7 @@
   <lexeme><grapheme>lenitivly</grapheme><phoneme>ˈlɛnətɪvli</phoneme></lexeme> <!-- lenitively -->
   <lexeme><grapheme>lenitivness</grapheme><phoneme>ˈlɛnətɪvnəs</phoneme></lexeme> <!-- lenitiveness -->
   <lexeme><grapheme>lenitivs</grapheme><phoneme>ˈlɛnətɪvz</phoneme></lexeme> <!-- lenitives -->
-  <lexeme><grapheme>lensd</grapheme><phoneme>ˈlɛnzd</phoneme></lexeme> <!-- lensed -->
+  <lexeme><grapheme>lensd</grapheme><phoneme>lɛnzd</phoneme></lexeme> <!-- lensed -->
   <lexeme><grapheme>lensez</grapheme><phoneme>ˈlɛnzɪz</phoneme></lexeme> <!-- lenses -->
   <lexeme><grapheme>lenticellat</grapheme><phoneme>ˌlɛntɪˈsɛlət</phoneme></lexeme> <!-- lenticellate -->
   <lexeme><grapheme>leonardesq</grapheme><phoneme>ˌliːənɑːrˈdɛsk</phoneme></lexeme> <!-- leonardesque -->
@@ -15646,8 +15646,8 @@
   <lexeme><grapheme>leppardesses</grapheme><phoneme>ˈlɛpərdəsɪz</phoneme></lexeme> <!-- leopardesses -->
   <lexeme><grapheme>leppards</grapheme><phoneme>ˈlɛpərdz</phoneme></lexeme> <!-- leopards -->
   <lexeme><grapheme>leppardwood</grapheme><phoneme>ˈlɛpərdwʊd</phoneme></lexeme> <!-- leopardwood -->
-  <lexeme><grapheme>leqh</grapheme><phoneme>ˈlɛtʃ</phoneme></lexeme> <!-- lech -->
-  <lexeme><grapheme>leqhd</grapheme><phoneme>ˈlɛtʃt</phoneme></lexeme> <!-- leched -->
+  <lexeme><grapheme>leqh</grapheme><phoneme>lɛtʃ</phoneme></lexeme> <!-- lech -->
+  <lexeme><grapheme>leqhd</grapheme><phoneme>lɛtʃt</phoneme></lexeme> <!-- leched -->
   <lexeme><grapheme>leqher</grapheme><phoneme>ˈlɛtʃər</phoneme></lexeme> <!-- lecher -->
   <lexeme><grapheme>leqherd</grapheme><phoneme>ˈlɛtʃərd</phoneme></lexeme> <!-- lechered -->
   <lexeme><grapheme>leqherer</grapheme><phoneme>ˈlɛtʃərər</phoneme></lexeme> <!-- lecherer -->
@@ -15688,7 +15688,7 @@
   <lexeme><grapheme>lesureliness</grapheme><phoneme>ˈlɛʒərilinəs</phoneme></lexeme> <!-- leisureliness -->
   <lexeme><grapheme>lesurely</grapheme><phoneme>ˈlɛʒərli</phoneme></lexeme> <!-- leisurely -->
   <lexeme><grapheme>lesures</grapheme><phoneme>ˈlɛʒərz</phoneme></lexeme> <!-- leisures -->
-  <lexeme><grapheme>letchd</grapheme><phoneme>ˈlɛtʃt</phoneme></lexeme> <!-- letched -->
+  <lexeme><grapheme>letchd</grapheme><phoneme>lɛtʃt</phoneme></lexeme> <!-- letched -->
   <lexeme><grapheme>letchez</grapheme><phoneme>ˈlɛtʃɪz</phoneme></lexeme> <!-- letches -->
   <lexeme><grapheme>letduwn</grapheme><phoneme>ˈlɛtdaʊn</phoneme></lexeme> <!-- letdown -->
   <lexeme><grapheme>letduwns</grapheme><phoneme>ˈlɛtdaʊnz</phoneme></lexeme> <!-- letdowns -->
@@ -15725,8 +15725,8 @@
   <lexeme><grapheme>letterhedd</grapheme><phoneme>ˈlɛtərhɛd</phoneme></lexeme> <!-- letterhead -->
   <lexeme><grapheme>letterhedds</grapheme><phoneme>ˈlɛtərhɛdz</phoneme></lexeme> <!-- letterheads -->
   <lexeme><grapheme>letterz</grapheme><phoneme>ˈlɛtərz</phoneme></lexeme> <!-- letters -->
-  <lexeme><grapheme>lettez</grapheme><phoneme>ˈlɛts</phoneme></lexeme> <!-- lettes -->
-  <lexeme><grapheme>letz</grapheme><phoneme>ˈlɛts</phoneme></lexeme> <!-- lets -->
+  <lexeme><grapheme>lettez</grapheme><phoneme>lɛts</phoneme></lexeme> <!-- lettes -->
+  <lexeme><grapheme>letz</grapheme><phoneme>lɛts</phoneme></lexeme> <!-- lets -->
   <lexeme><grapheme>levantz</grapheme><phoneme>lɪˈvænts</phoneme></lexeme> <!-- levants -->
   <lexeme><grapheme>leveez</grapheme><phoneme>ˈlɛviːz</phoneme></lexeme> <!-- levees -->
   <lexeme><grapheme>leveld</grapheme><phoneme>ˈlɛvəld</phoneme></lexeme> <!-- leveled -->
@@ -15756,16 +15756,16 @@
   <lexeme><grapheme>liberalizez</grapheme><phoneme>ˈlɪbərəlaɪzɪz</phoneme></lexeme> <!-- liberalises -->
   <lexeme><grapheme>liberatez</grapheme><phoneme>ˈlɪbəreɪts</phoneme></lexeme> <!-- liberates -->
   <lexeme><grapheme>libratez</grapheme><phoneme>ˈlaɪbreɪts</phoneme></lexeme> <!-- librates -->
-  <lexeme><grapheme>libz</grapheme><phoneme>ˈlɪbz</phoneme></lexeme> <!-- libs -->
+  <lexeme><grapheme>libz</grapheme><phoneme>lɪbz</phoneme></lexeme> <!-- libs -->
   <lexeme><grapheme>licensez</grapheme><phoneme>ˈlaɪsənsɪz</phoneme></lexeme> <!-- licences -->
   <lexeme><grapheme>licentiat</grapheme><phoneme>laɪˈsɛnʃiət</phoneme></lexeme> <!-- licentiate -->
   <lexeme><grapheme>licentiats</grapheme><phoneme>laɪˈsɛnʃiəts</phoneme></lexeme> <!-- licentiates -->
   <lexeme><grapheme>lichend</grapheme><phoneme>ˈlaɪkənd</phoneme></lexeme> <!-- lichened -->
-  <lexeme><grapheme>lickd</grapheme><phoneme>ˈlɪkt</phoneme></lexeme> <!-- licked -->
-  <lexeme><grapheme>lickz</grapheme><phoneme>ˈlɪks</phoneme></lexeme> <!-- licks -->
-  <lexeme><grapheme>lidz</grapheme><phoneme>ˈlɪdz</phoneme></lexeme> <!-- lids -->
+  <lexeme><grapheme>lickd</grapheme><phoneme>lɪkt</phoneme></lexeme> <!-- licked -->
+  <lexeme><grapheme>lickz</grapheme><phoneme>lɪks</phoneme></lexeme> <!-- licks -->
+  <lexeme><grapheme>lidz</grapheme><phoneme>lɪdz</phoneme></lexeme> <!-- lids -->
   <lexeme><grapheme>liefsom</grapheme><phoneme>ˈliːfsəm</phoneme></lexeme> <!-- liefsome -->
-  <lexeme><grapheme>liez</grapheme><phoneme>ˈlaɪz</phoneme></lexeme> <!-- lies -->
+  <lexeme><grapheme>liez</grapheme><phoneme>laɪz</phoneme></lexeme> <!-- lies -->
   <lexeme><grapheme>lifebludd</grapheme><phoneme>ˈlaɪfblʌd</phoneme></lexeme> <!-- lifeblood -->
   <lexeme><grapheme>lifebludds</grapheme><phoneme>ˈlaɪfblʌdz</phoneme></lexeme> <!-- lifebloods -->
   <lexeme><grapheme>lifegard</grapheme><phoneme>ˈlaɪfɡɑːrd</phoneme></lexeme> <!-- lifeguard -->
@@ -15773,15 +15773,15 @@
   <lexeme><grapheme>lifegarding</grapheme><phoneme>ˈlaɪfɡɑːrdɪŋ</phoneme></lexeme> <!-- lifeguarding -->
   <lexeme><grapheme>lifegards</grapheme><phoneme>ˈlaɪfɡɑːrdz</phoneme></lexeme> <!-- lifeguards -->
   <lexeme><grapheme>lifesom</grapheme><phoneme>ˈlaɪfsəm</phoneme></lexeme> <!-- lifesome -->
-  <lexeme><grapheme>liftz</grapheme><phoneme>ˈlɪfts</phoneme></lexeme> <!-- lifts -->
+  <lexeme><grapheme>liftz</grapheme><phoneme>lɪfts</phoneme></lexeme> <!-- lifts -->
   <lexeme><grapheme>ligatez</grapheme><phoneme>ˈlaɪɡeɪts</phoneme></lexeme> <!-- ligates -->
   <lexeme><grapheme>ligativ</grapheme><phoneme>ˈlaɪɡətɪv</phoneme></lexeme> <!-- ligative -->
   <lexeme><grapheme>ligaturez</grapheme><phoneme>ˈlɪɡətʃʊərz</phoneme></lexeme> <!-- ligatures -->
   <lexeme><grapheme>lignifiez</grapheme><phoneme>ˈlɪɡnəfaɪz</phoneme></lexeme> <!-- lignifies -->
   <lexeme><grapheme>ligulat</grapheme><phoneme>ˈlɪɡjʊlət</phoneme></lexeme> <!-- ligulate -->
-  <lexeme><grapheme>lihle</grapheme><phoneme>ˈlaɪl</phoneme></lexeme> <!-- lisle -->
-  <lexeme><grapheme>lihles</grapheme><phoneme>ˈlaɪlz</phoneme></lexeme> <!-- lisles -->
-  <lexeme><grapheme>liht</grapheme><phoneme>ˈlaɪt</phoneme></lexeme> <!-- light -->
+  <lexeme><grapheme>lihle</grapheme><phoneme>laɪl</phoneme></lexeme> <!-- lisle -->
+  <lexeme><grapheme>lihles</grapheme><phoneme>laɪlz</phoneme></lexeme> <!-- lisles -->
+  <lexeme><grapheme>liht</grapheme><phoneme>laɪt</phoneme></lexeme> <!-- light -->
   <lexeme><grapheme>lihtable</grapheme><phoneme>ˈlaɪtəbəl</phoneme></lexeme> <!-- lightable -->
   <lexeme><grapheme>lihtbulb</grapheme><phoneme>ˈlaɪtbʌlb</phoneme></lexeme> <!-- lightbulb -->
   <lexeme><grapheme>lihtbulbs</grapheme><phoneme>ˈlaɪtbʌlbz</phoneme></lexeme> <!-- lightbulbs -->
@@ -15833,7 +15833,7 @@
   <lexeme><grapheme>lihtproof</grapheme><phoneme>ˈlaɪtpruːf</phoneme></lexeme> <!-- lightproof -->
   <lexeme><grapheme>lihtroom</grapheme><phoneme>ˈlaɪtruːm</phoneme></lexeme> <!-- lightroom -->
   <lexeme><grapheme>lihtrooms</grapheme><phoneme>ˈlaɪtruːmz</phoneme></lexeme> <!-- lightrooms -->
-  <lexeme><grapheme>lihts</grapheme><phoneme>ˈlaɪts</phoneme></lexeme> <!-- lights -->
+  <lexeme><grapheme>lihts</grapheme><phoneme>laɪts</phoneme></lexeme> <!-- lights -->
   <lexeme><grapheme>lihtship</grapheme><phoneme>ˈlaɪtʃɪp</phoneme></lexeme> <!-- lightship -->
   <lexeme><grapheme>lihtships</grapheme><phoneme>ˈlaɪtʃɪps</phoneme></lexeme> <!-- lightships -->
   <lexeme><grapheme>lihtsom</grapheme><phoneme>ˈlaɪtsəm</phoneme></lexeme> <!-- lightsome -->
@@ -15847,11 +15847,11 @@
   <lexeme><grapheme>lihtwood</grapheme><phoneme>ˈlaɪtwʊd</phoneme></lexeme> <!-- lightwood -->
   <lexeme><grapheme>lihtwoods</grapheme><phoneme>ˈlaɪtwʊdz</phoneme></lexeme> <!-- lightwoods -->
   <lexeme><grapheme>lihty</grapheme><phoneme>ˈlaɪti</phoneme></lexeme> <!-- lighty -->
-  <lexeme><grapheme>lihtz</grapheme><phoneme>ˈlaɪts</phoneme></lexeme> <!-- lights -->
+  <lexeme><grapheme>lihtz</grapheme><phoneme>laɪts</phoneme></lexeme> <!-- lights -->
   <lexeme><grapheme>likend</grapheme><phoneme>ˈlaɪkənd</phoneme></lexeme> <!-- likened -->
   <lexeme><grapheme>likenz</grapheme><phoneme>ˈlaɪkənz</phoneme></lexeme> <!-- likens -->
-  <lexeme><grapheme>likez</grapheme><phoneme>ˈlaɪks</phoneme></lexeme> <!-- likes -->
-  <lexeme><grapheme>liltz</grapheme><phoneme>ˈlɪlts</phoneme></lexeme> <!-- lilts -->
+  <lexeme><grapheme>likez</grapheme><phoneme>laɪks</phoneme></lexeme> <!-- likes -->
+  <lexeme><grapheme>liltz</grapheme><phoneme>lɪlts</phoneme></lexeme> <!-- lilts -->
   <lexeme><grapheme>limberd</grapheme><phoneme>ˈlɪmbərd</phoneme></lexeme> <!-- limbered -->
   <lexeme><grapheme>limberz</grapheme><phoneme>ˈlɪmbərz</phoneme></lexeme> <!-- limbers -->
   <lexeme><grapheme>limeliht</grapheme><phoneme>ˈlaɪmlaɪt</phoneme></lexeme> <!-- limelight -->
@@ -15859,42 +15859,42 @@
   <lexeme><grapheme>limelihting</grapheme><phoneme>ˈlaɪmlaɪtɪŋ</phoneme></lexeme> <!-- limelighting -->
   <lexeme><grapheme>limelihts</grapheme><phoneme>ˈlaɪmlaɪts</phoneme></lexeme> <!-- limelights -->
   <lexeme><grapheme>limelihtz</grapheme><phoneme>ˈlaɪmlaɪts</phoneme></lexeme> <!-- limelights -->
-  <lexeme><grapheme>limez</grapheme><phoneme>ˈlaɪmz</phoneme></lexeme> <!-- limes -->
+  <lexeme><grapheme>limez</grapheme><phoneme>laɪmz</phoneme></lexeme> <!-- limes -->
   <lexeme><grapheme>limitativ</grapheme><phoneme>ˈlɪmɪteɪtɪv</phoneme></lexeme> <!-- limitative -->
   <lexeme><grapheme>limitz</grapheme><phoneme>ˈlɪmɪts</phoneme></lexeme> <!-- limits -->
-  <lexeme><grapheme>limm</grapheme><phoneme>ˈlɪm</phoneme></lexeme> <!-- limb -->
-  <lexeme><grapheme>limmd</grapheme><phoneme>ˈlɪmd</phoneme></lexeme> <!-- limbed -->
+  <lexeme><grapheme>limm</grapheme><phoneme>lɪm</phoneme></lexeme> <!-- limb -->
+  <lexeme><grapheme>limmd</grapheme><phoneme>lɪmd</phoneme></lexeme> <!-- limbed -->
   <lexeme><grapheme>limmless</grapheme><phoneme>ˈlɪmləs</phoneme></lexeme> <!-- limbless -->
-  <lexeme><grapheme>limms</grapheme><phoneme>ˈlɪmz</phoneme></lexeme> <!-- limbs -->
+  <lexeme><grapheme>limms</grapheme><phoneme>lɪmz</phoneme></lexeme> <!-- limbs -->
   <lexeme><grapheme>limmy</grapheme><phoneme>ˈlɪmi</phoneme></lexeme> <!-- limby -->
-  <lexeme><grapheme>limnd</grapheme><phoneme>ˈlɪmd</phoneme></lexeme> <!-- limned -->
-  <lexeme><grapheme>limnz</grapheme><phoneme>ˈlɪmz</phoneme></lexeme> <!-- limns -->
-  <lexeme><grapheme>limpd</grapheme><phoneme>ˈlɪmpt</phoneme></lexeme> <!-- limped -->
-  <lexeme><grapheme>limpz</grapheme><phoneme>ˈlɪmps</phoneme></lexeme> <!-- limps -->
+  <lexeme><grapheme>limnd</grapheme><phoneme>lɪmd</phoneme></lexeme> <!-- limned -->
+  <lexeme><grapheme>limnz</grapheme><phoneme>lɪmz</phoneme></lexeme> <!-- limns -->
+  <lexeme><grapheme>limpd</grapheme><phoneme>lɪmpt</phoneme></lexeme> <!-- limped -->
+  <lexeme><grapheme>limpz</grapheme><phoneme>lɪmps</phoneme></lexeme> <!-- limps -->
   <lexeme><grapheme>lincolnesq</grapheme><phoneme>ˌlɪŋkəˈnɛsk</phoneme></lexeme> <!-- lincolnesque -->
   <lexeme><grapheme>linearizez</grapheme><phoneme>ˈlɪniəraɪzɪz</phoneme></lexeme> <!-- linearises -->
   <lexeme><grapheme>lineat</grapheme><phoneme>ˈlɪniət</phoneme></lexeme> <!-- lineate -->
   <lexeme><grapheme>linebreedz</grapheme><phoneme>ˈlaɪnbriːdz</phoneme></lexeme> <!-- linebreeds -->
-  <lexeme><grapheme>linez</grapheme><phoneme>ˈlaɪnz</phoneme></lexeme> <!-- lines -->
+  <lexeme><grapheme>linez</grapheme><phoneme>laɪnz</phoneme></lexeme> <!-- lines -->
   <lexeme><grapheme>lingerd</grapheme><phoneme>ˈlɪŋɡərd</phoneme></lexeme> <!-- lingered -->
   <lexeme><grapheme>lingerz</grapheme><phoneme>ˈlɪŋɡərz</phoneme></lexeme> <!-- lingers -->
-  <lexeme><grapheme>linkd</grapheme><phoneme>ˈlɪŋkt</phoneme></lexeme> <!-- linked -->
-  <lexeme><grapheme>linkz</grapheme><phoneme>ˈlɪŋks</phoneme></lexeme> <!-- links -->
+  <lexeme><grapheme>linkd</grapheme><phoneme>lɪŋkt</phoneme></lexeme> <!-- linked -->
+  <lexeme><grapheme>linkz</grapheme><phoneme>lɪŋks</phoneme></lexeme> <!-- links -->
   <lexeme><grapheme>linqhpin</grapheme><phoneme>ˈlɪntʃpɪn</phoneme></lexeme> <!-- linchpin -->
   <lexeme><grapheme>linqhpins</grapheme><phoneme>ˈlɪntʃpɪnz</phoneme></lexeme> <!-- linchpins -->
   <lexeme><grapheme>lionhart</grapheme><phoneme>ˈlaɪənhɑːrt</phoneme></lexeme> <!-- lionheart -->
   <lexeme><grapheme>lionharted</grapheme><phoneme>ˌlaɪənˈhɑːrtɪd</phoneme></lexeme> <!-- lionhearted -->
   <lexeme><grapheme>lionizez</grapheme><phoneme>ˈlaɪənaɪzɪz</phoneme></lexeme> <!-- lionises -->
-  <lexeme><grapheme>lipd</grapheme><phoneme>ˈlɪpt</phoneme></lexeme> <!-- lipped -->
+  <lexeme><grapheme>lipd</grapheme><phoneme>lɪpt</phoneme></lexeme> <!-- lipped -->
   <lexeme><grapheme>lippend</grapheme><phoneme>ˈlɪpənd</phoneme></lexeme> <!-- lippened -->
   <lexeme><grapheme>lippenz</grapheme><phoneme>ˈlɪpənz</phoneme></lexeme> <!-- lippens -->
   <lexeme><grapheme>lipperd</grapheme><phoneme>ˈlɪpərd</phoneme></lexeme> <!-- lippered -->
   <lexeme><grapheme>lipperz</grapheme><phoneme>ˈlɪpərz</phoneme></lexeme> <!-- lippers -->
   <lexeme><grapheme>lipstickd</grapheme><phoneme>ˈlɪpstɪkt</phoneme></lexeme> <!-- lipsticked -->
-  <lexeme><grapheme>lipz</grapheme><phoneme>ˈlɪps</phoneme></lexeme> <!-- lips -->
+  <lexeme><grapheme>lipz</grapheme><phoneme>lɪps</phoneme></lexeme> <!-- lips -->
   <lexeme><grapheme>liqeur</grapheme><phoneme>lɪˈkɜːr</phoneme></lexeme> <!-- liqueur -->
   <lexeme><grapheme>liqeurs</grapheme><phoneme>lɪˈkɜːrz</phoneme></lexeme> <!-- liqueurs -->
-  <lexeme><grapheme>liqh</grapheme><phoneme>ˈlɪtʃ</phoneme></lexeme> <!-- lich -->
+  <lexeme><grapheme>liqh</grapheme><phoneme>lɪtʃ</phoneme></lexeme> <!-- lich -->
   <lexeme><grapheme>liqhee</grapheme><phoneme>ˈlaɪtʃiː</phoneme></lexeme> <!-- lichee -->
   <lexeme><grapheme>liqhees</grapheme><phoneme>ˈlaɪtʃiːz</phoneme></lexeme> <!-- lichees -->
   <lexeme><grapheme>liqhes</grapheme><phoneme>ˈlɪtʃɪz</phoneme></lexeme> <!-- liches -->
@@ -15916,7 +15916,7 @@
   <lexeme><grapheme>liquidatez</grapheme><phoneme>ˈlɪkwɪdeɪts</phoneme></lexeme> <!-- liquidates -->
   <lexeme><grapheme>liquidizez</grapheme><phoneme>ˈlɪkwɪdaɪzɪz</phoneme></lexeme> <!-- liquidises -->
   <lexeme><grapheme>liquifiez</grapheme><phoneme>ˈlɪkwəfaɪz</phoneme></lexeme> <!-- liquifies -->
-  <lexeme><grapheme>lispd</grapheme><phoneme>ˈlɪspt</phoneme></lexeme> <!-- lisped -->
+  <lexeme><grapheme>lispd</grapheme><phoneme>lɪspt</phoneme></lexeme> <!-- lisped -->
   <lexeme><grapheme>lissen</grapheme><phoneme>ˈlɪsən</phoneme></lexeme> <!-- listen -->
   <lexeme><grapheme>lissenable</grapheme><phoneme>ˈlɪsənəbəl</phoneme></lexeme> <!-- listenable -->
   <lexeme><grapheme>lissend</grapheme><phoneme>ˈlɪsənd</phoneme></lexeme> <!-- listened -->
@@ -15927,7 +15927,7 @@
   <lexeme><grapheme>lissening</grapheme><phoneme>ˈlɪsənɪŋ</phoneme></lexeme> <!-- listening -->
   <lexeme><grapheme>lissens</grapheme><phoneme>ˈlɪsənz</phoneme></lexeme> <!-- listens -->
   <lexeme><grapheme>lissenz</grapheme><phoneme>ˈlɪsənz</phoneme></lexeme> <!-- listens -->
-  <lexeme><grapheme>listz</grapheme><phoneme>ˈlɪsts</phoneme></lexeme> <!-- lists -->
+  <lexeme><grapheme>listz</grapheme><phoneme>lɪsts</phoneme></lexeme> <!-- lists -->
   <lexeme><grapheme>literalizez</grapheme><phoneme>ˈlɪtərəlaɪzɪz</phoneme></lexeme> <!-- literalises -->
   <lexeme><grapheme>literat</grapheme><phoneme>ˈlɪtərət</phoneme></lexeme> <!-- literate -->
   <lexeme><grapheme>literatly</grapheme><phoneme>ˈlɪtərətli</phoneme></lexeme> <!-- literately -->
@@ -15940,70 +15940,70 @@
   <lexeme><grapheme>litigatez</grapheme><phoneme>ˈlɪtɪɡeɪts</phoneme></lexeme> <!-- litigates -->
   <lexeme><grapheme>litterd</grapheme><phoneme>ˈlɪtərd</phoneme></lexeme> <!-- littered -->
   <lexeme><grapheme>litterz</grapheme><phoneme>ˈlɪtərz</phoneme></lexeme> <!-- litters -->
-  <lexeme><grapheme>liv</grapheme><phoneme>ˈlɪv</phoneme></lexeme> <!-- live -->
-  <lexeme><grapheme>livd</grapheme><phoneme>ˈlɪvd</phoneme></lexeme> <!-- lived -->
+  <lexeme><grapheme>liv</grapheme><phoneme>lɪv</phoneme></lexeme> <!-- live -->
+  <lexeme><grapheme>livd</grapheme><phoneme>lɪvd</phoneme></lexeme> <!-- lived -->
   <lexeme><grapheme>livend</grapheme><phoneme>ˈlaɪvənd</phoneme></lexeme> <!-- livened -->
   <lexeme><grapheme>livenz</grapheme><phoneme>ˈlaɪvənz</phoneme></lexeme> <!-- livens -->
   <lexeme><grapheme>liveriez</grapheme><phoneme>ˈlɪvəriz</phoneme></lexeme> <!-- liveries -->
   <lexeme><grapheme>livetrapd</grapheme><phoneme>ˈlaɪvtræpt</phoneme></lexeme> <!-- livetrapped -->
   <lexeme><grapheme>livetrapz</grapheme><phoneme>ˈlaɪvtræps</phoneme></lexeme> <!-- livetraps -->
-  <lexeme><grapheme>livz</grapheme><phoneme>ˈlaɪvz</phoneme></lexeme> <!-- lives -->
+  <lexeme><grapheme>livz</grapheme><phoneme>laɪvz</phoneme></lexeme> <!-- lives -->
   <lexeme><grapheme>lixiviatez</grapheme><phoneme>lɪkˈsɪvieɪts</phoneme></lexeme> <!-- lixiviates -->
-  <lexeme><grapheme>loadz</grapheme><phoneme>ˈloʊdz</phoneme></lexeme> <!-- loads -->
-  <lexeme><grapheme>loafd</grapheme><phoneme>ˈloʊft</phoneme></lexeme> <!-- loafed -->
-  <lexeme><grapheme>loafz</grapheme><phoneme>ˈloʊfs</phoneme></lexeme> <!-- loafs -->
-  <lexeme><grapheme>loamd</grapheme><phoneme>ˈloʊmd</phoneme></lexeme> <!-- loamed -->
-  <lexeme><grapheme>loamz</grapheme><phoneme>ˈloʊmz</phoneme></lexeme> <!-- loams -->
-  <lexeme><grapheme>loand</grapheme><phoneme>ˈloʊnd</phoneme></lexeme> <!-- loaned -->
-  <lexeme><grapheme>loanz</grapheme><phoneme>ˈloʊnz</phoneme></lexeme> <!-- loans -->
-  <lexeme><grapheme>loaqh</grapheme><phoneme>ˈloʊtʃ</phoneme></lexeme> <!-- loach -->
+  <lexeme><grapheme>loadz</grapheme><phoneme>loʊdz</phoneme></lexeme> <!-- loads -->
+  <lexeme><grapheme>loafd</grapheme><phoneme>loʊft</phoneme></lexeme> <!-- loafed -->
+  <lexeme><grapheme>loafz</grapheme><phoneme>loʊfs</phoneme></lexeme> <!-- loafs -->
+  <lexeme><grapheme>loamd</grapheme><phoneme>loʊmd</phoneme></lexeme> <!-- loamed -->
+  <lexeme><grapheme>loamz</grapheme><phoneme>loʊmz</phoneme></lexeme> <!-- loams -->
+  <lexeme><grapheme>loand</grapheme><phoneme>loʊnd</phoneme></lexeme> <!-- loaned -->
+  <lexeme><grapheme>loanz</grapheme><phoneme>loʊnz</phoneme></lexeme> <!-- loans -->
+  <lexeme><grapheme>loaqh</grapheme><phoneme>loʊtʃ</phoneme></lexeme> <!-- loach -->
   <lexeme><grapheme>loaqhes</grapheme><phoneme>ˈloʊtʃɪz</phoneme></lexeme> <!-- loaches -->
-  <lexeme><grapheme>loathez</grapheme><phoneme>ˈloʊðz</phoneme></lexeme> <!-- loathes -->
+  <lexeme><grapheme>loathez</grapheme><phoneme>loʊðz</phoneme></lexeme> <!-- loathes -->
   <lexeme><grapheme>loathsom</grapheme><phoneme>ˈloʊðsəm</phoneme></lexeme> <!-- loathsome -->
   <lexeme><grapheme>loathsomly</grapheme><phoneme>ˈloʊðsəmli</phoneme></lexeme> <!-- loathsomely -->
   <lexeme><grapheme>loathsomness</grapheme><phoneme>ˈloʊðsəmnəs</phoneme></lexeme> <!-- loathsomeness -->
-  <lexeme><grapheme>loavs</grapheme><phoneme>ˈloʊvz</phoneme></lexeme> <!-- loaves -->
-  <lexeme><grapheme>lobd</grapheme><phoneme>ˈlɑːbd</phoneme></lexeme> <!-- lobbed -->
+  <lexeme><grapheme>loavs</grapheme><phoneme>loʊvz</phoneme></lexeme> <!-- loaves -->
+  <lexeme><grapheme>lobd</grapheme><phoneme>lɑːbd</phoneme></lexeme> <!-- lobbed -->
   <lexeme><grapheme>lobotomizez</grapheme><phoneme>ləˈbɑːtəmaɪzɪz</phoneme></lexeme> <!-- lobotomises -->
   <lexeme><grapheme>lobsterd</grapheme><phoneme>ˈlɑːbstərd</phoneme></lexeme> <!-- lobstered -->
   <lexeme><grapheme>lobsterz</grapheme><phoneme>ˈlɑːbstərz</phoneme></lexeme> <!-- lobsters -->
   <lexeme><grapheme>lobulat</grapheme><phoneme>ˈlɑːbjʊlət</phoneme></lexeme> <!-- lobulate -->
-  <lexeme><grapheme>lobz</grapheme><phoneme>ˈlɑːbz</phoneme></lexeme> <!-- lobs -->
+  <lexeme><grapheme>lobz</grapheme><phoneme>lɑːbz</phoneme></lexeme> <!-- lobs -->
   <lexeme><grapheme>localizez</grapheme><phoneme>ˈloʊkəlaɪzɪz</phoneme></lexeme> <!-- localises -->
   <lexeme><grapheme>locatez</grapheme><phoneme>ˈloʊkeɪts</phoneme></lexeme> <!-- locates -->
   <lexeme><grapheme>locativ</grapheme><phoneme>ˈlɑːkətɪv</phoneme></lexeme> <!-- locative -->
   <lexeme><grapheme>locativs</grapheme><phoneme>ˈlɑːkətɪvz</phoneme></lexeme> <!-- locatives -->
-  <lexeme><grapheme>lockd</grapheme><phoneme>ˈlɑːkt</phoneme></lexeme> <!-- locked -->
+  <lexeme><grapheme>lockd</grapheme><phoneme>lɑːkt</phoneme></lexeme> <!-- locked -->
   <lexeme><grapheme>lockduwn</grapheme><phoneme>ˈlɑːkdaʊn</phoneme></lexeme> <!-- lockdown -->
   <lexeme><grapheme>lockduwns</grapheme><phoneme>ˈlɑːkdaʊnz</phoneme></lexeme> <!-- lockdowns -->
   <lexeme><grapheme>lockstitchd</grapheme><phoneme>ˈlɑːkstɪtʃt</phoneme></lexeme> <!-- lockstitched -->
   <lexeme><grapheme>lockstitchez</grapheme><phoneme>ˈlɑːkstɪtʃɪz</phoneme></lexeme> <!-- lockstitches -->
-  <lexeme><grapheme>lockz</grapheme><phoneme>ˈlɑːks</phoneme></lexeme> <!-- locks -->
+  <lexeme><grapheme>lockz</grapheme><phoneme>lɑːks</phoneme></lexeme> <!-- locks -->
   <lexeme><grapheme>locomotiv</grapheme><phoneme>ˌloʊkəˈmoʊtɪv</phoneme></lexeme> <!-- locomotive -->
   <lexeme><grapheme>locomotivs</grapheme><phoneme>ˌloʊkəˈmoʊtɪvz</phoneme></lexeme> <!-- locomotives -->
   <lexeme><grapheme>locoz</grapheme><phoneme>ˈloʊkoʊz</phoneme></lexeme> <!-- locos -->
   <lexeme><grapheme>loculat</grapheme><phoneme>ˈlɑːkjʊlət</phoneme></lexeme> <!-- loculate -->
   <lexeme><grapheme>lodgez</grapheme><phoneme>ˈlɑːdʒɪz</phoneme></lexeme> <!-- lodges -->
-  <lexeme><grapheme>loftz</grapheme><phoneme>ˈlɔːfts</phoneme></lexeme> <!-- lofts -->
-  <lexeme><grapheme>logd</grapheme><phoneme>ˈlɔːɡd</phoneme></lexeme> <!-- logged -->
+  <lexeme><grapheme>loftz</grapheme><phoneme>lɔːfts</phoneme></lexeme> <!-- lofts -->
+  <lexeme><grapheme>logd</grapheme><phoneme>lɔːɡd</phoneme></lexeme> <!-- logged -->
   <lexeme><grapheme>loggerhedd</grapheme><phoneme>ˈlɔːɡərhɛd</phoneme></lexeme> <!-- loggerhead -->
   <lexeme><grapheme>loggerhedds</grapheme><phoneme>ˈlɔːɡərhɛdz</phoneme></lexeme> <!-- loggerheads -->
   <lexeme><grapheme>logicizez</grapheme><phoneme>ˈlɑːdʒɪsaɪzɪz</phoneme></lexeme> <!-- logicises -->
   <lexeme><grapheme>logrolld</grapheme><phoneme>ˈlɔːɡroʊld</phoneme></lexeme> <!-- logrolled -->
   <lexeme><grapheme>logrollz</grapheme><phoneme>ˈlɔːɡroʊlz</phoneme></lexeme> <!-- logrolls -->
-  <lexeme><grapheme>logz</grapheme><phoneme>ˈlɔːɡz</phoneme></lexeme> <!-- logs -->
+  <lexeme><grapheme>logz</grapheme><phoneme>lɔːɡz</phoneme></lexeme> <!-- logs -->
   <lexeme><grapheme>loiterd</grapheme><phoneme>ˈlɔɪtərd</phoneme></lexeme> <!-- loitered -->
   <lexeme><grapheme>loiterz</grapheme><phoneme>ˈlɔɪtərz</phoneme></lexeme> <!-- loiters -->
-  <lexeme><grapheme>lolld</grapheme><phoneme>ˈlɑːld</phoneme></lexeme> <!-- lolled -->
+  <lexeme><grapheme>lolld</grapheme><phoneme>lɑːld</phoneme></lexeme> <!-- lolled -->
   <lexeme><grapheme>lollopd</grapheme><phoneme>ˈlɑːləpt</phoneme></lexeme> <!-- lolloped -->
   <lexeme><grapheme>lollopz</grapheme><phoneme>ˈlɑːləps</phoneme></lexeme> <!-- lollops -->
   <lexeme><grapheme>lollygagd</grapheme><phoneme>ˈlɑːliɡæɡd</phoneme></lexeme> <!-- lollygagged -->
   <lexeme><grapheme>lollygagz</grapheme><phoneme>ˈlɑːliɡæɡz</phoneme></lexeme> <!-- lollygags -->
-  <lexeme><grapheme>lollz</grapheme><phoneme>ˈlɑːlz</phoneme></lexeme> <!-- lolls -->
+  <lexeme><grapheme>lollz</grapheme><phoneme>lɑːlz</phoneme></lexeme> <!-- lolls -->
   <lexeme><grapheme>lonesom</grapheme><phoneme>ˈloʊnsəm</phoneme></lexeme> <!-- lonesome -->
   <lexeme><grapheme>lonesomly</grapheme><phoneme>ˈloʊnsəmli</phoneme></lexeme> <!-- lonesomely -->
   <lexeme><grapheme>lonesomness</grapheme><phoneme>ˈloʊnsəmnəs</phoneme></lexeme> <!-- lonesomeness -->
-  <lexeme><grapheme>longd</grapheme><phoneme>ˈlɔːŋd</phoneme></lexeme> <!-- longed -->
+  <lexeme><grapheme>longd</grapheme><phoneme>lɔːŋd</phoneme></lexeme> <!-- longed -->
   <lexeme><grapheme>longez</grapheme><phoneme>ˈlʌndʒɪz</phoneme></lexeme> <!-- longes -->
   <lexeme><grapheme>longhaird</grapheme><phoneme>ˈlɔːŋhɛərd</phoneme></lexeme> <!-- longhaired -->
   <lexeme><grapheme>longhedd</grapheme><phoneme>ˈlɔːŋhɛd</phoneme></lexeme> <!-- longhead -->
@@ -16019,30 +16019,30 @@
   <lexeme><grapheme>longsom</grapheme><phoneme>ˈlɔːŋsəm</phoneme></lexeme> <!-- longsome -->
   <lexeme><grapheme>longsomly</grapheme><phoneme>ˈlɔːŋsəmli</phoneme></lexeme> <!-- longsomely -->
   <lexeme><grapheme>longsomness</grapheme><phoneme>ˈlɔːŋsəmnəs</phoneme></lexeme> <!-- longsomeness -->
-  <lexeme><grapheme>longz</grapheme><phoneme>ˈlɔːŋz</phoneme></lexeme> <!-- longs -->
-  <lexeme><grapheme>lookd</grapheme><phoneme>ˈlʊkt</phoneme></lexeme> <!-- looked -->
+  <lexeme><grapheme>longz</grapheme><phoneme>lɔːŋz</phoneme></lexeme> <!-- longs -->
+  <lexeme><grapheme>lookd</grapheme><phoneme>lʊkt</phoneme></lexeme> <!-- looked -->
   <lexeme><grapheme>lookduwn</grapheme><phoneme>ˈlʊkdaʊn</phoneme></lexeme> <!-- lookdown -->
   <lexeme><grapheme>lookduwns</grapheme><phoneme>ˈlʊkdaʊnz</phoneme></lexeme> <!-- lookdowns -->
-  <lexeme><grapheme>lookz</grapheme><phoneme>ˈlʊks</phoneme></lexeme> <!-- looks -->
-  <lexeme><grapheme>loomd</grapheme><phoneme>ˈluːmd</phoneme></lexeme> <!-- loomed -->
-  <lexeme><grapheme>loomz</grapheme><phoneme>ˈluːmz</phoneme></lexeme> <!-- looms -->
-  <lexeme><grapheme>loopd</grapheme><phoneme>ˈluːpt</phoneme></lexeme> <!-- looped -->
+  <lexeme><grapheme>lookz</grapheme><phoneme>lʊks</phoneme></lexeme> <!-- looks -->
+  <lexeme><grapheme>loomd</grapheme><phoneme>luːmd</phoneme></lexeme> <!-- loomed -->
+  <lexeme><grapheme>loomz</grapheme><phoneme>luːmz</phoneme></lexeme> <!-- looms -->
+  <lexeme><grapheme>loopd</grapheme><phoneme>luːpt</phoneme></lexeme> <!-- looped -->
   <lexeme><grapheme>loopholez</grapheme><phoneme>ˈluːphoʊlz</phoneme></lexeme> <!-- loopholes -->
-  <lexeme><grapheme>loopz</grapheme><phoneme>ˈluːps</phoneme></lexeme> <!-- loops -->
+  <lexeme><grapheme>loopz</grapheme><phoneme>luːps</phoneme></lexeme> <!-- loops -->
   <lexeme><grapheme>loosend</grapheme><phoneme>ˈluːsənd</phoneme></lexeme> <!-- loosened -->
   <lexeme><grapheme>loosenz</grapheme><phoneme>ˈluːsənz</phoneme></lexeme> <!-- loosens -->
   <lexeme><grapheme>loosez</grapheme><phoneme>ˈluːsɪz</phoneme></lexeme> <!-- looses -->
-  <lexeme><grapheme>loosh</grapheme><phoneme>ˈluːʃ</phoneme></lexeme> <!-- louche -->
-  <lexeme><grapheme>lootz</grapheme><phoneme>ˈluːts</phoneme></lexeme> <!-- loots -->
+  <lexeme><grapheme>loosh</grapheme><phoneme>luːʃ</phoneme></lexeme> <!-- louche -->
+  <lexeme><grapheme>lootz</grapheme><phoneme>luːts</phoneme></lexeme> <!-- loots -->
   <lexeme><grapheme>loover</grapheme><phoneme>ˈluːvər</phoneme></lexeme> <!-- louver -->
   <lexeme><grapheme>looverd</grapheme><phoneme>ˈluːvərd</phoneme></lexeme> <!-- louvered -->
   <lexeme><grapheme>loovers</grapheme><phoneme>ˈluːvərz</phoneme></lexeme> <!-- louvers -->
-  <lexeme><grapheme>looz</grapheme><phoneme>ˈluːz</phoneme></lexeme> <!-- loos -->
-  <lexeme><grapheme>lopd</grapheme><phoneme>ˈlɑːpt</phoneme></lexeme> <!-- lopped -->
+  <lexeme><grapheme>looz</grapheme><phoneme>luːz</phoneme></lexeme> <!-- loos -->
+  <lexeme><grapheme>lopd</grapheme><phoneme>lɑːpt</phoneme></lexeme> <!-- lopped -->
   <lexeme><grapheme>lopperd</grapheme><phoneme>ˈlɑːpərd</phoneme></lexeme> <!-- loppered -->
   <lexeme><grapheme>lopperz</grapheme><phoneme>ˈlɑːpərz</phoneme></lexeme> <!-- loppers -->
-  <lexeme><grapheme>lopz</grapheme><phoneme>ˈlɑːps</phoneme></lexeme> <!-- lops -->
-  <lexeme><grapheme>lordz</grapheme><phoneme>ˈlɔːrdz</phoneme></lexeme> <!-- lords -->
+  <lexeme><grapheme>lopz</grapheme><phoneme>lɑːps</phoneme></lexeme> <!-- lops -->
+  <lexeme><grapheme>lordz</grapheme><phoneme>lɔːrdz</phoneme></lexeme> <!-- lords -->
   <lexeme><grapheme>loricat</grapheme><phoneme>ˈlɔːrɪkət</phoneme></lexeme> <!-- loricate -->
   <lexeme><grapheme>loricatez</grapheme><phoneme>ˈlɔːrɪkəts</phoneme></lexeme> <!-- loricates -->
   <lexeme><grapheme>loricats</grapheme><phoneme>ˈlɔːrɪkəts</phoneme></lexeme> <!-- loricates -->
@@ -16051,17 +16051,17 @@
   <lexeme><grapheme>loudmouthd</grapheme><phoneme>ˈlaʊdmaʊðd</phoneme></lexeme> <!-- loudmouthed -->
   <lexeme><grapheme>loungewaer</grapheme><phoneme>ˈlaʊndʒwɛər</phoneme></lexeme> <!-- loungewear -->
   <lexeme><grapheme>loungez</grapheme><phoneme>ˈlaʊndʒɪz</phoneme></lexeme> <!-- lounges -->
-  <lexeme><grapheme>loupz</grapheme><phoneme>ˈluːps</phoneme></lexeme> <!-- loups -->
+  <lexeme><grapheme>loupz</grapheme><phoneme>luːps</phoneme></lexeme> <!-- loups -->
   <lexeme><grapheme>lourd</grapheme><phoneme>ˈlaʊərd</phoneme></lexeme> <!-- loured -->
   <lexeme><grapheme>lourz</grapheme><phoneme>ˈlaʊərz</phoneme></lexeme> <!-- lours -->
   <lexeme><grapheme>lousez</grapheme><phoneme>ˈlaʊsɪz</phoneme></lexeme> <!-- louses -->
-  <lexeme><grapheme>loutz</grapheme><phoneme>ˈlaʊts</phoneme></lexeme> <!-- louts -->
-  <lexeme><grapheme>lov</grapheme><phoneme>ˈlʌv</phoneme></lexeme> <!-- love -->
+  <lexeme><grapheme>loutz</grapheme><phoneme>laʊts</phoneme></lexeme> <!-- louts -->
+  <lexeme><grapheme>lov</grapheme><phoneme>lʌv</phoneme></lexeme> <!-- love -->
   <lexeme><grapheme>lovbird</grapheme><phoneme>ˈlʌvbɜːrd</phoneme></lexeme> <!-- lovebird -->
   <lexeme><grapheme>lovbirds</grapheme><phoneme>ˈlʌvbɜːrdz</phoneme></lexeme> <!-- lovebirds -->
   <lexeme><grapheme>lovbug</grapheme><phoneme>ˈlʌvbʌɡ</phoneme></lexeme> <!-- lovebug -->
   <lexeme><grapheme>lovbugs</grapheme><phoneme>ˈlʌvbʌɡz</phoneme></lexeme> <!-- lovebugs -->
-  <lexeme><grapheme>lovd</grapheme><phoneme>ˈlʌvd</phoneme></lexeme> <!-- loved -->
+  <lexeme><grapheme>lovd</grapheme><phoneme>lʌvd</phoneme></lexeme> <!-- loved -->
   <lexeme><grapheme>lovingkyndness</grapheme><phoneme>ˈlʌvɪŋˈkaɪndnəs</phoneme></lexeme> <!-- lovingkindness -->
   <lexeme><grapheme>lovless</grapheme><phoneme>ˈlʌvləs</phoneme></lexeme> <!-- loveless -->
   <lexeme><grapheme>lovlessly</grapheme><phoneme>ˈlʌvləsli</phoneme></lexeme> <!-- lovelessly -->
@@ -16078,13 +16078,13 @@
   <lexeme><grapheme>lovly</grapheme><phoneme>ˈlʌvli</phoneme></lexeme> <!-- lovely -->
   <lexeme><grapheme>lovmaking</grapheme><phoneme>ˈlʌvmeɪkɪŋ</phoneme></lexeme> <!-- lovemaking -->
   <lexeme><grapheme>lovmakings</grapheme><phoneme>ˈlʌvmeɪkɪŋz</phoneme></lexeme> <!-- lovemakings -->
-  <lexeme><grapheme>lovs</grapheme><phoneme>ˈlʌvz</phoneme></lexeme> <!-- loves -->
+  <lexeme><grapheme>lovs</grapheme><phoneme>lʌvz</phoneme></lexeme> <!-- loves -->
   <lexeme><grapheme>lovseat</grapheme><phoneme>ˈlʌvsiːt</phoneme></lexeme> <!-- loveseat -->
   <lexeme><grapheme>lovseats</grapheme><phoneme>ˈlʌvsiːts</phoneme></lexeme> <!-- loveseats -->
   <lexeme><grapheme>lovsick</grapheme><phoneme>ˈlʌvsɪk</phoneme></lexeme> <!-- lovesick -->
   <lexeme><grapheme>lovsickness</grapheme><phoneme>ˈlʌvsɪknəs</phoneme></lexeme> <!-- lovesickness -->
   <lexeme><grapheme>lovsom</grapheme><phoneme>ˈlʌvsəm</phoneme></lexeme> <!-- lovesome -->
-  <lexeme><grapheme>lovz</grapheme><phoneme>ˈlʌvz</phoneme></lexeme> <!-- loves -->
+  <lexeme><grapheme>lovz</grapheme><phoneme>lʌvz</phoneme></lexeme> <!-- loves -->
   <lexeme><grapheme>lowballd</grapheme><phoneme>ˈloʊbɔːld</phoneme></lexeme> <!-- lowballed -->
   <lexeme><grapheme>lowballz</grapheme><phoneme>ˈloʊbɔːlz</phoneme></lexeme> <!-- lowballs -->
   <lexeme><grapheme>lowbruw</grapheme><phoneme>ˈloʊbraʊ</phoneme></lexeme> <!-- lowbrow -->
@@ -16095,39 +16095,39 @@
   <lexeme><grapheme>lowerd</grapheme><phoneme>ˈloʊərd</phoneme></lexeme> <!-- lowered -->
   <lexeme><grapheme>lowermoste</grapheme><phoneme>ˈloʊərmoʊst</phoneme></lexeme> <!-- lowermost -->
   <lexeme><grapheme>lowerz</grapheme><phoneme>ˈloʊərz</phoneme></lexeme> <!-- lowers -->
-  <lexeme><grapheme>lowez</grapheme><phoneme>ˈloʊz</phoneme></lexeme> <!-- lowes -->
+  <lexeme><grapheme>lowez</grapheme><phoneme>loʊz</phoneme></lexeme> <!-- lowes -->
   <lexeme><grapheme>lowlihedd</grapheme><phoneme>ˈloʊlihɛd</phoneme></lexeme> <!-- lowlihead -->
   <lexeme><grapheme>lowliht</grapheme><phoneme>ˈloʊlaɪt</phoneme></lexeme> <!-- lowlight -->
   <lexeme><grapheme>lowlihts</grapheme><phoneme>ˈloʊlaɪts</phoneme></lexeme> <!-- lowlights -->
   <lexeme><grapheme>lubricatez</grapheme><phoneme>ˈluːbrɪkeɪts</phoneme></lexeme> <!-- lubricates -->
   <lexeme><grapheme>lubricativ</grapheme><phoneme>ˈluːbrɪkeɪtɪv</phoneme></lexeme> <!-- lubricative -->
-  <lexeme><grapheme>luckd</grapheme><phoneme>ˈlʌkt</phoneme></lexeme> <!-- lucked -->
-  <lexeme><grapheme>luckz</grapheme><phoneme>ˈlʌks</phoneme></lexeme> <!-- lucks -->
+  <lexeme><grapheme>luckd</grapheme><phoneme>lʌkt</phoneme></lexeme> <!-- lucked -->
+  <lexeme><grapheme>luckz</grapheme><phoneme>lʌks</phoneme></lexeme> <!-- lucks -->
   <lexeme><grapheme>lucrativ</grapheme><phoneme>ˈluːkrətɪv</phoneme></lexeme> <!-- lucrative -->
   <lexeme><grapheme>lucrativly</grapheme><phoneme>ˈluːkrətɪvli</phoneme></lexeme> <!-- lucratively -->
   <lexeme><grapheme>lucrativness</grapheme><phoneme>ˈluːkrətɪvnəs</phoneme></lexeme> <!-- lucrativeness -->
   <lexeme><grapheme>lucubratez</grapheme><phoneme>ˈluːkjʊbreɪts</phoneme></lexeme> <!-- lucubrates -->
-  <lexeme><grapheme>luffd</grapheme><phoneme>ˈlʌft</phoneme></lexeme> <!-- luffed -->
-  <lexeme><grapheme>luffz</grapheme><phoneme>ˈlʌfs</phoneme></lexeme> <!-- luffs -->
-  <lexeme><grapheme>lugd</grapheme><phoneme>ˈlʌɡd</phoneme></lexeme> <!-- lugged -->
+  <lexeme><grapheme>luffd</grapheme><phoneme>lʌft</phoneme></lexeme> <!-- luffed -->
+  <lexeme><grapheme>luffz</grapheme><phoneme>lʌfs</phoneme></lexeme> <!-- luffs -->
+  <lexeme><grapheme>lugd</grapheme><phoneme>lʌɡd</phoneme></lexeme> <!-- lugged -->
   <lexeme><grapheme>lugez</grapheme><phoneme>ˈluːdʒɪz</phoneme></lexeme> <!-- luges -->
-  <lexeme><grapheme>lugz</grapheme><phoneme>ˈlʌɡz</phoneme></lexeme> <!-- lugs -->
+  <lexeme><grapheme>lugz</grapheme><phoneme>lʌɡz</phoneme></lexeme> <!-- lugs -->
   <lexeme><grapheme>lullabiez</grapheme><phoneme>ˈlʌləbaɪz</phoneme></lexeme> <!-- lullabies -->
-  <lexeme><grapheme>lulld</grapheme><phoneme>ˈlʌld</phoneme></lexeme> <!-- lulled -->
-  <lexeme><grapheme>lullz</grapheme><phoneme>ˈlʌlz</phoneme></lexeme> <!-- lulls -->
+  <lexeme><grapheme>lulld</grapheme><phoneme>lʌld</phoneme></lexeme> <!-- lulled -->
+  <lexeme><grapheme>lullz</grapheme><phoneme>lʌlz</phoneme></lexeme> <!-- lulls -->
   <lexeme><grapheme>lumberd</grapheme><phoneme>ˈlʌmbərd</phoneme></lexeme> <!-- lumbered -->
   <lexeme><grapheme>lumberz</grapheme><phoneme>ˈlʌmbərz</phoneme></lexeme> <!-- lumbers -->
   <lexeme><grapheme>luminescez</grapheme><phoneme>ˌluːmɪˈnɛsɪz</phoneme></lexeme> <!-- luminesces -->
-  <lexeme><grapheme>lumpd</grapheme><phoneme>ˈlʌmpt</phoneme></lexeme> <!-- lumped -->
-  <lexeme><grapheme>lumpz</grapheme><phoneme>ˈlʌmps</phoneme></lexeme> <!-- lumps -->
+  <lexeme><grapheme>lumpd</grapheme><phoneme>lʌmpt</phoneme></lexeme> <!-- lumped -->
+  <lexeme><grapheme>lumpz</grapheme><phoneme>lʌmps</phoneme></lexeme> <!-- lumps -->
   <lexeme><grapheme>lungez</grapheme><phoneme>ˈlʌndʒɪz</phoneme></lexeme> <!-- lunges -->
   <lexeme><grapheme>lunkhedd</grapheme><phoneme>ˈlʌŋkhɛd</phoneme></lexeme> <!-- lunkhead -->
   <lexeme><grapheme>lunkhedded</grapheme><phoneme>ˈlʌŋkhɛdɪd</phoneme></lexeme> <!-- lunkheaded -->
   <lexeme><grapheme>lunkhedds</grapheme><phoneme>ˈlʌŋkhɛdz</phoneme></lexeme> <!-- lunkheads -->
-  <lexeme><grapheme>lunqh</grapheme><phoneme>ˈlʌntʃ</phoneme></lexeme> <!-- lunch -->
+  <lexeme><grapheme>lunqh</grapheme><phoneme>lʌntʃ</phoneme></lexeme> <!-- lunch -->
   <lexeme><grapheme>lunqhbox</grapheme><phoneme>ˈlʌntʃbɑːks</phoneme></lexeme> <!-- lunchbox -->
   <lexeme><grapheme>lunqhboxes</grapheme><phoneme>ˈlʌntʃbɑːksɪz</phoneme></lexeme> <!-- lunchboxes -->
-  <lexeme><grapheme>lunqhd</grapheme><phoneme>ˈlʌntʃt</phoneme></lexeme> <!-- lunched -->
+  <lexeme><grapheme>lunqhd</grapheme><phoneme>lʌntʃt</phoneme></lexeme> <!-- lunched -->
   <lexeme><grapheme>lunqher</grapheme><phoneme>ˈlʌntʃər</phoneme></lexeme> <!-- luncher -->
   <lexeme><grapheme>lunqhers</grapheme><phoneme>ˈlʌntʃərz</phoneme></lexeme> <!-- lunchers -->
   <lexeme><grapheme>lunqhes</grapheme><phoneme>ˈlʌntʃɪz</phoneme></lexeme> <!-- lunches -->
@@ -16143,13 +16143,13 @@
   <lexeme><grapheme>lunqhrooms</grapheme><phoneme>ˈlʌntʃruːmz</phoneme></lexeme> <!-- lunchrooms -->
   <lexeme><grapheme>lunqhtime</grapheme><phoneme>ˈlʌntʃtaɪm</phoneme></lexeme> <!-- lunchtime -->
   <lexeme><grapheme>lunqhtimes</grapheme><phoneme>ˈlʌntʃtaɪmz</phoneme></lexeme> <!-- lunchtimes -->
-  <lexeme><grapheme>luntz</grapheme><phoneme>ˈlʌnts</phoneme></lexeme> <!-- lunts -->
+  <lexeme><grapheme>luntz</grapheme><phoneme>lʌnts</phoneme></lexeme> <!-- lunts -->
   <lexeme><grapheme>lunulat</grapheme><phoneme>ˈlʌnjʊlət</phoneme></lexeme> <!-- lunulate -->
   <lexeme><grapheme>lurez</grapheme><phoneme>ˈlʊərz</phoneme></lexeme> <!-- lures -->
-  <lexeme><grapheme>lurkd</grapheme><phoneme>ˈlɜːrkt</phoneme></lexeme> <!-- lurked -->
-  <lexeme><grapheme>lurkz</grapheme><phoneme>ˈlɜːrks</phoneme></lexeme> <!-- lurks -->
-  <lexeme><grapheme>lurqh</grapheme><phoneme>ˈlɜːrtʃ</phoneme></lexeme> <!-- lurch -->
-  <lexeme><grapheme>lurqhd</grapheme><phoneme>ˈlɜːrtʃt</phoneme></lexeme> <!-- lurched -->
+  <lexeme><grapheme>lurkd</grapheme><phoneme>lɜːrkt</phoneme></lexeme> <!-- lurked -->
+  <lexeme><grapheme>lurkz</grapheme><phoneme>lɜːrks</phoneme></lexeme> <!-- lurks -->
+  <lexeme><grapheme>lurqh</grapheme><phoneme>lɜːrtʃ</phoneme></lexeme> <!-- lurch -->
+  <lexeme><grapheme>lurqhd</grapheme><phoneme>lɜːrtʃt</phoneme></lexeme> <!-- lurched -->
   <lexeme><grapheme>lurqher</grapheme><phoneme>ˈlɜːrtʃər</phoneme></lexeme> <!-- lurcher -->
   <lexeme><grapheme>lurqhers</grapheme><phoneme>ˈlɜːrtʃərz</phoneme></lexeme> <!-- lurchers -->
   <lexeme><grapheme>lurqhes</grapheme><phoneme>ˈlɜːrtʃɪz</phoneme></lexeme> <!-- lurches -->
@@ -16157,11 +16157,11 @@
   <lexeme><grapheme>lurqhing</grapheme><phoneme>ˈlɜːrtʃɪŋ</phoneme></lexeme> <!-- lurching -->
   <lexeme><grapheme>lusable</grapheme><phoneme>ˈluːzəbəl</phoneme></lexeme> <!-- losable -->
   <lexeme><grapheme>lusableness</grapheme><phoneme>ˈluːzəbəlnəs</phoneme></lexeme> <!-- losableness -->
-  <lexeme><grapheme>luse</grapheme><phoneme>ˈluːz</phoneme></lexeme> <!-- lose -->
+  <lexeme><grapheme>luse</grapheme><phoneme>luːz</phoneme></lexeme> <!-- lose -->
   <lexeme><grapheme>luser</grapheme><phoneme>ˈluːzər</phoneme></lexeme> <!-- loser -->
   <lexeme><grapheme>lusers</grapheme><phoneme>ˈluːzərz</phoneme></lexeme> <!-- losers -->
   <lexeme><grapheme>lusez</grapheme><phoneme>ˈluːzɪz</phoneme></lexeme> <!-- loses -->
-  <lexeme><grapheme>lushd</grapheme><phoneme>ˈlʌʃt</phoneme></lexeme> <!-- lushed -->
+  <lexeme><grapheme>lushd</grapheme><phoneme>lʌʃt</phoneme></lexeme> <!-- lushed -->
   <lexeme><grapheme>lushez</grapheme><phoneme>ˈlʌʃɪz</phoneme></lexeme> <!-- lushes -->
   <lexeme><grapheme>lusing</grapheme><phoneme>ˈluːzɪŋ</phoneme></lexeme> <!-- losing -->
   <lexeme><grapheme>lusingly</grapheme><phoneme>ˈluːzɪŋli</phoneme></lexeme> <!-- losingly -->
@@ -16169,15 +16169,15 @@
   <lexeme><grapheme>lusterd</grapheme><phoneme>ˈlʌstərd</phoneme></lexeme> <!-- lustered -->
   <lexeme><grapheme>lusterz</grapheme><phoneme>ˈlʌstərz</phoneme></lexeme> <!-- lusters -->
   <lexeme><grapheme>lustratez</grapheme><phoneme>ˈlʌstreɪts</phoneme></lexeme> <!-- lustrates -->
-  <lexeme><grapheme>lustz</grapheme><phoneme>ˈlʌsts</phoneme></lexeme> <!-- lusts -->
+  <lexeme><grapheme>lustz</grapheme><phoneme>lʌsts</phoneme></lexeme> <!-- lusts -->
   <lexeme><grapheme>luteinizez</grapheme><phoneme>ˈluːtiənaɪzɪz</phoneme></lexeme> <!-- luteinises -->
-  <lexeme><grapheme>lutez</grapheme><phoneme>ˈluːts</phoneme></lexeme> <!-- lutes -->
+  <lexeme><grapheme>lutez</grapheme><phoneme>luːts</phoneme></lexeme> <!-- lutes -->
   <lexeme><grapheme>luwery</grapheme><phoneme>ˈlaʊəri</phoneme></lexeme> <!-- lowery -->
-  <lexeme><grapheme>luwn</grapheme><phoneme>ˈlaʊn</phoneme></lexeme> <!-- lown -->
+  <lexeme><grapheme>luwn</grapheme><phoneme>laʊn</phoneme></lexeme> <!-- lown -->
   <lexeme><grapheme>luxatez</grapheme><phoneme>ˈlʌkseɪts</phoneme></lexeme> <!-- luxates -->
   <lexeme><grapheme>luxuriatez</grapheme><phoneme>lʌɡˈʒʊrieɪts</phoneme></lexeme> <!-- luxuriates -->
-  <lexeme><grapheme>lynqh</grapheme><phoneme>ˈlɪntʃ</phoneme></lexeme> <!-- lynch -->
-  <lexeme><grapheme>lynqhd</grapheme><phoneme>ˈlɪntʃt</phoneme></lexeme> <!-- lynched -->
+  <lexeme><grapheme>lynqh</grapheme><phoneme>lɪntʃ</phoneme></lexeme> <!-- lynch -->
+  <lexeme><grapheme>lynqhd</grapheme><phoneme>lɪntʃt</phoneme></lexeme> <!-- lynched -->
   <lexeme><grapheme>lynqher</grapheme><phoneme>ˈlɪntʃər</phoneme></lexeme> <!-- lyncher -->
   <lexeme><grapheme>lynqhers</grapheme><phoneme>ˈlɪntʃərz</phoneme></lexeme> <!-- lynchers -->
   <lexeme><grapheme>lynqhez</grapheme><phoneme>ˈlɪntʃɪz</phoneme></lexeme> <!-- lynches -->
@@ -16218,17 +16218,17 @@
   <lexeme><grapheme>magnetostrictiv</grapheme><phoneme>mæɡˌniːtoʊˈstrɪktɪv</phoneme></lexeme> <!-- magnetostrictive -->
   <lexeme><grapheme>magnetostrictivly</grapheme><phoneme>mæɡˌniːtoʊˈstrɪktɪvli</phoneme></lexeme> <!-- magnetostrictively -->
   <lexeme><grapheme>magnifiez</grapheme><phoneme>ˈmæɡnəfaɪz</phoneme></lexeme> <!-- magnifies -->
-  <lexeme><grapheme>mahm</grapheme><phoneme>ˈmɑːm</phoneme></lexeme> <!-- malm -->
+  <lexeme><grapheme>mahm</grapheme><phoneme>mɑːm</phoneme></lexeme> <!-- malm -->
   <lexeme><grapheme>mahmier</grapheme><phoneme>ˈmɑːmiər</phoneme></lexeme> <!-- malmier -->
   <lexeme><grapheme>mahmiest</grapheme><phoneme>ˈmɑːmiɪst</phoneme></lexeme> <!-- malmiest -->
-  <lexeme><grapheme>mahms</grapheme><phoneme>ˈmɑːmz</phoneme></lexeme> <!-- malms -->
+  <lexeme><grapheme>mahms</grapheme><phoneme>mɑːmz</phoneme></lexeme> <!-- malms -->
   <lexeme><grapheme>mahmy</grapheme><phoneme>ˈmɑːmi</phoneme></lexeme> <!-- malmy -->
   <lexeme><grapheme>maidenhedd</grapheme><phoneme>ˈmeɪdənhɛd</phoneme></lexeme> <!-- maidenhead -->
   <lexeme><grapheme>maidenhedds</grapheme><phoneme>ˈmeɪdənhɛdz</phoneme></lexeme> <!-- maidenheads -->
-  <lexeme><grapheme>maild</grapheme><phoneme>ˈmeɪld</phoneme></lexeme> <!-- mailed -->
-  <lexeme><grapheme>mailz</grapheme><phoneme>ˈmeɪlz</phoneme></lexeme> <!-- mails -->
-  <lexeme><grapheme>maimd</grapheme><phoneme>ˈmeɪmd</phoneme></lexeme> <!-- maimed -->
-  <lexeme><grapheme>maimz</grapheme><phoneme>ˈmeɪmz</phoneme></lexeme> <!-- maims -->
+  <lexeme><grapheme>maild</grapheme><phoneme>meɪld</phoneme></lexeme> <!-- mailed -->
+  <lexeme><grapheme>mailz</grapheme><phoneme>meɪlz</phoneme></lexeme> <!-- mails -->
+  <lexeme><grapheme>maimd</grapheme><phoneme>meɪmd</phoneme></lexeme> <!-- maimed -->
+  <lexeme><grapheme>maimz</grapheme><phoneme>meɪmz</phoneme></lexeme> <!-- maims -->
   <lexeme><grapheme>mainlinez</grapheme><phoneme>ˈmeɪnlaɪnz</phoneme></lexeme> <!-- mainlines -->
   <lexeme><grapheme>mainstreamd</grapheme><phoneme>ˈmeɪnstriːmd</phoneme></lexeme> <!-- mainstreamed -->
   <lexeme><grapheme>mainstreamz</grapheme><phoneme>ˈmeɪnstriːmz</phoneme></lexeme> <!-- mainstreams -->
@@ -16242,7 +16242,7 @@
   <lexeme><grapheme>makereddy</grapheme><phoneme>ˈmeɪkˌrɛdi</phoneme></lexeme> <!-- makeready -->
   <lexeme><grapheme>makeweiht</grapheme><phoneme>ˈmeɪkweɪt</phoneme></lexeme> <!-- makeweight -->
   <lexeme><grapheme>makeweihts</grapheme><phoneme>ˈmeɪkweɪts</phoneme></lexeme> <!-- makeweights -->
-  <lexeme><grapheme>makez</grapheme><phoneme>ˈmeɪks</phoneme></lexeme> <!-- makes -->
+  <lexeme><grapheme>makez</grapheme><phoneme>meɪks</phoneme></lexeme> <!-- makes -->
   <lexeme><grapheme>maladaptiv</grapheme><phoneme>ˌmæləˈdæptɪv</phoneme></lexeme> <!-- maladaptive -->
   <lexeme><grapheme>maladjustiv</grapheme><phoneme>ˌmæləˈdʒʌstɪv</phoneme></lexeme> <!-- maladjustive -->
   <lexeme><grapheme>maladministerd</grapheme><phoneme>ˌmælədˈmɪnɪstərd</phoneme></lexeme> <!-- maladministered -->
@@ -16256,15 +16256,15 @@
   <lexeme><grapheme>malignz</grapheme><phoneme>ˈmælaɪnz</phoneme></lexeme> <!-- maligns -->
   <lexeme><grapheme>malingerd</grapheme><phoneme>məˈlɪŋɡərd</phoneme></lexeme> <!-- malingered -->
   <lexeme><grapheme>malingerz</grapheme><phoneme>məˈlɪŋɡərz</phoneme></lexeme> <!-- malingers -->
-  <lexeme><grapheme>malld</grapheme><phoneme>ˈmɔːld</phoneme></lexeme> <!-- malled -->
-  <lexeme><grapheme>mallz</grapheme><phoneme>ˈmɔːlz</phoneme></lexeme> <!-- malls -->
+  <lexeme><grapheme>malld</grapheme><phoneme>mɔːld</phoneme></lexeme> <!-- malled -->
+  <lexeme><grapheme>mallz</grapheme><phoneme>mɔːlz</phoneme></lexeme> <!-- malls -->
   <lexeme><grapheme>malnurrish</grapheme><phoneme>mælˈnɜːrɪʃ</phoneme></lexeme> <!-- malnourish -->
   <lexeme><grapheme>malnurrishd</grapheme><phoneme>mælˈnɜːrɪʃt</phoneme></lexeme> <!-- malnourished -->
   <lexeme><grapheme>malnurrishez</grapheme><phoneme>mælˈnɜːrɪʃɪz</phoneme></lexeme> <!-- malnourishes -->
   <lexeme><grapheme>malnurrishing</grapheme><phoneme>mælˈnɜːrɪʃɪŋ</phoneme></lexeme> <!-- malnourishing -->
   <lexeme><grapheme>malnurrishment</grapheme><phoneme>mælˈnɜːrɪʃmənt</phoneme></lexeme> <!-- malnourishment -->
   <lexeme><grapheme>maltreatz</grapheme><phoneme>mælˈtriːts</phoneme></lexeme> <!-- maltreats -->
-  <lexeme><grapheme>maltz</grapheme><phoneme>ˈmɔːlts</phoneme></lexeme> <!-- malts -->
+  <lexeme><grapheme>maltz</grapheme><phoneme>mɔːlts</phoneme></lexeme> <!-- malts -->
   <lexeme><grapheme>mamboez</grapheme><phoneme>ˈmæmboʊz</phoneme></lexeme> <!-- mamboes -->
   <lexeme><grapheme>mamboz</grapheme><phoneme>ˈmæmboʊz</phoneme></lexeme> <!-- mambos -->
   <lexeme><grapheme>mammerd</grapheme><phoneme>ˈmæmərd</phoneme></lexeme> <!-- mammered -->
@@ -16318,9 +16318,9 @@
   <lexeme><grapheme>manumitz</grapheme><phoneme>ˌmænjʊˈmɪts</phoneme></lexeme> <!-- manumits -->
   <lexeme><grapheme>manurez</grapheme><phoneme>məˈnʊrz</phoneme></lexeme> <!-- manures -->
   <lexeme><grapheme>manxwimen</grapheme><phoneme>ˈmæŋkswɪmɪn</phoneme></lexeme> <!-- manxwomen -->
-  <lexeme><grapheme>manz</grapheme><phoneme>ˈmænz</phoneme></lexeme> <!-- mans -->
-  <lexeme><grapheme>mapd</grapheme><phoneme>ˈmæpt</phoneme></lexeme> <!-- mapped -->
-  <lexeme><grapheme>mapz</grapheme><phoneme>ˈmæps</phoneme></lexeme> <!-- maps -->
+  <lexeme><grapheme>manz</grapheme><phoneme>mænz</phoneme></lexeme> <!-- mans -->
+  <lexeme><grapheme>mapd</grapheme><phoneme>mæpt</phoneme></lexeme> <!-- mapped -->
+  <lexeme><grapheme>mapz</grapheme><phoneme>mæps</phoneme></lexeme> <!-- maps -->
   <lexeme><grapheme>maqett</grapheme><phoneme>mæˈkɛt</phoneme></lexeme> <!-- maquette -->
   <lexeme><grapheme>maqetts</grapheme><phoneme>mæˈkɛts</phoneme></lexeme> <!-- maquettes -->
   <lexeme><grapheme>maqhicolate</grapheme><phoneme>məˈtʃɪkəleɪt</phoneme></lexeme> <!-- machicolate -->
@@ -16351,7 +16351,7 @@
   <lexeme><grapheme>marblizing</grapheme><phoneme>ˈmɑːrbəlaɪzɪŋ</phoneme></lexeme> <!-- marbleising -->
   <lexeme><grapheme>marceld</grapheme><phoneme>mɑːrˈsɛld</phoneme></lexeme> <!-- marcelled -->
   <lexeme><grapheme>marcelz</grapheme><phoneme>mɑːrˈsɛlz</phoneme></lexeme> <!-- marcels -->
-  <lexeme><grapheme>mard</grapheme><phoneme>ˈmɑːrd</phoneme></lexeme> <!-- marred -->
+  <lexeme><grapheme>mard</grapheme><phoneme>mɑːrd</phoneme></lexeme> <!-- marred -->
   <lexeme><grapheme>margentz</grapheme><phoneme>ˈmɑːrdʒənts</phoneme></lexeme> <!-- margents -->
   <lexeme><grapheme>margherite</grapheme><phoneme>ˌmɑːrɡəˈriːt</phoneme></lexeme> <!-- marguerite -->
   <lexeme><grapheme>margherites</grapheme><phoneme>ˌmɑːrɡəˈriːtz</phoneme></lexeme> <!-- marguerites -->
@@ -16368,12 +16368,12 @@
   <lexeme><grapheme>mariaqhis</grapheme><phoneme>ˌmɑːriˈɑːtʃiz</phoneme></lexeme> <!-- mariachis -->
   <lexeme><grapheme>marinadez</grapheme><phoneme>ˈmærəneɪdz</phoneme></lexeme> <!-- marinades -->
   <lexeme><grapheme>marinatez</grapheme><phoneme>ˈmærəneɪts</phoneme></lexeme> <!-- marinates -->
-  <lexeme><grapheme>markd</grapheme><phoneme>ˈmɑːrkt</phoneme></lexeme> <!-- marked -->
+  <lexeme><grapheme>markd</grapheme><phoneme>mɑːrkt</phoneme></lexeme> <!-- marked -->
   <lexeme><grapheme>markduwn</grapheme><phoneme>ˈmɑːrkdaʊn</phoneme></lexeme> <!-- markdown -->
   <lexeme><grapheme>markduwns</grapheme><phoneme>ˈmɑːrkdaʊnz</phoneme></lexeme> <!-- markdowns -->
   <lexeme><grapheme>marketz</grapheme><phoneme>ˈmɑːrkɪts</phoneme></lexeme> <!-- markets -->
   <lexeme><grapheme>markswimen</grapheme><phoneme>ˈmɑːrkswɪmɪn</phoneme></lexeme> <!-- markswomen -->
-  <lexeme><grapheme>markz</grapheme><phoneme>ˈmɑːrks</phoneme></lexeme> <!-- marks -->
+  <lexeme><grapheme>markz</grapheme><phoneme>mɑːrks</phoneme></lexeme> <!-- marks -->
   <lexeme><grapheme>marld</grapheme><phoneme>ˈmɑːrld</phoneme></lexeme> <!-- marled -->
   <lexeme><grapheme>marlz</grapheme><phoneme>ˈmɑːrlz</phoneme></lexeme> <!-- marls -->
   <lexeme><grapheme>maroond</grapheme><phoneme>məˈruːnd</phoneme></lexeme> <!-- marooned -->
@@ -16385,8 +16385,8 @@
   <lexeme><grapheme>marqeteries</grapheme><phoneme>ˈmɑːrkɪtriz</phoneme></lexeme> <!-- marqueteries -->
   <lexeme><grapheme>marqetries</grapheme><phoneme>ˈmɑːrkɪtriz</phoneme></lexeme> <!-- marquetries -->
   <lexeme><grapheme>marqetry</grapheme><phoneme>ˈmɑːrkɪtri</phoneme></lexeme> <!-- marquetry -->
-  <lexeme><grapheme>marqh</grapheme><phoneme>ˈmɑːrtʃ</phoneme></lexeme> <!-- march -->
-  <lexeme><grapheme>marqhd</grapheme><phoneme>ˈmɑːrtʃt</phoneme></lexeme> <!-- marched -->
+  <lexeme><grapheme>marqh</grapheme><phoneme>mɑːrtʃ</phoneme></lexeme> <!-- march -->
+  <lexeme><grapheme>marqhd</grapheme><phoneme>mɑːrtʃt</phoneme></lexeme> <!-- marched -->
   <lexeme><grapheme>marqher</grapheme><phoneme>ˈmɑːrtʃər</phoneme></lexeme> <!-- marcher -->
   <lexeme><grapheme>marqhers</grapheme><phoneme>ˈmɑːrtʃərz</phoneme></lexeme> <!-- marchers -->
   <lexeme><grapheme>marqhes</grapheme><phoneme>ˈmɑːrtʃɪz</phoneme></lexeme> <!-- marches -->
@@ -16410,18 +16410,18 @@
   <lexeme><grapheme>martyrd</grapheme><phoneme>ˈmɑːrtərd</phoneme></lexeme> <!-- martyred -->
   <lexeme><grapheme>martyrizez</grapheme><phoneme>ˈmɑːrtəraɪzɪz</phoneme></lexeme> <!-- martyrizes -->
   <lexeme><grapheme>martyrz</grapheme><phoneme>ˈmɑːrtərz</phoneme></lexeme> <!-- martyrs -->
-  <lexeme><grapheme>martz</grapheme><phoneme>ˈmɑːrts</phoneme></lexeme> <!-- marts -->
+  <lexeme><grapheme>martz</grapheme><phoneme>mɑːrts</phoneme></lexeme> <!-- marts -->
   <lexeme><grapheme>marveld</grapheme><phoneme>ˈmɑːrvəld</phoneme></lexeme> <!-- marveled -->
   <lexeme><grapheme>marvelz</grapheme><phoneme>ˈmɑːrvəlz</phoneme></lexeme> <!-- marvels -->
-  <lexeme><grapheme>marz</grapheme><phoneme>ˈmɑːrz</phoneme></lexeme> <!-- mars -->
+  <lexeme><grapheme>marz</grapheme><phoneme>mɑːrz</phoneme></lexeme> <!-- mars -->
   <lexeme><grapheme>mascarad</grapheme><phoneme>mæˈskærəd</phoneme></lexeme> <!-- mascaraed -->
   <lexeme><grapheme>mascaraz</grapheme><phoneme>mæˈskærəz</phoneme></lexeme> <!-- mascaras -->
   <lexeme><grapheme>masculin</grapheme><phoneme>ˈmæskjʊlɪn</phoneme></lexeme> <!-- masculine -->
   <lexeme><grapheme>masculinizez</grapheme><phoneme>ˈmæskjʊlɪnaɪzɪz</phoneme></lexeme> <!-- masculinises -->
   <lexeme><grapheme>masculinly</grapheme><phoneme>ˈmæskjʊlɪnli</phoneme></lexeme> <!-- masculinely -->
   <lexeme><grapheme>masculins</grapheme><phoneme>ˈmæskjʊlɪnz</phoneme></lexeme> <!-- masculines -->
-  <lexeme><grapheme>mashd</grapheme><phoneme>ˈmæʃt</phoneme></lexeme> <!-- mashed -->
-  <lexeme><grapheme>masheh</grapheme><phoneme>ˈmæʃ</phoneme></lexeme> <!-- mache -->
+  <lexeme><grapheme>mashd</grapheme><phoneme>mæʃt</phoneme></lexeme> <!-- mashed -->
+  <lexeme><grapheme>masheh</grapheme><phoneme>mæʃ</phoneme></lexeme> <!-- mache -->
   <lexeme><grapheme>mashehs</grapheme><phoneme>ˈmæʃɪz</phoneme></lexeme> <!-- maches -->
   <lexeme><grapheme>mashete</grapheme><phoneme>məˈʃɛti</phoneme></lexeme> <!-- machete -->
   <lexeme><grapheme>mashetes</grapheme><phoneme>məˈʃɛtiz</phoneme></lexeme> <!-- machetes -->
@@ -16442,11 +16442,11 @@
   <lexeme><grapheme>mashining</grapheme><phoneme>məˈʃiːnɪŋ</phoneme></lexeme> <!-- machining -->
   <lexeme><grapheme>mashinist</grapheme><phoneme>məˈʃiːnəst</phoneme></lexeme> <!-- machinist -->
   <lexeme><grapheme>mashinists</grapheme><phoneme>məˈʃiːnɪsts</phoneme></lexeme> <!-- machinists -->
-  <lexeme><grapheme>maskd</grapheme><phoneme>ˈmæskt</phoneme></lexeme> <!-- masked -->
-  <lexeme><grapheme>maskz</grapheme><phoneme>ˈmæsks</phoneme></lexeme> <!-- masks -->
+  <lexeme><grapheme>maskd</grapheme><phoneme>mæskt</phoneme></lexeme> <!-- masked -->
+  <lexeme><grapheme>maskz</grapheme><phoneme>mæsks</phoneme></lexeme> <!-- masks -->
   <lexeme><grapheme>masond</grapheme><phoneme>ˈmeɪsənd</phoneme></lexeme> <!-- masoned -->
   <lexeme><grapheme>masonz</grapheme><phoneme>ˈmeɪsənz</phoneme></lexeme> <!-- masons -->
-  <lexeme><grapheme>masq</grapheme><phoneme>ˈmæsk</phoneme></lexeme> <!-- masque -->
+  <lexeme><grapheme>masq</grapheme><phoneme>mæsk</phoneme></lexeme> <!-- masque -->
   <lexeme><grapheme>masqer</grapheme><phoneme>ˈmæskər</phoneme></lexeme> <!-- masquer -->
   <lexeme><grapheme>masqerade</grapheme><phoneme>ˌmæskəˈreɪd</phoneme></lexeme> <!-- masquerade -->
   <lexeme><grapheme>masqeraded</grapheme><phoneme>ˌmæskəˈreɪdɪd</phoneme></lexeme> <!-- masqueraded -->
@@ -16456,10 +16456,10 @@
   <lexeme><grapheme>masqeradez</grapheme><phoneme>ˌmæskəˈreɪdz</phoneme></lexeme> <!-- masquerades -->
   <lexeme><grapheme>masqerading</grapheme><phoneme>ˌmæskəˈreɪdɪŋ</phoneme></lexeme> <!-- masquerading -->
   <lexeme><grapheme>masqers</grapheme><phoneme>ˈmæskərz</phoneme></lexeme> <!-- masquers -->
-  <lexeme><grapheme>masqs</grapheme><phoneme>ˈmæsks</phoneme></lexeme> <!-- masques -->
+  <lexeme><grapheme>masqs</grapheme><phoneme>mæsks</phoneme></lexeme> <!-- masques -->
   <lexeme><grapheme>massacrez</grapheme><phoneme>ˈmæsəkərz</phoneme></lexeme> <!-- massacres -->
   <lexeme><grapheme>massagez</grapheme><phoneme>məˈsɑːʒɪz</phoneme></lexeme> <!-- massages -->
-  <lexeme><grapheme>massd</grapheme><phoneme>ˈmæst</phoneme></lexeme> <!-- massed -->
+  <lexeme><grapheme>massd</grapheme><phoneme>mæst</phoneme></lexeme> <!-- massed -->
   <lexeme><grapheme>massez</grapheme><phoneme>ˈmæsɪz</phoneme></lexeme> <!-- masses -->
   <lexeme><grapheme>massiv</grapheme><phoneme>ˈmæsɪv</phoneme></lexeme> <!-- massive -->
   <lexeme><grapheme>massivly</grapheme><phoneme>ˈmæsɪvli</phoneme></lexeme> <!-- massively -->
@@ -16478,11 +16478,11 @@
   <lexeme><grapheme>mastheddz</grapheme><phoneme>ˈmæsthɛdz</phoneme></lexeme> <!-- mastheads -->
   <lexeme><grapheme>masticatez</grapheme><phoneme>ˈmæstɪkeɪts</phoneme></lexeme> <!-- masticates -->
   <lexeme><grapheme>masturbatez</grapheme><phoneme>ˈmæstərbeɪts</phoneme></lexeme> <!-- masturbates -->
-  <lexeme><grapheme>mastz</grapheme><phoneme>ˈmæsts</phoneme></lexeme> <!-- masts -->
-  <lexeme><grapheme>matchd</grapheme><phoneme>ˈmætʃt</phoneme></lexeme> <!-- matched -->
+  <lexeme><grapheme>mastz</grapheme><phoneme>mæsts</phoneme></lexeme> <!-- masts -->
+  <lexeme><grapheme>matchd</grapheme><phoneme>mætʃt</phoneme></lexeme> <!-- matched -->
   <lexeme><grapheme>matchez</grapheme><phoneme>ˈmætʃɪz</phoneme></lexeme> <!-- matches -->
   <lexeme><grapheme>materializez</grapheme><phoneme>məˈtɪəriəlaɪzɪz</phoneme></lexeme> <!-- materialises -->
-  <lexeme><grapheme>matez</grapheme><phoneme>ˈmeɪts</phoneme></lexeme> <!-- mates -->
+  <lexeme><grapheme>matez</grapheme><phoneme>meɪts</phoneme></lexeme> <!-- mates -->
   <lexeme><grapheme>mathematizez</grapheme><phoneme>ˌmæθəməˈtaɪzɪz</phoneme></lexeme> <!-- mathematises -->
   <lexeme><grapheme>matriarchat</grapheme><phoneme>ˌmeɪtriˈɑːrkət</phoneme></lexeme> <!-- matriarchate -->
   <lexeme><grapheme>matriarchats</grapheme><phoneme>ˌmeɪtriˈɑːrkəts</phoneme></lexeme> <!-- matriarchates -->
@@ -16493,17 +16493,17 @@
   <lexeme><grapheme>matterz</grapheme><phoneme>ˈmætərz</phoneme></lexeme> <!-- matters -->
   <lexeme><grapheme>maturatez</grapheme><phoneme>ˈmætʃʊreɪts</phoneme></lexeme> <!-- maturates -->
   <lexeme><grapheme>maturez</grapheme><phoneme>məˈtʃʊrz</phoneme></lexeme> <!-- matures -->
-  <lexeme><grapheme>matz</grapheme><phoneme>ˈmæts</phoneme></lexeme> <!-- mats -->
-  <lexeme><grapheme>mauld</grapheme><phoneme>ˈmɔːld</phoneme></lexeme> <!-- mauled -->
-  <lexeme><grapheme>maulz</grapheme><phoneme>ˈmɔːlz</phoneme></lexeme> <!-- mauls -->
+  <lexeme><grapheme>matz</grapheme><phoneme>mæts</phoneme></lexeme> <!-- mats -->
+  <lexeme><grapheme>mauld</grapheme><phoneme>mɔːld</phoneme></lexeme> <!-- mauled -->
+  <lexeme><grapheme>maulz</grapheme><phoneme>mɔːlz</phoneme></lexeme> <!-- mauls -->
   <lexeme><grapheme>maunderd</grapheme><phoneme>ˈmɔːndərd</phoneme></lexeme> <!-- maundered -->
   <lexeme><grapheme>maunderz</grapheme><phoneme>ˈmɔːndərz</phoneme></lexeme> <!-- maunders -->
   <lexeme><grapheme>mavurneen</grapheme><phoneme>məˈvʊərniːn</phoneme></lexeme> <!-- mavourneen -->
   <lexeme><grapheme>mavurneens</grapheme><phoneme>ˌmævʊrˈniːnz</phoneme></lexeme> <!-- mavourneens -->
   <lexeme><grapheme>mavurnin</grapheme><phoneme>məˈvʊrnɪn</phoneme></lexeme> <!-- mavournin -->
   <lexeme><grapheme>mavurnins</grapheme><phoneme>məˈvʊrnɪnz</phoneme></lexeme> <!-- mavournins -->
-  <lexeme><grapheme>mawd</grapheme><phoneme>ˈmɔːd</phoneme></lexeme> <!-- mawed -->
-  <lexeme><grapheme>maxd</grapheme><phoneme>ˈmækst</phoneme></lexeme> <!-- maxed -->
+  <lexeme><grapheme>mawd</grapheme><phoneme>mɔːd</phoneme></lexeme> <!-- mawed -->
+  <lexeme><grapheme>maxd</grapheme><phoneme>mækst</phoneme></lexeme> <!-- maxed -->
   <lexeme><grapheme>maxez</grapheme><phoneme>ˈmæksɪz</phoneme></lexeme> <!-- maxes -->
   <lexeme><grapheme>maximizez</grapheme><phoneme>ˈmæksɪmaɪzɪz</phoneme></lexeme> <!-- maximises -->
   <lexeme><grapheme>mayfluwer</grapheme><phoneme>ˈmeɪflaʊər</phoneme></lexeme> <!-- mayflower -->
@@ -16512,7 +16512,7 @@
   <lexeme><grapheme>mealymouthd</grapheme><phoneme>ˌmiːlimmaʊðd</phoneme></lexeme> <!-- mealymouthed -->
   <lexeme><grapheme>meanderd</grapheme><phoneme>miˈændərd</phoneme></lexeme> <!-- meandered -->
   <lexeme><grapheme>meanderz</grapheme><phoneme>miˈændərz</phoneme></lexeme> <!-- meanders -->
-  <lexeme><grapheme>meanz</grapheme><phoneme>ˈmiːnz</phoneme></lexeme> <!-- means -->
+  <lexeme><grapheme>meanz</grapheme><phoneme>miːnz</phoneme></lexeme> <!-- means -->
   <lexeme><grapheme>meathedd</grapheme><phoneme>ˈmiːthɛd</phoneme></lexeme> <!-- meathead -->
   <lexeme><grapheme>meathedds</grapheme><phoneme>ˈmiːthɛdz</phoneme></lexeme> <!-- meatheads -->
   <lexeme><grapheme>meatloavs</grapheme><phoneme>ˈmiːtloʊvz</phoneme></lexeme> <!-- meatloaves -->
@@ -16548,30 +16548,30 @@
   <lexeme><grapheme>meditativness</grapheme><phoneme>ˈmɛdəˌteɪtɪvnəs</phoneme></lexeme> <!-- meditativeness -->
   <lexeme><grapheme>medivacd</grapheme><phoneme>ˈmɛdɪvækt</phoneme></lexeme> <!-- medivacked -->
   <lexeme><grapheme>medivacz</grapheme><phoneme>ˈmɛdɪvæks</phoneme></lexeme> <!-- medivacs -->
-  <lexeme><grapheme>meetz</grapheme><phoneme>ˈmiːts</phoneme></lexeme> <!-- meets -->
+  <lexeme><grapheme>meetz</grapheme><phoneme>miːts</phoneme></lexeme> <!-- meets -->
   <lexeme><grapheme>megadeth</grapheme><phoneme>ˈmɛɡədɛθ</phoneme></lexeme> <!-- megadeath -->
   <lexeme><grapheme>megadeths</grapheme><phoneme>ˈmɛɡədɛθs</phoneme></lexeme> <!-- megadeaths -->
   <lexeme><grapheme>megaphonez</grapheme><phoneme>ˈmɛɡəfoʊnz</phoneme></lexeme> <!-- megaphones -->
   <lexeme><grapheme>megaqhurqh</grapheme><phoneme>ˈmɛɡətʃɜːrtʃ</phoneme></lexeme> <!-- megachurch -->
   <lexeme><grapheme>megaqhurqhes</grapheme><phoneme>ˈmɛɡətʃɜːrtʃɪz</phoneme></lexeme> <!-- megachurches -->
   <lexeme><grapheme>melanizez</grapheme><phoneme>ˈmɛlənaɪzɪz</phoneme></lexeme> <!-- melanises -->
-  <lexeme><grapheme>meldz</grapheme><phoneme>ˈmɛldz</phoneme></lexeme> <!-- melds -->
+  <lexeme><grapheme>meldz</grapheme><phoneme>mɛldz</phoneme></lexeme> <!-- melds -->
   <lexeme><grapheme>melioratez</grapheme><phoneme>ˈmiːliəreɪts</phoneme></lexeme> <!-- meliorates -->
   <lexeme><grapheme>meliorativ</grapheme><phoneme>ˈmiːliəreɪtɪv</phoneme></lexeme> <!-- meliorative -->
-  <lexeme><grapheme>melld</grapheme><phoneme>ˈmɛld</phoneme></lexeme> <!-- melled -->
+  <lexeme><grapheme>melld</grapheme><phoneme>mɛld</phoneme></lexeme> <!-- melled -->
   <lexeme><grapheme>mellowd</grapheme><phoneme>ˈmɛloʊd</phoneme></lexeme> <!-- mellowed -->
   <lexeme><grapheme>mellowz</grapheme><phoneme>ˈmɛloʊz</phoneme></lexeme> <!-- mellows -->
-  <lexeme><grapheme>mellz</grapheme><phoneme>ˈmɛlz</phoneme></lexeme> <!-- mells -->
+  <lexeme><grapheme>mellz</grapheme><phoneme>mɛlz</phoneme></lexeme> <!-- mells -->
   <lexeme><grapheme>melodizez</grapheme><phoneme>ˈmɛlədaɪzɪz</phoneme></lexeme> <!-- melodises -->
   <lexeme><grapheme>melodramatizez</grapheme><phoneme>ˌmɛlədræməˈtaɪzɪz</phoneme></lexeme> <!-- melodramatises -->
   <lexeme><grapheme>meltduwn</grapheme><phoneme>ˈmɛltdaʊn</phoneme></lexeme> <!-- meltdown -->
   <lexeme><grapheme>meltduwns</grapheme><phoneme>ˈmɛltdaʊnz</phoneme></lexeme> <!-- meltdowns -->
-  <lexeme><grapheme>meltz</grapheme><phoneme>ˈmɛlts</phoneme></lexeme> <!-- melts -->
+  <lexeme><grapheme>meltz</grapheme><phoneme>mɛlts</phoneme></lexeme> <!-- melts -->
   <lexeme><grapheme>memberd</grapheme><phoneme>ˈmɛmbərd</phoneme></lexeme> <!-- membered -->
   <lexeme><grapheme>memorializez</grapheme><phoneme>mɪˈmɔːriəlaɪzɪz</phoneme></lexeme> <!-- memorialises -->
   <lexeme><grapheme>memorizez</grapheme><phoneme>ˈmɛməraɪzɪz</phoneme></lexeme> <!-- memorises -->
   <lexeme><grapheme>menacez</grapheme><phoneme>ˈmɛnəsɪz</phoneme></lexeme> <!-- menaces -->
-  <lexeme><grapheme>mendz</grapheme><phoneme>ˈmɛndz</phoneme></lexeme> <!-- mends -->
+  <lexeme><grapheme>mendz</grapheme><phoneme>mɛndz</phoneme></lexeme> <!-- mends -->
   <lexeme><grapheme>mensez</grapheme><phoneme>ˈmɛnsiːz</phoneme></lexeme> <!-- menses -->
   <lexeme><grapheme>menstruatez</grapheme><phoneme>ˈmɛnstrueɪts</phoneme></lexeme> <!-- menstruates -->
   <lexeme><grapheme>mensuratez</grapheme><phoneme>ˈmɛnsjʊreɪts</phoneme></lexeme> <!-- mensurates -->
@@ -16593,7 +16593,7 @@
   <lexeme><grapheme>meritz</grapheme><phoneme>ˈmɛrəts</phoneme></lexeme> <!-- merits -->
   <lexeme><grapheme>merloh</grapheme><phoneme>mɛrˈloʊ</phoneme></lexeme> <!-- merlot -->
   <lexeme><grapheme>merlohs</grapheme><phoneme>mɛrˈloʊz</phoneme></lexeme> <!-- merlots -->
-  <lexeme><grapheme>merqh</grapheme><phoneme>ˈmɜːrtʃ</phoneme></lexeme> <!-- merch -->
+  <lexeme><grapheme>merqh</grapheme><phoneme>mɜːrtʃ</phoneme></lexeme> <!-- merch -->
   <lexeme><grapheme>merqhandise</grapheme><phoneme>ˈmɜːrtʃənˌdaɪz</phoneme></lexeme> <!-- merchandise -->
   <lexeme><grapheme>merqhandised</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzd</phoneme></lexeme> <!-- merchandised -->
   <lexeme><grapheme>merqhandiser</grapheme><phoneme>ˈmɜːrtʃənˌdaɪzər</phoneme></lexeme> <!-- merchandiser -->
@@ -16615,7 +16615,7 @@
   <lexeme><grapheme>merrythohts</grapheme><phoneme>ˈmɛriθɔːts</phoneme></lexeme> <!-- merrythoughts -->
   <lexeme><grapheme>meseemd</grapheme><phoneme>mɪˈsiːmd</phoneme></lexeme> <!-- meseemed -->
   <lexeme><grapheme>meseemz</grapheme><phoneme>mɪˈsiːmz</phoneme></lexeme> <!-- meseems -->
-  <lexeme><grapheme>meshd</grapheme><phoneme>ˈmɛʃt</phoneme></lexeme> <!-- meshed -->
+  <lexeme><grapheme>meshd</grapheme><phoneme>mɛʃt</phoneme></lexeme> <!-- meshed -->
   <lexeme><grapheme>meshez</grapheme><phoneme>ˈmɛʃɪz</phoneme></lexeme> <!-- meshes -->
   <lexeme><grapheme>mesmerizez</grapheme><phoneme>ˈmɛzməraɪzɪz</phoneme></lexeme> <!-- mesmerises -->
   <lexeme><grapheme>mesqit</grapheme><phoneme>ˈmɛskiːt</phoneme></lexeme> <!-- mesquit -->
@@ -16623,7 +16623,7 @@
   <lexeme><grapheme>mesqites</grapheme><phoneme>ˈmɛˌskiːts</phoneme></lexeme> <!-- mesquites -->
   <lexeme><grapheme>mesqits</grapheme><phoneme>ˈmɛskiːts</phoneme></lexeme> <!-- mesquits -->
   <lexeme><grapheme>messagez</grapheme><phoneme>ˈmɛsədʒəz</phoneme></lexeme> <!-- messages -->
-  <lexeme><grapheme>messd</grapheme><phoneme>ˈmɛst</phoneme></lexeme> <!-- messed -->
+  <lexeme><grapheme>messd</grapheme><phoneme>mɛst</phoneme></lexeme> <!-- messed -->
   <lexeme><grapheme>messez</grapheme><phoneme>ˈmɛsɪz</phoneme></lexeme> <!-- messes -->
   <lexeme><grapheme>mesurabilities</grapheme><phoneme>ˌmɛʒərəˈbɪlɪtiz</phoneme></lexeme> <!-- measurabilities -->
   <lexeme><grapheme>mesurability</grapheme><phoneme>ˌmɛʒərəˈbɪlɪtiː</phoneme></lexeme> <!-- measurability -->
@@ -16664,10 +16664,10 @@
   <lexeme><grapheme>meuwing</grapheme><phoneme>miˈaʊɪŋ</phoneme></lexeme> <!-- meowing -->
   <lexeme><grapheme>meuws</grapheme><phoneme>miˈaʊz</phoneme></lexeme> <!-- meows -->
   <lexeme><grapheme>meuwz</grapheme><phoneme>miˈaʊz</phoneme></lexeme> <!-- meows -->
-  <lexeme><grapheme>mewd</grapheme><phoneme>ˈmjuːd</phoneme></lexeme> <!-- mewed -->
-  <lexeme><grapheme>mewld</grapheme><phoneme>ˈmjuːld</phoneme></lexeme> <!-- mewled -->
-  <lexeme><grapheme>mewlz</grapheme><phoneme>ˈmjuːlz</phoneme></lexeme> <!-- mewls -->
-  <lexeme><grapheme>mewz</grapheme><phoneme>ˈmjuːz</phoneme></lexeme> <!-- mews -->
+  <lexeme><grapheme>mewd</grapheme><phoneme>mjuːd</phoneme></lexeme> <!-- mewed -->
+  <lexeme><grapheme>mewld</grapheme><phoneme>mjuːld</phoneme></lexeme> <!-- mewled -->
+  <lexeme><grapheme>mewlz</grapheme><phoneme>mjuːlz</phoneme></lexeme> <!-- mewls -->
+  <lexeme><grapheme>mewz</grapheme><phoneme>mjuːz</phoneme></lexeme> <!-- mews -->
   <lexeme><grapheme>miao</grapheme><phoneme>miˈaʊ</phoneme></lexeme> <!-- miaou -->
   <lexeme><grapheme>miaod</grapheme><phoneme>miˈaʊd</phoneme></lexeme> <!-- miaoued -->
   <lexeme><grapheme>miaoing</grapheme><phoneme>miˈaʊɪŋ</phoneme></lexeme> <!-- miaouing -->
@@ -16714,40 +16714,40 @@
   <lexeme><grapheme>midtuwn</grapheme><phoneme>ˈmɪdtaʊn</phoneme></lexeme> <!-- midtown -->
   <lexeme><grapheme>midtuwns</grapheme><phoneme>ˈmɪdtaʊnz</phoneme></lexeme> <!-- midtowns -->
   <lexeme><grapheme>midwifez</grapheme><phoneme>ˈmɪdwaɪfs</phoneme></lexeme> <!-- midwifes -->
-  <lexeme><grapheme>miffd</grapheme><phoneme>ˈmɪft</phoneme></lexeme> <!-- miffed -->
-  <lexeme><grapheme>miffz</grapheme><phoneme>ˈmɪfs</phoneme></lexeme> <!-- miffs -->
+  <lexeme><grapheme>miffd</grapheme><phoneme>mɪft</phoneme></lexeme> <!-- miffed -->
+  <lexeme><grapheme>miffz</grapheme><phoneme>mɪfs</phoneme></lexeme> <!-- miffs -->
   <lexeme><grapheme>migratez</grapheme><phoneme>ˈmaɪɡreɪts</phoneme></lexeme> <!-- migrates -->
-  <lexeme><grapheme>miht</grapheme><phoneme>ˈmaɪt</phoneme></lexeme> <!-- might -->
+  <lexeme><grapheme>miht</grapheme><phoneme>maɪt</phoneme></lexeme> <!-- might -->
   <lexeme><grapheme>mihtier</grapheme><phoneme>ˈmaɪtiər</phoneme></lexeme> <!-- mightier -->
   <lexeme><grapheme>mihtiest</grapheme><phoneme>ˈmaɪtiɪst</phoneme></lexeme> <!-- mightiest -->
   <lexeme><grapheme>mihtily</grapheme><phoneme>ˈmaɪtɪli</phoneme></lexeme> <!-- mightily -->
   <lexeme><grapheme>mihtiness</grapheme><phoneme>ˈmaɪtinis</phoneme></lexeme> <!-- mightiness -->
-  <lexeme><grapheme>mihts</grapheme><phoneme>ˈmaɪts</phoneme></lexeme> <!-- mights -->
+  <lexeme><grapheme>mihts</grapheme><phoneme>maɪts</phoneme></lexeme> <!-- mights -->
   <lexeme><grapheme>mihty</grapheme><phoneme>ˈmaɪti</phoneme></lexeme> <!-- mighty -->
-  <lexeme><grapheme>mikez</grapheme><phoneme>ˈmaɪks</phoneme></lexeme> <!-- mikes -->
+  <lexeme><grapheme>mikez</grapheme><phoneme>maɪks</phoneme></lexeme> <!-- mikes -->
   <lexeme><grapheme>mildewd</grapheme><phoneme>ˈmɪldjuːd</phoneme></lexeme> <!-- mildewed -->
   <lexeme><grapheme>mildewz</grapheme><phoneme>ˈmɪldjuːz</phoneme></lexeme> <!-- mildews -->
   <lexeme><grapheme>mileposte</grapheme><phoneme>ˈmaɪlpoʊst</phoneme></lexeme> <!-- milepost -->
   <lexeme><grapheme>milepostes</grapheme><phoneme>ˈmaɪlpoʊsts</phoneme></lexeme> <!-- mileposts -->
   <lexeme><grapheme>militarizez</grapheme><phoneme>ˈmɪlɪtəraɪzɪz</phoneme></lexeme> <!-- militarises -->
   <lexeme><grapheme>militatez</grapheme><phoneme>ˈmɪlɪteɪts</phoneme></lexeme> <!-- militates -->
-  <lexeme><grapheme>milkd</grapheme><phoneme>ˈmɪlkt</phoneme></lexeme> <!-- milked -->
-  <lexeme><grapheme>milkz</grapheme><phoneme>ˈmɪlks</phoneme></lexeme> <!-- milks -->
-  <lexeme><grapheme>milld</grapheme><phoneme>ˈmɪld</phoneme></lexeme> <!-- milled -->
+  <lexeme><grapheme>milkd</grapheme><phoneme>mɪlkt</phoneme></lexeme> <!-- milked -->
+  <lexeme><grapheme>milkz</grapheme><phoneme>mɪlks</phoneme></lexeme> <!-- milks -->
+  <lexeme><grapheme>milld</grapheme><phoneme>mɪld</phoneme></lexeme> <!-- milled -->
   <lexeme><grapheme>millwriht</grapheme><phoneme>ˈmɪlraɪt</phoneme></lexeme> <!-- millwright -->
   <lexeme><grapheme>millwrihts</grapheme><phoneme>ˈmɪlraɪts</phoneme></lexeme> <!-- millwrights -->
-  <lexeme><grapheme>millz</grapheme><phoneme>ˈmɪlz</phoneme></lexeme> <!-- mills -->
-  <lexeme><grapheme>milqh</grapheme><phoneme>ˈmɪltʃ</phoneme></lexeme> <!-- milch -->
-  <lexeme><grapheme>miltz</grapheme><phoneme>ˈmɪlts</phoneme></lexeme> <!-- milts -->
+  <lexeme><grapheme>millz</grapheme><phoneme>mɪlz</phoneme></lexeme> <!-- mills -->
+  <lexeme><grapheme>milqh</grapheme><phoneme>mɪltʃ</phoneme></lexeme> <!-- milch -->
+  <lexeme><grapheme>miltz</grapheme><phoneme>mɪlts</phoneme></lexeme> <!-- milts -->
   <lexeme><grapheme>mimeographd</grapheme><phoneme>ˈmɪmiəɡræft</phoneme></lexeme> <!-- mimeographed -->
   <lexeme><grapheme>mimeographz</grapheme><phoneme>ˈmɪmiəɡræfs</phoneme></lexeme> <!-- mimeographs -->
   <lexeme><grapheme>mimeoz</grapheme><phoneme>ˈmɪmioʊz</phoneme></lexeme> <!-- mimeos -->
-  <lexeme><grapheme>mimez</grapheme><phoneme>ˈmaɪmz</phoneme></lexeme> <!-- mimes -->
+  <lexeme><grapheme>mimez</grapheme><phoneme>maɪmz</phoneme></lexeme> <!-- mimes -->
   <lexeme><grapheme>mimicd</grapheme><phoneme>ˈmɪmɪkt</phoneme></lexeme> <!-- mimicked -->
   <lexeme><grapheme>mimicz</grapheme><phoneme>ˈmɪmɪks</phoneme></lexeme> <!-- mimics -->
   <lexeme><grapheme>mincez</grapheme><phoneme>ˈmɪnsɪz</phoneme></lexeme> <!-- minces -->
   <lexeme><grapheme>mineralizez</grapheme><phoneme>ˈmɪnərəlaɪzɪz</phoneme></lexeme> <!-- mineralises -->
-  <lexeme><grapheme>minez</grapheme><phoneme>ˈmaɪnz</phoneme></lexeme> <!-- mines -->
+  <lexeme><grapheme>minez</grapheme><phoneme>maɪnz</phoneme></lexeme> <!-- mines -->
   <lexeme><grapheme>minglez</grapheme><phoneme>ˈmɪŋɡəlz</phoneme></lexeme> <!-- mingles -->
   <lexeme><grapheme>miniaturizez</grapheme><phoneme>ˈmɪnɪtʃəraɪzɪz</phoneme></lexeme> <!-- miniaturises -->
   <lexeme><grapheme>minicorse</grapheme><phoneme>ˈmɪnikɔːrs</phoneme></lexeme> <!-- minicourse -->
@@ -16760,7 +16760,7 @@
   <lexeme><grapheme>ministerz</grapheme><phoneme>ˈmɪnɪstərz</phoneme></lexeme> <!-- ministers -->
   <lexeme><grapheme>minord</grapheme><phoneme>ˈmaɪnərd</phoneme></lexeme> <!-- minored -->
   <lexeme><grapheme>minorz</grapheme><phoneme>ˈmaɪnərz</phoneme></lexeme> <!-- minors -->
-  <lexeme><grapheme>mintz</grapheme><phoneme>ˈmɪnts</phoneme></lexeme> <!-- mints -->
+  <lexeme><grapheme>mintz</grapheme><phoneme>mɪnts</phoneme></lexeme> <!-- mints -->
   <lexeme><grapheme>minut</grapheme><phoneme>ˈmɪnət</phoneme></lexeme> <!-- minute -->
   <lexeme><grapheme>minutman</grapheme><phoneme>ˈmɪnɪtmæn</phoneme></lexeme> <!-- minuteman -->
   <lexeme><grapheme>minutmen</grapheme><phoneme>ˈmɪnɪtmɛn</phoneme></lexeme> <!-- minutemen -->
@@ -16773,8 +16773,8 @@
   <lexeme><grapheme>miqelet</grapheme><phoneme>ˈmɪkəlɛt</phoneme></lexeme> <!-- miquelet -->
   <lexeme><grapheme>miqelets</grapheme><phoneme>ˈmɪkəlɛts</phoneme></lexeme> <!-- miquelets -->
   <lexeme><grapheme>mirez</grapheme><phoneme>ˈmaɪərz</phoneme></lexeme> <!-- mires -->
-  <lexeme><grapheme>mirkd</grapheme><phoneme>ˈmɜːrkt</phoneme></lexeme> <!-- mirked -->
-  <lexeme><grapheme>mirkz</grapheme><phoneme>ˈmɜːrks</phoneme></lexeme> <!-- mirks -->
+  <lexeme><grapheme>mirkd</grapheme><phoneme>mɜːrkt</phoneme></lexeme> <!-- mirked -->
+  <lexeme><grapheme>mirkz</grapheme><phoneme>mɜːrks</phoneme></lexeme> <!-- mirks -->
   <lexeme><grapheme>mirrord</grapheme><phoneme>ˈmɪrərd</phoneme></lexeme> <!-- mirrored -->
   <lexeme><grapheme>mirrorz</grapheme><phoneme>ˈmɪrərz</phoneme></lexeme> <!-- mirrors -->
   <lexeme><grapheme>misactz</grapheme><phoneme>ˌmɪsˈækts</phoneme></lexeme> <!-- misacts -->
@@ -17082,7 +17082,7 @@
   <lexeme><grapheme>misroutez</grapheme><phoneme>ˌmɪsˈruːts</phoneme></lexeme> <!-- misroutes -->
   <lexeme><grapheme>misrulez</grapheme><phoneme>ˌmɪsˈruːlz</phoneme></lexeme> <!-- misrules -->
   <lexeme><grapheme>missayz</grapheme><phoneme>ˌmɪsˈsɛz</phoneme></lexeme> <!-- missays -->
-  <lexeme><grapheme>missd</grapheme><phoneme>ˈmɪst</phoneme></lexeme> <!-- missed -->
+  <lexeme><grapheme>missd</grapheme><phoneme>mɪst</phoneme></lexeme> <!-- missed -->
   <lexeme><grapheme>misseatz</grapheme><phoneme>ˌmɪsˈiːts</phoneme></lexeme> <!-- misseats -->
   <lexeme><grapheme>missendz</grapheme><phoneme>ˌmɪsˈsɛndz</phoneme></lexeme> <!-- missends -->
   <lexeme><grapheme>missensez</grapheme><phoneme>ˌmɪsˈsɛnsɪz</phoneme></lexeme> <!-- missenses -->
@@ -17144,7 +17144,7 @@
   <lexeme><grapheme>mistutord</grapheme><phoneme>ˌmɪsˈtuːtərd</phoneme></lexeme> <!-- mistutored -->
   <lexeme><grapheme>mistutorz</grapheme><phoneme>ˌmɪsˈtuːtərz</phoneme></lexeme> <!-- mistutors -->
   <lexeme><grapheme>mistypez</grapheme><phoneme>ˌmɪsˈtaɪps</phoneme></lexeme> <!-- mistypes -->
-  <lexeme><grapheme>mistz</grapheme><phoneme>ˈmɪsts</phoneme></lexeme> <!-- mists -->
+  <lexeme><grapheme>mistz</grapheme><phoneme>mɪsts</phoneme></lexeme> <!-- mists -->
   <lexeme><grapheme>misunderstandz</grapheme><phoneme>ˌmɪsʌndərˈstændz</phoneme></lexeme> <!-- misunderstands -->
   <lexeme><grapheme>misuze</grapheme><phoneme>mɪˈsjuːz</phoneme></lexeme> <!-- misuse -->
   <lexeme><grapheme>misuzed</grapheme><phoneme>mɪˈsjuːzd</phoneme></lexeme> <!-- misused -->
@@ -17156,7 +17156,7 @@
   <lexeme><grapheme>miswordz</grapheme><phoneme>ˌmɪsˈwɜːrdz</phoneme></lexeme> <!-- miswords -->
   <lexeme><grapheme>miswritez</grapheme><phoneme>ˌmɪsˈraɪts</phoneme></lexeme> <!-- miswrites -->
   <lexeme><grapheme>misyokez</grapheme><phoneme>ˌmɪsˈjoʊks</phoneme></lexeme> <!-- misyokes -->
-  <lexeme><grapheme>mitchd</grapheme><phoneme>ˈmɪtʃt</phoneme></lexeme> <!-- miched -->
+  <lexeme><grapheme>mitchd</grapheme><phoneme>mɪtʃt</phoneme></lexeme> <!-- miched -->
   <lexeme><grapheme>mitchez</grapheme><phoneme>ˈmɪtʃɪz</phoneme></lexeme> <!-- miches -->
   <lexeme><grapheme>miterd</grapheme><phoneme>ˈmaɪtərd</phoneme></lexeme> <!-- mitered -->
   <lexeme><grapheme>miterz</grapheme><phoneme>ˈmaɪtərz</phoneme></lexeme> <!-- miters -->
@@ -17165,19 +17165,19 @@
   <lexeme><grapheme>mitigatez</grapheme><phoneme>ˈmɪtɪɡeɪts</phoneme></lexeme> <!-- mitigates -->
   <lexeme><grapheme>mitigativ</grapheme><phoneme>ˈmɪtɪɡeɪtɪv</phoneme></lexeme> <!-- mitigative -->
   <lexeme><grapheme>mittend</grapheme><phoneme>ˈmɪtənd</phoneme></lexeme> <!-- mittened -->
-  <lexeme><grapheme>mixd</grapheme><phoneme>ˈmɪkst</phoneme></lexeme> <!-- mixed -->
+  <lexeme><grapheme>mixd</grapheme><phoneme>mɪkst</phoneme></lexeme> <!-- mixed -->
   <lexeme><grapheme>mixez</grapheme><phoneme>ˈmɪksɪz</phoneme></lexeme> <!-- mixes -->
   <lexeme><grapheme>mizzlez</grapheme><phoneme>ˈmɪzəlz</phoneme></lexeme> <!-- mizzles -->
-  <lexeme><grapheme>moand</grapheme><phoneme>ˈmoʊnd</phoneme></lexeme> <!-- moaned -->
-  <lexeme><grapheme>moanz</grapheme><phoneme>ˈmoʊnz</phoneme></lexeme> <!-- moans -->
-  <lexeme><grapheme>moatz</grapheme><phoneme>ˈmoʊts</phoneme></lexeme> <!-- moats -->
-  <lexeme><grapheme>mobd</grapheme><phoneme>ˈmɑːbd</phoneme></lexeme> <!-- mobbed -->
+  <lexeme><grapheme>moand</grapheme><phoneme>moʊnd</phoneme></lexeme> <!-- moaned -->
+  <lexeme><grapheme>moanz</grapheme><phoneme>moʊnz</phoneme></lexeme> <!-- moans -->
+  <lexeme><grapheme>moatz</grapheme><phoneme>moʊts</phoneme></lexeme> <!-- moats -->
+  <lexeme><grapheme>mobd</grapheme><phoneme>mɑːbd</phoneme></lexeme> <!-- mobbed -->
   <lexeme><grapheme>mobilizez</grapheme><phoneme>ˈmoʊbəlaɪzɪz</phoneme></lexeme> <!-- mobilises -->
   <lexeme><grapheme>moblez</grapheme><phoneme>ˈmoʊbəlz</phoneme></lexeme> <!-- mobles -->
-  <lexeme><grapheme>mobz</grapheme><phoneme>ˈmɑːbz</phoneme></lexeme> <!-- mobs -->
+  <lexeme><grapheme>mobz</grapheme><phoneme>mɑːbz</phoneme></lexeme> <!-- mobs -->
   <lexeme><grapheme>moccasind</grapheme><phoneme>ˈmɑːkəsənd</phoneme></lexeme> <!-- moccasined -->
-  <lexeme><grapheme>mockd</grapheme><phoneme>ˈmɑːkt</phoneme></lexeme> <!-- mocked -->
-  <lexeme><grapheme>mockz</grapheme><phoneme>ˈmɑːks</phoneme></lexeme> <!-- mocks -->
+  <lexeme><grapheme>mockd</grapheme><phoneme>mɑːkt</phoneme></lexeme> <!-- mocked -->
+  <lexeme><grapheme>mockz</grapheme><phoneme>mɑːks</phoneme></lexeme> <!-- mocks -->
   <lexeme><grapheme>modeld</grapheme><phoneme>ˈmɑːdəld</phoneme></lexeme> <!-- modeled -->
   <lexeme><grapheme>modelz</grapheme><phoneme>ˈmɑːdəlz</phoneme></lexeme> <!-- models -->
   <lexeme><grapheme>moderat</grapheme><phoneme>ˈmɑːdərət</phoneme></lexeme> <!-- moderate -->
@@ -17189,21 +17189,21 @@
   <lexeme><grapheme>modifiez</grapheme><phoneme>ˈmɑːdəfaɪz</phoneme></lexeme> <!-- modifies -->
   <lexeme><grapheme>modularizez</grapheme><phoneme>ˈmɑːdʒʊləraɪzɪz</phoneme></lexeme> <!-- modularises -->
   <lexeme><grapheme>modulatez</grapheme><phoneme>ˈmɑːdʒʊleɪts</phoneme></lexeme> <!-- modulates -->
-  <lexeme><grapheme>mogd</grapheme><phoneme>ˈmɑːɡd</phoneme></lexeme> <!-- mogged -->
-  <lexeme><grapheme>mogz</grapheme><phoneme>ˈmɑːɡz</phoneme></lexeme> <!-- mogs -->
-  <lexeme><grapheme>moh</grapheme><phoneme>ˈmoʊ</phoneme></lexeme> <!-- mot -->
-  <lexeme><grapheme>moild</grapheme><phoneme>ˈmɔɪld</phoneme></lexeme> <!-- moiled -->
-  <lexeme><grapheme>moilz</grapheme><phoneme>ˈmɔɪlz</phoneme></lexeme> <!-- moils -->
+  <lexeme><grapheme>mogd</grapheme><phoneme>mɑːɡd</phoneme></lexeme> <!-- mogged -->
+  <lexeme><grapheme>mogz</grapheme><phoneme>mɑːɡz</phoneme></lexeme> <!-- mogs -->
+  <lexeme><grapheme>moh</grapheme><phoneme>moʊ</phoneme></lexeme> <!-- mot -->
+  <lexeme><grapheme>moild</grapheme><phoneme>mɔɪld</phoneme></lexeme> <!-- moiled -->
+  <lexeme><grapheme>moilz</grapheme><phoneme>mɔɪlz</phoneme></lexeme> <!-- moils -->
   <lexeme><grapheme>moistend</grapheme><phoneme>ˈmɔɪsənd</phoneme></lexeme> <!-- moistened -->
   <lexeme><grapheme>moistenz</grapheme><phoneme>ˈmɔɪsənz</phoneme></lexeme> <!-- moistens -->
   <lexeme><grapheme>moisturizez</grapheme><phoneme>ˈmɔɪstʃəraɪzɪz</phoneme></lexeme> <!-- moisturises -->
   <lexeme><grapheme>molderd</grapheme><phoneme>ˈmoʊldərd</phoneme></lexeme> <!-- moldered -->
   <lexeme><grapheme>molderz</grapheme><phoneme>ˈmoʊldərz</phoneme></lexeme> <!-- molders -->
-  <lexeme><grapheme>moldz</grapheme><phoneme>ˈmoʊldz</phoneme></lexeme> <!-- molds -->
+  <lexeme><grapheme>moldz</grapheme><phoneme>moʊldz</phoneme></lexeme> <!-- molds -->
   <lexeme><grapheme>molestz</grapheme><phoneme>məˈlɛsts</phoneme></lexeme> <!-- molests -->
   <lexeme><grapheme>mollifiez</grapheme><phoneme>ˈmɑːləfaɪz</phoneme></lexeme> <!-- mollifies -->
   <lexeme><grapheme>mollycoddlez</grapheme><phoneme>ˈmɑːlikɑːdəlz</phoneme></lexeme> <!-- mollycoddles -->
-  <lexeme><grapheme>moltz</grapheme><phoneme>ˈmoʊlts</phoneme></lexeme> <!-- molts -->
+  <lexeme><grapheme>moltz</grapheme><phoneme>moʊlts</phoneme></lexeme> <!-- molts -->
   <lexeme><grapheme>monetizez</grapheme><phoneme>ˈmɑːnɪtaɪzɪz</phoneme></lexeme> <!-- monetises -->
   <lexeme><grapheme>mongerd</grapheme><phoneme>ˈmʌŋɡərd</phoneme></lexeme> <!-- mongered -->
   <lexeme><grapheme>mongerz</grapheme><phoneme>ˈmʌŋɡərz</phoneme></lexeme> <!-- mongers -->
@@ -17256,7 +17256,7 @@
   <lexeme><grapheme>moolages</grapheme><phoneme>muːˈlɑːʒɪz</phoneme></lexeme> <!-- moulages -->
   <lexeme><grapheme>mooncaff</grapheme><phoneme>ˈmuːnkæf</phoneme></lexeme> <!-- mooncalf -->
   <lexeme><grapheme>mooncavvs</grapheme><phoneme>ˈmuːnkævz</phoneme></lexeme> <!-- mooncalves -->
-  <lexeme><grapheme>moond</grapheme><phoneme>ˈmuːnd</phoneme></lexeme> <!-- mooned -->
+  <lexeme><grapheme>moond</grapheme><phoneme>muːnd</phoneme></lexeme> <!-- mooned -->
   <lexeme><grapheme>moonfluwer</grapheme><phoneme>ˈmuːnˌflaʊər</phoneme></lexeme> <!-- moonflower -->
   <lexeme><grapheme>moonfluwers</grapheme><phoneme>ˈmuːnˌflaʊərz</phoneme></lexeme> <!-- moonflowers -->
   <lexeme><grapheme>mooniye</grapheme><phoneme>ˈmuːnaɪ</phoneme></lexeme> <!-- mooneye -->
@@ -17274,11 +17274,11 @@
   <lexeme><grapheme>moonwahking</grapheme><phoneme>ˈmuːnwɔːkɪŋ</phoneme></lexeme> <!-- moonwalking -->
   <lexeme><grapheme>moonwahks</grapheme><phoneme>ˈmuːnwɔːks</phoneme></lexeme> <!-- moonwalks -->
   <lexeme><grapheme>moonwahkz</grapheme><phoneme>ˈmuːnwɔːks</phoneme></lexeme> <!-- moonwalks -->
-  <lexeme><grapheme>moonz</grapheme><phoneme>ˈmuːnz</phoneme></lexeme> <!-- moons -->
-  <lexeme><grapheme>mooqh</grapheme><phoneme>ˈmuːtʃ</phoneme></lexeme> <!-- mooch -->
+  <lexeme><grapheme>moonz</grapheme><phoneme>muːnz</phoneme></lexeme> <!-- moons -->
+  <lexeme><grapheme>mooqh</grapheme><phoneme>muːtʃ</phoneme></lexeme> <!-- mooch -->
   <lexeme><grapheme>mooqha</grapheme><phoneme>ˈmuːtʃə</phoneme></lexeme> <!-- moocha -->
   <lexeme><grapheme>mooqhas</grapheme><phoneme>ˈmuːtʃəz</phoneme></lexeme> <!-- moochas -->
-  <lexeme><grapheme>mooqhd</grapheme><phoneme>ˈmuːtʃt</phoneme></lexeme> <!-- mooched -->
+  <lexeme><grapheme>mooqhd</grapheme><phoneme>muːtʃt</phoneme></lexeme> <!-- mooched -->
   <lexeme><grapheme>mooqher</grapheme><phoneme>ˈmuːtʃər</phoneme></lexeme> <!-- moocher -->
   <lexeme><grapheme>mooqhers</grapheme><phoneme>ˈmuːtʃərz</phoneme></lexeme> <!-- moochers -->
   <lexeme><grapheme>mooqhes</grapheme><phoneme>ˈmuːtʃɪz</phoneme></lexeme> <!-- mooches -->
@@ -17289,23 +17289,23 @@
   <lexeme><grapheme>moorz</grapheme><phoneme>ˈmʊərz</phoneme></lexeme> <!-- moors -->
   <lexeme><grapheme>mooshwar</grapheme><phoneme>muːˈʃwɑːr</phoneme></lexeme> <!-- mouchoir -->
   <lexeme><grapheme>mooshwars</grapheme><phoneme>muːˈʃwɑːrz</phoneme></lexeme> <!-- mouchoirs -->
-  <lexeme><grapheme>moosse</grapheme><phoneme>ˈmus</phoneme></lexeme> <!-- mousse -->
-  <lexeme><grapheme>moossed</grapheme><phoneme>ˈmust</phoneme></lexeme> <!-- moussed -->
+  <lexeme><grapheme>moosse</grapheme><phoneme>mus</phoneme></lexeme> <!-- mousse -->
+  <lexeme><grapheme>moossed</grapheme><phoneme>must</phoneme></lexeme> <!-- moussed -->
   <lexeme><grapheme>moosseline</grapheme><phoneme>ˌmusəˈlin</phoneme></lexeme> <!-- mousseline -->
   <lexeme><grapheme>moosselines</grapheme><phoneme>ˌmusəˈlinz</phoneme></lexeme> <!-- mousselines -->
   <lexeme><grapheme>moosses</grapheme><phoneme>ˈmusɪz</phoneme></lexeme> <!-- mousses -->
   <lexeme><grapheme>moossing</grapheme><phoneme>ˈmusɪŋ</phoneme></lexeme> <!-- moussing -->
   <lexeme><grapheme>mootins</grapheme><phoneme>ˈmutɑnz</phoneme></lexeme> <!-- moutons -->
   <lexeme><grapheme>mooton</grapheme><phoneme>ˈmutɑn</phoneme></lexeme> <!-- mouton -->
-  <lexeme><grapheme>mootz</grapheme><phoneme>ˈmuːts</phoneme></lexeme> <!-- moots -->
-  <lexeme><grapheme>moov</grapheme><phoneme>ˈmuv</phoneme></lexeme> <!-- move -->
+  <lexeme><grapheme>mootz</grapheme><phoneme>muːts</phoneme></lexeme> <!-- moots -->
+  <lexeme><grapheme>moov</grapheme><phoneme>muv</phoneme></lexeme> <!-- move -->
   <lexeme><grapheme>moovabilities</grapheme><phoneme>ˌmuvəˈbɪlɪtiz</phoneme></lexeme> <!-- movabilities -->
   <lexeme><grapheme>moovability</grapheme><phoneme>ˌmuvəˈbɪlɪti</phoneme></lexeme> <!-- movability -->
   <lexeme><grapheme>moovable</grapheme><phoneme>ˈmuvəbəl</phoneme></lexeme> <!-- movable -->
   <lexeme><grapheme>moovableness</grapheme><phoneme>ˈmuvəbəlnəs</phoneme></lexeme> <!-- movableness -->
   <lexeme><grapheme>moovables</grapheme><phoneme>ˈmuvəbəlz</phoneme></lexeme> <!-- movables -->
   <lexeme><grapheme>moovably</grapheme><phoneme>ˈmuvəbli</phoneme></lexeme> <!-- movably -->
-  <lexeme><grapheme>moovd</grapheme><phoneme>ˈmuvd</phoneme></lexeme> <!-- moved -->
+  <lexeme><grapheme>moovd</grapheme><phoneme>muvd</phoneme></lexeme> <!-- moved -->
   <lexeme><grapheme>moover</grapheme><phoneme>ˈmuvər</phoneme></lexeme> <!-- mover -->
   <lexeme><grapheme>moovers</grapheme><phoneme>ˈmuvərz</phoneme></lexeme> <!-- movers -->
   <lexeme><grapheme>moovie</grapheme><phoneme>ˈmuvi</phoneme></lexeme> <!-- movie -->
@@ -17326,12 +17326,12 @@
   <lexeme><grapheme>moovlessness</grapheme><phoneme>ˈmuvləsnəs</phoneme></lexeme> <!-- movelessness -->
   <lexeme><grapheme>moovment</grapheme><phoneme>ˈmuvmənt</phoneme></lexeme> <!-- movement -->
   <lexeme><grapheme>moovments</grapheme><phoneme>ˈmuvmənts</phoneme></lexeme> <!-- movements -->
-  <lexeme><grapheme>moovs</grapheme><phoneme>ˈmuvz</phoneme></lexeme> <!-- moves -->
-  <lexeme><grapheme>moovz</grapheme><phoneme>ˈmuvz</phoneme></lexeme> <!-- moves -->
-  <lexeme><grapheme>mooz</grapheme><phoneme>ˈmuːz</phoneme></lexeme> <!-- moos -->
-  <lexeme><grapheme>mopd</grapheme><phoneme>ˈmɑːpt</phoneme></lexeme> <!-- mopped -->
-  <lexeme><grapheme>mopez</grapheme><phoneme>ˈmoʊps</phoneme></lexeme> <!-- mopes -->
-  <lexeme><grapheme>mopz</grapheme><phoneme>ˈmɑːps</phoneme></lexeme> <!-- mops -->
+  <lexeme><grapheme>moovs</grapheme><phoneme>muvz</phoneme></lexeme> <!-- moves -->
+  <lexeme><grapheme>moovz</grapheme><phoneme>muvz</phoneme></lexeme> <!-- moves -->
+  <lexeme><grapheme>mooz</grapheme><phoneme>muːz</phoneme></lexeme> <!-- moos -->
+  <lexeme><grapheme>mopd</grapheme><phoneme>mɑːpt</phoneme></lexeme> <!-- mopped -->
+  <lexeme><grapheme>mopez</grapheme><phoneme>moʊps</phoneme></lexeme> <!-- mopes -->
+  <lexeme><grapheme>mopz</grapheme><phoneme>mɑːps</phoneme></lexeme> <!-- mops -->
   <lexeme><grapheme>moqett</grapheme><phoneme>moʊˈkɛt</phoneme></lexeme> <!-- moquette -->
   <lexeme><grapheme>moqetts</grapheme><phoneme>moʊˈkɛts</phoneme></lexeme> <!-- moquettes -->
   <lexeme><grapheme>moqhila</grapheme><phoneme>moʊˈtʃiːlə</phoneme></lexeme> <!-- mochila -->
@@ -17341,7 +17341,7 @@
   <lexeme><grapheme>mordantz</grapheme><phoneme>ˈmɔːrdənts</phoneme></lexeme> <!-- mordants -->
   <lexeme><grapheme>moresq</grapheme><phoneme>məˈrɛsk</phoneme></lexeme> <!-- moresque -->
   <lexeme><grapheme>moresqs</grapheme><phoneme>məˈrɛsks</phoneme></lexeme> <!-- moresques -->
-  <lexeme><grapheme>morg</grapheme><phoneme>ˈmɔːrɡ</phoneme></lexeme> <!-- morgue -->
+  <lexeme><grapheme>morg</grapheme><phoneme>mɔːrɡ</phoneme></lexeme> <!-- morgue -->
   <lexeme><grapheme>morgage</grapheme><phoneme>ˈmɔːrɡədʒ</phoneme></lexeme> <!-- mortgage -->
   <lexeme><grapheme>morgaged</grapheme><phoneme>ˈmɔːrɡɪdʒd</phoneme></lexeme> <!-- mortgaged -->
   <lexeme><grapheme>morgagee</grapheme><phoneme>ˌmɔːrɡəˈdʒiː</phoneme></lexeme> <!-- mortgagee -->
@@ -17353,7 +17353,7 @@
   <lexeme><grapheme>morgaging</grapheme><phoneme>ˈmɔːrɡɪdʒɪŋ</phoneme></lexeme> <!-- mortgaging -->
   <lexeme><grapheme>morgagor</grapheme><phoneme>ˈmɔːrɡədʒɔːr</phoneme></lexeme> <!-- mortgagor -->
   <lexeme><grapheme>morgagors</grapheme><phoneme>ˈmɔːrɡədʒərz</phoneme></lexeme> <!-- mortgagors -->
-  <lexeme><grapheme>morgs</grapheme><phoneme>ˈmɔːrɡz</phoneme></lexeme> <!-- morgues -->
+  <lexeme><grapheme>morgs</grapheme><phoneme>mɔːrɡz</phoneme></lexeme> <!-- morgues -->
   <lexeme><grapheme>morrn</grapheme><phoneme>ˈmɔːrn</phoneme></lexeme> <!-- mourn -->
   <lexeme><grapheme>morrnd</grapheme><phoneme>ˈmɔːrnd</phoneme></lexeme> <!-- mourned -->
   <lexeme><grapheme>morrner</grapheme><phoneme>ˈmɔːrnər</phoneme></lexeme> <!-- mourner -->
@@ -17377,18 +17377,18 @@
   <lexeme><grapheme>mosaicz</grapheme><phoneme>moʊˈzeɪɪks</phoneme></lexeme> <!-- mosaics -->
   <lexeme><grapheme>moseyd</grapheme><phoneme>ˈmoʊzeɪd</phoneme></lexeme> <!-- moseyed -->
   <lexeme><grapheme>moseyz</grapheme><phoneme>ˈmoʊzeɪz</phoneme></lexeme> <!-- moseys -->
-  <lexeme><grapheme>moshd</grapheme><phoneme>ˈmɑːʃt</phoneme></lexeme> <!-- moshed -->
+  <lexeme><grapheme>moshd</grapheme><phoneme>mɑːʃt</phoneme></lexeme> <!-- moshed -->
   <lexeme><grapheme>moshez</grapheme><phoneme>ˈmɑːʃɪz</phoneme></lexeme> <!-- moshes -->
-  <lexeme><grapheme>mosq</grapheme><phoneme>ˈmɑːsk</phoneme></lexeme> <!-- mosque -->
+  <lexeme><grapheme>mosq</grapheme><phoneme>mɑːsk</phoneme></lexeme> <!-- mosque -->
   <lexeme><grapheme>mosqito</grapheme><phoneme>məˈskiːtoʊ</phoneme></lexeme> <!-- mosquito -->
   <lexeme><grapheme>mosqitoes</grapheme><phoneme>məˈskiːtoʊz</phoneme></lexeme> <!-- mosquitoes -->
   <lexeme><grapheme>mosqitoey</grapheme><phoneme>məˈskiːtoʊi</phoneme></lexeme> <!-- mosquitoey -->
   <lexeme><grapheme>mosqitofish</grapheme><phoneme>məˈskiːtoʊˌfɪʃ</phoneme></lexeme> <!-- mosquitofish -->
   <lexeme><grapheme>mosqitofishes</grapheme><phoneme>məˈskiːtoʊˌfɪʃɪz</phoneme></lexeme> <!-- mosquitofishes -->
   <lexeme><grapheme>mosqitos</grapheme><phoneme>məˈskiːtoʊz</phoneme></lexeme> <!-- mosquitos -->
-  <lexeme><grapheme>mosqs</grapheme><phoneme>ˈmɑːsks</phoneme></lexeme> <!-- mosques -->
+  <lexeme><grapheme>mosqs</grapheme><phoneme>mɑːsks</phoneme></lexeme> <!-- mosques -->
   <lexeme><grapheme>mossbackd</grapheme><phoneme>ˈmɔːsbækt</phoneme></lexeme> <!-- mossbacked -->
-  <lexeme><grapheme>mossd</grapheme><phoneme>ˈmɔːst</phoneme></lexeme> <!-- mossed -->
+  <lexeme><grapheme>mossd</grapheme><phoneme>mɔːst</phoneme></lexeme> <!-- mossed -->
   <lexeme><grapheme>mossez</grapheme><phoneme>ˈmɔːsɪz</phoneme></lexeme> <!-- mosses -->
   <lexeme><grapheme>mostely</grapheme><phoneme>ˈmoʊstli</phoneme></lexeme> <!-- mostly -->
   <lexeme><grapheme>mothballd</grapheme><phoneme>ˈmɔːθbɔːld</phoneme></lexeme> <!-- mothballed -->
@@ -17415,7 +17415,7 @@
   <lexeme><grapheme>motorizez</grapheme><phoneme>ˈmoʊtəraɪzɪz</phoneme></lexeme> <!-- motorises -->
   <lexeme><grapheme>motorz</grapheme><phoneme>ˈmoʊtərz</phoneme></lexeme> <!-- motors -->
   <lexeme><grapheme>mottlez</grapheme><phoneme>ˈmɑːtəlz</phoneme></lexeme> <!-- mottles -->
-  <lexeme><grapheme>moundz</grapheme><phoneme>ˈmaʊndz</phoneme></lexeme> <!-- mounds -->
+  <lexeme><grapheme>moundz</grapheme><phoneme>maʊndz</phoneme></lexeme> <!-- mounds -->
   <lexeme><grapheme>mountan</grapheme><phoneme>ˈmaʊntən</phoneme></lexeme> <!-- mountain -->
   <lexeme><grapheme>mountaneer</grapheme><phoneme>ˌmaʊntəˈnɪər</phoneme></lexeme> <!-- mountaineer -->
   <lexeme><grapheme>mountaneerd</grapheme><phoneme>ˈmaʊntɪˌnɪrd</phoneme></lexeme> <!-- mountaineered -->
@@ -17432,22 +17432,22 @@
   <lexeme><grapheme>mountantops</grapheme><phoneme>ˈmaʊntənˌtɑːps</phoneme></lexeme> <!-- mountaintops -->
   <lexeme><grapheme>mountany</grapheme><phoneme>ˈmaʊntəni</phoneme></lexeme> <!-- mountainy -->
   <lexeme><grapheme>mountebankd</grapheme><phoneme>ˈmaʊntɪbæŋkt</phoneme></lexeme> <!-- mountebanked -->
-  <lexeme><grapheme>mountz</grapheme><phoneme>ˈmaʊnts</phoneme></lexeme> <!-- mounts -->
+  <lexeme><grapheme>mountz</grapheme><phoneme>maʊnts</phoneme></lexeme> <!-- mounts -->
   <lexeme><grapheme>mousetrapd</grapheme><phoneme>ˈmaʊsˌtræpt</phoneme></lexeme> <!-- mousetrapped -->
   <lexeme><grapheme>mousetrapz</grapheme><phoneme>ˈmaʊsˌtræps</phoneme></lexeme> <!-- mousetraps -->
   <lexeme><grapheme>mousez</grapheme><phoneme>ˈmaʊsɪz</phoneme></lexeme> <!-- mouses -->
-  <lexeme><grapheme>mouthe</grapheme><phoneme>ˈmaʊθ</phoneme></lexeme> <!-- mouth -->
-  <lexeme><grapheme>mouthez</grapheme><phoneme>ˈmaʊðz</phoneme></lexeme> <!-- mouths -->
+  <lexeme><grapheme>mouthe</grapheme><phoneme>maʊθ</phoneme></lexeme> <!-- mouth -->
+  <lexeme><grapheme>mouthez</grapheme><phoneme>maʊðz</phoneme></lexeme> <!-- mouths -->
   <lexeme><grapheme>mouthgard</grapheme><phoneme>ˈmaʊθˌɡɑrd</phoneme></lexeme> <!-- mouthguard -->
   <lexeme><grapheme>mouthgards</grapheme><phoneme>ˈmaʊθˌɡɑrdz</phoneme></lexeme> <!-- mouthguards -->
-  <lexeme><grapheme>mowd</grapheme><phoneme>ˈmoʊd</phoneme></lexeme> <!-- mowed -->
-  <lexeme><grapheme>mowv</grapheme><phoneme>ˈmoʊv</phoneme></lexeme> <!-- mauve -->
-  <lexeme><grapheme>mowvs</grapheme><phoneme>ˈmoʊvz</phoneme></lexeme> <!-- mauves -->
-  <lexeme><grapheme>mowz</grapheme><phoneme>ˈmoʊz</phoneme></lexeme> <!-- mows -->
-  <lexeme><grapheme>muckd</grapheme><phoneme>ˈmʌkt</phoneme></lexeme> <!-- mucked -->
+  <lexeme><grapheme>mowd</grapheme><phoneme>moʊd</phoneme></lexeme> <!-- mowed -->
+  <lexeme><grapheme>mowv</grapheme><phoneme>moʊv</phoneme></lexeme> <!-- mauve -->
+  <lexeme><grapheme>mowvs</grapheme><phoneme>moʊvz</phoneme></lexeme> <!-- mauves -->
+  <lexeme><grapheme>mowz</grapheme><phoneme>moʊz</phoneme></lexeme> <!-- mows -->
+  <lexeme><grapheme>muckd</grapheme><phoneme>mʌkt</phoneme></lexeme> <!-- mucked -->
   <lexeme><grapheme>mucklez</grapheme><phoneme>ˈmʌkəlz</phoneme></lexeme> <!-- muckles -->
   <lexeme><grapheme>muckrakez</grapheme><phoneme>ˈmʌkˌreɪks</phoneme></lexeme> <!-- muckrakes -->
-  <lexeme><grapheme>muckz</grapheme><phoneme>ˈmʌks</phoneme></lexeme> <!-- mucks -->
+  <lexeme><grapheme>muckz</grapheme><phoneme>mʌks</phoneme></lexeme> <!-- mucks -->
   <lexeme><grapheme>mucronat</grapheme><phoneme>ˈmjukrəneɪt</phoneme></lexeme> <!-- mucronate -->
   <lexeme><grapheme>mudcapd</grapheme><phoneme>ˈmʌdˌkæpt</phoneme></lexeme> <!-- mudcapped -->
   <lexeme><grapheme>mudcapz</grapheme><phoneme>ˈmʌdˌkæps</phoneme></lexeme> <!-- mudcaps -->
@@ -17458,24 +17458,24 @@
   <lexeme><grapheme>muddlez</grapheme><phoneme>ˈmʌdəlz</phoneme></lexeme> <!-- muddles -->
   <lexeme><grapheme>mudgard</grapheme><phoneme>ˈmʌdˌɡɑrd</phoneme></lexeme> <!-- mudguard -->
   <lexeme><grapheme>mudgards</grapheme><phoneme>ˈmʌdˌɡɑrdz</phoneme></lexeme> <!-- mudguards -->
-  <lexeme><grapheme>mudz</grapheme><phoneme>ˈmʌdz</phoneme></lexeme> <!-- muds -->
-  <lexeme><grapheme>muez</grapheme><phoneme>ˈmuːz</phoneme></lexeme> <!-- mues -->
-  <lexeme><grapheme>muffd</grapheme><phoneme>ˈmʌft</phoneme></lexeme> <!-- muffed -->
+  <lexeme><grapheme>mudz</grapheme><phoneme>mʌdz</phoneme></lexeme> <!-- muds -->
+  <lexeme><grapheme>muez</grapheme><phoneme>muːz</phoneme></lexeme> <!-- mues -->
+  <lexeme><grapheme>muffd</grapheme><phoneme>mʌft</phoneme></lexeme> <!-- muffed -->
   <lexeme><grapheme>mufflerd</grapheme><phoneme>ˈmʌflərd</phoneme></lexeme> <!-- mufflered -->
   <lexeme><grapheme>mufflez</grapheme><phoneme>ˈmʌfəlz</phoneme></lexeme> <!-- muffles -->
-  <lexeme><grapheme>mugd</grapheme><phoneme>ˈmʌɡd</phoneme></lexeme> <!-- mugged -->
-  <lexeme><grapheme>mugz</grapheme><phoneme>ˈmʌɡz</phoneme></lexeme> <!-- mugs -->
+  <lexeme><grapheme>mugd</grapheme><phoneme>mʌɡd</phoneme></lexeme> <!-- mugged -->
+  <lexeme><grapheme>mugz</grapheme><phoneme>mʌɡz</phoneme></lexeme> <!-- mugs -->
   <lexeme><grapheme>muieh</grapheme><phoneme>ˈmuːljeɪ</phoneme></lexeme> <!-- mouille -->
-  <lexeme><grapheme>mulctz</grapheme><phoneme>ˈmʌlkts</phoneme></lexeme> <!-- mulcts -->
-  <lexeme><grapheme>mulez</grapheme><phoneme>ˈmjulz</phoneme></lexeme> <!-- mules -->
+  <lexeme><grapheme>mulctz</grapheme><phoneme>mʌlkts</phoneme></lexeme> <!-- mulcts -->
+  <lexeme><grapheme>mulez</grapheme><phoneme>mjulz</phoneme></lexeme> <!-- mules -->
   <lexeme><grapheme>mulin</grapheme><phoneme>muːˈlæn</phoneme></lexeme> <!-- moulin -->
   <lexeme><grapheme>mulins</grapheme><phoneme>muːˈlænz</phoneme></lexeme> <!-- moulins -->
-  <lexeme><grapheme>mulld</grapheme><phoneme>ˈmʌld</phoneme></lexeme> <!-- mulled -->
+  <lexeme><grapheme>mulld</grapheme><phoneme>mʌld</phoneme></lexeme> <!-- mulled -->
   <lexeme><grapheme>mulliond</grapheme><phoneme>ˈmʌljənd</phoneme></lexeme> <!-- mullioned -->
   <lexeme><grapheme>mullionz</grapheme><phoneme>ˈmʌljənz</phoneme></lexeme> <!-- mullions -->
-  <lexeme><grapheme>mullz</grapheme><phoneme>ˈmʌlz</phoneme></lexeme> <!-- mulls -->
-  <lexeme><grapheme>mulqh</grapheme><phoneme>ˈmʌltʃ</phoneme></lexeme> <!-- mulch -->
-  <lexeme><grapheme>mulqhd</grapheme><phoneme>ˈmʌltʃt</phoneme></lexeme> <!-- mulched -->
+  <lexeme><grapheme>mullz</grapheme><phoneme>mʌlz</phoneme></lexeme> <!-- mulls -->
+  <lexeme><grapheme>mulqh</grapheme><phoneme>mʌltʃ</phoneme></lexeme> <!-- mulch -->
+  <lexeme><grapheme>mulqhd</grapheme><phoneme>mʌltʃt</phoneme></lexeme> <!-- mulched -->
   <lexeme><grapheme>mulqhes</grapheme><phoneme>ˈmʌltʃɪz</phoneme></lexeme> <!-- mulches -->
   <lexeme><grapheme>mulqhez</grapheme><phoneme>ˈmʌltʃɪz</phoneme></lexeme> <!-- mulches -->
   <lexeme><grapheme>mulqhing</grapheme><phoneme>ˈmʌltʃɪŋ</phoneme></lexeme> <!-- mulching -->
@@ -17520,18 +17520,18 @@
   <lexeme><grapheme>multivariat</grapheme><phoneme>ˌmʌltiˈvɛriɪt</phoneme></lexeme> <!-- multivariate -->
   <lexeme><grapheme>multiwarhedd</grapheme><phoneme>ˌmʌltiˈwɔrhɛd</phoneme></lexeme> <!-- multiwarhead -->
   <lexeme><grapheme>mumblez</grapheme><phoneme>ˈmʌbəlz</phoneme></lexeme> <!-- mumbles -->
-  <lexeme><grapheme>mummd</grapheme><phoneme>ˈmʌmd</phoneme></lexeme> <!-- mummed -->
+  <lexeme><grapheme>mummd</grapheme><phoneme>mʌmd</phoneme></lexeme> <!-- mummed -->
   <lexeme><grapheme>mummiez</grapheme><phoneme>ˈmʌmiz</phoneme></lexeme> <!-- mummies -->
   <lexeme><grapheme>mummifiez</grapheme><phoneme>ˈmʌmɪfaɪz</phoneme></lexeme> <!-- mummifies -->
-  <lexeme><grapheme>mumpd</grapheme><phoneme>ˈmʌmpt</phoneme></lexeme> <!-- mumped -->
-  <lexeme><grapheme>mumpz</grapheme><phoneme>ˈmʌmps</phoneme></lexeme> <!-- mumps -->
-  <lexeme><grapheme>mungd</grapheme><phoneme>ˈmʌndʒ</phoneme></lexeme> <!-- munged -->
-  <lexeme><grapheme>mungz</grapheme><phoneme>ˈmʌŋz</phoneme></lexeme> <!-- mungs -->
+  <lexeme><grapheme>mumpd</grapheme><phoneme>mʌmpt</phoneme></lexeme> <!-- mumped -->
+  <lexeme><grapheme>mumpz</grapheme><phoneme>mʌmps</phoneme></lexeme> <!-- mumps -->
+  <lexeme><grapheme>mungd</grapheme><phoneme>mʌndʒ</phoneme></lexeme> <!-- munged -->
+  <lexeme><grapheme>mungz</grapheme><phoneme>mʌŋz</phoneme></lexeme> <!-- mungs -->
   <lexeme><grapheme>municipalizez</grapheme><phoneme>ˈmjunəsəpəˌlaɪzɪz</phoneme></lexeme> <!-- municipalises -->
   <lexeme><grapheme>munitiond</grapheme><phoneme>mjuˈnɪʃənd</phoneme></lexeme> <!-- munitioned -->
   <lexeme><grapheme>munitionz</grapheme><phoneme>mjuˈnɪʃənz</phoneme></lexeme> <!-- munitions -->
-  <lexeme><grapheme>munqh</grapheme><phoneme>ˈmʌntʃ</phoneme></lexeme> <!-- munch -->
-  <lexeme><grapheme>munqhd</grapheme><phoneme>ˈmʌntʃt</phoneme></lexeme> <!-- munched -->
+  <lexeme><grapheme>munqh</grapheme><phoneme>mʌntʃ</phoneme></lexeme> <!-- munch -->
+  <lexeme><grapheme>munqhd</grapheme><phoneme>mʌntʃt</phoneme></lexeme> <!-- munched -->
   <lexeme><grapheme>munqher</grapheme><phoneme>ˈmʌntʃər</phoneme></lexeme> <!-- muncher -->
   <lexeme><grapheme>munqhers</grapheme><phoneme>ˈmʌntʃərz</phoneme></lexeme> <!-- munchers -->
   <lexeme><grapheme>munqhes</grapheme><phoneme>ˈmʌntʃɪz</phoneme></lexeme> <!-- munches -->
@@ -17542,7 +17542,7 @@
   <lexeme><grapheme>munqhkin</grapheme><phoneme>ˈmʌntʃkɪn</phoneme></lexeme> <!-- munchkin -->
   <lexeme><grapheme>munqhkins</grapheme><phoneme>ˈmʌntʃkɪnz</phoneme></lexeme> <!-- munchkins -->
   <lexeme><grapheme>munqhy</grapheme><phoneme>ˈmʌntʃi</phoneme></lexeme> <!-- munchy -->
-  <lexeme><grapheme>muqh</grapheme><phoneme>ˈmʌtʃ</phoneme></lexeme> <!-- much -->
+  <lexeme><grapheme>muqh</grapheme><phoneme>mʌtʃ</phoneme></lexeme> <!-- much -->
   <lexeme><grapheme>muqhaqho</grapheme><phoneme>muˈtʃɑtʃoʊ</phoneme></lexeme> <!-- muchacho -->
   <lexeme><grapheme>muqhaqhos</grapheme><phoneme>muˈtʃɑtʃoʊz</phoneme></lexeme> <!-- muchachos -->
   <lexeme><grapheme>muqhly</grapheme><phoneme>ˈmʌtʃli</phoneme></lexeme> <!-- muchly -->
@@ -17550,20 +17550,20 @@
   <lexeme><grapheme>muqhnesses</grapheme><phoneme>ˈmʌtʃnəsɪz</phoneme></lexeme> <!-- muchnesses -->
   <lexeme><grapheme>murderd</grapheme><phoneme>ˈmɜrdərd</phoneme></lexeme> <!-- murdered -->
   <lexeme><grapheme>murderz</grapheme><phoneme>ˈmɜrdərz</phoneme></lexeme> <!-- murders -->
-  <lexeme><grapheme>murez</grapheme><phoneme>ˈmjʊrz</phoneme></lexeme> <!-- mures -->
-  <lexeme><grapheme>murkd</grapheme><phoneme>ˈmɜrkt</phoneme></lexeme> <!-- murked -->
-  <lexeme><grapheme>murkz</grapheme><phoneme>ˈmɜrks</phoneme></lexeme> <!-- murks -->
+  <lexeme><grapheme>murez</grapheme><phoneme>mjʊrz</phoneme></lexeme> <!-- mures -->
+  <lexeme><grapheme>murkd</grapheme><phoneme>mɜrkt</phoneme></lexeme> <!-- murked -->
+  <lexeme><grapheme>murkz</grapheme><phoneme>mɜrks</phoneme></lexeme> <!-- murks -->
   <lexeme><grapheme>murmurd</grapheme><phoneme>ˈmɜrmərd</phoneme></lexeme> <!-- murmured -->
   <lexeme><grapheme>murmurz</grapheme><phoneme>ˈmɜrmərz</phoneme></lexeme> <!-- murmurs -->
   <lexeme><grapheme>musclez</grapheme><phoneme>ˈmʌsəlz</phoneme></lexeme> <!-- muscles -->
   <lexeme><grapheme>musez</grapheme><phoneme>ˈmjuzɪz</phoneme></lexeme> <!-- muses -->
-  <lexeme><grapheme>mushd</grapheme><phoneme>ˈmʌʃt</phoneme></lexeme> <!-- mushed -->
+  <lexeme><grapheme>mushd</grapheme><phoneme>mʌʃt</phoneme></lexeme> <!-- mushed -->
   <lexeme><grapheme>mushez</grapheme><phoneme>ˈmʌʃɪz</phoneme></lexeme> <!-- mushes -->
   <lexeme><grapheme>mushroomd</grapheme><phoneme>ˈmʌʃrumd</phoneme></lexeme> <!-- mushroomed -->
   <lexeme><grapheme>mushroomz</grapheme><phoneme>ˈmʌʃrumz</phoneme></lexeme> <!-- mushrooms -->
   <lexeme><grapheme>musicalizez</grapheme><phoneme>ˈmjuzɪkəˌlaɪzɪz</phoneme></lexeme> <!-- musicalises -->
   <lexeme><grapheme>mussaka</grapheme><phoneme>muˈsɑkə</phoneme></lexeme> <!-- moussaka -->
-  <lexeme><grapheme>mussd</grapheme><phoneme>ˈmʌst</phoneme></lexeme> <!-- mussed -->
+  <lexeme><grapheme>mussd</grapheme><phoneme>mʌst</phoneme></lexeme> <!-- mussed -->
   <lexeme><grapheme>mussez</grapheme><phoneme>ˈmʌsɪz</phoneme></lexeme> <!-- musses -->
   <lexeme><grapheme>mustash</grapheme><phoneme>ˈmʌstæʃ</phoneme></lexeme> <!-- moustache -->
   <lexeme><grapheme>mustashd</grapheme><phoneme>ˈmʌstæʃt</phoneme></lexeme> <!-- moustached -->
@@ -17578,7 +17578,7 @@
   <lexeme><grapheme>musterz</grapheme><phoneme>ˈmʌstərz</phoneme></lexeme> <!-- musters -->
   <lexeme><grapheme>mutatez</grapheme><phoneme>ˈmjuˌteɪts</phoneme></lexeme> <!-- mutates -->
   <lexeme><grapheme>mutativ</grapheme><phoneme>ˈmjutətɪv</phoneme></lexeme> <!-- mutative -->
-  <lexeme><grapheme>mutez</grapheme><phoneme>ˈmjuts</phoneme></lexeme> <!-- mutes -->
+  <lexeme><grapheme>mutez</grapheme><phoneme>mjuts</phoneme></lexeme> <!-- mutes -->
   <lexeme><grapheme>mutilat</grapheme><phoneme>ˈmjutəlˌeɪt</phoneme></lexeme> <!-- mutilate -->
   <lexeme><grapheme>mutilatez</grapheme><phoneme>ˈmjutəlˌeɪts</phoneme></lexeme> <!-- mutilates -->
   <lexeme><grapheme>mutin</grapheme><phoneme>ˈmjutɪn</phoneme></lexeme> <!-- mutine -->
@@ -17592,11 +17592,11 @@
   <lexeme><grapheme>muttonqhop</grapheme><phoneme>ˈmʌtənˌtʃɑp</phoneme></lexeme> <!-- muttonchop -->
   <lexeme><grapheme>muttonqhops</grapheme><phoneme>ˈmʌtənˌtʃɑps</phoneme></lexeme> <!-- muttonchops -->
   <lexeme><grapheme>mutualizez</grapheme><phoneme>ˈmjutʃuəˌlaɪzɪz</phoneme></lexeme> <!-- mutualises -->
-  <lexeme><grapheme>muw</grapheme><phoneme>ˈmoʊ</phoneme></lexeme> <!-- mow -->
-  <lexeme><grapheme>muws</grapheme><phoneme>ˈmoʊz</phoneme></lexeme> <!-- mows -->
+  <lexeme><grapheme>muw</grapheme><phoneme>moʊ</phoneme></lexeme> <!-- mow -->
+  <lexeme><grapheme>muws</grapheme><phoneme>moʊz</phoneme></lexeme> <!-- mows -->
   <lexeme><grapheme>muzzlez</grapheme><phoneme>ˈmʌzəlz</phoneme></lexeme> <!-- muzzles -->
   <lexeme><grapheme>myeloproliferativ</grapheme><phoneme>ˌmaɪəloʊproʊˈlɪfərətɪv</phoneme></lexeme> <!-- myeloproliferative -->
-  <lexeme><grapheme>myld</grapheme><phoneme>ˈmaɪld</phoneme></lexeme> <!-- mild -->
+  <lexeme><grapheme>myld</grapheme><phoneme>maɪld</phoneme></lexeme> <!-- mild -->
   <lexeme><grapheme>mylden</grapheme><phoneme>ˈmaɪldən</phoneme></lexeme> <!-- milden -->
   <lexeme><grapheme>myldend</grapheme><phoneme>ˈmaɪldənd</phoneme></lexeme> <!-- mildened -->
   <lexeme><grapheme>myldening</grapheme><phoneme>ˈmaɪldənɪŋ</phoneme></lexeme> <!-- mildening -->
@@ -17605,7 +17605,7 @@
   <lexeme><grapheme>myldest</grapheme><phoneme>ˈmaɪldɪst</phoneme></lexeme> <!-- mildest -->
   <lexeme><grapheme>myldly</grapheme><phoneme>ˈmaɪldli</phoneme></lexeme> <!-- mildly -->
   <lexeme><grapheme>myldness</grapheme><phoneme>ˈmaɪldnəs</phoneme></lexeme> <!-- mildness -->
-  <lexeme><grapheme>mynd</grapheme><phoneme>ˈmaɪnd</phoneme></lexeme> <!-- mind -->
+  <lexeme><grapheme>mynd</grapheme><phoneme>maɪnd</phoneme></lexeme> <!-- mind -->
   <lexeme><grapheme>myndblower</grapheme><phoneme>ˈmaɪndˌbloʊər</phoneme></lexeme> <!-- mindblower -->
   <lexeme><grapheme>myndblowers</grapheme><phoneme>ˈmaɪndˌbloʊərz</phoneme></lexeme> <!-- mindblowers -->
   <lexeme><grapheme>myndblowing</grapheme><phoneme>ˈmaɪndˌbloʊɪŋ</phoneme></lexeme> <!-- mindblowing -->
@@ -17621,19 +17621,19 @@
   <lexeme><grapheme>myndless</grapheme><phoneme>ˈmaɪndləs</phoneme></lexeme> <!-- mindless -->
   <lexeme><grapheme>myndlessly</grapheme><phoneme>ˈmaɪndləsli</phoneme></lexeme> <!-- mindlessly -->
   <lexeme><grapheme>myndlessness</grapheme><phoneme>ˈmaɪndləsnəs</phoneme></lexeme> <!-- mindlessness -->
-  <lexeme><grapheme>mynds</grapheme><phoneme>ˈmaɪndz</phoneme></lexeme> <!-- minds -->
+  <lexeme><grapheme>mynds</grapheme><phoneme>maɪndz</phoneme></lexeme> <!-- minds -->
   <lexeme><grapheme>myndset</grapheme><phoneme>ˈmaɪndsɛt</phoneme></lexeme> <!-- mindset -->
   <lexeme><grapheme>myndsets</grapheme><phoneme>ˈmaɪndsɛts</phoneme></lexeme> <!-- mindsets -->
-  <lexeme><grapheme>myndz</grapheme><phoneme>ˈmaɪndz</phoneme></lexeme> <!-- minds -->
+  <lexeme><grapheme>myndz</grapheme><phoneme>maɪndz</phoneme></lexeme> <!-- minds -->
   <lexeme><grapheme>mystifiez</grapheme><phoneme>ˈmɪstɪfaɪz</phoneme></lexeme> <!-- mystifies -->
   <lexeme><grapheme>mystiqe</grapheme><phoneme>mɪˈstik</phoneme></lexeme> <!-- mystique -->
   <lexeme><grapheme>mystiqes</grapheme><phoneme>mɪˈstikz</phoneme></lexeme> <!-- mystiques -->
   <lexeme><grapheme>mythicizez</grapheme><phoneme>ˈmɪθəˌsaɪzɪz</phoneme></lexeme> <!-- mythicises -->
   <lexeme><grapheme>mythologizez</grapheme><phoneme>mɪˈθɑləˌdʒaɪzɪz</phoneme></lexeme> <!-- mythologises -->
-  <lexeme><grapheme>nabd</grapheme><phoneme>ˈnæbd</phoneme></lexeme> <!-- nabbed -->
-  <lexeme><grapheme>nabz</grapheme><phoneme>ˈnæbz</phoneme></lexeme> <!-- nabs -->
-  <lexeme><grapheme>nagd</grapheme><phoneme>ˈnæɡd</phoneme></lexeme> <!-- nagged -->
-  <lexeme><grapheme>nagz</grapheme><phoneme>ˈnæɡz</phoneme></lexeme> <!-- nags -->
+  <lexeme><grapheme>nabd</grapheme><phoneme>næbd</phoneme></lexeme> <!-- nabbed -->
+  <lexeme><grapheme>nabz</grapheme><phoneme>næbz</phoneme></lexeme> <!-- nabs -->
+  <lexeme><grapheme>nagd</grapheme><phoneme>næɡd</phoneme></lexeme> <!-- nagged -->
+  <lexeme><grapheme>nagz</grapheme><phoneme>næɡz</phoneme></lexeme> <!-- nags -->
   <lexeme><grapheme>naiiv</grapheme><phoneme>nɑˈiv</phoneme></lexeme> <!-- naive -->
   <lexeme><grapheme>naiiver</grapheme><phoneme>nɑˈivər</phoneme></lexeme> <!-- naiver -->
   <lexeme><grapheme>naiivest</grapheme><phoneme>nɑˈivəst</phoneme></lexeme> <!-- naivest -->
@@ -17644,25 +17644,25 @@
   <lexeme><grapheme>naiivly</grapheme><phoneme>nɑˈivli</phoneme></lexeme> <!-- naively -->
   <lexeme><grapheme>naiivness</grapheme><phoneme>nɑˈivnəs</phoneme></lexeme> <!-- naiveness -->
   <lexeme><grapheme>naiivs</grapheme><phoneme>nɑˈivz</phoneme></lexeme> <!-- naives -->
-  <lexeme><grapheme>naild</grapheme><phoneme>ˈneɪld</phoneme></lexeme> <!-- nailed -->
+  <lexeme><grapheme>naild</grapheme><phoneme>neɪld</phoneme></lexeme> <!-- nailed -->
   <lexeme><grapheme>nailhedd</grapheme><phoneme>ˈneɪlhɛd</phoneme></lexeme> <!-- nailhead -->
   <lexeme><grapheme>nailhedds</grapheme><phoneme>ˈneɪlhɛdz</phoneme></lexeme> <!-- nailheads -->
-  <lexeme><grapheme>nailz</grapheme><phoneme>ˈneɪlz</phoneme></lexeme> <!-- nails -->
+  <lexeme><grapheme>nailz</grapheme><phoneme>neɪlz</phoneme></lexeme> <!-- nails -->
   <lexeme><grapheme>nalqhik</grapheme><phoneme>ˈnɑltʃɪk</phoneme></lexeme> <!-- nalchik -->
-  <lexeme><grapheme>namez</grapheme><phoneme>ˈneɪmz</phoneme></lexeme> <!-- names -->
+  <lexeme><grapheme>namez</grapheme><phoneme>neɪmz</phoneme></lexeme> <!-- names -->
   <lexeme><grapheme>nancez</grapheme><phoneme>ˈnænsɪz</phoneme></lexeme> <!-- nances -->
   <lexeme><grapheme>napalmd</grapheme><phoneme>ˈneɪpɑmd</phoneme></lexeme> <!-- napalmed -->
   <lexeme><grapheme>napalmz</grapheme><phoneme>ˈneɪpɑmz</phoneme></lexeme> <!-- napalms -->
-  <lexeme><grapheme>napd</grapheme><phoneme>ˈnæpt</phoneme></lexeme> <!-- napped -->
+  <lexeme><grapheme>napd</grapheme><phoneme>næpt</phoneme></lexeme> <!-- napped -->
   <lexeme><grapheme>naphthalizez</grapheme><phoneme>ˈnæfθəˌlaɪzɪz</phoneme></lexeme> <!-- naphthalises -->
-  <lexeme><grapheme>napp</grapheme><phoneme>ˈnæp</phoneme></lexeme> <!-- nappe -->
-  <lexeme><grapheme>napps</grapheme><phoneme>ˈnæps</phoneme></lexeme> <!-- nappes -->
-  <lexeme><grapheme>napz</grapheme><phoneme>ˈnæps</phoneme></lexeme> <!-- naps -->
+  <lexeme><grapheme>napp</grapheme><phoneme>næp</phoneme></lexeme> <!-- nappe -->
+  <lexeme><grapheme>napps</grapheme><phoneme>næps</phoneme></lexeme> <!-- nappes -->
+  <lexeme><grapheme>napz</grapheme><phoneme>næps</phoneme></lexeme> <!-- naps -->
   <lexeme><grapheme>naqho</grapheme><phoneme>ˈnɑtʃoʊ</phoneme></lexeme> <!-- nacho -->
   <lexeme><grapheme>naqhos</grapheme><phoneme>ˈnɑtʃoʊz</phoneme></lexeme> <!-- nachos -->
   <lexeme><grapheme>narcotizez</grapheme><phoneme>ˈnɑrkəˌtaɪzɪz</phoneme></lexeme> <!-- narcotises -->
-  <lexeme><grapheme>narkd</grapheme><phoneme>ˈnɑrkt</phoneme></lexeme> <!-- narked -->
-  <lexeme><grapheme>narkz</grapheme><phoneme>ˈnɑrks</phoneme></lexeme> <!-- narks -->
+  <lexeme><grapheme>narkd</grapheme><phoneme>nɑrkt</phoneme></lexeme> <!-- narked -->
+  <lexeme><grapheme>narkz</grapheme><phoneme>nɑrks</phoneme></lexeme> <!-- narks -->
   <lexeme><grapheme>narratez</grapheme><phoneme>ˈnæreɪts</phoneme></lexeme> <!-- narrates -->
   <lexeme><grapheme>narrativ</grapheme><phoneme>ˈnærətɪv</phoneme></lexeme> <!-- narrative -->
   <lexeme><grapheme>narrativly</grapheme><phoneme>ˈnærətɪvli</phoneme></lexeme> <!-- narratively -->
@@ -17681,42 +17681,42 @@
   <lexeme><grapheme>natterd</grapheme><phoneme>ˈnætərd</phoneme></lexeme> <!-- nattered -->
   <lexeme><grapheme>natterz</grapheme><phoneme>ˈnætərz</phoneme></lexeme> <!-- natters -->
   <lexeme><grapheme>naturalizez</grapheme><phoneme>ˈnætʃərəˌlaɪzɪz</phoneme></lexeme> <!-- naturalises -->
-  <lexeme><grapheme>nauht</grapheme><phoneme>ˈnɔt</phoneme></lexeme> <!-- naught -->
+  <lexeme><grapheme>nauht</grapheme><phoneme>nɔt</phoneme></lexeme> <!-- naught -->
   <lexeme><grapheme>nauhtier</grapheme><phoneme>ˈnɔtiər</phoneme></lexeme> <!-- naughtier -->
   <lexeme><grapheme>nauhtiest</grapheme><phoneme>ˈnɔtiəst</phoneme></lexeme> <!-- naughtiest -->
   <lexeme><grapheme>nauhtily</grapheme><phoneme>ˈnɔtəli</phoneme></lexeme> <!-- naughtily -->
   <lexeme><grapheme>nauhtiness</grapheme><phoneme>ˈnɔtinəs</phoneme></lexeme> <!-- naughtiness -->
   <lexeme><grapheme>nauhtly</grapheme><phoneme>ˈnɔtli</phoneme></lexeme> <!-- naughtly -->
-  <lexeme><grapheme>nauhts</grapheme><phoneme>ˈnɔts</phoneme></lexeme> <!-- naughts -->
+  <lexeme><grapheme>nauhts</grapheme><phoneme>nɔts</phoneme></lexeme> <!-- naughts -->
   <lexeme><grapheme>nauhty</grapheme><phoneme>ˈnɔti</phoneme></lexeme> <!-- naughty -->
   <lexeme><grapheme>nauseatez</grapheme><phoneme>ˈnɔziˌeɪts</phoneme></lexeme> <!-- nauseates -->
   <lexeme><grapheme>nauseativ</grapheme><phoneme>ˈnɔziətɪv</phoneme></lexeme> <!-- nauseative -->
   <lexeme><grapheme>navigatez</grapheme><phoneme>ˈnævəˌɡeɪts</phoneme></lexeme> <!-- navigates -->
   <lexeme><grapheme>nazifiez</grapheme><phoneme>ˈnɑtsɪfaɪz</phoneme></lexeme> <!-- nazifies -->
-  <lexeme><grapheme>neald</grapheme><phoneme>ˈnild</phoneme></lexeme> <!-- nealed -->
-  <lexeme><grapheme>nealz</grapheme><phoneme>ˈnilz</phoneme></lexeme> <!-- neals -->
-  <lexeme><grapheme>neapd</grapheme><phoneme>ˈnipt</phoneme></lexeme> <!-- neaped -->
-  <lexeme><grapheme>neapz</grapheme><phoneme>ˈnips</phoneme></lexeme> <!-- neaps -->
-  <lexeme><grapheme>neard</grapheme><phoneme>ˈnɪrd</phoneme></lexeme> <!-- neared -->
+  <lexeme><grapheme>neald</grapheme><phoneme>nild</phoneme></lexeme> <!-- nealed -->
+  <lexeme><grapheme>nealz</grapheme><phoneme>nilz</phoneme></lexeme> <!-- neals -->
+  <lexeme><grapheme>neapd</grapheme><phoneme>nipt</phoneme></lexeme> <!-- neaped -->
+  <lexeme><grapheme>neapz</grapheme><phoneme>nips</phoneme></lexeme> <!-- neaps -->
+  <lexeme><grapheme>neard</grapheme><phoneme>nɪrd</phoneme></lexeme> <!-- neared -->
   <lexeme><grapheme>nearshorez</grapheme><phoneme>ˌnɪrˈʃɔrz</phoneme></lexeme> <!-- nearshores -->
   <lexeme><grapheme>nearsihted</grapheme><phoneme>ˌnɪrˈsaɪtəd</phoneme></lexeme> <!-- nearsighted -->
   <lexeme><grapheme>nearsihtedly</grapheme><phoneme>ˌnɪrˈsaɪtədli</phoneme></lexeme> <!-- nearsightedly -->
   <lexeme><grapheme>nearsihtedness</grapheme><phoneme>ˌnɪrˈsaɪtədnəs</phoneme></lexeme> <!-- nearsightedness -->
-  <lexeme><grapheme>nearz</grapheme><phoneme>ˈnɪrz</phoneme></lexeme> <!-- nears -->
+  <lexeme><grapheme>nearz</grapheme><phoneme>nɪrz</phoneme></lexeme> <!-- nears -->
   <lexeme><grapheme>neatend</grapheme><phoneme>ˈnitənd</phoneme></lexeme> <!-- neatened -->
   <lexeme><grapheme>neatenz</grapheme><phoneme>ˈnitənz</phoneme></lexeme> <!-- neatens -->
   <lexeme><grapheme>neatifiez</grapheme><phoneme>ˈnitɪfaɪz</phoneme></lexeme> <!-- neatifies -->
-  <lexeme><grapheme>neavs</grapheme><phoneme>ˈnivz</phoneme></lexeme> <!-- neaves -->
-  <lexeme><grapheme>nebd</grapheme><phoneme>ˈnɛbd</phoneme></lexeme> <!-- nebbed -->
+  <lexeme><grapheme>neavs</grapheme><phoneme>nivz</phoneme></lexeme> <!-- neaves -->
+  <lexeme><grapheme>nebd</grapheme><phoneme>nɛbd</phoneme></lexeme> <!-- nebbed -->
   <lexeme><grapheme>nebulizez</grapheme><phoneme>ˈnɛbjəˌlaɪzɪz</phoneme></lexeme> <!-- nebulises -->
   <lexeme><grapheme>necessitatez</grapheme><phoneme>nəˈsɛsəˌteɪts</phoneme></lexeme> <!-- necessitates -->
-  <lexeme><grapheme>neckd</grapheme><phoneme>ˈnɛkt</phoneme></lexeme> <!-- necked -->
+  <lexeme><grapheme>neckd</grapheme><phoneme>nɛkt</phoneme></lexeme> <!-- necked -->
   <lexeme><grapheme>neckerqhif</grapheme><phoneme>ˈnɛkərtʃəf</phoneme></lexeme> <!-- neckerchief -->
   <lexeme><grapheme>neckerqhifs</grapheme><phoneme>ˈnɛkərtʃəfs</phoneme></lexeme> <!-- neckerchiefs -->
   <lexeme><grapheme>neckerqhivs</grapheme><phoneme>ˈnɛkərtʃivz</phoneme></lexeme> <!-- neckerchieves -->
   <lexeme><grapheme>neckwaer</grapheme><phoneme>ˈnɛkˌwɛr</phoneme></lexeme> <!-- neckwear -->
   <lexeme><grapheme>neckwaers</grapheme><phoneme>ˈnɛkˌwɛrz</phoneme></lexeme> <!-- neckwears -->
-  <lexeme><grapheme>neckz</grapheme><phoneme>ˈnɛks</phoneme></lexeme> <!-- necks -->
+  <lexeme><grapheme>neckz</grapheme><phoneme>nɛks</phoneme></lexeme> <!-- necks -->
   <lexeme><grapheme>necropsiez</grapheme><phoneme>ˈnɛkrɑpsiz</phoneme></lexeme> <!-- necropsies -->
   <lexeme><grapheme>necrosez</grapheme><phoneme>nəˈkroʊsiz</phoneme></lexeme> <!-- necroses -->
   <lexeme><grapheme>necrotizez</grapheme><phoneme>ˈnɛkrəˌtaɪzɪz</phoneme></lexeme> <!-- necrotises -->
@@ -17724,7 +17724,7 @@
   <lexeme><grapheme>needlepointz</grapheme><phoneme>ˈnidəlˌpɔɪnts</phoneme></lexeme> <!-- needlepoints -->
   <lexeme><grapheme>needlewimen</grapheme><phoneme>ˈnidəlˌwɪmən</phoneme></lexeme> <!-- needlewomen -->
   <lexeme><grapheme>needlez</grapheme><phoneme>ˈnidəlz</phoneme></lexeme> <!-- needles -->
-  <lexeme><grapheme>needz</grapheme><phoneme>ˈnidz</phoneme></lexeme> <!-- needs -->
+  <lexeme><grapheme>needz</grapheme><phoneme>nidz</phoneme></lexeme> <!-- needs -->
   <lexeme><grapheme>neesez</grapheme><phoneme>ˈnisɪz</phoneme></lexeme> <!-- neeses -->
   <lexeme><grapheme>negatez</grapheme><phoneme>nɪˈɡeɪts</phoneme></lexeme> <!-- negates -->
   <lexeme><grapheme>negativ</grapheme><phoneme>ˈnɛɡətɪv</phoneme></lexeme> <!-- negative -->
@@ -17736,7 +17736,7 @@
   <lexeme><grapheme>neglectiv</grapheme><phoneme>nɪˈɡlɛktɪv</phoneme></lexeme> <!-- neglective -->
   <lexeme><grapheme>neglectz</grapheme><phoneme>nɪˈɡlɛkts</phoneme></lexeme> <!-- neglects -->
   <lexeme><grapheme>negotiatez</grapheme><phoneme>nɪˈɡoʊʃiˌeɪts</phoneme></lexeme> <!-- negotiates -->
-  <lexeme><grapheme>neih</grapheme><phoneme>ˈneɪ</phoneme></lexeme> <!-- neigh -->
+  <lexeme><grapheme>neih</grapheme><phoneme>neɪ</phoneme></lexeme> <!-- neigh -->
   <lexeme><grapheme>neihbor</grapheme><phoneme>ˈneɪbər</phoneme></lexeme> <!-- neighbor -->
   <lexeme><grapheme>neihbord</grapheme><phoneme>ˈneɪbərd</phoneme></lexeme> <!-- neighbored -->
   <lexeme><grapheme>neihborhood</grapheme><phoneme>ˈneɪbərhʊd</phoneme></lexeme> <!-- neighborhood -->
@@ -17748,26 +17748,26 @@
   <lexeme><grapheme>neihborship</grapheme><phoneme>ˈneɪbərʃɪp</phoneme></lexeme> <!-- neighborship -->
   <lexeme><grapheme>neihborships</grapheme><phoneme>ˈneɪbərʃɪps</phoneme></lexeme> <!-- neighborships -->
   <lexeme><grapheme>neihborz</grapheme><phoneme>ˈneɪbərz</phoneme></lexeme> <!-- neighbors -->
-  <lexeme><grapheme>neihd</grapheme><phoneme>ˈneɪd</phoneme></lexeme> <!-- neighed -->
+  <lexeme><grapheme>neihd</grapheme><phoneme>neɪd</phoneme></lexeme> <!-- neighed -->
   <lexeme><grapheme>neihing</grapheme><phoneme>ˈneɪɪŋ</phoneme></lexeme> <!-- neighing -->
-  <lexeme><grapheme>neihs</grapheme><phoneme>ˈneɪz</phoneme></lexeme> <!-- neighs -->
-  <lexeme><grapheme>neihz</grapheme><phoneme>ˈneɪz</phoneme></lexeme> <!-- neighs -->
+  <lexeme><grapheme>neihs</grapheme><phoneme>neɪz</phoneme></lexeme> <!-- neighs -->
+  <lexeme><grapheme>neihz</grapheme><phoneme>neɪz</phoneme></lexeme> <!-- neighs -->
   <lexeme><grapheme>neoconservativ</grapheme><phoneme>ˌnioʊkənˈsɜrvətɪv</phoneme></lexeme> <!-- neoconservative -->
   <lexeme><grapheme>neoconservativs</grapheme><phoneme>ˌnioʊkənˈsɜrvətɪvz</phoneme></lexeme> <!-- neoconservatives -->
   <lexeme><grapheme>neologizez</grapheme><phoneme>niˈɑləˌdʒaɪzɪz</phoneme></lexeme> <!-- neologises -->
   <lexeme><grapheme>neond</grapheme><phoneme>ˈniˌɑnd</phoneme></lexeme> <!-- neoned -->
   <lexeme><grapheme>neoterizez</grapheme><phoneme>ˈniətəˌraɪzɪz</phoneme></lexeme> <!-- neoterises -->
   <lexeme><grapheme>nephrectomizez</grapheme><phoneme>nəˈfrɛktəˌmaɪzɪz</phoneme></lexeme> <!-- nephrectomises -->
-  <lexeme><grapheme>nerv</grapheme><phoneme>ˈnɜrv</phoneme></lexeme> <!-- nerve -->
-  <lexeme><grapheme>nervd</grapheme><phoneme>ˈnɜrvd</phoneme></lexeme> <!-- nerved -->
+  <lexeme><grapheme>nerv</grapheme><phoneme>nɜrv</phoneme></lexeme> <!-- nerve -->
+  <lexeme><grapheme>nervd</grapheme><phoneme>nɜrvd</phoneme></lexeme> <!-- nerved -->
   <lexeme><grapheme>nervless</grapheme><phoneme>ˈnɜrvləs</phoneme></lexeme> <!-- nerveless -->
   <lexeme><grapheme>nervlessly</grapheme><phoneme>ˈnɜrvləsli</phoneme></lexeme> <!-- nervelessly -->
   <lexeme><grapheme>nervlessness</grapheme><phoneme>ˈnɜrvləsnəs</phoneme></lexeme> <!-- nervelessness -->
-  <lexeme><grapheme>nervs</grapheme><phoneme>ˈnɜrvz</phoneme></lexeme> <!-- nerves -->
-  <lexeme><grapheme>nervz</grapheme><phoneme>ˈnɜrvz</phoneme></lexeme> <!-- nerves -->
+  <lexeme><grapheme>nervs</grapheme><phoneme>nɜrvz</phoneme></lexeme> <!-- nerves -->
+  <lexeme><grapheme>nervz</grapheme><phoneme>nɜrvz</phoneme></lexeme> <!-- nerves -->
   <lexeme><grapheme>nesslerizez</grapheme><phoneme>ˈnɛsləˌraɪzɪz</phoneme></lexeme> <!-- nesslerises -->
   <lexeme><grapheme>nestlez</grapheme><phoneme>ˈnɛsəlz</phoneme></lexeme> <!-- nestles -->
-  <lexeme><grapheme>nestz</grapheme><phoneme>ˈnɛsts</phoneme></lexeme> <!-- nests -->
+  <lexeme><grapheme>nestz</grapheme><phoneme>nɛsts</phoneme></lexeme> <!-- nests -->
   <lexeme><grapheme>nethermoste</grapheme><phoneme>ˈnɛðərˌmoʊst</phoneme></lexeme> <!-- nethermost -->
   <lexeme><grapheme>netifiez</grapheme><phoneme>ˈnɛtɪfaɪz</phoneme></lexeme> <!-- netifies -->
   <lexeme><grapheme>netiqet</grapheme><phoneme>ˈnɛtɪkət</phoneme></lexeme> <!-- netiquette -->
@@ -17777,7 +17777,7 @@
   <lexeme><grapheme>nettlez</grapheme><phoneme>ˈnɛtəlz</phoneme></lexeme> <!-- nettles -->
   <lexeme><grapheme>networkd</grapheme><phoneme>ˈnɛtˌwɜrkt</phoneme></lexeme> <!-- networked -->
   <lexeme><grapheme>networkz</grapheme><phoneme>ˈnɛtˌwɜrks</phoneme></lexeme> <!-- networks -->
-  <lexeme><grapheme>netz</grapheme><phoneme>ˈnɛts</phoneme></lexeme> <!-- nets -->
+  <lexeme><grapheme>netz</grapheme><phoneme>nɛts</phoneme></lexeme> <!-- nets -->
   <lexeme><grapheme>neuroactiv</grapheme><phoneme>ˌnʊroʊˈæktɪv</phoneme></lexeme> <!-- neuroactive -->
   <lexeme><grapheme>neurodegenerativ</grapheme><phoneme>ˌnʊroʊdɪˈdʒɛnərətɪv</phoneme></lexeme> <!-- neurodegenerative -->
   <lexeme><grapheme>neuroendocrin</grapheme><phoneme>ˌnʊroʊˈɛndəkrɪn</phoneme></lexeme> <!-- neuroendocrine -->
@@ -17798,14 +17798,14 @@
   <lexeme><grapheme>nextdorr</grapheme><phoneme>ˌnɛkstˈdɔr</phoneme></lexeme> <!-- nextdoor -->
   <lexeme><grapheme>nexusez</grapheme><phoneme>ˈnɛksəsɪz</phoneme></lexeme> <!-- nexuses -->
   <lexeme><grapheme>nibblez</grapheme><phoneme>ˈnɪbəlz</phoneme></lexeme> <!-- nibbles -->
-  <lexeme><grapheme>nibd</grapheme><phoneme>ˈnɪbd</phoneme></lexeme> <!-- nibbed -->
-  <lexeme><grapheme>nickd</grapheme><phoneme>ˈnɪkt</phoneme></lexeme> <!-- nicked -->
+  <lexeme><grapheme>nibd</grapheme><phoneme>nɪbd</phoneme></lexeme> <!-- nibbed -->
+  <lexeme><grapheme>nickd</grapheme><phoneme>nɪkt</phoneme></lexeme> <!-- nicked -->
   <lexeme><grapheme>nickeld</grapheme><phoneme>ˈnɪkəld</phoneme></lexeme> <!-- nickeled -->
   <lexeme><grapheme>nickelz</grapheme><phoneme>ˈnɪkəlz</phoneme></lexeme> <!-- nickels -->
   <lexeme><grapheme>nickerd</grapheme><phoneme>ˈnɪkərd</phoneme></lexeme> <!-- nickered -->
   <lexeme><grapheme>nickerz</grapheme><phoneme>ˈnɪkərz</phoneme></lexeme> <!-- nickers -->
   <lexeme><grapheme>nicknamez</grapheme><phoneme>ˈnɪkˌneɪmz</phoneme></lexeme> <!-- nicknames -->
-  <lexeme><grapheme>nickz</grapheme><phoneme>ˈnɪks</phoneme></lexeme> <!-- nicks -->
+  <lexeme><grapheme>nickz</grapheme><phoneme>nɪks</phoneme></lexeme> <!-- nicks -->
   <lexeme><grapheme>nictatez</grapheme><phoneme>ˈnɪkteɪts</phoneme></lexeme> <!-- nictates -->
   <lexeme><grapheme>nictitatez</grapheme><phoneme>ˈnɪktəˌteɪts</phoneme></lexeme> <!-- nictitates -->
   <lexeme><grapheme>nidificatez</grapheme><phoneme>ˈnɪdəfəˌkeɪts</phoneme></lexeme> <!-- nidificates -->
@@ -17818,14 +17818,14 @@
   <lexeme><grapheme>niggerz</grapheme><phoneme>ˈnɪɡərz</phoneme></lexeme> <!-- niggers -->
   <lexeme><grapheme>nigglez</grapheme><phoneme>ˈnɪɡəlz</phoneme></lexeme> <!-- niggles -->
   <lexeme><grapheme>nigrifiez</grapheme><phoneme>ˈnɪɡrəfaɪz</phoneme></lexeme> <!-- nigrifies -->
-  <lexeme><grapheme>nih</grapheme><phoneme>ˈnaɪ</phoneme></lexeme> <!-- nigh -->
-  <lexeme><grapheme>nihd</grapheme><phoneme>ˈnaɪd</phoneme></lexeme> <!-- nighed -->
+  <lexeme><grapheme>nih</grapheme><phoneme>naɪ</phoneme></lexeme> <!-- nigh -->
+  <lexeme><grapheme>nihd</grapheme><phoneme>naɪd</phoneme></lexeme> <!-- nighed -->
   <lexeme><grapheme>niher</grapheme><phoneme>ˈnaɪər</phoneme></lexeme> <!-- nigher -->
   <lexeme><grapheme>nihest</grapheme><phoneme>ˈnaɪəst</phoneme></lexeme> <!-- nighest -->
   <lexeme><grapheme>nihing</grapheme><phoneme>ˈnaɪɪŋ</phoneme></lexeme> <!-- nighing -->
   <lexeme><grapheme>nihly</grapheme><phoneme>ˈnaɪli</phoneme></lexeme> <!-- nighly -->
   <lexeme><grapheme>nihness</grapheme><phoneme>ˈnaɪnəs</phoneme></lexeme> <!-- nighness -->
-  <lexeme><grapheme>niht</grapheme><phoneme>ˈnaɪt</phoneme></lexeme> <!-- night -->
+  <lexeme><grapheme>niht</grapheme><phoneme>naɪt</phoneme></lexeme> <!-- night -->
   <lexeme><grapheme>nihtcap</grapheme><phoneme>ˈnaɪtˌkæp</phoneme></lexeme> <!-- nightcap -->
   <lexeme><grapheme>nihtcaps</grapheme><phoneme>ˈnaɪtˌkæps</phoneme></lexeme> <!-- nightcaps -->
   <lexeme><grapheme>nihtclothes</grapheme><phoneme>ˈnaɪtˌkloʊðz</phoneme></lexeme> <!-- nightclothes -->
@@ -17873,7 +17873,7 @@
   <lexeme><grapheme>nihtmarish</grapheme><phoneme>ˈnaɪtˌmɛrɪʃ</phoneme></lexeme> <!-- nightmarish -->
   <lexeme><grapheme>nihtmarishly</grapheme><phoneme>ˈnaɪtˌmɛrɪʃli</phoneme></lexeme> <!-- nightmarishly -->
   <lexeme><grapheme>nihtmen</grapheme><phoneme>ˈnaɪtˌmɛn</phoneme></lexeme> <!-- nightmen -->
-  <lexeme><grapheme>nihts</grapheme><phoneme>ˈnaɪts</phoneme></lexeme> <!-- nights -->
+  <lexeme><grapheme>nihts</grapheme><phoneme>naɪts</phoneme></lexeme> <!-- nights -->
   <lexeme><grapheme>nihtscope</grapheme><phoneme>ˈnaɪtˌskoʊp</phoneme></lexeme> <!-- nightscope -->
   <lexeme><grapheme>nihtscopes</grapheme><phoneme>ˈnaɪtˌskoʊpz</phoneme></lexeme> <!-- nightscopes -->
   <lexeme><grapheme>nihtshade</grapheme><phoneme>ˈnaɪtˌʃeɪd</phoneme></lexeme> <!-- nightshade -->
@@ -17898,18 +17898,18 @@
   <lexeme><grapheme>nihtwatchman</grapheme><phoneme>ˈnaɪtˌwɑtʃmən</phoneme></lexeme> <!-- nightwatchman -->
   <lexeme><grapheme>nihtwatchmen</grapheme><phoneme>ˈnaɪtˌwɑtʃmən</phoneme></lexeme> <!-- nightwatchmen -->
   <lexeme><grapheme>nihty</grapheme><phoneme>ˈnaɪti</phoneme></lexeme> <!-- nighty -->
-  <lexeme><grapheme>nihtz</grapheme><phoneme>ˈnaɪts</phoneme></lexeme> <!-- nights -->
-  <lexeme><grapheme>nihz</grapheme><phoneme>ˈnaɪz</phoneme></lexeme> <!-- nighs -->
-  <lexeme><grapheme>nilld</grapheme><phoneme>ˈnɪld</phoneme></lexeme> <!-- nilled -->
-  <lexeme><grapheme>nillz</grapheme><phoneme>ˈnɪlz</phoneme></lexeme> <!-- nills -->
+  <lexeme><grapheme>nihtz</grapheme><phoneme>naɪts</phoneme></lexeme> <!-- nights -->
+  <lexeme><grapheme>nihz</grapheme><phoneme>naɪz</phoneme></lexeme> <!-- nighs -->
+  <lexeme><grapheme>nilld</grapheme><phoneme>nɪld</phoneme></lexeme> <!-- nilled -->
+  <lexeme><grapheme>nillz</grapheme><phoneme>nɪlz</phoneme></lexeme> <!-- nills -->
   <lexeme><grapheme>nimbusd</grapheme><phoneme>ˈnɪmbəsst</phoneme></lexeme> <!-- nimbused -->
-  <lexeme><grapheme>nimd</grapheme><phoneme>ˈnɪmd</phoneme></lexeme> <!-- nimmed -->
-  <lexeme><grapheme>nimz</grapheme><phoneme>ˈnɪmz</phoneme></lexeme> <!-- nims -->
-  <lexeme><grapheme>nipd</grapheme><phoneme>ˈnɪpt</phoneme></lexeme> <!-- nipped -->
+  <lexeme><grapheme>nimd</grapheme><phoneme>nɪmd</phoneme></lexeme> <!-- nimmed -->
+  <lexeme><grapheme>nimz</grapheme><phoneme>nɪmz</phoneme></lexeme> <!-- nims -->
+  <lexeme><grapheme>nipd</grapheme><phoneme>nɪpt</phoneme></lexeme> <!-- nipped -->
   <lexeme><grapheme>nipplez</grapheme><phoneme>ˈnɪpəlz</phoneme></lexeme> <!-- nipples -->
-  <lexeme><grapheme>nipz</grapheme><phoneme>ˈnɪps</phoneme></lexeme> <!-- nips -->
-  <lexeme><grapheme>nishe</grapheme><phoneme>ˈnɪtʃ</phoneme></lexeme> <!-- niche -->
-  <lexeme><grapheme>nished</grapheme><phoneme>ˈnɪtʃt</phoneme></lexeme> <!-- niched -->
+  <lexeme><grapheme>nipz</grapheme><phoneme>nɪps</phoneme></lexeme> <!-- nips -->
+  <lexeme><grapheme>nishe</grapheme><phoneme>nɪtʃ</phoneme></lexeme> <!-- niche -->
+  <lexeme><grapheme>nished</grapheme><phoneme>nɪtʃt</phoneme></lexeme> <!-- niched -->
   <lexeme><grapheme>nishes</grapheme><phoneme>ˈnɪtʃɪz</phoneme></lexeme> <!-- niches -->
   <lexeme><grapheme>nishez</grapheme><phoneme>ˈnɪtʃɪz</phoneme></lexeme> <!-- niches -->
   <lexeme><grapheme>nishing</grapheme><phoneme>ˈnɪtʃɪŋ</phoneme></lexeme> <!-- niching -->
@@ -17919,7 +17919,7 @@
   <lexeme><grapheme>nitridez</grapheme><phoneme>ˈnaɪˌtraɪdz</phoneme></lexeme> <!-- nitrides -->
   <lexeme><grapheme>nitrifiez</grapheme><phoneme>ˈnaɪtrəfaɪz</phoneme></lexeme> <!-- nitrifies -->
   <lexeme><grapheme>nitrogenizez</grapheme><phoneme>ˈnaɪtrədʒəˌlaɪzɪz</phoneme></lexeme> <!-- nitrogenises -->
-  <lexeme><grapheme>nixd</grapheme><phoneme>ˈnɪkst</phoneme></lexeme> <!-- nixed -->
+  <lexeme><grapheme>nixd</grapheme><phoneme>nɪkst</phoneme></lexeme> <!-- nixed -->
   <lexeme><grapheme>nixez</grapheme><phoneme>ˈnɪksɪz</phoneme></lexeme> <!-- nixes -->
   <lexeme><grapheme>nobblez</grapheme><phoneme>ˈnɑbəlz</phoneme></lexeme> <!-- nobbles -->
   <lexeme><grapheme>nobilifiez</grapheme><phoneme>noʊˈbɪləfaɪz</phoneme></lexeme> <!-- nobilifies -->
@@ -17927,16 +17927,16 @@
   <lexeme><grapheme>noblewimen</grapheme><phoneme>ˈnoʊbəlˌwɪmən</phoneme></lexeme> <!-- noblewomen -->
   <lexeme><grapheme>nociceptiv</grapheme><phoneme>ˌnoʊsɪˈsɛptɪv</phoneme></lexeme> <!-- nociceptive -->
   <lexeme><grapheme>nociv</grapheme><phoneme>ˈnoʊsɪv</phoneme></lexeme> <!-- nocive -->
-  <lexeme><grapheme>nockd</grapheme><phoneme>ˈnɑkt</phoneme></lexeme> <!-- nocked -->
-  <lexeme><grapheme>nockz</grapheme><phoneme>ˈnɑkts</phoneme></lexeme> <!-- nocks -->
+  <lexeme><grapheme>nockd</grapheme><phoneme>nɑkt</phoneme></lexeme> <!-- nocked -->
+  <lexeme><grapheme>nockz</grapheme><phoneme>nɑkts</phoneme></lexeme> <!-- nocks -->
   <lexeme><grapheme>noddlez</grapheme><phoneme>ˈnɑdəlz</phoneme></lexeme> <!-- noddles -->
   <lexeme><grapheme>nodulatez</grapheme><phoneme>ˈnɑdʒəˌleɪts</phoneme></lexeme> <!-- nodulates -->
-  <lexeme><grapheme>nodz</grapheme><phoneme>ˈnɑdz</phoneme></lexeme> <!-- nods -->
-  <lexeme><grapheme>nogd</grapheme><phoneme>ˈnɑɡd</phoneme></lexeme> <!-- nogged -->
-  <lexeme><grapheme>nogz</grapheme><phoneme>ˈnɑɡz</phoneme></lexeme> <!-- nogs -->
-  <lexeme><grapheme>noht</grapheme><phoneme>ˈnɔt</phoneme></lexeme> <!-- noght -->
-  <lexeme><grapheme>nohts</grapheme><phoneme>ˈnɔts</phoneme></lexeme> <!-- noughts -->
-  <lexeme><grapheme>nointz</grapheme><phoneme>ˈɔɪnts</phoneme></lexeme> <!-- noints -->
+  <lexeme><grapheme>nodz</grapheme><phoneme>nɑdz</phoneme></lexeme> <!-- nods -->
+  <lexeme><grapheme>nogd</grapheme><phoneme>nɑɡd</phoneme></lexeme> <!-- nogged -->
+  <lexeme><grapheme>nogz</grapheme><phoneme>nɑɡz</phoneme></lexeme> <!-- nogs -->
+  <lexeme><grapheme>noht</grapheme><phoneme>nɔt</phoneme></lexeme> <!-- noght -->
+  <lexeme><grapheme>nohts</grapheme><phoneme>nɔts</phoneme></lexeme> <!-- noughts -->
+  <lexeme><grapheme>nointz</grapheme><phoneme>ɔɪnts</phoneme></lexeme> <!-- noints -->
   <lexeme><grapheme>noisom</grapheme><phoneme>ˈnɔɪsəm</phoneme></lexeme> <!-- noisome -->
   <lexeme><grapheme>noisomly</grapheme><phoneme>ˈnɔɪsəmli</phoneme></lexeme> <!-- noisomely -->
   <lexeme><grapheme>noisomness</grapheme><phoneme>ˈnɔɪsəmnəs</phoneme></lexeme> <!-- noisomeness -->
@@ -18066,14 +18066,14 @@
   <lexeme><grapheme>nonliterats</grapheme><phoneme>ˌnɑnˈlɪtərəts</phoneme></lexeme> <!-- nonliterates -->
   <lexeme><grapheme>nonmesurable</grapheme><phoneme>ˌnɑnˈmɛʒərəbəl</phoneme></lexeme> <!-- nonmeasurable -->
   <lexeme><grapheme>nonmooving</grapheme><phoneme>ˌnɑnˈmuvɪŋ</phoneme></lexeme> <!-- nonmoving -->
-  <lexeme><grapheme>nonn</grapheme><phoneme>ˈnən</phoneme></lexeme> <!-- none -->
+  <lexeme><grapheme>nonn</grapheme><phoneme>nən</phoneme></lexeme> <!-- none -->
   <lexeme><grapheme>nonnarrativ</grapheme><phoneme>ˌnɑnˈnærətɪv</phoneme></lexeme> <!-- nonnarrative -->
   <lexeme><grapheme>nonnarrativs</grapheme><phoneme>ˌnɑnˈnærətɪvz</phoneme></lexeme> <!-- nonnarratives -->
   <lexeme><grapheme>nonnativ</grapheme><phoneme>ˌnɑnˈneɪtɪv</phoneme></lexeme> <!-- nonnative -->
   <lexeme><grapheme>nonnativs</grapheme><phoneme>ˌnɑnˈneɪtɪvz</phoneme></lexeme> <!-- nonnatives -->
   <lexeme><grapheme>nonnegativ</grapheme><phoneme>ˌnɑnˈnɛɡətɪv</phoneme></lexeme> <!-- nonnegative -->
   <lexeme><grapheme>nonnormativ</grapheme><phoneme>ˌnɑnˈnɔrmətɪv</phoneme></lexeme> <!-- nonnormative -->
-  <lexeme><grapheme>nonns</grapheme><phoneme>ˈnoʊnz</phoneme></lexeme> <!-- nones -->
+  <lexeme><grapheme>nonns</grapheme><phoneme>noʊnz</phoneme></lexeme> <!-- nones -->
   <lexeme><grapheme>nonnsuqh</grapheme><phoneme>ˈnənˌsətʃ</phoneme></lexeme> <!-- nonesuch -->
   <lexeme><grapheme>nonnsuqhes</grapheme><phoneme>ˈnənˌsətʃɪz</phoneme></lexeme> <!-- nonesuches -->
   <lexeme><grapheme>nonntheless</grapheme><phoneme>ˌnənðəˈlɛs</phoneme></lexeme> <!-- nonetheless -->
@@ -18143,9 +18143,9 @@
   <lexeme><grapheme>noodlez</grapheme><phoneme>ˈnudəlz</phoneme></lexeme> <!-- noodles -->
   <lexeme><grapheme>noogat</grapheme><phoneme>ˈnuɡət</phoneme></lexeme> <!-- nougat -->
   <lexeme><grapheme>noogats</grapheme><phoneme>ˈnuɡəts</phoneme></lexeme> <!-- nougats -->
-  <lexeme><grapheme>noond</grapheme><phoneme>ˈnund</phoneme></lexeme> <!-- nooned -->
+  <lexeme><grapheme>noond</grapheme><phoneme>nund</phoneme></lexeme> <!-- nooned -->
   <lexeme><grapheme>noonstedd</grapheme><phoneme>ˈnunˌstɛd</phoneme></lexeme> <!-- noonstead -->
-  <lexeme><grapheme>noonz</grapheme><phoneme>ˈnunz</phoneme></lexeme> <!-- noons -->
+  <lexeme><grapheme>noonz</grapheme><phoneme>nunz</phoneme></lexeme> <!-- noons -->
   <lexeme><grapheme>noosez</grapheme><phoneme>ˈnusɪz</phoneme></lexeme> <!-- nooses -->
   <lexeme><grapheme>nooveau</grapheme><phoneme>nuˈvoʊ</phoneme></lexeme> <!-- nouveau -->
   <lexeme><grapheme>noovelle</grapheme><phoneme>nuˈvɛl</phoneme></lexeme> <!-- nouvelle -->
@@ -18164,20 +18164,20 @@
   <lexeme><grapheme>nosegard</grapheme><phoneme>ˈnoʊzˌɡɑrd</phoneme></lexeme> <!-- noseguard -->
   <lexeme><grapheme>nosegards</grapheme><phoneme>ˈnoʊzˌɡɑrdz</phoneme></lexeme> <!-- noseguards -->
   <lexeme><grapheme>nosez</grapheme><phoneme>ˈnoʊzɪz</phoneme></lexeme> <!-- noses -->
-  <lexeme><grapheme>noshd</grapheme><phoneme>ˈnɑʃt</phoneme></lexeme> <!-- noshed -->
+  <lexeme><grapheme>noshd</grapheme><phoneme>nɑʃt</phoneme></lexeme> <!-- noshed -->
   <lexeme><grapheme>noshez</grapheme><phoneme>ˈnɑʃɪz</phoneme></lexeme> <!-- noshes -->
   <lexeme><grapheme>notarizez</grapheme><phoneme>ˈnoʊtəˌraɪzɪz</phoneme></lexeme> <!-- notarises -->
   <lexeme><grapheme>notatez</grapheme><phoneme>ˈnoʊteɪts</phoneme></lexeme> <!-- notates -->
-  <lexeme><grapheme>notchd</grapheme><phoneme>ˈnɑtʃt</phoneme></lexeme> <!-- notched -->
+  <lexeme><grapheme>notchd</grapheme><phoneme>nɑtʃt</phoneme></lexeme> <!-- notched -->
   <lexeme><grapheme>notchez</grapheme><phoneme>ˈnɑtʃɪz</phoneme></lexeme> <!-- notches -->
-  <lexeme><grapheme>notez</grapheme><phoneme>ˈnoʊts</phoneme></lexeme> <!-- notes -->
+  <lexeme><grapheme>notez</grapheme><phoneme>noʊts</phoneme></lexeme> <!-- notes -->
   <lexeme><grapheme>noticez</grapheme><phoneme>ˈnoʊtəsɪz</phoneme></lexeme> <!-- notices -->
   <lexeme><grapheme>notifiez</grapheme><phoneme>ˈnoʊtəfaɪz</phoneme></lexeme> <!-- notifies -->
   <lexeme><grapheme>notionat</grapheme><phoneme>ˈnoʊʃənət</phoneme></lexeme> <!-- notionate -->
   <lexeme><grapheme>notobranchiat</grapheme><phoneme>ˌnoʊtoʊˈbræŋkiət</phoneme></lexeme> <!-- notobranchiate -->
   <lexeme><grapheme>notobranchiats</grapheme><phoneme>ˌnoʊtoʊˈbræŋkiəts</phoneme></lexeme> <!-- notobranchiates -->
   <lexeme><grapheme>nounizez</grapheme><phoneme>ˈnaʊnaɪzɪz</phoneme></lexeme> <!-- nounizes -->
-  <lexeme><grapheme>nouqh</grapheme><phoneme>ˈnaʊtʃ</phoneme></lexeme> <!-- nouch -->
+  <lexeme><grapheme>nouqh</grapheme><phoneme>naʊtʃ</phoneme></lexeme> <!-- nouch -->
   <lexeme><grapheme>nouqhes</grapheme><phoneme>ˈnaʊtʃɪz</phoneme></lexeme> <!-- nouches -->
   <lexeme><grapheme>novelizez</grapheme><phoneme>ˈnɑvəˌlaɪzɪz</phoneme></lexeme> <!-- novelises -->
   <lexeme><grapheme>novitiat</grapheme><phoneme>noʊˈvɪʃiət</phoneme></lexeme> <!-- novitiate -->
@@ -18192,18 +18192,18 @@
   <lexeme><grapheme>nudibrachiats</grapheme><phoneme>ˌnudəˈbrækiəts</phoneme></lexeme> <!-- nudibrachiates -->
   <lexeme><grapheme>nudibranchiat</grapheme><phoneme>ˌnudəˈbræŋkiət</phoneme></lexeme> <!-- nudibranchiate -->
   <lexeme><grapheme>nugifiez</grapheme><phoneme>ˈnʌɡəfaɪz</phoneme></lexeme> <!-- nugifies -->
-  <lexeme><grapheme>nukez</grapheme><phoneme>ˈnuks</phoneme></lexeme> <!-- nukes -->
-  <lexeme><grapheme>nulld</grapheme><phoneme>ˈnʌld</phoneme></lexeme> <!-- nulled -->
+  <lexeme><grapheme>nukez</grapheme><phoneme>nuks</phoneme></lexeme> <!-- nukes -->
+  <lexeme><grapheme>nulld</grapheme><phoneme>nʌld</phoneme></lexeme> <!-- nulled -->
   <lexeme><grapheme>nullifiez</grapheme><phoneme>ˈnʌləfaɪz</phoneme></lexeme> <!-- nullifies -->
-  <lexeme><grapheme>nullz</grapheme><phoneme>ˈnʌlz</phoneme></lexeme> <!-- nulls -->
+  <lexeme><grapheme>nullz</grapheme><phoneme>nʌlz</phoneme></lexeme> <!-- nulls -->
   <lexeme><grapheme>numberd</grapheme><phoneme>ˈnʌmbərd</phoneme></lexeme> <!-- numbered -->
   <lexeme><grapheme>numberz</grapheme><phoneme>ˈnʌmbərz</phoneme></lexeme> <!-- numbers -->
   <lexeme><grapheme>numerat</grapheme><phoneme>ˈnuməˌreɪt</phoneme></lexeme> <!-- numerate -->
   <lexeme><grapheme>numeratez</grapheme><phoneme>ˈnuməˌreɪts</phoneme></lexeme> <!-- numerates -->
   <lexeme><grapheme>numerativ</grapheme><phoneme>ˈnumərətɪv</phoneme></lexeme> <!-- numerative -->
   <lexeme><grapheme>numerativs</grapheme><phoneme>ˈnumərətɪvz</phoneme></lexeme> <!-- numeratives -->
-  <lexeme><grapheme>numm</grapheme><phoneme>ˈnʌm</phoneme></lexeme> <!-- numb -->
-  <lexeme><grapheme>nummd</grapheme><phoneme>ˈnʌmd</phoneme></lexeme> <!-- numbed -->
+  <lexeme><grapheme>numm</grapheme><phoneme>nʌm</phoneme></lexeme> <!-- numb -->
+  <lexeme><grapheme>nummd</grapheme><phoneme>nʌmd</phoneme></lexeme> <!-- numbed -->
   <lexeme><grapheme>nummedness</grapheme><phoneme>ˈnʌmədnes</phoneme></lexeme> <!-- numbedness -->
   <lexeme><grapheme>nummfish</grapheme><phoneme>ˈnʌmˌfɪʃ</phoneme></lexeme> <!-- numbfish -->
   <lexeme><grapheme>nummfishes</grapheme><phoneme>ˈnʌmˌfɪʃɪz</phoneme></lexeme> <!-- numbfishes -->
@@ -18215,7 +18215,7 @@
   <lexeme><grapheme>nummness</grapheme><phoneme>ˈnʌmnəs</phoneme></lexeme> <!-- numbness -->
   <lexeme><grapheme>nummskull</grapheme><phoneme>ˈnʌmˌskʌl</phoneme></lexeme> <!-- numbskull -->
   <lexeme><grapheme>nummskulls</grapheme><phoneme>ˈnʌmˌskʌlz</phoneme></lexeme> <!-- numbskulls -->
-  <lexeme><grapheme>nummz</grapheme><phoneme>ˈnʌmz</phoneme></lexeme> <!-- numbs -->
+  <lexeme><grapheme>nummz</grapheme><phoneme>nʌmz</phoneme></lexeme> <!-- numbs -->
   <lexeme><grapheme>nunatakz</grapheme><phoneme>ˈnʊnəˌtæks</phoneme></lexeme> <!-- nunataks -->
   <lexeme><grapheme>nuncupatez</grapheme><phoneme>ˈnʌŋkjəˌpeɪts</phoneme></lexeme> <!-- nuncupates -->
   <lexeme><grapheme>nuncupativ</grapheme><phoneme>nʌnˈkjupətɪv</phoneme></lexeme> <!-- nuncupative -->
@@ -18242,29 +18242,29 @@
   <lexeme><grapheme>nutbruwn</grapheme><phoneme>ˈnʌtˌbraʊn</phoneme></lexeme> <!-- nutbrown -->
   <lexeme><grapheme>nutritiv</grapheme><phoneme>ˈnutrətɪv</phoneme></lexeme> <!-- nutritive -->
   <lexeme><grapheme>nutritivly</grapheme><phoneme>ˈnutrətɪvli</phoneme></lexeme> <!-- nutritively -->
-  <lexeme><grapheme>nutz</grapheme><phoneme>ˈnʌts</phoneme></lexeme> <!-- nuts -->
-  <lexeme><grapheme>nuw</grapheme><phoneme>ˈnaʊ</phoneme></lexeme> <!-- now -->
+  <lexeme><grapheme>nutz</grapheme><phoneme>nʌts</phoneme></lexeme> <!-- nuts -->
+  <lexeme><grapheme>nuw</grapheme><phoneme>naʊ</phoneme></lexeme> <!-- now -->
   <lexeme><grapheme>nuwadays</grapheme><phoneme>ˈnaʊəˌdeɪz</phoneme></lexeme> <!-- nowadays -->
-  <lexeme><grapheme>nuwd</grapheme><phoneme>ˈnaʊd</phoneme></lexeme> <!-- nowd -->
-  <lexeme><grapheme>nuwds</grapheme><phoneme>ˈnaʊdz</phoneme></lexeme> <!-- nowds -->
+  <lexeme><grapheme>nuwd</grapheme><phoneme>naʊd</phoneme></lexeme> <!-- nowd -->
+  <lexeme><grapheme>nuwds</grapheme><phoneme>naʊdz</phoneme></lexeme> <!-- nowds -->
   <lexeme><grapheme>nuwness</grapheme><phoneme>ˈnaʊnəs</phoneme></lexeme> <!-- nowness -->
   <lexeme><grapheme>nuwnesses</grapheme><phoneme>ˈnaʊnəsɪz</phoneme></lexeme> <!-- nownesses -->
-  <lexeme><grapheme>nuws</grapheme><phoneme>ˈnaʊz</phoneme></lexeme> <!-- nows -->
-  <lexeme><grapheme>nuwt</grapheme><phoneme>ˈnaʊt</phoneme></lexeme> <!-- nowt -->
-  <lexeme><grapheme>nuwts</grapheme><phoneme>ˈnaʊts</phoneme></lexeme> <!-- nowts -->
+  <lexeme><grapheme>nuws</grapheme><phoneme>naʊz</phoneme></lexeme> <!-- nows -->
+  <lexeme><grapheme>nuwt</grapheme><phoneme>naʊt</phoneme></lexeme> <!-- nowt -->
+  <lexeme><grapheme>nuwts</grapheme><phoneme>naʊts</phoneme></lexeme> <!-- nowts -->
   <lexeme><grapheme>nuzzlez</grapheme><phoneme>ˈnʌzəlz</phoneme></lexeme> <!-- nuzzles -->
-  <lexeme><grapheme>nwar</grapheme><phoneme>ˈnwɑr</phoneme></lexeme> <!-- noir -->
+  <lexeme><grapheme>nwar</grapheme><phoneme>nwɑr</phoneme></lexeme> <!-- noir -->
   <lexeme><grapheme>nwarish</grapheme><phoneme>ˈnwɑrɪʃ</phoneme></lexeme> <!-- noirish -->
-  <lexeme><grapheme>nwars</grapheme><phoneme>ˈnwɑrz</phoneme></lexeme> <!-- noirs -->
+  <lexeme><grapheme>nwars</grapheme><phoneme>nwɑrz</phoneme></lexeme> <!-- noirs -->
   <lexeme><grapheme>nwasett</grapheme><phoneme>nwɑˈzɛt</phoneme></lexeme> <!-- noisette -->
   <lexeme><grapheme>nwasetts</grapheme><phoneme>nwɑˈzɛts</phoneme></lexeme> <!-- noisettes -->
-  <lexeme><grapheme>oard</grapheme><phoneme>ˈɔrd</phoneme></lexeme> <!-- oared -->
+  <lexeme><grapheme>oard</grapheme><phoneme>ɔrd</phoneme></lexeme> <!-- oared -->
   <lexeme><grapheme>oarswimen</grapheme><phoneme>ˈɔrzˌwɪmən</phoneme></lexeme> <!-- oarswomen -->
-  <lexeme><grapheme>oarz</grapheme><phoneme>ˈɔrz</phoneme></lexeme> <!-- oars -->
+  <lexeme><grapheme>oarz</grapheme><phoneme>ɔrz</phoneme></lexeme> <!-- oars -->
   <lexeme><grapheme>oathbraeker</grapheme><phoneme>ˈoʊθˌbreɪkər</phoneme></lexeme> <!-- oathbreaker -->
   <lexeme><grapheme>oathbraekers</grapheme><phoneme>ˈoʊθˌbreɪkərz</phoneme></lexeme> <!-- oathbreakers -->
   <lexeme><grapheme>oathbraeking</grapheme><phoneme>ˈoʊθˌbreɪkɪŋ</phoneme></lexeme> <!-- oathbreaking -->
-  <lexeme><grapheme>oavs</grapheme><phoneme>ˈoʊvz</phoneme></lexeme> <!-- oaves -->
+  <lexeme><grapheme>oavs</grapheme><phoneme>oʊvz</phoneme></lexeme> <!-- oaves -->
   <lexeme><grapheme>obcompressd</grapheme><phoneme>ˌɑbkəmˈprɛst</phoneme></lexeme> <!-- obcompressed -->
   <lexeme><grapheme>obducez</grapheme><phoneme>ɑbˈdusɪz</phoneme></lexeme> <!-- obduces -->
   <lexeme><grapheme>obductz</grapheme><phoneme>ɑbˈdʌkts</phoneme></lexeme> <!-- obducts -->
@@ -18359,7 +18359,7 @@
   <lexeme><grapheme>odord</grapheme><phoneme>ˈoʊdərd</phoneme></lexeme> <!-- odored -->
   <lexeme><grapheme>odorizez</grapheme><phoneme>ˈoʊdəˌraɪzɪz</phoneme></lexeme> <!-- odorises -->
   <lexeme><grapheme>offcastz</grapheme><phoneme>ˈɔfˌkæsts</phoneme></lexeme> <!-- offcasts -->
-  <lexeme><grapheme>offd</grapheme><phoneme>ˈɔft</phoneme></lexeme> <!-- offed -->
+  <lexeme><grapheme>offd</grapheme><phoneme>ɔft</phoneme></lexeme> <!-- offed -->
   <lexeme><grapheme>offendz</grapheme><phoneme>əˈfɛndz</phoneme></lexeme> <!-- offends -->
   <lexeme><grapheme>offensiv</grapheme><phoneme>əˈfɛnsɪv</phoneme></lexeme> <!-- offencive -->
   <lexeme><grapheme>offensivly</grapheme><phoneme>əˈfɛnsɪvli</phoneme></lexeme> <!-- offensively -->
@@ -18376,18 +18376,18 @@
   <lexeme><grapheme>offsetz</grapheme><phoneme>ˈɔfˌsɛts</phoneme></lexeme> <!-- offsets -->
   <lexeme><grapheme>offshorez</grapheme><phoneme>ˌɔfˈʃɔrz</phoneme></lexeme> <!-- offshores -->
   <lexeme><grapheme>offstagez</grapheme><phoneme>ˌɔfˈsteɪdʒɪz</phoneme></lexeme> <!-- offstages -->
-  <lexeme><grapheme>offz</grapheme><phoneme>ˈɔfs</phoneme></lexeme> <!-- offs -->
+  <lexeme><grapheme>offz</grapheme><phoneme>ɔfs</phoneme></lexeme> <!-- offs -->
   <lexeme><grapheme>oglez</grapheme><phoneme>ˈoʊɡəlz</phoneme></lexeme> <!-- ogles -->
-  <lexeme><grapheme>ohd</grapheme><phoneme>ˈoʊd</phoneme></lexeme> <!-- ohed -->
-  <lexeme><grapheme>oht</grapheme><phoneme>ˈɔt</phoneme></lexeme> <!-- ought -->
+  <lexeme><grapheme>ohd</grapheme><phoneme>oʊd</phoneme></lexeme> <!-- ohed -->
+  <lexeme><grapheme>oht</grapheme><phoneme>ɔt</phoneme></lexeme> <!-- ought -->
   <lexeme><grapheme>ohtness</grapheme><phoneme>ˈɔtnəs</phoneme></lexeme> <!-- oughtness -->
-  <lexeme><grapheme>ohts</grapheme><phoneme>ˈɔts</phoneme></lexeme> <!-- oughts -->
-  <lexeme><grapheme>ohz</grapheme><phoneme>ˈoʊz</phoneme></lexeme> <!-- ohs -->
-  <lexeme><grapheme>oild</grapheme><phoneme>ˈɔɪld</phoneme></lexeme> <!-- oiled -->
+  <lexeme><grapheme>ohts</grapheme><phoneme>ɔts</phoneme></lexeme> <!-- oughts -->
+  <lexeme><grapheme>ohz</grapheme><phoneme>oʊz</phoneme></lexeme> <!-- ohs -->
+  <lexeme><grapheme>oild</grapheme><phoneme>ɔɪld</phoneme></lexeme> <!-- oiled -->
   <lexeme><grapheme>oiltiht</grapheme><phoneme>ˈɔɪlˌtaɪt</phoneme></lexeme> <!-- oiltight -->
-  <lexeme><grapheme>oilz</grapheme><phoneme>ˈɔɪlz</phoneme></lexeme> <!-- oils -->
-  <lexeme><grapheme>oinkd</grapheme><phoneme>ˈɔɪŋkt</phoneme></lexeme> <!-- oinked -->
-  <lexeme><grapheme>oinkz</grapheme><phoneme>ˈɔɪŋks</phoneme></lexeme> <!-- oinks -->
+  <lexeme><grapheme>oilz</grapheme><phoneme>ɔɪlz</phoneme></lexeme> <!-- oils -->
+  <lexeme><grapheme>oinkd</grapheme><phoneme>ɔɪŋkt</phoneme></lexeme> <!-- oinked -->
+  <lexeme><grapheme>oinkz</grapheme><phoneme>ɔɪŋks</phoneme></lexeme> <!-- oinks -->
   <lexeme><grapheme>okayd</grapheme><phoneme>oʊˈkeɪd</phoneme></lexeme> <!-- okayed -->
   <lexeme><grapheme>okayz</grapheme><phoneme>oʊˈkeɪz</phoneme></lexeme> <!-- okays -->
   <lexeme><grapheme>oldfashond</grapheme><phoneme>ˌoʊldˈfæʃənd</phoneme></lexeme> <!-- oldfashioned -->
@@ -18406,15 +18406,15 @@
   <lexeme><grapheme>onwardz</grapheme><phoneme>ˈɔnwərdz</phoneme></lexeme> <!-- onwards -->
   <lexeme><grapheme>oobliett</grapheme><phoneme>ˌubliˈɛt</phoneme></lexeme> <!-- oubliette -->
   <lexeme><grapheme>ooblietts</grapheme><phoneme>ˌubliˈɛts</phoneme></lexeme> <!-- oubliettes -->
-  <lexeme><grapheme>ood</grapheme><phoneme>ˈud</phoneme></lexeme> <!-- oud -->
-  <lexeme><grapheme>oods</grapheme><phoneme>ˈudz</phoneme></lexeme> <!-- ouds -->
-  <lexeme><grapheme>oohd</grapheme><phoneme>ˈud</phoneme></lexeme> <!-- oohed -->
-  <lexeme><grapheme>oohz</grapheme><phoneme>ˈuz</phoneme></lexeme> <!-- oohs -->
-  <lexeme><grapheme>ookd</grapheme><phoneme>ˈʊkt</phoneme></lexeme> <!-- ooked -->
-  <lexeme><grapheme>ookz</grapheme><phoneme>ˈʊks</phoneme></lexeme> <!-- ooks -->
+  <lexeme><grapheme>ood</grapheme><phoneme>ud</phoneme></lexeme> <!-- oud -->
+  <lexeme><grapheme>oods</grapheme><phoneme>udz</phoneme></lexeme> <!-- ouds -->
+  <lexeme><grapheme>oohd</grapheme><phoneme>ud</phoneme></lexeme> <!-- oohed -->
+  <lexeme><grapheme>oohz</grapheme><phoneme>uz</phoneme></lexeme> <!-- oohs -->
+  <lexeme><grapheme>ookd</grapheme><phoneme>ʊkt</phoneme></lexeme> <!-- ooked -->
+  <lexeme><grapheme>ookz</grapheme><phoneme>ʊks</phoneme></lexeme> <!-- ooks -->
   <lexeme><grapheme>oompahd</grapheme><phoneme>ˈʊmpɑd</phoneme></lexeme> <!-- oompahed -->
   <lexeme><grapheme>oompahz</grapheme><phoneme>ˈʊmpɑz</phoneme></lexeme> <!-- oompahs -->
-  <lexeme><grapheme>oozd</grapheme><phoneme>ˈuzd</phoneme></lexeme> <!-- oozed -->
+  <lexeme><grapheme>oozd</grapheme><phoneme>uzd</phoneme></lexeme> <!-- oozed -->
   <lexeme><grapheme>oozel</grapheme><phoneme>ˈuzəl</phoneme></lexeme> <!-- ousel -->
   <lexeme><grapheme>oozels</grapheme><phoneme>ˈuzəlz</phoneme></lexeme> <!-- ousels -->
   <lexeme><grapheme>oozez</grapheme><phoneme>ˈuzɪz</phoneme></lexeme> <!-- oozes -->
@@ -18444,7 +18444,7 @@
   <lexeme><grapheme>operativness</grapheme><phoneme>ˈɑpərətɪvnəs</phoneme></lexeme> <!-- operativeness -->
   <lexeme><grapheme>operativs</grapheme><phoneme>ˈɑpərətɪvz</phoneme></lexeme> <!-- operatives -->
   <lexeme><grapheme>operculat</grapheme><phoneme>oʊˈpɜrkjələt</phoneme></lexeme> <!-- operculate -->
-  <lexeme><grapheme>opez</grapheme><phoneme>ˈoʊps</phoneme></lexeme> <!-- opes -->
+  <lexeme><grapheme>opez</grapheme><phoneme>oʊps</phoneme></lexeme> <!-- opes -->
   <lexeme><grapheme>opiat</grapheme><phoneme>ˈoʊpiət</phoneme></lexeme> <!-- opiate -->
   <lexeme><grapheme>opiatez</grapheme><phoneme>ˈoʊpiəts</phoneme></lexeme> <!-- opiates -->
   <lexeme><grapheme>opiats</grapheme><phoneme>ˈoʊpiəts</phoneme></lexeme> <!-- opiates -->
@@ -18473,11 +18473,11 @@
   <lexeme><grapheme>optimizez</grapheme><phoneme>ˈɑptəˌmɪzɪz</phoneme></lexeme> <!-- optimises -->
   <lexeme><grapheme>optiond</grapheme><phoneme>ˈɑpʃənd</phoneme></lexeme> <!-- optioned -->
   <lexeme><grapheme>optionz</grapheme><phoneme>ˈɑpʃənz</phoneme></lexeme> <!-- options -->
-  <lexeme><grapheme>optz</grapheme><phoneme>ˈɑpts</phoneme></lexeme> <!-- opts -->
+  <lexeme><grapheme>optz</grapheme><phoneme>ɑpts</phoneme></lexeme> <!-- opts -->
   <lexeme><grapheme>oraqh</grapheme><phoneme>ˈɔrətʃ</phoneme></lexeme> <!-- orach -->
   <lexeme><grapheme>oraqhes</grapheme><phoneme>ˈɔrətʃɪz</phoneme></lexeme> <!-- oraches -->
   <lexeme><grapheme>oratez</grapheme><phoneme>ɔˈreɪts</phoneme></lexeme> <!-- orates -->
-  <lexeme><grapheme>orbd</grapheme><phoneme>ˈɔrbd</phoneme></lexeme> <!-- orbed -->
+  <lexeme><grapheme>orbd</grapheme><phoneme>ɔrbd</phoneme></lexeme> <!-- orbed -->
   <lexeme><grapheme>orbiculat</grapheme><phoneme>ɔrˈbɪkjəlɪt</phoneme></lexeme> <!-- orbiculate -->
   <lexeme><grapheme>orbiculats</grapheme><phoneme>ɔrˈbɪkjəleɪts</phoneme></lexeme> <!-- orbiculates -->
   <lexeme><grapheme>orbitz</grapheme><phoneme>ˈɔrbəts</phoneme></lexeme> <!-- orbits -->
@@ -18525,12 +18525,12 @@
   <lexeme><grapheme>ostriqh</grapheme><phoneme>ˈɑstrɪtʃ</phoneme></lexeme> <!-- ostrich -->
   <lexeme><grapheme>ostriqhes</grapheme><phoneme>ˈɑstrɪtʃɪz</phoneme></lexeme> <!-- ostriches -->
   <lexeme><grapheme>ostriqhlike</grapheme><phoneme>ˈɑstrɪtʃˌlaɪk</phoneme></lexeme> <!-- ostrichlike -->
-  <lexeme><grapheme>ouqh</grapheme><phoneme>ˈaʊtʃ</phoneme></lexeme> <!-- ouch -->
-  <lexeme><grapheme>ouqhd</grapheme><phoneme>ˈaʊtʃt</phoneme></lexeme> <!-- ouched -->
+  <lexeme><grapheme>ouqh</grapheme><phoneme>aʊtʃ</phoneme></lexeme> <!-- ouch -->
+  <lexeme><grapheme>ouqhd</grapheme><phoneme>aʊtʃt</phoneme></lexeme> <!-- ouched -->
   <lexeme><grapheme>ouqhez</grapheme><phoneme>ˈaʊtʃɪz</phoneme></lexeme> <!-- ouches -->
   <lexeme><grapheme>ouqhing</grapheme><phoneme>ˈaʊtʃɪŋ</phoneme></lexeme> <!-- ouching -->
   <lexeme><grapheme>ourselvs</grapheme><phoneme>aʊərˈsɛlvz</phoneme></lexeme> <!-- ourselves -->
-  <lexeme><grapheme>oustz</grapheme><phoneme>ˈaʊsts</phoneme></lexeme> <!-- ousts -->
+  <lexeme><grapheme>oustz</grapheme><phoneme>aʊsts</phoneme></lexeme> <!-- ousts -->
   <lexeme><grapheme>outactz</grapheme><phoneme>ˌaʊtˈækts</phoneme></lexeme> <!-- outacts -->
   <lexeme><grapheme>outaddz</grapheme><phoneme>ˌaʊtˈædz</phoneme></lexeme> <!-- outadds -->
   <lexeme><grapheme>outaqhiev</grapheme><phoneme>ˌaʊtəˈtʃiv</phoneme></lexeme> <!-- outachieve -->
@@ -19068,7 +19068,7 @@
   <lexeme><grapheme>outyelpd</grapheme><phoneme>ˌaʊtˈjɛlpt</phoneme></lexeme> <!-- outyelped -->
   <lexeme><grapheme>outyelpz</grapheme><phoneme>ˌaʊtˈjɛlps</phoneme></lexeme> <!-- outyelps -->
   <lexeme><grapheme>outyieldz</grapheme><phoneme>ˌaʊtˈjildz</phoneme></lexeme> <!-- outyields -->
-  <lexeme><grapheme>outz</grapheme><phoneme>ˈaʊts</phoneme></lexeme> <!-- outs -->
+  <lexeme><grapheme>outz</grapheme><phoneme>aʊts</phoneme></lexeme> <!-- outs -->
   <lexeme><grapheme>ov</grapheme><phoneme>ʌv</phoneme></lexeme> <!-- of -->
   <lexeme><grapheme>ovariectomizez</grapheme><phoneme>oʊˌværiˈɛktəˌmaɪzɪz</phoneme></lexeme> <!-- ovariectomises -->
   <lexeme><grapheme>overabstractz</grapheme><phoneme>ˌoʊvərəbˈstrækts</phoneme></lexeme> <!-- overabstracts -->
@@ -22530,7 +22530,7 @@
   <lexeme><grapheme>qhia</grapheme><phoneme>ˈtʃiːə</phoneme></lexeme> <!-- chia -->
   <lexeme><grapheme>qhiao</grapheme><phoneme>tʃaʊ</phoneme></lexeme> <!-- chiao -->
   <lexeme><grapheme>qhiaos</grapheme><phoneme>tʃaʊz</phoneme></lexeme> <!-- chiaos -->
-  <lexeme><grapheme>qhiaus</grapheme><phoneme>ˈtʃaʊs</phoneme></lexeme> <!-- chiaus -->
+  <lexeme><grapheme>qhiaus</grapheme><phoneme>tʃaʊs</phoneme></lexeme> <!-- chiaus -->
   <lexeme><grapheme>qhiauses</grapheme><phoneme>ˈtʃaʊsɪz</phoneme></lexeme> <!-- chiauses -->
   <lexeme><grapheme>qhiba</grapheme><phoneme>ˈtʃiːbə</phoneme></lexeme> <!-- chiba -->
   <lexeme><grapheme>qhibuk</grapheme><phoneme>tʃɪˈbuːk</phoneme></lexeme> <!-- chibouk -->
@@ -23608,7 +23608,7 @@
   <lexeme><grapheme>reattemptz</grapheme><phoneme>ˌriːəˈtɛmpts</phoneme></lexeme> <!-- reattempts -->
   <lexeme><grapheme>reattributez</grapheme><phoneme>ˌriːəˈtrɪbjuːts</phoneme></lexeme> <!-- reattributes -->
   <lexeme><grapheme>reauthorizez</grapheme><phoneme>riːˈɔːθəraɪzɪz</phoneme></lexeme> <!-- reauthorizes -->
-  <lexeme><grapheme>reav</grapheme><phoneme>rˈiːv</phoneme></lexeme> <!-- reive -->
+  <lexeme><grapheme>reav</grapheme><phoneme>riːv</phoneme></lexeme> <!-- reive -->
   <lexeme><grapheme>reavaild</grapheme><phoneme>ˌriːəˈveɪld</phoneme></lexeme> <!-- reavailed -->
   <lexeme><grapheme>reavailz</grapheme><phoneme>ˌriːəˈveɪlz</phoneme></lexeme> <!-- reavails -->
   <lexeme><grapheme>reavd</grapheme><phoneme>riːvd</phoneme></lexeme> <!-- reaved -->
@@ -23976,7 +23976,7 @@
   <lexeme><grapheme>redeterminz</grapheme><phoneme>riːdɪˈtɜːrmɪnz</phoneme></lexeme> <!-- redetermines -->
   <lexeme><grapheme>redevelopd</grapheme><phoneme>ˌriːdɪˈvɛləpt</phoneme></lexeme> <!-- redeveloped -->
   <lexeme><grapheme>redevelopz</grapheme><phoneme>ˌriːdɪˈvɛləps</phoneme></lexeme> <!-- redevelops -->
-  <lexeme><grapheme>redez</grapheme><phoneme>ˈriːdz</phoneme></lexeme> <!-- redes -->
+  <lexeme><grapheme>redez</grapheme><phoneme>riːdz</phoneme></lexeme> <!-- redes -->
   <lexeme><grapheme>redfinqh</grapheme><phoneme>ˈrɛdfɪntʃ</phoneme></lexeme> <!-- redfinch -->
   <lexeme><grapheme>redfinqhes</grapheme><phoneme>ˈrɛdfɪntʃɪz</phoneme></lexeme> <!-- redfinches -->
   <lexeme><grapheme>redhedd</grapheme><phoneme>ˈrɛdhɛd</phoneme></lexeme> <!-- redhead -->
@@ -24429,7 +24429,7 @@
   <lexeme><grapheme>reincreasez</grapheme><phoneme>riːɪnˈkriːsɪz</phoneme></lexeme> <!-- reincreases -->
   <lexeme><grapheme>reincurd</grapheme><phoneme>riːɪnˈkɜːrd</phoneme></lexeme> <!-- reincurred -->
   <lexeme><grapheme>reincurz</grapheme><phoneme>riːɪnˈkɜːrz</phoneme></lexeme> <!-- reincurs -->
-  <lexeme><grapheme>reind</grapheme><phoneme>rˈeɪnd</phoneme></lexeme> <!-- reined -->
+  <lexeme><grapheme>reind</grapheme><phoneme>reɪnd</phoneme></lexeme> <!-- reined -->
   <lexeme><grapheme>reindexd</grapheme><phoneme>riːˈɪndɛkst</phoneme></lexeme> <!-- reindexed -->
   <lexeme><grapheme>reindexez</grapheme><phoneme>riːˈɪndɛksɪz</phoneme></lexeme> <!-- reindexes -->
   <lexeme><grapheme>reindiht</grapheme><phoneme>riːɪnˈdaɪt</phoneme></lexeme> <!-- reindict -->
@@ -24485,7 +24485,7 @@
   <lexeme><grapheme>reinvigoratez</grapheme><phoneme>rˌiiɪnvˈɪɡərˌeɪts</phoneme></lexeme> <!-- reinvigorates -->
   <lexeme><grapheme>reinvitez</grapheme><phoneme>rˌiiɪnvˈaɪts</phoneme></lexeme> <!-- reinvites -->
   <lexeme><grapheme>reinvokez</grapheme><phoneme>rˌiiɪnvˈoʊks</phoneme></lexeme> <!-- reinvokes -->
-  <lexeme><grapheme>reinz</grapheme><phoneme>rˈeɪnz</phoneme></lexeme> <!-- reins -->
+  <lexeme><grapheme>reinz</grapheme><phoneme>reɪnz</phoneme></lexeme> <!-- reins -->
   <lexeme><grapheme>reissuez</grapheme><phoneme>rˌiiɪʃˈuːz</phoneme></lexeme> <!-- reissues -->
   <lexeme><grapheme>reiteratez</grapheme><phoneme>riːˈɪtərˌeɪts</phoneme></lexeme> <!-- reiterates -->
   <lexeme><grapheme>reiterativ</grapheme><phoneme>riːˈɪtərətˌɪv</phoneme></lexeme> <!-- reiterative -->
@@ -24720,7 +24720,7 @@
   <lexeme><grapheme>rendezvoohd</grapheme><phoneme>rˈɒndeɪvˌuːd</phoneme></lexeme> <!-- rendezvoused -->
   <lexeme><grapheme>rendezvoohs</grapheme><phoneme>rˈɒndeɪvˌuːzɪz</phoneme></lexeme> <!-- rendezvouses -->
   <lexeme><grapheme>rendezvoohz</grapheme><phoneme>rˈɒndeɪvˌuːzɪz</phoneme></lexeme> <!-- rendezvouses -->
-  <lexeme><grapheme>rendz</grapheme><phoneme>rˈɛndz</phoneme></lexeme> <!-- rends -->
+  <lexeme><grapheme>rendz</grapheme><phoneme>rɛndz</phoneme></lexeme> <!-- rends -->
   <lexeme><grapheme>reneg</grapheme><phoneme>rɪnˈɛɡ</phoneme></lexeme> <!-- renege -->
   <lexeme><grapheme>renegadez</grapheme><phoneme>rˈɛnɪɡˌeɪdz</phoneme></lexeme> <!-- renegades -->
   <lexeme><grapheme>renegd</grapheme><phoneme>rɪnˈɛɡd</phoneme></lexeme> <!-- reneged -->
@@ -24745,7 +24745,7 @@
   <lexeme><grapheme>renovativ</grapheme><phoneme>rˈɛnəvətˌɪv</phoneme></lexeme> <!-- renovative -->
   <lexeme><grapheme>renterd</grapheme><phoneme>rˈɛntərd</phoneme></lexeme> <!-- rentered -->
   <lexeme><grapheme>renterz</grapheme><phoneme>rˈɛntərz</phoneme></lexeme> <!-- renters -->
-  <lexeme><grapheme>rentz</grapheme><phoneme>rˈɛnts</phoneme></lexeme> <!-- rents -->
+  <lexeme><grapheme>rentz</grapheme><phoneme>rɛnts</phoneme></lexeme> <!-- rents -->
   <lexeme><grapheme>renumberd</grapheme><phoneme>riːnˈʌmbərd</phoneme></lexeme> <!-- renumbered -->
   <lexeme><grapheme>renumberz</grapheme><phoneme>riːnˈʌmbərz</phoneme></lexeme> <!-- renumbers -->
   <lexeme><grapheme>renumeratez</grapheme><phoneme>rɪnjˈuːnərˌeɪts</phoneme></lexeme> <!-- renumerates -->
@@ -24814,7 +24814,7 @@
   <lexeme><grapheme>repatternz</grapheme><phoneme>riːpˈætərnz</phoneme></lexeme> <!-- repatterns -->
   <lexeme><grapheme>repavez</grapheme><phoneme>riːpˈeɪvz</phoneme></lexeme> <!-- repaves -->
   <lexeme><grapheme>repayz</grapheme><phoneme>riːpˈeɪz</phoneme></lexeme> <!-- repays -->
-  <lexeme><grapheme>repd</grapheme><phoneme>rˈɛpt</phoneme></lexeme> <!-- repped -->
+  <lexeme><grapheme>repd</grapheme><phoneme>rɛpt</phoneme></lexeme> <!-- repped -->
   <lexeme><grapheme>repeald</grapheme><phoneme>rɪpˈiːld</phoneme></lexeme> <!-- repealed -->
   <lexeme><grapheme>repealz</grapheme><phoneme>rɪpˈiːlz</phoneme></lexeme> <!-- repeals -->
   <lexeme><grapheme>repeatz</grapheme><phoneme>rɪpˈiːts</phoneme></lexeme> <!-- repeats -->
@@ -25291,7 +25291,7 @@
   <lexeme><grapheme>restuffd</grapheme><phoneme>riːstˈʌft</phoneme></lexeme> <!-- restuffed -->
   <lexeme><grapheme>restuffz</grapheme><phoneme>riːstˈʌfs</phoneme></lexeme> <!-- restuffs -->
   <lexeme><grapheme>restylez</grapheme><phoneme>riːstaɪlz</phoneme></lexeme> <!-- restyles -->
-  <lexeme><grapheme>restz</grapheme><phoneme>rˈɛsts</phoneme></lexeme> <!-- rests -->
+  <lexeme><grapheme>restz</grapheme><phoneme>rɛsts</phoneme></lexeme> <!-- rests -->
   <lexeme><grapheme>resublimez</grapheme><phoneme>riːsəblˈaɪmz</phoneme></lexeme> <!-- resublimes -->
   <lexeme><grapheme>resubmitz</grapheme><phoneme>riːsəbmˈɪts</phoneme></lexeme> <!-- resubmits -->
   <lexeme><grapheme>resultiv</grapheme><phoneme>rɪzˈʌltɪv</phoneme></lexeme> <!-- resultive -->
@@ -25335,7 +25335,7 @@
   <lexeme><grapheme>retauht</grapheme><phoneme>riːtˈɔːt</phoneme></lexeme> <!-- retaught -->
   <lexeme><grapheme>retaxd</grapheme><phoneme>riːtˈækst</phoneme></lexeme> <!-- retaxed -->
   <lexeme><grapheme>retaxez</grapheme><phoneme>riːtˈæksɪz</phoneme></lexeme> <!-- retaxes -->
-  <lexeme><grapheme>retchd</grapheme><phoneme>rˈɛtʃt</phoneme></lexeme> <!-- retched -->
+  <lexeme><grapheme>retchd</grapheme><phoneme>rɛtʃt</phoneme></lexeme> <!-- retched -->
   <lexeme><grapheme>retchez</grapheme><phoneme>rˈɛtʃɪz</phoneme></lexeme> <!-- retches -->
   <lexeme><grapheme>reteamd</grapheme><phoneme>riːtˈiːmd</phoneme></lexeme> <!-- reteamed -->
   <lexeme><grapheme>reteamz</grapheme><phoneme>riːtˈiːmz</phoneme></lexeme> <!-- reteams -->
@@ -25450,7 +25450,7 @@
   <lexeme><grapheme>returnz</grapheme><phoneme>rɪtˈɜːrnz</phoneme></lexeme> <!-- returns -->
   <lexeme><grapheme>retwistz</grapheme><phoneme>riːtwˈɪsts</phoneme></lexeme> <!-- retwists -->
   <lexeme><grapheme>retypez</grapheme><phoneme>riːtˈaɪps</phoneme></lexeme> <!-- retypes -->
-  <lexeme><grapheme>retz</grapheme><phoneme>rˈɛts</phoneme></lexeme> <!-- rets -->
+  <lexeme><grapheme>retz</grapheme><phoneme>rɛts</phoneme></lexeme> <!-- rets -->
   <lexeme><grapheme>reunifiez</grapheme><phoneme>riːjˈuːnɪfˌaɪz</phoneme></lexeme> <!-- reunifies -->
   <lexeme><grapheme>reunitez</grapheme><phoneme>riːjˈuːnaɪts</phoneme></lexeme> <!-- reunites -->
   <lexeme><grapheme>reupholsterd</grapheme><phoneme>riːʌphˈoʊlstərd</phoneme></lexeme> <!-- reupholstered -->
@@ -25476,7 +25476,7 @@
   <lexeme><grapheme>revanqhism</grapheme><phoneme>rəvˈɑːnʃɪzəm</phoneme></lexeme> <!-- revanchism -->
   <lexeme><grapheme>revanqhisms</grapheme><phoneme>rəvˈɑːnʃɪzəmz</phoneme></lexeme> <!-- revanchisms -->
   <lexeme><grapheme>revanqhist</grapheme><phoneme>rəvˈɑːnʃɪst</phoneme></lexeme> <!-- revanchist -->
-  <lexeme><grapheme>revd</grapheme><phoneme>rˈɛvd</phoneme></lexeme> <!-- revved -->
+  <lexeme><grapheme>revd</grapheme><phoneme>rɛvd</phoneme></lexeme> <!-- revved -->
   <lexeme><grapheme>reveald</grapheme><phoneme>rɪvˈiːld</phoneme></lexeme> <!-- revealed -->
   <lexeme><grapheme>revealz</grapheme><phoneme>rɪvˈiːlz</phoneme></lexeme> <!-- reveals -->
   <lexeme><grapheme>revegetatez</grapheme><phoneme>riːvˈɛdʒɪtˌeɪts</phoneme></lexeme> <!-- revegetates -->
@@ -25526,7 +25526,7 @@
   <lexeme><grapheme>revolvz</grapheme><phoneme>rɪvˈɒlvz</phoneme></lexeme> <!-- revolves -->
   <lexeme><grapheme>revotez</grapheme><phoneme>riːvˈoʊts</phoneme></lexeme> <!-- revotes -->
   <lexeme><grapheme>revulsiv</grapheme><phoneme>rɪvˈʌlsɪv</phoneme></lexeme> <!-- revulsive -->
-  <lexeme><grapheme>revz</grapheme><phoneme>rˈɛvz</phoneme></lexeme> <!-- revs -->
+  <lexeme><grapheme>revz</grapheme><phoneme>rɛvz</phoneme></lexeme> <!-- revs -->
   <lexeme><grapheme>rewakend</grapheme><phoneme>riːwˈeɪkənd</phoneme></lexeme> <!-- rewakened -->
   <lexeme><grapheme>rewakenz</grapheme><phoneme>riːwˈeɪkənz</phoneme></lexeme> <!-- rewakens -->
   <lexeme><grapheme>rewakez</grapheme><phoneme>riːwˈeɪks</phoneme></lexeme> <!-- rewakes -->
@@ -25571,34 +25571,34 @@
   <lexeme><grapheme>rhetorizez</grapheme><phoneme>rˈɛtərˌaɪzɪz</phoneme></lexeme> <!-- rhetorises -->
   <lexeme><grapheme>rhumbad</grapheme><phoneme>rˈʌmbəd</phoneme></lexeme> <!-- rhumbaed -->
   <lexeme><grapheme>rhumbaz</grapheme><phoneme>rˈʌmbəz</phoneme></lexeme> <!-- rhumbas -->
-  <lexeme><grapheme>rhymez</grapheme><phoneme>rˈaɪmz</phoneme></lexeme> <!-- rhymes -->
+  <lexeme><grapheme>rhymez</grapheme><phoneme>raɪmz</phoneme></lexeme> <!-- rhymes -->
   <lexeme><grapheme>rhythmizez</grapheme><phoneme>rˈɪðəmˌaɪzɪz</phoneme></lexeme> <!-- rhythmizes -->
   <lexeme><grapheme>ribbond</grapheme><phoneme>rˈɪbənd</phoneme></lexeme> <!-- ribboned -->
   <lexeme><grapheme>ribbonz</grapheme><phoneme>rˈɪbənz</phoneme></lexeme> <!-- ribbons -->
-  <lexeme><grapheme>ribd</grapheme><phoneme>rˈɪbd</phoneme></lexeme> <!-- ribbed -->
-  <lexeme><grapheme>ribz</grapheme><phoneme>rˈɪbz</phoneme></lexeme> <!-- ribs -->
-  <lexeme><grapheme>rickd</grapheme><phoneme>rˈɪkt</phoneme></lexeme> <!-- ricked -->
-  <lexeme><grapheme>rickz</grapheme><phoneme>rˈɪks</phoneme></lexeme> <!-- ricks -->
+  <lexeme><grapheme>ribd</grapheme><phoneme>rɪbd</phoneme></lexeme> <!-- ribbed -->
+  <lexeme><grapheme>ribz</grapheme><phoneme>rɪbz</phoneme></lexeme> <!-- ribs -->
+  <lexeme><grapheme>rickd</grapheme><phoneme>rɪkt</phoneme></lexeme> <!-- ricked -->
+  <lexeme><grapheme>rickz</grapheme><phoneme>rɪks</phoneme></lexeme> <!-- ricks -->
   <lexeme><grapheme>ricosheh</grapheme><phoneme>rˈɪkəʃˌeɪ</phoneme></lexeme> <!-- ricochet -->
   <lexeme><grapheme>ricoshehd</grapheme><phoneme>rˈɪkəʃˌeɪd</phoneme></lexeme> <!-- ricocheted -->
   <lexeme><grapheme>ricoshehing</grapheme><phoneme>rˈɪkəʃˌeɪɪŋ</phoneme></lexeme> <!-- ricocheting -->
   <lexeme><grapheme>ricoshehs</grapheme><phoneme>rˈɪkəʃˌeɪz</phoneme></lexeme> <!-- ricochets -->
   <lexeme><grapheme>ricoshehz</grapheme><phoneme>rˈɪkəʃˌeɪz</phoneme></lexeme> <!-- ricochets -->
   <lexeme><grapheme>riddlez</grapheme><phoneme>rˈɪdəlz</phoneme></lexeme> <!-- riddles -->
-  <lexeme><grapheme>ridez</grapheme><phoneme>rˈaɪdz</phoneme></lexeme> <!-- rides -->
+  <lexeme><grapheme>ridez</grapheme><phoneme>raɪdz</phoneme></lexeme> <!-- rides -->
   <lexeme><grapheme>ridgelinez</grapheme><phoneme>rˈɪdʒlaɪnz</phoneme></lexeme> <!-- ridgelines -->
   <lexeme><grapheme>ridgez</grapheme><phoneme>rˈɪdʒɪz</phoneme></lexeme> <!-- ridges -->
   <lexeme><grapheme>ridiculez</grapheme><phoneme>rˈɪdɪkjuːlz</phoneme></lexeme> <!-- ridicules -->
-  <lexeme><grapheme>ridz</grapheme><phoneme>rˈɪdz</phoneme></lexeme> <!-- rids -->
-  <lexeme><grapheme>riffd</grapheme><phoneme>rˈɪft</phoneme></lexeme> <!-- riffed -->
+  <lexeme><grapheme>ridz</grapheme><phoneme>rɪdz</phoneme></lexeme> <!-- rids -->
+  <lexeme><grapheme>riffd</grapheme><phoneme>rɪft</phoneme></lexeme> <!-- riffed -->
   <lexeme><grapheme>rifflez</grapheme><phoneme>rˈɪfəlz</phoneme></lexeme> <!-- riffles -->
-  <lexeme><grapheme>riffz</grapheme><phoneme>rˈɪfs</phoneme></lexeme> <!-- riffs -->
+  <lexeme><grapheme>riffz</grapheme><phoneme>rɪfs</phoneme></lexeme> <!-- riffs -->
   <lexeme><grapheme>riflez</grapheme><phoneme>rˈaɪfəlz</phoneme></lexeme> <!-- rifles -->
-  <lexeme><grapheme>riftz</grapheme><phoneme>rˈɪfts</phoneme></lexeme> <!-- rifts -->
-  <lexeme><grapheme>rigd</grapheme><phoneme>rˈɪɡd</phoneme></lexeme> <!-- rigged -->
+  <lexeme><grapheme>riftz</grapheme><phoneme>rɪfts</phoneme></lexeme> <!-- rifts -->
+  <lexeme><grapheme>rigd</grapheme><phoneme>rɪɡd</phoneme></lexeme> <!-- rigged -->
   <lexeme><grapheme>rigidifiez</grapheme><phoneme>rɪdʒˈɪdɪfˌaɪz</phoneme></lexeme> <!-- rigidifies -->
-  <lexeme><grapheme>rigz</grapheme><phoneme>rˈɪɡz</phoneme></lexeme> <!-- rigs -->
-  <lexeme><grapheme>riht</grapheme><phoneme>rˈaɪt</phoneme></lexeme> <!-- right -->
+  <lexeme><grapheme>rigz</grapheme><phoneme>rɪɡz</phoneme></lexeme> <!-- rigs -->
+  <lexeme><grapheme>riht</grapheme><phoneme>raɪt</phoneme></lexeme> <!-- right -->
   <lexeme><grapheme>rihted</grapheme><phoneme>rˈaɪtɪd</phoneme></lexeme> <!-- righted -->
   <lexeme><grapheme>rihten</grapheme><phoneme>rˈaɪtən</phoneme></lexeme> <!-- righten -->
   <lexeme><grapheme>rihtend</grapheme><phoneme>rˈaɪtənd</phoneme></lexeme> <!-- rightened -->
@@ -25633,43 +25633,43 @@
   <lexeme><grapheme>rihtmoste</grapheme><phoneme>rˈaɪtmoʊst</phoneme></lexeme> <!-- rightmost -->
   <lexeme><grapheme>rihtness</grapheme><phoneme>rˈaɪtnəs</phoneme></lexeme> <!-- rightness -->
   <lexeme><grapheme>rihto</grapheme><phoneme>rˈaɪtˈoʊ</phoneme></lexeme> <!-- righto -->
-  <lexeme><grapheme>rihts</grapheme><phoneme>rˈaɪts</phoneme></lexeme> <!-- rights -->
+  <lexeme><grapheme>rihts</grapheme><phoneme>raɪts</phoneme></lexeme> <!-- rights -->
   <lexeme><grapheme>rihtward</grapheme><phoneme>rˈaɪtwərd</phoneme></lexeme> <!-- rightward -->
   <lexeme><grapheme>rihtwise</grapheme><phoneme>rˈaɪtwaɪz</phoneme></lexeme> <!-- rightwise -->
   <lexeme><grapheme>rihtwisely</grapheme><phoneme>rˈaɪtwaɪzli</phoneme></lexeme> <!-- rightwisely -->
   <lexeme><grapheme>rihtwiseness</grapheme><phoneme>rˈaɪtwaɪznəs</phoneme></lexeme> <!-- rightwiseness -->
   <lexeme><grapheme>rihty</grapheme><phoneme>rˈaɪti</phoneme></lexeme> <!-- righty -->
-  <lexeme><grapheme>rihtz</grapheme><phoneme>rˈaɪts</phoneme></lexeme> <!-- rights -->
+  <lexeme><grapheme>rihtz</grapheme><phoneme>raɪts</phoneme></lexeme> <!-- rights -->
   <lexeme><grapheme>rilez</grapheme><phoneme>rˈaɪərz</phoneme></lexeme> <!-- riles -->
-  <lexeme><grapheme>rilld</grapheme><phoneme>rˈɪld</phoneme></lexeme> <!-- rilled -->
-  <lexeme><grapheme>rillz</grapheme><phoneme>rˈɪlz</phoneme></lexeme> <!-- rills -->
-  <lexeme><grapheme>rimd</grapheme><phoneme>rˈɪmd</phoneme></lexeme> <!-- rimmed -->
-  <lexeme><grapheme>rimez</grapheme><phoneme>rˈaɪmz</phoneme></lexeme> <!-- rimes -->
+  <lexeme><grapheme>rilld</grapheme><phoneme>rɪld</phoneme></lexeme> <!-- rilled -->
+  <lexeme><grapheme>rillz</grapheme><phoneme>rɪlz</phoneme></lexeme> <!-- rills -->
+  <lexeme><grapheme>rimd</grapheme><phoneme>rɪmd</phoneme></lexeme> <!-- rimmed -->
+  <lexeme><grapheme>rimez</grapheme><phoneme>raɪmz</phoneme></lexeme> <!-- rimes -->
   <lexeme><grapheme>rimplez</grapheme><phoneme>rˈɪmpəlz</phoneme></lexeme> <!-- rimples -->
-  <lexeme><grapheme>rimz</grapheme><phoneme>rˈɪmz</phoneme></lexeme> <!-- rims -->
-  <lexeme><grapheme>rinez</grapheme><phoneme>rˈaɪnz</phoneme></lexeme> <!-- rines -->
+  <lexeme><grapheme>rimz</grapheme><phoneme>rɪmz</phoneme></lexeme> <!-- rims -->
+  <lexeme><grapheme>rinez</grapheme><phoneme>raɪnz</phoneme></lexeme> <!-- rines -->
   <lexeme><grapheme>ringbarkd</grapheme><phoneme>rˈɪŋbɑːrkt</phoneme></lexeme> <!-- ringbarked -->
   <lexeme><grapheme>ringbarkz</grapheme><phoneme>rˈɪŋbɑːrks</phoneme></lexeme> <!-- ringbarks -->
-  <lexeme><grapheme>ringd</grapheme><phoneme>rˈɪŋd</phoneme></lexeme> <!-- ringed -->
+  <lexeme><grapheme>ringd</grapheme><phoneme>rɪŋd</phoneme></lexeme> <!-- ringed -->
   <lexeme><grapheme>ringdov</grapheme><phoneme>rˈɪŋdʌv</phoneme></lexeme> <!-- ringdove -->
   <lexeme><grapheme>ringdovs</grapheme><phoneme>rˈɪŋdʌvz</phoneme></lexeme> <!-- ringdoves -->
   <lexeme><grapheme>ringhedd</grapheme><phoneme>rˈɪŋhɛd</phoneme></lexeme> <!-- ringhead -->
   <lexeme><grapheme>ringhedds</grapheme><phoneme>rˈɪŋhɛdz</phoneme></lexeme> <!-- ringheads -->
-  <lexeme><grapheme>ringz</grapheme><phoneme>rˈɪŋz</phoneme></lexeme> <!-- rings -->
+  <lexeme><grapheme>ringz</grapheme><phoneme>rɪŋz</phoneme></lexeme> <!-- rings -->
   <lexeme><grapheme>rinsez</grapheme><phoneme>rˈɪnsɪz</phoneme></lexeme> <!-- rinses -->
   <lexeme><grapheme>riotz</grapheme><phoneme>rˈaɪəts</phoneme></lexeme> <!-- riots -->
-  <lexeme><grapheme>ripd</grapheme><phoneme>rˈɪpt</phoneme></lexeme> <!-- ripped -->
+  <lexeme><grapheme>ripd</grapheme><phoneme>rɪpt</phoneme></lexeme> <!-- ripped -->
   <lexeme><grapheme>ripend</grapheme><phoneme>rˈaɪpənd</phoneme></lexeme> <!-- ripened -->
   <lexeme><grapheme>ripenz</grapheme><phoneme>rˈaɪpənz</phoneme></lexeme> <!-- ripens -->
-  <lexeme><grapheme>ripez</grapheme><phoneme>rˈaɪps</phoneme></lexeme> <!-- ripes -->
+  <lexeme><grapheme>ripez</grapheme><phoneme>raɪps</phoneme></lexeme> <!-- ripes -->
   <lexeme><grapheme>ripostez</grapheme><phoneme>rɪpˈoʊsts</phoneme></lexeme> <!-- ripostes -->
   <lexeme><grapheme>ripplez</grapheme><phoneme>rˈɪpəlz</phoneme></lexeme> <!-- ripples -->
   <lexeme><grapheme>riprapd</grapheme><phoneme>rˈɪpræpt</phoneme></lexeme> <!-- riprapped -->
   <lexeme><grapheme>riprapz</grapheme><phoneme>rˈɪpræps</phoneme></lexeme> <!-- ripraps -->
   <lexeme><grapheme>riptuwel</grapheme><phoneme>rˈɪptaʊəl</phoneme></lexeme> <!-- riptowel -->
   <lexeme><grapheme>riptuwels</grapheme><phoneme>rˈɪptaʊəlz</phoneme></lexeme> <!-- riptowels -->
-  <lexeme><grapheme>ripz</grapheme><phoneme>rˈɪps</phoneme></lexeme> <!-- rips -->
-  <lexeme><grapheme>riqh</grapheme><phoneme>rˈɪtʃ</phoneme></lexeme> <!-- rich -->
+  <lexeme><grapheme>ripz</grapheme><phoneme>rɪps</phoneme></lexeme> <!-- rips -->
+  <lexeme><grapheme>riqh</grapheme><phoneme>rɪtʃ</phoneme></lexeme> <!-- rich -->
   <lexeme><grapheme>riqhen</grapheme><phoneme>rˈɪtʃən</phoneme></lexeme> <!-- richen -->
   <lexeme><grapheme>riqhend</grapheme><phoneme>rˈɪtʃənd</phoneme></lexeme> <!-- richened -->
   <lexeme><grapheme>riqhening</grapheme><phoneme>rˈɪtʃənɪŋ</phoneme></lexeme> <!-- richening -->
@@ -25683,8 +25683,8 @@
   <lexeme><grapheme>riqhweeds</grapheme><phoneme>rˈɪtʃwiːdz</phoneme></lexeme> <!-- richweeds -->
   <lexeme><grapheme>risez</grapheme><phoneme>rˈaɪzɪz</phoneme></lexeme> <!-- rises -->
   <lexeme><grapheme>rishess</grapheme><phoneme>rɪtʃˈɛs</phoneme></lexeme> <!-- richesse -->
-  <lexeme><grapheme>riskd</grapheme><phoneme>rˈɪskt</phoneme></lexeme> <!-- risked -->
-  <lexeme><grapheme>riskz</grapheme><phoneme>rˈɪsks</phoneme></lexeme> <!-- risks -->
+  <lexeme><grapheme>riskd</grapheme><phoneme>rɪskt</phoneme></lexeme> <!-- risked -->
+  <lexeme><grapheme>riskz</grapheme><phoneme>rɪsks</phoneme></lexeme> <!-- risks -->
   <lexeme><grapheme>risqeh</grapheme><phoneme>rɪskˈeɪ</phoneme></lexeme> <!-- risque -->
   <lexeme><grapheme>ritualizez</grapheme><phoneme>rˈɪtʃʊəlˌaɪzɪz</phoneme></lexeme> <!-- ritualises -->
   <lexeme><grapheme>rivald</grapheme><phoneme>rˈaɪvəld</phoneme></lexeme> <!-- rivaled -->
@@ -25693,72 +25693,72 @@
   <lexeme><grapheme>rivelz</grapheme><phoneme>rˈɪvəlz</phoneme></lexeme> <!-- rivels -->
   <lexeme><grapheme>riverz</grapheme><phoneme>rˈɪvərz</phoneme></lexeme> <!-- rivers -->
   <lexeme><grapheme>rivetz</grapheme><phoneme>rˈɪvɪts</phoneme></lexeme> <!-- rivets -->
-  <lexeme><grapheme>rivez</grapheme><phoneme>rˈaɪvz</phoneme></lexeme> <!-- rives -->
+  <lexeme><grapheme>rivez</grapheme><phoneme>raɪvz</phoneme></lexeme> <!-- rives -->
   <lexeme><grapheme>roadblockd</grapheme><phoneme>rˈoʊdblɒkt</phoneme></lexeme> <!-- roadblocked -->
   <lexeme><grapheme>roadblockz</grapheme><phoneme>rˈoʊdblɒks</phoneme></lexeme> <!-- roadblocks -->
   <lexeme><grapheme>roadstedd</grapheme><phoneme>rˈoʊdstɛd</phoneme></lexeme> <!-- roadstead -->
   <lexeme><grapheme>roadstedds</grapheme><phoneme>rˈoʊdstɛdz</phoneme></lexeme> <!-- roadsteads -->
-  <lexeme><grapheme>roamd</grapheme><phoneme>rˈoʊmd</phoneme></lexeme> <!-- roamed -->
-  <lexeme><grapheme>roamz</grapheme><phoneme>rˈoʊmz</phoneme></lexeme> <!-- roams -->
-  <lexeme><grapheme>roaqh</grapheme><phoneme>rˈoʊtʃ</phoneme></lexeme> <!-- roach -->
-  <lexeme><grapheme>roaqhd</grapheme><phoneme>rˈoʊtʃt</phoneme></lexeme> <!-- roached -->
+  <lexeme><grapheme>roamd</grapheme><phoneme>roʊmd</phoneme></lexeme> <!-- roamed -->
+  <lexeme><grapheme>roamz</grapheme><phoneme>roʊmz</phoneme></lexeme> <!-- roams -->
+  <lexeme><grapheme>roaqh</grapheme><phoneme>roʊtʃ</phoneme></lexeme> <!-- roach -->
+  <lexeme><grapheme>roaqhd</grapheme><phoneme>roʊtʃt</phoneme></lexeme> <!-- roached -->
   <lexeme><grapheme>roaqhes</grapheme><phoneme>rˈoʊtʃɪz</phoneme></lexeme> <!-- roaches -->
   <lexeme><grapheme>roaqhez</grapheme><phoneme>rˈoʊtʃɪz</phoneme></lexeme> <!-- roaches -->
   <lexeme><grapheme>roaqhing</grapheme><phoneme>rˈoʊtʃɪŋ</phoneme></lexeme> <!-- roaching -->
-  <lexeme><grapheme>roard</grapheme><phoneme>rˈɔːrd</phoneme></lexeme> <!-- roared -->
-  <lexeme><grapheme>roarz</grapheme><phoneme>rˈɔːrz</phoneme></lexeme> <!-- roars -->
-  <lexeme><grapheme>roastz</grapheme><phoneme>rˈoʊsts</phoneme></lexeme> <!-- roasts -->
-  <lexeme><grapheme>robd</grapheme><phoneme>rˈɒbd</phoneme></lexeme> <!-- robbed -->
-  <lexeme><grapheme>robez</grapheme><phoneme>rˈoʊbz</phoneme></lexeme> <!-- robes -->
+  <lexeme><grapheme>roard</grapheme><phoneme>rɔːrd</phoneme></lexeme> <!-- roared -->
+  <lexeme><grapheme>roarz</grapheme><phoneme>rɔːrz</phoneme></lexeme> <!-- roars -->
+  <lexeme><grapheme>roastz</grapheme><phoneme>roʊsts</phoneme></lexeme> <!-- roasts -->
+  <lexeme><grapheme>robd</grapheme><phoneme>rɒbd</phoneme></lexeme> <!-- robbed -->
+  <lexeme><grapheme>robez</grapheme><phoneme>roʊbz</phoneme></lexeme> <!-- robes -->
   <lexeme><grapheme>roboratez</grapheme><phoneme>rˈɒbərˌeɪts</phoneme></lexeme> <!-- roborates -->
   <lexeme><grapheme>robotizez</grapheme><phoneme>rˈoʊbɒtˌaɪzɪz</phoneme></lexeme> <!-- robotises -->
-  <lexeme><grapheme>robz</grapheme><phoneme>rˈɒbz</phoneme></lexeme> <!-- robs -->
+  <lexeme><grapheme>robz</grapheme><phoneme>rɒbz</phoneme></lexeme> <!-- robs -->
   <lexeme><grapheme>rocaie</grapheme><phoneme>rɒkˈaɪ</phoneme></lexeme> <!-- rocaille -->
   <lexeme><grapheme>rocaies</grapheme><phoneme>rɒkˈaɪz</phoneme></lexeme> <!-- rocailles -->
   <lexeme><grapheme>rockabyez</grapheme><phoneme>rˈɒkəbˌaɪz</phoneme></lexeme> <!-- rockabyes -->
-  <lexeme><grapheme>rockd</grapheme><phoneme>rˈɒkt</phoneme></lexeme> <!-- rocked -->
+  <lexeme><grapheme>rockd</grapheme><phoneme>rɒkt</phoneme></lexeme> <!-- rocked -->
   <lexeme><grapheme>rockerd</grapheme><phoneme>rˈɒkərd</phoneme></lexeme> <!-- rockered -->
   <lexeme><grapheme>rocketz</grapheme><phoneme>rˈɒkɪts</phoneme></lexeme> <!-- rockets -->
-  <lexeme><grapheme>rockz</grapheme><phoneme>rˈɒks</phoneme></lexeme> <!-- rocks -->
+  <lexeme><grapheme>rockz</grapheme><phoneme>rɒks</phoneme></lexeme> <!-- rocks -->
   <lexeme><grapheme>rodeoz</grapheme><phoneme>rˈoʊdɪˌoʊz</phoneme></lexeme> <!-- rodeos -->
-  <lexeme><grapheme>rodz</grapheme><phoneme>rˈɒdz</phoneme></lexeme> <!-- rods -->
+  <lexeme><grapheme>rodz</grapheme><phoneme>rɒdz</phoneme></lexeme> <!-- rods -->
   <lexeme><grapheme>rogerd</grapheme><phoneme>rˈɒdʒərd</phoneme></lexeme> <!-- rogered -->
   <lexeme><grapheme>rogerz</grapheme><phoneme>rˈɒdʒərz</phoneme></lexeme> <!-- rogers -->
-  <lexeme><grapheme>roghe</grapheme><phoneme>rˈoʊɡ</phoneme></lexeme> <!-- rogue -->
-  <lexeme><grapheme>roghed</grapheme><phoneme>rˈoʊɡd</phoneme></lexeme> <!-- rogued -->
+  <lexeme><grapheme>roghe</grapheme><phoneme>roʊɡ</phoneme></lexeme> <!-- rogue -->
+  <lexeme><grapheme>roghed</grapheme><phoneme>roʊɡd</phoneme></lexeme> <!-- rogued -->
   <lexeme><grapheme>rogheries</grapheme><phoneme>rˈoʊɡəriz</phoneme></lexeme> <!-- rogueries -->
   <lexeme><grapheme>roghery</grapheme><phoneme>rˈoʊɡəri</phoneme></lexeme> <!-- roguery -->
-  <lexeme><grapheme>roghes</grapheme><phoneme>rˈoʊɡz</phoneme></lexeme> <!-- rogues -->
+  <lexeme><grapheme>roghes</grapheme><phoneme>roʊɡz</phoneme></lexeme> <!-- rogues -->
   <lexeme><grapheme>rogheship</grapheme><phoneme>rˈoʊɡʃɪp</phoneme></lexeme> <!-- rogueship -->
   <lexeme><grapheme>rogheships</grapheme><phoneme>rˈoʊɡʃɪps</phoneme></lexeme> <!-- rogueships -->
-  <lexeme><grapheme>roghez</grapheme><phoneme>rˈoʊɡz</phoneme></lexeme> <!-- rogues -->
+  <lexeme><grapheme>roghez</grapheme><phoneme>roʊɡz</phoneme></lexeme> <!-- rogues -->
   <lexeme><grapheme>roghing</grapheme><phoneme>rˈoʊɡɪŋ</phoneme></lexeme> <!-- rogueing -->
   <lexeme><grapheme>roghish</grapheme><phoneme>rˈoʊɡɪʃ</phoneme></lexeme> <!-- roguish -->
   <lexeme><grapheme>roghishly</grapheme><phoneme>rˈoʊɡɪʃli</phoneme></lexeme> <!-- roguishly -->
   <lexeme><grapheme>roghishness</grapheme><phoneme>rˈoʊɡɪʃnəs</phoneme></lexeme> <!-- roguishness -->
   <lexeme><grapheme>roghy</grapheme><phoneme>rˈoʊɡi</phoneme></lexeme> <!-- roguy -->
-  <lexeme><grapheme>roild</grapheme><phoneme>rˈɔɪld</phoneme></lexeme> <!-- roiled -->
-  <lexeme><grapheme>roilz</grapheme><phoneme>rˈɔɪlz</phoneme></lexeme> <!-- roils -->
-  <lexeme><grapheme>roind</grapheme><phoneme>rˈɔɪnd</phoneme></lexeme> <!-- roined -->
-  <lexeme><grapheme>roinz</grapheme><phoneme>rˈɔɪnz</phoneme></lexeme> <!-- roins -->
+  <lexeme><grapheme>roild</grapheme><phoneme>rɔɪld</phoneme></lexeme> <!-- roiled -->
+  <lexeme><grapheme>roilz</grapheme><phoneme>rɔɪlz</phoneme></lexeme> <!-- roils -->
+  <lexeme><grapheme>roind</grapheme><phoneme>rɔɪnd</phoneme></lexeme> <!-- roined -->
+  <lexeme><grapheme>roinz</grapheme><phoneme>rɔɪnz</phoneme></lexeme> <!-- roins -->
   <lexeme><grapheme>roisterd</grapheme><phoneme>rˈɔɪstərd</phoneme></lexeme> <!-- roistered -->
   <lexeme><grapheme>roisterz</grapheme><phoneme>rˈɔɪstərz</phoneme></lexeme> <!-- roisters -->
   <lexeme><grapheme>roleplayd</grapheme><phoneme>rˈoʊlplˌeɪd</phoneme></lexeme> <!-- roleplayed -->
   <lexeme><grapheme>roleplayz</grapheme><phoneme>rˈoʊlplˌeɪz</phoneme></lexeme> <!-- roleplays -->
-  <lexeme><grapheme>rolfd</grapheme><phoneme>rˈɒlft</phoneme></lexeme> <!-- rolfed -->
-  <lexeme><grapheme>rolfz</grapheme><phoneme>rˈɒlfs</phoneme></lexeme> <!-- rolfs -->
-  <lexeme><grapheme>rolld</grapheme><phoneme>rˈoʊld</phoneme></lexeme> <!-- rolled -->
+  <lexeme><grapheme>rolfd</grapheme><phoneme>rɒlft</phoneme></lexeme> <!-- rolfed -->
+  <lexeme><grapheme>rolfz</grapheme><phoneme>rɒlfs</phoneme></lexeme> <!-- rolfs -->
+  <lexeme><grapheme>rolld</grapheme><phoneme>roʊld</phoneme></lexeme> <!-- rolled -->
   <lexeme><grapheme>rollerbladez</grapheme><phoneme>rˈoʊlərbliːdz</phoneme></lexeme> <!-- rollerblades -->
   <lexeme><grapheme>rollickd</grapheme><phoneme>rˈɒlɪkt</phoneme></lexeme> <!-- rollicked -->
   <lexeme><grapheme>rollickz</grapheme><phoneme>rˈɒlɪks</phoneme></lexeme> <!-- rollicks -->
   <lexeme><grapheme>rollicz</grapheme><phoneme>rˈɒlɪks</phoneme></lexeme> <!-- rollics -->
-  <lexeme><grapheme>rollz</grapheme><phoneme>rˈoʊlz</phoneme></lexeme> <!-- rolls -->
+  <lexeme><grapheme>rollz</grapheme><phoneme>roʊlz</phoneme></lexeme> <!-- rolls -->
   <lexeme><grapheme>romancez</grapheme><phoneme>roʊmˈænsɪz</phoneme></lexeme> <!-- romances -->
   <lexeme><grapheme>romanesq</grapheme><phoneme>rˌoʊmənˈɛsk</phoneme></lexeme> <!-- romanesque -->
   <lexeme><grapheme>romanizez</grapheme><phoneme>rˈoʊmənˌaɪzɪz</phoneme></lexeme> <!-- romanises -->
   <lexeme><grapheme>romanticizez</grapheme><phoneme>roʊmˈæntɪsˌaɪzɪz</phoneme></lexeme> <!-- romanticises -->
-  <lexeme><grapheme>rompd</grapheme><phoneme>rˈɒmpt</phoneme></lexeme> <!-- romped -->
-  <lexeme><grapheme>rompz</grapheme><phoneme>rˈɒmps</phoneme></lexeme> <!-- romps -->
+  <lexeme><grapheme>rompd</grapheme><phoneme>rɒmpt</phoneme></lexeme> <!-- romped -->
+  <lexeme><grapheme>rompz</grapheme><phoneme>rɒmps</phoneme></lexeme> <!-- romps -->
   <lexeme><grapheme>rondash</grapheme><phoneme>rɒndˈæʃ</phoneme></lexeme> <!-- rondache -->
   <lexeme><grapheme>rondashes</grapheme><phoneme>rɒndˈæʃɪz</phoneme></lexeme> <!-- rondaches -->
   <lexeme><grapheme>rondeaus</grapheme><phoneme>rˈɒndoʊz</phoneme></lexeme> <!-- rondeaux -->
@@ -25766,15 +25766,15 @@
   <lexeme><grapheme>rooeh</grapheme><phoneme>rˈuːeɪ</phoneme></lexeme> <!-- rouet -->
   <lexeme><grapheme>rooehs</grapheme><phoneme>rˈuːeɪz</phoneme></lexeme> <!-- rouets -->
   <lexeme><grapheme>rooes</grapheme><phoneme>rˈuːeɪz</phoneme></lexeme> <!-- roues -->
-  <lexeme><grapheme>roofd</grapheme><phoneme>rˈuːft</phoneme></lexeme> <!-- roofed -->
-  <lexeme><grapheme>roofz</grapheme><phoneme>rˈuːfs</phoneme></lexeme> <!-- roofs -->
-  <lexeme><grapheme>rooge</grapheme><phoneme>rˈuːʒ</phoneme></lexeme> <!-- rouge -->
-  <lexeme><grapheme>rooged</grapheme><phoneme>rˈuːʒd</phoneme></lexeme> <!-- rouged -->
+  <lexeme><grapheme>roofd</grapheme><phoneme>ruːft</phoneme></lexeme> <!-- roofed -->
+  <lexeme><grapheme>roofz</grapheme><phoneme>ruːfs</phoneme></lexeme> <!-- roofs -->
+  <lexeme><grapheme>rooge</grapheme><phoneme>ruːʒ</phoneme></lexeme> <!-- rouge -->
+  <lexeme><grapheme>rooged</grapheme><phoneme>ruːʒd</phoneme></lexeme> <!-- rouged -->
   <lexeme><grapheme>rooges</grapheme><phoneme>rˈuːʒɪz</phoneme></lexeme> <!-- rouges -->
   <lexeme><grapheme>roogez</grapheme><phoneme>rˈuːʒɪz</phoneme></lexeme> <!-- rouges -->
   <lexeme><grapheme>rooging</grapheme><phoneme>rˈuːʒɪŋ</phoneme></lexeme> <!-- rouging -->
-  <lexeme><grapheme>rookd</grapheme><phoneme>rˈʊkt</phoneme></lexeme> <!-- rooked -->
-  <lexeme><grapheme>rookz</grapheme><phoneme>rˈʊks</phoneme></lexeme> <!-- rooks -->
+  <lexeme><grapheme>rookd</grapheme><phoneme>rʊkt</phoneme></lexeme> <!-- rooked -->
+  <lexeme><grapheme>rookz</grapheme><phoneme>rʊks</phoneme></lexeme> <!-- rooks -->
   <lexeme><grapheme>roolade</grapheme><phoneme>rˈuːlɑːd</phoneme></lexeme> <!-- roulade -->
   <lexeme><grapheme>roolades</grapheme><phoneme>rˈuːlɑːdz</phoneme></lexeme> <!-- roulades -->
   <lexeme><grapheme>rooleau</grapheme><phoneme>rˈuːloʊ</phoneme></lexeme> <!-- rouleau -->
@@ -25783,26 +25783,26 @@
   <lexeme><grapheme>rooletted</grapheme><phoneme>ruːlˈɛtɪd</phoneme></lexeme> <!-- rouletted -->
   <lexeme><grapheme>rooletting</grapheme><phoneme>ruːlˈɛtɪŋ</phoneme></lexeme> <!-- rouletting -->
   <lexeme><grapheme>rooletts</grapheme><phoneme>ruːlˈɛts</phoneme></lexeme> <!-- roulettes -->
-  <lexeme><grapheme>roomd</grapheme><phoneme>rˈuːmd</phoneme></lexeme> <!-- roomed -->
+  <lexeme><grapheme>roomd</grapheme><phoneme>ruːmd</phoneme></lexeme> <!-- roomed -->
   <lexeme><grapheme>roomsom</grapheme><phoneme>rˈuːmsəm</phoneme></lexeme> <!-- roomsome -->
-  <lexeme><grapheme>roomz</grapheme><phoneme>rˈuːmz</phoneme></lexeme> <!-- rooms -->
-  <lexeme><grapheme>roopd</grapheme><phoneme>rˈuːpt</phoneme></lexeme> <!-- rooped -->
-  <lexeme><grapheme>roopz</grapheme><phoneme>rˈuːps</phoneme></lexeme> <!-- roops -->
+  <lexeme><grapheme>roomz</grapheme><phoneme>ruːmz</phoneme></lexeme> <!-- rooms -->
+  <lexeme><grapheme>roopd</grapheme><phoneme>ruːpt</phoneme></lexeme> <!-- rooped -->
+  <lexeme><grapheme>roopz</grapheme><phoneme>ruːps</phoneme></lexeme> <!-- roops -->
   <lexeme><grapheme>roosez</grapheme><phoneme>rˈuːsɪz</phoneme></lexeme> <!-- rooses -->
-  <lexeme><grapheme>roosh</grapheme><phoneme>rˈuːʃ</phoneme></lexeme> <!-- rouche -->
-  <lexeme><grapheme>rooshe</grapheme><phoneme>rˈuːʃ</phoneme></lexeme> <!-- ruche -->
-  <lexeme><grapheme>rooshed</grapheme><phoneme>rˈuːʃt</phoneme></lexeme> <!-- ruched -->
+  <lexeme><grapheme>roosh</grapheme><phoneme>ruːʃ</phoneme></lexeme> <!-- rouche -->
+  <lexeme><grapheme>rooshe</grapheme><phoneme>ruːʃ</phoneme></lexeme> <!-- ruche -->
+  <lexeme><grapheme>rooshed</grapheme><phoneme>ruːʃt</phoneme></lexeme> <!-- ruched -->
   <lexeme><grapheme>rooshes</grapheme><phoneme>rˈuːʃɪz</phoneme></lexeme> <!-- rouches -->
   <lexeme><grapheme>rooshez</grapheme><phoneme>rˈuːʃɪz</phoneme></lexeme> <!-- ruches -->
   <lexeme><grapheme>rooshing</grapheme><phoneme>rˈuːʃɪŋ</phoneme></lexeme> <!-- ruching -->
-  <lexeme><grapheme>roostz</grapheme><phoneme>rˈuːsts</phoneme></lexeme> <!-- roosts -->
-  <lexeme><grapheme>rootz</grapheme><phoneme>rˈuːts</phoneme></lexeme> <!-- roots -->
+  <lexeme><grapheme>roostz</grapheme><phoneme>ruːsts</phoneme></lexeme> <!-- roosts -->
+  <lexeme><grapheme>rootz</grapheme><phoneme>ruːts</phoneme></lexeme> <!-- roots -->
   <lexeme><grapheme>ropewahk</grapheme><phoneme>rˈoʊpwɔːk</phoneme></lexeme> <!-- ropewalk -->
   <lexeme><grapheme>ropewahker</grapheme><phoneme>rˈoʊpwɔːkər</phoneme></lexeme> <!-- ropewalker -->
   <lexeme><grapheme>ropewahkers</grapheme><phoneme>rˈoʊpwɔːkərz</phoneme></lexeme> <!-- ropewalkers -->
   <lexeme><grapheme>ropewahks</grapheme><phoneme>rˈoʊpwɔːks</phoneme></lexeme> <!-- ropewalks -->
-  <lexeme><grapheme>ropez</grapheme><phoneme>rˈoʊps</phoneme></lexeme> <!-- ropes -->
-  <lexeme><grapheme>roqe</grapheme><phoneme>rˈoʊk</phoneme></lexeme> <!-- roque -->
+  <lexeme><grapheme>ropez</grapheme><phoneme>roʊps</phoneme></lexeme> <!-- ropes -->
+  <lexeme><grapheme>roqe</grapheme><phoneme>roʊk</phoneme></lexeme> <!-- roque -->
   <lexeme><grapheme>roqeh</grapheme><phoneme>rˈoʊkeɪ</phoneme></lexeme> <!-- roquet -->
   <lexeme><grapheme>roqehd</grapheme><phoneme>rˈoʊkeɪd</phoneme></lexeme> <!-- roqueted -->
   <lexeme><grapheme>roqehing</grapheme><phoneme>rˈoʊkeɪɪŋ</phoneme></lexeme> <!-- roqueting -->
@@ -25827,24 +25827,24 @@
   <lexeme><grapheme>rotatez</grapheme><phoneme>rˈoʊteɪts</phoneme></lexeme> <!-- rotates -->
   <lexeme><grapheme>rotativ</grapheme><phoneme>rˈoʊtətɪv</phoneme></lexeme> <!-- rotative -->
   <lexeme><grapheme>rotativly</grapheme><phoneme>rˈoʊtətɪvli</phoneme></lexeme> <!-- rotatively -->
-  <lexeme><grapheme>rotez</grapheme><phoneme>rˈoʊts</phoneme></lexeme> <!-- rotes -->
+  <lexeme><grapheme>rotez</grapheme><phoneme>roʊts</phoneme></lexeme> <!-- rotes -->
   <lexeme><grapheme>rototilld</grapheme><phoneme>rˈoʊtoʊtˌɪld</phoneme></lexeme> <!-- rototilled -->
   <lexeme><grapheme>rototillz</grapheme><phoneme>rˈoʊtoʊtˌɪlz</phoneme></lexeme> <!-- rototills -->
-  <lexeme><grapheme>rotz</grapheme><phoneme>rˈɒts</phoneme></lexeme> <!-- rots -->
+  <lexeme><grapheme>rotz</grapheme><phoneme>rɒts</phoneme></lexeme> <!-- rots -->
   <lexeme><grapheme>roundhedd</grapheme><phoneme>rˈaʊndhɛd</phoneme></lexeme> <!-- roundhead -->
   <lexeme><grapheme>roundhedded</grapheme><phoneme>rˈaʊndhɛdɪd</phoneme></lexeme> <!-- roundheaded -->
   <lexeme><grapheme>roundheddedness</grapheme><phoneme>rˈaʊndhɛdɪdnəs</phoneme></lexeme> <!-- roundheadedness -->
   <lexeme><grapheme>roundhedds</grapheme><phoneme>rˈaʊndhɛdz</phoneme></lexeme> <!-- roundheads -->
   <lexeme><grapheme>roundridgez</grapheme><phoneme>rˈaʊndrɪdʒɪz</phoneme></lexeme> <!-- roundridges -->
-  <lexeme><grapheme>roundz</grapheme><phoneme>rˈaʊndz</phoneme></lexeme> <!-- rounds -->
+  <lexeme><grapheme>roundz</grapheme><phoneme>raʊndz</phoneme></lexeme> <!-- rounds -->
   <lexeme><grapheme>rousez</grapheme><phoneme>rˈaʊzɪz</phoneme></lexeme> <!-- rouses -->
-  <lexeme><grapheme>roustz</grapheme><phoneme>rˈaʊsts</phoneme></lexeme> <!-- rousts -->
-  <lexeme><grapheme>routez</grapheme><phoneme>rˈuːts</phoneme></lexeme> <!-- routes -->
+  <lexeme><grapheme>roustz</grapheme><phoneme>raʊsts</phoneme></lexeme> <!-- rousts -->
+  <lexeme><grapheme>routez</grapheme><phoneme>ruːts</phoneme></lexeme> <!-- routes -->
   <lexeme><grapheme>routinizez</grapheme><phoneme>ruːtˈiːnˌaɪzɪz</phoneme></lexeme> <!-- routinises -->
-  <lexeme><grapheme>routz</grapheme><phoneme>rˈaʊts</phoneme></lexeme> <!-- routs -->
-  <lexeme><grapheme>rovez</grapheme><phoneme>rˈoʊvz</phoneme></lexeme> <!-- roves -->
-  <lexeme><grapheme>rowd</grapheme><phoneme>rˈoʊd</phoneme></lexeme> <!-- rowed -->
-  <lexeme><grapheme>rowz</grapheme><phoneme>rˈoʊz</phoneme></lexeme> <!-- rows -->
+  <lexeme><grapheme>routz</grapheme><phoneme>raʊts</phoneme></lexeme> <!-- routs -->
+  <lexeme><grapheme>rovez</grapheme><phoneme>roʊvz</phoneme></lexeme> <!-- roves -->
+  <lexeme><grapheme>rowd</grapheme><phoneme>roʊd</phoneme></lexeme> <!-- rowed -->
+  <lexeme><grapheme>rowz</grapheme><phoneme>roʊz</phoneme></lexeme> <!-- rows -->
   <lexeme><grapheme>royalizez</grapheme><phoneme>rˈɔɪəlˌaɪzɪz</phoneme></lexeme> <!-- royalises -->
   <lexeme><grapheme>rubberd</grapheme><phoneme>rˈʌbərd</phoneme></lexeme> <!-- rubbered -->
   <lexeme><grapheme>rubberizez</grapheme><phoneme>rˈʌbərˌaɪzɪz</phoneme></lexeme> <!-- rubberises -->
@@ -25853,23 +25853,23 @@
   <lexeme><grapheme>rubberstampd</grapheme><phoneme>rˈʌbərstæmpt</phoneme></lexeme> <!-- rubberstamped -->
   <lexeme><grapheme>rubberstampz</grapheme><phoneme>rˈʌbərstæmps</phoneme></lexeme> <!-- rubberstamps -->
   <lexeme><grapheme>rubblez</grapheme><phoneme>rˈʌbəlz</phoneme></lexeme> <!-- rubbles -->
-  <lexeme><grapheme>rubd</grapheme><phoneme>rˈʌbd</phoneme></lexeme> <!-- rubbed -->
+  <lexeme><grapheme>rubd</grapheme><phoneme>rʌbd</phoneme></lexeme> <!-- rubbed -->
   <lexeme><grapheme>rubduwn</grapheme><phoneme>rˈʌbdaʊn</phoneme></lexeme> <!-- rubdown -->
   <lexeme><grapheme>rubduwns</grapheme><phoneme>rˈʌbdaʊnz</phoneme></lexeme> <!-- rubdowns -->
   <lexeme><grapheme>rubefiez</grapheme><phoneme>rˈuːbɪfˌaɪz</phoneme></lexeme> <!-- rubefies -->
   <lexeme><grapheme>rubifiez</grapheme><phoneme>rˈuːbɪfˌaɪz</phoneme></lexeme> <!-- rubifies -->
   <lexeme><grapheme>rubricatez</grapheme><phoneme>rˈuːbrɪkˌeɪts</phoneme></lexeme> <!-- rubricates -->
-  <lexeme><grapheme>rubz</grapheme><phoneme>rˈʌbz</phoneme></lexeme> <!-- rubs -->
-  <lexeme><grapheme>ruckd</grapheme><phoneme>rˈʌkt</phoneme></lexeme> <!-- rucked -->
+  <lexeme><grapheme>rubz</grapheme><phoneme>rʌbz</phoneme></lexeme> <!-- rubs -->
+  <lexeme><grapheme>ruckd</grapheme><phoneme>rʌkt</phoneme></lexeme> <!-- rucked -->
   <lexeme><grapheme>rucklez</grapheme><phoneme>rˈʌkəlz</phoneme></lexeme> <!-- ruckles -->
-  <lexeme><grapheme>ruckz</grapheme><phoneme>rˈʌks</phoneme></lexeme> <!-- rucks -->
+  <lexeme><grapheme>ruckz</grapheme><phoneme>rʌks</phoneme></lexeme> <!-- rucks -->
   <lexeme><grapheme>rudderhedd</grapheme><phoneme>rˈʌdərhɛd</phoneme></lexeme> <!-- rudderhead -->
   <lexeme><grapheme>rudderhedds</grapheme><phoneme>rˈʌdərhɛdz</phoneme></lexeme> <!-- rudderheads -->
   <lexeme><grapheme>rudderposte</grapheme><phoneme>rˈʌdərpoʊst</phoneme></lexeme> <!-- rudderpost -->
   <lexeme><grapheme>rudderpostes</grapheme><phoneme>rˈʌdərpoʊsts</phoneme></lexeme> <!-- rudderposts -->
   <lexeme><grapheme>ruddiez</grapheme><phoneme>rˈʌdɪz</phoneme></lexeme> <!-- ruddies -->
   <lexeme><grapheme>ruddlez</grapheme><phoneme>rˈʌdəlz</phoneme></lexeme> <!-- ruddles -->
-  <lexeme><grapheme>ruez</grapheme><phoneme>rˈuːz</phoneme></lexeme> <!-- rues -->
+  <lexeme><grapheme>ruez</grapheme><phoneme>ruːz</phoneme></lexeme> <!-- rues -->
   <lexeme><grapheme>ruffage</grapheme><phoneme>rˈʌfɪdʒ</phoneme></lexeme> <!-- roughage -->
   <lexeme><grapheme>ruffages</grapheme><phoneme>rˈʌfɪdʒɪz</phoneme></lexeme> <!-- roughages -->
   <lexeme><grapheme>ruffcast</grapheme><phoneme>rˈʌfkæst</phoneme></lexeme> <!-- roughcast -->
@@ -25878,7 +25878,7 @@
   <lexeme><grapheme>ruffcasting</grapheme><phoneme>rˈʌfkæstɪŋ</phoneme></lexeme> <!-- roughcasting -->
   <lexeme><grapheme>ruffcasts</grapheme><phoneme>rˈʌfkæsts</phoneme></lexeme> <!-- roughcasts -->
   <lexeme><grapheme>ruffcastz</grapheme><phoneme>rˈʌfkæsts</phoneme></lexeme> <!-- roughcasts -->
-  <lexeme><grapheme>ruffd</grapheme><phoneme>rˈʌft</phoneme></lexeme> <!-- roughed -->
+  <lexeme><grapheme>ruffd</grapheme><phoneme>rʌft</phoneme></lexeme> <!-- roughed -->
   <lexeme><grapheme>ruffdraw</grapheme><phoneme>rˈʌfdrɔː</phoneme></lexeme> <!-- roughdraw -->
   <lexeme><grapheme>ruffdrawing</grapheme><phoneme>rˈʌfdrɔːɪŋ</phoneme></lexeme> <!-- roughdrawing -->
   <lexeme><grapheme>ruffdrawn</grapheme><phoneme>rˈʌfdrɔːn</phoneme></lexeme> <!-- roughdrawn -->
@@ -25928,14 +25928,14 @@
   <lexeme><grapheme>ruffworkd</grapheme><phoneme>rˈʌfwɜːrkt</phoneme></lexeme> <!-- roughworked -->
   <lexeme><grapheme>ruffworkz</grapheme><phoneme>rˈʌfwɜːrks</phoneme></lexeme> <!-- roughworks -->
   <lexeme><grapheme>ruffwroht</grapheme><phoneme>rˈʌfrɔːt</phoneme></lexeme> <!-- roughwrought -->
-  <lexeme><grapheme>ruffz</grapheme><phoneme>rˈʌfs</phoneme></lexeme> <!-- roughs -->
+  <lexeme><grapheme>ruffz</grapheme><phoneme>rʌfs</phoneme></lexeme> <!-- roughs -->
   <lexeme><grapheme>rufworking</grapheme><phoneme>rˈʌfwɜːrkɪŋ</phoneme></lexeme> <!-- roughworking -->
   <lexeme><grapheme>ruggedizez</grapheme><phoneme>rˈʌɡɪdˌaɪzɪz</phoneme></lexeme> <!-- ruggedises -->
   <lexeme><grapheme>rui</grapheme><phoneme>rˈuːi</phoneme></lexeme> <!-- rouille -->
   <lexeme><grapheme>ruinatez</grapheme><phoneme>rˈuːɪnˌeɪts</phoneme></lexeme> <!-- ruinates -->
   <lexeme><grapheme>ruind</grapheme><phoneme>rˈuːɪnd</phoneme></lexeme> <!-- ruined -->
   <lexeme><grapheme>ruinz</grapheme><phoneme>rˈuːɪnz</phoneme></lexeme> <!-- ruins -->
-  <lexeme><grapheme>rulez</grapheme><phoneme>rˈuːlz</phoneme></lexeme> <!-- rules -->
+  <lexeme><grapheme>rulez</grapheme><phoneme>ruːlz</phoneme></lexeme> <!-- rules -->
   <lexeme><grapheme>rumbad</grapheme><phoneme>rˈʌmbəd</phoneme></lexeme> <!-- rumbaed -->
   <lexeme><grapheme>rumbaz</grapheme><phoneme>rˈʌmbəz</phoneme></lexeme> <!-- rumbas -->
   <lexeme><grapheme>rumblez</grapheme><phoneme>rˈʌmbəlz</phoneme></lexeme> <!-- rumbles -->
@@ -25952,12 +25952,12 @@
   <lexeme><grapheme>runghedd</grapheme><phoneme>rˈʌŋhɛd</phoneme></lexeme> <!-- runghead -->
   <lexeme><grapheme>runghedds</grapheme><phoneme>rˈʌŋhɛdz</phoneme></lexeme> <!-- rungheads -->
   <lexeme><grapheme>runklez</grapheme><phoneme>rˈʌŋkəlz</phoneme></lexeme> <!-- runkles -->
-  <lexeme><grapheme>runqh</grapheme><phoneme>rˈʌntʃ</phoneme></lexeme> <!-- runch -->
+  <lexeme><grapheme>runqh</grapheme><phoneme>rʌntʃ</phoneme></lexeme> <!-- runch -->
   <lexeme><grapheme>runqhes</grapheme><phoneme>rˈʌntʃɪz</phoneme></lexeme> <!-- runches -->
-  <lexeme><grapheme>runz</grapheme><phoneme>rˈʌnz</phoneme></lexeme> <!-- runs -->
+  <lexeme><grapheme>runz</grapheme><phoneme>rʌnz</phoneme></lexeme> <!-- runs -->
   <lexeme><grapheme>rupturez</grapheme><phoneme>rˈʌptʃərz</phoneme></lexeme> <!-- ruptures -->
   <lexeme><grapheme>ruralizez</grapheme><phoneme>rˈʊərəlˌaɪzɪz</phoneme></lexeme> <!-- ruralises -->
-  <lexeme><grapheme>rushd</grapheme><phoneme>rˈʌʃt</phoneme></lexeme> <!-- rushed -->
+  <lexeme><grapheme>rushd</grapheme><phoneme>rʌʃt</phoneme></lexeme> <!-- rushed -->
   <lexeme><grapheme>rushez</grapheme><phoneme>rˈʌʃɪz</phoneme></lexeme> <!-- rushes -->
   <lexeme><grapheme>rushliht</grapheme><phoneme>rˈʌʃlaɪt</phoneme></lexeme> <!-- rushlight -->
   <lexeme><grapheme>rushlihts</grapheme><phoneme>rˈʌʃlaɪts</phoneme></lexeme> <!-- rushlights -->
@@ -25966,11 +25966,11 @@
   <lexeme><grapheme>rustlez</grapheme><phoneme>rˈʌsəlz</phoneme></lexeme> <!-- rustles -->
   <lexeme><grapheme>rustproofd</grapheme><phoneme>rˈʌstpruːft</phoneme></lexeme> <!-- rustproofed -->
   <lexeme><grapheme>rustproofz</grapheme><phoneme>rˈʌstpruːfs</phoneme></lexeme> <!-- rustproofs -->
-  <lexeme><grapheme>rustz</grapheme><phoneme>rˈʌsts</phoneme></lexeme> <!-- rusts -->
+  <lexeme><grapheme>rustz</grapheme><phoneme>rʌsts</phoneme></lexeme> <!-- rusts -->
   <lexeme><grapheme>rutilatez</grapheme><phoneme>rˈuːtɪlˌeɪts</phoneme></lexeme> <!-- rutilates -->
-  <lexeme><grapheme>rutz</grapheme><phoneme>rˈʌts</phoneme></lexeme> <!-- ruts -->
-  <lexeme><grapheme>ruw</grapheme><phoneme>rˈoʊ</phoneme></lexeme> <!-- row -->
-  <lexeme><grapheme>ruwd</grapheme><phoneme>rˈoʊd</phoneme></lexeme> <!-- rowed -->
+  <lexeme><grapheme>rutz</grapheme><phoneme>rʌts</phoneme></lexeme> <!-- ruts -->
+  <lexeme><grapheme>ruw</grapheme><phoneme>roʊ</phoneme></lexeme> <!-- row -->
+  <lexeme><grapheme>ruwd</grapheme><phoneme>roʊd</phoneme></lexeme> <!-- rowed -->
   <lexeme><grapheme>ruwdier</grapheme><phoneme>rˈaʊdɪər</phoneme></lexeme> <!-- rowdier -->
   <lexeme><grapheme>ruwdies</grapheme><phoneme>rˈaʊdɪz</phoneme></lexeme> <!-- rowdies -->
   <lexeme><grapheme>ruwdiest</grapheme><phoneme>rˈaʊdɪɪst</phoneme></lexeme> <!-- rowdiest -->
@@ -25991,28 +25991,28 @@
   <lexeme><grapheme>ruwen</grapheme><phoneme>rˈoʊən</phoneme></lexeme> <!-- rowen -->
   <lexeme><grapheme>ruwens</grapheme><phoneme>rˈoʊənz</phoneme></lexeme> <!-- rowens -->
   <lexeme><grapheme>ruwing</grapheme><phoneme>rˈoʊɪŋ</phoneme></lexeme> <!-- rowing -->
-  <lexeme><grapheme>ruws</grapheme><phoneme>rˈoʊz</phoneme></lexeme> <!-- rows -->
-  <lexeme><grapheme>ruwth</grapheme><phoneme>rˈoʊθ</phoneme></lexeme> <!-- rowth -->
-  <lexeme><grapheme>ruwz</grapheme><phoneme>rˈoʊz</phoneme></lexeme> <!-- rows -->
-  <lexeme><grapheme>rykez</grapheme><phoneme>rˈaɪks</phoneme></lexeme> <!-- rykes -->
+  <lexeme><grapheme>ruws</grapheme><phoneme>roʊz</phoneme></lexeme> <!-- rows -->
+  <lexeme><grapheme>ruwth</grapheme><phoneme>roʊθ</phoneme></lexeme> <!-- rowth -->
+  <lexeme><grapheme>ruwz</grapheme><phoneme>roʊz</phoneme></lexeme> <!-- rows -->
+  <lexeme><grapheme>rykez</grapheme><phoneme>raɪks</phoneme></lexeme> <!-- rykes -->
   <lexeme><grapheme>rynded</grapheme><phoneme>rˈaɪndɪd</phoneme></lexeme> <!-- rinded -->
   <lexeme><grapheme>rynding</grapheme><phoneme>rˈaɪndɪŋ</phoneme></lexeme> <!-- rinding -->
   <lexeme><grapheme>ryndless</grapheme><phoneme>rˈaɪndləs</phoneme></lexeme> <!-- rindless -->
   <lexeme><grapheme>ryndy</grapheme><phoneme>rˈaɪndi</phoneme></lexeme> <!-- rindy -->
-  <lexeme><grapheme>ryndz</grapheme><phoneme>rˈaɪndz</phoneme></lexeme> <!-- rinds -->
-  <lexeme><grapheme>sabd</grapheme><phoneme>sˈæbd</phoneme></lexeme> <!-- sabbed -->
+  <lexeme><grapheme>ryndz</grapheme><phoneme>raɪndz</phoneme></lexeme> <!-- rinds -->
+  <lexeme><grapheme>sabd</grapheme><phoneme>sæbd</phoneme></lexeme> <!-- sabbed -->
   <lexeme><grapheme>saberd</grapheme><phoneme>sˈeɪbərd</phoneme></lexeme> <!-- sabered -->
   <lexeme><grapheme>saberz</grapheme><phoneme>sˈeɪbərz</phoneme></lexeme> <!-- sabers -->
   <lexeme><grapheme>sabotagez</grapheme><phoneme>sˈæbətˌɑːʒɪz</phoneme></lexeme> <!-- sabotages -->
   <lexeme><grapheme>sabotz</grapheme><phoneme>sˈæboʊz</phoneme></lexeme> <!-- sabots -->
-  <lexeme><grapheme>sabz</grapheme><phoneme>sˈæbz</phoneme></lexeme> <!-- sabs -->
+  <lexeme><grapheme>sabz</grapheme><phoneme>sæbz</phoneme></lexeme> <!-- sabs -->
   <lexeme><grapheme>saccharifiez</grapheme><phoneme>sækˈærɪfˌaɪz</phoneme></lexeme> <!-- saccharifies -->
   <lexeme><grapheme>saccharizez</grapheme><phoneme>sˈækərˌaɪzɪz</phoneme></lexeme> <!-- saccharises -->
   <lexeme><grapheme>sacculat</grapheme><phoneme>sˈækjʊlət</phoneme></lexeme> <!-- sacculate -->
-  <lexeme><grapheme>sackd</grapheme><phoneme>sˈækt</phoneme></lexeme> <!-- sacked -->
-  <lexeme><grapheme>sackz</grapheme><phoneme>sˈækz</phoneme></lexeme> <!-- sacks -->
-  <lexeme><grapheme>sacq</grapheme><phoneme>sˈæk</phoneme></lexeme> <!-- sacque -->
-  <lexeme><grapheme>sacqs</grapheme><phoneme>sˈæks</phoneme></lexeme> <!-- sacques -->
+  <lexeme><grapheme>sackd</grapheme><phoneme>sækt</phoneme></lexeme> <!-- sacked -->
+  <lexeme><grapheme>sackz</grapheme><phoneme>sækz</phoneme></lexeme> <!-- sacks -->
+  <lexeme><grapheme>sacq</grapheme><phoneme>sæk</phoneme></lexeme> <!-- sacque -->
+  <lexeme><grapheme>sacqs</grapheme><phoneme>sæks</phoneme></lexeme> <!-- sacques -->
   <lexeme><grapheme>sacramentizez</grapheme><phoneme>sˈækrəməntˌaɪzɪz</phoneme></lexeme> <!-- sacramentizes -->
   <lexeme><grapheme>sacratez</grapheme><phoneme>sˈeɪkreɪts</phoneme></lexeme> <!-- sacrates -->
   <lexeme><grapheme>sacrificez</grapheme><phoneme>sˈækrɪfˌaɪsɪz</phoneme></lexeme> <!-- sacrifices -->
@@ -26029,17 +26029,17 @@
   <lexeme><grapheme>safeliht</grapheme><phoneme>sˈeɪflaɪt</phoneme></lexeme> <!-- safelight -->
   <lexeme><grapheme>safelihts</grapheme><phoneme>sˈeɪflaɪts</phoneme></lexeme> <!-- safelights -->
   <lexeme><grapheme>safetiez</grapheme><phoneme>sˈeɪftɪz</phoneme></lexeme> <!-- safeties -->
-  <lexeme><grapheme>sagd</grapheme><phoneme>sˈæɡd</phoneme></lexeme> <!-- sagged -->
+  <lexeme><grapheme>sagd</grapheme><phoneme>sæɡd</phoneme></lexeme> <!-- sagged -->
   <lexeme><grapheme>saggerd</grapheme><phoneme>sˈæɡərd</phoneme></lexeme> <!-- saggered -->
   <lexeme><grapheme>saginatez</grapheme><phoneme>sˈædʒɪnˌeɪts</phoneme></lexeme> <!-- saginates -->
-  <lexeme><grapheme>sagz</grapheme><phoneme>sˈæɡz</phoneme></lexeme> <!-- sags -->
-  <lexeme><grapheme>saild</grapheme><phoneme>sˈeɪld</phoneme></lexeme> <!-- sailed -->
+  <lexeme><grapheme>sagz</grapheme><phoneme>sæɡz</phoneme></lexeme> <!-- sags -->
+  <lexeme><grapheme>saild</grapheme><phoneme>seɪld</phoneme></lexeme> <!-- sailed -->
   <lexeme><grapheme>sailpland</grapheme><phoneme>sˈeɪlpliːnd</phoneme></lexeme> <!-- sailplaned -->
   <lexeme><grapheme>sailplanez</grapheme><phoneme>sˈeɪlpliːnz</phoneme></lexeme> <!-- sailplanes -->
-  <lexeme><grapheme>sailz</grapheme><phoneme>sˈeɪlz</phoneme></lexeme> <!-- sails -->
-  <lexeme><grapheme>saind</grapheme><phoneme>sˈeɪnd</phoneme></lexeme> <!-- sained -->
-  <lexeme><grapheme>saintz</grapheme><phoneme>sˈeɪnts</phoneme></lexeme> <!-- saints -->
-  <lexeme><grapheme>sainz</grapheme><phoneme>sˈeɪnz</phoneme></lexeme> <!-- sains -->
+  <lexeme><grapheme>sailz</grapheme><phoneme>seɪlz</phoneme></lexeme> <!-- sails -->
+  <lexeme><grapheme>saind</grapheme><phoneme>seɪnd</phoneme></lexeme> <!-- sained -->
+  <lexeme><grapheme>saintz</grapheme><phoneme>seɪnts</phoneme></lexeme> <!-- saints -->
+  <lexeme><grapheme>sainz</grapheme><phoneme>seɪnz</phoneme></lexeme> <!-- sains -->
   <lexeme><grapheme>saju</grapheme><phoneme>səʒˈuː</phoneme></lexeme> <!-- sajou -->
   <lexeme><grapheme>sajus</grapheme><phoneme>səʒˈuːz</phoneme></lexeme> <!-- sajous -->
   <lexeme><grapheme>salaamd</grapheme><phoneme>səlˈɑːmd</phoneme></lexeme> <!-- salaamed -->
@@ -26059,16 +26059,16 @@
   <lexeme><grapheme>sallowz</grapheme><phoneme>sˈæloʊz</phoneme></lexeme> <!-- sallows -->
   <lexeme><grapheme>salsifiez</grapheme><phoneme>sˈælsɪfˌaɪz</phoneme></lexeme> <!-- salsifies -->
   <lexeme><grapheme>saltatez</grapheme><phoneme>sˈælteɪts</phoneme></lexeme> <!-- saltates -->
-  <lexeme><grapheme>saltz</grapheme><phoneme>sˈɔːlts</phoneme></lexeme> <!-- salts -->
+  <lexeme><grapheme>saltz</grapheme><phoneme>sɔːlts</phoneme></lexeme> <!-- salts -->
   <lexeme><grapheme>saluez</grapheme><phoneme>sˈæluːz</phoneme></lexeme> <!-- salues -->
   <lexeme><grapheme>salutez</grapheme><phoneme>səlˈuːts</phoneme></lexeme> <!-- salutes -->
-  <lexeme><grapheme>salv</grapheme><phoneme>sˈæv</phoneme></lexeme> <!-- salve -->
+  <lexeme><grapheme>salv</grapheme><phoneme>sæv</phoneme></lexeme> <!-- salve -->
   <lexeme><grapheme>salvagez</grapheme><phoneme>sˈælvɪdʒɪz</phoneme></lexeme> <!-- salvages -->
-  <lexeme><grapheme>salvd</grapheme><phoneme>sˈævd</phoneme></lexeme> <!-- salved -->
+  <lexeme><grapheme>salvd</grapheme><phoneme>sævd</phoneme></lexeme> <!-- salved -->
   <lexeme><grapheme>salverz</grapheme><phoneme>sˈælvərz</phoneme></lexeme> <!-- salvers -->
   <lexeme><grapheme>salvoz</grapheme><phoneme>sˈælvoʊz</phoneme></lexeme> <!-- salvos -->
-  <lexeme><grapheme>salvs</grapheme><phoneme>sˈævz</phoneme></lexeme> <!-- salves -->
-  <lexeme><grapheme>salvz</grapheme><phoneme>sˈævz</phoneme></lexeme> <!-- salves -->
+  <lexeme><grapheme>salvs</grapheme><phoneme>sævz</phoneme></lexeme> <!-- salves -->
+  <lexeme><grapheme>salvz</grapheme><phoneme>sævz</phoneme></lexeme> <!-- salves -->
   <lexeme><grapheme>sambad</grapheme><phoneme>sˈæmbəd</phoneme></lexeme> <!-- sambaed -->
   <lexeme><grapheme>sambaz</grapheme><phoneme>sˈæmbəz</phoneme></lexeme> <!-- sambas -->
   <lexeme><grapheme>samplez</grapheme><phoneme>sˈæmpəlz</phoneme></lexeme> <!-- samples -->
@@ -26089,7 +26089,7 @@
   <lexeme><grapheme>sandwiqhes</grapheme><phoneme>sˈændwɪdʒɪz</phoneme></lexeme> <!-- sandwiches -->
   <lexeme><grapheme>sandwiqhez</grapheme><phoneme>sˈændwɪdʒɪz</phoneme></lexeme> <!-- sandwiches -->
   <lexeme><grapheme>sandwiqhing</grapheme><phoneme>sˈændwɪdʒɪŋ</phoneme></lexeme> <!-- sandwiching -->
-  <lexeme><grapheme>sandz</grapheme><phoneme>sˈændz</phoneme></lexeme> <!-- sands -->
+  <lexeme><grapheme>sandz</grapheme><phoneme>sændz</phoneme></lexeme> <!-- sands -->
   <lexeme><grapheme>sanforizez</grapheme><phoneme>sˈænfərˌaɪzɪz</phoneme></lexeme> <!-- sanforises -->
   <lexeme><grapheme>sangfrwa</grapheme><phoneme>sɒŋfrwˈɑː</phoneme></lexeme> <!-- sangfroid -->
   <lexeme><grapheme>sanguifiez</grapheme><phoneme>sˈæŋɡwɪfˌaɪz</phoneme></lexeme> <!-- sanguifies -->
@@ -26101,13 +26101,13 @@
   <lexeme><grapheme>sanitatez</grapheme><phoneme>sˈænɪtˌeɪts</phoneme></lexeme> <!-- sanitates -->
   <lexeme><grapheme>sanitizez</grapheme><phoneme>sˈænɪtˌaɪzɪz</phoneme></lexeme> <!-- sanitises -->
   <lexeme><grapheme>sapaju</grapheme><phoneme>sˈæpədʒˌuː</phoneme></lexeme> <!-- sapajou -->
-  <lexeme><grapheme>sapd</grapheme><phoneme>sˈæpt</phoneme></lexeme> <!-- sapped -->
+  <lexeme><grapheme>sapd</grapheme><phoneme>sæpt</phoneme></lexeme> <!-- sapped -->
   <lexeme><grapheme>saphedd</grapheme><phoneme>sˈæphɛd</phoneme></lexeme> <!-- saphead -->
   <lexeme><grapheme>saphedded</grapheme><phoneme>sˈæphɛdɪd</phoneme></lexeme> <!-- sapheaded -->
   <lexeme><grapheme>sapheddedness</grapheme><phoneme>sˈæphɛdɪdnəs</phoneme></lexeme> <!-- sapheadedness -->
   <lexeme><grapheme>saphedds</grapheme><phoneme>sˈæphɛdz</phoneme></lexeme> <!-- sapheads -->
   <lexeme><grapheme>saponifiez</grapheme><phoneme>səpˈɒnɪfˌaɪz</phoneme></lexeme> <!-- saponifies -->
-  <lexeme><grapheme>sapz</grapheme><phoneme>sˈæps</phoneme></lexeme> <!-- saps -->
+  <lexeme><grapheme>sapz</grapheme><phoneme>sæps</phoneme></lexeme> <!-- saps -->
   <lexeme><grapheme>saqhem</grapheme><phoneme>sˈeɪtʃəm</phoneme></lexeme> <!-- sachem -->
   <lexeme><grapheme>saqhemdom</grapheme><phoneme>sˈeɪtʃəmdəm</phoneme></lexeme> <!-- sachemdom -->
   <lexeme><grapheme>saqhemdoms</grapheme><phoneme>sˈeɪtʃəmdəmz</phoneme></lexeme> <!-- sachemdoms -->
@@ -26124,15 +26124,15 @@
   <lexeme><grapheme>sarighes</grapheme><phoneme>sərˈiːɡz</phoneme></lexeme> <!-- sarigues -->
   <lexeme><grapheme>sashayd</grapheme><phoneme>sæʃˈeɪd</phoneme></lexeme> <!-- sashayed -->
   <lexeme><grapheme>sashayz</grapheme><phoneme>sæʃˈeɪz</phoneme></lexeme> <!-- sashays -->
-  <lexeme><grapheme>sashd</grapheme><phoneme>sˈæʃt</phoneme></lexeme> <!-- sashed -->
+  <lexeme><grapheme>sashd</grapheme><phoneme>sæʃt</phoneme></lexeme> <!-- sashed -->
   <lexeme><grapheme>sasheh</grapheme><phoneme>sæʃˈeɪ</phoneme></lexeme> <!-- sachet -->
   <lexeme><grapheme>sashehd</grapheme><phoneme>sæʃˈeɪd</phoneme></lexeme> <!-- sacheted -->
   <lexeme><grapheme>sashehs</grapheme><phoneme>sæʃˈeɪz</phoneme></lexeme> <!-- sachets -->
   <lexeme><grapheme>sashez</grapheme><phoneme>sˈæʃɪz</phoneme></lexeme> <!-- sashes -->
-  <lexeme><grapheme>sassd</grapheme><phoneme>sˈæst</phoneme></lexeme> <!-- sassed -->
+  <lexeme><grapheme>sassd</grapheme><phoneme>sæst</phoneme></lexeme> <!-- sassed -->
   <lexeme><grapheme>sassez</grapheme><phoneme>sˈæsɪz</phoneme></lexeme> <!-- sasses -->
   <lexeme><grapheme>satchelz</grapheme><phoneme>sˈætʃəlz</phoneme></lexeme> <!-- satchels -->
-  <lexeme><grapheme>satez</grapheme><phoneme>sˈeɪts</phoneme></lexeme> <!-- sates -->
+  <lexeme><grapheme>satez</grapheme><phoneme>seɪts</phoneme></lexeme> <!-- sates -->
   <lexeme><grapheme>satiatez</grapheme><phoneme>sˈeɪʃɪjˌeɪts</phoneme></lexeme> <!-- satiates -->
   <lexeme><grapheme>satirizez</grapheme><phoneme>sˈætɪrˌaɪzɪz</phoneme></lexeme> <!-- satirises -->
   <lexeme><grapheme>satisfactiv</grapheme><phoneme>sætɪsfˈæktɪv</phoneme></lexeme> <!-- satisfactive -->
@@ -26148,40 +26148,40 @@
   <lexeme><grapheme>sautehz</grapheme><phoneme>soʊtˈeɪz</phoneme></lexeme> <!-- sautees -->
   <lexeme><grapheme>sautez</grapheme><phoneme>soʊtˈeɪz</phoneme></lexeme> <!-- sautes -->
   <lexeme><grapheme>savagez</grapheme><phoneme>sˈævɪdʒɪz</phoneme></lexeme> <!-- savages -->
-  <lexeme><grapheme>savez</grapheme><phoneme>sˈeɪvz</phoneme></lexeme> <!-- saves -->
+  <lexeme><grapheme>savez</grapheme><phoneme>seɪvz</phoneme></lexeme> <!-- saves -->
   <lexeme><grapheme>savingz</grapheme><phoneme>sˈeɪvɪŋz</phoneme></lexeme> <!-- savings -->
   <lexeme><grapheme>savord</grapheme><phoneme>sˈeɪvərd</phoneme></lexeme> <!-- savored -->
   <lexeme><grapheme>savorz</grapheme><phoneme>sˈeɪvərz</phoneme></lexeme> <!-- savors -->
   <lexeme><grapheme>savviez</grapheme><phoneme>sˈævɪz</phoneme></lexeme> <!-- savvies -->
-  <lexeme><grapheme>sawd</grapheme><phoneme>sˈɔːd</phoneme></lexeme> <!-- sawed -->
+  <lexeme><grapheme>sawd</grapheme><phoneme>sɔːd</phoneme></lexeme> <!-- sawed -->
   <lexeme><grapheme>sawtoothd</grapheme><phoneme>sˈɔːtuːθt</phoneme></lexeme> <!-- sawtoothed -->
-  <lexeme><grapheme>sawz</grapheme><phoneme>sˈɔːz</phoneme></lexeme> <!-- saws -->
-  <lexeme><grapheme>sayz</grapheme><phoneme>sˈɛz</phoneme></lexeme> <!-- says -->
+  <lexeme><grapheme>sawz</grapheme><phoneme>sɔːz</phoneme></lexeme> <!-- saws -->
+  <lexeme><grapheme>sayz</grapheme><phoneme>sɛz</phoneme></lexeme> <!-- says -->
   <lexeme><grapheme>scabbardz</grapheme><phoneme>skˈæbərdz</phoneme></lexeme> <!-- scabbards -->
   <lexeme><grapheme>scabblez</grapheme><phoneme>skˈæbəlz</phoneme></lexeme> <!-- scabbles -->
-  <lexeme><grapheme>scabd</grapheme><phoneme>skˈæbd</phoneme></lexeme> <!-- scabbed -->
-  <lexeme><grapheme>scabz</grapheme><phoneme>skˈæbz</phoneme></lexeme> <!-- scabs -->
+  <lexeme><grapheme>scabd</grapheme><phoneme>skæbd</phoneme></lexeme> <!-- scabbed -->
+  <lexeme><grapheme>scabz</grapheme><phoneme>skæbz</phoneme></lexeme> <!-- scabs -->
   <lexeme><grapheme>scaffoldz</grapheme><phoneme>skˈæfəldz</phoneme></lexeme> <!-- scaffolds -->
-  <lexeme><grapheme>scaldz</grapheme><phoneme>skˈɔːldz</phoneme></lexeme> <!-- scalds -->
-  <lexeme><grapheme>scalez</grapheme><phoneme>skˈeɪlz</phoneme></lexeme> <!-- scales -->
-  <lexeme><grapheme>scalld</grapheme><phoneme>skˈɔːld</phoneme></lexeme> <!-- scalled -->
+  <lexeme><grapheme>scaldz</grapheme><phoneme>skɔːldz</phoneme></lexeme> <!-- scalds -->
+  <lexeme><grapheme>scalez</grapheme><phoneme>skeɪlz</phoneme></lexeme> <!-- scales -->
+  <lexeme><grapheme>scalld</grapheme><phoneme>skɔːld</phoneme></lexeme> <!-- scalled -->
   <lexeme><grapheme>scallopd</grapheme><phoneme>skˈɒləpt</phoneme></lexeme> <!-- scalloped -->
   <lexeme><grapheme>scallopz</grapheme><phoneme>skˈɒləps</phoneme></lexeme> <!-- scallops -->
-  <lexeme><grapheme>scalpd</grapheme><phoneme>skˈælpt</phoneme></lexeme> <!-- scalped -->
-  <lexeme><grapheme>scamd</grapheme><phoneme>skˈæmd</phoneme></lexeme> <!-- scammed -->
+  <lexeme><grapheme>scalpd</grapheme><phoneme>skælpt</phoneme></lexeme> <!-- scalped -->
+  <lexeme><grapheme>scamd</grapheme><phoneme>skæmd</phoneme></lexeme> <!-- scammed -->
   <lexeme><grapheme>scammoniat</grapheme><phoneme>skæmˈoʊnɪət</phoneme></lexeme> <!-- scammoniate -->
-  <lexeme><grapheme>scampd</grapheme><phoneme>skˈæmpt</phoneme></lexeme> <!-- scamped -->
+  <lexeme><grapheme>scampd</grapheme><phoneme>skæmpt</phoneme></lexeme> <!-- scamped -->
   <lexeme><grapheme>scamperd</grapheme><phoneme>skˈæmpərd</phoneme></lexeme> <!-- scampered -->
   <lexeme><grapheme>scamperz</grapheme><phoneme>skˈæmpərz</phoneme></lexeme> <!-- scampers -->
-  <lexeme><grapheme>scampz</grapheme><phoneme>skˈæmps</phoneme></lexeme> <!-- scamps -->
-  <lexeme><grapheme>scamz</grapheme><phoneme>skˈæmz</phoneme></lexeme> <!-- scams -->
-  <lexeme><grapheme>scand</grapheme><phoneme>skˈænd</phoneme></lexeme> <!-- scanned -->
+  <lexeme><grapheme>scampz</grapheme><phoneme>skæmps</phoneme></lexeme> <!-- scamps -->
+  <lexeme><grapheme>scamz</grapheme><phoneme>skæmz</phoneme></lexeme> <!-- scams -->
+  <lexeme><grapheme>scand</grapheme><phoneme>skænd</phoneme></lexeme> <!-- scanned -->
   <lexeme><grapheme>scandald</grapheme><phoneme>skˈændəld</phoneme></lexeme> <!-- scandaled -->
   <lexeme><grapheme>scandalizez</grapheme><phoneme>skˈændəlˌaɪzɪz</phoneme></lexeme> <!-- scandalises -->
   <lexeme><grapheme>scandalz</grapheme><phoneme>skˈændəlz</phoneme></lexeme> <!-- scandals -->
   <lexeme><grapheme>scantlez</grapheme><phoneme>skˈæntəlz</phoneme></lexeme> <!-- scantles -->
-  <lexeme><grapheme>scantz</grapheme><phoneme>skˈænts</phoneme></lexeme> <!-- scants -->
-  <lexeme><grapheme>scanz</grapheme><phoneme>skˈænz</phoneme></lexeme> <!-- scans -->
+  <lexeme><grapheme>scantz</grapheme><phoneme>skænts</phoneme></lexeme> <!-- scants -->
+  <lexeme><grapheme>scanz</grapheme><phoneme>skænz</phoneme></lexeme> <!-- scans -->
   <lexeme><grapheme>scapegoatz</grapheme><phoneme>skˈeɪpɡoʊts</phoneme></lexeme> <!-- scapegoats -->
   <lexeme><grapheme>scapplez</grapheme><phoneme>skˈæpəlz</phoneme></lexeme> <!-- scapples -->
   <lexeme><grapheme>scaramouqh</grapheme><phoneme>skˈærəmˌaʊtʃ</phoneme></lexeme> <!-- scaramouch -->
@@ -26191,70 +26191,70 @@
   <lexeme><grapheme>scaremongerd</grapheme><phoneme>skˈɛərmʌŋɡərd</phoneme></lexeme> <!-- scaremongered -->
   <lexeme><grapheme>scaremongerz</grapheme><phoneme>skˈɛərmʌŋɡərz</phoneme></lexeme> <!-- scaremongers -->
   <lexeme><grapheme>scarez</grapheme><phoneme>skˈɛərz</phoneme></lexeme> <!-- scares -->
-  <lexeme><grapheme>scarfd</grapheme><phoneme>skˈɑːrft</phoneme></lexeme> <!-- scarfed -->
-  <lexeme><grapheme>scarfz</grapheme><phoneme>skˈɑːrfs</phoneme></lexeme> <!-- scarfs -->
+  <lexeme><grapheme>scarfd</grapheme><phoneme>skɑːrft</phoneme></lexeme> <!-- scarfed -->
+  <lexeme><grapheme>scarfz</grapheme><phoneme>skɑːrfs</phoneme></lexeme> <!-- scarfs -->
   <lexeme><grapheme>scarifiez</grapheme><phoneme>skˈærɪfˌaɪz</phoneme></lexeme> <!-- scarifies -->
-  <lexeme><grapheme>scarpd</grapheme><phoneme>skˈɑːrpt</phoneme></lexeme> <!-- scarped -->
+  <lexeme><grapheme>scarpd</grapheme><phoneme>skɑːrpt</phoneme></lexeme> <!-- scarped -->
   <lexeme><grapheme>scarperd</grapheme><phoneme>skˈɑːrpərd</phoneme></lexeme> <!-- scarpered -->
   <lexeme><grapheme>scarperz</grapheme><phoneme>skˈɑːrpərz</phoneme></lexeme> <!-- scarpers -->
-  <lexeme><grapheme>scarphd</grapheme><phoneme>skˈɑːrft</phoneme></lexeme> <!-- scarphed -->
-  <lexeme><grapheme>scarphz</grapheme><phoneme>skˈɑːrfs</phoneme></lexeme> <!-- scarphs -->
-  <lexeme><grapheme>scarpz</grapheme><phoneme>skˈɑːrps</phoneme></lexeme> <!-- scarps -->
-  <lexeme><grapheme>scartz</grapheme><phoneme>skˈɑːrts</phoneme></lexeme> <!-- scarts -->
-  <lexeme><grapheme>scarvs</grapheme><phoneme>skˈɑːrvz</phoneme></lexeme> <!-- scarves -->
-  <lexeme><grapheme>scarz</grapheme><phoneme>skˈɑːrz</phoneme></lexeme> <!-- scars -->
-  <lexeme><grapheme>scathez</grapheme><phoneme>skˈeɪðz</phoneme></lexeme> <!-- scathes -->
+  <lexeme><grapheme>scarphd</grapheme><phoneme>skɑːrft</phoneme></lexeme> <!-- scarphed -->
+  <lexeme><grapheme>scarphz</grapheme><phoneme>skɑːrfs</phoneme></lexeme> <!-- scarphs -->
+  <lexeme><grapheme>scarpz</grapheme><phoneme>skɑːrps</phoneme></lexeme> <!-- scarps -->
+  <lexeme><grapheme>scartz</grapheme><phoneme>skɑːrts</phoneme></lexeme> <!-- scarts -->
+  <lexeme><grapheme>scarvs</grapheme><phoneme>skɑːrvz</phoneme></lexeme> <!-- scarves -->
+  <lexeme><grapheme>scarz</grapheme><phoneme>skɑːrz</phoneme></lexeme> <!-- scars -->
+  <lexeme><grapheme>scathez</grapheme><phoneme>skeɪðz</phoneme></lexeme> <!-- scathes -->
   <lexeme><grapheme>scatterbraind</grapheme><phoneme>skˈætərbreɪnd</phoneme></lexeme> <!-- scatterbrained -->
   <lexeme><grapheme>scatterd</grapheme><phoneme>skˈætərd</phoneme></lexeme> <!-- scattered -->
   <lexeme><grapheme>scatterz</grapheme><phoneme>skˈætərz</phoneme></lexeme> <!-- scatters -->
-  <lexeme><grapheme>scatz</grapheme><phoneme>skˈæts</phoneme></lexeme> <!-- scats -->
+  <lexeme><grapheme>scatz</grapheme><phoneme>skæts</phoneme></lexeme> <!-- scats -->
   <lexeme><grapheme>scavengez</grapheme><phoneme>skˈævɪdʒɪz</phoneme></lexeme> <!-- scavenges -->
-  <lexeme><grapheme>scendz</grapheme><phoneme>sˈɛndz</phoneme></lexeme> <!-- scends -->
-  <lexeme><grapheme>scentz</grapheme><phoneme>sˈɛnts</phoneme></lexeme> <!-- scents -->
+  <lexeme><grapheme>scendz</grapheme><phoneme>sɛndz</phoneme></lexeme> <!-- scends -->
+  <lexeme><grapheme>scentz</grapheme><phoneme>sɛnts</phoneme></lexeme> <!-- scents -->
   <lexeme><grapheme>scepterd</grapheme><phoneme>sˈɛptərd</phoneme></lexeme> <!-- sceptered -->
   <lexeme><grapheme>scepterellat</grapheme><phoneme>sɛptərˈɛlət</phoneme></lexeme> <!-- scepterellate -->
   <lexeme><grapheme>scepterz</grapheme><phoneme>sˈɛptərz</phoneme></lexeme> <!-- scepters -->
-  <lexeme><grapheme>schappez</grapheme><phoneme>ʃˈæps</phoneme></lexeme> <!-- schappes -->
+  <lexeme><grapheme>schappez</grapheme><phoneme>ʃæps</phoneme></lexeme> <!-- schappes -->
   <lexeme><grapheme>schedulez</grapheme><phoneme>ʃˈɛdjuːlz</phoneme></lexeme> <!-- schedules -->
   <lexeme><grapheme>schematizez</grapheme><phoneme>skˈiːmətˌaɪzɪz</phoneme></lexeme> <!-- schematises -->
-  <lexeme><grapheme>schemez</grapheme><phoneme>skˈiːmz</phoneme></lexeme> <!-- schemes -->
+  <lexeme><grapheme>schemez</grapheme><phoneme>skiːmz</phoneme></lexeme> <!-- schemes -->
   <lexeme><grapheme>schilerizez</grapheme><phoneme>ʃˈɪlərˌaɪzɪz</phoneme></lexeme> <!-- schilerises -->
   <lexeme><grapheme>schismatizez</grapheme><phoneme>sˈɪzmətˌaɪzɪz</phoneme></lexeme> <!-- schismatises -->
-  <lexeme><grapheme>schleppd</grapheme><phoneme>ʃlˈɛpt</phoneme></lexeme> <!-- schlepped -->
-  <lexeme><grapheme>schleppz</grapheme><phoneme>ʃlˈɛps</phoneme></lexeme> <!-- schlepps -->
-  <lexeme><grapheme>schlumpd</grapheme><phoneme>ʃlˈʌmpt</phoneme></lexeme> <!-- schlumped -->
-  <lexeme><grapheme>schlumpz</grapheme><phoneme>ʃlˈʌmps</phoneme></lexeme> <!-- schlumps -->
+  <lexeme><grapheme>schleppd</grapheme><phoneme>ʃlɛpt</phoneme></lexeme> <!-- schlepped -->
+  <lexeme><grapheme>schleppz</grapheme><phoneme>ʃlɛps</phoneme></lexeme> <!-- schlepps -->
+  <lexeme><grapheme>schlumpd</grapheme><phoneme>ʃlʌmpt</phoneme></lexeme> <!-- schlumped -->
+  <lexeme><grapheme>schlumpz</grapheme><phoneme>ʃlʌmps</phoneme></lexeme> <!-- schlumps -->
   <lexeme><grapheme>schmeard</grapheme><phoneme>ʃmˈɪərd</phoneme></lexeme> <!-- schmeared -->
   <lexeme><grapheme>schmearz</grapheme><phoneme>ʃmˈɪərz</phoneme></lexeme> <!-- schmears -->
-  <lexeme><grapheme>schmeerd</grapheme><phoneme>ʃmˈɪrd</phoneme></lexeme> <!-- schmeered -->
-  <lexeme><grapheme>schmeerz</grapheme><phoneme>ʃmˈɪrz</phoneme></lexeme> <!-- schmeers -->
+  <lexeme><grapheme>schmeerd</grapheme><phoneme>ʃmɪrd</phoneme></lexeme> <!-- schmeered -->
+  <lexeme><grapheme>schmeerz</grapheme><phoneme>ʃmɪrz</phoneme></lexeme> <!-- schmeers -->
   <lexeme><grapheme>schmoosez</grapheme><phoneme>ʃmˈuːzɪz</phoneme></lexeme> <!-- schmooses -->
   <lexeme><grapheme>schmoozez</grapheme><phoneme>ʃmˈuːzɪz</phoneme></lexeme> <!-- schmoozes -->
   <lexeme><grapheme>schnorkeld</grapheme><phoneme>ʃnˈɔːrkəld</phoneme></lexeme> <!-- schnorkeled -->
   <lexeme><grapheme>schnorkelz</grapheme><phoneme>ʃnˈɔːrkəlz</phoneme></lexeme> <!-- schnorkels -->
   <lexeme><grapheme>scholasticat</grapheme><phoneme>skəlˈæstɪkət</phoneme></lexeme> <!-- scholasticate -->
   <lexeme><grapheme>scholasticats</grapheme><phoneme>skəlˈæstɪkəts</phoneme></lexeme> <!-- scholasticates -->
-  <lexeme><grapheme>schoold</grapheme><phoneme>skˈuːld</phoneme></lexeme> <!-- schooled -->
+  <lexeme><grapheme>schoold</grapheme><phoneme>skuːld</phoneme></lexeme> <!-- schooled -->
   <lexeme><grapheme>schoolfrend</grapheme><phoneme>skˈuːlfrɛnd</phoneme></lexeme> <!-- schoolfriend -->
   <lexeme><grapheme>schoolfrends</grapheme><phoneme>skˈuːlfrɛndz</phoneme></lexeme> <!-- schoolfriends -->
   <lexeme><grapheme>schoolqhildren</grapheme><phoneme>skˈuːltʃɪldrən</phoneme></lexeme> <!-- schoolchildren -->
   <lexeme><grapheme>schoolqhyld</grapheme><phoneme>skˈuːltʃaɪld</phoneme></lexeme> <!-- schoolchild -->
   <lexeme><grapheme>schoolteaqher</grapheme><phoneme>skˈuːltiːtʃər</phoneme></lexeme> <!-- schoolteacher -->
-  <lexeme><grapheme>schoolz</grapheme><phoneme>skˈuːlz</phoneme></lexeme> <!-- schools -->
-  <lexeme><grapheme>schussd</grapheme><phoneme>ʃˈʊst</phoneme></lexeme> <!-- schussed -->
+  <lexeme><grapheme>schoolz</grapheme><phoneme>skuːlz</phoneme></lexeme> <!-- schools -->
+  <lexeme><grapheme>schussd</grapheme><phoneme>ʃʊst</phoneme></lexeme> <!-- schussed -->
   <lexeme><grapheme>schussez</grapheme><phoneme>ʃˈʊsɪz</phoneme></lexeme> <!-- schusses -->
   <lexeme><grapheme>scientizez</grapheme><phoneme>sˈaɪəntˌaɪzɪz</phoneme></lexeme> <!-- scientises -->
   <lexeme><grapheme>scintillatez</grapheme><phoneme>skˈɪntɪlˌeɪts</phoneme></lexeme> <!-- scintillates -->
   <lexeme><grapheme>scisez</grapheme><phoneme>sˈaɪzɪz</phoneme></lexeme> <!-- scises -->
   <lexeme><grapheme>scissord</grapheme><phoneme>sˈɪzərd</phoneme></lexeme> <!-- scissored -->
   <lexeme><grapheme>scissorz</grapheme><phoneme>sˈɪzərz</phoneme></lexeme> <!-- scissors -->
-  <lexeme><grapheme>sclaffd</grapheme><phoneme>sklˈæft</phoneme></lexeme> <!-- sclaffed -->
-  <lexeme><grapheme>sclaffz</grapheme><phoneme>sklˈæfs</phoneme></lexeme> <!-- sclaffs -->
+  <lexeme><grapheme>sclaffd</grapheme><phoneme>sklæft</phoneme></lexeme> <!-- sclaffed -->
+  <lexeme><grapheme>sclaffz</grapheme><phoneme>sklæfs</phoneme></lexeme> <!-- sclaffs -->
   <lexeme><grapheme>sclerosez</grapheme><phoneme>sklɪərˈoʊsɪz</phoneme></lexeme> <!-- scleroses -->
   <lexeme><grapheme>sclerotizez</grapheme><phoneme>sklɪərˈɒtˌaɪzɪz</phoneme></lexeme> <!-- sclerotises -->
-  <lexeme><grapheme>scoffd</grapheme><phoneme>skˈɒft</phoneme></lexeme> <!-- scoffed -->
-  <lexeme><grapheme>scoffz</grapheme><phoneme>skˈɒfs</phoneme></lexeme> <!-- scoffs -->
-  <lexeme><grapheme>scoldz</grapheme><phoneme>skˈoʊldz</phoneme></lexeme> <!-- scolds -->
+  <lexeme><grapheme>scoffd</grapheme><phoneme>skɒft</phoneme></lexeme> <!-- scoffed -->
+  <lexeme><grapheme>scoffz</grapheme><phoneme>skɒfs</phoneme></lexeme> <!-- scoffs -->
+  <lexeme><grapheme>scoldz</grapheme><phoneme>skoʊldz</phoneme></lexeme> <!-- scolds -->
   <lexeme><grapheme>scollopd</grapheme><phoneme>skˈɒləpt</phoneme></lexeme> <!-- scolloped -->
   <lexeme><grapheme>scollopz</grapheme><phoneme>skˈɒləps</phoneme></lexeme> <!-- scollops -->
   <lexeme><grapheme>scomfishd</grapheme><phoneme>skˈʌmfɪʃt</phoneme></lexeme> <!-- scomfished -->
@@ -26264,11 +26264,11 @@
   <lexeme><grapheme>sconshons</grapheme><phoneme>skˈʌntʃənz</phoneme></lexeme> <!-- sconcheons -->
   <lexeme><grapheme>scooner</grapheme><phoneme>skˈuːnər</phoneme></lexeme> <!-- schooner -->
   <lexeme><grapheme>scooners</grapheme><phoneme>skˈuːnərz</phoneme></lexeme> <!-- schooners -->
-  <lexeme><grapheme>scoopd</grapheme><phoneme>skˈuːpt</phoneme></lexeme> <!-- scooped -->
-  <lexeme><grapheme>scoopz</grapheme><phoneme>skˈuːps</phoneme></lexeme> <!-- scoops -->
-  <lexeme><grapheme>scootz</grapheme><phoneme>skˈuːts</phoneme></lexeme> <!-- scoots -->
-  <lexeme><grapheme>scopez</grapheme><phoneme>skˈoʊps</phoneme></lexeme> <!-- scopes -->
-  <lexeme><grapheme>scorez</grapheme><phoneme>skˈɔːrz</phoneme></lexeme> <!-- scores -->
+  <lexeme><grapheme>scoopd</grapheme><phoneme>skuːpt</phoneme></lexeme> <!-- scooped -->
+  <lexeme><grapheme>scoopz</grapheme><phoneme>skuːps</phoneme></lexeme> <!-- scoops -->
+  <lexeme><grapheme>scootz</grapheme><phoneme>skuːts</phoneme></lexeme> <!-- scoots -->
+  <lexeme><grapheme>scopez</grapheme><phoneme>skoʊps</phoneme></lexeme> <!-- scopes -->
+  <lexeme><grapheme>scorez</grapheme><phoneme>skɔːrz</phoneme></lexeme> <!-- scores -->
   <lexeme><grapheme>scorifiez</grapheme><phoneme>skˈɔːrɪfˌaɪz</phoneme></lexeme> <!-- scorifies -->
   <lexeme><grapheme>scornd</grapheme><phoneme>skˈɔːrnd</phoneme></lexeme> <!-- scorned -->
   <lexeme><grapheme>scornz</grapheme><phoneme>skˈɔːrnz</phoneme></lexeme> <!-- scorns -->
@@ -26277,54 +26277,54 @@
   <lexeme><grapheme>scorpenids</grapheme><phoneme>skɔːrpˈiːnɪdz</phoneme></lexeme> <!-- scorpaenids -->
   <lexeme><grapheme>scorpenoid</grapheme><phoneme>skˈɔːrpɪnˌɔɪd</phoneme></lexeme> <!-- scorpaenoid -->
   <lexeme><grapheme>scorpenoids</grapheme><phoneme>skˈɔːrpɪnˌɔɪdz</phoneme></lexeme> <!-- scorpaenoids -->
-  <lexeme><grapheme>scorqh</grapheme><phoneme>skˈɔːrtʃ</phoneme></lexeme> <!-- scorch -->
-  <lexeme><grapheme>scorqhd</grapheme><phoneme>skˈɔːrtʃt</phoneme></lexeme> <!-- scorched -->
+  <lexeme><grapheme>scorqh</grapheme><phoneme>skɔːrtʃ</phoneme></lexeme> <!-- scorch -->
+  <lexeme><grapheme>scorqhd</grapheme><phoneme>skɔːrtʃt</phoneme></lexeme> <!-- scorched -->
   <lexeme><grapheme>scorqher</grapheme><phoneme>skˈɔːrtʃər</phoneme></lexeme> <!-- scorcher -->
   <lexeme><grapheme>scorqhers</grapheme><phoneme>skˈɔːrtʃərz</phoneme></lexeme> <!-- scorchers -->
   <lexeme><grapheme>scorqhes</grapheme><phoneme>skˈɔːrtʃɪz</phoneme></lexeme> <!-- scorches -->
   <lexeme><grapheme>scorqhez</grapheme><phoneme>skˈɔːrtʃɪz</phoneme></lexeme> <!-- scorches -->
   <lexeme><grapheme>scorqhing</grapheme><phoneme>skˈɔːrtʃɪŋ</phoneme></lexeme> <!-- scorching -->
   <lexeme><grapheme>scorqhingly</grapheme><phoneme>skˈɔːrtʃɪŋli</phoneme></lexeme> <!-- scorchingly -->
-  <lexeme><grapheme>scotchd</grapheme><phoneme>skˈɒtʃt</phoneme></lexeme> <!-- scotched -->
+  <lexeme><grapheme>scotchd</grapheme><phoneme>skɒtʃt</phoneme></lexeme> <!-- scotched -->
   <lexeme><grapheme>scotchez</grapheme><phoneme>skˈɒtʃɪz</phoneme></lexeme> <!-- scotches -->
   <lexeme><grapheme>scotticizez</grapheme><phoneme>skˈɒtɪsˌaɪzɪz</phoneme></lexeme> <!-- scotticises -->
   <lexeme><grapheme>scourd</grapheme><phoneme>skˈaʊərd</phoneme></lexeme> <!-- scoured -->
   <lexeme><grapheme>scourz</grapheme><phoneme>skˈaʊərz</phoneme></lexeme> <!-- scours -->
   <lexeme><grapheme>scoutherd</grapheme><phoneme>skˈaʊðərd</phoneme></lexeme> <!-- scouthered -->
   <lexeme><grapheme>scoutherz</grapheme><phoneme>skˈaʊðərz</phoneme></lexeme> <!-- scouthers -->
-  <lexeme><grapheme>scoutz</grapheme><phoneme>skˈaʊts</phoneme></lexeme> <!-- scouts -->
+  <lexeme><grapheme>scoutz</grapheme><phoneme>skaʊts</phoneme></lexeme> <!-- scouts -->
   <lexeme><grapheme>scrabblez</grapheme><phoneme>skrˈæbəlz</phoneme></lexeme> <!-- scrabbles -->
   <lexeme><grapheme>scrafflez</grapheme><phoneme>skrˈæfəlz</phoneme></lexeme> <!-- scraffles -->
-  <lexeme><grapheme>scragd</grapheme><phoneme>skrˈæɡd</phoneme></lexeme> <!-- scragged -->
-  <lexeme><grapheme>scragz</grapheme><phoneme>skrˈæɡz</phoneme></lexeme> <!-- scrags -->
-  <lexeme><grapheme>scraichd</grapheme><phoneme>skrˈeɪtʃt</phoneme></lexeme> <!-- scraiched -->
-  <lexeme><grapheme>scraichz</grapheme><phoneme>skrˈeɪtʃs</phoneme></lexeme> <!-- scraichs -->
-  <lexeme><grapheme>scraighd</grapheme><phoneme>skrˈeɪtʃt</phoneme></lexeme> <!-- scraighed -->
-  <lexeme><grapheme>scraighz</grapheme><phoneme>skrˈeɪtʃs</phoneme></lexeme> <!-- scraighs -->
+  <lexeme><grapheme>scragd</grapheme><phoneme>skræɡd</phoneme></lexeme> <!-- scragged -->
+  <lexeme><grapheme>scragz</grapheme><phoneme>skræɡz</phoneme></lexeme> <!-- scrags -->
+  <lexeme><grapheme>scraichd</grapheme><phoneme>skreɪtʃt</phoneme></lexeme> <!-- scraiched -->
+  <lexeme><grapheme>scraichz</grapheme><phoneme>skreɪtʃs</phoneme></lexeme> <!-- scraichs -->
+  <lexeme><grapheme>scraighd</grapheme><phoneme>skreɪtʃt</phoneme></lexeme> <!-- scraighed -->
+  <lexeme><grapheme>scraighz</grapheme><phoneme>skreɪtʃs</phoneme></lexeme> <!-- scraighs -->
   <lexeme><grapheme>scramblez</grapheme><phoneme>skrˈæmbəlz</phoneme></lexeme> <!-- scrambles -->
-  <lexeme><grapheme>scramd</grapheme><phoneme>skrˈæmd</phoneme></lexeme> <!-- scrammed -->
-  <lexeme><grapheme>scramz</grapheme><phoneme>skrˈæmz</phoneme></lexeme> <!-- scrams -->
-  <lexeme><grapheme>scranqh</grapheme><phoneme>skrˈæntʃ</phoneme></lexeme> <!-- scranch -->
-  <lexeme><grapheme>scranqhd</grapheme><phoneme>skrˈæntʃt</phoneme></lexeme> <!-- scranched -->
+  <lexeme><grapheme>scramd</grapheme><phoneme>skræmd</phoneme></lexeme> <!-- scrammed -->
+  <lexeme><grapheme>scramz</grapheme><phoneme>skræmz</phoneme></lexeme> <!-- scrams -->
+  <lexeme><grapheme>scranqh</grapheme><phoneme>skræntʃ</phoneme></lexeme> <!-- scranch -->
+  <lexeme><grapheme>scranqhd</grapheme><phoneme>skræntʃt</phoneme></lexeme> <!-- scranched -->
   <lexeme><grapheme>scranqhez</grapheme><phoneme>skrˈæntʃɪz</phoneme></lexeme> <!-- scranches -->
   <lexeme><grapheme>scranqhing</grapheme><phoneme>skrˈæntʃɪŋ</phoneme></lexeme> <!-- scranching -->
-  <lexeme><grapheme>scrapd</grapheme><phoneme>skrˈæpt</phoneme></lexeme> <!-- scrapped -->
-  <lexeme><grapheme>scrapez</grapheme><phoneme>skrˈeɪps</phoneme></lexeme> <!-- scrapes -->
+  <lexeme><grapheme>scrapd</grapheme><phoneme>skræpt</phoneme></lexeme> <!-- scrapped -->
+  <lexeme><grapheme>scrapez</grapheme><phoneme>skreɪps</phoneme></lexeme> <!-- scrapes -->
   <lexeme><grapheme>scrapplez</grapheme><phoneme>skrˈæpəlz</phoneme></lexeme> <!-- scrapples -->
-  <lexeme><grapheme>scrapz</grapheme><phoneme>skrˈæps</phoneme></lexeme> <!-- scraps -->
-  <lexeme><grapheme>scratchd</grapheme><phoneme>skrˈætʃt</phoneme></lexeme> <!-- scratched -->
+  <lexeme><grapheme>scrapz</grapheme><phoneme>skræps</phoneme></lexeme> <!-- scraps -->
+  <lexeme><grapheme>scratchd</grapheme><phoneme>skrætʃt</phoneme></lexeme> <!-- scratched -->
   <lexeme><grapheme>scratchez</grapheme><phoneme>skrˈætʃɪz</phoneme></lexeme> <!-- scratches -->
-  <lexeme><grapheme>scrawld</grapheme><phoneme>skrˈɔːld</phoneme></lexeme> <!-- scrawled -->
-  <lexeme><grapheme>scrawlz</grapheme><phoneme>skrˈɔːlz</phoneme></lexeme> <!-- scrawls -->
-  <lexeme><grapheme>screakd</grapheme><phoneme>skrˈiːkt</phoneme></lexeme> <!-- screaked -->
-  <lexeme><grapheme>screakz</grapheme><phoneme>skrˈiːks</phoneme></lexeme> <!-- screaks -->
-  <lexeme><grapheme>screamd</grapheme><phoneme>skrˈiːmd</phoneme></lexeme> <!-- screamed -->
-  <lexeme><grapheme>screamz</grapheme><phoneme>skrˈiːmz</phoneme></lexeme> <!-- screams -->
-  <lexeme><grapheme>screedz</grapheme><phoneme>skrˈiːdz</phoneme></lexeme> <!-- screeds -->
-  <lexeme><grapheme>screend</grapheme><phoneme>skrˈiːnd</phoneme></lexeme> <!-- screened -->
-  <lexeme><grapheme>screenz</grapheme><phoneme>skrˈiːnz</phoneme></lexeme> <!-- screens -->
-  <lexeme><grapheme>screeqh</grapheme><phoneme>skrˈiːtʃ</phoneme></lexeme> <!-- screech -->
-  <lexeme><grapheme>screeqhd</grapheme><phoneme>skrˈiːtʃt</phoneme></lexeme> <!-- screeched -->
+  <lexeme><grapheme>scrawld</grapheme><phoneme>skrɔːld</phoneme></lexeme> <!-- scrawled -->
+  <lexeme><grapheme>scrawlz</grapheme><phoneme>skrɔːlz</phoneme></lexeme> <!-- scrawls -->
+  <lexeme><grapheme>screakd</grapheme><phoneme>skriːkt</phoneme></lexeme> <!-- screaked -->
+  <lexeme><grapheme>screakz</grapheme><phoneme>skriːks</phoneme></lexeme> <!-- screaks -->
+  <lexeme><grapheme>screamd</grapheme><phoneme>skriːmd</phoneme></lexeme> <!-- screamed -->
+  <lexeme><grapheme>screamz</grapheme><phoneme>skriːmz</phoneme></lexeme> <!-- screams -->
+  <lexeme><grapheme>screedz</grapheme><phoneme>skriːdz</phoneme></lexeme> <!-- screeds -->
+  <lexeme><grapheme>screend</grapheme><phoneme>skriːnd</phoneme></lexeme> <!-- screened -->
+  <lexeme><grapheme>screenz</grapheme><phoneme>skriːnz</phoneme></lexeme> <!-- screens -->
+  <lexeme><grapheme>screeqh</grapheme><phoneme>skriːtʃ</phoneme></lexeme> <!-- screech -->
+  <lexeme><grapheme>screeqhd</grapheme><phoneme>skriːtʃt</phoneme></lexeme> <!-- screeched -->
   <lexeme><grapheme>screeqher</grapheme><phoneme>skrˈiːtʃər</phoneme></lexeme> <!-- screecher -->
   <lexeme><grapheme>screeqhers</grapheme><phoneme>skrˈiːtʃərz</phoneme></lexeme> <!-- screechers -->
   <lexeme><grapheme>screeqhes</grapheme><phoneme>skrˈiːtʃɪz</phoneme></lexeme> <!-- screeches -->
@@ -26333,40 +26333,40 @@
   <lexeme><grapheme>screeqhiest</grapheme><phoneme>skrˈiːtʃɪɪst</phoneme></lexeme> <!-- screechiest -->
   <lexeme><grapheme>screeqhing</grapheme><phoneme>skrˈiːtʃɪŋ</phoneme></lexeme> <!-- screeching -->
   <lexeme><grapheme>screeqhy</grapheme><phoneme>skrˈiːtʃi</phoneme></lexeme> <!-- screechy -->
-  <lexeme><grapheme>screwd</grapheme><phoneme>skrːˈuːd</phoneme></lexeme> <!-- screwed -->
-  <lexeme><grapheme>screwz</grapheme><phoneme>skrːˈuːz</phoneme></lexeme> <!-- screws -->
+  <lexeme><grapheme>screwd</grapheme><phoneme>skrːuːd</phoneme></lexeme> <!-- screwed -->
+  <lexeme><grapheme>screwz</grapheme><phoneme>skrːuːz</phoneme></lexeme> <!-- screws -->
   <lexeme><grapheme>scribblez</grapheme><phoneme>skrˈɪbəlz</phoneme></lexeme> <!-- scribbles -->
-  <lexeme><grapheme>scribez</grapheme><phoneme>skrˈaɪbz</phoneme></lexeme> <!-- scribes -->
-  <lexeme><grapheme>scriev</grapheme><phoneme>skrˈiːv</phoneme></lexeme> <!-- scrieve -->
-  <lexeme><grapheme>scrievd</grapheme><phoneme>skrˈiːvd</phoneme></lexeme> <!-- scrieved -->
-  <lexeme><grapheme>scrievz</grapheme><phoneme>skrˈiːvz</phoneme></lexeme> <!-- scrieves -->
-  <lexeme><grapheme>scriez</grapheme><phoneme>skrˈaɪz</phoneme></lexeme> <!-- scries -->
+  <lexeme><grapheme>scribez</grapheme><phoneme>skraɪbz</phoneme></lexeme> <!-- scribes -->
+  <lexeme><grapheme>scriev</grapheme><phoneme>skriːv</phoneme></lexeme> <!-- scrieve -->
+  <lexeme><grapheme>scrievd</grapheme><phoneme>skriːvd</phoneme></lexeme> <!-- scrieved -->
+  <lexeme><grapheme>scrievz</grapheme><phoneme>skriːvz</phoneme></lexeme> <!-- scrieves -->
+  <lexeme><grapheme>scriez</grapheme><phoneme>skraɪz</phoneme></lexeme> <!-- scries -->
   <lexeme><grapheme>scrimmagez</grapheme><phoneme>skˈrɪmɪdʒɪz</phoneme></lexeme> <!-- scrimmages -->
-  <lexeme><grapheme>scrimpd</grapheme><phoneme>skrˈɪmpt</phoneme></lexeme> <!-- scrimped -->
-  <lexeme><grapheme>scrimpz</grapheme><phoneme>skrˈɪmps</phoneme></lexeme> <!-- scrimps -->
+  <lexeme><grapheme>scrimpd</grapheme><phoneme>skrɪmpt</phoneme></lexeme> <!-- scrimped -->
+  <lexeme><grapheme>scrimpz</grapheme><phoneme>skrɪmps</phoneme></lexeme> <!-- scrimps -->
   <lexeme><grapheme>scrimshawd</grapheme><phoneme>skˈrɪmʃɔːd</phoneme></lexeme> <!-- scrimshawed -->
   <lexeme><grapheme>scrimshawz</grapheme><phoneme>skˈrɪmʃɔːz</phoneme></lexeme> <!-- scrimshaws -->
   <lexeme><grapheme>scringez</grapheme><phoneme>skrˈɪndʒɪz</phoneme></lexeme> <!-- scringes -->
-  <lexeme><grapheme>scriptz</grapheme><phoneme>skrˈɪpts</phoneme></lexeme> <!-- scripts -->
-  <lexeme><grapheme>scrivez</grapheme><phoneme>skrˈaɪvz</phoneme></lexeme> <!-- scrives -->
-  <lexeme><grapheme>scrolld</grapheme><phoneme>skrˈoʊld</phoneme></lexeme> <!-- scrolled -->
-  <lexeme><grapheme>scrollz</grapheme><phoneme>skrˈoʊlz</phoneme></lexeme> <!-- scrolls -->
-  <lexeme><grapheme>scroopd</grapheme><phoneme>skrˈuːpt</phoneme></lexeme> <!-- scrooped -->
-  <lexeme><grapheme>scroopz</grapheme><phoneme>skrˈuːps</phoneme></lexeme> <!-- scroops -->
-  <lexeme><grapheme>scrooqh</grapheme><phoneme>skrˈuːtʃ</phoneme></lexeme> <!-- scrooch -->
-  <lexeme><grapheme>scrooqhd</grapheme><phoneme>skrˈuːtʃt</phoneme></lexeme> <!-- scrooched -->
+  <lexeme><grapheme>scriptz</grapheme><phoneme>skrɪpts</phoneme></lexeme> <!-- scripts -->
+  <lexeme><grapheme>scrivez</grapheme><phoneme>skraɪvz</phoneme></lexeme> <!-- scrives -->
+  <lexeme><grapheme>scrolld</grapheme><phoneme>skroʊld</phoneme></lexeme> <!-- scrolled -->
+  <lexeme><grapheme>scrollz</grapheme><phoneme>skroʊlz</phoneme></lexeme> <!-- scrolls -->
+  <lexeme><grapheme>scroopd</grapheme><phoneme>skruːpt</phoneme></lexeme> <!-- scrooped -->
+  <lexeme><grapheme>scroopz</grapheme><phoneme>skruːps</phoneme></lexeme> <!-- scroops -->
+  <lexeme><grapheme>scrooqh</grapheme><phoneme>skruːtʃ</phoneme></lexeme> <!-- scrooch -->
+  <lexeme><grapheme>scrooqhd</grapheme><phoneme>skruːtʃt</phoneme></lexeme> <!-- scrooched -->
   <lexeme><grapheme>scrooqhez</grapheme><phoneme>skrˈuːtʃɪz</phoneme></lexeme> <!-- scrooches -->
   <lexeme><grapheme>scrooqhing</grapheme><phoneme>skrˈuːtʃɪŋ</phoneme></lexeme> <!-- scrooching -->
-  <lexeme><grapheme>scrootchd</grapheme><phoneme>skrˈuːtʃt</phoneme></lexeme> <!-- scrootched -->
+  <lexeme><grapheme>scrootchd</grapheme><phoneme>skruːtʃt</phoneme></lexeme> <!-- scrootched -->
   <lexeme><grapheme>scrootchez</grapheme><phoneme>skrˈuːtʃɪz</phoneme></lexeme> <!-- scrootches -->
   <lexeme><grapheme>scroungez</grapheme><phoneme>skrˈaʊndʒɪz</phoneme></lexeme> <!-- scrounges -->
-  <lexeme><grapheme>scrubd</grapheme><phoneme>skrˈʌbd</phoneme></lexeme> <!-- scrubbed -->
+  <lexeme><grapheme>scrubd</grapheme><phoneme>skrʌbd</phoneme></lexeme> <!-- scrubbed -->
   <lexeme><grapheme>scrubwimen</grapheme><phoneme>skˈrʌbwɪmɪn</phoneme></lexeme> <!-- scrubwomen -->
-  <lexeme><grapheme>scrubz</grapheme><phoneme>skrˈʌbz</phoneme></lexeme> <!-- scrubs -->
-  <lexeme><grapheme>scrumd</grapheme><phoneme>skrˈʌmd</phoneme></lexeme> <!-- scrummed -->
-  <lexeme><grapheme>scrumz</grapheme><phoneme>skrˈʌmz</phoneme></lexeme> <!-- scrums -->
-  <lexeme><grapheme>scrunqh</grapheme><phoneme>skrˈʌntʃ</phoneme></lexeme> <!-- scrunch -->
-  <lexeme><grapheme>scrunqhd</grapheme><phoneme>skrˈʌntʃt</phoneme></lexeme> <!-- scrunched -->
+  <lexeme><grapheme>scrubz</grapheme><phoneme>skrʌbz</phoneme></lexeme> <!-- scrubs -->
+  <lexeme><grapheme>scrumd</grapheme><phoneme>skrʌmd</phoneme></lexeme> <!-- scrummed -->
+  <lexeme><grapheme>scrumz</grapheme><phoneme>skrʌmz</phoneme></lexeme> <!-- scrums -->
+  <lexeme><grapheme>scrunqh</grapheme><phoneme>skrʌntʃ</phoneme></lexeme> <!-- scrunch -->
+  <lexeme><grapheme>scrunqhd</grapheme><phoneme>skrʌntʃt</phoneme></lexeme> <!-- scrunched -->
   <lexeme><grapheme>scrunqhes</grapheme><phoneme>skrˈʌntʃɪz</phoneme></lexeme> <!-- scrunches -->
   <lexeme><grapheme>scrunqhez</grapheme><phoneme>skrˈʌntʃɪz</phoneme></lexeme> <!-- scrunches -->
   <lexeme><grapheme>scrunqhing</grapheme><phoneme>skrˈʌntʃɪŋ</phoneme></lexeme> <!-- scrunching -->
@@ -26374,14 +26374,14 @@
   <lexeme><grapheme>scrutinizez</grapheme><phoneme>skrˈuːtɪnˌaɪzɪz</phoneme></lexeme> <!-- scrutinises -->
   <lexeme><grapheme>scruzez</grapheme><phoneme>skrˈuːzɪz</phoneme></lexeme> <!-- scruzes -->
   <lexeme><grapheme>scuddlez</grapheme><phoneme>skˈʌdəlz</phoneme></lexeme> <!-- scuddles -->
-  <lexeme><grapheme>scudz</grapheme><phoneme>skˈʌdz</phoneme></lexeme> <!-- scuds -->
-  <lexeme><grapheme>scuffd</grapheme><phoneme>skˈʌft</phoneme></lexeme> <!-- scuffed -->
+  <lexeme><grapheme>scudz</grapheme><phoneme>skʌdz</phoneme></lexeme> <!-- scuds -->
+  <lexeme><grapheme>scuffd</grapheme><phoneme>skʌft</phoneme></lexeme> <!-- scuffed -->
   <lexeme><grapheme>scufflez</grapheme><phoneme>skˈʌfəlz</phoneme></lexeme> <!-- scuffles -->
-  <lexeme><grapheme>scuffz</grapheme><phoneme>skˈʌfs</phoneme></lexeme> <!-- scuffs -->
-  <lexeme><grapheme>sculkd</grapheme><phoneme>skˈʌlkt</phoneme></lexeme> <!-- sculked -->
-  <lexeme><grapheme>sculkz</grapheme><phoneme>skˈʌlks</phoneme></lexeme> <!-- sculks -->
-  <lexeme><grapheme>sculld</grapheme><phoneme>skˈʌld</phoneme></lexeme> <!-- sculled -->
-  <lexeme><grapheme>scullz</grapheme><phoneme>skˈʌlz</phoneme></lexeme> <!-- sculls -->
+  <lexeme><grapheme>scuffz</grapheme><phoneme>skʌfs</phoneme></lexeme> <!-- scuffs -->
+  <lexeme><grapheme>sculkd</grapheme><phoneme>skʌlkt</phoneme></lexeme> <!-- sculked -->
+  <lexeme><grapheme>sculkz</grapheme><phoneme>skʌlks</phoneme></lexeme> <!-- sculks -->
+  <lexeme><grapheme>sculld</grapheme><phoneme>skʌld</phoneme></lexeme> <!-- sculled -->
+  <lexeme><grapheme>scullz</grapheme><phoneme>skʌlz</phoneme></lexeme> <!-- sculls -->
   <lexeme><grapheme>sculpd</grapheme><phoneme>skʌlpt</phoneme></lexeme> <!-- sculped -->
   <lexeme><grapheme>sculpturesq</grapheme><phoneme>ˌskʌlptʃəˈrɛsk</phoneme></lexeme> <!-- sculpturesque -->
   <lexeme><grapheme>sculpturez</grapheme><phoneme>ˈskʌlptʃərz</phoneme></lexeme> <!-- sculptures -->
@@ -26394,8 +26394,8 @@
   <lexeme><grapheme>scunnerz</grapheme><phoneme>ˈskʌnərz</phoneme></lexeme> <!-- scunners -->
   <lexeme><grapheme>scupperd</grapheme><phoneme>ˈskʌpərd</phoneme></lexeme> <!-- scuppered -->
   <lexeme><grapheme>scupperz</grapheme><phoneme>ˈskʌpərz</phoneme></lexeme> <!-- scuppers -->
-  <lexeme><grapheme>scurge</grapheme><phoneme>skˈɜːrdʒ</phoneme></lexeme> <!-- scourge -->
-  <lexeme><grapheme>scurged</grapheme><phoneme>skˈɜːrdʒt</phoneme></lexeme> <!-- scourged -->
+  <lexeme><grapheme>scurge</grapheme><phoneme>skɜːrdʒ</phoneme></lexeme> <!-- scourge -->
+  <lexeme><grapheme>scurged</grapheme><phoneme>skɜːrdʒt</phoneme></lexeme> <!-- scourged -->
   <lexeme><grapheme>scurger</grapheme><phoneme>skˈɜːrdʒər</phoneme></lexeme> <!-- scourger -->
   <lexeme><grapheme>scurgers</grapheme><phoneme>skˈɜːrdʒərz</phoneme></lexeme> <!-- scourgers -->
   <lexeme><grapheme>scurges</grapheme><phoneme>skˈɜːrdʒɪz</phoneme></lexeme> <!-- scourges -->
@@ -26412,23 +26412,23 @@
   <lexeme><grapheme>scutterd</grapheme><phoneme>ˈskʌtərd</phoneme></lexeme> <!-- scuttered -->
   <lexeme><grapheme>scutterz</grapheme><phoneme>ˈskʌtərz</phoneme></lexeme> <!-- scutters -->
   <lexeme><grapheme>scuttlez</grapheme><phoneme>ˈskʌtəlz</phoneme></lexeme> <!-- scuttles -->
-  <lexeme><grapheme>scuw</grapheme><phoneme>skˈaʊ</phoneme></lexeme> <!-- scow -->
-  <lexeme><grapheme>scuwd</grapheme><phoneme>skˈaʊd</phoneme></lexeme> <!-- scowed -->
+  <lexeme><grapheme>scuw</grapheme><phoneme>skaʊ</phoneme></lexeme> <!-- scow -->
+  <lexeme><grapheme>scuwd</grapheme><phoneme>skaʊd</phoneme></lexeme> <!-- scowed -->
   <lexeme><grapheme>scuwder</grapheme><phoneme>skˈaʊdər</phoneme></lexeme> <!-- scowder -->
   <lexeme><grapheme>scuwderd</grapheme><phoneme>skˈaʊðərd</phoneme></lexeme> <!-- scowdered -->
   <lexeme><grapheme>scuwdering</grapheme><phoneme>skˈaʊðərɪŋ</phoneme></lexeme> <!-- scowdering -->
   <lexeme><grapheme>scuwderz</grapheme><phoneme>skˈaʊðərz</phoneme></lexeme> <!-- scowders -->
   <lexeme><grapheme>scuwing</grapheme><phoneme>skˈaʊɪŋ</phoneme></lexeme> <!-- scowing -->
-  <lexeme><grapheme>scuwl</grapheme><phoneme>skˈaʊl</phoneme></lexeme> <!-- scowl -->
-  <lexeme><grapheme>scuwld</grapheme><phoneme>skˈaʊld</phoneme></lexeme> <!-- scowled -->
+  <lexeme><grapheme>scuwl</grapheme><phoneme>skaʊl</phoneme></lexeme> <!-- scowl -->
+  <lexeme><grapheme>scuwld</grapheme><phoneme>skaʊld</phoneme></lexeme> <!-- scowled -->
   <lexeme><grapheme>scuwler</grapheme><phoneme>skˈaʊlər</phoneme></lexeme> <!-- scowler -->
   <lexeme><grapheme>scuwlers</grapheme><phoneme>skˈaʊlərz</phoneme></lexeme> <!-- scowlers -->
   <lexeme><grapheme>scuwling</grapheme><phoneme>skˈaʊlɪŋ</phoneme></lexeme> <!-- scowling -->
   <lexeme><grapheme>scuwlingly</grapheme><phoneme>skˈaʊlɪŋli</phoneme></lexeme> <!-- scowlingly -->
-  <lexeme><grapheme>scuwls</grapheme><phoneme>skˈaʊlz</phoneme></lexeme> <!-- scowls -->
-  <lexeme><grapheme>scuwlz</grapheme><phoneme>skˈaʊlz</phoneme></lexeme> <!-- scowls -->
-  <lexeme><grapheme>scuws</grapheme><phoneme>skˈaʊz</phoneme></lexeme> <!-- scows -->
-  <lexeme><grapheme>scuwz</grapheme><phoneme>skˈaʊz</phoneme></lexeme> <!-- scows -->
+  <lexeme><grapheme>scuwls</grapheme><phoneme>skaʊlz</phoneme></lexeme> <!-- scowls -->
+  <lexeme><grapheme>scuwlz</grapheme><phoneme>skaʊlz</phoneme></lexeme> <!-- scowls -->
+  <lexeme><grapheme>scuws</grapheme><phoneme>skaʊz</phoneme></lexeme> <!-- scows -->
+  <lexeme><grapheme>scuwz</grapheme><phoneme>skaʊz</phoneme></lexeme> <!-- scows -->
   <lexeme><grapheme>scylez</grapheme><phoneme>saɪlz</phoneme></lexeme> <!-- scyles -->
   <lexeme><grapheme>seabeaqh</grapheme><phoneme>ˈsiːˌbitʃ</phoneme></lexeme> <!-- seabeach -->
   <lexeme><grapheme>seabeaqhes</grapheme><phoneme>ˈsiːˌbitʃəz</phoneme></lexeme> <!-- seabeaches -->
@@ -33754,11 +33754,11 @@
   <lexeme><grapheme>wrongheddedly</grapheme><phoneme>ˈrɒŋˈhɛdədli</phoneme></lexeme> <!-- wrongheadedly -->
   <lexeme><grapheme>wrongheddedness</grapheme><phoneme>ˈrɒŋˈhɛdədnəs</phoneme></lexeme> <!-- wrongheadedness -->
   <lexeme><grapheme>wrongz</grapheme><phoneme>rɒŋz</phoneme></lexeme> <!-- wrongs -->
-  <lexeme><grapheme>wun</grapheme><phoneme>ˈwən</phoneme></lexeme> <!-- one -->
-  <lexeme><grapheme>wunce</grapheme><phoneme>ˈwəns</phoneme></lexeme> <!-- once -->
+  <lexeme><grapheme>wun</grapheme><phoneme>wən</phoneme></lexeme> <!-- one -->
+  <lexeme><grapheme>wunce</grapheme><phoneme>wəns</phoneme></lexeme> <!-- once -->
   <lexeme><grapheme>wunfold</grapheme><phoneme>ˈwənˌfoʊld</phoneme></lexeme> <!-- onefold -->
   <lexeme><grapheme>wunness</grapheme><phoneme>ˈwənnəs</phoneme></lexeme> <!-- oneness -->
-  <lexeme><grapheme>wuns</grapheme><phoneme>ˈwənz</phoneme></lexeme> <!-- ones -->
+  <lexeme><grapheme>wuns</grapheme><phoneme>wənz</phoneme></lexeme> <!-- ones -->
   <lexeme><grapheme>wunself</grapheme><phoneme>wənˈsɛlf</phoneme></lexeme> <!-- oneself -->
   <lexeme><grapheme>wuntime</grapheme><phoneme>ˈwənˌtaɪm</phoneme></lexeme> <!-- onetime -->
   <lexeme><grapheme>wunway</grapheme><phoneme>ˈwənˌweɪ</phoneme></lexeme> <!-- oneway -->
@@ -33986,7 +33986,7 @@
   <lexeme><grapheme>yuwling</grapheme><phoneme>ˈjaʊlɪŋ</phoneme></lexeme> <!-- yowling -->
   <lexeme><grapheme>yuwls</grapheme><phoneme>jaʊlz</phoneme></lexeme> <!-- yowls -->
   <lexeme><grapheme>yuwlz</grapheme><phoneme>jaʊlz</phoneme></lexeme> <!-- yowls -->
-  <lexeme><grapheme>zagd</grapheme><phoneme>ˈzæɡd</phoneme></lexeme> <!-- zagged -->
+  <lexeme><grapheme>zagd</grapheme><phoneme>zæɡd</phoneme></lexeme> <!-- zagged -->
   <lexeme><grapheme>zagz</grapheme><phoneme>zæɡz</phoneme></lexeme> <!-- zags -->
   <lexeme><grapheme>zapd</grapheme><phoneme>zæpt</phoneme></lexeme> <!-- zapped -->
   <lexeme><grapheme>zapz</grapheme><phoneme>zæps</phoneme></lexeme> <!-- zaps -->
@@ -34006,8 +34006,8 @@
   <lexeme><grapheme>zeroez</grapheme><phoneme>ˈzɪroʊz</phoneme></lexeme> <!-- zeroes -->
   <lexeme><grapheme>zeroz</grapheme><phoneme>ˈzɪroʊz</phoneme></lexeme> <!-- zeros -->
   <lexeme><grapheme>zestz</grapheme><phoneme>zɛsts</phoneme></lexeme> <!-- zests -->
-  <lexeme><grapheme>zigd</grapheme><phoneme>ˈzɪɡd</phoneme></lexeme> <!-- zigged -->
-  <lexeme><grapheme>zigz</grapheme><phoneme>ˈzɪɡz</phoneme></lexeme> <!-- zigs -->
+  <lexeme><grapheme>zigd</grapheme><phoneme>zɪɡd</phoneme></lexeme> <!-- zigged -->
+  <lexeme><grapheme>zigz</grapheme><phoneme>zɪɡz</phoneme></lexeme> <!-- zigs -->
   <lexeme><grapheme>zigzagd</grapheme><phoneme>ˈzɪɡˌzæɡd</phoneme></lexeme> <!-- zigzagged -->
   <lexeme><grapheme>zigzagz</grapheme><phoneme>ˈzɪɡˌzæɡz</phoneme></lexeme> <!-- zigzags -->
   <lexeme><grapheme>zilqh</grapheme><phoneme>zɪltʃ</phoneme></lexeme> <!-- zilch -->
