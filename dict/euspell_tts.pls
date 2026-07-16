@@ -17298,36 +17298,36 @@
   <lexeme><grapheme>mootins</grapheme><phoneme>ˈmutɑnz</phoneme></lexeme> <!-- moutons -->
   <lexeme><grapheme>mooton</grapheme><phoneme>ˈmutɑn</phoneme></lexeme> <!-- mouton -->
   <lexeme><grapheme>mootz</grapheme><phoneme>ˈmuːts</phoneme></lexeme> <!-- moots -->
-  <lexeme><grapheme>moov</grapheme><phoneme>ˈmuw</phoneme></lexeme> <!-- move -->
-  <lexeme><grapheme>moovabilities</grapheme><phoneme>ˌmuwəˈbɪlɪtiz</phoneme></lexeme> <!-- movabilities -->
-  <lexeme><grapheme>moovability</grapheme><phoneme>ˌmuwəˈbɪlɪti</phoneme></lexeme> <!-- movability -->
-  <lexeme><grapheme>moovable</grapheme><phoneme>ˈmuwəbəl</phoneme></lexeme> <!-- movable -->
-  <lexeme><grapheme>moovableness</grapheme><phoneme>ˈmuwəbəlnəs</phoneme></lexeme> <!-- movableness -->
-  <lexeme><grapheme>moovables</grapheme><phoneme>ˈmuwəbəlz</phoneme></lexeme> <!-- movables -->
-  <lexeme><grapheme>moovably</grapheme><phoneme>ˈmuwəbli</phoneme></lexeme> <!-- movably -->
-  <lexeme><grapheme>moovd</grapheme><phoneme>ˈmuwd</phoneme></lexeme> <!-- moved -->
-  <lexeme><grapheme>moover</grapheme><phoneme>ˈmuwər</phoneme></lexeme> <!-- mover -->
-  <lexeme><grapheme>moovers</grapheme><phoneme>ˈmuwərz</phoneme></lexeme> <!-- movers -->
-  <lexeme><grapheme>moovie</grapheme><phoneme>ˈmuwi</phoneme></lexeme> <!-- movie -->
-  <lexeme><grapheme>mooviedom</grapheme><phoneme>ˈmuwɪdəm</phoneme></lexeme> <!-- moviedom -->
-  <lexeme><grapheme>mooviegoer</grapheme><phoneme>ˈmuwiˌɡoʊər</phoneme></lexeme> <!-- moviegoer -->
-  <lexeme><grapheme>mooviegoers</grapheme><phoneme>ˈmuwiˌɡoʊərz</phoneme></lexeme> <!-- moviegoers -->
-  <lexeme><grapheme>mooviegoing</grapheme><phoneme>ˈmuwiˌɡoʊɪŋ</phoneme></lexeme> <!-- moviegoing -->
-  <lexeme><grapheme>mooviegoings</grapheme><phoneme>ˈmuwiˌɡoʊɪŋz</phoneme></lexeme> <!-- moviegoings -->
-  <lexeme><grapheme>mooviemaker</grapheme><phoneme>ˈmuwiˌmeɪkər</phoneme></lexeme> <!-- moviemaker -->
-  <lexeme><grapheme>mooviemakers</grapheme><phoneme>ˈmuwiˌmeɪkərz</phoneme></lexeme> <!-- moviemakers -->
-  <lexeme><grapheme>mooviemaking</grapheme><phoneme>ˈmuwiˌmeɪkɪŋ</phoneme></lexeme> <!-- moviemaking -->
-  <lexeme><grapheme>mooviemakings</grapheme><phoneme>ˈmuwiˌmeɪkɪŋz</phoneme></lexeme> <!-- moviemakings -->
-  <lexeme><grapheme>moovies</grapheme><phoneme>ˈmuwiz</phoneme></lexeme> <!-- movies -->
-  <lexeme><grapheme>mooving</grapheme><phoneme>ˈmuwɪŋ</phoneme></lexeme> <!-- moving -->
-  <lexeme><grapheme>moovingly</grapheme><phoneme>ˈmuwɪŋli</phoneme></lexeme> <!-- movingly -->
-  <lexeme><grapheme>moovless</grapheme><phoneme>ˈmuwləs</phoneme></lexeme> <!-- moveless -->
-  <lexeme><grapheme>moovlessly</grapheme><phoneme>ˈmuwləsli</phoneme></lexeme> <!-- movelessly -->
-  <lexeme><grapheme>moovlessness</grapheme><phoneme>ˈmuwləsnəs</phoneme></lexeme> <!-- movelessness -->
-  <lexeme><grapheme>moovment</grapheme><phoneme>ˈmuwmənt</phoneme></lexeme> <!-- movement -->
-  <lexeme><grapheme>moovments</grapheme><phoneme>ˈmuwmənts</phoneme></lexeme> <!-- movements -->
-  <lexeme><grapheme>moovs</grapheme><phoneme>ˈmuwz</phoneme></lexeme> <!-- moves -->
-  <lexeme><grapheme>moovz</grapheme><phoneme>ˈmuwz</phoneme></lexeme> <!-- moves -->
+  <lexeme><grapheme>moov</grapheme><phoneme>ˈmuv</phoneme></lexeme> <!-- move -->
+  <lexeme><grapheme>moovabilities</grapheme><phoneme>ˌmuvəˈbɪlɪtiz</phoneme></lexeme> <!-- movabilities -->
+  <lexeme><grapheme>moovability</grapheme><phoneme>ˌmuvəˈbɪlɪti</phoneme></lexeme> <!-- movability -->
+  <lexeme><grapheme>moovable</grapheme><phoneme>ˈmuvəbəl</phoneme></lexeme> <!-- movable -->
+  <lexeme><grapheme>moovableness</grapheme><phoneme>ˈmuvəbəlnəs</phoneme></lexeme> <!-- movableness -->
+  <lexeme><grapheme>moovables</grapheme><phoneme>ˈmuvəbəlz</phoneme></lexeme> <!-- movables -->
+  <lexeme><grapheme>moovably</grapheme><phoneme>ˈmuvəbli</phoneme></lexeme> <!-- movably -->
+  <lexeme><grapheme>moovd</grapheme><phoneme>ˈmuvd</phoneme></lexeme> <!-- moved -->
+  <lexeme><grapheme>moover</grapheme><phoneme>ˈmuvər</phoneme></lexeme> <!-- mover -->
+  <lexeme><grapheme>moovers</grapheme><phoneme>ˈmuvərz</phoneme></lexeme> <!-- movers -->
+  <lexeme><grapheme>moovie</grapheme><phoneme>ˈmuvi</phoneme></lexeme> <!-- movie -->
+  <lexeme><grapheme>mooviedom</grapheme><phoneme>ˈmuvɪdəm</phoneme></lexeme> <!-- moviedom -->
+  <lexeme><grapheme>mooviegoer</grapheme><phoneme>ˈmuviˌɡoʊər</phoneme></lexeme> <!-- moviegoer -->
+  <lexeme><grapheme>mooviegoers</grapheme><phoneme>ˈmuviˌɡoʊərz</phoneme></lexeme> <!-- moviegoers -->
+  <lexeme><grapheme>mooviegoing</grapheme><phoneme>ˈmuviˌɡoʊɪŋ</phoneme></lexeme> <!-- moviegoing -->
+  <lexeme><grapheme>mooviegoings</grapheme><phoneme>ˈmuviˌɡoʊɪŋz</phoneme></lexeme> <!-- moviegoings -->
+  <lexeme><grapheme>mooviemaker</grapheme><phoneme>ˈmuviˌmeɪkər</phoneme></lexeme> <!-- moviemaker -->
+  <lexeme><grapheme>mooviemakers</grapheme><phoneme>ˈmuviˌmeɪkərz</phoneme></lexeme> <!-- moviemakers -->
+  <lexeme><grapheme>mooviemaking</grapheme><phoneme>ˈmuviˌmeɪkɪŋ</phoneme></lexeme> <!-- moviemaking -->
+  <lexeme><grapheme>mooviemakings</grapheme><phoneme>ˈmuviˌmeɪkɪŋz</phoneme></lexeme> <!-- moviemakings -->
+  <lexeme><grapheme>moovies</grapheme><phoneme>ˈmuviz</phoneme></lexeme> <!-- movies -->
+  <lexeme><grapheme>mooving</grapheme><phoneme>ˈmuvɪŋ</phoneme></lexeme> <!-- moving -->
+  <lexeme><grapheme>moovingly</grapheme><phoneme>ˈmuvɪŋli</phoneme></lexeme> <!-- movingly -->
+  <lexeme><grapheme>moovless</grapheme><phoneme>ˈmuvləs</phoneme></lexeme> <!-- moveless -->
+  <lexeme><grapheme>moovlessly</grapheme><phoneme>ˈmuvləsli</phoneme></lexeme> <!-- movelessly -->
+  <lexeme><grapheme>moovlessness</grapheme><phoneme>ˈmuvləsnəs</phoneme></lexeme> <!-- movelessness -->
+  <lexeme><grapheme>moovment</grapheme><phoneme>ˈmuvmənt</phoneme></lexeme> <!-- movement -->
+  <lexeme><grapheme>moovments</grapheme><phoneme>ˈmuvmənts</phoneme></lexeme> <!-- movements -->
+  <lexeme><grapheme>moovs</grapheme><phoneme>ˈmuvz</phoneme></lexeme> <!-- moves -->
+  <lexeme><grapheme>moovz</grapheme><phoneme>ˈmuvz</phoneme></lexeme> <!-- moves -->
   <lexeme><grapheme>mooz</grapheme><phoneme>ˈmuːz</phoneme></lexeme> <!-- moos -->
   <lexeme><grapheme>mopd</grapheme><phoneme>ˈmɑːpt</phoneme></lexeme> <!-- mopped -->
   <lexeme><grapheme>mopez</grapheme><phoneme>ˈmoʊps</phoneme></lexeme> <!-- mopes -->
@@ -17491,14 +17491,14 @@
   <lexeme><grapheme>multihandicapd</grapheme><phoneme>ˌmʌltiˈhændikæpt</phoneme></lexeme> <!-- multihandicapped -->
   <lexeme><grapheme>multihedded</grapheme><phoneme>ˌmʌltiˈhɛdəd</phoneme></lexeme> <!-- multiheaded -->
   <lexeme><grapheme>multilayerd</grapheme><phoneme>ˌmʌltiˈleɪərd</phoneme></lexeme> <!-- multilayered -->
-  <lexeme><grapheme>multileveld</grapheme><phoneme>ˌmʌltiˈlɛwəld</phoneme></lexeme> <!-- multileveled -->
+  <lexeme><grapheme>multileveld</grapheme><phoneme>ˌmʌltiˈlɛvəld</phoneme></lexeme> <!-- multileveled -->
   <lexeme><grapheme>multimannd</grapheme><phoneme>ˌmʌltiˈmænd</phoneme></lexeme> <!-- multimanned -->
   <lexeme><grapheme>multiplexd</grapheme><phoneme>ˈmʌltiˌplɛkst</phoneme></lexeme> <!-- multiplexed -->
   <lexeme><grapheme>multiplexez</grapheme><phoneme>ˈmʌltiˌplɛksɪz</phoneme></lexeme> <!-- multiplexes -->
   <lexeme><grapheme>multiplicat</grapheme><phoneme>ˈmʌltəpləkɪt</phoneme></lexeme> <!-- multiplicate -->
   <lexeme><grapheme>multiplicatez</grapheme><phoneme>ˈmʌltəpləkɪts</phoneme></lexeme> <!-- multiplicates -->
-  <lexeme><grapheme>multiplicativ</grapheme><phoneme>ˌmʌltəˈplɪkətɪw</phoneme></lexeme> <!-- multiplicative -->
-  <lexeme><grapheme>multiplicativly</grapheme><phoneme>ˌmʌltəˈplɪkətɪwli</phoneme></lexeme> <!-- multiplicatively -->
+  <lexeme><grapheme>multiplicativ</grapheme><phoneme>ˌmʌltəˈplɪkətɪv</phoneme></lexeme> <!-- multiplicative -->
+  <lexeme><grapheme>multiplicativly</grapheme><phoneme>ˌmʌltəˈplɪkətɪvli</phoneme></lexeme> <!-- multiplicatively -->
   <lexeme><grapheme>multipliez</grapheme><phoneme>ˈmʌltəplaɪz</phoneme></lexeme> <!-- multiplies -->
   <lexeme><grapheme>multiprongd</grapheme><phoneme>ˌmʌltiˈprɔŋd</phoneme></lexeme> <!-- multipronged -->
   <lexeme><grapheme>multipurpos</grapheme><phoneme>ˌmʌltiˈpɜrpəs</phoneme></lexeme> <!-- multipurpose -->
@@ -17517,7 +17517,7 @@
   <lexeme><grapheme>multitrackd</grapheme><phoneme>ˌmʌltiˈtrækt</phoneme></lexeme> <!-- multitracked -->
   <lexeme><grapheme>multitrackz</grapheme><phoneme>ˌmʌltiˈtræks</phoneme></lexeme> <!-- multitracks -->
   <lexeme><grapheme>multituwerd</grapheme><phoneme>ˌmʌltiˈtaʊərd</phoneme></lexeme> <!-- multitowered -->
-  <lexeme><grapheme>multivariat</grapheme><phoneme>ˌmʌltiˈbæriət</phoneme></lexeme> <!-- multivariate -->
+  <lexeme><grapheme>multivariat</grapheme><phoneme>ˌmʌltiˈvɛriɪt</phoneme></lexeme> <!-- multivariate -->
   <lexeme><grapheme>multiwarhedd</grapheme><phoneme>ˌmʌltiˈwɔrhɛd</phoneme></lexeme> <!-- multiwarhead -->
   <lexeme><grapheme>mumblez</grapheme><phoneme>ˈmʌbəlz</phoneme></lexeme> <!-- mumbles -->
   <lexeme><grapheme>mummd</grapheme><phoneme>ˈmʌmd</phoneme></lexeme> <!-- mummed -->
@@ -17577,7 +17577,7 @@
   <lexeme><grapheme>musterd</grapheme><phoneme>ˈmʌstərd</phoneme></lexeme> <!-- mustered -->
   <lexeme><grapheme>musterz</grapheme><phoneme>ˈmʌstərz</phoneme></lexeme> <!-- musters -->
   <lexeme><grapheme>mutatez</grapheme><phoneme>ˈmjuˌteɪts</phoneme></lexeme> <!-- mutates -->
-  <lexeme><grapheme>mutativ</grapheme><phoneme>ˈmjutətɪw</phoneme></lexeme> <!-- mutative -->
+  <lexeme><grapheme>mutativ</grapheme><phoneme>ˈmjutətɪv</phoneme></lexeme> <!-- mutative -->
   <lexeme><grapheme>mutez</grapheme><phoneme>ˈmjuts</phoneme></lexeme> <!-- mutes -->
   <lexeme><grapheme>mutilat</grapheme><phoneme>ˈmjutəlˌeɪt</phoneme></lexeme> <!-- mutilate -->
   <lexeme><grapheme>mutilatez</grapheme><phoneme>ˈmjutəlˌeɪts</phoneme></lexeme> <!-- mutilates -->
@@ -17595,7 +17595,7 @@
   <lexeme><grapheme>muw</grapheme><phoneme>ˈmoʊ</phoneme></lexeme> <!-- mow -->
   <lexeme><grapheme>muws</grapheme><phoneme>ˈmoʊz</phoneme></lexeme> <!-- mows -->
   <lexeme><grapheme>muzzlez</grapheme><phoneme>ˈmʌzəlz</phoneme></lexeme> <!-- muzzles -->
-  <lexeme><grapheme>myeloproliferativ</grapheme><phoneme>ˌmaɪəloʊproʊˈlɪfərətɪw</phoneme></lexeme> <!-- myeloproliferative -->
+  <lexeme><grapheme>myeloproliferativ</grapheme><phoneme>ˌmaɪəloʊproʊˈlɪfərətɪv</phoneme></lexeme> <!-- myeloproliferative -->
   <lexeme><grapheme>myld</grapheme><phoneme>ˈmaɪld</phoneme></lexeme> <!-- mild -->
   <lexeme><grapheme>mylden</grapheme><phoneme>ˈmaɪldən</phoneme></lexeme> <!-- milden -->
   <lexeme><grapheme>myldend</grapheme><phoneme>ˈmaɪldənd</phoneme></lexeme> <!-- mildened -->
@@ -17634,16 +17634,16 @@
   <lexeme><grapheme>nabz</grapheme><phoneme>ˈnæbz</phoneme></lexeme> <!-- nabs -->
   <lexeme><grapheme>nagd</grapheme><phoneme>ˈnæɡd</phoneme></lexeme> <!-- nagged -->
   <lexeme><grapheme>nagz</grapheme><phoneme>ˈnæɡz</phoneme></lexeme> <!-- nags -->
-  <lexeme><grapheme>naiiv</grapheme><phoneme>nɑˈiw</phoneme></lexeme> <!-- naive -->
-  <lexeme><grapheme>naiiver</grapheme><phoneme>nɑˈiwər</phoneme></lexeme> <!-- naiver -->
-  <lexeme><grapheme>naiivest</grapheme><phoneme>nɑˈiwəst</phoneme></lexeme> <!-- naivest -->
-  <lexeme><grapheme>naiiveteh</grapheme><phoneme>nɑˌiwəˈteɪ</phoneme></lexeme> <!-- naivete -->
-  <lexeme><grapheme>naiivetehs</grapheme><phoneme>nɑˌiwəˈteɪz</phoneme></lexeme> <!-- naivetes -->
-  <lexeme><grapheme>naiiveties</grapheme><phoneme>nɑˈiwətiz</phoneme></lexeme> <!-- naiveties -->
-  <lexeme><grapheme>naiivety</grapheme><phoneme>nɑˈiwəti</phoneme></lexeme> <!-- naivety -->
-  <lexeme><grapheme>naiivly</grapheme><phoneme>nɑˈiwli</phoneme></lexeme> <!-- naively -->
-  <lexeme><grapheme>naiivness</grapheme><phoneme>nɑˈiwnəs</phoneme></lexeme> <!-- naiveness -->
-  <lexeme><grapheme>naiivs</grapheme><phoneme>nɑˈiwz</phoneme></lexeme> <!-- naives -->
+  <lexeme><grapheme>naiiv</grapheme><phoneme>nɑˈiv</phoneme></lexeme> <!-- naive -->
+  <lexeme><grapheme>naiiver</grapheme><phoneme>nɑˈivər</phoneme></lexeme> <!-- naiver -->
+  <lexeme><grapheme>naiivest</grapheme><phoneme>nɑˈivəst</phoneme></lexeme> <!-- naivest -->
+  <lexeme><grapheme>naiiveteh</grapheme><phoneme>nɑˌivəˈteɪ</phoneme></lexeme> <!-- naivete -->
+  <lexeme><grapheme>naiivetehs</grapheme><phoneme>nɑˌivəˈteɪz</phoneme></lexeme> <!-- naivetes -->
+  <lexeme><grapheme>naiiveties</grapheme><phoneme>nɑˈivətiz</phoneme></lexeme> <!-- naiveties -->
+  <lexeme><grapheme>naiivety</grapheme><phoneme>nɑˈivəti</phoneme></lexeme> <!-- naivety -->
+  <lexeme><grapheme>naiivly</grapheme><phoneme>nɑˈivli</phoneme></lexeme> <!-- naively -->
+  <lexeme><grapheme>naiivness</grapheme><phoneme>nɑˈivnəs</phoneme></lexeme> <!-- naiveness -->
+  <lexeme><grapheme>naiivs</grapheme><phoneme>nɑˈivz</phoneme></lexeme> <!-- naives -->
   <lexeme><grapheme>naild</grapheme><phoneme>ˈneɪld</phoneme></lexeme> <!-- nailed -->
   <lexeme><grapheme>nailhedd</grapheme><phoneme>ˈneɪlhɛd</phoneme></lexeme> <!-- nailhead -->
   <lexeme><grapheme>nailhedds</grapheme><phoneme>ˈneɪlhɛdz</phoneme></lexeme> <!-- nailheads -->
@@ -17664,9 +17664,9 @@
   <lexeme><grapheme>narkd</grapheme><phoneme>ˈnɑrkt</phoneme></lexeme> <!-- narked -->
   <lexeme><grapheme>narkz</grapheme><phoneme>ˈnɑrks</phoneme></lexeme> <!-- narks -->
   <lexeme><grapheme>narratez</grapheme><phoneme>ˈnæreɪts</phoneme></lexeme> <!-- narrates -->
-  <lexeme><grapheme>narrativ</grapheme><phoneme>ˈnærətɪw</phoneme></lexeme> <!-- narrative -->
-  <lexeme><grapheme>narrativly</grapheme><phoneme>ˈnærətɪwli</phoneme></lexeme> <!-- narratively -->
-  <lexeme><grapheme>narrativs</grapheme><phoneme>ˈnærətɪwz</phoneme></lexeme> <!-- narratives -->
+  <lexeme><grapheme>narrativ</grapheme><phoneme>ˈnærətɪv</phoneme></lexeme> <!-- narrative -->
+  <lexeme><grapheme>narrativly</grapheme><phoneme>ˈnærətɪvli</phoneme></lexeme> <!-- narratively -->
+  <lexeme><grapheme>narrativs</grapheme><phoneme>ˈnærətɪvz</phoneme></lexeme> <!-- narratives -->
   <lexeme><grapheme>narrowd</grapheme><phoneme>ˈnæroʊd</phoneme></lexeme> <!-- narrowed -->
   <lexeme><grapheme>narrowmynded</grapheme><phoneme>ˌnæroʊˈmaɪndəd</phoneme></lexeme> <!-- narrowminded -->
   <lexeme><grapheme>narrowmyndedly</grapheme><phoneme>ˌnæroʊˈmaɪndədli</phoneme></lexeme> <!-- narrowmindedly -->
@@ -17674,10 +17674,10 @@
   <lexeme><grapheme>narrowz</grapheme><phoneme>ˈnæroʊz</phoneme></lexeme> <!-- narrows -->
   <lexeme><grapheme>nasalizez</grapheme><phoneme>ˈneɪzəˌlaɪzɪz</phoneme></lexeme> <!-- nasalises -->
   <lexeme><grapheme>nationalizez</grapheme><phoneme>ˈnæʃənəˌlaɪzɪz</phoneme></lexeme> <!-- nationalises -->
-  <lexeme><grapheme>nativ</grapheme><phoneme>ˈneɪtɪw</phoneme></lexeme> <!-- native -->
-  <lexeme><grapheme>nativly</grapheme><phoneme>ˈneɪtɪwli</phoneme></lexeme> <!-- natively -->
-  <lexeme><grapheme>nativness</grapheme><phoneme>ˈneɪtɪwnəs</phoneme></lexeme> <!-- nativeness -->
-  <lexeme><grapheme>nativs</grapheme><phoneme>ˈneɪtɪwz</phoneme></lexeme> <!-- natives -->
+  <lexeme><grapheme>nativ</grapheme><phoneme>ˈneɪtɪv</phoneme></lexeme> <!-- native -->
+  <lexeme><grapheme>nativly</grapheme><phoneme>ˈneɪtɪvli</phoneme></lexeme> <!-- natively -->
+  <lexeme><grapheme>nativness</grapheme><phoneme>ˈneɪtɪvnəs</phoneme></lexeme> <!-- nativeness -->
+  <lexeme><grapheme>nativs</grapheme><phoneme>ˈneɪtɪvz</phoneme></lexeme> <!-- natives -->
   <lexeme><grapheme>natterd</grapheme><phoneme>ˈnætərd</phoneme></lexeme> <!-- nattered -->
   <lexeme><grapheme>natterz</grapheme><phoneme>ˈnætərz</phoneme></lexeme> <!-- natters -->
   <lexeme><grapheme>naturalizez</grapheme><phoneme>ˈnætʃərəˌlaɪzɪz</phoneme></lexeme> <!-- naturalises -->
@@ -17690,8 +17690,8 @@
   <lexeme><grapheme>nauhts</grapheme><phoneme>ˈnɔts</phoneme></lexeme> <!-- naughts -->
   <lexeme><grapheme>nauhty</grapheme><phoneme>ˈnɔti</phoneme></lexeme> <!-- naughty -->
   <lexeme><grapheme>nauseatez</grapheme><phoneme>ˈnɔziˌeɪts</phoneme></lexeme> <!-- nauseates -->
-  <lexeme><grapheme>nauseativ</grapheme><phoneme>ˈnɔziətɪw</phoneme></lexeme> <!-- nauseative -->
-  <lexeme><grapheme>navigatez</grapheme><phoneme>ˈnæwəˌɡeɪts</phoneme></lexeme> <!-- navigates -->
+  <lexeme><grapheme>nauseativ</grapheme><phoneme>ˈnɔziətɪv</phoneme></lexeme> <!-- nauseative -->
+  <lexeme><grapheme>navigatez</grapheme><phoneme>ˈnævəˌɡeɪts</phoneme></lexeme> <!-- navigates -->
   <lexeme><grapheme>nazifiez</grapheme><phoneme>ˈnɑtsɪfaɪz</phoneme></lexeme> <!-- nazifies -->
   <lexeme><grapheme>neald</grapheme><phoneme>ˈnild</phoneme></lexeme> <!-- nealed -->
   <lexeme><grapheme>nealz</grapheme><phoneme>ˈnilz</phoneme></lexeme> <!-- neals -->
@@ -17706,14 +17706,14 @@
   <lexeme><grapheme>neatend</grapheme><phoneme>ˈnitənd</phoneme></lexeme> <!-- neatened -->
   <lexeme><grapheme>neatenz</grapheme><phoneme>ˈnitənz</phoneme></lexeme> <!-- neatens -->
   <lexeme><grapheme>neatifiez</grapheme><phoneme>ˈnitɪfaɪz</phoneme></lexeme> <!-- neatifies -->
-  <lexeme><grapheme>neavs</grapheme><phoneme>ˈniwz</phoneme></lexeme> <!-- neaves -->
+  <lexeme><grapheme>neavs</grapheme><phoneme>ˈnivz</phoneme></lexeme> <!-- neaves -->
   <lexeme><grapheme>nebd</grapheme><phoneme>ˈnɛbd</phoneme></lexeme> <!-- nebbed -->
   <lexeme><grapheme>nebulizez</grapheme><phoneme>ˈnɛbjəˌlaɪzɪz</phoneme></lexeme> <!-- nebulises -->
   <lexeme><grapheme>necessitatez</grapheme><phoneme>nəˈsɛsəˌteɪts</phoneme></lexeme> <!-- necessitates -->
   <lexeme><grapheme>neckd</grapheme><phoneme>ˈnɛkt</phoneme></lexeme> <!-- necked -->
   <lexeme><grapheme>neckerqhif</grapheme><phoneme>ˈnɛkərtʃəf</phoneme></lexeme> <!-- neckerchief -->
   <lexeme><grapheme>neckerqhifs</grapheme><phoneme>ˈnɛkərtʃəfs</phoneme></lexeme> <!-- neckerchiefs -->
-  <lexeme><grapheme>neckerqhivs</grapheme><phoneme>ˈnɛkərtʃiwz</phoneme></lexeme> <!-- neckerchieves -->
+  <lexeme><grapheme>neckerqhivs</grapheme><phoneme>ˈnɛkərtʃivz</phoneme></lexeme> <!-- neckerchieves -->
   <lexeme><grapheme>neckwaer</grapheme><phoneme>ˈnɛkˌwɛr</phoneme></lexeme> <!-- neckwear -->
   <lexeme><grapheme>neckwaers</grapheme><phoneme>ˈnɛkˌwɛrz</phoneme></lexeme> <!-- neckwears -->
   <lexeme><grapheme>neckz</grapheme><phoneme>ˈnɛks</phoneme></lexeme> <!-- necks -->
@@ -17727,13 +17727,13 @@
   <lexeme><grapheme>needz</grapheme><phoneme>ˈnidz</phoneme></lexeme> <!-- needs -->
   <lexeme><grapheme>neesez</grapheme><phoneme>ˈnisɪz</phoneme></lexeme> <!-- neeses -->
   <lexeme><grapheme>negatez</grapheme><phoneme>nɪˈɡeɪts</phoneme></lexeme> <!-- negates -->
-  <lexeme><grapheme>negativ</grapheme><phoneme>ˈnɛɡətɪw</phoneme></lexeme> <!-- negative -->
-  <lexeme><grapheme>negativd</grapheme><phoneme>ˈnɛɡətɪwd</phoneme></lexeme> <!-- negatived -->
-  <lexeme><grapheme>negativly</grapheme><phoneme>ˈnɛɡətɪwli</phoneme></lexeme> <!-- negatively -->
-  <lexeme><grapheme>negativness</grapheme><phoneme>ˈnɛɡətɪwnəs</phoneme></lexeme> <!-- negativeness -->
-  <lexeme><grapheme>negativs</grapheme><phoneme>ˈnɛɡətɪwz</phoneme></lexeme> <!-- negatives -->
-  <lexeme><grapheme>negativz</grapheme><phoneme>ˈnɛɡətɪwz</phoneme></lexeme> <!-- negatives -->
-  <lexeme><grapheme>neglectiv</grapheme><phoneme>nɪˈɡlɛktɪw</phoneme></lexeme> <!-- neglective -->
+  <lexeme><grapheme>negativ</grapheme><phoneme>ˈnɛɡətɪv</phoneme></lexeme> <!-- negative -->
+  <lexeme><grapheme>negativd</grapheme><phoneme>ˈnɛɡətɪvd</phoneme></lexeme> <!-- negatived -->
+  <lexeme><grapheme>negativly</grapheme><phoneme>ˈnɛɡətɪvli</phoneme></lexeme> <!-- negatively -->
+  <lexeme><grapheme>negativness</grapheme><phoneme>ˈnɛɡətɪvnəs</phoneme></lexeme> <!-- negativeness -->
+  <lexeme><grapheme>negativs</grapheme><phoneme>ˈnɛɡətɪvz</phoneme></lexeme> <!-- negatives -->
+  <lexeme><grapheme>negativz</grapheme><phoneme>ˈnɛɡətɪvz</phoneme></lexeme> <!-- negatives -->
+  <lexeme><grapheme>neglectiv</grapheme><phoneme>nɪˈɡlɛktɪv</phoneme></lexeme> <!-- neglective -->
   <lexeme><grapheme>neglectz</grapheme><phoneme>nɪˈɡlɛkts</phoneme></lexeme> <!-- neglects -->
   <lexeme><grapheme>negotiatez</grapheme><phoneme>nɪˈɡoʊʃiˌeɪts</phoneme></lexeme> <!-- negotiates -->
   <lexeme><grapheme>neih</grapheme><phoneme>ˈneɪ</phoneme></lexeme> <!-- neigh -->
@@ -17752,19 +17752,19 @@
   <lexeme><grapheme>neihing</grapheme><phoneme>ˈneɪɪŋ</phoneme></lexeme> <!-- neighing -->
   <lexeme><grapheme>neihs</grapheme><phoneme>ˈneɪz</phoneme></lexeme> <!-- neighs -->
   <lexeme><grapheme>neihz</grapheme><phoneme>ˈneɪz</phoneme></lexeme> <!-- neighs -->
-  <lexeme><grapheme>neoconservativ</grapheme><phoneme>ˌnioʊkənˈsɜrwətɪw</phoneme></lexeme> <!-- neoconservative -->
-  <lexeme><grapheme>neoconservativs</grapheme><phoneme>ˌnioʊkənˈsɜrwətɪwz</phoneme></lexeme> <!-- neoconservatives -->
+  <lexeme><grapheme>neoconservativ</grapheme><phoneme>ˌnioʊkənˈsɜrvətɪv</phoneme></lexeme> <!-- neoconservative -->
+  <lexeme><grapheme>neoconservativs</grapheme><phoneme>ˌnioʊkənˈsɜrvətɪvz</phoneme></lexeme> <!-- neoconservatives -->
   <lexeme><grapheme>neologizez</grapheme><phoneme>niˈɑləˌdʒaɪzɪz</phoneme></lexeme> <!-- neologises -->
   <lexeme><grapheme>neond</grapheme><phoneme>ˈniˌɑnd</phoneme></lexeme> <!-- neoned -->
   <lexeme><grapheme>neoterizez</grapheme><phoneme>ˈniətəˌraɪzɪz</phoneme></lexeme> <!-- neoterises -->
   <lexeme><grapheme>nephrectomizez</grapheme><phoneme>nəˈfrɛktəˌmaɪzɪz</phoneme></lexeme> <!-- nephrectomises -->
-  <lexeme><grapheme>nerv</grapheme><phoneme>ˈnɜrw</phoneme></lexeme> <!-- nerve -->
-  <lexeme><grapheme>nervd</grapheme><phoneme>ˈnɜrwd</phoneme></lexeme> <!-- nerved -->
-  <lexeme><grapheme>nervless</grapheme><phoneme>ˈnɜrwləs</phoneme></lexeme> <!-- nerveless -->
-  <lexeme><grapheme>nervlessly</grapheme><phoneme>ˈnɜrwləsli</phoneme></lexeme> <!-- nervelessly -->
-  <lexeme><grapheme>nervlessness</grapheme><phoneme>ˈnɜrwləsnəs</phoneme></lexeme> <!-- nervelessness -->
-  <lexeme><grapheme>nervs</grapheme><phoneme>ˈnɜrwz</phoneme></lexeme> <!-- nerves -->
-  <lexeme><grapheme>nervz</grapheme><phoneme>ˈnɜrwz</phoneme></lexeme> <!-- nerves -->
+  <lexeme><grapheme>nerv</grapheme><phoneme>ˈnɜrv</phoneme></lexeme> <!-- nerve -->
+  <lexeme><grapheme>nervd</grapheme><phoneme>ˈnɜrvd</phoneme></lexeme> <!-- nerved -->
+  <lexeme><grapheme>nervless</grapheme><phoneme>ˈnɜrvləs</phoneme></lexeme> <!-- nerveless -->
+  <lexeme><grapheme>nervlessly</grapheme><phoneme>ˈnɜrvləsli</phoneme></lexeme> <!-- nervelessly -->
+  <lexeme><grapheme>nervlessness</grapheme><phoneme>ˈnɜrvləsnəs</phoneme></lexeme> <!-- nervelessness -->
+  <lexeme><grapheme>nervs</grapheme><phoneme>ˈnɜrvz</phoneme></lexeme> <!-- nerves -->
+  <lexeme><grapheme>nervz</grapheme><phoneme>ˈnɜrvz</phoneme></lexeme> <!-- nerves -->
   <lexeme><grapheme>nesslerizez</grapheme><phoneme>ˈnɛsləˌraɪzɪz</phoneme></lexeme> <!-- nesslerises -->
   <lexeme><grapheme>nestlez</grapheme><phoneme>ˈnɛsəlz</phoneme></lexeme> <!-- nestles -->
   <lexeme><grapheme>nestz</grapheme><phoneme>ˈnɛsts</phoneme></lexeme> <!-- nests -->
@@ -17778,8 +17778,8 @@
   <lexeme><grapheme>networkd</grapheme><phoneme>ˈnɛtˌwɜrkt</phoneme></lexeme> <!-- networked -->
   <lexeme><grapheme>networkz</grapheme><phoneme>ˈnɛtˌwɜrks</phoneme></lexeme> <!-- networks -->
   <lexeme><grapheme>netz</grapheme><phoneme>ˈnɛts</phoneme></lexeme> <!-- nets -->
-  <lexeme><grapheme>neuroactiv</grapheme><phoneme>ˌnʊroʊˈæktɪw</phoneme></lexeme> <!-- neuroactive -->
-  <lexeme><grapheme>neurodegenerativ</grapheme><phoneme>ˌnʊroʊdɪˈdʒɛnərətɪw</phoneme></lexeme> <!-- neurodegenerative -->
+  <lexeme><grapheme>neuroactiv</grapheme><phoneme>ˌnʊroʊˈæktɪv</phoneme></lexeme> <!-- neuroactive -->
+  <lexeme><grapheme>neurodegenerativ</grapheme><phoneme>ˌnʊroʊdɪˈdʒɛnərətɪv</phoneme></lexeme> <!-- neurodegenerative -->
   <lexeme><grapheme>neuroendocrin</grapheme><phoneme>ˌnʊroʊˈɛndəkrɪn</phoneme></lexeme> <!-- neuroendocrine -->
   <lexeme><grapheme>neurosurjen</grapheme><phoneme>ˈnʊroʊˌsɜrdʒən</phoneme></lexeme> <!-- neurosurgeon -->
   <lexeme><grapheme>neurosurjens</grapheme><phoneme>ˈnʊroʊˌsɜrdʒənz</phoneme></lexeme> <!-- neurosurgeons -->
@@ -17864,7 +17864,7 @@
   <lexeme><grapheme>nihtless</grapheme><phoneme>ˈnaɪtləs</phoneme></lexeme> <!-- nightless -->
   <lexeme><grapheme>nihtlife</grapheme><phoneme>ˈnaɪtˌlaɪf</phoneme></lexeme> <!-- nightlife -->
   <lexeme><grapheme>nihtlifes</grapheme><phoneme>ˈnaɪtˌlaɪfs</phoneme></lexeme> <!-- nightlifes -->
-  <lexeme><grapheme>nihtlives</grapheme><phoneme>ˈnaɪtˌlaɪwz</phoneme></lexeme> <!-- nightlives -->
+  <lexeme><grapheme>nihtlives</grapheme><phoneme>ˈnaɪtˌlaɪvz</phoneme></lexeme> <!-- nightlives -->
   <lexeme><grapheme>nihtlong</grapheme><phoneme>ˈnaɪtˌlɔŋ</phoneme></lexeme> <!-- nightlong -->
   <lexeme><grapheme>nihtly</grapheme><phoneme>ˈnaɪtli</phoneme></lexeme> <!-- nightly -->
   <lexeme><grapheme>nihtman</grapheme><phoneme>ˈnaɪtˌmæn</phoneme></lexeme> <!-- nightman -->
@@ -17925,8 +17925,8 @@
   <lexeme><grapheme>nobilifiez</grapheme><phoneme>noʊˈbɪləfaɪz</phoneme></lexeme> <!-- nobilifies -->
   <lexeme><grapheme>nobilitatez</grapheme><phoneme>noʊˈbɪləˌteɪts</phoneme></lexeme> <!-- nobilitates -->
   <lexeme><grapheme>noblewimen</grapheme><phoneme>ˈnoʊbəlˌwɪmən</phoneme></lexeme> <!-- noblewomen -->
-  <lexeme><grapheme>nociceptiv</grapheme><phoneme>ˌnoʊsɪˈsɛptɪw</phoneme></lexeme> <!-- nociceptive -->
-  <lexeme><grapheme>nociv</grapheme><phoneme>ˈnoʊsɪw</phoneme></lexeme> <!-- nocive -->
+  <lexeme><grapheme>nociceptiv</grapheme><phoneme>ˌnoʊsɪˈsɛptɪv</phoneme></lexeme> <!-- nociceptive -->
+  <lexeme><grapheme>nociv</grapheme><phoneme>ˈnoʊsɪv</phoneme></lexeme> <!-- nocive -->
   <lexeme><grapheme>nockd</grapheme><phoneme>ˈnɑkt</phoneme></lexeme> <!-- nocked -->
   <lexeme><grapheme>nockz</grapheme><phoneme>ˈnɑkts</phoneme></lexeme> <!-- nocks -->
   <lexeme><grapheme>noddlez</grapheme><phoneme>ˈnɑdəlz</phoneme></lexeme> <!-- noddles -->
@@ -17944,28 +17944,28 @@
   <lexeme><grapheme>nominalizez</grapheme><phoneme>ˈnɑmənəˌlaɪzɪz</phoneme></lexeme> <!-- nominalises -->
   <lexeme><grapheme>nominat</grapheme><phoneme>ˈnɑməˌneɪt</phoneme></lexeme> <!-- nominate -->
   <lexeme><grapheme>nominatez</grapheme><phoneme>ˈnɑməˌneɪts</phoneme></lexeme> <!-- nominates -->
-  <lexeme><grapheme>nominativ</grapheme><phoneme>ˈnɑmənətɪw</phoneme></lexeme> <!-- nominative -->
-  <lexeme><grapheme>nominativly</grapheme><phoneme>ˈnɑmənətɪwli</phoneme></lexeme> <!-- nominatively -->
-  <lexeme><grapheme>nominativs</grapheme><phoneme>ˈnɑmənətɪwz</phoneme></lexeme> <!-- nominatives -->
+  <lexeme><grapheme>nominativ</grapheme><phoneme>ˈnɑmənətɪv</phoneme></lexeme> <!-- nominative -->
+  <lexeme><grapheme>nominativly</grapheme><phoneme>ˈnɑmənətɪvli</phoneme></lexeme> <!-- nominatively -->
+  <lexeme><grapheme>nominativs</grapheme><phoneme>ˈnɑmənətɪvz</phoneme></lexeme> <!-- nominatives -->
   <lexeme><grapheme>nominatly</grapheme><phoneme>ˈnɑmənətli</phoneme></lexeme> <!-- nominately -->
-  <lexeme><grapheme>nonabrasiv</grapheme><phoneme>ˌnɑnəˈbreɪsɪw</phoneme></lexeme> <!-- nonabrasive -->
-  <lexeme><grapheme>nonabsorptiv</grapheme><phoneme>ˌnɑnəbˈsɔrptɪw</phoneme></lexeme> <!-- nonabsorptive -->
-  <lexeme><grapheme>nonacquisitiv</grapheme><phoneme>ˌnɑnəˈkwɪzətɪw</phoneme></lexeme> <!-- nonacquisitive -->
-  <lexeme><grapheme>nonadaptiv</grapheme><phoneme>ˌnɑnəˈdæptɪw</phoneme></lexeme> <!-- nonadaptive -->
-  <lexeme><grapheme>nonaddictiv</grapheme><phoneme>ˌnɑnəˈdɪktɪw</phoneme></lexeme> <!-- nonaddictive -->
-  <lexeme><grapheme>nonadditiv</grapheme><phoneme>ˌnɑnˈædətɪw</phoneme></lexeme> <!-- nonadditive -->
-  <lexeme><grapheme>nonadhesiv</grapheme><phoneme>ˌnɑnədˈhisɪw</phoneme></lexeme> <!-- nonadhesive -->
-  <lexeme><grapheme>nonaggressiv</grapheme><phoneme>ˌnɑnəˈɡrɛsɪw</phoneme></lexeme> <!-- nonaggressive -->
+  <lexeme><grapheme>nonabrasiv</grapheme><phoneme>ˌnɑnəˈbreɪsɪv</phoneme></lexeme> <!-- nonabrasive -->
+  <lexeme><grapheme>nonabsorptiv</grapheme><phoneme>ˌnɑnəbˈsɔrptɪv</phoneme></lexeme> <!-- nonabsorptive -->
+  <lexeme><grapheme>nonacquisitiv</grapheme><phoneme>ˌnɑnəˈkwɪzətɪv</phoneme></lexeme> <!-- nonacquisitive -->
+  <lexeme><grapheme>nonadaptiv</grapheme><phoneme>ˌnɑnəˈdæptɪv</phoneme></lexeme> <!-- nonadaptive -->
+  <lexeme><grapheme>nonaddictiv</grapheme><phoneme>ˌnɑnəˈdɪktɪv</phoneme></lexeme> <!-- nonaddictive -->
+  <lexeme><grapheme>nonadditiv</grapheme><phoneme>ˌnɑnˈædətɪv</phoneme></lexeme> <!-- nonadditive -->
+  <lexeme><grapheme>nonadhesiv</grapheme><phoneme>ˌnɑnədˈhisɪv</phoneme></lexeme> <!-- nonadhesive -->
+  <lexeme><grapheme>nonaggressiv</grapheme><phoneme>ˌnɑnəˈɡrɛsɪv</phoneme></lexeme> <!-- nonaggressive -->
   <lexeme><grapheme>nonalignd</grapheme><phoneme>ˌnɑnəˈlaɪnd</phoneme></lexeme> <!-- nonaligned -->
   <lexeme><grapheme>nonanser</grapheme><phoneme>ˌnɑnˈænsər</phoneme></lexeme> <!-- nonanswer -->
   <lexeme><grapheme>nonansers</grapheme><phoneme>ˌnɑnˈænsərz</phoneme></lexeme> <!-- nonanswers -->
-  <lexeme><grapheme>nonaqhievment</grapheme><phoneme>ˌnɑnəˈtʃiwmənt</phoneme></lexeme> <!-- nonachievement -->
-  <lexeme><grapheme>nonaqhievments</grapheme><phoneme>ˌnɑnəˈtʃiwmǝnts</phoneme></lexeme> <!-- nonachievements -->
-  <lexeme><grapheme>nonassertiv</grapheme><phoneme>ˌnɑnəˈsɜrtɪw</phoneme></lexeme> <!-- nonassertive -->
+  <lexeme><grapheme>nonaqhievment</grapheme><phoneme>ˌnɑnəˈtʃivmənt</phoneme></lexeme> <!-- nonachievement -->
+  <lexeme><grapheme>nonaqhievments</grapheme><phoneme>ˌnɑnəˈtʃivmǝnts</phoneme></lexeme> <!-- nonachievements -->
+  <lexeme><grapheme>nonassertiv</grapheme><phoneme>ˌnɑnəˈsɜrtɪv</phoneme></lexeme> <!-- nonassertive -->
   <lexeme><grapheme>nonattaqhd</grapheme><phoneme>ˌnɑnəˈtætʃt</phoneme></lexeme> <!-- nonattached -->
   <lexeme><grapheme>nonattaqhment</grapheme><phoneme>ˌnɑnəˈtætʃmənt</phoneme></lexeme> <!-- nonattachment -->
   <lexeme><grapheme>nonattaqhments</grapheme><phoneme>ˌnɑnəˈtætʃmənts</phoneme></lexeme> <!-- nonattachments -->
-  <lexeme><grapheme>nonautomotiv</grapheme><phoneme>ˌnɑnˌɔtəˈmoʊtɪw</phoneme></lexeme> <!-- nonautomotive -->
+  <lexeme><grapheme>nonautomotiv</grapheme><phoneme>ˌnɑnˌɔtəˈmoʊtɪv</phoneme></lexeme> <!-- nonautomotive -->
   <lexeme><grapheme>nonbaering</grapheme><phoneme>ˌnɑnˈbɛrɪŋ</phoneme></lexeme> <!-- nonbearing -->
   <lexeme><grapheme>nonbilding</grapheme><phoneme>ˌnɑnˈbɪldɪŋ</phoneme></lexeme> <!-- nonbuilding -->
   <lexeme><grapheme>nonbildings</grapheme><phoneme>ˌnɑnˈbɪldɪŋz</phoneme></lexeme> <!-- nonbuildings -->
@@ -17975,73 +17975,73 @@
   <lexeme><grapheme>nonbroddcasting</grapheme><phoneme>ˌnɑnˈbrɔdkæstɪŋ</phoneme></lexeme> <!-- nonbroadcasting -->
   <lexeme><grapheme>nonbynding</grapheme><phoneme>ˌnɑnˈbaɪndɪŋ</phoneme></lexeme> <!-- nonbinding -->
   <lexeme><grapheme>nonclandestin</grapheme><phoneme>ˌnɑnklænˈdɛstɪn</phoneme></lexeme> <!-- nonclandestine -->
-  <lexeme><grapheme>noncoerciv</grapheme><phoneme>ˌnɑnkoʊˈɜrsɪw</phoneme></lexeme> <!-- noncoercive -->
-  <lexeme><grapheme>noncognitiv</grapheme><phoneme>ˌnɑnˈkɑɡnətɪw</phoneme></lexeme> <!-- noncognitive -->
+  <lexeme><grapheme>noncoerciv</grapheme><phoneme>ˌnɑnkoʊˈɜrsɪv</phoneme></lexeme> <!-- noncoercive -->
+  <lexeme><grapheme>noncognitiv</grapheme><phoneme>ˌnɑnˈkɑɡnətɪv</phoneme></lexeme> <!-- noncognitive -->
   <lexeme><grapheme>noncollegiat</grapheme><phoneme>ˌnɑnkəˈlidʒət</phoneme></lexeme> <!-- noncollegiate -->
   <lexeme><grapheme>noncolord</grapheme><phoneme>ˌnɑnˈkʌlərd</phoneme></lexeme> <!-- noncolored -->
-  <lexeme><grapheme>noncombativ</grapheme><phoneme>ˌnɑnkəmˈbætɪw</phoneme></lexeme> <!-- noncombative -->
+  <lexeme><grapheme>noncombativ</grapheme><phoneme>ˌnɑnkəmˈbætɪv</phoneme></lexeme> <!-- noncombative -->
   <lexeme><grapheme>noncommissiond</grapheme><phoneme>ˌnɑnkəˈmɪʃənd</phoneme></lexeme> <!-- noncommissioned -->
-  <lexeme><grapheme>noncommunicativ</grapheme><phoneme>ˌnɑnkəˈmjunəkətɪw</phoneme></lexeme> <!-- noncommunicative -->
-  <lexeme><grapheme>noncommutativ</grapheme><phoneme>ˌnɑnkəˈmjutətɪw</phoneme></lexeme> <!-- noncommutative -->
-  <lexeme><grapheme>noncompetitiv</grapheme><phoneme>ˌnɑnkəmˈpɛtətɪw</phoneme></lexeme> <!-- noncompetitive -->
+  <lexeme><grapheme>noncommunicativ</grapheme><phoneme>ˌnɑnkəˈmjunəkətɪv</phoneme></lexeme> <!-- noncommunicative -->
+  <lexeme><grapheme>noncommutativ</grapheme><phoneme>ˌnɑnkəˈmjutətɪv</phoneme></lexeme> <!-- noncommutative -->
+  <lexeme><grapheme>noncompetitiv</grapheme><phoneme>ˌnɑnkəmˈpɛtətɪv</phoneme></lexeme> <!-- noncompetitive -->
   <lexeme><grapheme>nonconcurd</grapheme><phoneme>ˌnɑnkənˈkɜrd</phoneme></lexeme> <!-- nonconcurred -->
   <lexeme><grapheme>nonconcurz</grapheme><phoneme>ˌnɑnkənˈkɜrz</phoneme></lexeme> <!-- nonconcurs -->
   <lexeme><grapheme>nonconditiond</grapheme><phoneme>ˌnɑnkənˈdɪʃənd</phoneme></lexeme> <!-- nonconditioned -->
-  <lexeme><grapheme>nonconductiv</grapheme><phoneme>ˌnɑnkənˈdʌktɪw</phoneme></lexeme> <!-- nonconductive -->
+  <lexeme><grapheme>nonconductiv</grapheme><phoneme>ˌnɑnkənˈdʌktɪv</phoneme></lexeme> <!-- nonconductive -->
   <lexeme><grapheme>nonconformd</grapheme><phoneme>ˌnɑnkənˈfɔrmd</phoneme></lexeme> <!-- nonconformed -->
   <lexeme><grapheme>nonconformz</grapheme><phoneme>ˌnɑnkənˈfɔrmz</phoneme></lexeme> <!-- nonconforms -->
-  <lexeme><grapheme>nonconsecutiv</grapheme><phoneme>ˌnɑnkənˈsɛkjətɪw</phoneme></lexeme> <!-- nonconsecutive -->
-  <lexeme><grapheme>nonconservativ</grapheme><phoneme>ˌnɑnkənˈsɜrwətɪw</phoneme></lexeme> <!-- nonconservative -->
-  <lexeme><grapheme>nonconservativs</grapheme><phoneme>ˌnɑnkənˈsɜrwətɪwz</phoneme></lexeme> <!-- nonconservatives -->
-  <lexeme><grapheme>nonconstructiv</grapheme><phoneme>ˌnɑnkənˈstrʌktɪw</phoneme></lexeme> <!-- nonconstructive -->
-  <lexeme><grapheme>nonconsumptiv</grapheme><phoneme>ˌnɑnkənˈsʌmptɪw</phoneme></lexeme> <!-- nonconsumptive -->
+  <lexeme><grapheme>nonconsecutiv</grapheme><phoneme>ˌnɑnkənˈsɛkjətɪv</phoneme></lexeme> <!-- nonconsecutive -->
+  <lexeme><grapheme>nonconservativ</grapheme><phoneme>ˌnɑnkənˈsɜrvətɪv</phoneme></lexeme> <!-- nonconservative -->
+  <lexeme><grapheme>nonconservativs</grapheme><phoneme>ˌnɑnkənˈsɜrvətɪvz</phoneme></lexeme> <!-- nonconservatives -->
+  <lexeme><grapheme>nonconstructiv</grapheme><phoneme>ˌnɑnkənˈstrʌktɪv</phoneme></lexeme> <!-- nonconstructive -->
+  <lexeme><grapheme>nonconsumptiv</grapheme><phoneme>ˌnɑnkənˈsʌmptɪv</phoneme></lexeme> <!-- nonconsumptive -->
   <lexeme><grapheme>noncontries</grapheme><phoneme>ˌnɑnˈkʌntriz</phoneme></lexeme> <!-- noncountries -->
   <lexeme><grapheme>noncontrold</grapheme><phoneme>ˌnɑnkənˈtroʊld</phoneme></lexeme> <!-- noncontrolled -->
   <lexeme><grapheme>noncontry</grapheme><phoneme>ˌnɑnˈkʌntri</phoneme></lexeme> <!-- noncountry -->
-  <lexeme><grapheme>noncooperativ</grapheme><phoneme>ˌnɑnkoʊˈɑpərətɪw</phoneme></lexeme> <!-- noncooperative -->
+  <lexeme><grapheme>noncooperativ</grapheme><phoneme>ˌnɑnkoʊˈɑpərətɪv</phoneme></lexeme> <!-- noncooperative -->
   <lexeme><grapheme>noncorporat</grapheme><phoneme>ˌnɑnˈkɔrpərət</phoneme></lexeme> <!-- noncorporate -->
-  <lexeme><grapheme>noncorrosiv</grapheme><phoneme>ˌnɑnkəˈroʊsɪw</phoneme></lexeme> <!-- noncorrosive -->
-  <lexeme><grapheme>noncreativ</grapheme><phoneme>ˌnɑnkriˈeɪtɪw</phoneme></lexeme> <!-- noncreative -->
+  <lexeme><grapheme>noncorrosiv</grapheme><phoneme>ˌnɑnkəˈroʊsɪv</phoneme></lexeme> <!-- noncorrosive -->
+  <lexeme><grapheme>noncreativ</grapheme><phoneme>ˌnɑnkriˈeɪtɪv</phoneme></lexeme> <!-- noncreative -->
   <lexeme><grapheme>noncredentiald</grapheme><phoneme>ˌnɑnkrɪˈdɛnʃəld</phoneme></lexeme> <!-- noncredentialed -->
-  <lexeme><grapheme>noncumulativ</grapheme><phoneme>ˌnɑnˈkæmjələtɪw</phoneme></lexeme> <!-- noncumulative -->
-  <lexeme><grapheme>nondeceptiv</grapheme><phoneme>ˌnɑndɪˈsɛptɪw</phoneme></lexeme> <!-- nondeceptive -->
+  <lexeme><grapheme>noncumulativ</grapheme><phoneme>ˌnɑnˈkæmjələtɪv</phoneme></lexeme> <!-- noncumulative -->
+  <lexeme><grapheme>nondeceptiv</grapheme><phoneme>ˌnɑndɪˈsɛptɪv</phoneme></lexeme> <!-- nondeceptive -->
   <lexeme><grapheme>nondeciduat</grapheme><phoneme>ˌnɑndɪˈsɪdʒuət</phoneme></lexeme> <!-- nondeciduate -->
-  <lexeme><grapheme>nondeductiv</grapheme><phoneme>ˌnɑndɪˈdʌktɪw</phoneme></lexeme> <!-- nondeductive -->
+  <lexeme><grapheme>nondeductiv</grapheme><phoneme>ˌnɑndɪˈdʌktɪv</phoneme></lexeme> <!-- nondeductive -->
   <lexeme><grapheme>nondegenerat</grapheme><phoneme>ˌnɑndɪˈdʒɛnərət</phoneme></lexeme> <!-- nondegenerate -->
   <lexeme><grapheme>nondegenerats</grapheme><phoneme>ˌnɑndɪˈdʒɛnərəts</phoneme></lexeme> <!-- nondegenerates -->
   <lexeme><grapheme>nondelegat</grapheme><phoneme>ˌnɑnˈdɛlɪɡət</phoneme></lexeme> <!-- nondelegate -->
   <lexeme><grapheme>nondelegats</grapheme><phoneme>ˌnɑnˈdɛlɪɡəts</phoneme></lexeme> <!-- nondelegates -->
   <lexeme><grapheme>nondeliberat</grapheme><phoneme>ˌnɑndɪˈlɪbərət</phoneme></lexeme> <!-- nondeliberate -->
   <lexeme><grapheme>nondepressd</grapheme><phoneme>ˌnɑndɪˈprɛst</phoneme></lexeme> <!-- nondepressed -->
-  <lexeme><grapheme>nonderivativ</grapheme><phoneme>ˌnɑndɪˈrɪwətɪw</phoneme></lexeme> <!-- nonderivative -->
-  <lexeme><grapheme>nonderivativs</grapheme><phoneme>ˌnɑndɪˈrɪwətɪwz</phoneme></lexeme> <!-- nonderivatives -->
-  <lexeme><grapheme>nondescriptiv</grapheme><phoneme>ˌnɑndɪˈskrɪptɪw</phoneme></lexeme> <!-- nondescriptive -->
-  <lexeme><grapheme>nondestructiv</grapheme><phoneme>ˌnɑndɪˈstrʌktɪw</phoneme></lexeme> <!-- nondestructive -->
-  <lexeme><grapheme>nondestructivly</grapheme><phoneme>ˌnɑndɪˈstrʌktɪwli</phoneme></lexeme> <!-- nondestructively -->
-  <lexeme><grapheme>nondestructivness</grapheme><phoneme>ˌnɑndɪˈstrʌktɪwnəs</phoneme></lexeme> <!-- nondestructiveness -->
+  <lexeme><grapheme>nonderivativ</grapheme><phoneme>ˌnɑndɪˈrɪvətɪv</phoneme></lexeme> <!-- nonderivative -->
+  <lexeme><grapheme>nonderivativs</grapheme><phoneme>ˌnɑndɪˈrɪvətɪvz</phoneme></lexeme> <!-- nonderivatives -->
+  <lexeme><grapheme>nondescriptiv</grapheme><phoneme>ˌnɑndɪˈskrɪptɪv</phoneme></lexeme> <!-- nondescriptive -->
+  <lexeme><grapheme>nondestructiv</grapheme><phoneme>ˌnɑndɪˈstrʌktɪv</phoneme></lexeme> <!-- nondestructive -->
+  <lexeme><grapheme>nondestructivly</grapheme><phoneme>ˌnɑndɪˈstrʌktɪvli</phoneme></lexeme> <!-- nondestructively -->
+  <lexeme><grapheme>nondestructivness</grapheme><phoneme>ˌnɑndɪˈstrʌktɪvnəs</phoneme></lexeme> <!-- nondestructiveness -->
   <lexeme><grapheme>nondetaqhable</grapheme><phoneme>ˌnɑndɪˈtætʃəbəl</phoneme></lexeme> <!-- nondetachable -->
-  <lexeme><grapheme>nondirectiv</grapheme><phoneme>ˌnɑndəˈrɛktɪw</phoneme></lexeme> <!-- nondirective -->
-  <lexeme><grapheme>nondiscursiv</grapheme><phoneme>ˌnɑndɪˈskɜrsɪw</phoneme></lexeme> <!-- nondiscursive -->
-  <lexeme><grapheme>nondispersiv</grapheme><phoneme>ˌnɑndɪˈspɜrsɪw</phoneme></lexeme> <!-- nondispersive -->
-  <lexeme><grapheme>nondisruptiv</grapheme><phoneme>ˌnɑndɪˈsrʌptɪw</phoneme></lexeme> <!-- nondisruptive -->
-  <lexeme><grapheme>nondistinctiv</grapheme><phoneme>ˌnɑndɪˈstɪŋktɪw</phoneme></lexeme> <!-- nondistinctive -->
+  <lexeme><grapheme>nondirectiv</grapheme><phoneme>ˌnɑndəˈrɛktɪv</phoneme></lexeme> <!-- nondirective -->
+  <lexeme><grapheme>nondiscursiv</grapheme><phoneme>ˌnɑndɪˈskɜrsɪv</phoneme></lexeme> <!-- nondiscursive -->
+  <lexeme><grapheme>nondispersiv</grapheme><phoneme>ˌnɑndɪˈspɜrsɪv</phoneme></lexeme> <!-- nondispersive -->
+  <lexeme><grapheme>nondisruptiv</grapheme><phoneme>ˌnɑndɪˈsrʌptɪv</phoneme></lexeme> <!-- nondisruptive -->
+  <lexeme><grapheme>nondistinctiv</grapheme><phoneme>ˌnɑndɪˈstɪŋktɪv</phoneme></lexeme> <!-- nondistinctive -->
   <lexeme><grapheme>nonduplicat</grapheme><phoneme>ˌnɑnˈdupləkət</phoneme></lexeme> <!-- nonduplicate -->
-  <lexeme><grapheme>noneffectiv</grapheme><phoneme>ˌnɑnɪˈfɛktɪw</phoneme></lexeme> <!-- noneffective -->
-  <lexeme><grapheme>noneffectivs</grapheme><phoneme>ˌnɑnɪˈfɛktɪwz</phoneme></lexeme> <!-- noneffectives -->
-  <lexeme><grapheme>nonelectiv</grapheme><phoneme>ˌnɑnɪˈlɛktɪw</phoneme></lexeme> <!-- nonelective -->
-  <lexeme><grapheme>nonelectivs</grapheme><phoneme>ˌnɑnɪˈlɛktɪwz</phoneme></lexeme> <!-- nonelectives -->
+  <lexeme><grapheme>noneffectiv</grapheme><phoneme>ˌnɑnɪˈfɛktɪv</phoneme></lexeme> <!-- noneffective -->
+  <lexeme><grapheme>noneffectivs</grapheme><phoneme>ˌnɑnɪˈfɛktɪvz</phoneme></lexeme> <!-- noneffectives -->
+  <lexeme><grapheme>nonelectiv</grapheme><phoneme>ˌnɑnɪˈlɛktɪv</phoneme></lexeme> <!-- nonelective -->
+  <lexeme><grapheme>nonelectivs</grapheme><phoneme>ˌnɑnɪˈlɛktɪvz</phoneme></lexeme> <!-- nonelectives -->
   <lexeme><grapheme>nonerning</grapheme><phoneme>ˌnɑnˈɜrnɪŋ</phoneme></lexeme> <!-- nonearning -->
   <lexeme><grapheme>nonernings</grapheme><phoneme>ˌnɑnˈɜrnɪŋz</phoneme></lexeme> <!-- nonearnings -->
   <lexeme><grapheme>nonestablishd</grapheme><phoneme>ˌnɑnɪˈstæblɪʃt</phoneme></lexeme> <!-- nonestablished -->
-  <lexeme><grapheme>nonevaluativ</grapheme><phoneme>ˌnɑnɪˈwæljʊeɪtɪw</phoneme></lexeme> <!-- nonevaluative -->
-  <lexeme><grapheme>nonexclusiv</grapheme><phoneme>ˌnɑnɪkˈsklusɪw</phoneme></lexeme> <!-- nonexclusive -->
-  <lexeme><grapheme>nonexecutiv</grapheme><phoneme>ˌnɑnɪɡˈzɛkjətɪw</phoneme></lexeme> <!-- nonexecutive -->
-  <lexeme><grapheme>nonexecutivs</grapheme><phoneme>ˌnɑnɪɡˈzɛkjətɪwz</phoneme></lexeme> <!-- nonexecutives -->
-  <lexeme><grapheme>nonexploitativ</grapheme><phoneme>ˌnɑnɪkˈsplɔɪtətɪw</phoneme></lexeme> <!-- nonexploitative -->
-  <lexeme><grapheme>nonexploitiv</grapheme><phoneme>ˌnɑnɪkˈsplɔɪtɪw</phoneme></lexeme> <!-- nonexploitive -->
-  <lexeme><grapheme>nonexplosiv</grapheme><phoneme>ˌnɑnɪkˈsploʊsɪw</phoneme></lexeme> <!-- nonexplosive -->
-  <lexeme><grapheme>nonexplosivs</grapheme><phoneme>ˌnɑnɪkˈsploʊsɪwz</phoneme></lexeme> <!-- nonexplosives -->
-  <lexeme><grapheme>nonfigurativ</grapheme><phoneme>ˌnɑnˈfɪɡjərətɪw</phoneme></lexeme> <!-- nonfigurative -->
+  <lexeme><grapheme>nonevaluativ</grapheme><phoneme>ˌnɑnɪˈvæljʊeɪtɪv</phoneme></lexeme> <!-- nonevaluative -->
+  <lexeme><grapheme>nonexclusiv</grapheme><phoneme>ˌnɑnɪkˈsklusɪv</phoneme></lexeme> <!-- nonexclusive -->
+  <lexeme><grapheme>nonexecutiv</grapheme><phoneme>ˌnɑnɪɡˈzɛkjətɪv</phoneme></lexeme> <!-- nonexecutive -->
+  <lexeme><grapheme>nonexecutivs</grapheme><phoneme>ˌnɑnɪɡˈzɛkjətɪvz</phoneme></lexeme> <!-- nonexecutives -->
+  <lexeme><grapheme>nonexploitativ</grapheme><phoneme>ˌnɑnɪkˈsplɔɪtətɪv</phoneme></lexeme> <!-- nonexploitative -->
+  <lexeme><grapheme>nonexploitiv</grapheme><phoneme>ˌnɑnɪkˈsplɔɪtɪv</phoneme></lexeme> <!-- nonexploitive -->
+  <lexeme><grapheme>nonexplosiv</grapheme><phoneme>ˌnɑnɪkˈsploʊsɪv</phoneme></lexeme> <!-- nonexplosive -->
+  <lexeme><grapheme>nonexplosivs</grapheme><phoneme>ˌnɑnɪkˈsploʊsɪvz</phoneme></lexeme> <!-- nonexplosives -->
+  <lexeme><grapheme>nonfigurativ</grapheme><phoneme>ˌnɑnˈfɪɡjərətɪv</phoneme></lexeme> <!-- nonfigurative -->
   <lexeme><grapheme>nonfluwering</grapheme><phoneme>ˌnɑnˈflaʊərɪŋ</phoneme></lexeme> <!-- nonflowering -->
   <lexeme><grapheme>nonghest</grapheme><phoneme>ˌnɑnˈɡɛst</phoneme></lexeme> <!-- nonguest -->
   <lexeme><grapheme>nonghests</grapheme><phoneme>ˌnɑnˈɡɛsts</phoneme></lexeme> <!-- nonguests -->
@@ -18050,79 +18050,79 @@
   <lexeme><grapheme>nongraduat</grapheme><phoneme>ˌnɑnˈɡrædʒuət</phoneme></lexeme> <!-- nongraduate -->
   <lexeme><grapheme>nongraduats</grapheme><phoneme>ˌnɑnˈɡrædʒuəts</phoneme></lexeme> <!-- nongraduates -->
   <lexeme><grapheme>nonhandicapd</grapheme><phoneme>ˌnɑnˈhændikæpt</phoneme></lexeme> <!-- nonhandicapped -->
-  <lexeme><grapheme>nonimitativ</grapheme><phoneme>ˌnɑnˈɪmətətɪw</phoneme></lexeme> <!-- nonimitative -->
-  <lexeme><grapheme>noninductiv</grapheme><phoneme>ˌnɑndɪˈdʌktɪw</phoneme></lexeme> <!-- noninductive -->
-  <lexeme><grapheme>noninfectiv</grapheme><phoneme>ˌnɑnɪnˈfɛktɪw</phoneme></lexeme> <!-- noninfective -->
+  <lexeme><grapheme>nonimitativ</grapheme><phoneme>ˌnɑnˈɪmətətɪv</phoneme></lexeme> <!-- nonimitative -->
+  <lexeme><grapheme>noninductiv</grapheme><phoneme>ˌnɑndɪˈdʌktɪv</phoneme></lexeme> <!-- noninductive -->
+  <lexeme><grapheme>noninfectiv</grapheme><phoneme>ˌnɑnɪnˈfɛktɪv</phoneme></lexeme> <!-- noninfective -->
   <lexeme><grapheme>noninitiat</grapheme><phoneme>ˌnɑnɪˈnɪʃiət</phoneme></lexeme> <!-- noninitiate -->
   <lexeme><grapheme>noninitiats</grapheme><phoneme>ˌnɑnɪˈnɪʃiəts</phoneme></lexeme> <!-- noninitiates -->
-  <lexeme><grapheme>noninteractiv</grapheme><phoneme>ˌnɑnɪntərˈæktɪw</phoneme></lexeme> <!-- noninteractive -->
+  <lexeme><grapheme>noninteractiv</grapheme><phoneme>ˌnɑnɪntərˈæktɪv</phoneme></lexeme> <!-- noninteractive -->
   <lexeme><grapheme>nonintercorse</grapheme><phoneme>ˌnɑnˈɪntərˌkɔrs</phoneme></lexeme> <!-- nonintercourse -->
-  <lexeme><grapheme>nonintrusiv</grapheme><phoneme>ˌnɑnɪnˈtrusɪw</phoneme></lexeme> <!-- nonintrusive -->
-  <lexeme><grapheme>nonintuitiv</grapheme><phoneme>ˌnɑnɪnˈtuətɪw</phoneme></lexeme> <!-- nonintuitive -->
-  <lexeme><grapheme>noninvasiv</grapheme><phoneme>ˌnɑnɪnˈweɪsɪw</phoneme></lexeme> <!-- noninvasive -->
+  <lexeme><grapheme>nonintrusiv</grapheme><phoneme>ˌnɑnɪnˈtrusɪv</phoneme></lexeme> <!-- nonintrusive -->
+  <lexeme><grapheme>nonintuitiv</grapheme><phoneme>ˌnɑnɪnˈtuətɪv</phoneme></lexeme> <!-- nonintuitive -->
+  <lexeme><grapheme>noninvasiv</grapheme><phoneme>ˌnɑnɪnˈveɪsɪv</phoneme></lexeme> <!-- noninvasive -->
   <lexeme><grapheme>nonleagh</grapheme><phoneme>ˌnɑnˈliɡ</phoneme></lexeme> <!-- nonleague -->
   <lexeme><grapheme>nonledded</grapheme><phoneme>ˌnɑnˈlɛdəd</phoneme></lexeme> <!-- nonleaded -->
   <lexeme><grapheme>nonliterat</grapheme><phoneme>ˌnɑnˈlɪtərət</phoneme></lexeme> <!-- nonliterate -->
   <lexeme><grapheme>nonliterats</grapheme><phoneme>ˌnɑnˈlɪtərəts</phoneme></lexeme> <!-- nonliterates -->
   <lexeme><grapheme>nonmesurable</grapheme><phoneme>ˌnɑnˈmɛʒərəbəl</phoneme></lexeme> <!-- nonmeasurable -->
-  <lexeme><grapheme>nonmooving</grapheme><phoneme>ˌnɑnˈmuwɪŋ</phoneme></lexeme> <!-- nonmoving -->
+  <lexeme><grapheme>nonmooving</grapheme><phoneme>ˌnɑnˈmuvɪŋ</phoneme></lexeme> <!-- nonmoving -->
   <lexeme><grapheme>nonn</grapheme><phoneme>ˈnən</phoneme></lexeme> <!-- none -->
-  <lexeme><grapheme>nonnarrativ</grapheme><phoneme>ˌnɑnˈnærətɪw</phoneme></lexeme> <!-- nonnarrative -->
-  <lexeme><grapheme>nonnarrativs</grapheme><phoneme>ˌnɑnˈnærətɪwz</phoneme></lexeme> <!-- nonnarratives -->
-  <lexeme><grapheme>nonnativ</grapheme><phoneme>ˌnɑnˈneɪtɪw</phoneme></lexeme> <!-- nonnative -->
-  <lexeme><grapheme>nonnativs</grapheme><phoneme>ˌnɑnˈneɪtɪwz</phoneme></lexeme> <!-- nonnatives -->
-  <lexeme><grapheme>nonnegativ</grapheme><phoneme>ˌnɑnˈnɛɡətɪw</phoneme></lexeme> <!-- nonnegative -->
-  <lexeme><grapheme>nonnormativ</grapheme><phoneme>ˌnɑnˈnɔrmətɪw</phoneme></lexeme> <!-- nonnormative -->
+  <lexeme><grapheme>nonnarrativ</grapheme><phoneme>ˌnɑnˈnærətɪv</phoneme></lexeme> <!-- nonnarrative -->
+  <lexeme><grapheme>nonnarrativs</grapheme><phoneme>ˌnɑnˈnærətɪvz</phoneme></lexeme> <!-- nonnarratives -->
+  <lexeme><grapheme>nonnativ</grapheme><phoneme>ˌnɑnˈneɪtɪv</phoneme></lexeme> <!-- nonnative -->
+  <lexeme><grapheme>nonnativs</grapheme><phoneme>ˌnɑnˈneɪtɪvz</phoneme></lexeme> <!-- nonnatives -->
+  <lexeme><grapheme>nonnegativ</grapheme><phoneme>ˌnɑnˈnɛɡətɪv</phoneme></lexeme> <!-- nonnegative -->
+  <lexeme><grapheme>nonnormativ</grapheme><phoneme>ˌnɑnˈnɔrmətɪv</phoneme></lexeme> <!-- nonnormative -->
   <lexeme><grapheme>nonns</grapheme><phoneme>ˈnoʊnz</phoneme></lexeme> <!-- nones -->
   <lexeme><grapheme>nonnsuqh</grapheme><phoneme>ˈnənˌsətʃ</phoneme></lexeme> <!-- nonesuch -->
   <lexeme><grapheme>nonnsuqhes</grapheme><phoneme>ˈnənˌsətʃɪz</phoneme></lexeme> <!-- nonesuches -->
   <lexeme><grapheme>nonntheless</grapheme><phoneme>ˌnənðəˈlɛs</phoneme></lexeme> <!-- nonetheless -->
-  <lexeme><grapheme>nonnutritiv</grapheme><phoneme>ˌnɑnˈnutrətɪw</phoneme></lexeme> <!-- nonnutritive -->
-  <lexeme><grapheme>nonobjectiv</grapheme><phoneme>ˌnɑnəbˈdʒɛktɪw</phoneme></lexeme> <!-- nonobjective -->
-  <lexeme><grapheme>nonoperativ</grapheme><phoneme>ˌnɑnˈɑpərətɪw</phoneme></lexeme> <!-- nonoperative -->
-  <lexeme><grapheme>nonpassiv</grapheme><phoneme>ˌnɑnˈpæsɪw</phoneme></lexeme> <!-- nonpassive -->
-  <lexeme><grapheme>nonpermissiv</grapheme><phoneme>ˌnɑnpərˈmɪsɪw</phoneme></lexeme> <!-- nonpermissive -->
+  <lexeme><grapheme>nonnutritiv</grapheme><phoneme>ˌnɑnˈnutrətɪv</phoneme></lexeme> <!-- nonnutritive -->
+  <lexeme><grapheme>nonobjectiv</grapheme><phoneme>ˌnɑnəbˈdʒɛktɪv</phoneme></lexeme> <!-- nonobjective -->
+  <lexeme><grapheme>nonoperativ</grapheme><phoneme>ˌnɑnˈɑpərətɪv</phoneme></lexeme> <!-- nonoperative -->
+  <lexeme><grapheme>nonpassiv</grapheme><phoneme>ˌnɑnˈpæsɪv</phoneme></lexeme> <!-- nonpassive -->
+  <lexeme><grapheme>nonpermissiv</grapheme><phoneme>ˌnɑnpərˈmɪsɪv</phoneme></lexeme> <!-- nonpermissive -->
   <lexeme><grapheme>nonplusd</grapheme><phoneme>ˌnɑnˈplʌst</phoneme></lexeme> <!-- nonplused -->
   <lexeme><grapheme>nonplusez</grapheme><phoneme>ˌnɑnˈplʌsɪz</phoneme></lexeme> <!-- nonpluses -->
   <lexeme><grapheme>nonplussez</grapheme><phoneme>ˌnɑnˈplʌsɪz</phoneme></lexeme> <!-- nonplusses -->
-  <lexeme><grapheme>nonproductiv</grapheme><phoneme>ˌnɑnprəˈdʌktɪw</phoneme></lexeme> <!-- nonproductive -->
-  <lexeme><grapheme>nonproductivness</grapheme><phoneme>ˌnɑnprəˈdʌktɪwnəs</phoneme></lexeme> <!-- nonproductiveness -->
-  <lexeme><grapheme>nonprogressiv</grapheme><phoneme>ˌnɑnprəˈɡrɛsɪw</phoneme></lexeme> <!-- nonprogressive -->
-  <lexeme><grapheme>nonprogressivs</grapheme><phoneme>ˌnɑnprəˈɡrɛsɪwz</phoneme></lexeme> <!-- nonprogressives -->
+  <lexeme><grapheme>nonproductiv</grapheme><phoneme>ˌnɑnprəˈdʌktɪv</phoneme></lexeme> <!-- nonproductive -->
+  <lexeme><grapheme>nonproductivness</grapheme><phoneme>ˌnɑnprəˈdʌktɪvnəs</phoneme></lexeme> <!-- nonproductiveness -->
+  <lexeme><grapheme>nonprogressiv</grapheme><phoneme>ˌnɑnprəˈɡrɛsɪv</phoneme></lexeme> <!-- nonprogressive -->
+  <lexeme><grapheme>nonprogressivs</grapheme><phoneme>ˌnɑnprəˈɡrɛsɪvz</phoneme></lexeme> <!-- nonprogressives -->
   <lexeme><grapheme>nonprosd</grapheme><phoneme>ˌnɑnˈprɑst</phoneme></lexeme> <!-- nonprossed -->
   <lexeme><grapheme>nonprossez</grapheme><phoneme>ˌnɑnˈprɑsɪz</phoneme></lexeme> <!-- nonprosses -->
-  <lexeme><grapheme>nonpunitiv</grapheme><phoneme>ˌnɑnˈpjunətɪw</phoneme></lexeme> <!-- nonpunitive -->
-  <lexeme><grapheme>nonpurposiv</grapheme><phoneme>ˌnɑnˈpɜrpəsɪw</phoneme></lexeme> <!-- nonpurposive -->
+  <lexeme><grapheme>nonpunitiv</grapheme><phoneme>ˌnɑnˈpjunətɪv</phoneme></lexeme> <!-- nonpunitive -->
+  <lexeme><grapheme>nonpurposiv</grapheme><phoneme>ˌnɑnˈpɜrpəsɪv</phoneme></lexeme> <!-- nonpurposive -->
   <lexeme><grapheme>nonqhurqh</grapheme><phoneme>ˌnɑnˈtʃɜrtʃ</phoneme></lexeme> <!-- nonchurch -->
   <lexeme><grapheme>nonqhurqhes</grapheme><phoneme>ˌnɑnˈtʃɜrtʃɪz</phoneme></lexeme> <!-- nonchurches -->
   <lexeme><grapheme>nonqhurqhgoer</grapheme><phoneme>ˌnɑnˈtʃɜrtʃˌɡoʊər</phoneme></lexeme> <!-- nonchurchgoer -->
   <lexeme><grapheme>nonqhurqhgoers</grapheme><phoneme>ˌnɑnˈtʃɜrtʃˌɡoʊərz</phoneme></lexeme> <!-- nonchurchgoers -->
-  <lexeme><grapheme>nonquantitativ</grapheme><phoneme>ˌnɑnˈkwɑntətətɪw</phoneme></lexeme> <!-- nonquantitative -->
-  <lexeme><grapheme>nonradioactiv</grapheme><phoneme>ˌnɑnreɪdioʊˈæktɪw</phoneme></lexeme> <!-- nonradioactive -->
-  <lexeme><grapheme>nonreactiv</grapheme><phoneme>ˌnɑnriˈæktɪw</phoneme></lexeme> <!-- nonreactive -->
+  <lexeme><grapheme>nonquantitativ</grapheme><phoneme>ˌnɑnˈkwɑntətətɪv</phoneme></lexeme> <!-- nonquantitative -->
+  <lexeme><grapheme>nonradioactiv</grapheme><phoneme>ˌnɑnreɪdioʊˈæktɪv</phoneme></lexeme> <!-- nonradioactive -->
+  <lexeme><grapheme>nonreactiv</grapheme><phoneme>ˌnɑnriˈæktɪv</phoneme></lexeme> <!-- nonreactive -->
   <lexeme><grapheme>nonreceet</grapheme><phoneme>ˌnɑnrɪˈsit</phoneme></lexeme> <!-- nonreceipt -->
   <lexeme><grapheme>nonreceets</grapheme><phoneme>ˌnɑnrɪˈsits</phoneme></lexeme> <!-- nonreceipts -->
   <lexeme><grapheme>nonrecorse</grapheme><phoneme>ˌnɑnˈriˌkɔrs</phoneme></lexeme> <!-- nonrecourse -->
-  <lexeme><grapheme>nonrelativ</grapheme><phoneme>ˌnɑnˈrɛlətɪw</phoneme></lexeme> <!-- nonrelative -->
-  <lexeme><grapheme>nonrelativs</grapheme><phoneme>ˌnɑnˈrɛlətɪwz</phoneme></lexeme> <!-- nonrelatives -->
-  <lexeme><grapheme>nonrepresentativ</grapheme><phoneme>ˌnɑnrɛprɪˈzɛntətɪw</phoneme></lexeme> <!-- nonrepresentative -->
-  <lexeme><grapheme>nonrepresentativs</grapheme><phoneme>ˌnɑnrɛprɪˈzɛntətɪwz</phoneme></lexeme> <!-- nonrepresentatives -->
-  <lexeme><grapheme>nonreproductiv</grapheme><phoneme>ˌnɑnriprəˈdʌktɪw</phoneme></lexeme> <!-- nonreproductive -->
-  <lexeme><grapheme>nonresponsiv</grapheme><phoneme>ˌnɑnrɪˈspɑnsɪw</phoneme></lexeme> <!-- nonresponsive -->
-  <lexeme><grapheme>nonrestrictiv</grapheme><phoneme>ˌnɑnrɪˈstrɪktɪw</phoneme></lexeme> <!-- nonrestrictive -->
-  <lexeme><grapheme>nonretroactiv</grapheme><phoneme>ˌnɑnrɛtroʊˈæktɪw</phoneme></lexeme> <!-- nonretroactive -->
-  <lexeme><grapheme>nonselectiv</grapheme><phoneme>ˌnɑnsɪˈlɛktɪw</phoneme></lexeme> <!-- nonselective -->
-  <lexeme><grapheme>nonsensitiv</grapheme><phoneme>ˌnɑnˈsɛnsətɪw</phoneme></lexeme> <!-- nonsensitive -->
+  <lexeme><grapheme>nonrelativ</grapheme><phoneme>ˌnɑnˈrɛlətɪv</phoneme></lexeme> <!-- nonrelative -->
+  <lexeme><grapheme>nonrelativs</grapheme><phoneme>ˌnɑnˈrɛlətɪvz</phoneme></lexeme> <!-- nonrelatives -->
+  <lexeme><grapheme>nonrepresentativ</grapheme><phoneme>ˌnɑnrɛprɪˈzɛntətɪv</phoneme></lexeme> <!-- nonrepresentative -->
+  <lexeme><grapheme>nonrepresentativs</grapheme><phoneme>ˌnɑnrɛprɪˈzɛntətɪvz</phoneme></lexeme> <!-- nonrepresentatives -->
+  <lexeme><grapheme>nonreproductiv</grapheme><phoneme>ˌnɑnriprəˈdʌktɪv</phoneme></lexeme> <!-- nonreproductive -->
+  <lexeme><grapheme>nonresponsiv</grapheme><phoneme>ˌnɑnrɪˈspɑnsɪv</phoneme></lexeme> <!-- nonresponsive -->
+  <lexeme><grapheme>nonrestrictiv</grapheme><phoneme>ˌnɑnrɪˈstrɪktɪv</phoneme></lexeme> <!-- nonrestrictive -->
+  <lexeme><grapheme>nonretroactiv</grapheme><phoneme>ˌnɑnrɛtroʊˈæktɪv</phoneme></lexeme> <!-- nonretroactive -->
+  <lexeme><grapheme>nonselectiv</grapheme><phoneme>ˌnɑnsɪˈlɛktɪv</phoneme></lexeme> <!-- nonselective -->
+  <lexeme><grapheme>nonsensitiv</grapheme><phoneme>ˌnɑnˈsɛnsətɪv</phoneme></lexeme> <!-- nonsensitive -->
   <lexeme><grapheme>nonshalance</grapheme><phoneme>ˌnɑnʃəˈlɑns</phoneme></lexeme> <!-- nonchalance -->
   <lexeme><grapheme>nonshalant</grapheme><phoneme>ˌnɑnʃəˈlɑnt</phoneme></lexeme> <!-- nonchalant -->
   <lexeme><grapheme>nonshalantly</grapheme><phoneme>ˌnɑnʃəˈlɑntli</phoneme></lexeme> <!-- nonchalantly -->
-  <lexeme><grapheme>nonshauvinist</grapheme><phoneme>ˌnɑnˈʃoʊwənɪst</phoneme></lexeme> <!-- nonchauvinist -->
-  <lexeme><grapheme>nonshauvinists</grapheme><phoneme>ˌnɑnˈʃoʊwənɪsts</phoneme></lexeme> <!-- nonchauvinists -->
-  <lexeme><grapheme>nonspeculativ</grapheme><phoneme>ˌnɑnˈspɛkjələtɪw</phoneme></lexeme> <!-- nonspeculative -->
+  <lexeme><grapheme>nonshauvinist</grapheme><phoneme>ˌnɑnˈʃoʊvənɪst</phoneme></lexeme> <!-- nonchauvinist -->
+  <lexeme><grapheme>nonshauvinists</grapheme><phoneme>ˌnɑnˈʃoʊvənɪsts</phoneme></lexeme> <!-- nonchauvinists -->
+  <lexeme><grapheme>nonspeculativ</grapheme><phoneme>ˌnɑnˈspɛkjələtɪv</phoneme></lexeme> <!-- nonspeculative -->
   <lexeme><grapheme>nonspeeqh</grapheme><phoneme>ˌnɑnˈspitʃ</phoneme></lexeme> <!-- nonspeech -->
   <lexeme><grapheme>nonsteddy</grapheme><phoneme>ˌnɑnˈstɛdi</phoneme></lexeme> <!-- nonsteady -->
-  <lexeme><grapheme>nonsubjectiv</grapheme><phoneme>ˌnɑnsəbˈdʒɛktɪw</phoneme></lexeme> <!-- nonsubjective -->
-  <lexeme><grapheme>nonsubmissiv</grapheme><phoneme>ˌnɑnsəbˈmɪsɪw</phoneme></lexeme> <!-- nonsubmissive -->
+  <lexeme><grapheme>nonsubjectiv</grapheme><phoneme>ˌnɑnsəbˈdʒɛktɪv</phoneme></lexeme> <!-- nonsubjective -->
+  <lexeme><grapheme>nonsubmissiv</grapheme><phoneme>ˌnɑnsəbˈmɪsɪv</phoneme></lexeme> <!-- nonsubmissive -->
   <lexeme><grapheme>nonsuht</grapheme><phoneme>ˈnɑnˈsut</phoneme></lexeme> <!-- nonsuit -->
   <lexeme><grapheme>nonsuhted</grapheme><phoneme>ˈnɑnˈsutəd</phoneme></lexeme> <!-- nonsuited -->
   <lexeme><grapheme>nonsuhting</grapheme><phoneme>ˈnɑnˈsutɪŋ</phoneme></lexeme> <!-- nonsuiting -->
@@ -18147,20 +18147,20 @@
   <lexeme><grapheme>noonstedd</grapheme><phoneme>ˈnunˌstɛd</phoneme></lexeme> <!-- noonstead -->
   <lexeme><grapheme>noonz</grapheme><phoneme>ˈnunz</phoneme></lexeme> <!-- noons -->
   <lexeme><grapheme>noosez</grapheme><phoneme>ˈnusɪz</phoneme></lexeme> <!-- nooses -->
-  <lexeme><grapheme>nooveau</grapheme><phoneme>nuˈwoʊ</phoneme></lexeme> <!-- nouveau -->
-  <lexeme><grapheme>noovelle</grapheme><phoneme>nuˈwɛl</phoneme></lexeme> <!-- nouvelle -->
+  <lexeme><grapheme>nooveau</grapheme><phoneme>nuˈvoʊ</phoneme></lexeme> <!-- nouveau -->
+  <lexeme><grapheme>noovelle</grapheme><phoneme>nuˈvɛl</phoneme></lexeme> <!-- nouvelle -->
   <lexeme><grapheme>normalizez</grapheme><phoneme>ˈnɔrməˌlaɪzɪz</phoneme></lexeme> <!-- normalises -->
-  <lexeme><grapheme>normativ</grapheme><phoneme>ˈnɔrmətɪw</phoneme></lexeme> <!-- normative -->
-  <lexeme><grapheme>normativly</grapheme><phoneme>ˈnɔrmətɪwli</phoneme></lexeme> <!-- normatively -->
-  <lexeme><grapheme>normativness</grapheme><phoneme>ˈnɔrmətɪwnəs</phoneme></lexeme> <!-- normativeness -->
+  <lexeme><grapheme>normativ</grapheme><phoneme>ˈnɔrmətɪv</phoneme></lexeme> <!-- normative -->
+  <lexeme><grapheme>normativly</grapheme><phoneme>ˈnɔrmətɪvli</phoneme></lexeme> <!-- normatively -->
+  <lexeme><grapheme>normativness</grapheme><phoneme>ˈnɔrmətɪvnəs</phoneme></lexeme> <!-- normativeness -->
   <lexeme><grapheme>normd</grapheme><phoneme>ˈnɔrmd</phoneme></lexeme> <!-- normed -->
-  <lexeme><grapheme>normotensiv</grapheme><phoneme>ˌnɔrməˈtɛnsɪw</phoneme></lexeme> <!-- normotensive -->
-  <lexeme><grapheme>normotensivs</grapheme><phoneme>ˌnɔrməˈtɛnsɪwz</phoneme></lexeme> <!-- normotensives -->
+  <lexeme><grapheme>normotensiv</grapheme><phoneme>ˌnɔrməˈtɛnsɪv</phoneme></lexeme> <!-- normotensive -->
+  <lexeme><grapheme>normotensivs</grapheme><phoneme>ˌnɔrməˈtɛnsɪvz</phoneme></lexeme> <!-- normotensives -->
   <lexeme><grapheme>northeasternmoste</grapheme><phoneme>ˌnɔrθˈistərnˌmoʊst</phoneme></lexeme> <!-- northeasternmost -->
   <lexeme><grapheme>northernmoste</grapheme><phoneme>ˈnɔrðərnˌmoʊst</phoneme></lexeme> <!-- northernmost -->
   <lexeme><grapheme>northmoste</grapheme><phoneme>ˈnɔrθˌmoʊst</phoneme></lexeme> <!-- northmost -->
   <lexeme><grapheme>northwesternmoste</grapheme><phoneme>ˌnɔrθˈwɛstərnˌmoʊst</phoneme></lexeme> <!-- northwesternmost -->
-  <lexeme><grapheme>nosedivez</grapheme><phoneme>ˈnoʊzˌdaɪwz</phoneme></lexeme> <!-- nosedives -->
+  <lexeme><grapheme>nosedivez</grapheme><phoneme>ˈnoʊzˌdaɪvz</phoneme></lexeme> <!-- nosedives -->
   <lexeme><grapheme>nosegard</grapheme><phoneme>ˈnoʊzˌɡɑrd</phoneme></lexeme> <!-- noseguard -->
   <lexeme><grapheme>nosegards</grapheme><phoneme>ˈnoʊzˌɡɑrdz</phoneme></lexeme> <!-- noseguards -->
   <lexeme><grapheme>nosez</grapheme><phoneme>ˈnoʊzɪz</phoneme></lexeme> <!-- noses -->
@@ -18179,9 +18179,9 @@
   <lexeme><grapheme>nounizez</grapheme><phoneme>ˈnaʊnaɪzɪz</phoneme></lexeme> <!-- nounizes -->
   <lexeme><grapheme>nouqh</grapheme><phoneme>ˈnaʊtʃ</phoneme></lexeme> <!-- nouch -->
   <lexeme><grapheme>nouqhes</grapheme><phoneme>ˈnaʊtʃɪz</phoneme></lexeme> <!-- nouches -->
-  <lexeme><grapheme>novelizez</grapheme><phoneme>ˈnɑwəˌlaɪzɪz</phoneme></lexeme> <!-- novelises -->
-  <lexeme><grapheme>novitiat</grapheme><phoneme>noʊˈwɪʃiət</phoneme></lexeme> <!-- novitiate -->
-  <lexeme><grapheme>novitiats</grapheme><phoneme>noʊˈwɪʃiəts</phoneme></lexeme> <!-- novitiates -->
+  <lexeme><grapheme>novelizez</grapheme><phoneme>ˈnɑvəˌlaɪzɪz</phoneme></lexeme> <!-- novelises -->
+  <lexeme><grapheme>novitiat</grapheme><phoneme>noʊˈvɪʃiət</phoneme></lexeme> <!-- novitiate -->
+  <lexeme><grapheme>novitiats</grapheme><phoneme>noʊˈvɪʃiəts</phoneme></lexeme> <!-- novitiates -->
   <lexeme><grapheme>nuancez</grapheme><phoneme>ˈnuˌɑnsɪz</phoneme></lexeme> <!-- nuances -->
   <lexeme><grapheme>nubilatez</grapheme><phoneme>ˈnubəˌleɪts</phoneme></lexeme> <!-- nubilates -->
   <lexeme><grapheme>nucleat</grapheme><phoneme>ˈnukliˌeɪt</phoneme></lexeme> <!-- nucleate -->
@@ -18200,8 +18200,8 @@
   <lexeme><grapheme>numberz</grapheme><phoneme>ˈnʌmbərz</phoneme></lexeme> <!-- numbers -->
   <lexeme><grapheme>numerat</grapheme><phoneme>ˈnuməˌreɪt</phoneme></lexeme> <!-- numerate -->
   <lexeme><grapheme>numeratez</grapheme><phoneme>ˈnuməˌreɪts</phoneme></lexeme> <!-- numerates -->
-  <lexeme><grapheme>numerativ</grapheme><phoneme>ˈnumərətɪw</phoneme></lexeme> <!-- numerative -->
-  <lexeme><grapheme>numerativs</grapheme><phoneme>ˈnumərətɪwz</phoneme></lexeme> <!-- numeratives -->
+  <lexeme><grapheme>numerativ</grapheme><phoneme>ˈnumərətɪv</phoneme></lexeme> <!-- numerative -->
+  <lexeme><grapheme>numerativs</grapheme><phoneme>ˈnumərətɪvz</phoneme></lexeme> <!-- numeratives -->
   <lexeme><grapheme>numm</grapheme><phoneme>ˈnʌm</phoneme></lexeme> <!-- numb -->
   <lexeme><grapheme>nummd</grapheme><phoneme>ˈnʌmd</phoneme></lexeme> <!-- numbed -->
   <lexeme><grapheme>nummedness</grapheme><phoneme>ˈnʌmədnes</phoneme></lexeme> <!-- numbedness -->
@@ -18218,7 +18218,7 @@
   <lexeme><grapheme>nummz</grapheme><phoneme>ˈnʌmz</phoneme></lexeme> <!-- numbs -->
   <lexeme><grapheme>nunatakz</grapheme><phoneme>ˈnʊnəˌtæks</phoneme></lexeme> <!-- nunataks -->
   <lexeme><grapheme>nuncupatez</grapheme><phoneme>ˈnʌŋkjəˌpeɪts</phoneme></lexeme> <!-- nuncupates -->
-  <lexeme><grapheme>nuncupativ</grapheme><phoneme>nʌnˈkjupətɪw</phoneme></lexeme> <!-- nuncupative -->
+  <lexeme><grapheme>nuncupativ</grapheme><phoneme>nʌnˈkjupətɪv</phoneme></lexeme> <!-- nuncupative -->
   <lexeme><grapheme>nunqhaku</grapheme><phoneme>ˈnʌnˌtʃæku</phoneme></lexeme> <!-- nunchaku -->
   <lexeme><grapheme>nunqhakus</grapheme><phoneme>ˈnʌnˌtʃækus</phoneme></lexeme> <!-- nunchakus -->
   <lexeme><grapheme>nunqhon</grapheme><phoneme>ˈnʌntʃən</phoneme></lexeme> <!-- nuncheon -->
@@ -18240,8 +18240,8 @@
   <lexeme><grapheme>nurturez</grapheme><phoneme>ˈnɜrtʃərz</phoneme></lexeme> <!-- nurtures -->
   <lexeme><grapheme>nutatez</grapheme><phoneme>ˈnjuˌteɪts</phoneme></lexeme> <!-- nutates -->
   <lexeme><grapheme>nutbruwn</grapheme><phoneme>ˈnʌtˌbraʊn</phoneme></lexeme> <!-- nutbrown -->
-  <lexeme><grapheme>nutritiv</grapheme><phoneme>ˈnutrətɪw</phoneme></lexeme> <!-- nutritive -->
-  <lexeme><grapheme>nutritivly</grapheme><phoneme>ˈnutrətɪwli</phoneme></lexeme> <!-- nutritively -->
+  <lexeme><grapheme>nutritiv</grapheme><phoneme>ˈnutrətɪv</phoneme></lexeme> <!-- nutritive -->
+  <lexeme><grapheme>nutritivly</grapheme><phoneme>ˈnutrətɪvli</phoneme></lexeme> <!-- nutritively -->
   <lexeme><grapheme>nutz</grapheme><phoneme>ˈnʌts</phoneme></lexeme> <!-- nuts -->
   <lexeme><grapheme>nuw</grapheme><phoneme>ˈnaʊ</phoneme></lexeme> <!-- now -->
   <lexeme><grapheme>nuwadays</grapheme><phoneme>ˈnaʊəˌdeɪz</phoneme></lexeme> <!-- nowadays -->
@@ -18264,7 +18264,7 @@
   <lexeme><grapheme>oathbraeker</grapheme><phoneme>ˈoʊθˌbreɪkər</phoneme></lexeme> <!-- oathbreaker -->
   <lexeme><grapheme>oathbraekers</grapheme><phoneme>ˈoʊθˌbreɪkərz</phoneme></lexeme> <!-- oathbreakers -->
   <lexeme><grapheme>oathbraeking</grapheme><phoneme>ˈoʊθˌbreɪkɪŋ</phoneme></lexeme> <!-- oathbreaking -->
-  <lexeme><grapheme>oavs</grapheme><phoneme>ˈoʊwz</phoneme></lexeme> <!-- oaves -->
+  <lexeme><grapheme>oavs</grapheme><phoneme>ˈoʊvz</phoneme></lexeme> <!-- oaves -->
   <lexeme><grapheme>obcompressd</grapheme><phoneme>ˌɑbkəmˈprɛst</phoneme></lexeme> <!-- obcompressed -->
   <lexeme><grapheme>obducez</grapheme><phoneme>ɑbˈdusɪz</phoneme></lexeme> <!-- obduces -->
   <lexeme><grapheme>obductz</grapheme><phoneme>ɑbˈdʌkts</phoneme></lexeme> <!-- obducts -->
@@ -18279,10 +18279,10 @@
   <lexeme><grapheme>obeyz</grapheme><phoneme>oʊˈbeɪz</phoneme></lexeme> <!-- obeys -->
   <lexeme><grapheme>obfuscatez</grapheme><phoneme>ˈɑbfəˌskeɪts</phoneme></lexeme> <!-- obfuscates -->
   <lexeme><grapheme>objectifiez</grapheme><phoneme>əbˈdʒɛktəfaɪz</phoneme></lexeme> <!-- objectifies -->
-  <lexeme><grapheme>objectiv</grapheme><phoneme>əbˈdʒɛktɪw</phoneme></lexeme> <!-- objective -->
-  <lexeme><grapheme>objectivly</grapheme><phoneme>əbˈdʒɛktɪwli</phoneme></lexeme> <!-- objectively -->
-  <lexeme><grapheme>objectivness</grapheme><phoneme>əbˈdʒɛktɪwnəs</phoneme></lexeme> <!-- objectiveness -->
-  <lexeme><grapheme>objectivs</grapheme><phoneme>əbˈdʒɛktɪwz</phoneme></lexeme> <!-- objectives -->
+  <lexeme><grapheme>objectiv</grapheme><phoneme>əbˈdʒɛktɪv</phoneme></lexeme> <!-- objective -->
+  <lexeme><grapheme>objectivly</grapheme><phoneme>əbˈdʒɛktɪvli</phoneme></lexeme> <!-- objectively -->
+  <lexeme><grapheme>objectivness</grapheme><phoneme>əbˈdʒɛktɪvnəs</phoneme></lexeme> <!-- objectiveness -->
+  <lexeme><grapheme>objectivs</grapheme><phoneme>əbˈdʒɛktɪvz</phoneme></lexeme> <!-- objectives -->
   <lexeme><grapheme>objectz</grapheme><phoneme>ˈɑbdʒɛkts</phoneme></lexeme> <!-- objects -->
   <lexeme><grapheme>objeh</grapheme><phoneme>oʊbˈʒeɪ</phoneme></lexeme> <!-- objet -->
   <lexeme><grapheme>objehs</grapheme><phoneme>oʊbˈʒeɪz</phoneme></lexeme> <!-- objets -->
@@ -18302,46 +18302,46 @@
   <lexeme><grapheme>obliqez</grapheme><phoneme>oʊˈbliks</phoneme></lexeme> <!-- obliques -->
   <lexeme><grapheme>obliqing</grapheme><phoneme>oʊˈblikɪŋ</phoneme></lexeme> <!-- obliquing -->
   <lexeme><grapheme>obliteratez</grapheme><phoneme>əˈblɪtəˌreɪts</phoneme></lexeme> <!-- obliterates -->
-  <lexeme><grapheme>obliterativ</grapheme><phoneme>əˈblɪtəˌreɪtɪw</phoneme></lexeme> <!-- obliterative -->
+  <lexeme><grapheme>obliterativ</grapheme><phoneme>əˈblɪtəˌreɪtɪv</phoneme></lexeme> <!-- obliterative -->
   <lexeme><grapheme>obnubilatez</grapheme><phoneme>ɑbˈnubəˌleɪts</phoneme></lexeme> <!-- obnubilates -->
   <lexeme><grapheme>obscurez</grapheme><phoneme>əbˈskjʊrz</phoneme></lexeme> <!-- obscures -->
-  <lexeme><grapheme>observ</grapheme><phoneme>əbˈzɜrw</phoneme></lexeme> <!-- observe -->
-  <lexeme><grapheme>observd</grapheme><phoneme>əbˈzɜrwd</phoneme></lexeme> <!-- observed -->
-  <lexeme><grapheme>observz</grapheme><phoneme>əbˈzɜrwz</phoneme></lexeme> <!-- observes -->
+  <lexeme><grapheme>observ</grapheme><phoneme>əbˈzɜrv</phoneme></lexeme> <!-- observe -->
+  <lexeme><grapheme>observd</grapheme><phoneme>əbˈzɜrvd</phoneme></lexeme> <!-- observed -->
+  <lexeme><grapheme>observz</grapheme><phoneme>əbˈzɜrvz</phoneme></lexeme> <!-- observes -->
   <lexeme><grapheme>obsessd</grapheme><phoneme>əbˈsɛst</phoneme></lexeme> <!-- obsessed -->
   <lexeme><grapheme>obsessez</grapheme><phoneme>əbˈsɛsɪz</phoneme></lexeme> <!-- obsesses -->
-  <lexeme><grapheme>obsessiv</grapheme><phoneme>əbˈsɛsɪw</phoneme></lexeme> <!-- obsessive -->
-  <lexeme><grapheme>obsessivly</grapheme><phoneme>əbˈsɛsɪwli</phoneme></lexeme> <!-- obsessively -->
-  <lexeme><grapheme>obsessivness</grapheme><phoneme>əbˈsɛsɪwnəs</phoneme></lexeme> <!-- obsessiveness -->
-  <lexeme><grapheme>obsessivs</grapheme><phoneme>əbˈsɛsɪwz</phoneme></lexeme> <!-- obsessives -->
+  <lexeme><grapheme>obsessiv</grapheme><phoneme>əbˈsɛsɪv</phoneme></lexeme> <!-- obsessive -->
+  <lexeme><grapheme>obsessivly</grapheme><phoneme>əbˈsɛsɪvli</phoneme></lexeme> <!-- obsessively -->
+  <lexeme><grapheme>obsessivness</grapheme><phoneme>əbˈsɛsɪvnəs</phoneme></lexeme> <!-- obsessiveness -->
+  <lexeme><grapheme>obsessivs</grapheme><phoneme>əbˈsɛsɪvz</phoneme></lexeme> <!-- obsessives -->
   <lexeme><grapheme>obsolescez</grapheme><phoneme>ˌɑbsəˈlɛsɪz</phoneme></lexeme> <!-- obsolesces -->
   <lexeme><grapheme>obsoletez</grapheme><phoneme>ˌɑbsəˈlits</phoneme></lexeme> <!-- obsoletes -->
   <lexeme><grapheme>obstinat</grapheme><phoneme>ˈɑbstənət</phoneme></lexeme> <!-- obstinate -->
   <lexeme><grapheme>obstinatly</grapheme><phoneme>ˈɑbstənətli</phoneme></lexeme> <!-- obstinately -->
   <lexeme><grapheme>obstinatness</grapheme><phoneme>ˈɑbstənətnəs</phoneme></lexeme> <!-- obstinateness -->
-  <lexeme><grapheme>obstructiv</grapheme><phoneme>əbˈstrʌktɪw</phoneme></lexeme> <!-- obstructive -->
-  <lexeme><grapheme>obstructivly</grapheme><phoneme>əbˈstrʌktɪwli</phoneme></lexeme> <!-- obstructively -->
-  <lexeme><grapheme>obstructivness</grapheme><phoneme>əbˈstrʌktɪwnəs</phoneme></lexeme> <!-- obstructiveness -->
-  <lexeme><grapheme>obstructivs</grapheme><phoneme>əbˈstrʌktɪwz</phoneme></lexeme> <!-- obstructives -->
+  <lexeme><grapheme>obstructiv</grapheme><phoneme>əbˈstrʌktɪv</phoneme></lexeme> <!-- obstructive -->
+  <lexeme><grapheme>obstructivly</grapheme><phoneme>əbˈstrʌktɪvli</phoneme></lexeme> <!-- obstructively -->
+  <lexeme><grapheme>obstructivness</grapheme><phoneme>əbˈstrʌktɪvnəs</phoneme></lexeme> <!-- obstructiveness -->
+  <lexeme><grapheme>obstructivs</grapheme><phoneme>əbˈstrʌktɪvz</phoneme></lexeme> <!-- obstructives -->
   <lexeme><grapheme>obstructz</grapheme><phoneme>əbˈstrʌkts</phoneme></lexeme> <!-- obstructs -->
   <lexeme><grapheme>obtaind</grapheme><phoneme>əbˈteɪnd</phoneme></lexeme> <!-- obtained -->
   <lexeme><grapheme>obtainz</grapheme><phoneme>əbˈteɪnz</phoneme></lexeme> <!-- obtains -->
   <lexeme><grapheme>obtestz</grapheme><phoneme>ɑbˈtɛsts</phoneme></lexeme> <!-- obtests -->
   <lexeme><grapheme>obtrudez</grapheme><phoneme>əbˈtrudz</phoneme></lexeme> <!-- obtrudes -->
-  <lexeme><grapheme>obtrusiv</grapheme><phoneme>əbˈtrusɪw</phoneme></lexeme> <!-- obtrusive -->
-  <lexeme><grapheme>obtrusivly</grapheme><phoneme>əbˈtrusɪwli</phoneme></lexeme> <!-- obtrusively -->
-  <lexeme><grapheme>obtrusivness</grapheme><phoneme>əbˈtrusɪwnəs</phoneme></lexeme> <!-- obtrusiveness -->
+  <lexeme><grapheme>obtrusiv</grapheme><phoneme>əbˈtrusɪv</phoneme></lexeme> <!-- obtrusive -->
+  <lexeme><grapheme>obtrusivly</grapheme><phoneme>əbˈtrusɪvli</phoneme></lexeme> <!-- obtrusively -->
+  <lexeme><grapheme>obtrusivness</grapheme><phoneme>əbˈtrusɪvnəs</phoneme></lexeme> <!-- obtrusiveness -->
   <lexeme><grapheme>obtundz</grapheme><phoneme>ɑbˈtʌndz</phoneme></lexeme> <!-- obtunds -->
   <lexeme><grapheme>obturatez</grapheme><phoneme>ˈɑbtʃəˌreɪts</phoneme></lexeme> <!-- obturates -->
   <lexeme><grapheme>obumbratez</grapheme><phoneme>ɑbˈʌmbræts</phoneme></lexeme> <!-- obumbrates -->
-  <lexeme><grapheme>obvertz</grapheme><phoneme>ɑbˈwɜrts</phoneme></lexeme> <!-- obverts -->
-  <lexeme><grapheme>obviatez</grapheme><phoneme>ˈɑbwiˌeɪts</phoneme></lexeme> <!-- obviates -->
+  <lexeme><grapheme>obvertz</grapheme><phoneme>ɑbˈvɜrts</phoneme></lexeme> <!-- obverts -->
+  <lexeme><grapheme>obviatez</grapheme><phoneme>ˈɑbviˌeɪts</phoneme></lexeme> <!-- obviates -->
   <lexeme><grapheme>occasiond</grapheme><phoneme>əˈkeɪʒənd</phoneme></lexeme> <!-- occasioned -->
   <lexeme><grapheme>occasionz</grapheme><phoneme>əˈkeɪʒənz</phoneme></lexeme> <!-- occasions -->
   <lexeme><grapheme>occidentalizez</grapheme><phoneme>ˌɑksədɛntəˈlaɪzɪz</phoneme></lexeme> <!-- occidentalises -->
   <lexeme><grapheme>occludez</grapheme><phoneme>əˈkludz</phoneme></lexeme> <!-- occludes -->
-  <lexeme><grapheme>occlusiv</grapheme><phoneme>əˈklusɪw</phoneme></lexeme> <!-- occlusive -->
-  <lexeme><grapheme>occlusivly</grapheme><phoneme>əˈklusɪwli</phoneme></lexeme> <!-- occlusively -->
+  <lexeme><grapheme>occlusiv</grapheme><phoneme>əˈklusɪv</phoneme></lexeme> <!-- occlusive -->
+  <lexeme><grapheme>occlusivly</grapheme><phoneme>əˈklusɪvli</phoneme></lexeme> <!-- occlusively -->
   <lexeme><grapheme>occultz</grapheme><phoneme>əˈkʌlts</phoneme></lexeme> <!-- occults -->
   <lexeme><grapheme>occupiez</grapheme><phoneme>ˈɑkjəpaɪz</phoneme></lexeme> <!-- occupies -->
   <lexeme><grapheme>occurd</grapheme><phoneme>əˈkɜrd</phoneme></lexeme> <!-- occurred -->
@@ -18361,10 +18361,10 @@
   <lexeme><grapheme>offcastz</grapheme><phoneme>ˈɔfˌkæsts</phoneme></lexeme> <!-- offcasts -->
   <lexeme><grapheme>offd</grapheme><phoneme>ˈɔft</phoneme></lexeme> <!-- offed -->
   <lexeme><grapheme>offendz</grapheme><phoneme>əˈfɛndz</phoneme></lexeme> <!-- offends -->
-  <lexeme><grapheme>offensiv</grapheme><phoneme>əˈfɛnsɪw</phoneme></lexeme> <!-- offencive -->
-  <lexeme><grapheme>offensivly</grapheme><phoneme>əˈfɛnsɪwli</phoneme></lexeme> <!-- offensively -->
-  <lexeme><grapheme>offensivness</grapheme><phoneme>əˈfɛnsɪwnəs</phoneme></lexeme> <!-- offensiveness -->
-  <lexeme><grapheme>offensivs</grapheme><phoneme>əˈfɛnsɪwz</phoneme></lexeme> <!-- offensives -->
+  <lexeme><grapheme>offensiv</grapheme><phoneme>əˈfɛnsɪv</phoneme></lexeme> <!-- offencive -->
+  <lexeme><grapheme>offensivly</grapheme><phoneme>əˈfɛnsɪvli</phoneme></lexeme> <!-- offensively -->
+  <lexeme><grapheme>offensivness</grapheme><phoneme>əˈfɛnsɪvnəs</phoneme></lexeme> <!-- offensiveness -->
+  <lexeme><grapheme>offensivs</grapheme><phoneme>əˈfɛnsɪvz</phoneme></lexeme> <!-- offensives -->
   <lexeme><grapheme>offerd</grapheme><phoneme>ˈɔfərd</phoneme></lexeme> <!-- offered -->
   <lexeme><grapheme>offerz</grapheme><phoneme>ˈɔfərz</phoneme></lexeme> <!-- offers -->
   <lexeme><grapheme>offgard</grapheme><phoneme>ˌɔfˈɡɑrd</phoneme></lexeme> <!-- offguard -->
@@ -18392,12 +18392,12 @@
   <lexeme><grapheme>okayz</grapheme><phoneme>oʊˈkeɪz</phoneme></lexeme> <!-- okays -->
   <lexeme><grapheme>oldfashond</grapheme><phoneme>ˌoʊldˈfæʃənd</phoneme></lexeme> <!-- oldfashioned -->
   <lexeme><grapheme>oligomerizez</grapheme><phoneme>əˈlɪɡəməˌraɪzɪz</phoneme></lexeme> <!-- oligomerises -->
-  <lexeme><grapheme>oliv</grapheme><phoneme>ˈɑlɪw</phoneme></lexeme> <!-- olive -->
-  <lexeme><grapheme>olivs</grapheme><phoneme>ˈɑlɪwz</phoneme></lexeme> <!-- olives -->
+  <lexeme><grapheme>oliv</grapheme><phoneme>ˈɑlɪv</phoneme></lexeme> <!-- olive -->
+  <lexeme><grapheme>olivs</grapheme><phoneme>ˈɑlɪvz</phoneme></lexeme> <!-- olives -->
   <lexeme><grapheme>ololiuqi</grapheme><phoneme>ˌoʊloʊliˈuhki</phoneme></lexeme> <!-- ololiuhqui -->
   <lexeme><grapheme>omend</grapheme><phoneme>ˈoʊmənd</phoneme></lexeme> <!-- omened -->
   <lexeme><grapheme>omenz</grapheme><phoneme>ˈoʊmənz</phoneme></lexeme> <!-- omens -->
-  <lexeme><grapheme>omissiv</grapheme><phoneme>oʊˈmɪsɪw</phoneme></lexeme> <!-- omissive -->
+  <lexeme><grapheme>omissiv</grapheme><phoneme>oʊˈmɪsɪv</phoneme></lexeme> <!-- omissive -->
   <lexeme><grapheme>omitz</grapheme><phoneme>oʊˈmɪts</phoneme></lexeme> <!-- omits -->
   <lexeme><grapheme>onshorez</grapheme><phoneme>ˌɔnˈʃɔrz</phoneme></lexeme> <!-- onshores -->
   <lexeme><grapheme>onslauht</grapheme><phoneme>ˈɔnˌslɔt</phoneme></lexeme> <!-- onslaught -->
@@ -18439,18 +18439,18 @@
   <lexeme><grapheme>openmyndedness</grapheme><phoneme>ˌoʊpənˈmaɪndədnəs</phoneme></lexeme> <!-- openmindedness -->
   <lexeme><grapheme>openz</grapheme><phoneme>ˈoʊpənz</phoneme></lexeme> <!-- opens -->
   <lexeme><grapheme>operatez</grapheme><phoneme>ˈɑpəˌreɪts</phoneme></lexeme> <!-- operates -->
-  <lexeme><grapheme>operativ</grapheme><phoneme>ˈɑpərətɪw</phoneme></lexeme> <!-- operative -->
-  <lexeme><grapheme>operativly</grapheme><phoneme>ˈɑpərətɪwli</phoneme></lexeme> <!-- operatively -->
-  <lexeme><grapheme>operativness</grapheme><phoneme>ˈɑpərətɪwnəs</phoneme></lexeme> <!-- operativeness -->
-  <lexeme><grapheme>operativs</grapheme><phoneme>ˈɑpərətɪwz</phoneme></lexeme> <!-- operatives -->
+  <lexeme><grapheme>operativ</grapheme><phoneme>ˈɑpərətɪv</phoneme></lexeme> <!-- operative -->
+  <lexeme><grapheme>operativly</grapheme><phoneme>ˈɑpərətɪvli</phoneme></lexeme> <!-- operatively -->
+  <lexeme><grapheme>operativness</grapheme><phoneme>ˈɑpərətɪvnəs</phoneme></lexeme> <!-- operativeness -->
+  <lexeme><grapheme>operativs</grapheme><phoneme>ˈɑpərətɪvz</phoneme></lexeme> <!-- operatives -->
   <lexeme><grapheme>operculat</grapheme><phoneme>oʊˈpɜrkjələt</phoneme></lexeme> <!-- operculate -->
   <lexeme><grapheme>opez</grapheme><phoneme>ˈoʊps</phoneme></lexeme> <!-- opes -->
   <lexeme><grapheme>opiat</grapheme><phoneme>ˈoʊpiət</phoneme></lexeme> <!-- opiate -->
   <lexeme><grapheme>opiatez</grapheme><phoneme>ˈoʊpiəts</phoneme></lexeme> <!-- opiates -->
   <lexeme><grapheme>opiats</grapheme><phoneme>ˈoʊpiəts</phoneme></lexeme> <!-- opiates -->
   <lexeme><grapheme>opinez</grapheme><phoneme>oʊˈpaɪnz</phoneme></lexeme> <!-- opines -->
-  <lexeme><grapheme>opinionativ</grapheme><phoneme>əˈpɪnjənətɪw</phoneme></lexeme> <!-- opinionative -->
-  <lexeme><grapheme>opinionativly</grapheme><phoneme>əˈpɪnjənətɪwli</phoneme></lexeme> <!-- opinionatively -->
+  <lexeme><grapheme>opinionativ</grapheme><phoneme>əˈpɪnjənətɪv</phoneme></lexeme> <!-- opinionative -->
+  <lexeme><grapheme>opinionativly</grapheme><phoneme>əˈpɪnjənətɪvli</phoneme></lexeme> <!-- opinionatively -->
   <lexeme><grapheme>opiniond</grapheme><phoneme>əˈpɪnjənd</phoneme></lexeme> <!-- opinioned -->
   <lexeme><grapheme>opinionz</grapheme><phoneme>əˈpɪnjənz</phoneme></lexeme> <!-- opinions -->
   <lexeme><grapheme>oppilatez</grapheme><phoneme>ˈɑpəˌleɪts</phoneme></lexeme> <!-- oppilates -->
@@ -18461,15 +18461,15 @@
   <lexeme><grapheme>opposits</grapheme><phoneme>ˈɑpəzəts</phoneme></lexeme> <!-- opposites -->
   <lexeme><grapheme>oppressd</grapheme><phoneme>əˈprɛst</phoneme></lexeme> <!-- oppressed -->
   <lexeme><grapheme>oppressez</grapheme><phoneme>əˈprɛsɪz</phoneme></lexeme> <!-- oppresses -->
-  <lexeme><grapheme>oppressiv</grapheme><phoneme>əˈprɛsɪw</phoneme></lexeme> <!-- oppressive -->
-  <lexeme><grapheme>oppressivly</grapheme><phoneme>əˈprɛsɪwli</phoneme></lexeme> <!-- oppressively -->
-  <lexeme><grapheme>oppressivness</grapheme><phoneme>əˈprɛsɪwnəs</phoneme></lexeme> <!-- oppressiveness -->
+  <lexeme><grapheme>oppressiv</grapheme><phoneme>əˈprɛsɪv</phoneme></lexeme> <!-- oppressive -->
+  <lexeme><grapheme>oppressivly</grapheme><phoneme>əˈprɛsɪvli</phoneme></lexeme> <!-- oppressively -->
+  <lexeme><grapheme>oppressivness</grapheme><phoneme>əˈprɛsɪvnəs</phoneme></lexeme> <!-- oppressiveness -->
   <lexeme><grapheme>oppugnz</grapheme><phoneme>əˈpjunz</phoneme></lexeme> <!-- oppugns -->
   <lexeme><grapheme>opsonifiez</grapheme><phoneme>ɑpˈsɑnəfaɪz</phoneme></lexeme> <!-- opsonifies -->
   <lexeme><grapheme>opsonizez</grapheme><phoneme>ɑpˈsɑnəˌlaɪzɪz</phoneme></lexeme> <!-- opsonises -->
-  <lexeme><grapheme>optativ</grapheme><phoneme>ˈɑptətɪw</phoneme></lexeme> <!-- optative -->
-  <lexeme><grapheme>optativly</grapheme><phoneme>ˈɑptətɪwli</phoneme></lexeme> <!-- optatively -->
-  <lexeme><grapheme>optativs</grapheme><phoneme>ˈɑptətɪwz</phoneme></lexeme> <!-- optatives -->
+  <lexeme><grapheme>optativ</grapheme><phoneme>ˈɑptətɪv</phoneme></lexeme> <!-- optative -->
+  <lexeme><grapheme>optativly</grapheme><phoneme>ˈɑptətɪvli</phoneme></lexeme> <!-- optatively -->
+  <lexeme><grapheme>optativs</grapheme><phoneme>ˈɑptətɪvz</phoneme></lexeme> <!-- optatives -->
   <lexeme><grapheme>optimizez</grapheme><phoneme>ˈɑptəˌmɪzɪz</phoneme></lexeme> <!-- optimises -->
   <lexeme><grapheme>optiond</grapheme><phoneme>ˈɑpʃənd</phoneme></lexeme> <!-- optioned -->
   <lexeme><grapheme>optionz</grapheme><phoneme>ˈɑpʃənz</phoneme></lexeme> <!-- options -->
@@ -18489,7 +18489,7 @@
   <lexeme><grapheme>ordinat</grapheme><phoneme>ˈɔrdənət</phoneme></lexeme> <!-- ordinate -->
   <lexeme><grapheme>ordinats</grapheme><phoneme>ˈɔrdənəts</phoneme></lexeme> <!-- ordinates -->
   <lexeme><grapheme>ordurez</grapheme><phoneme>ˈɔrdʒʊrz</phoneme></lexeme> <!-- ordures -->
-  <lexeme><grapheme>orectiv</grapheme><phoneme>ɔːˈrɛktɪw</phoneme></lexeme> <!-- orective -->
+  <lexeme><grapheme>orectiv</grapheme><phoneme>ɔːˈrɛktɪv</phoneme></lexeme> <!-- orective -->
   <lexeme><grapheme>organizez</grapheme><phoneme>ˈɔrɡəˌnaɪzɪz</phoneme></lexeme> <!-- organises -->
   <lexeme><grapheme>orgasmd</grapheme><phoneme>ˈɔrˌɡæzəmd</phoneme></lexeme> <!-- orgasmed -->
   <lexeme><grapheme>orgasmz</grapheme><phoneme>ˈɔrˌɡæzəmz</phoneme></lexeme> <!-- orgasms -->
@@ -18499,8 +18499,8 @@
   <lexeme><grapheme>orienteerz</grapheme><phoneme>ˌɔriənˈtɪrz</phoneme></lexeme> <!-- orienteers -->
   <lexeme><grapheme>orientz</grapheme><phoneme>ˈɔriənts</phoneme></lexeme> <!-- orients -->
   <lexeme><grapheme>originatez</grapheme><phoneme>əˈrɪdʒəˌneɪts</phoneme></lexeme> <!-- originates -->
-  <lexeme><grapheme>originativ</grapheme><phoneme>əˈrɪdʒəˌneɪtɪw</phoneme></lexeme> <!-- originative -->
-  <lexeme><grapheme>originativly</grapheme><phoneme>əˈrɪdʒəˌneɪtɪwli</phoneme></lexeme> <!-- originatively -->
+  <lexeme><grapheme>originativ</grapheme><phoneme>əˈrɪdʒəˌneɪtɪv</phoneme></lexeme> <!-- originative -->
+  <lexeme><grapheme>originativly</grapheme><phoneme>əˈrɪdʒəˌneɪtɪvli</phoneme></lexeme> <!-- originatively -->
   <lexeme><grapheme>ornamentz</grapheme><phoneme>ˈɔrnəmənts</phoneme></lexeme> <!-- ornaments -->
   <lexeme><grapheme>ornd</grapheme><phoneme>ˈɔrnd</phoneme></lexeme> <!-- orned -->
   <lexeme><grapheme>ornz</grapheme><phoneme>ˈɔrnz</phoneme></lexeme> <!-- orns -->
@@ -18519,8 +18519,8 @@
   <lexeme><grapheme>osmosez</grapheme><phoneme>ɑzˈmoʊsiz</phoneme></lexeme> <!-- osmoses -->
   <lexeme><grapheme>ossifiez</grapheme><phoneme>ˈɑsəfaɪz</phoneme></lexeme> <!-- ossifies -->
   <lexeme><grapheme>ostendz</grapheme><phoneme>ɑsˈtɛndz</phoneme></lexeme> <!-- ostends -->
-  <lexeme><grapheme>ostensiv</grapheme><phoneme>ɑsˈtɛnsɪw</phoneme></lexeme> <!-- ostensive -->
-  <lexeme><grapheme>ostensivly</grapheme><phoneme>ɑsˈtɛnsɪwli</phoneme></lexeme> <!-- ostensively -->
+  <lexeme><grapheme>ostensiv</grapheme><phoneme>ɑsˈtɛnsɪv</phoneme></lexeme> <!-- ostensive -->
+  <lexeme><grapheme>ostensivly</grapheme><phoneme>ɑsˈtɛnsɪvli</phoneme></lexeme> <!-- ostensively -->
   <lexeme><grapheme>ostracizez</grapheme><phoneme>ˈɑstrəˌlaɪzɪz</phoneme></lexeme> <!-- ostracises -->
   <lexeme><grapheme>ostriqh</grapheme><phoneme>ˈɑstrɪtʃ</phoneme></lexeme> <!-- ostrich -->
   <lexeme><grapheme>ostriqhes</grapheme><phoneme>ˈɑstrɪtʃɪz</phoneme></lexeme> <!-- ostriches -->
@@ -18529,16 +18529,16 @@
   <lexeme><grapheme>ouqhd</grapheme><phoneme>ˈaʊtʃt</phoneme></lexeme> <!-- ouched -->
   <lexeme><grapheme>ouqhez</grapheme><phoneme>ˈaʊtʃɪz</phoneme></lexeme> <!-- ouches -->
   <lexeme><grapheme>ouqhing</grapheme><phoneme>ˈaʊtʃɪŋ</phoneme></lexeme> <!-- ouching -->
-  <lexeme><grapheme>ourselvs</grapheme><phoneme>aʊərˈsɛlwz</phoneme></lexeme> <!-- ourselves -->
+  <lexeme><grapheme>ourselvs</grapheme><phoneme>aʊərˈsɛlvz</phoneme></lexeme> <!-- ourselves -->
   <lexeme><grapheme>oustz</grapheme><phoneme>ˈaʊsts</phoneme></lexeme> <!-- ousts -->
   <lexeme><grapheme>outactz</grapheme><phoneme>ˌaʊtˈækts</phoneme></lexeme> <!-- outacts -->
   <lexeme><grapheme>outaddz</grapheme><phoneme>ˌaʊtˈædz</phoneme></lexeme> <!-- outadds -->
-  <lexeme><grapheme>outaqhiev</grapheme><phoneme>ˌaʊtəˈtʃiw</phoneme></lexeme> <!-- outachieve -->
-  <lexeme><grapheme>outaqhievd</grapheme><phoneme>ˌaʊtəˈtʃiwd</phoneme></lexeme> <!-- outachieved -->
-  <lexeme><grapheme>outaqhiever</grapheme><phoneme>ˌaʊtəˈtʃiwər</phoneme></lexeme> <!-- outachiever -->
-  <lexeme><grapheme>outaqhievers</grapheme><phoneme>ˌaʊtəˈtʃiwərz</phoneme></lexeme> <!-- outachievers -->
-  <lexeme><grapheme>outaqhieving</grapheme><phoneme>ˌaʊtəˈtʃiwɪŋ</phoneme></lexeme> <!-- outachieving -->
-  <lexeme><grapheme>outaqhievz</grapheme><phoneme>ˌaʊtəˈtʃiwz</phoneme></lexeme> <!-- outachieves -->
+  <lexeme><grapheme>outaqhiev</grapheme><phoneme>ˌaʊtəˈtʃiv</phoneme></lexeme> <!-- outachieve -->
+  <lexeme><grapheme>outaqhievd</grapheme><phoneme>ˌaʊtəˈtʃivd</phoneme></lexeme> <!-- outachieved -->
+  <lexeme><grapheme>outaqhiever</grapheme><phoneme>ˌaʊtəˈtʃivər</phoneme></lexeme> <!-- outachiever -->
+  <lexeme><grapheme>outaqhievers</grapheme><phoneme>ˌaʊtəˈtʃivərz</phoneme></lexeme> <!-- outachievers -->
+  <lexeme><grapheme>outaqhieving</grapheme><phoneme>ˌaʊtəˈtʃivɪŋ</phoneme></lexeme> <!-- outachieving -->
+  <lexeme><grapheme>outaqhievz</grapheme><phoneme>ˌaʊtəˈtʃivz</phoneme></lexeme> <!-- outachieves -->
   <lexeme><grapheme>outarguez</grapheme><phoneme>ˌaʊtˈɑrɡjuz</phoneme></lexeme> <!-- outargues -->
   <lexeme><grapheme>outaskd</grapheme><phoneme>ˌaʊtˈæskt</phoneme></lexeme> <!-- outasked -->
   <lexeme><grapheme>outaskz</grapheme><phoneme>ˌaʊtˈæsks</phoneme></lexeme> <!-- outasks -->
@@ -18582,7 +18582,7 @@
   <lexeme><grapheme>outbraeks</grapheme><phoneme>ˈaʊtˌbreɪks</phoneme></lexeme> <!-- outbreaks -->
   <lexeme><grapheme>outbragd</grapheme><phoneme>ˌaʊtˈbræɡd</phoneme></lexeme> <!-- outbragged -->
   <lexeme><grapheme>outbragz</grapheme><phoneme>ˌaʊtˈbræɡz</phoneme></lexeme> <!-- outbrags -->
-  <lexeme><grapheme>outbravez</grapheme><phoneme>ˌaʊtˈbreɪwz</phoneme></lexeme> <!-- outbraves -->
+  <lexeme><grapheme>outbravez</grapheme><phoneme>ˌaʊtˈbreɪvz</phoneme></lexeme> <!-- outbraves -->
   <lexeme><grapheme>outbrawld</grapheme><phoneme>ˌaʊtˈbrɔld</phoneme></lexeme> <!-- outbrawled -->
   <lexeme><grapheme>outbrawlz</grapheme><phoneme>ˌaʊtˈbrɔlz</phoneme></lexeme> <!-- outbrawls -->
   <lexeme><grapheme>outbreedz</grapheme><phoneme>ˌaʊtˈbridz</phoneme></lexeme> <!-- outbreeds -->
@@ -18599,8 +18599,8 @@
   <lexeme><grapheme>outcaperz</grapheme><phoneme>ˌaʊtˈkeɪpərz</phoneme></lexeme> <!-- outcapers -->
   <lexeme><grapheme>outcatchez</grapheme><phoneme>ˌaʊtˈkætʃɪz</phoneme></lexeme> <!-- outcatches -->
   <lexeme><grapheme>outcauht</grapheme><phoneme>ˌaʊtˈkɔt</phoneme></lexeme> <!-- outcaught -->
-  <lexeme><grapheme>outcavild</grapheme><phoneme>ˌaʊtˈkæwəld</phoneme></lexeme> <!-- outcaviled -->
-  <lexeme><grapheme>outcavilz</grapheme><phoneme>ˌaʊtˈkæwəlz</phoneme></lexeme> <!-- outcavils -->
+  <lexeme><grapheme>outcavild</grapheme><phoneme>ˌaʊtˈkævəld</phoneme></lexeme> <!-- outcaviled -->
+  <lexeme><grapheme>outcavilz</grapheme><phoneme>ˌaʊtˈkævəlz</phoneme></lexeme> <!-- outcavils -->
   <lexeme><grapheme>outclassd</grapheme><phoneme>ˌaʊtˈklæst</phoneme></lexeme> <!-- outclassed -->
   <lexeme><grapheme>outclassez</grapheme><phoneme>ˌaʊtˈklæsɪz</phoneme></lexeme> <!-- outclasses -->
   <lexeme><grapheme>outclym</grapheme><phoneme>ˌaʊtˈklaɪm</phoneme></lexeme> <!-- outclimb -->
@@ -18627,15 +18627,15 @@
   <lexeme><grapheme>outcrowd</grapheme><phoneme>ˌaʊtˈkroʊd</phoneme></lexeme> <!-- outcrowed -->
   <lexeme><grapheme>outcrowz</grapheme><phoneme>ˌaʊtˈkroʊz</phoneme></lexeme> <!-- outcrows -->
   <lexeme><grapheme>outcursez</grapheme><phoneme>ˌaʊtˈkɜrsɪz</phoneme></lexeme> <!-- outcurses -->
-  <lexeme><grapheme>outcurv</grapheme><phoneme>ˌaʊtˈkɜrw</phoneme></lexeme> <!-- outcurve -->
-  <lexeme><grapheme>outcurvs</grapheme><phoneme>ˌaʊtˈkɜrwz</phoneme></lexeme> <!-- outcurves -->
+  <lexeme><grapheme>outcurv</grapheme><phoneme>ˌaʊtˈkɜrv</phoneme></lexeme> <!-- outcurve -->
+  <lexeme><grapheme>outcurvs</grapheme><phoneme>ˌaʊtˈkɜrvz</phoneme></lexeme> <!-- outcurves -->
   <lexeme><grapheme>outdancez</grapheme><phoneme>ˌaʊtˈdænsɪz</phoneme></lexeme> <!-- outdances -->
   <lexeme><grapheme>outdarez</grapheme><phoneme>ˌaʊtˈdɛrz</phoneme></lexeme> <!-- outdares -->
   <lexeme><grapheme>outdatez</grapheme><phoneme>ˌaʊtˈdeɪts</phoneme></lexeme> <!-- outdates -->
   <lexeme><grapheme>outdazzlez</grapheme><phoneme>ˌaʊtˈdæzəlz</phoneme></lexeme> <!-- outdazzles -->
   <lexeme><grapheme>outdebatez</grapheme><phoneme>ˌaʊtˈdeɪts</phoneme></lexeme> <!-- outdebates -->
-  <lexeme><grapheme>outdeliverd</grapheme><phoneme>ˌaʊtdɪˈlɪwərd</phoneme></lexeme> <!-- outdelivered -->
-  <lexeme><grapheme>outdeliverz</grapheme><phoneme>ˌaʊtdɪˈlɪwərz</phoneme></lexeme> <!-- outdelivers -->
+  <lexeme><grapheme>outdeliverd</grapheme><phoneme>ˌaʊtdɪˈlɪvərd</phoneme></lexeme> <!-- outdelivered -->
+  <lexeme><grapheme>outdeliverz</grapheme><phoneme>ˌaʊtdɪˈlɪvərz</phoneme></lexeme> <!-- outdelivers -->
   <lexeme><grapheme>outdesignd</grapheme><phoneme>ˌaʊtdɪˈzaɪnd</phoneme></lexeme> <!-- outdesigned -->
   <lexeme><grapheme>outdesignz</grapheme><phoneme>ˌaʊtdɪˈzaɪnz</phoneme></lexeme> <!-- outdesigns -->
   <lexeme><grapheme>outdistancez</grapheme><phoneme>ˌaʊtˈdɪstənsɪz</phoneme></lexeme> <!-- outdistances -->
@@ -18655,7 +18655,7 @@
   <lexeme><grapheme>outdressd</grapheme><phoneme>ˌaʊtˈdrɛst</phoneme></lexeme> <!-- outdressed -->
   <lexeme><grapheme>outdressez</grapheme><phoneme>ˌaʊtˈdrɛsɪz</phoneme></lexeme> <!-- outdresses -->
   <lexeme><grapheme>outdrinkz</grapheme><phoneme>ˌaʊtˈdrɪŋks</phoneme></lexeme> <!-- outdrinks -->
-  <lexeme><grapheme>outdrivez</grapheme><phoneme>ˌaʊtˈdraɪwz</phoneme></lexeme> <!-- outdrives -->
+  <lexeme><grapheme>outdrivez</grapheme><phoneme>ˌaʊtˈdraɪvz</phoneme></lexeme> <!-- outdrives -->
   <lexeme><grapheme>outdu</grapheme><phoneme>ˌaʊtˈdu</phoneme></lexeme> <!-- outdo -->
   <lexeme><grapheme>outdueld</grapheme><phoneme>ˌaʊtˈduəld</phoneme></lexeme> <!-- outdueled -->
   <lexeme><grapheme>outduelz</grapheme><phoneme>ˌaʊtˈduəlz</phoneme></lexeme> <!-- outduels -->
@@ -18720,8 +18720,8 @@
   <lexeme><grapheme>outghessing</grapheme><phoneme>ˌaʊtˈɡɛsɪŋ</phoneme></lexeme> <!-- outguessing -->
   <lexeme><grapheme>outghide</grapheme><phoneme>ˌaʊtˈɡaɪd</phoneme></lexeme> <!-- outguide -->
   <lexeme><grapheme>outghides</grapheme><phoneme>ˌaʊtˈɡaɪdz</phoneme></lexeme> <!-- outguides -->
-  <lexeme><grapheme>outgiv</grapheme><phoneme>ˌaʊtˈɡɪw</phoneme></lexeme> <!-- outgive -->
-  <lexeme><grapheme>outgivz</grapheme><phoneme>ˌaʊtˈɡɪwz</phoneme></lexeme> <!-- outgives -->
+  <lexeme><grapheme>outgiv</grapheme><phoneme>ˌaʊtˈɡɪv</phoneme></lexeme> <!-- outgive -->
+  <lexeme><grapheme>outgivz</grapheme><phoneme>ˌaʊtˈɡɪvz</phoneme></lexeme> <!-- outgives -->
   <lexeme><grapheme>outglarez</grapheme><phoneme>ˌaʊtˈɡlɛrz</phoneme></lexeme> <!-- outglares -->
   <lexeme><grapheme>outglitterd</grapheme><phoneme>ˌaʊtˈɡlɪtərd</phoneme></lexeme> <!-- outglittered -->
   <lexeme><grapheme>outglitterz</grapheme><phoneme>ˌaʊtˈɡlɪtərz</phoneme></lexeme> <!-- outglitters -->
@@ -18789,15 +18789,15 @@
   <lexeme><grapheme>outlernz</grapheme><phoneme>ˌaʊtˈlɜrnz</phoneme></lexeme> <!-- outlearns -->
   <lexeme><grapheme>outliez</grapheme><phoneme>ˌaʊtˈlaɪz</phoneme></lexeme> <!-- outlies -->
   <lexeme><grapheme>outlinez</grapheme><phoneme>ˈaʊtˌlaɪnz</phoneme></lexeme> <!-- outlines -->
-  <lexeme><grapheme>outliv</grapheme><phoneme>ˌaʊtˈlɪw</phoneme></lexeme> <!-- outlive -->
-  <lexeme><grapheme>outlivd</grapheme><phoneme>ˌaʊtˈlɪwd</phoneme></lexeme> <!-- outlived -->
-  <lexeme><grapheme>outlivz</grapheme><phoneme>ˌaʊtˈlɪwz</phoneme></lexeme> <!-- outlives -->
-  <lexeme><grapheme>outlov</grapheme><phoneme>ˌaʊtˈlʌw</phoneme></lexeme> <!-- outlove -->
-  <lexeme><grapheme>outlovd</grapheme><phoneme>ˌaʊtˈlʌwd</phoneme></lexeme> <!-- outloved -->
-  <lexeme><grapheme>outlovz</grapheme><phoneme>ˌaʊtˈlʌwz</phoneme></lexeme> <!-- outloves -->
+  <lexeme><grapheme>outliv</grapheme><phoneme>ˌaʊtˈlɪv</phoneme></lexeme> <!-- outlive -->
+  <lexeme><grapheme>outlivd</grapheme><phoneme>ˌaʊtˈlɪvd</phoneme></lexeme> <!-- outlived -->
+  <lexeme><grapheme>outlivz</grapheme><phoneme>ˌaʊtˈlɪvz</phoneme></lexeme> <!-- outlives -->
+  <lexeme><grapheme>outlov</grapheme><phoneme>ˌaʊtˈlʌv</phoneme></lexeme> <!-- outlove -->
+  <lexeme><grapheme>outlovd</grapheme><phoneme>ˌaʊtˈlʌvd</phoneme></lexeme> <!-- outloved -->
+  <lexeme><grapheme>outlovz</grapheme><phoneme>ˌaʊtˈlʌvz</phoneme></lexeme> <!-- outloves -->
   <lexeme><grapheme>outmand</grapheme><phoneme>ˌaʊtˈmænd</phoneme></lexeme> <!-- outmanned -->
-  <lexeme><grapheme>outmaneuverd</grapheme><phoneme>ˌaʊtməˈnuwərd</phoneme></lexeme> <!-- outmaneuvered -->
-  <lexeme><grapheme>outmaneuverz</grapheme><phoneme>ˌaʊtməˈnuwərz</phoneme></lexeme> <!-- outmaneuvers -->
+  <lexeme><grapheme>outmaneuverd</grapheme><phoneme>ˌaʊtməˈnuvərd</phoneme></lexeme> <!-- outmaneuvered -->
+  <lexeme><grapheme>outmaneuverz</grapheme><phoneme>ˌaʊtməˈnuvərz</phoneme></lexeme> <!-- outmaneuvers -->
   <lexeme><grapheme>outmanipulatez</grapheme><phoneme>ˌaʊtməˈnɪpjəˌleɪts</phoneme></lexeme> <!-- outmanipulates -->
   <lexeme><grapheme>outmanz</grapheme><phoneme>ˌaʊtˈmændz</phoneme></lexeme> <!-- outmans -->
   <lexeme><grapheme>outmarqh</grapheme><phoneme>ˌaʊtˈmɑrtʃ</phoneme></lexeme> <!-- outmarch -->
@@ -18807,10 +18807,10 @@
   <lexeme><grapheme>outmatchd</grapheme><phoneme>ˌaʊtˈmætʃt</phoneme></lexeme> <!-- outmatched -->
   <lexeme><grapheme>outmatchez</grapheme><phoneme>ˌaʊtˈmætʃɪz</phoneme></lexeme> <!-- outmatches -->
   <lexeme><grapheme>outmodez</grapheme><phoneme>ˌaʊtˈmoʊdz</phoneme></lexeme> <!-- outmodes -->
-  <lexeme><grapheme>outmoov</grapheme><phoneme>ˌaʊtˈmuw</phoneme></lexeme> <!-- outmove -->
-  <lexeme><grapheme>outmoovd</grapheme><phoneme>ˌaʊtˈmuwd</phoneme></lexeme> <!-- outmoved -->
-  <lexeme><grapheme>outmooving</grapheme><phoneme>ˌaʊtˈmuwɪŋ</phoneme></lexeme> <!-- outmoving -->
-  <lexeme><grapheme>outmoovz</grapheme><phoneme>ˌaʊtˈmuwz</phoneme></lexeme> <!-- outmoves -->
+  <lexeme><grapheme>outmoov</grapheme><phoneme>ˌaʊtˈmuv</phoneme></lexeme> <!-- outmove -->
+  <lexeme><grapheme>outmoovd</grapheme><phoneme>ˌaʊtˈmuvd</phoneme></lexeme> <!-- outmoved -->
+  <lexeme><grapheme>outmooving</grapheme><phoneme>ˌaʊtˈmuvɪŋ</phoneme></lexeme> <!-- outmoving -->
+  <lexeme><grapheme>outmoovz</grapheme><phoneme>ˌaʊtˈmuvz</phoneme></lexeme> <!-- outmoves -->
   <lexeme><grapheme>outmoste</grapheme><phoneme>ˈaʊtˌmoʊst</phoneme></lexeme> <!-- outmost -->
   <lexeme><grapheme>outmusclez</grapheme><phoneme>ˌaʊtˈmʌsəlz</phoneme></lexeme> <!-- outmuscles -->
   <lexeme><grapheme>outnumberd</grapheme><phoneme>ˌaʊtˈmʌmbərd</phoneme></lexeme> <!-- outnumbered -->
@@ -18899,7 +18899,7 @@
   <lexeme><grapheme>outrankd</grapheme><phoneme>ˌaʊtˈræŋkt</phoneme></lexeme> <!-- outranked -->
   <lexeme><grapheme>outrankz</grapheme><phoneme>ˌaʊtˈræŋks</phoneme></lexeme> <!-- outranks -->
   <lexeme><grapheme>outratez</grapheme><phoneme>ˌaʊtˈreɪts</phoneme></lexeme> <!-- outrates -->
-  <lexeme><grapheme>outravez</grapheme><phoneme>ˌaʊtˈreɪwz</phoneme></lexeme> <!-- outraves -->
+  <lexeme><grapheme>outravez</grapheme><phoneme>ˌaʊtˈreɪvz</phoneme></lexeme> <!-- outraves -->
   <lexeme><grapheme>outreadz</grapheme><phoneme>ˌaʊtˈridz</phoneme></lexeme> <!-- outreads -->
   <lexeme><grapheme>outreaqh</grapheme><phoneme>ˈaʊtˌritʃ</phoneme></lexeme> <!-- outreach -->
   <lexeme><grapheme>outreaqhd</grapheme><phoneme>ˌaʊtˈritʃt</phoneme></lexeme> <!-- outreached -->
@@ -18915,8 +18915,8 @@
   <lexeme><grapheme>outriht</grapheme><phoneme>ˌaʊtˈraɪt</phoneme></lexeme> <!-- outright -->
   <lexeme><grapheme>outrihtly</grapheme><phoneme>ˌaʊtˈraɪtli</phoneme></lexeme> <!-- outrightly -->
   <lexeme><grapheme>outringz</grapheme><phoneme>ˌaʊtˈrɪŋz</phoneme></lexeme> <!-- outrings -->
-  <lexeme><grapheme>outrivald</grapheme><phoneme>ˌaʊtˈraɪwəld</phoneme></lexeme> <!-- outrivaled -->
-  <lexeme><grapheme>outrivalz</grapheme><phoneme>ˌaʊtˈraɪwəlz</phoneme></lexeme> <!-- outrivals -->
+  <lexeme><grapheme>outrivald</grapheme><phoneme>ˌaʊtˈraɪvəld</phoneme></lexeme> <!-- outrivaled -->
+  <lexeme><grapheme>outrivalz</grapheme><phoneme>ˌaʊtˈraɪvəlz</phoneme></lexeme> <!-- outrivals -->
   <lexeme><grapheme>outroard</grapheme><phoneme>ˌaʊtˈrɔrd</phoneme></lexeme> <!-- outroared -->
   <lexeme><grapheme>outroarz</grapheme><phoneme>ˌaʊtˈrɔrz</phoneme></lexeme> <!-- outroars -->
   <lexeme><grapheme>outrockd</grapheme><phoneme>ˌaʊtˈrɑkt</phoneme></lexeme> <!-- outrocked -->
@@ -18931,8 +18931,8 @@
   <lexeme><grapheme>outrushez</grapheme><phoneme>ˌaʊtˈrʌʃɪz</phoneme></lexeme> <!-- outrushes -->
   <lexeme><grapheme>outsaild</grapheme><phoneme>ˌaʊtˈseɪld</phoneme></lexeme> <!-- outsailed -->
   <lexeme><grapheme>outsailz</grapheme><phoneme>ˌaʊtˈseɪlz</phoneme></lexeme> <!-- outsails -->
-  <lexeme><grapheme>outsavord</grapheme><phoneme>ˌaʊtˈseɪwərd</phoneme></lexeme> <!-- outsavored -->
-  <lexeme><grapheme>outsavorz</grapheme><phoneme>ˌaʊtˈseɪwərz</phoneme></lexeme> <!-- outsavors -->
+  <lexeme><grapheme>outsavord</grapheme><phoneme>ˌaʊtˈseɪvərd</phoneme></lexeme> <!-- outsavored -->
+  <lexeme><grapheme>outsavorz</grapheme><phoneme>ˌaʊtˈseɪvərz</phoneme></lexeme> <!-- outsavors -->
   <lexeme><grapheme>outschemez</grapheme><phoneme>ˌaʊtˈskims</phoneme></lexeme> <!-- outschemes -->
   <lexeme><grapheme>outscoldz</grapheme><phoneme>ˌaʊtˈskoʊldz</phoneme></lexeme> <!-- outscolds -->
   <lexeme><grapheme>outscoopz</grapheme><phoneme>ˌaʊtˈskups</phoneme></lexeme> <!-- outscoops -->
@@ -18941,9 +18941,9 @@
   <lexeme><grapheme>outscornz</grapheme><phoneme>ˌaʊtˈskɔrnz</phoneme></lexeme> <!-- outscorns -->
   <lexeme><grapheme>outseez</grapheme><phoneme>ˌaʊtˈsiz</phoneme></lexeme> <!-- outsees -->
   <lexeme><grapheme>outsellz</grapheme><phoneme>ˌaʊtˈsɛlz</phoneme></lexeme> <!-- outsells -->
-  <lexeme><grapheme>outserv</grapheme><phoneme>ˌaʊtˈsɜrw</phoneme></lexeme> <!-- outserve -->
-  <lexeme><grapheme>outservd</grapheme><phoneme>ˌaʊtˈsɜrwd</phoneme></lexeme> <!-- outserved -->
-  <lexeme><grapheme>outservz</grapheme><phoneme>ˌaʊtˈsɜrwz</phoneme></lexeme> <!-- outserves -->
+  <lexeme><grapheme>outserv</grapheme><phoneme>ˌaʊtˈsɜrv</phoneme></lexeme> <!-- outserve -->
+  <lexeme><grapheme>outservd</grapheme><phoneme>ˌaʊtˈsɜrvd</phoneme></lexeme> <!-- outserved -->
+  <lexeme><grapheme>outservz</grapheme><phoneme>ˌaʊtˈsɜrvz</phoneme></lexeme> <!-- outserves -->
   <lexeme><grapheme>outshamez</grapheme><phoneme>ˌaʊtˈʃeɪmz</phoneme></lexeme> <!-- outshames -->
   <lexeme><grapheme>outshinez</grapheme><phoneme>ˌaʊtˈʃaɪnz</phoneme></lexeme> <!-- outshines -->
   <lexeme><grapheme>outshootz</grapheme><phoneme>ˌaʊtˈʃuts</phoneme></lexeme> <!-- outshoots -->
@@ -19027,11 +19027,11 @@
   <lexeme><grapheme>outtuwerd</grapheme><phoneme>ˌaʊtˈtaʊərd</phoneme></lexeme> <!-- outtowered -->
   <lexeme><grapheme>outtuwering</grapheme><phoneme>ˌaʊtˈtaʊərɪŋ</phoneme></lexeme> <!-- outtowering -->
   <lexeme><grapheme>outtuwerz</grapheme><phoneme>ˌaʊtˈtaʊərz</phoneme></lexeme> <!-- outtowers -->
-  <lexeme><grapheme>outvaluez</grapheme><phoneme>ˌaʊtˈwæljuz</phoneme></lexeme> <!-- outvalues -->
-  <lexeme><grapheme>outvauntz</grapheme><phoneme>ˌaʊtˈwɔnts</phoneme></lexeme> <!-- outvaunts -->
-  <lexeme><grapheme>outviez</grapheme><phoneme>ˌaʊtˈwaɪz</phoneme></lexeme> <!-- outvies -->
-  <lexeme><grapheme>outvoicez</grapheme><phoneme>ˌaʊtˈwɔɪsɪz</phoneme></lexeme> <!-- outvoices -->
-  <lexeme><grapheme>outvotez</grapheme><phoneme>ˌaʊtˈwoʊts</phoneme></lexeme> <!-- outvotes -->
+  <lexeme><grapheme>outvaluez</grapheme><phoneme>ˌaʊtˈvæljuz</phoneme></lexeme> <!-- outvalues -->
+  <lexeme><grapheme>outvauntz</grapheme><phoneme>ˌaʊtˈvɔnts</phoneme></lexeme> <!-- outvaunts -->
+  <lexeme><grapheme>outviez</grapheme><phoneme>ˌaʊtˈvaɪz</phoneme></lexeme> <!-- outvies -->
+  <lexeme><grapheme>outvoicez</grapheme><phoneme>ˌaʊtˈvɔɪsɪz</phoneme></lexeme> <!-- outvoices -->
+  <lexeme><grapheme>outvotez</grapheme><phoneme>ˌaʊtˈvoʊts</phoneme></lexeme> <!-- outvotes -->
   <lexeme><grapheme>outwaer</grapheme><phoneme>ˌaʊtˈwɛr</phoneme></lexeme> <!-- outwear -->
   <lexeme><grapheme>outwaeriez</grapheme><phoneme>ˌaʊtˈwɪriz</phoneme></lexeme> <!-- outwearies -->
   <lexeme><grapheme>outwaering</grapheme><phoneme>ˌaʊtˈwɛrɪŋ</phoneme></lexeme> <!-- outwearing -->
@@ -19070,257 +19070,257 @@
   <lexeme><grapheme>outyieldz</grapheme><phoneme>ˌaʊtˈjildz</phoneme></lexeme> <!-- outyields -->
   <lexeme><grapheme>outz</grapheme><phoneme>ˈaʊts</phoneme></lexeme> <!-- outs -->
   <lexeme><grapheme>ov</grapheme><phoneme>ʌw</phoneme></lexeme> <!-- of -->
-  <lexeme><grapheme>ovariectomizez</grapheme><phoneme>oʊˌwæriˈɛktəˌmaɪzɪz</phoneme></lexeme> <!-- ovariectomises -->
-  <lexeme><grapheme>overabstractz</grapheme><phoneme>ˌoʊwərəbˈstrækts</phoneme></lexeme> <!-- overabstracts -->
-  <lexeme><grapheme>overaccentuatez</grapheme><phoneme>ˌoʊwərækˈtsɛntʃuˌeɪts</phoneme></lexeme> <!-- overaccentuates -->
-  <lexeme><grapheme>overactiv</grapheme><phoneme>ˌoʊwərˈæktɪw</phoneme></lexeme> <!-- overactive -->
-  <lexeme><grapheme>overactz</grapheme><phoneme>ˌoʊwərˈækts</phoneme></lexeme> <!-- overacts -->
-  <lexeme><grapheme>overadvertisez</grapheme><phoneme>ˌoʊwərˈædwərˌtaɪzɪz</phoneme></lexeme> <!-- overadvertises -->
-  <lexeme><grapheme>overagez</grapheme><phoneme>ˈoʊwərɪdʒɪz</phoneme></lexeme> <!-- overages -->
-  <lexeme><grapheme>overaggressiv</grapheme><phoneme>ˌoʊwərəˈɡrɛsɪw</phoneme></lexeme> <!-- overaggressive -->
-  <lexeme><grapheme>overanalyzez</grapheme><phoneme>ˌoʊwərəˈnæləsiz</phoneme></lexeme> <!-- overanalyses -->
-  <lexeme><grapheme>overappliez</grapheme><phoneme>ˌoʊwərəˈplaɪz</phoneme></lexeme> <!-- overapplies -->
-  <lexeme><grapheme>overaqhiev</grapheme><phoneme>ˌoʊwərəˈtʃiw</phoneme></lexeme> <!-- overachieve -->
-  <lexeme><grapheme>overaqhievd</grapheme><phoneme>ˌoʊwərəˈtʃiwd</phoneme></lexeme> <!-- overachieved -->
-  <lexeme><grapheme>overaqhiever</grapheme><phoneme>ˌoʊwərəˈtʃiwər</phoneme></lexeme> <!-- overachiever -->
-  <lexeme><grapheme>overaqhievers</grapheme><phoneme>ˌoʊwərəˈtʃiwərz</phoneme></lexeme> <!-- overachievers -->
-  <lexeme><grapheme>overaqhieving</grapheme><phoneme>ˌoʊwərəˈtʃiwɪŋ</phoneme></lexeme> <!-- overachieving -->
-  <lexeme><grapheme>overaqhievment</grapheme><phoneme>ˌoʊwərəˈtʃiwmənt</phoneme></lexeme> <!-- overachievement -->
-  <lexeme><grapheme>overaqhievments</grapheme><phoneme>ˌoʊwərəˈtʃiwmǝnts</phoneme></lexeme> <!-- overachievements -->
-  <lexeme><grapheme>overaqhievz</grapheme><phoneme>ˌoʊwərəˈtʃiwz</phoneme></lexeme> <!-- overachieves -->
-  <lexeme><grapheme>overarmd</grapheme><phoneme>ˌoʊwərˈɑrmd</phoneme></lexeme> <!-- overarmed -->
-  <lexeme><grapheme>overarmz</grapheme><phoneme>ˌoʊwərˈɑrmz</phoneme></lexeme> <!-- overarms -->
-  <lexeme><grapheme>overarqh</grapheme><phoneme>ˌoʊwərˈɑrtʃ</phoneme></lexeme> <!-- overarch -->
-  <lexeme><grapheme>overarqhd</grapheme><phoneme>ˌoʊwərˈɑrtʃt</phoneme></lexeme> <!-- overarched -->
-  <lexeme><grapheme>overarqhes</grapheme><phoneme>ˌoʊwərˈɑrtʃɪz</phoneme></lexeme> <!-- overarches -->
-  <lexeme><grapheme>overarqhez</grapheme><phoneme>ˌoʊwərˈɑrtʃɪz</phoneme></lexeme> <!-- overarches -->
-  <lexeme><grapheme>overarqhing</grapheme><phoneme>ˌoʊwərˈɑrtʃɪŋ</phoneme></lexeme> <!-- overarching -->
-  <lexeme><grapheme>overarrangez</grapheme><phoneme>ˌoʊwərəˈreɪndʒɪz</phoneme></lexeme> <!-- overarranges -->
-  <lexeme><grapheme>overarticulatez</grapheme><phoneme>ˌoʊwərɑrˈtɪkjəleɪts</phoneme></lexeme> <!-- overarticulates -->
-  <lexeme><grapheme>overassertiv</grapheme><phoneme>ˌoʊwərəˈsɜrtɪw</phoneme></lexeme> <!-- overassertive -->
-  <lexeme><grapheme>overassertz</grapheme><phoneme>ˌoʊwərəˈsɜrts</phoneme></lexeme> <!-- overasserts -->
-  <lexeme><grapheme>overaw</grapheme><phoneme>ˌoʊwərˈɔ</phoneme></lexeme> <!-- overawe -->
-  <lexeme><grapheme>overawd</grapheme><phoneme>ˌoʊwərˈɔd</phoneme></lexeme> <!-- overawed -->
-  <lexeme><grapheme>overawz</grapheme><phoneme>ˌoʊwərˈɔz</phoneme></lexeme> <!-- overawes -->
-  <lexeme><grapheme>overbaer</grapheme><phoneme>ˌoʊwərˈbɛr</phoneme></lexeme> <!-- overbear -->
-  <lexeme><grapheme>overbaering</grapheme><phoneme>ˌoʊwərˈbɛrɪŋ</phoneme></lexeme> <!-- overbearing -->
-  <lexeme><grapheme>overbaeringly</grapheme><phoneme>ˌoʊwərˈbɛrɪŋli</phoneme></lexeme> <!-- overbearingly -->
-  <lexeme><grapheme>overbaerz</grapheme><phoneme>ˌoʊwərˈbɛrz</phoneme></lexeme> <!-- overbears -->
-  <lexeme><grapheme>overbakez</grapheme><phoneme>ˌoʊwərˈbeɪks</phoneme></lexeme> <!-- overbakes -->
-  <lexeme><grapheme>overbalancez</grapheme><phoneme>ˌoʊwərˈbælənsɪz</phoneme></lexeme> <!-- overbalances -->
-  <lexeme><grapheme>overbeatz</grapheme><phoneme>ˌoʊwərˈbits</phoneme></lexeme> <!-- overbeats -->
-  <lexeme><grapheme>overbejeweld</grapheme><phoneme>ˌoʊwərbɪˈdʒuəld</phoneme></lexeme> <!-- overbejeweled -->
-  <lexeme><grapheme>overbetz</grapheme><phoneme>ˌoʊwərˈbɛts</phoneme></lexeme> <!-- overbets -->
-  <lexeme><grapheme>overbidz</grapheme><phoneme>ˌoʊwərˈbɪdz</phoneme></lexeme> <!-- overbids -->
-  <lexeme><grapheme>overbild</grapheme><phoneme>ˌoʊwərˈbɪld</phoneme></lexeme> <!-- overbuild -->
-  <lexeme><grapheme>overbilding</grapheme><phoneme>ˌoʊwərˈbɪldɪŋ</phoneme></lexeme> <!-- overbuilding -->
-  <lexeme><grapheme>overbildz</grapheme><phoneme>ˌoʊwərˈbɪldz</phoneme></lexeme> <!-- overbuilds -->
-  <lexeme><grapheme>overbilld</grapheme><phoneme>ˌoʊwərˈbɪld</phoneme></lexeme> <!-- overbilled -->
-  <lexeme><grapheme>overbillz</grapheme><phoneme>ˌoʊwərˈbɪlz</phoneme></lexeme> <!-- overbills -->
-  <lexeme><grapheme>overbilt</grapheme><phoneme>ˌoʊwərˈbɪlt</phoneme></lexeme> <!-- overbuilt -->
-  <lexeme><grapheme>overbleaqh</grapheme><phoneme>ˌoʊwərˈblitʃ</phoneme></lexeme> <!-- overbleach -->
-  <lexeme><grapheme>overbleaqhd</grapheme><phoneme>ˌoʊwərˈblitʃt</phoneme></lexeme> <!-- overbleached -->
-  <lexeme><grapheme>overbleaqhez</grapheme><phoneme>ˌoʊwərˈblitʃɪz</phoneme></lexeme> <!-- overbleaches -->
-  <lexeme><grapheme>overbleaqhing</grapheme><phoneme>ˌoʊwərˈblitʃɪŋ</phoneme></lexeme> <!-- overbleaching -->
-  <lexeme><grapheme>overblowz</grapheme><phoneme>ˌoʊwərˈbloʊz</phoneme></lexeme> <!-- overblows -->
-  <lexeme><grapheme>overboht</grapheme><phoneme>ˌoʊwərˈbɔt</phoneme></lexeme> <!-- overbought -->
-  <lexeme><grapheme>overboild</grapheme><phoneme>ˌoʊwərˈbɔɪld</phoneme></lexeme> <!-- overboiled -->
-  <lexeme><grapheme>overboilz</grapheme><phoneme>ˌoʊwərˈbɔɪlz</phoneme></lexeme> <!-- overboils -->
-  <lexeme><grapheme>overbookd</grapheme><phoneme>ˌoʊwərˈbʊkt</phoneme></lexeme> <!-- overbooked -->
-  <lexeme><grapheme>overbookz</grapheme><phoneme>ˌoʊwərˈbʊks</phoneme></lexeme> <!-- overbooks -->
-  <lexeme><grapheme>overborrowd</grapheme><phoneme>ˌoʊwərˈbɑroʊd</phoneme></lexeme> <!-- overborrowed -->
-  <lexeme><grapheme>overborrowz</grapheme><phoneme>ˌoʊwərˈbɑroʊz</phoneme></lexeme> <!-- overborrows -->
-  <lexeme><grapheme>overbreathez</grapheme><phoneme>ˌoʊwərˈbriðz</phoneme></lexeme> <!-- overbreathes -->
-  <lexeme><grapheme>overbreedz</grapheme><phoneme>ˌoʊwərˈbridz</phoneme></lexeme> <!-- overbreeds -->
-  <lexeme><grapheme>overbriht</grapheme><phoneme>ˌoʊwərˈbraɪt</phoneme></lexeme> <!-- overbright -->
-  <lexeme><grapheme>overbrodd</grapheme><phoneme>ˌoʊwərˈbrɔd</phoneme></lexeme> <!-- overbroad -->
-  <lexeme><grapheme>overbruwse</grapheme><phoneme>ˌoʊwərˈbraʊz</phoneme></lexeme> <!-- overbrowse -->
-  <lexeme><grapheme>overbruwsed</grapheme><phoneme>ˌoʊwərˈbraʊzd</phoneme></lexeme> <!-- overbrowsed -->
-  <lexeme><grapheme>overbruwsez</grapheme><phoneme>ˌoʊwərˈbraʊzɪz</phoneme></lexeme> <!-- overbrowses -->
-  <lexeme><grapheme>overbruwsing</grapheme><phoneme>ˌoʊwərˈbraʊzɪŋ</phoneme></lexeme> <!-- overbrowsing -->
-  <lexeme><grapheme>overburdend</grapheme><phoneme>ˌoʊwərˈbɜrdənd</phoneme></lexeme> <!-- overburdened -->
-  <lexeme><grapheme>overburdenz</grapheme><phoneme>ˌoʊwərˈbɜrdənz</phoneme></lexeme> <!-- overburdens -->
-  <lexeme><grapheme>overburnd</grapheme><phoneme>ˌoʊwərˈbɜrnd</phoneme></lexeme> <!-- overburned -->
-  <lexeme><grapheme>overburnz</grapheme><phoneme>ˌoʊwərˈbɜrnz</phoneme></lexeme> <!-- overburns -->
-  <lexeme><grapheme>overbuyz</grapheme><phoneme>ˌoʊwərˈbaɪz</phoneme></lexeme> <!-- overbuys -->
-  <lexeme><grapheme>overcalld</grapheme><phoneme>ˌoʊwərˈkɔld</phoneme></lexeme> <!-- overcalled -->
-  <lexeme><grapheme>overcallz</grapheme><phoneme>ˌoʊwərˈkɔlz</phoneme></lexeme> <!-- overcalls -->
-  <lexeme><grapheme>overcapitalizez</grapheme><phoneme>ˌoʊwərˈkæpətələɪzɪz</phoneme></lexeme> <!-- overcapitalises -->
-  <lexeme><grapheme>overcastz</grapheme><phoneme>ˈoʊwərˌkæsts</phoneme></lexeme> <!-- overcasts -->
-  <lexeme><grapheme>overcautiond</grapheme><phoneme>ˌoʊwərˈkɔʃənd</phoneme></lexeme> <!-- overcautioned -->
-  <lexeme><grapheme>overcautionz</grapheme><phoneme>ˌoʊwərˈkɔʃənz</phoneme></lexeme> <!-- overcautions -->
-  <lexeme><grapheme>overcentralizez</grapheme><phoneme>ˌoʊwərˈsɛntrələɪzɪz</phoneme></lexeme> <!-- overcentralises -->
-  <lexeme><grapheme>overclaimd</grapheme><phoneme>ˌoʊwərˈkleɪmd</phoneme></lexeme> <!-- overclaimed -->
-  <lexeme><grapheme>overclaimz</grapheme><phoneme>ˌoʊwərˈkleɪmz</phoneme></lexeme> <!-- overclaims -->
-  <lexeme><grapheme>overclassifiez</grapheme><phoneme>ˌoʊwərˈklæsəfaɪz</phoneme></lexeme> <!-- overclassifies -->
-  <lexeme><grapheme>overcleand</grapheme><phoneme>ˌoʊwərˈklind</phoneme></lexeme> <!-- overcleaned -->
-  <lexeme><grapheme>overcleanz</grapheme><phoneme>ˌoʊwərˈklinz</phoneme></lexeme> <!-- overcleans -->
-  <lexeme><grapheme>overcleard</grapheme><phoneme>ˌoʊwərˈklɪrd</phoneme></lexeme> <!-- overcleared -->
-  <lexeme><grapheme>overclearz</grapheme><phoneme>ˌoʊwərˈklɪrz</phoneme></lexeme> <!-- overclears -->
-  <lexeme><grapheme>overclockd</grapheme><phoneme>ˌoʊwərˈklɑkt</phoneme></lexeme> <!-- overclocked -->
-  <lexeme><grapheme>overclockz</grapheme><phoneme>ˌoʊwərˈklɑks</phoneme></lexeme> <!-- overclocks -->
-  <lexeme><grapheme>overcloudz</grapheme><phoneme>ˌoʊwərˈklaʊdz</phoneme></lexeme> <!-- overclouds -->
-  <lexeme><grapheme>overcoaqh</grapheme><phoneme>ˌoʊwərˈkoʊtʃ</phoneme></lexeme> <!-- overcoach -->
-  <lexeme><grapheme>overcoaqhd</grapheme><phoneme>ˌoʊwərˈkoʊtʃt</phoneme></lexeme> <!-- overcoached -->
-  <lexeme><grapheme>overcoaqhez</grapheme><phoneme>ˌoʊwərˈkoʊtʃɪz</phoneme></lexeme> <!-- overcoaches -->
-  <lexeme><grapheme>overcoaqhing</grapheme><phoneme>ˌoʊwərˈkoʊtʃɪŋ</phoneme></lexeme> <!-- overcoaching -->
-  <lexeme><grapheme>overcom</grapheme><phoneme>ˌoʊwərˈkəm</phoneme></lexeme> <!-- overcome -->
-  <lexeme><grapheme>overcommercializez</grapheme><phoneme>ˌoʊwərkəˈmɜrʃələɪzɪz</phoneme></lexeme> <!-- overcommercialises -->
-  <lexeme><grapheme>overcommitz</grapheme><phoneme>ˌoʊwərkəˈmɪts</phoneme></lexeme> <!-- overcommits -->
-  <lexeme><grapheme>overcommunicatez</grapheme><phoneme>ˌoʊwərkəˈmjunəkeɪts</phoneme></lexeme> <!-- overcommunicates -->
-  <lexeme><grapheme>overcompensatez</grapheme><phoneme>ˌoʊwərˈkɑmpənseɪts</phoneme></lexeme> <!-- overcompensates -->
-  <lexeme><grapheme>overcomplicatez</grapheme><phoneme>ˌoʊwərˈkɑmpləkeɪts</phoneme></lexeme> <!-- overcomplicates -->
-  <lexeme><grapheme>overcompressd</grapheme><phoneme>ˌoʊwərkəmˈprɛst</phoneme></lexeme> <!-- overcompressed -->
-  <lexeme><grapheme>overcompressez</grapheme><phoneme>ˌoʊwərkəmˈprɛsɪz</phoneme></lexeme> <!-- overcompresses -->
-  <lexeme><grapheme>overcomz</grapheme><phoneme>ˌoʊwərˈkəmz</phoneme></lexeme> <!-- overcomes -->
-  <lexeme><grapheme>overconcernd</grapheme><phoneme>ˌoʊwərkənˈsɜrnd</phoneme></lexeme> <!-- overconcerned -->
-  <lexeme><grapheme>overconcernz</grapheme><phoneme>ˌoʊwərkənˈsɜrnz</phoneme></lexeme> <!-- overconcerns -->
-  <lexeme><grapheme>overconservativ</grapheme><phoneme>ˌoʊwərkənˈsɜrwətɪw</phoneme></lexeme> <!-- overconservative -->
-  <lexeme><grapheme>overconstructz</grapheme><phoneme>ˌoʊwərkənˈstrʌkts</phoneme></lexeme> <!-- overconstructs -->
-  <lexeme><grapheme>overconsumez</grapheme><phoneme>ˌoʊwərkənˈsums</phoneme></lexeme> <!-- overconsumes -->
-  <lexeme><grapheme>overcontrold</grapheme><phoneme>ˌoʊwərkənˈtroʊld</phoneme></lexeme> <!-- overcontrolled -->
-  <lexeme><grapheme>overcontrolz</grapheme><phoneme>ˌoʊwərkənˈtroʊlz</phoneme></lexeme> <!-- overcontrols -->
-  <lexeme><grapheme>overcookd</grapheme><phoneme>ˌoʊwərˈkʊkt</phoneme></lexeme> <!-- overcooked -->
-  <lexeme><grapheme>overcookz</grapheme><phoneme>ˌoʊwərˈkʊks</phoneme></lexeme> <!-- overcooks -->
-  <lexeme><grapheme>overcoold</grapheme><phoneme>ˌoʊwərˈkuld</phoneme></lexeme> <!-- overcooled -->
-  <lexeme><grapheme>overcoolz</grapheme><phoneme>ˌoʊwərˈkulz</phoneme></lexeme> <!-- overcools -->
-  <lexeme><grapheme>overcorrectz</grapheme><phoneme>ˌoʊwərkəˈrɛkts</phoneme></lexeme> <!-- overcorrects -->
-  <lexeme><grapheme>overcountz</grapheme><phoneme>ˌoʊwərˈkaʊnts</phoneme></lexeme> <!-- overcounts -->
-  <lexeme><grapheme>overcramd</grapheme><phoneme>ˌoʊwərˈkræmd</phoneme></lexeme> <!-- overcrammed -->
-  <lexeme><grapheme>overcramz</grapheme><phoneme>ˌoʊwərˈkræmz</phoneme></lexeme> <!-- overcrams -->
-  <lexeme><grapheme>overcropd</grapheme><phoneme>ˌoʊwərˈkrɑpt</phoneme></lexeme> <!-- overcropped -->
-  <lexeme><grapheme>overcropz</grapheme><phoneme>ˌoʊwərˈkrɑps</phoneme></lexeme> <!-- overcrops -->
-  <lexeme><grapheme>overcruwd</grapheme><phoneme>ˌoʊwərˈkraʊd</phoneme></lexeme> <!-- overcrowd -->
-  <lexeme><grapheme>overcruwded</grapheme><phoneme>ˌoʊwərˈkraʊdəd</phoneme></lexeme> <!-- overcrowded -->
-  <lexeme><grapheme>overcruwding</grapheme><phoneme>ˌoʊwərˈkraʊdɪŋ</phoneme></lexeme> <!-- overcrowding -->
-  <lexeme><grapheme>overcruwdz</grapheme><phoneme>ˌoʊwərˈkraʊdz</phoneme></lexeme> <!-- overcrowds -->
-  <lexeme><grapheme>overcurez</grapheme><phoneme>ˌoʊwərˈkjʊrz</phoneme></lexeme> <!-- overcures -->
-  <lexeme><grapheme>overcutz</grapheme><phoneme>ˌoʊwərˈkʌts</phoneme></lexeme> <!-- overcuts -->
-  <lexeme><grapheme>overd</grapheme><phoneme>ˈoʊwərd</phoneme></lexeme> <!-- overed -->
-  <lexeme><grapheme>overdarez</grapheme><phoneme>ˌoʊwərˈdɛrz</phoneme></lexeme> <!-- overdares -->
-  <lexeme><grapheme>overdeckd</grapheme><phoneme>ˌoʊwərˈdɛkt</phoneme></lexeme> <!-- overdecked -->
-  <lexeme><grapheme>overdeckz</grapheme><phoneme>ˌoʊwərˈdɛks</phoneme></lexeme> <!-- overdecks -->
-  <lexeme><grapheme>overdecoratez</grapheme><phoneme>ˌoʊwərˈdɛkəreɪts</phoneme></lexeme> <!-- overdecorates -->
-  <lexeme><grapheme>overdesignd</grapheme><phoneme>ˌoʊwərdɪˈzaɪnd</phoneme></lexeme> <!-- overdesigned -->
-  <lexeme><grapheme>overdesignz</grapheme><phoneme>ˌoʊwərdɪˈzaɪnz</phoneme></lexeme> <!-- overdesigns -->
-  <lexeme><grapheme>overdetermind</grapheme><phoneme>ˌoʊwərdɪˈmɜrmənd</phoneme></lexeme> <!-- overdetermined -->
-  <lexeme><grapheme>overdevelopd</grapheme><phoneme>ˌoʊwərdɪˈwɛləpt</phoneme></lexeme> <!-- overdeveloped -->
-  <lexeme><grapheme>overdevelopz</grapheme><phoneme>ˌoʊwərdɪˈwɛləps</phoneme></lexeme> <!-- overdevelops -->
-  <lexeme><grapheme>overdirectz</grapheme><phoneme>ˌoʊwərdɪˈrɛkts</phoneme></lexeme> <!-- overdirects -->
-  <lexeme><grapheme>overdiscountz</grapheme><phoneme>ˌoʊwərdɪˈskaʊnts</phoneme></lexeme> <!-- overdiscounts -->
-  <lexeme><grapheme>overdocumentz</grapheme><phoneme>ˌoʊwərˈdɑkjəmənts</phoneme></lexeme> <!-- overdocuments -->
-  <lexeme><grapheme>overdosez</grapheme><phoneme>ˈoʊwərˌdoʊsɪz</phoneme></lexeme> <!-- overdoses -->
-  <lexeme><grapheme>overdramatizez</grapheme><phoneme>ˌoʊwərˈdræmətəɪzɪz</phoneme></lexeme> <!-- overdramatises -->
-  <lexeme><grapheme>overdrawz</grapheme><phoneme>ˌoʊwərˈdrɔz</phoneme></lexeme> <!-- overdraws -->
-  <lexeme><grapheme>overdressd</grapheme><phoneme>ˌoʊwərˈdrɛst</phoneme></lexeme> <!-- overdressed -->
-  <lexeme><grapheme>overdressez</grapheme><phoneme>ˌoʊwərˈdrɛsɪz</phoneme></lexeme> <!-- overdresses -->
-  <lexeme><grapheme>overdriez</grapheme><phoneme>ˌoʊwərˈdraɪz</phoneme></lexeme> <!-- overdries -->
-  <lexeme><grapheme>overdrinkz</grapheme><phoneme>ˌoʊwərˈdrɪŋks</phoneme></lexeme> <!-- overdrinks -->
-  <lexeme><grapheme>overdrivez</grapheme><phoneme>ˈoʊwərˌdraɪwz</phoneme></lexeme> <!-- overdrives -->
-  <lexeme><grapheme>overdu</grapheme><phoneme>ˌoʊwərˈdu</phoneme></lexeme> <!-- overdo -->
-  <lexeme><grapheme>overdubd</grapheme><phoneme>ˌoʊwərˈdʌbd</phoneme></lexeme> <!-- overdubbed -->
-  <lexeme><grapheme>overdubz</grapheme><phoneme>ˌoʊwərˈdʌbz</phoneme></lexeme> <!-- overdubs -->
-  <lexeme><grapheme>overduer</grapheme><phoneme>ˌoʊwərˈduər</phoneme></lexeme> <!-- overdoer -->
-  <lexeme><grapheme>overduers</grapheme><phoneme>ˌoʊwərˈduərz</phoneme></lexeme> <!-- overdoers -->
-  <lexeme><grapheme>overduing</grapheme><phoneme>ˌoʊwərˈduɪŋ</phoneme></lexeme> <!-- overdoing -->
-  <lexeme><grapheme>overdun</grapheme><phoneme>ˌoʊwərˈdən</phoneme></lexeme> <!-- overdone -->
-  <lexeme><grapheme>overduz</grapheme><phoneme>ˌoʊwərˈdʌz</phoneme></lexeme> <!-- overdoes -->
-  <lexeme><grapheme>overdyez</grapheme><phoneme>ˌoʊwərˈdaɪz</phoneme></lexeme> <!-- overdyes -->
-  <lexeme><grapheme>overeatz</grapheme><phoneme>ˌoʊwərˈits</phoneme></lexeme> <!-- overeats -->
-  <lexeme><grapheme>overeditz</grapheme><phoneme>ˌoʊwərˈɛdəts</phoneme></lexeme> <!-- overedits -->
-  <lexeme><grapheme>overeducatez</grapheme><phoneme>ˌoʊwərˈɛdʒəkeɪts</phoneme></lexeme> <!-- overeducates -->
-  <lexeme><grapheme>overelaboratez</grapheme><phoneme>ˌoʊwərɪˈlæbəreɪts</phoneme></lexeme> <!-- overelaborates -->
-  <lexeme><grapheme>overembellishd</grapheme><phoneme>ˌoʊwərɪmˈbɛlɪʃt</phoneme></lexeme> <!-- overembellished -->
-  <lexeme><grapheme>overembellishez</grapheme><phoneme>ˌoʊwərɪmˈbɛlɪʃɪz</phoneme></lexeme> <!-- overembellishes -->
-  <lexeme><grapheme>overemotez</grapheme><phoneme>ˌoʊwərɪˈmoʊts</phoneme></lexeme> <!-- overemotes -->
-  <lexeme><grapheme>overemphasizez</grapheme><phoneme>ˌoʊwərˈɛmfəsəɪzɪz</phoneme></lexeme> <!-- overemphasises -->
-  <lexeme><grapheme>overenamord</grapheme><phoneme>ˌoʊwərɪˈnæmərd</phoneme></lexeme> <!-- overenamored -->
-  <lexeme><grapheme>overencurrage</grapheme><phoneme>ˌoʊwərɪnˈkɜrɪdʒ</phoneme></lexeme> <!-- overencourage -->
-  <lexeme><grapheme>overencurraged</grapheme><phoneme>ˌoʊwərɪnˈkɜrɪdʒd</phoneme></lexeme> <!-- overencouraged -->
-  <lexeme><grapheme>overencurragez</grapheme><phoneme>ˌoʊwərɪnˈkɜrɪdʒɪz</phoneme></lexeme> <!-- overencourages -->
-  <lexeme><grapheme>overencurraging</grapheme><phoneme>ˌoʊwərɪnˈkɜrɪdʒɪŋ</phoneme></lexeme> <!-- overencouraging -->
-  <lexeme><grapheme>overengineerd</grapheme><phoneme>ˌoʊwərɛndʒəˈnɪrd</phoneme></lexeme> <!-- overengineered -->
-  <lexeme><grapheme>overengineerz</grapheme><phoneme>ˌoʊwərɛndʒəˈnɪrz</phoneme></lexeme> <!-- overengineers -->
-  <lexeme><grapheme>overenrolld</grapheme><phoneme>ˌoʊwərɪnˈroʊld</phoneme></lexeme> <!-- overenrolled -->
-  <lexeme><grapheme>overentertaind</grapheme><phoneme>ˌoʊwərɛntərˈteɪnd</phoneme></lexeme> <!-- overentertained -->
-  <lexeme><grapheme>overequipd</grapheme><phoneme>ˌoʊwərɪˈkwɪpt</phoneme></lexeme> <!-- overequipped -->
-  <lexeme><grapheme>overequipz</grapheme><phoneme>ˌoʊwərɪˈkwɪps</phoneme></lexeme> <!-- overequips -->
-  <lexeme><grapheme>overernest</grapheme><phoneme>ˌoʊwərˈɛrnəst</phoneme></lexeme> <!-- overearnest -->
-  <lexeme><grapheme>overestimat</grapheme><phoneme>ˌoʊwərˈɛstəmeɪt</phoneme></lexeme> <!-- overestimate -->
-  <lexeme><grapheme>overestimatez</grapheme><phoneme>ˌoʊwərˈɛstəmeɪts</phoneme></lexeme> <!-- overestimates -->
-  <lexeme><grapheme>overestimats</grapheme><phoneme>ˌoʊwərˈɛstəmeɪts</phoneme></lexeme> <!-- overestimates -->
-  <lexeme><grapheme>overexaggeratez</grapheme><phoneme>ˌoʊwərɪɡˈzædʒəreɪts</phoneme></lexeme> <!-- overexaggerates -->
-  <lexeme><grapheme>overexcitez</grapheme><phoneme>ˌoʊwərɪkˈsaɪts</phoneme></lexeme> <!-- overexcites -->
-  <lexeme><grapheme>overexercisez</grapheme><phoneme>ˌoʊwərˈɛksərsaɪzɪz</phoneme></lexeme> <!-- overexercises -->
-  <lexeme><grapheme>overexertz</grapheme><phoneme>ˌoʊwərɪɡˈzɜrts</phoneme></lexeme> <!-- overexerts -->
-  <lexeme><grapheme>overexpandz</grapheme><phoneme>ˌoʊwərɪkˈspændz</phoneme></lexeme> <!-- overexpands -->
-  <lexeme><grapheme>overexplaind</grapheme><phoneme>ˌoʊwərɪkˈspleɪnd</phoneme></lexeme> <!-- overexplained -->
-  <lexeme><grapheme>overexplainz</grapheme><phoneme>ˌoʊwərɪkˈspleɪnz</phoneme></lexeme> <!-- overexplains -->
-  <lexeme><grapheme>overexploitz</grapheme><phoneme>ˌoʊwərɪkˈsplɔɪts</phoneme></lexeme> <!-- overexploits -->
-  <lexeme><grapheme>overexposez</grapheme><phoneme>ˌoʊwərɪkˈspoʊzɪz</phoneme></lexeme> <!-- overexposes -->
-  <lexeme><grapheme>overextendz</grapheme><phoneme>ˌoʊwərɪkˈstɛndz</phoneme></lexeme> <!-- overextends -->
-  <lexeme><grapheme>overextrapolatez</grapheme><phoneme>ˌoʊwərɪkˈstræpəleɪts</phoneme></lexeme> <!-- overextrapolates -->
-  <lexeme><grapheme>overfatighe</grapheme><phoneme>ˌoʊwərfəˈtiɡ</phoneme></lexeme> <!-- overfatigue -->
-  <lexeme><grapheme>overfatighed</grapheme><phoneme>ˌoʊwərfəˈtiɡd</phoneme></lexeme> <!-- overfatigued -->
-  <lexeme><grapheme>overfatighez</grapheme><phoneme>ˌoʊwərfəˈtiɡz</phoneme></lexeme> <!-- overfatigues -->
-  <lexeme><grapheme>overfatighing</grapheme><phoneme>ˌoʊwərfəˈtiɡɪŋ</phoneme></lexeme> <!-- overfatiguing -->
-  <lexeme><grapheme>overfavord</grapheme><phoneme>ˌoʊwərˈfeɪwərd</phoneme></lexeme> <!-- overfavored -->
-  <lexeme><grapheme>overfavorz</grapheme><phoneme>ˌoʊwərˈfeɪwərz</phoneme></lexeme> <!-- overfavors -->
-  <lexeme><grapheme>overfeard</grapheme><phoneme>ˌoʊwərˈfɪrd</phoneme></lexeme> <!-- overfeared -->
-  <lexeme><grapheme>overfearz</grapheme><phoneme>ˌoʊwərˈfɪrz</phoneme></lexeme> <!-- overfears -->
-  <lexeme><grapheme>overfeedz</grapheme><phoneme>ˌoʊwərˈfidz</phoneme></lexeme> <!-- overfeeds -->
-  <lexeme><grapheme>overfertilizez</grapheme><phoneme>ˌoʊwərˈfɜrtələɪzɪz</phoneme></lexeme> <!-- overfertilizes -->
-  <lexeme><grapheme>overfilld</grapheme><phoneme>ˌoʊwərˈfɪld</phoneme></lexeme> <!-- overfilled -->
-  <lexeme><grapheme>overfillz</grapheme><phoneme>ˌoʊwərˈfɪlz</phoneme></lexeme> <!-- overfills -->
-  <lexeme><grapheme>overfishd</grapheme><phoneme>ˌoʊwərˈfɪʃt</phoneme></lexeme> <!-- overfished -->
-  <lexeme><grapheme>overfishez</grapheme><phoneme>ˌoʊwərˈfɪʃɪz</phoneme></lexeme> <!-- overfishes -->
-  <lexeme><grapheme>overfliez</grapheme><phoneme>ˌoʊwərˈflaɪz</phoneme></lexeme> <!-- overflies -->
-  <lexeme><grapheme>overfliht</grapheme><phoneme>ˈoʊwərˌflaɪt</phoneme></lexeme> <!-- overflight -->
-  <lexeme><grapheme>overflihts</grapheme><phoneme>ˈoʊwərˌflaɪts</phoneme></lexeme> <!-- overflights -->
-  <lexeme><grapheme>overflowd</grapheme><phoneme>ˌoʊwərˈfloʊd</phoneme></lexeme> <!-- overflowed -->
-  <lexeme><grapheme>overflowz</grapheme><phoneme>ˌoʊwərˈfloʊz</phoneme></lexeme> <!-- overflows -->
-  <lexeme><grapheme>overfocusd</grapheme><phoneme>ˌoʊwərˈfoʊkəst</phoneme></lexeme> <!-- overfocused -->
-  <lexeme><grapheme>overfocusez</grapheme><phoneme>ˌoʊwərˈfoʊkəsɪz</phoneme></lexeme> <!-- overfocuses -->
-  <lexeme><grapheme>overfulfilld</grapheme><phoneme>ˌoʊwərfʊlˈfɪld</phoneme></lexeme> <!-- overfulfilled -->
-  <lexeme><grapheme>overfulfillz</grapheme><phoneme>ˌoʊwərfʊlˈfɪlz</phoneme></lexeme> <!-- overfulfills -->
-  <lexeme><grapheme>overfundz</grapheme><phoneme>ˌoʊwərˈfʌndz</phoneme></lexeme> <!-- overfunds -->
-  <lexeme><grapheme>overgeneralizez</grapheme><phoneme>ˌoʊwərˈdʒɛnərəlaɪzɪz</phoneme></lexeme> <!-- overgeneralises -->
-  <lexeme><grapheme>overgildz</grapheme><phoneme>ˌoʊwərˈɡɪldz</phoneme></lexeme> <!-- overgilds -->
-  <lexeme><grapheme>overgirdz</grapheme><phoneme>ˌoʊwərˈɡɪrdz</phoneme></lexeme> <!-- overgirds -->
-  <lexeme><grapheme>overglamorizez</grapheme><phoneme>ˌoʊwərˈɡlæməraɪzɪz</phoneme></lexeme> <!-- overglamorises -->
-  <lexeme><grapheme>overglazez</grapheme><phoneme>ˌoʊwərˈɡleɪzɪz</phoneme></lexeme> <!-- overglazes -->
-  <lexeme><grapheme>overgoadz</grapheme><phoneme>ˌoʊwərˈɡoʊdz</phoneme></lexeme> <!-- overgoads -->
-  <lexeme><grapheme>overgovernd</grapheme><phoneme>ˌoʊwərˈɡʌwərnd</phoneme></lexeme> <!-- overgoverned -->
-  <lexeme><grapheme>overgovernz</grapheme><phoneme>ˌoʊwərˈɡʌwərnz</phoneme></lexeme> <!-- overgoverns -->
-  <lexeme><grapheme>overgrazez</grapheme><phoneme>ˌoʊwərˈɡreɪzɪz</phoneme></lexeme> <!-- overgrazes -->
-  <lexeme><grapheme>overgrowz</grapheme><phoneme>ˌoʊwərˈɡroʊz</phoneme></lexeme> <!-- overgrows -->
-  <lexeme><grapheme>overgrynd</grapheme><phoneme>ˌoʊwərˈɡraɪnd</phoneme></lexeme> <!-- overgrind -->
-  <lexeme><grapheme>overgrynding</grapheme><phoneme>ˌoʊwərˈɡraɪndɪŋ</phoneme></lexeme> <!-- overgrinding -->
-  <lexeme><grapheme>overgryndz</grapheme><phoneme>ˌoʊwərˈɡraɪndz</phoneme></lexeme> <!-- overgrinds -->
-  <lexeme><grapheme>overhandlez</grapheme><phoneme>ˌoʊwərˈhændəlz</phoneme></lexeme> <!-- overhandles -->
-  <lexeme><grapheme>overhandz</grapheme><phoneme>ˈoʊwərˌhændz</phoneme></lexeme> <!-- overhands -->
-  <lexeme><grapheme>overhangz</grapheme><phoneme>ˌoʊwərˈhæŋz</phoneme></lexeme> <!-- overhangs -->
-  <lexeme><grapheme>overharvestz</grapheme><phoneme>ˌoʊwərˈhɑrwəsts</phoneme></lexeme> <!-- overharvests -->
-  <lexeme><grapheme>overhatez</grapheme><phoneme>ˌoʊwərˈheɪts</phoneme></lexeme> <!-- overhates -->
-  <lexeme><grapheme>overhauld</grapheme><phoneme>ˌoʊwərˈhɔld</phoneme></lexeme> <!-- overhauled -->
-  <lexeme><grapheme>overhaulz</grapheme><phoneme>ˌoʊwərˈhɔlz</phoneme></lexeme> <!-- overhauls -->
-  <lexeme><grapheme>overheapz</grapheme><phoneme>ˌoʊwərˈhips</phoneme></lexeme> <!-- overheaps -->
-  <lexeme><grapheme>overhearz</grapheme><phoneme>ˌoʊwərˈhɪrz</phoneme></lexeme> <!-- overhears -->
-  <lexeme><grapheme>overheatz</grapheme><phoneme>ˌoʊwərˈhits</phoneme></lexeme> <!-- overheats -->
-  <lexeme><grapheme>overhedd</grapheme><phoneme>ˈoʊwərˌhɛd</phoneme></lexeme> <!-- overhead -->
-  <lexeme><grapheme>overhedds</grapheme><phoneme>ˈoʊwərˌhɛdz</phoneme></lexeme> <!-- overheads -->
-  <lexeme><grapheme>overherrd</grapheme><phoneme>ˌoʊwərˈhɜrd</phoneme></lexeme> <!-- overheard -->
-  <lexeme><grapheme>overhih</grapheme><phoneme>ˌoʊwərˈhaɪ</phoneme></lexeme> <!-- overhigh -->
-  <lexeme><grapheme>overholdz</grapheme><phoneme>ˌoʊwərˈhoʊldz</phoneme></lexeme> <!-- overholds -->
-  <lexeme><grapheme>overhomogenizez</grapheme><phoneme>ˌoʊwərhoʊˈmɑdʒənaɪzɪz</phoneme></lexeme> <!-- overhomogenizes -->
-  <lexeme><grapheme>overhopez</grapheme><phoneme>ˌoʊwərˈhoʊps</phoneme></lexeme> <!-- overhopes -->
-  <lexeme><grapheme>overhuntz</grapheme><phoneme>ˌoʊwərˈhʌnts</phoneme></lexeme> <!-- overhunts -->
-  <lexeme><grapheme>overhypez</grapheme><phoneme>ˌoʊwərˈhaɪps</phoneme></lexeme> <!-- overhypes -->
-  <lexeme><grapheme>overidealizez</grapheme><phoneme>ˌoʊwəraɪˈdiəlaɪzɪz</phoneme></lexeme> <!-- overidealises -->
-  <lexeme><grapheme>overidentifiez</grapheme><phoneme>ˌoʊwəraɪˈdɛntəfaɪz</phoneme></lexeme> <!-- overidentifies -->
-  <lexeme><grapheme>overimaginativ</grapheme><phoneme>ˌoʊwərɪˈmædʒənətɪw</phoneme></lexeme> <!-- overimaginative -->
-  <lexeme><grapheme>overimpressd</grapheme><phoneme>ˌoʊwərɪmˈprɛst</phoneme></lexeme> <!-- overimpressed -->
-  <lexeme><grapheme>overimpressez</grapheme><phoneme>ˌoʊwərɪmˈprɛsɪz</phoneme></lexeme> <!-- overimpresses -->
+  <lexeme><grapheme>ovariectomizez</grapheme><phoneme>oʊˌværiˈɛktəˌmaɪzɪz</phoneme></lexeme> <!-- ovariectomises -->
+  <lexeme><grapheme>overabstractz</grapheme><phoneme>ˌoʊvərəbˈstrækts</phoneme></lexeme> <!-- overabstracts -->
+  <lexeme><grapheme>overaccentuatez</grapheme><phoneme>ˌoʊvərækˈtsɛntʃuˌeɪts</phoneme></lexeme> <!-- overaccentuates -->
+  <lexeme><grapheme>overactiv</grapheme><phoneme>ˌoʊvərˈæktɪv</phoneme></lexeme> <!-- overactive -->
+  <lexeme><grapheme>overactz</grapheme><phoneme>ˌoʊvərˈækts</phoneme></lexeme> <!-- overacts -->
+  <lexeme><grapheme>overadvertisez</grapheme><phoneme>ˌoʊvərˈædvərˌtaɪzɪz</phoneme></lexeme> <!-- overadvertises -->
+  <lexeme><grapheme>overagez</grapheme><phoneme>ˈoʊvərɪdʒɪz</phoneme></lexeme> <!-- overages -->
+  <lexeme><grapheme>overaggressiv</grapheme><phoneme>ˌoʊvərəˈɡrɛsɪv</phoneme></lexeme> <!-- overaggressive -->
+  <lexeme><grapheme>overanalyzez</grapheme><phoneme>ˌoʊvərəˈnæləsiz</phoneme></lexeme> <!-- overanalyses -->
+  <lexeme><grapheme>overappliez</grapheme><phoneme>ˌoʊvərəˈplaɪz</phoneme></lexeme> <!-- overapplies -->
+  <lexeme><grapheme>overaqhiev</grapheme><phoneme>ˌoʊvərəˈtʃiv</phoneme></lexeme> <!-- overachieve -->
+  <lexeme><grapheme>overaqhievd</grapheme><phoneme>ˌoʊvərəˈtʃivd</phoneme></lexeme> <!-- overachieved -->
+  <lexeme><grapheme>overaqhiever</grapheme><phoneme>ˌoʊvərəˈtʃivər</phoneme></lexeme> <!-- overachiever -->
+  <lexeme><grapheme>overaqhievers</grapheme><phoneme>ˌoʊvərəˈtʃivərz</phoneme></lexeme> <!-- overachievers -->
+  <lexeme><grapheme>overaqhieving</grapheme><phoneme>ˌoʊvərəˈtʃivɪŋ</phoneme></lexeme> <!-- overachieving -->
+  <lexeme><grapheme>overaqhievment</grapheme><phoneme>ˌoʊvərəˈtʃivmənt</phoneme></lexeme> <!-- overachievement -->
+  <lexeme><grapheme>overaqhievments</grapheme><phoneme>ˌoʊvərəˈtʃivmǝnts</phoneme></lexeme> <!-- overachievements -->
+  <lexeme><grapheme>overaqhievz</grapheme><phoneme>ˌoʊvərəˈtʃivz</phoneme></lexeme> <!-- overachieves -->
+  <lexeme><grapheme>overarmd</grapheme><phoneme>ˌoʊvərˈɑrmd</phoneme></lexeme> <!-- overarmed -->
+  <lexeme><grapheme>overarmz</grapheme><phoneme>ˌoʊvərˈɑrmz</phoneme></lexeme> <!-- overarms -->
+  <lexeme><grapheme>overarqh</grapheme><phoneme>ˌoʊvərˈɑrtʃ</phoneme></lexeme> <!-- overarch -->
+  <lexeme><grapheme>overarqhd</grapheme><phoneme>ˌoʊvərˈɑrtʃt</phoneme></lexeme> <!-- overarched -->
+  <lexeme><grapheme>overarqhes</grapheme><phoneme>ˌoʊvərˈɑrtʃɪz</phoneme></lexeme> <!-- overarches -->
+  <lexeme><grapheme>overarqhez</grapheme><phoneme>ˌoʊvərˈɑrtʃɪz</phoneme></lexeme> <!-- overarches -->
+  <lexeme><grapheme>overarqhing</grapheme><phoneme>ˌoʊvərˈɑrtʃɪŋ</phoneme></lexeme> <!-- overarching -->
+  <lexeme><grapheme>overarrangez</grapheme><phoneme>ˌoʊvərəˈreɪndʒɪz</phoneme></lexeme> <!-- overarranges -->
+  <lexeme><grapheme>overarticulatez</grapheme><phoneme>ˌoʊvərɑrˈtɪkjəleɪts</phoneme></lexeme> <!-- overarticulates -->
+  <lexeme><grapheme>overassertiv</grapheme><phoneme>ˌoʊvərəˈsɜrtɪv</phoneme></lexeme> <!-- overassertive -->
+  <lexeme><grapheme>overassertz</grapheme><phoneme>ˌoʊvərəˈsɜrts</phoneme></lexeme> <!-- overasserts -->
+  <lexeme><grapheme>overaw</grapheme><phoneme>ˌoʊvərˈɔ</phoneme></lexeme> <!-- overawe -->
+  <lexeme><grapheme>overawd</grapheme><phoneme>ˌoʊvərˈɔd</phoneme></lexeme> <!-- overawed -->
+  <lexeme><grapheme>overawz</grapheme><phoneme>ˌoʊvərˈɔz</phoneme></lexeme> <!-- overawes -->
+  <lexeme><grapheme>overbaer</grapheme><phoneme>ˌoʊvərˈbɛr</phoneme></lexeme> <!-- overbear -->
+  <lexeme><grapheme>overbaering</grapheme><phoneme>ˌoʊvərˈbɛrɪŋ</phoneme></lexeme> <!-- overbearing -->
+  <lexeme><grapheme>overbaeringly</grapheme><phoneme>ˌoʊvərˈbɛrɪŋli</phoneme></lexeme> <!-- overbearingly -->
+  <lexeme><grapheme>overbaerz</grapheme><phoneme>ˌoʊvərˈbɛrz</phoneme></lexeme> <!-- overbears -->
+  <lexeme><grapheme>overbakez</grapheme><phoneme>ˌoʊvərˈbeɪks</phoneme></lexeme> <!-- overbakes -->
+  <lexeme><grapheme>overbalancez</grapheme><phoneme>ˌoʊvərˈbælənsɪz</phoneme></lexeme> <!-- overbalances -->
+  <lexeme><grapheme>overbeatz</grapheme><phoneme>ˌoʊvərˈbits</phoneme></lexeme> <!-- overbeats -->
+  <lexeme><grapheme>overbejeweld</grapheme><phoneme>ˌoʊvərbɪˈdʒuəld</phoneme></lexeme> <!-- overbejeweled -->
+  <lexeme><grapheme>overbetz</grapheme><phoneme>ˌoʊvərˈbɛts</phoneme></lexeme> <!-- overbets -->
+  <lexeme><grapheme>overbidz</grapheme><phoneme>ˌoʊvərˈbɪdz</phoneme></lexeme> <!-- overbids -->
+  <lexeme><grapheme>overbild</grapheme><phoneme>ˌoʊvərˈbɪld</phoneme></lexeme> <!-- overbuild -->
+  <lexeme><grapheme>overbilding</grapheme><phoneme>ˌoʊvərˈbɪldɪŋ</phoneme></lexeme> <!-- overbuilding -->
+  <lexeme><grapheme>overbildz</grapheme><phoneme>ˌoʊvərˈbɪldz</phoneme></lexeme> <!-- overbuilds -->
+  <lexeme><grapheme>overbilld</grapheme><phoneme>ˌoʊvərˈbɪld</phoneme></lexeme> <!-- overbilled -->
+  <lexeme><grapheme>overbillz</grapheme><phoneme>ˌoʊvərˈbɪlz</phoneme></lexeme> <!-- overbills -->
+  <lexeme><grapheme>overbilt</grapheme><phoneme>ˌoʊvərˈbɪlt</phoneme></lexeme> <!-- overbuilt -->
+  <lexeme><grapheme>overbleaqh</grapheme><phoneme>ˌoʊvərˈblitʃ</phoneme></lexeme> <!-- overbleach -->
+  <lexeme><grapheme>overbleaqhd</grapheme><phoneme>ˌoʊvərˈblitʃt</phoneme></lexeme> <!-- overbleached -->
+  <lexeme><grapheme>overbleaqhez</grapheme><phoneme>ˌoʊvərˈblitʃɪz</phoneme></lexeme> <!-- overbleaches -->
+  <lexeme><grapheme>overbleaqhing</grapheme><phoneme>ˌoʊvərˈblitʃɪŋ</phoneme></lexeme> <!-- overbleaching -->
+  <lexeme><grapheme>overblowz</grapheme><phoneme>ˌoʊvərˈbloʊz</phoneme></lexeme> <!-- overblows -->
+  <lexeme><grapheme>overboht</grapheme><phoneme>ˌoʊvərˈbɔt</phoneme></lexeme> <!-- overbought -->
+  <lexeme><grapheme>overboild</grapheme><phoneme>ˌoʊvərˈbɔɪld</phoneme></lexeme> <!-- overboiled -->
+  <lexeme><grapheme>overboilz</grapheme><phoneme>ˌoʊvərˈbɔɪlz</phoneme></lexeme> <!-- overboils -->
+  <lexeme><grapheme>overbookd</grapheme><phoneme>ˌoʊvərˈbʊkt</phoneme></lexeme> <!-- overbooked -->
+  <lexeme><grapheme>overbookz</grapheme><phoneme>ˌoʊvərˈbʊks</phoneme></lexeme> <!-- overbooks -->
+  <lexeme><grapheme>overborrowd</grapheme><phoneme>ˌoʊvərˈbɑroʊd</phoneme></lexeme> <!-- overborrowed -->
+  <lexeme><grapheme>overborrowz</grapheme><phoneme>ˌoʊvərˈbɑroʊz</phoneme></lexeme> <!-- overborrows -->
+  <lexeme><grapheme>overbreathez</grapheme><phoneme>ˌoʊvərˈbriðz</phoneme></lexeme> <!-- overbreathes -->
+  <lexeme><grapheme>overbreedz</grapheme><phoneme>ˌoʊvərˈbridz</phoneme></lexeme> <!-- overbreeds -->
+  <lexeme><grapheme>overbriht</grapheme><phoneme>ˌoʊvərˈbraɪt</phoneme></lexeme> <!-- overbright -->
+  <lexeme><grapheme>overbrodd</grapheme><phoneme>ˌoʊvərˈbrɔd</phoneme></lexeme> <!-- overbroad -->
+  <lexeme><grapheme>overbruwse</grapheme><phoneme>ˌoʊvərˈbraʊz</phoneme></lexeme> <!-- overbrowse -->
+  <lexeme><grapheme>overbruwsed</grapheme><phoneme>ˌoʊvərˈbraʊzd</phoneme></lexeme> <!-- overbrowsed -->
+  <lexeme><grapheme>overbruwsez</grapheme><phoneme>ˌoʊvərˈbraʊzɪz</phoneme></lexeme> <!-- overbrowses -->
+  <lexeme><grapheme>overbruwsing</grapheme><phoneme>ˌoʊvərˈbraʊzɪŋ</phoneme></lexeme> <!-- overbrowsing -->
+  <lexeme><grapheme>overburdend</grapheme><phoneme>ˌoʊvərˈbɜrdənd</phoneme></lexeme> <!-- overburdened -->
+  <lexeme><grapheme>overburdenz</grapheme><phoneme>ˌoʊvərˈbɜrdənz</phoneme></lexeme> <!-- overburdens -->
+  <lexeme><grapheme>overburnd</grapheme><phoneme>ˌoʊvərˈbɜrnd</phoneme></lexeme> <!-- overburned -->
+  <lexeme><grapheme>overburnz</grapheme><phoneme>ˌoʊvərˈbɜrnz</phoneme></lexeme> <!-- overburns -->
+  <lexeme><grapheme>overbuyz</grapheme><phoneme>ˌoʊvərˈbaɪz</phoneme></lexeme> <!-- overbuys -->
+  <lexeme><grapheme>overcalld</grapheme><phoneme>ˌoʊvərˈkɔld</phoneme></lexeme> <!-- overcalled -->
+  <lexeme><grapheme>overcallz</grapheme><phoneme>ˌoʊvərˈkɔlz</phoneme></lexeme> <!-- overcalls -->
+  <lexeme><grapheme>overcapitalizez</grapheme><phoneme>ˌoʊvərˈkæpətələɪzɪz</phoneme></lexeme> <!-- overcapitalises -->
+  <lexeme><grapheme>overcastz</grapheme><phoneme>ˈoʊvərˌkæsts</phoneme></lexeme> <!-- overcasts -->
+  <lexeme><grapheme>overcautiond</grapheme><phoneme>ˌoʊvərˈkɔʃənd</phoneme></lexeme> <!-- overcautioned -->
+  <lexeme><grapheme>overcautionz</grapheme><phoneme>ˌoʊvərˈkɔʃənz</phoneme></lexeme> <!-- overcautions -->
+  <lexeme><grapheme>overcentralizez</grapheme><phoneme>ˌoʊvərˈsɛntrələɪzɪz</phoneme></lexeme> <!-- overcentralises -->
+  <lexeme><grapheme>overclaimd</grapheme><phoneme>ˌoʊvərˈkleɪmd</phoneme></lexeme> <!-- overclaimed -->
+  <lexeme><grapheme>overclaimz</grapheme><phoneme>ˌoʊvərˈkleɪmz</phoneme></lexeme> <!-- overclaims -->
+  <lexeme><grapheme>overclassifiez</grapheme><phoneme>ˌoʊvərˈklæsəfaɪz</phoneme></lexeme> <!-- overclassifies -->
+  <lexeme><grapheme>overcleand</grapheme><phoneme>ˌoʊvərˈklind</phoneme></lexeme> <!-- overcleaned -->
+  <lexeme><grapheme>overcleanz</grapheme><phoneme>ˌoʊvərˈklinz</phoneme></lexeme> <!-- overcleans -->
+  <lexeme><grapheme>overcleard</grapheme><phoneme>ˌoʊvərˈklɪrd</phoneme></lexeme> <!-- overcleared -->
+  <lexeme><grapheme>overclearz</grapheme><phoneme>ˌoʊvərˈklɪrz</phoneme></lexeme> <!-- overclears -->
+  <lexeme><grapheme>overclockd</grapheme><phoneme>ˌoʊvərˈklɑkt</phoneme></lexeme> <!-- overclocked -->
+  <lexeme><grapheme>overclockz</grapheme><phoneme>ˌoʊvərˈklɑks</phoneme></lexeme> <!-- overclocks -->
+  <lexeme><grapheme>overcloudz</grapheme><phoneme>ˌoʊvərˈklaʊdz</phoneme></lexeme> <!-- overclouds -->
+  <lexeme><grapheme>overcoaqh</grapheme><phoneme>ˌoʊvərˈkoʊtʃ</phoneme></lexeme> <!-- overcoach -->
+  <lexeme><grapheme>overcoaqhd</grapheme><phoneme>ˌoʊvərˈkoʊtʃt</phoneme></lexeme> <!-- overcoached -->
+  <lexeme><grapheme>overcoaqhez</grapheme><phoneme>ˌoʊvərˈkoʊtʃɪz</phoneme></lexeme> <!-- overcoaches -->
+  <lexeme><grapheme>overcoaqhing</grapheme><phoneme>ˌoʊvərˈkoʊtʃɪŋ</phoneme></lexeme> <!-- overcoaching -->
+  <lexeme><grapheme>overcom</grapheme><phoneme>ˌoʊvərˈkəm</phoneme></lexeme> <!-- overcome -->
+  <lexeme><grapheme>overcommercializez</grapheme><phoneme>ˌoʊvərkəˈmɜrʃələɪzɪz</phoneme></lexeme> <!-- overcommercialises -->
+  <lexeme><grapheme>overcommitz</grapheme><phoneme>ˌoʊvərkəˈmɪts</phoneme></lexeme> <!-- overcommits -->
+  <lexeme><grapheme>overcommunicatez</grapheme><phoneme>ˌoʊvərkəˈmjunəkeɪts</phoneme></lexeme> <!-- overcommunicates -->
+  <lexeme><grapheme>overcompensatez</grapheme><phoneme>ˌoʊvərˈkɑmpənseɪts</phoneme></lexeme> <!-- overcompensates -->
+  <lexeme><grapheme>overcomplicatez</grapheme><phoneme>ˌoʊvərˈkɑmpləkeɪts</phoneme></lexeme> <!-- overcomplicates -->
+  <lexeme><grapheme>overcompressd</grapheme><phoneme>ˌoʊvərkəmˈprɛst</phoneme></lexeme> <!-- overcompressed -->
+  <lexeme><grapheme>overcompressez</grapheme><phoneme>ˌoʊvərkəmˈprɛsɪz</phoneme></lexeme> <!-- overcompresses -->
+  <lexeme><grapheme>overcomz</grapheme><phoneme>ˌoʊvərˈkəmz</phoneme></lexeme> <!-- overcomes -->
+  <lexeme><grapheme>overconcernd</grapheme><phoneme>ˌoʊvərkənˈsɜrnd</phoneme></lexeme> <!-- overconcerned -->
+  <lexeme><grapheme>overconcernz</grapheme><phoneme>ˌoʊvərkənˈsɜrnz</phoneme></lexeme> <!-- overconcerns -->
+  <lexeme><grapheme>overconservativ</grapheme><phoneme>ˌoʊvərkənˈsɜrvətɪv</phoneme></lexeme> <!-- overconservative -->
+  <lexeme><grapheme>overconstructz</grapheme><phoneme>ˌoʊvərkənˈstrʌkts</phoneme></lexeme> <!-- overconstructs -->
+  <lexeme><grapheme>overconsumez</grapheme><phoneme>ˌoʊvərkənˈsums</phoneme></lexeme> <!-- overconsumes -->
+  <lexeme><grapheme>overcontrold</grapheme><phoneme>ˌoʊvərkənˈtroʊld</phoneme></lexeme> <!-- overcontrolled -->
+  <lexeme><grapheme>overcontrolz</grapheme><phoneme>ˌoʊvərkənˈtroʊlz</phoneme></lexeme> <!-- overcontrols -->
+  <lexeme><grapheme>overcookd</grapheme><phoneme>ˌoʊvərˈkʊkt</phoneme></lexeme> <!-- overcooked -->
+  <lexeme><grapheme>overcookz</grapheme><phoneme>ˌoʊvərˈkʊks</phoneme></lexeme> <!-- overcooks -->
+  <lexeme><grapheme>overcoold</grapheme><phoneme>ˌoʊvərˈkuld</phoneme></lexeme> <!-- overcooled -->
+  <lexeme><grapheme>overcoolz</grapheme><phoneme>ˌoʊvərˈkulz</phoneme></lexeme> <!-- overcools -->
+  <lexeme><grapheme>overcorrectz</grapheme><phoneme>ˌoʊvərkəˈrɛkts</phoneme></lexeme> <!-- overcorrects -->
+  <lexeme><grapheme>overcountz</grapheme><phoneme>ˌoʊvərˈkaʊnts</phoneme></lexeme> <!-- overcounts -->
+  <lexeme><grapheme>overcramd</grapheme><phoneme>ˌoʊvərˈkræmd</phoneme></lexeme> <!-- overcrammed -->
+  <lexeme><grapheme>overcramz</grapheme><phoneme>ˌoʊvərˈkræmz</phoneme></lexeme> <!-- overcrams -->
+  <lexeme><grapheme>overcropd</grapheme><phoneme>ˌoʊvərˈkrɑpt</phoneme></lexeme> <!-- overcropped -->
+  <lexeme><grapheme>overcropz</grapheme><phoneme>ˌoʊvərˈkrɑps</phoneme></lexeme> <!-- overcrops -->
+  <lexeme><grapheme>overcruwd</grapheme><phoneme>ˌoʊvərˈkraʊd</phoneme></lexeme> <!-- overcrowd -->
+  <lexeme><grapheme>overcruwded</grapheme><phoneme>ˌoʊvərˈkraʊdəd</phoneme></lexeme> <!-- overcrowded -->
+  <lexeme><grapheme>overcruwding</grapheme><phoneme>ˌoʊvərˈkraʊdɪŋ</phoneme></lexeme> <!-- overcrowding -->
+  <lexeme><grapheme>overcruwdz</grapheme><phoneme>ˌoʊvərˈkraʊdz</phoneme></lexeme> <!-- overcrowds -->
+  <lexeme><grapheme>overcurez</grapheme><phoneme>ˌoʊvərˈkjʊrz</phoneme></lexeme> <!-- overcures -->
+  <lexeme><grapheme>overcutz</grapheme><phoneme>ˌoʊvərˈkʌts</phoneme></lexeme> <!-- overcuts -->
+  <lexeme><grapheme>overd</grapheme><phoneme>ˈoʊvərd</phoneme></lexeme> <!-- overed -->
+  <lexeme><grapheme>overdarez</grapheme><phoneme>ˌoʊvərˈdɛrz</phoneme></lexeme> <!-- overdares -->
+  <lexeme><grapheme>overdeckd</grapheme><phoneme>ˌoʊvərˈdɛkt</phoneme></lexeme> <!-- overdecked -->
+  <lexeme><grapheme>overdeckz</grapheme><phoneme>ˌoʊvərˈdɛks</phoneme></lexeme> <!-- overdecks -->
+  <lexeme><grapheme>overdecoratez</grapheme><phoneme>ˌoʊvərˈdɛkəreɪts</phoneme></lexeme> <!-- overdecorates -->
+  <lexeme><grapheme>overdesignd</grapheme><phoneme>ˌoʊvərdɪˈzaɪnd</phoneme></lexeme> <!-- overdesigned -->
+  <lexeme><grapheme>overdesignz</grapheme><phoneme>ˌoʊvərdɪˈzaɪnz</phoneme></lexeme> <!-- overdesigns -->
+  <lexeme><grapheme>overdetermind</grapheme><phoneme>ˌoʊvərdɪˈmɜrmənd</phoneme></lexeme> <!-- overdetermined -->
+  <lexeme><grapheme>overdevelopd</grapheme><phoneme>ˌoʊvərdɪˈvɛləpt</phoneme></lexeme> <!-- overdeveloped -->
+  <lexeme><grapheme>overdevelopz</grapheme><phoneme>ˌoʊvərdɪˈvɛləps</phoneme></lexeme> <!-- overdevelops -->
+  <lexeme><grapheme>overdirectz</grapheme><phoneme>ˌoʊvərdɪˈrɛkts</phoneme></lexeme> <!-- overdirects -->
+  <lexeme><grapheme>overdiscountz</grapheme><phoneme>ˌoʊvərdɪˈskaʊnts</phoneme></lexeme> <!-- overdiscounts -->
+  <lexeme><grapheme>overdocumentz</grapheme><phoneme>ˌoʊvərˈdɑkjəmənts</phoneme></lexeme> <!-- overdocuments -->
+  <lexeme><grapheme>overdosez</grapheme><phoneme>ˈoʊvərˌdoʊsɪz</phoneme></lexeme> <!-- overdoses -->
+  <lexeme><grapheme>overdramatizez</grapheme><phoneme>ˌoʊvərˈdræmətəɪzɪz</phoneme></lexeme> <!-- overdramatises -->
+  <lexeme><grapheme>overdrawz</grapheme><phoneme>ˌoʊvərˈdrɔz</phoneme></lexeme> <!-- overdraws -->
+  <lexeme><grapheme>overdressd</grapheme><phoneme>ˌoʊvərˈdrɛst</phoneme></lexeme> <!-- overdressed -->
+  <lexeme><grapheme>overdressez</grapheme><phoneme>ˌoʊvərˈdrɛsɪz</phoneme></lexeme> <!-- overdresses -->
+  <lexeme><grapheme>overdriez</grapheme><phoneme>ˌoʊvərˈdraɪz</phoneme></lexeme> <!-- overdries -->
+  <lexeme><grapheme>overdrinkz</grapheme><phoneme>ˌoʊvərˈdrɪŋks</phoneme></lexeme> <!-- overdrinks -->
+  <lexeme><grapheme>overdrivez</grapheme><phoneme>ˈoʊvərˌdraɪvz</phoneme></lexeme> <!-- overdrives -->
+  <lexeme><grapheme>overdu</grapheme><phoneme>ˌoʊvərˈdu</phoneme></lexeme> <!-- overdo -->
+  <lexeme><grapheme>overdubd</grapheme><phoneme>ˌoʊvərˈdʌbd</phoneme></lexeme> <!-- overdubbed -->
+  <lexeme><grapheme>overdubz</grapheme><phoneme>ˌoʊvərˈdʌbz</phoneme></lexeme> <!-- overdubs -->
+  <lexeme><grapheme>overduer</grapheme><phoneme>ˌoʊvərˈduər</phoneme></lexeme> <!-- overdoer -->
+  <lexeme><grapheme>overduers</grapheme><phoneme>ˌoʊvərˈduərz</phoneme></lexeme> <!-- overdoers -->
+  <lexeme><grapheme>overduing</grapheme><phoneme>ˌoʊvərˈduɪŋ</phoneme></lexeme> <!-- overdoing -->
+  <lexeme><grapheme>overdun</grapheme><phoneme>ˌoʊvərˈdən</phoneme></lexeme> <!-- overdone -->
+  <lexeme><grapheme>overduz</grapheme><phoneme>ˌoʊvərˈdʌz</phoneme></lexeme> <!-- overdoes -->
+  <lexeme><grapheme>overdyez</grapheme><phoneme>ˌoʊvərˈdaɪz</phoneme></lexeme> <!-- overdyes -->
+  <lexeme><grapheme>overeatz</grapheme><phoneme>ˌoʊvərˈits</phoneme></lexeme> <!-- overeats -->
+  <lexeme><grapheme>overeditz</grapheme><phoneme>ˌoʊvərˈɛdəts</phoneme></lexeme> <!-- overedits -->
+  <lexeme><grapheme>overeducatez</grapheme><phoneme>ˌoʊvərˈɛdʒəkeɪts</phoneme></lexeme> <!-- overeducates -->
+  <lexeme><grapheme>overelaboratez</grapheme><phoneme>ˌoʊvərɪˈlæbəreɪts</phoneme></lexeme> <!-- overelaborates -->
+  <lexeme><grapheme>overembellishd</grapheme><phoneme>ˌoʊvərɪmˈbɛlɪʃt</phoneme></lexeme> <!-- overembellished -->
+  <lexeme><grapheme>overembellishez</grapheme><phoneme>ˌoʊvərɪmˈbɛlɪʃɪz</phoneme></lexeme> <!-- overembellishes -->
+  <lexeme><grapheme>overemotez</grapheme><phoneme>ˌoʊvərɪˈmoʊts</phoneme></lexeme> <!-- overemotes -->
+  <lexeme><grapheme>overemphasizez</grapheme><phoneme>ˌoʊvərˈɛmfəsəɪzɪz</phoneme></lexeme> <!-- overemphasises -->
+  <lexeme><grapheme>overenamord</grapheme><phoneme>ˌoʊvərɪˈnæmərd</phoneme></lexeme> <!-- overenamored -->
+  <lexeme><grapheme>overencurrage</grapheme><phoneme>ˌoʊvərɪnˈkɜrɪdʒ</phoneme></lexeme> <!-- overencourage -->
+  <lexeme><grapheme>overencurraged</grapheme><phoneme>ˌoʊvərɪnˈkɜrɪdʒd</phoneme></lexeme> <!-- overencouraged -->
+  <lexeme><grapheme>overencurragez</grapheme><phoneme>ˌoʊvərɪnˈkɜrɪdʒɪz</phoneme></lexeme> <!-- overencourages -->
+  <lexeme><grapheme>overencurraging</grapheme><phoneme>ˌoʊvərɪnˈkɜrɪdʒɪŋ</phoneme></lexeme> <!-- overencouraging -->
+  <lexeme><grapheme>overengineerd</grapheme><phoneme>ˌoʊvərɛndʒəˈnɪrd</phoneme></lexeme> <!-- overengineered -->
+  <lexeme><grapheme>overengineerz</grapheme><phoneme>ˌoʊvərɛndʒəˈnɪrz</phoneme></lexeme> <!-- overengineers -->
+  <lexeme><grapheme>overenrolld</grapheme><phoneme>ˌoʊvərɪnˈroʊld</phoneme></lexeme> <!-- overenrolled -->
+  <lexeme><grapheme>overentertaind</grapheme><phoneme>ˌoʊvərɛntərˈteɪnd</phoneme></lexeme> <!-- overentertained -->
+  <lexeme><grapheme>overequipd</grapheme><phoneme>ˌoʊvərɪˈkwɪpt</phoneme></lexeme> <!-- overequipped -->
+  <lexeme><grapheme>overequipz</grapheme><phoneme>ˌoʊvərɪˈkwɪps</phoneme></lexeme> <!-- overequips -->
+  <lexeme><grapheme>overernest</grapheme><phoneme>ˌoʊvərˈɛrnəst</phoneme></lexeme> <!-- overearnest -->
+  <lexeme><grapheme>overestimat</grapheme><phoneme>ˌoʊvərˈɛstəmeɪt</phoneme></lexeme> <!-- overestimate -->
+  <lexeme><grapheme>overestimatez</grapheme><phoneme>ˌoʊvərˈɛstəmeɪts</phoneme></lexeme> <!-- overestimates -->
+  <lexeme><grapheme>overestimats</grapheme><phoneme>ˌoʊvərˈɛstəmeɪts</phoneme></lexeme> <!-- overestimates -->
+  <lexeme><grapheme>overexaggeratez</grapheme><phoneme>ˌoʊvərɪɡˈzædʒəreɪts</phoneme></lexeme> <!-- overexaggerates -->
+  <lexeme><grapheme>overexcitez</grapheme><phoneme>ˌoʊvərɪkˈsaɪts</phoneme></lexeme> <!-- overexcites -->
+  <lexeme><grapheme>overexercisez</grapheme><phoneme>ˌoʊvərˈɛksərsaɪzɪz</phoneme></lexeme> <!-- overexercises -->
+  <lexeme><grapheme>overexertz</grapheme><phoneme>ˌoʊvərɪɡˈzɜrts</phoneme></lexeme> <!-- overexerts -->
+  <lexeme><grapheme>overexpandz</grapheme><phoneme>ˌoʊvərɪkˈspændz</phoneme></lexeme> <!-- overexpands -->
+  <lexeme><grapheme>overexplaind</grapheme><phoneme>ˌoʊvərɪkˈspleɪnd</phoneme></lexeme> <!-- overexplained -->
+  <lexeme><grapheme>overexplainz</grapheme><phoneme>ˌoʊvərɪkˈspleɪnz</phoneme></lexeme> <!-- overexplains -->
+  <lexeme><grapheme>overexploitz</grapheme><phoneme>ˌoʊvərɪkˈsplɔɪts</phoneme></lexeme> <!-- overexploits -->
+  <lexeme><grapheme>overexposez</grapheme><phoneme>ˌoʊvərɪkˈspoʊzɪz</phoneme></lexeme> <!-- overexposes -->
+  <lexeme><grapheme>overextendz</grapheme><phoneme>ˌoʊvərɪkˈstɛndz</phoneme></lexeme> <!-- overextends -->
+  <lexeme><grapheme>overextrapolatez</grapheme><phoneme>ˌoʊvərɪkˈstræpəleɪts</phoneme></lexeme> <!-- overextrapolates -->
+  <lexeme><grapheme>overfatighe</grapheme><phoneme>ˌoʊvərfəˈtiɡ</phoneme></lexeme> <!-- overfatigue -->
+  <lexeme><grapheme>overfatighed</grapheme><phoneme>ˌoʊvərfəˈtiɡd</phoneme></lexeme> <!-- overfatigued -->
+  <lexeme><grapheme>overfatighez</grapheme><phoneme>ˌoʊvərfəˈtiɡz</phoneme></lexeme> <!-- overfatigues -->
+  <lexeme><grapheme>overfatighing</grapheme><phoneme>ˌoʊvərfəˈtiɡɪŋ</phoneme></lexeme> <!-- overfatiguing -->
+  <lexeme><grapheme>overfavord</grapheme><phoneme>ˌoʊvərˈfeɪvərd</phoneme></lexeme> <!-- overfavored -->
+  <lexeme><grapheme>overfavorz</grapheme><phoneme>ˌoʊvərˈfeɪvərz</phoneme></lexeme> <!-- overfavors -->
+  <lexeme><grapheme>overfeard</grapheme><phoneme>ˌoʊvərˈfɪrd</phoneme></lexeme> <!-- overfeared -->
+  <lexeme><grapheme>overfearz</grapheme><phoneme>ˌoʊvərˈfɪrz</phoneme></lexeme> <!-- overfears -->
+  <lexeme><grapheme>overfeedz</grapheme><phoneme>ˌoʊvərˈfidz</phoneme></lexeme> <!-- overfeeds -->
+  <lexeme><grapheme>overfertilizez</grapheme><phoneme>ˌoʊvərˈfɜrtələɪzɪz</phoneme></lexeme> <!-- overfertilizes -->
+  <lexeme><grapheme>overfilld</grapheme><phoneme>ˌoʊvərˈfɪld</phoneme></lexeme> <!-- overfilled -->
+  <lexeme><grapheme>overfillz</grapheme><phoneme>ˌoʊvərˈfɪlz</phoneme></lexeme> <!-- overfills -->
+  <lexeme><grapheme>overfishd</grapheme><phoneme>ˌoʊvərˈfɪʃt</phoneme></lexeme> <!-- overfished -->
+  <lexeme><grapheme>overfishez</grapheme><phoneme>ˌoʊvərˈfɪʃɪz</phoneme></lexeme> <!-- overfishes -->
+  <lexeme><grapheme>overfliez</grapheme><phoneme>ˌoʊvərˈflaɪz</phoneme></lexeme> <!-- overflies -->
+  <lexeme><grapheme>overfliht</grapheme><phoneme>ˈoʊvərˌflaɪt</phoneme></lexeme> <!-- overflight -->
+  <lexeme><grapheme>overflihts</grapheme><phoneme>ˈoʊvərˌflaɪts</phoneme></lexeme> <!-- overflights -->
+  <lexeme><grapheme>overflowd</grapheme><phoneme>ˌoʊvərˈfloʊd</phoneme></lexeme> <!-- overflowed -->
+  <lexeme><grapheme>overflowz</grapheme><phoneme>ˌoʊvərˈfloʊz</phoneme></lexeme> <!-- overflows -->
+  <lexeme><grapheme>overfocusd</grapheme><phoneme>ˌoʊvərˈfoʊkəst</phoneme></lexeme> <!-- overfocused -->
+  <lexeme><grapheme>overfocusez</grapheme><phoneme>ˌoʊvərˈfoʊkəsɪz</phoneme></lexeme> <!-- overfocuses -->
+  <lexeme><grapheme>overfulfilld</grapheme><phoneme>ˌoʊvərfʊlˈfɪld</phoneme></lexeme> <!-- overfulfilled -->
+  <lexeme><grapheme>overfulfillz</grapheme><phoneme>ˌoʊvərfʊlˈfɪlz</phoneme></lexeme> <!-- overfulfills -->
+  <lexeme><grapheme>overfundz</grapheme><phoneme>ˌoʊvərˈfʌndz</phoneme></lexeme> <!-- overfunds -->
+  <lexeme><grapheme>overgeneralizez</grapheme><phoneme>ˌoʊvərˈdʒɛnərəlaɪzɪz</phoneme></lexeme> <!-- overgeneralises -->
+  <lexeme><grapheme>overgildz</grapheme><phoneme>ˌoʊvərˈɡɪldz</phoneme></lexeme> <!-- overgilds -->
+  <lexeme><grapheme>overgirdz</grapheme><phoneme>ˌoʊvərˈɡɪrdz</phoneme></lexeme> <!-- overgirds -->
+  <lexeme><grapheme>overglamorizez</grapheme><phoneme>ˌoʊvərˈɡlæməraɪzɪz</phoneme></lexeme> <!-- overglamorises -->
+  <lexeme><grapheme>overglazez</grapheme><phoneme>ˌoʊvərˈɡleɪzɪz</phoneme></lexeme> <!-- overglazes -->
+  <lexeme><grapheme>overgoadz</grapheme><phoneme>ˌoʊvərˈɡoʊdz</phoneme></lexeme> <!-- overgoads -->
+  <lexeme><grapheme>overgovernd</grapheme><phoneme>ˌoʊvərˈɡʌvərnd</phoneme></lexeme> <!-- overgoverned -->
+  <lexeme><grapheme>overgovernz</grapheme><phoneme>ˌoʊvərˈɡʌvərnz</phoneme></lexeme> <!-- overgoverns -->
+  <lexeme><grapheme>overgrazez</grapheme><phoneme>ˌoʊvərˈɡreɪzɪz</phoneme></lexeme> <!-- overgrazes -->
+  <lexeme><grapheme>overgrowz</grapheme><phoneme>ˌoʊvərˈɡroʊz</phoneme></lexeme> <!-- overgrows -->
+  <lexeme><grapheme>overgrynd</grapheme><phoneme>ˌoʊvərˈɡraɪnd</phoneme></lexeme> <!-- overgrind -->
+  <lexeme><grapheme>overgrynding</grapheme><phoneme>ˌoʊvərˈɡraɪndɪŋ</phoneme></lexeme> <!-- overgrinding -->
+  <lexeme><grapheme>overgryndz</grapheme><phoneme>ˌoʊvərˈɡraɪndz</phoneme></lexeme> <!-- overgrinds -->
+  <lexeme><grapheme>overhandlez</grapheme><phoneme>ˌoʊvərˈhændəlz</phoneme></lexeme> <!-- overhandles -->
+  <lexeme><grapheme>overhandz</grapheme><phoneme>ˈoʊvərˌhændz</phoneme></lexeme> <!-- overhands -->
+  <lexeme><grapheme>overhangz</grapheme><phoneme>ˌoʊvərˈhæŋz</phoneme></lexeme> <!-- overhangs -->
+  <lexeme><grapheme>overharvestz</grapheme><phoneme>ˌoʊvərˈhɑrvəsts</phoneme></lexeme> <!-- overharvests -->
+  <lexeme><grapheme>overhatez</grapheme><phoneme>ˌoʊvərˈheɪts</phoneme></lexeme> <!-- overhates -->
+  <lexeme><grapheme>overhauld</grapheme><phoneme>ˌoʊvərˈhɔld</phoneme></lexeme> <!-- overhauled -->
+  <lexeme><grapheme>overhaulz</grapheme><phoneme>ˌoʊvərˈhɔlz</phoneme></lexeme> <!-- overhauls -->
+  <lexeme><grapheme>overheapz</grapheme><phoneme>ˌoʊvərˈhips</phoneme></lexeme> <!-- overheaps -->
+  <lexeme><grapheme>overhearz</grapheme><phoneme>ˌoʊvərˈhɪrz</phoneme></lexeme> <!-- overhears -->
+  <lexeme><grapheme>overheatz</grapheme><phoneme>ˌoʊvərˈhits</phoneme></lexeme> <!-- overheats -->
+  <lexeme><grapheme>overhedd</grapheme><phoneme>ˈoʊvərˌhɛd</phoneme></lexeme> <!-- overhead -->
+  <lexeme><grapheme>overhedds</grapheme><phoneme>ˈoʊvərˌhɛdz</phoneme></lexeme> <!-- overheads -->
+  <lexeme><grapheme>overherrd</grapheme><phoneme>ˌoʊvərˈhɜrd</phoneme></lexeme> <!-- overheard -->
+  <lexeme><grapheme>overhih</grapheme><phoneme>ˌoʊvərˈhaɪ</phoneme></lexeme> <!-- overhigh -->
+  <lexeme><grapheme>overholdz</grapheme><phoneme>ˌoʊvərˈhoʊldz</phoneme></lexeme> <!-- overholds -->
+  <lexeme><grapheme>overhomogenizez</grapheme><phoneme>ˌoʊvərhoʊˈmɑdʒənaɪzɪz</phoneme></lexeme> <!-- overhomogenizes -->
+  <lexeme><grapheme>overhopez</grapheme><phoneme>ˌoʊvərˈhoʊps</phoneme></lexeme> <!-- overhopes -->
+  <lexeme><grapheme>overhuntz</grapheme><phoneme>ˌoʊvərˈhʌnts</phoneme></lexeme> <!-- overhunts -->
+  <lexeme><grapheme>overhypez</grapheme><phoneme>ˌoʊvərˈhaɪps</phoneme></lexeme> <!-- overhypes -->
+  <lexeme><grapheme>overidealizez</grapheme><phoneme>ˌoʊvəraɪˈdiəlaɪzɪz</phoneme></lexeme> <!-- overidealises -->
+  <lexeme><grapheme>overidentifiez</grapheme><phoneme>ˌoʊvəraɪˈdɛntəfaɪz</phoneme></lexeme> <!-- overidentifies -->
+  <lexeme><grapheme>overimaginativ</grapheme><phoneme>ˌoʊvərɪˈmædʒənətɪv</phoneme></lexeme> <!-- overimaginative -->
+  <lexeme><grapheme>overimpressd</grapheme><phoneme>ˌoʊvərɪmˈprɛst</phoneme></lexeme> <!-- overimpressed -->
+  <lexeme><grapheme>overimpressez</grapheme><phoneme>ˌoʊvərɪmˈprɛsɪz</phoneme></lexeme> <!-- overimpresses -->
   <lexeme><grapheme>overindetted</grapheme><phoneme>ˌoʊvərɪnˈdɛtɪd</phoneme></lexeme> <!-- overindebted -->
   <lexeme><grapheme>overindettedness</grapheme><phoneme>ˌoʊvərɪnˈdɛtɪdnəs</phoneme></lexeme> <!-- overindebtedness -->
   <lexeme><grapheme>overindulgez</grapheme><phoneme>ˌoʊvərɪnˈdʌldʒɪz</phoneme></lexeme> <!-- overindulges -->
@@ -19459,15 +19459,15 @@
   <lexeme><grapheme>overpuwering</grapheme><phoneme>ˌoʊvərˈpaʊərɪŋ</phoneme></lexeme> <!-- overpowering -->
   <lexeme><grapheme>overpuweringly</grapheme><phoneme>ˌoʊvərˈpaʊərɪŋli</phoneme></lexeme> <!-- overpoweringly -->
   <lexeme><grapheme>overpuwerz</grapheme><phoneme>ˌoʊvərˈpaʊərz</phoneme></lexeme> <!-- overpowers -->
-  <lexeme><grapheme>overqharge</grapheme><phoneme>ˌoʊwərˈtʃɑrdʒ</phoneme></lexeme> <!-- overcharge -->
-  <lexeme><grapheme>overqharged</grapheme><phoneme>ˌoʊwərˈtʃɑrdʒd</phoneme></lexeme> <!-- overcharged -->
-  <lexeme><grapheme>overqharges</grapheme><phoneme>ˌoʊwərˈtʃɑrdʒɪz</phoneme></lexeme> <!-- overcharges -->
-  <lexeme><grapheme>overqhargez</grapheme><phoneme>ˌoʊwərˈtʃɑrdʒɪz</phoneme></lexeme> <!-- overcharges -->
-  <lexeme><grapheme>overqharging</grapheme><phoneme>ˌoʊwərˈtʃɑrdʒɪŋ</phoneme></lexeme> <!-- overcharging -->
-  <lexeme><grapheme>overqhill</grapheme><phoneme>ˌoʊwərˈtʃɪl</phoneme></lexeme> <!-- overchill -->
-  <lexeme><grapheme>overqhilld</grapheme><phoneme>ˌoʊwərˈtʃɪld</phoneme></lexeme> <!-- overchilled -->
-  <lexeme><grapheme>overqhilling</grapheme><phoneme>ˌoʊwərˈtʃɪlɪŋ</phoneme></lexeme> <!-- overchilling -->
-  <lexeme><grapheme>overqhillz</grapheme><phoneme>ˌoʊwərˈtʃɪlz</phoneme></lexeme> <!-- overchills -->
+  <lexeme><grapheme>overqharge</grapheme><phoneme>ˌoʊvərˈtʃɑrdʒ</phoneme></lexeme> <!-- overcharge -->
+  <lexeme><grapheme>overqharged</grapheme><phoneme>ˌoʊvərˈtʃɑrdʒd</phoneme></lexeme> <!-- overcharged -->
+  <lexeme><grapheme>overqharges</grapheme><phoneme>ˌoʊvərˈtʃɑrdʒɪz</phoneme></lexeme> <!-- overcharges -->
+  <lexeme><grapheme>overqhargez</grapheme><phoneme>ˌoʊvərˈtʃɑrdʒɪz</phoneme></lexeme> <!-- overcharges -->
+  <lexeme><grapheme>overqharging</grapheme><phoneme>ˌoʊvərˈtʃɑrdʒɪŋ</phoneme></lexeme> <!-- overcharging -->
+  <lexeme><grapheme>overqhill</grapheme><phoneme>ˌoʊvərˈtʃɪl</phoneme></lexeme> <!-- overchill -->
+  <lexeme><grapheme>overqhilld</grapheme><phoneme>ˌoʊvərˈtʃɪld</phoneme></lexeme> <!-- overchilled -->
+  <lexeme><grapheme>overqhilling</grapheme><phoneme>ˌoʊvərˈtʃɪlɪŋ</phoneme></lexeme> <!-- overchilling -->
+  <lexeme><grapheme>overqhillz</grapheme><phoneme>ˌoʊvərˈtʃɪlz</phoneme></lexeme> <!-- overchills -->
   <lexeme><grapheme>overratez</grapheme><phoneme>ˌoʊvərˈreɪts</phoneme></lexeme> <!-- overrates -->
   <lexeme><grapheme>overreactz</grapheme><phoneme>ˌoʊvərriˈækts</phoneme></lexeme> <!-- overreacts -->
   <lexeme><grapheme>overreaqh</grapheme><phoneme>ˌoʊvərˈriːtʃ</phoneme></lexeme> <!-- overreach -->
