@@ -31,9 +31,20 @@
  * 'sans-serif' for Computer Modern — a serif face — because CM declares itself
  * Symbolic and never sets the Serif flag, so isSerifFont is false. But the font
  * NAME is honest where the flags are not (RYDCUL+CMBX12), so fontFace derives the
- * generic from it (see texGeneric): the stray sans-serif q becomes a serif one
- * that reads almost as the heading's own glyph. That is cosmetic, not a fix — the
- * outline is still not in the file.
+ * generic AND the weight from it (see texGeneric/texBold): the stray sans-serif q
+ * becomes a serif one, bold in a bold heading, that reads almost as the heading's
+ * own glyph. That is cosmetic, not a fix — the outline is still not in the file.
+ *
+ * Family and weight match; SIZE does not, and cannot here. The generic resolves
+ * to a different face per platform (Times on Chrome, Noto/Roboto Serif on
+ * Android), none matching CM's proportions — measured, the Android serif's
+ * x-height is ~1.17x CM's, so the substitute is a touch large there and a touch
+ * small on Chrome. CSS font-size-adjust would normalise it, but canvas 2D has no
+ * such control, and the whole word is one ctx.font, so the substitute cannot be
+ * sized apart from the real glyphs around it. Left as-is (2026-07): the only
+ * closes are a bundled metric-matched webfont (weight, and only helps TeX PDFs)
+ * or per-glyph drawing (the thing this file avoids), neither worth it for a
+ * substitute this rare.
  *
  * Decided (2026-07) to accept the substituted glyph rather than suppress the
  * reform for that word: this is a spelling-reform tool, and a heading that
