@@ -12,6 +12,7 @@
     "build:lexicon": "node build/compile-lexicon.js",
     "build:pdfjs": "node build/copy-pdfjs.js",
     "build:ext": "rollup -c",
+    "build:pdf:mobile": "rollup -c rollup.pdf.mobile.config.js",
     "build:firefox": "npm run build && node build/gen-firefox.js",
     "lint:firefox": "web-ext lint --source-dir build/firefox",
     "run:firefox": "web-ext run --source-dir build/firefox",

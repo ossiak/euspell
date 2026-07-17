@@ -22,10 +22,9 @@ import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
-import { ensureLexicon } from '../content/lexicon-load.js';
-import { browser } from '../lib/browser.js';
+import { assetURL, prepareLexicon } from './host.js';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = browser.runtime.getURL('dist/pdfjs/pdf.worker.min.mjs');
+pdfjsLib.GlobalWorkerOptions.workerSrc = assetURL('dist/pdfjs/pdf.worker.min.mjs');
 
 const RENDER_SCALE = 1.5;
 
@@ -126,6 +125,11 @@ async function renderPage(pdf, n, dpr, wrap) {
       font: `${fl.style} ${fl.weight} ${cs.fontSize} ${cs.fontFamily}`,
     };
   });
+  // Make this page's words looked-up-able before converting them. The extension
+  // has one resident table and does this once; a mobile host with no resident
+  // table fetches just this page's vocabulary. Must complete before convert(),
+  // since an unknown word silently passes through unchanged.
+  await prepareLexicon(textLayerDiv);
   walkTextNodes(textLayerDiv, convert);
 
   // Snapshot the pristine raster once so each changed word's ink/paper colours are
@@ -214,20 +218,16 @@ async function main() {
       verbosity: pdfjsLib.VerbosityLevel.ERRORS,
       // Where the bundled WebAssembly image/colour decoders live (trailing slash
       // required) — without this PDF.js can't decode JBIG2/JPEG2000 images.
-      wasmUrl: browser.runtime.getURL('dist/pdfjs/wasm/'),
+      wasmUrl: assetURL('dist/pdfjs/wasm/'),
       // Where the bundled standard substitute fonts live (trailing slash
       // required) — lets PDF.js render non-embedded fonts (e.g. Goudy-Bold) with
       // a matching Foxit/Liberation face instead of warning and falling back.
-      standardFontDataUrl: browser.runtime.getURL('dist/pdfjs/standard_fonts/'),
+      standardFontDataUrl: assetURL('dist/pdfjs/standard_fonts/'),
     }).promise;
   } catch (e) {
     setStatus(`Couldn’t open this PDF (${e?.message ?? e}). You can open the original instead.`);
     return;
   }
-
-  // The lexicon is fetched at runtime (dist/lexicon.data) rather than inlined
-  // into this bundle; load it before reforming any page's text layer.
-  await ensureLexicon();
 
   if (status) status.remove();
   const dpr = window.devicePixelRatio || 1;
