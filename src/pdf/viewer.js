@@ -33,6 +33,33 @@ function setStatus(msg) {
   if (status) status.textContent = msg;
 }
 
+// ?debug=1 turns on per-phase timings for each page. Off by default: the marks
+// are only useful when you are asking where a page's time goes, and on Android
+// the host forwards console output to logcat, so leaving them on would be noise
+// in every session.
+const DEBUG = new URLSearchParams(location.search).has('debug');
+
+/**
+ * Time the phases of one page and report them as a single line, so a slow page
+ * says which part was slow rather than just that it was slow.
+ */
+function phaseTimer(pageNum) {
+  if (!DEBUG) return { mark() {}, done() {} };
+  const t0 = performance.now();
+  let last = t0;
+  const parts = [];
+  return {
+    mark(name) {
+      const now = performance.now();
+      parts.push(`${name} ${Math.round(now - last)}`);
+      last = now;
+    },
+    done() {
+      console.info(`[eupub-pdf] page ${pageNum}: ${parts.join('  ')}  TOTAL ${Math.round(performance.now() - t0)}ms`);
+    },
+  };
+}
+
 /** The width pages are laid out into, in CSS px — #pages minus its own padding. */
 function containerWidth() {
   const cs = getComputedStyle(root);
@@ -77,7 +104,9 @@ function fontFlags(page, fontName) {
 }
 
 async function renderPage(pdf, n, dpr, wrap) {
+  const t = phaseTimer(n);
   const page = await pdf.getPage(n);
+  t.mark('getPage');
   const scale = scaleFor(page);
   const viewport = page.getViewport({ scale });
 
@@ -107,6 +136,7 @@ async function renderPage(pdf, n, dpr, wrap) {
 
   // Opaque white background so blank areas are sampled as paper, not transparent.
   await page.render({ canvasContext: ctx, viewport, background: '#ffffff' }).promise;
+  t.mark('raster');
 
   // Build the (transparent) text layer: one span per glyph run, with the font and
   // box PDF.js laid out. We read its text/geometry, reform it, then redraw the
@@ -115,8 +145,10 @@ async function renderPage(pdf, n, dpr, wrap) {
   const textContent = await page.getTextContent();
   const layer = new pdfjsLib.TextLayer({ textContentSource: textContent, container: textLayerDiv, viewport });
   await layer.render();
+  t.mark('textLayer');
   // Make sure the embedded fonts PDF.js registered are ready for canvas drawing.
   await document.fonts.ready;
+  t.mark('fonts');
 
   // Each str-bearing text item produces one span, in order; map the item's font
   // bold/italic flags onto its span (skipping marked-content boundary items,
@@ -152,11 +184,14 @@ async function renderPage(pdf, n, dpr, wrap) {
   // table fetches just this page's vocabulary. Must complete before convert(),
   // since an unknown word silently passes through unchanged.
   await prepareLexicon(textLayerDiv);
+  t.mark('lexicon');
   walkTextNodes(textLayerDiv, convert);
+  t.mark('convert');
 
   // Snapshot the pristine raster once so each changed word's ink/paper colours are
   // sampled from the original glyphs, before any are painted over.
   const snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  t.mark('snapshot');
 
   ctx.textBaseline = 'alphabetic';
   for (let i = 0; i < spans.length; i++) {
@@ -197,6 +232,8 @@ async function renderPage(pdf, n, dpr, wrap) {
     ctx.fillText(drawText, 0, 0);
     ctx.restore();
   }
+  t.mark('repaint');
+  t.done();
 
   page.cleanup();
 }
