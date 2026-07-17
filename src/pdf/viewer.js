@@ -271,6 +271,24 @@ async function main() {
     wraps.push(wrap);
   }
 
+  // A rendered canvas is backed at scale x dpr and is the dominant cost here —
+  // several MB per page — so pages that scroll far enough away are thrown back to
+  // being empty placeholders and re-rendered if the reader returns. Without this,
+  // memory grows for the whole length of the document and a long PDF eventually
+  // takes the renderer down with it.
+  const rendered = new WeakSet(); // holds a canvas right now
+  const near = new WeakSet(); // inside the keep window (per evictIO, below)
+
+  /** Back to an empty, still-correctly-sized placeholder. */
+  function evict(wrap) {
+    if (!rendered.has(wrap)) return;
+    rendered.delete(wrap);
+    // Keep the width/height renderPage corrected: an emptied page must still
+    // occupy its own space, or everything below it jumps as you scroll.
+    wrap.replaceChildren();
+    renderIO.observe(wrap); // re-arm — coming back into view renders it again
+  }
+
   // Serialize renders so a fast scroll queues pages instead of rasterizing many
   // at once (each render holds a full-page snapshot while it works).
   let queue = Promise.resolve();
@@ -278,6 +296,12 @@ async function main() {
     queue = queue.then(async () => {
       try {
         await renderPage(pdf, n, dpr, wrap);
+        rendered.add(wrap);
+        // A fast scroll can leave a page queued until it is already far behind,
+        // and evictIO won't fire again for something that never re-entered the
+        // keep window — so a page that finished out of view is dropped here
+        // rather than kept forever.
+        if (!near.has(wrap)) evict(wrap);
       } catch (e) {
         const err = document.createElement('div');
         err.className = 'page-error';
@@ -288,17 +312,38 @@ async function main() {
   }
 
   // ~2 estimated pages of lookahead, so reading pace never catches the renderer.
-  const io = new IntersectionObserver(
+  const renderIO = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
-        io.unobserve(entry.target);
+        renderIO.unobserve(entry.target);
         enqueueRender(entry.target, wraps.indexOf(entry.target) + 1);
       }
     },
     { rootMargin: `${Math.ceil(estimate.height * 2)}px 0px` },
   );
-  for (const wrap of wraps) io.observe(wrap);
+
+  // The keep window is deliberately WIDER than the render lookahead. If they were
+  // equal, a page hovering at the boundary would be evicted and re-rendered on
+  // every small scroll; the gap is the hysteresis that stops that thrash.
+  const evictIO = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          near.add(entry.target);
+        } else {
+          near.delete(entry.target);
+          evict(entry.target);
+        }
+      }
+    },
+    { rootMargin: `${Math.ceil(estimate.height * 3)}px 0px` },
+  );
+
+  for (const wrap of wraps) {
+    renderIO.observe(wrap);
+    evictIO.observe(wrap); // observed for the whole session, unlike renderIO
+  }
 }
 
 main();
