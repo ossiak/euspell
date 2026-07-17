@@ -82,24 +82,34 @@ function scaleFor(page) {
 }
 
 /**
- * Bold/italic of a PDF.js font, mirroring how its own canvas renderer builds
- * ctx.font (black -> 900, bold -> bold, italic -> italic). PDF.js bakes weight
- * and slant into the font face rather than a CSS weight on the span, so we read
- * them from the font object in commonObjs. Defaults to normal if unresolved.
+ * The face PDF.js actually drew this run with, mirroring how its own canvas
+ * renderer builds ctx.font: weight/slant are baked into the face rather than
+ * carried as CSS, and the family is the @font-face it registered (loadedName)
+ * with its chosen generic as the fallback.
+ *
+ * The family must come from HERE and not from the span's computed style. The
+ * text layer's font-family is textContent.styles[...].fontFamily, which for an
+ * embedded font is only a generic ("sans-serif" for this paper's Computer
+ * Modern) — drawing with that paints reformed words in a different typeface
+ * from the page they sit on, and measures them at widths the real glyphs never
+ * had. commonObjs carries the real loadedName.
  *
  * @param {import('pdfjs-dist').PDFPageProxy} page
  * @param {string} fontName  the item's loaded font name (commonObjs key)
- * @returns {{ weight: string, style: string }}
+ * @returns {{ weight: string, style: string, family: string }}
  */
-function fontFlags(page, fontName) {
+function fontFace(page, fontName) {
   try {
     const f = page.commonObjs.get(fontName);
     return {
       weight: f.black ? '900' : f.bold ? 'bold' : 'normal',
       style: f.italic ? 'italic' : 'normal',
+      // Quoted, then the fallback — the same shape pdf.js gives its own ctx.font,
+      // so an unloaded face degrades exactly the way the rest of the page does.
+      family: `"${f.loadedName}", ${f.fallbackName || 'sans-serif'}`,
     };
   } catch {
-    return { weight: 'normal', style: 'normal' };
+    return { weight: 'normal', style: 'normal', family: 'sans-serif' };
   }
 }
 
@@ -150,14 +160,14 @@ async function renderPage(pdf, n, dpr, wrap) {
   await document.fonts.ready;
   t.mark('fonts');
 
-  // Each str-bearing text item produces one span, in order; map the item's font
-  // bold/italic flags onto its span (skipping marked-content boundary items,
+  // Each str-bearing text item produces one span, in order; pair each span with
+  // its item's face and advance width (skipping marked-content boundary items,
   // which produce no span).
-  const flagsBySpan = [];
+  const bySpan = [];
   let spanIdx = 0;
   for (const it of textContent.items) {
     if (it.str === undefined) continue;
-    flagsBySpan[spanIdx++] = fontFlags(page, it.fontName);
+    bySpan[spanIdx++] = { face: fontFace(page, it.fontName), width: it.width };
   }
 
   // Record each span's original text, laid-out box, and resolved font BEFORE
@@ -167,16 +177,18 @@ async function renderPage(pdf, n, dpr, wrap) {
   const spans = layer.textDivs;
   const originals = spans.map((s, i) => {
     const cs = getComputedStyle(s);
-    const fl = flagsBySpan[i] || { weight: 'normal', style: 'normal' };
-    // PDF.js stretches each span's glyphs to the PDF's advance width via --scale-x
-    // (it doesn't change offsetWidth, which stays the natural width). The real
-    // width the original text occupies is offsetWidth * scale-x — use that so the
-    // reformed text fills the same extent and lines keep their length.
-    const sx = parseFloat(cs.getPropertyValue('--scale-x')) || 1;
+    const info = bySpan[i] || { face: { weight: 'normal', style: 'normal', family: 'sans-serif' }, width: 0 };
+    // The extent the original glyphs occupy comes from the PDF's own advance
+    // width, NOT from the span's offsetWidth. The span is laid out in the text
+    // layer's font-family, which is a generic fallback whenever the page uses an
+    // embedded face — so its measured width is the fallback's idea of the string
+    // and can be far from what was actually painted. (pdf.js compensates with a
+    // --scale-x on the span, but only sets it when it decides it is needed, so
+    // it cannot be relied on either.) item.width is in PDF units at scale 1.
     return {
       text: s.textContent,
-      x: s.offsetLeft, y: s.offsetTop, w: s.offsetWidth * sx, h: s.offsetHeight,
-      font: `${fl.style} ${fl.weight} ${cs.fontSize} ${cs.fontFamily}`,
+      x: s.offsetLeft, y: s.offsetTop, w: info.width * scale, h: s.offsetHeight,
+      font: `${info.face.style} ${info.face.weight} ${cs.fontSize} ${info.face.family}`,
     };
   });
   // Make this page's words looked-up-able before converting them. The extension
