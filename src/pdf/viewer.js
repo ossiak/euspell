@@ -27,14 +27,17 @@
  * Hsu et al.'s SVM guide the heading face carries 52 glyphs and the body face
  * 81, and only the body has q and z).
  *
- * Picking a nicer fallback is not reliably possible either: pdf.js reports
- * fallbackName 'sans-serif' for Computer Modern, a serif face, because CM
- * declares itself Symbolic and never sets the Serif flag in its font
- * descriptor — so isSerifFont is false and neither pdf.js nor we can tell.
+ * The substitute is made to blend in where we can. pdf.js reports fallbackName
+ * 'sans-serif' for Computer Modern — a serif face — because CM declares itself
+ * Symbolic and never sets the Serif flag, so isSerifFont is false. But the font
+ * NAME is honest where the flags are not (RYDCUL+CMBX12), so fontFace derives the
+ * generic from it (see texGeneric): the stray sans-serif q becomes a serif one
+ * that reads almost as the heading's own glyph. That is cosmetic, not a fix — the
+ * outline is still not in the file.
  *
- * Decided (2026-07) to accept the odd glyph rather than suppress the reform for
- * that word: this is a spelling-reform tool, and a heading that quietly fails to
- * reform costs more than a letter that looks wrong.
+ * Decided (2026-07) to accept the substituted glyph rather than suppress the
+ * reform for that word: this is a spelling-reform tool, and a heading that
+ * quietly fails to reform costs more than a letter that looks slightly off.
  */
 
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
@@ -121,16 +124,49 @@ function scaleFor(page) {
 function fontFace(page, fontName) {
   try {
     const f = page.commonObjs.get(fontName);
+    const fallback = texGeneric(f.name) || f.fallbackName || 'sans-serif';
     return {
       weight: f.black ? '900' : f.bold ? 'bold' : 'normal',
       style: f.italic ? 'italic' : 'normal',
       // Quoted, then the fallback — the same shape pdf.js gives its own ctx.font,
       // so an unloaded face degrades exactly the way the rest of the page does.
-      family: `"${f.loadedName}", ${f.fallbackName || 'sans-serif'}`,
+      family: `"${f.loadedName}", ${fallback}`,
     };
   } catch {
     return { weight: 'normal', style: 'normal', family: 'sans-serif' };
   }
+}
+
+/**
+ * A better generic fallback for a font than pdf.js's fallbackName, read from the
+ * font's NAME — or null to keep pdf.js's guess.
+ *
+ * This exists because the descriptor flags are exactly what is wrong. Computer
+ * Modern declares itself Symbolic and never sets the Serif flag, so isSerifFont
+ * is false and pdf.js derives fallbackName 'sans-serif' for a serif face. The
+ * name is honest where the flags are not: the TeX convention encodes the style,
+ * so cmr/cmbx/cmti are roman (serif), cmss is sans, cmtt is typewriter (mono),
+ * and Latin Modern (lmroman/lmsans/lmmono) mirrors it. When the name is a family
+ * we recognise, trust it over the flags.
+ *
+ * The generic only ever backs a glyph the embedded subset is MISSING, in a word
+ * we draw (see fontFace) — the rest of the page is untouched raster. So the blast
+ * radius is one substituted letter, and an unrecognised name returns null and
+ * keeps today's behaviour. Deliberately narrow: CM and Latin Modern cover almost
+ * all academic PDFs, and guessing past them buys little for real risk.
+ *
+ * @param {string} name  the font's PostScript name, e.g. "RYDCUL+CMBX12"
+ * @returns {'serif' | 'sans-serif' | 'monospace' | null}
+ */
+function texGeneric(name) {
+  if (!name) return null;
+  const n = name.replace(/^[A-Z]{6}\+/, '').toLowerCase(); // drop the subset prefix
+  // Order matters: the mono and sans families also start with cm/lm, so they
+  // must be matched before the serif catch-all.
+  if (/^(cmtt|cmsltt|cmitt|cmtex|cmvtt|lmmono|lmtt)/.test(n)) return 'monospace';
+  if (/^(cmss|lmss|lmsans)/.test(n)) return 'sans-serif';
+  if (/^(cm|lm)/.test(n)) return 'serif';
+  return null;
 }
 
 async function renderPage(pdf, n, dpr, wrap) {
