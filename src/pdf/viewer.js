@@ -15,6 +15,26 @@
  * and copy still work). Ink/paper are sampled per word, so coloured text and
  * non-white backgrounds are handled; heavily textured backgrounds remain a
  * known limitation.
+ *
+ * KNOWN LIMITATION — a reform can need a glyph the PDF does not contain. An
+ * embedded font is usually SUBSETTED to the characters the document actually
+ * uses, and euspell introduces letters the original text may never have had:
+ * research -> reserqh needs a q, Physics -> Physicz needs a z. Where the subset
+ * lacks the glyph the browser substitutes that ONE letter from the fallback
+ * family, so a reformed word can carry a single odd-looking character. This is
+ * unfixable by font selection — the outline is simply not in the file — and it
+ * shows up mainly in headings, whose display fonts are subsetted hardest (in
+ * Hsu et al.'s SVM guide the heading face carries 52 glyphs and the body face
+ * 81, and only the body has q and z).
+ *
+ * Picking a nicer fallback is not reliably possible either: pdf.js reports
+ * fallbackName 'sans-serif' for Computer Modern, a serif face, because CM
+ * declares itself Symbolic and never sets the Serif flag in its font
+ * descriptor — so isSerifFont is false and neither pdf.js nor we can tell.
+ *
+ * Decided (2026-07) to accept the odd glyph rather than suppress the reform for
+ * that word: this is a spelling-reform tool, and a heading that quietly fails to
+ * reform costs more than a letter that looks wrong.
  */
 
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
