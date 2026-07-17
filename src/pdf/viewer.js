@@ -309,7 +309,7 @@ async function main() {
   // cost — canvas, text layer, and a full-page getImageData snapshot per page —
   // before the reader got past page 1.
   const firstPage = await pdf.getPage(1);
-  const estimate = firstPage.getViewport({ scale: scaleFor(firstPage) });
+  let estimate = firstPage.getViewport({ scale: scaleFor(firstPage) });
   const wraps = [];
   for (let n = 1; n <= pdf.numPages; n++) {
     const wrap = document.createElement('div');
@@ -360,39 +360,93 @@ async function main() {
     });
   }
 
-  // ~2 estimated pages of lookahead, so reading pace never catches the renderer.
-  const renderIO = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        renderIO.unobserve(entry.target);
-        enqueueRender(entry.target, wraps.indexOf(entry.target) + 1);
-      }
-    },
-    { rootMargin: `${Math.ceil(estimate.height * 2)}px 0px` },
-  );
+  /** @type {IntersectionObserver | undefined} */ let renderIO;
+  /** @type {IntersectionObserver | undefined} */ let evictIO;
 
-  // The keep window is deliberately WIDER than the render lookahead. If they were
-  // equal, a page hovering at the boundary would be evicted and re-rendered on
-  // every small scroll; the gap is the hysteresis that stops that thrash.
-  const evictIO = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          near.add(entry.target);
-        } else {
-          near.delete(entry.target);
-          evict(entry.target);
+  // Rebuilt whenever the page size changes: both margins are page-heights, so a
+  // rotation leaves them measuring the old layout.
+  function observe() {
+    renderIO?.disconnect();
+    evictIO?.disconnect();
+
+    // ~2 estimated pages of lookahead, so reading pace never catches the renderer.
+    renderIO = new IntersectionObserver(
+      // Unobserve through the callback's OWN observer, not the renderIO binding:
+      // relayout replaces it, and a queued callback from the old one would
+      // otherwise unobserve its target from the new observer — quietly ensuring
+      // that page never renders.
+      (entries, obs) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          obs.unobserve(entry.target);
+          enqueueRender(entry.target, wraps.indexOf(entry.target) + 1);
         }
-      }
-    },
-    { rootMargin: `${Math.ceil(estimate.height * 3)}px 0px` },
-  );
+      },
+      { rootMargin: `${Math.ceil(estimate.height * 2)}px 0px` },
+    );
 
-  for (const wrap of wraps) {
-    renderIO.observe(wrap);
-    evictIO.observe(wrap); // observed for the whole session, unlike renderIO
+    // The keep window is deliberately WIDER than the render lookahead. If they
+    // were equal, a page hovering at the boundary would be evicted and
+    // re-rendered on every small scroll; the gap is the hysteresis that stops
+    // that thrash.
+    evictIO = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            near.add(entry.target);
+          } else {
+            near.delete(entry.target);
+            evict(entry.target);
+          }
+        }
+      },
+      { rootMargin: `${Math.ceil(estimate.height * 3)}px 0px` },
+    );
+
+    for (const wrap of wraps) {
+      if (!rendered.has(wrap)) renderIO.observe(wrap);
+      evictIO.observe(wrap); // observed for the whole session, unlike renderIO
+    }
   }
+  observe();
+
+  // A host that fits pages to the screen (see host.mobile.js) changes scale when
+  // the window does — a phone rotating is the real case. Every rendered canvas is
+  // then at the wrong scale: rotating to a NARROWER screen leaves pages wider
+  // than the viewport and scrolling sideways, and to a wider one leaves them
+  // stranded at half the available width.
+  //
+  // Where renderScale ignores the container (the extension's fixed 1.5) the width
+  // never changes and this is a no-op, so no host needs to opt out.
+  function relayout() {
+    const next = firstPage.getViewport({ scale: scaleFor(firstPage) });
+    if (Math.abs(next.width - estimate.width) < 1) return;
+
+    // Remember the reading position as a page plus a fraction into it — pixel
+    // offsets mean nothing once every page changes height.
+    const anchor = wraps.find((w) => w.offsetTop + w.offsetHeight > window.scrollY) ?? wraps[0];
+    const into = anchor && anchor.offsetHeight
+      ? (window.scrollY - anchor.offsetTop) / anchor.offsetHeight
+      : 0;
+
+    estimate = next;
+    for (const wrap of wraps) {
+      evict(wrap); // every canvas is at the old scale
+      wrap.style.width = `${estimate.width}px`;
+      wrap.style.height = `${estimate.height}px`;
+    }
+    observe();
+
+    if (anchor) window.scrollTo(0, anchor.offsetTop + into * anchor.offsetHeight);
+  }
+
+  // Rotation fires several resizes as the viewport settles, and each one would
+  // otherwise evict and re-render everything.
+  let resizeTimer = 0;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(relayout, 200);
+  });
 }
 
 main();
