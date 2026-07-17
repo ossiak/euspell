@@ -26,6 +26,21 @@ export function assetURL(relPath) {
 }
 
 /**
+ * The scale to rasterize a page at, in CSS px per PDF pt.
+ *
+ * The extension renders in a desktop-width tab, where a fixed 1.5 is a readable
+ * size and the page is free to be wider than the window — the tab scrolls. A
+ * phone-sized host wants the page fitted to the screen instead, so this is a
+ * host decision (see host.mobile.js).
+ *
+ * @param {{ naturalWidth: number, containerWidth: number }} _dims  unused here
+ * @returns {number}
+ */
+export function renderScale(_dims) {
+  return 1.5;
+}
+
+/**
  * Ensure every word under `root` can be looked up before it is converted.
  *
  * The extension ships one lexicon for the whole document and loads it once, so

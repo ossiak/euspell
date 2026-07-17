@@ -22,17 +22,36 @@ import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
-import { assetURL, prepareLexicon } from './host.js';
+import { assetURL, prepareLexicon, renderScale } from './host.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = assetURL('dist/pdfjs/pdf.worker.min.mjs');
-
-const RENDER_SCALE = 1.5;
 
 const root = document.getElementById('pages');
 const status = document.getElementById('status');
 
 function setStatus(msg) {
   if (status) status.textContent = msg;
+}
+
+/** The width pages are laid out into, in CSS px — #pages minus its own padding. */
+function containerWidth() {
+  const cs = getComputedStyle(root);
+  return root.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+}
+
+/**
+ * The scale to rasterize a page at. Asked per page rather than fixed once: pages
+ * within one PDF can differ in size and rotation, and getViewport({scale:1})
+ * already accounts for both.
+ *
+ * @param {import('pdfjs-dist').PDFPageProxy} page
+ * @returns {number}
+ */
+function scaleFor(page) {
+  return renderScale({
+    naturalWidth: page.getViewport({ scale: 1 }).width,
+    containerWidth: containerWidth(),
+  });
 }
 
 /**
@@ -59,7 +78,8 @@ function fontFlags(page, fontName) {
 
 async function renderPage(pdf, n, dpr, wrap) {
   const page = await pdf.getPage(n);
-  const viewport = page.getViewport({ scale: RENDER_SCALE });
+  const scale = scaleFor(page);
+  const viewport = page.getViewport({ scale });
 
   // Correct the placeholder's estimated size (page 1's) to this page's real one.
   wrap.style.width = `${viewport.width}px`;
@@ -78,8 +98,10 @@ async function renderPage(pdf, n, dpr, wrap) {
   // PDF.js stores each span's font height in the --font-height variable and
   // expects the stylesheet to turn it into font-size via the scale factor (see
   // viewer.css). It uses --total-scale-factor; we set both names for safety.
-  textLayerDiv.style.setProperty('--scale-factor', String(RENDER_SCALE));
-  textLayerDiv.style.setProperty('--total-scale-factor', String(RENDER_SCALE));
+  // These MUST be this page's scale: the spans' geometry is what the reformed
+  // words are measured and drawn from, so a stale factor mis-sizes them.
+  textLayerDiv.style.setProperty('--scale-factor', String(scale));
+  textLayerDiv.style.setProperty('--total-scale-factor', String(scale));
 
   wrap.append(canvas, textLayerDiv);
 
@@ -238,7 +260,7 @@ async function main() {
   // cost — canvas, text layer, and a full-page getImageData snapshot per page —
   // before the reader got past page 1.
   const firstPage = await pdf.getPage(1);
-  const estimate = firstPage.getViewport({ scale: RENDER_SCALE });
+  const estimate = firstPage.getViewport({ scale: scaleFor(firstPage) });
   const wraps = [];
   for (let n = 1; n <= pdf.numPages; n++) {
     const wrap = document.createElement('div');

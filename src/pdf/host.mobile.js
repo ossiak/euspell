@@ -26,6 +26,30 @@ export function assetURL(relPath) {
   return new URL(relPath.replace(/^dist\/pdfjs\//, '../pdfjs/'), location.href).href;
 }
 
+// A page never usefully exceeds the extension's fixed scale: past this, a fitted
+// page is just a big raster nobody asked for. On a phone the fit is far below it
+// (~0.55), so this only binds on a tablet or a rotated large screen.
+const MAX_SCALE = 1.5;
+
+/**
+ * Fit the page to the screen, rather than the extension's fixed 1.5.
+ *
+ * This is not only about layout. At 1.5 a US-Letter page is 918 CSS px wide — on
+ * a 360 px phone that is 2.7x the screen, so the reader sees a third of the line
+ * and scrolls sideways for the rest. It is also the memory story: the canvas is
+ * backed at scale x devicePixelRatio, so 1.5 on a dpr-3 phone rasterizes
+ * 2754x3564 = 9.8 Mpx (~37 MB) per page to show a 336 px-wide column. Fitting to
+ * width makes the same page ~1008x1304 (~5.3 MB) — the same pixels the screen can
+ * actually show, and ~7x less of them.
+ *
+ * @param {{ naturalWidth: number, containerWidth: number }} dims  both in CSS px
+ * @returns {number}
+ */
+export function renderScale({ naturalWidth, containerWidth }) {
+  if (!(naturalWidth > 0) || !(containerWidth > 0)) return 1; // pre-layout: don't divide by zero
+  return Math.min(containerWidth / naturalWidth, MAX_SCALE);
+}
+
 // ONE table, installed once and only ever added to. A per-page setLexicon() swap
 // would also work today — renders are serialized by enqueueRender, and nothing
 // awaits between prepareLexicon and walkTextNodes — but that safety is
