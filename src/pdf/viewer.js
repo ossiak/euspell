@@ -125,8 +125,9 @@ function fontFace(page, fontName) {
   try {
     const f = page.commonObjs.get(fontName);
     const fallback = texGeneric(f.name) || f.fallbackName || 'sans-serif';
+    const bold = f.black || f.bold || texBold(f.name);
     return {
-      weight: f.black ? '900' : f.bold ? 'bold' : 'normal',
+      weight: f.black ? '900' : bold ? 'bold' : 'normal',
       style: f.italic ? 'italic' : 'normal',
       // Quoted, then the fallback — the same shape pdf.js gives its own ctx.font,
       // so an unloaded face degrades exactly the way the rest of the page does.
@@ -135,6 +136,21 @@ function fontFace(page, fontName) {
   } catch {
     return { weight: 'normal', style: 'normal', family: 'sans-serif' };
   }
+}
+
+/**
+ * Whether a TeX font is bold, from its NAME — same reasoning as texGeneric.
+ * Computer Modern's bold faces (cmb, cmbx, cmbsy, cmssbx) and Latin Modern's
+ * (lmbx…, or a human name ending -Bold) leave fontObj.bold unset, so the weight
+ * has to come from the name too. cmbx12 -> bold; cmr12, cmss10 -> not.
+ *
+ * @param {string} name
+ * @returns {boolean}
+ */
+function texBold(name) {
+  if (!name) return false;
+  const n = name.replace(/^[A-Z]{6}\+/, '').toLowerCase();
+  return /^(cm|lm)(b|ssb)/.test(n) || /bold/.test(n);
 }
 
 /**
