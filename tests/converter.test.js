@@ -90,6 +90,25 @@ test('the pronoun I reforms to ih, capitalized only at sentence start', () => {
   assert.equal(convert('I', [t('and', 'CC'), t('I', '')], 1), 'ih');
 });
 
+test('contractions of the pronoun I follow the same sentence-position case', () => {
+  // mid-sentence (idx 1, no break before) → lowercase; sentence start → capital.
+  for (const [w, mid, start] of [
+    ["I've", "ih'v", "Ih'v"],
+    ["I'm", "ih'm", "Ih'm"],
+    ["I’m", "ih'm", "Ih'm"], // curly apostrophe resolves the same
+    ['Imma', 'ihma', 'Ihma'],
+  ]) {
+    assert.equal(convert(w, [t('so', 'RR'), t(w, '')], 1), mid, `${w} mid-sentence`);
+    assert.equal(convert(w, [t(w, '')], 0), start, `${w} at sentence start`);
+  }
+});
+
+test('a capitalized non-pronoun that reforms to ih… keeps its capital', () => {
+  // "Island" → "Ihland"; the decapitalization is gated on the pronoun (PPIS1),
+  // not on the "ih" spelling, so a proper noun mid-sentence is untouched.
+  assert.equal(convert('Island', [t('the', 'AT'), t('Island', 'NP1')], 1), 'Ihland');
+});
+
 test('capitalization of the source word is preserved', () => {
   assert.equal(conv([['Wind', ''], ['the', 'AT'], ['clock', 'NN1']], 'Wind'), 'Wynd');
 });

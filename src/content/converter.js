@@ -32,7 +32,8 @@ export function convert(word, tokens, idx) {
   // getContraction() normalizes case and apostrophe style (I'll, don’t).
   const key = word.toLowerCase();
   if (KEEP_UNCHANGED.has(key)) return word;
-  const entry = lookupEntry(key) ?? getContraction(word);
+  const lexEntry = lookupEntry(key);
+  const entry = lexEntry ?? getContraction(word);
   if (!entry) return word;
 
   // The encoding's last digit is the euspelling count: 0 ⇒ word unchanged,
@@ -40,10 +41,34 @@ export function convert(word, tokens, idx) {
   // entries whose euspelling field is [] despite a non-zero last digit.
   const variants = entry.encoding % 10;
   if (variants === 0) return word;
-  if (variants === 1) return matchCase(word, entry.spellings[0] ?? word);
+  const spelling =
+    variants === 1 ? entry.spellings[0] ?? word : entry.spellings[route(key, entry, tokens, idx)] ?? word;
 
-  const spellingIdx = route(key, entry, tokens, idx);
-  return matchCase(word, entry.spellings[spellingIdx] ?? word);
+  // Contractions of the pronoun "I" (I'm, I've, I'll, I'd, Imma, …) reform with a
+  // leading "ih" and follow the SAME rule as the standalone pronoun above: written
+  // English always capitalizes "I", but "ih" is an ordinary word, so it is
+  // lowercase mid-sentence and capitalized only at a sentence start — not given
+  // the source's ever-present capital by matchCase. A lexicon word that reforms to
+  // "ih…" (e.g. "Island") must NOT be caught, so this gates on the entry being a
+  // contraction led by PPIS1 ("I"), not on the spelling.
+  if (!lexEntry && leadsWithPronounI(entry)) {
+    return isSentenceStart(tokens, idx) ? spelling[0].toUpperCase() + spelling.slice(1) : spelling;
+  }
+  return matchCase(word, spelling);
+}
+
+/**
+ * True when a contraction's leading component is the pronoun "I" (CLAWS7 PPIS1),
+ * across every alternative reading — I'm, I've, I'll, I'd, I'd've, Imma, Idunno.
+ * @param {import('../../dist/lexicon.js').LexiconEntry} entry
+ * @returns {boolean}
+ */
+function leadsWithPronounI(entry) {
+  return (
+    Array.isArray(entry.pos) &&
+    entry.pos.length > 0 &&
+    entry.pos.every((seq) => seq.split(/\s+/)[0] === 'PPIS1')
+  );
 }
 
 /**
