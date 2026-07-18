@@ -51,6 +51,7 @@
  * quietly fails to reform costs more than a letter that looks slightly off.
  */
 
+import './polyfills.js'; // shim toHex / getOrInsert for older WebViews — must precede pdf.js
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
 import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
