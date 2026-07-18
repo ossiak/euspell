@@ -46,18 +46,19 @@ function run() {
   var reverting = choice === 'Revert to English';
   var transform = reverting ? Euspell.revertText : Euspell.convertText;
 
+  // Per-paragraph text-suite access (`.text()` / `.text =`) throws "Can't
+  // convert types" on at least Pages 15.3. The reliable specifier is calling
+  // bodyText as a function to read and assigning it directly to write — see
+  // pages/README.md "whole-body fallback". This resets all body formatting
+  // to a single run, but works.
   var changed = 0;
   try {
-    var body = Pages.documents[0].bodyText;
-    var paras = body.paragraphs;
-    var n = paras.length; // stable: a reform never adds or removes a paragraph break
-    for (var i = 0; i < n; i++) {
-      var before = paras[i].text();
-      if (!before || !before.replace(/\s+/g, '')) continue; // blank line
-      var after = transform(before);
-      if (after === before) continue;
-      paras[i].text = after;
-      changed++;
+    var doc = Pages.documents[0];
+    var before = String(doc.bodyText());
+    var after = transform(before);
+    if (after !== before) {
+      doc.bodyText = after;
+      changed = 1;
     }
   } catch (e) {
     Pages.displayAlert('Euspell — could not rewrite the document', {
@@ -67,7 +68,7 @@ function run() {
   }
 
   Pages.displayNotification(
-    changed + (changed === 1 ? ' paragraph ' : ' paragraphs ') + (reverting ? 'reverted' : 'reformed'),
+    changed ? 'Document ' + (reverting ? 'reverted' : 'reformed') : 'No changes',
     { withTitle: 'Euspell' }
   );
 }

@@ -72,32 +72,32 @@ dictionary data, so expect a couple of seconds before it acts.
 | Revert (euspell → English) | supported (lexicon reverse) |
 | Selection only | **not** supported — Pages exposes no scriptable text selection; whole document only |
 | Text in text boxes / shapes / table cells | not reached (only the main body flow) |
-| Inline character formatting | a converted paragraph resets to its default run formatting |
+| Inline character formatting | the whole body resets to its default run formatting (whole-document rewrite, see below) |
 
 - **Run once.** A few reforms aren't idempotent, so converting an already-euspell
   document again can over-transform those words.
 - Correctness of the reform itself is covered by the shared engine's fixtures
   (`npm run test:gas`, 35/35); only the thin Pages glue is new here.
 
-## If the document doesn't change (text-suite note)
+## Text-suite note
 
-The one unproven line is how the glue reads and writes paragraph text
-(`bodyText` / `paragraphs` / `.text()` in
-[`euspell-pages-glue.js`](euspell-pages-glue.js)). JXA's text suite is finicky
-and the exact specifier can vary by Pages version. If a run pops an **"Euspell —
-could not rewrite the document"** alert, note the error it shows and:
+Per-paragraph access (`bodyText.paragraphs[i].text()` / `.text = …`) throws
+**"Error: Can't convert types"** on Pages 15.3 — JXA's text suite is finicky
+and that specifier doesn't work at least on that version. The glue therefore
+reads and writes the whole body in one shot instead:
 
-1. Confirm the names against Pages' real dictionary: **Script Editor ▸ File ▸
-   Open Dictionary… ▸ Pages**, and look at the *Text Suite* (`body text`,
-   `paragraph`, `text`).
-2. **Whole-body fallback** (reliable, but resets *all* body formatting): replace
-   the per-paragraph loop with a single get/set —
-   ```js
-   var body = Pages.documents[0].bodyText;
-   body.text = transform(body.text());
-   ```
-   `Euspell.convertText` handles the embedded newlines itself, so this converts
-   the entire body in one shot; the cost is that the whole body collapses to one
-   formatting run.
+```js
+var doc = Pages.documents[0];
+doc.bodyText = transform(String(doc.bodyText()));
+```
 
-Report back what the dictionary shows and we can lock the specifier in.
+Calling `bodyText` as a function reads the text; assigning to the property
+directly writes it — confirmed working via a probe against a live document
+(`osascript -l JavaScript`). `Euspell.convertText` handles the embedded
+newlines itself, so this converts the entire body in one shot; the cost is
+that the whole body collapses to one formatting run.
+
+If a run still pops an **"Euspell — could not rewrite the document"** alert
+on some other Pages version, confirm the names against Pages' real
+dictionary: **Script Editor ▸ File ▸ Open Dictionary… ▸ Pages**, and look at
+the *Text Suite* (`body text`, `paragraph`, `text`).
