@@ -89,11 +89,19 @@ export function fileParam(search) {
  * value — this keeps `javascript:`/`data:`/extension URLs out of both the
  * PDF.js fetch and the "Open original" anchor (the extension CSP would block a
  * javascript: link's execution anyway, but the URL should never get that far).
+ *
+ * Beyond the fetchable web schemes, a target on THIS page's own origin is
+ * allowed whatever the scheme: an embedding host may serve both the viewer and
+ * the document from a private scheme (Eupub desktop uses app://eupub for
+ * both, the way Android uses https://eupub.local), and fetching one's own
+ * origin is as safe as the page itself. Guarded for test contexts without a
+ * `location`.
  */
 export function isAllowedViewerUrl(url) {
   try {
-    const p = new URL(url).protocol;
-    return p === 'http:' || p === 'https:' || p === 'file:';
+    const u = new URL(url);
+    if (u.protocol === 'http:' || u.protocol === 'https:' || u.protocol === 'file:') return true;
+    return typeof location !== 'undefined' && u.origin !== 'null' && u.origin === location.origin;
   } catch {
     return false;
   }

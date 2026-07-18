@@ -107,8 +107,14 @@ export async function prepareLexicon(root) {
 // This viewer runs embedded in the Eupub reader (an iframe), which owns the
 // sidebar TOC, the status bar, and the saved reading position. viewer.js reports
 // the outline and current page up to it, and takes jump commands back, over
-// postMessage. Same-origin, so a specific target origin is used both ways; the
-// tags (eupubPdf / eupubPdfCmd) keep this clear of the bridge relay's messages.
+// postMessage. The embedding reader is NOT always same-origin: on Android both
+// pages share https://eupub.local, but the desktop reader is a file:// page
+// embedding an app://eupub viewer. So both directions gate on the WINDOW
+// (`parent` — unforgeable) rather than on origin equality: reports go to
+// whoever embeds us ('*' — the payload is outline titles and page numbers from
+// the document itself, nothing the embedder couldn't read anyway), and
+// commands are accepted only from the parent window. The tags (eupubPdf /
+// eupubPdfCmd) keep this clear of the bridge relay's messages.
 
 export const wantsNav = true;
 
@@ -121,7 +127,7 @@ export const wantsNav = true;
  * @param {object} payload
  */
 export function reportNav(kind, payload) {
-  window.parent.postMessage({ eupubPdf: kind, ...payload }, location.origin);
+  window.parent.postMessage({ eupubPdf: kind, ...payload }, '*');
 }
 
 /**
@@ -130,7 +136,7 @@ export function reportNav(kind, payload) {
  */
 export function onNavCommand(cb) {
   window.addEventListener('message', (e) => {
-    if (e.origin !== location.origin) return;
+    if (e.source !== window.parent) return;
     if (e.data && e.data.eupubPdfCmd) cb(e.data);
   });
 }
