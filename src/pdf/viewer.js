@@ -56,7 +56,7 @@ import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
-import { assetURL, prepareLexicon, renderScale } from './host.js';
+import { assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand } from './host.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = assetURL('dist/pdfjs/pdf.worker.min.mjs');
 
@@ -530,6 +530,66 @@ async function main() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(relayout, 200);
   });
+
+  // Navigation channel — only when an embedding host wants it (Eupub's reader).
+  // The extension viewer has no TOC/status chrome, so wantsNav is false there and
+  // none of this runs. The host owns the sidebar and status bar; we feed it the
+  // outline and the current page, and take jump commands back.
+  if (wantsNav) setUpNav();
+
+  async function setUpNav() {
+    // Current page: the wrap straddling the viewport's vertical middle.
+    function reportPosition() {
+      const mid = window.scrollY + window.innerHeight / 2;
+      let page = wraps.findIndex((w) => w.offsetTop + w.offsetHeight > mid);
+      if (page < 0) page = wraps.length - 1;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.round((window.scrollY / max) * 100) : 0;
+      reportNav('position', { page, pages: wraps.length, pct });
+    }
+    let posTimer = 0;
+    window.addEventListener(
+      'scroll',
+      () => {
+        clearTimeout(posTimer);
+        posTimer = setTimeout(reportPosition, 120);
+      },
+      { passive: true },
+    );
+
+    // Jump to a page (TOC click or position restore). Scrolling to a placeholder
+    // works before it renders — the render observer fills it in. Registered
+    // BEFORE reporting 'ready', so a restore command can't outrun the listener.
+    onNavCommand((c) => {
+      if (c.goto != null && wraps[c.goto]) {
+        wraps[c.goto].scrollIntoView();
+        reportPosition();
+      }
+    });
+
+    // Flatten pdf.js's outline tree to [{ title, page, depth }], resolving each
+    // destination to a page index. Entries whose dest doesn't resolve are dropped
+    // (their children still walk); a PDF with no outline yields [].
+    async function flattenOutline(nodes, depth, out) {
+      for (const node of nodes || []) {
+        try {
+          const dest = typeof node.dest === 'string' ? await pdf.getDestination(node.dest) : node.dest;
+          if (dest && dest[0]) out.push({ title: node.title, page: await pdf.getPageIndex(dest[0]), depth });
+        } catch {
+          /* unresolved destination — skip this heading, keep its children */
+        }
+        if (node.items?.length) await flattenOutline(node.items, depth + 1, out);
+      }
+    }
+    const outline = [];
+    try {
+      await flattenOutline(await pdf.getOutline(), 0, outline);
+    } catch {
+      /* no outline / malformed — report an empty one */
+    }
+    reportNav('ready', { pages: wraps.length, outline });
+    reportPosition(); // starting page, before any scroll
+  }
 }
 
 main();

@@ -54,3 +54,18 @@ export function renderScale(_dims) {
 export function prepareLexicon(_root) {
   return ensureLexicon();
 }
+
+// --- navigation channel ----------------------------------------------------
+// Lets an embedding host (Eupub's reader) show a table of contents, a page
+// readout, and remember the reading position. The extension viewer is a
+// standalone tab with none of that chrome, so the whole channel is inert here:
+// wantsNav is false, so viewer.js never computes the outline or tracks the page.
+
+/** Whether the host wants outline/position reporting (see host.mobile.js). */
+export const wantsNav = false;
+
+/** Report an outline or a position change to the host. No-op in the extension. */
+export function reportNav(_kind, _payload) {}
+
+/** Subscribe to host nav commands (e.g. jump to page). No-op in the extension. */
+export function onNavCommand(_cb) {}

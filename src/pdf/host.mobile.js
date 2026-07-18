@@ -102,3 +102,35 @@ export async function prepareLexicon(root) {
     throw e;
   }
 }
+
+// --- navigation channel ----------------------------------------------------
+// This viewer runs embedded in the Eupub reader (an iframe), which owns the
+// sidebar TOC, the status bar, and the saved reading position. viewer.js reports
+// the outline and current page up to it, and takes jump commands back, over
+// postMessage. Same-origin, so a specific target origin is used both ways; the
+// tags (eupubPdf / eupubPdfCmd) keep this clear of the bridge relay's messages.
+
+export const wantsNav = true;
+
+/**
+ * Report to the reader: kind 'ready' with { pages, outline }, or 'position' with
+ * { page, pct }. Posts to the parent frame (self when somehow un-embedded, which
+ * is harmless — nothing listens).
+ *
+ * @param {'ready' | 'position'} kind
+ * @param {object} payload
+ */
+export function reportNav(kind, payload) {
+  window.parent.postMessage({ eupubPdf: kind, ...payload }, location.origin);
+}
+
+/**
+ * Subscribe to nav commands from the reader (currently { goto: pageIndex }).
+ * @param {(cmd: { goto?: number }) => void} cb
+ */
+export function onNavCommand(cb) {
+  window.addEventListener('message', (e) => {
+    if (e.origin !== location.origin) return;
+    if (e.data && e.data.eupubPdfCmd) cb(e.data);
+  });
+}
