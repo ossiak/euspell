@@ -221,6 +221,16 @@ var Euspell = (function () {
   function anyPrefix(token, prefixes) {
     return tagsOf(token).some(function (t) { return prefixes.some(function (p) { return t.indexOf(p) === 0; }); });
   }
+  // anyPrefix ignoring ditto tags — for a test that CATEGORICALLY decides the
+  // answer rather than contributing a vote. In a vote a ditto tag only inflates
+  // a magnitude, but in a branch that returns, one spurious match flips the
+  // answer: "a" carries NN132, so it counted as the noun in isVerbalS's
+  // attributive test. Mirrors anyPrefixReal in pos.js.
+  function anyPrefixReal(token, prefixes) {
+    return tagsOf(token).some(function (t) {
+      return !/\d\d$/.test(t) && prefixes.some(function (p) { return t.indexOf(p) === 0; });
+    });
+  }
   function anyExact(token, tags) {
     return tagsOf(token).some(function (t) { return tags.indexOf(t) !== -1; });
   }
@@ -364,7 +374,8 @@ var Euspell = (function () {
     var win = contextWindow(tokens, idx);
     var w1b = win[2], w1a = win[4], w2a = win[5];
     if (anyExact(w1b, SUBJECT_PRON)) return true;
-    if (anyPrefix(w1a, ['VVN', 'VVG'])) return !anyPrefix(w2a, ['NN', 'NP']);
+    // Ditto-aware: both tests return, so one spurious match flips the answer.
+    if (anyPrefixReal(w1a, ['VVN', 'VVG'])) return !anyPrefixReal(w2a, ['NN', 'NP']);
     return false;
   }
   // Signed context vote for the POS-heteronym decision (> 0 => verb). Only a

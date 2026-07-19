@@ -33,6 +33,24 @@ function anyExact(token, tags) {
   return tagsOf(token).some((t) => tags.includes(t));
 }
 
+/**
+ * anyPrefix, ignoring ditto tags — for a test whose result CATEGORICALLY
+ * decides the answer rather than contributing a vote.
+ *
+ * Ditto tags (RR22, NN132, JJ43 …) mark "word k of an n-word expression"; as
+ * candidate readings of an isolated word they are noise, which is why the SVM's
+ * fam() drops them. In a vote they are mostly harmless — for a determiner they
+ * point the same way its genuine reading does, so they only inflate a magnitude
+ * (measured: stripping them moves the VVZ and VV0 decisions by <0.4% and
+ * changes accuracy by <0.05pt either way). In a branch that RETURNS, one
+ * spurious match flips the answer outright: "a" carries NN132, so it counted as
+ * the noun in is_verbal_s's attributive test and turned "the author's published
+ * a book" into a genitive.
+ */
+function anyPrefixReal(token, prefixes) {
+  return tagsOf(token).some((t) => !DITTO.test(t) && prefixes.some((p) => t.startsWith(p)));
+}
+
 // Determiners/articles (exact, so the wh-determiner DDQ 'which' is excluded).
 const DETERMINER = ['AT', 'AT1', 'DD', 'DD1', 'DD2', 'DA', 'DA1', 'DA2', 'DAR', 'DAT', 'DB', 'DB2'];
 // Possessives, adjectives, numerals — other noun-phrase pre-modifiers.
@@ -390,7 +408,10 @@ export function is_verbal_s(tokens, idx) {
   // "'s" + participle: contracted is/has ("bus's arriving", "author's published a
   // book") — unless the participle is attributive (a noun follows it), making the
   // 's a genitive ("today's featured article", "author's published works").
-  if (anyPrefix(w1a, ['VVN', 'VVG'])) return !anyPrefix(w2a, ['NN', 'NP']);
+  // anyPrefixReal, not anyPrefix: both tests RETURN, so one spurious ditto match
+  // flips the answer. "a" carries NN132, which made "the author's published a
+  // book" read as attributive — hence genitive — instead of "has published".
+  if (anyPrefixReal(w1a, ['VVN', 'VVG'])) return !anyPrefixReal(w2a, ['NN', 'NP']);
   return false;                                         // default: genitive
 }
 

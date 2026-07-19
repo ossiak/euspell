@@ -275,6 +275,18 @@ def _any_prefix(token, prefixes):
     return any(any(t.startswith(p) for p in prefixes) for t in _tags_of(token))
 
 
+def _any_prefix_real(token, prefixes):
+    """_any_prefix ignoring ditto tags — for a test that CATEGORICALLY decides
+    the answer rather than contributing a vote. In a vote a ditto tag only
+    inflates a magnitude, but in a branch that returns, one spurious match flips
+    the answer: "a" carries NN132, so it counted as the noun in _is_verbal_s's
+    attributive test. Mirrors anyPrefixReal in pos.js."""
+    return any(
+        not re.search(r"\d\d$", t) and any(t.startswith(p) for p in prefixes)
+        for t in _tags_of(token)
+    )
+
+
 def _any_exact(token, tags):
     return any(t in tags for t in _tags_of(token))
 
@@ -475,8 +487,9 @@ def _is_verbal_s(tokens, idx):
     w1b, w1a, w2a = win[2], win[4], win[5]
     if _any_exact(w1b, _SUBJECT_PRON):
         return True
-    if _any_prefix(w1a, ["VVN", "VVG"]):
-        return not _any_prefix(w2a, ["NN", "NP"])
+    # Ditto-aware: both tests return, so one spurious match flips the answer.
+    if _any_prefix_real(w1a, ["VVN", "VVG"]):
+        return not _any_prefix_real(w2a, ["NN", "NP"])
     return False
 
 

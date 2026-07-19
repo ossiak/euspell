@@ -54,6 +54,18 @@ test('152 POS heteronym, non -ate (use): noun vs verb', () => {
   assert.equal(conv([['they', 'PPHS2'], ['use', ''], ['it', 'PPH1']], 'use'), 'uze');
 });
 
+test("the clitic 's: a determiner after a participle is not an attributive noun", () => {
+  // Regression: the attributive test used a loose prefix check, so "a"
+  // (AT1|…|NN132 — a stray ditto tag) counted as the following NOUN and made
+  // "the author's published a book" a genitive. Both arms of that test RETURN,
+  // so one spurious ditto match flips the answer outright.
+  assert.equal(conv([['the', ''], ['author', ''], ["'s", ''], ['published', ''], ['a', ''], ['book', '']], "'s"), "'z");
+  // Still a genitive where a real noun follows the participle (attributive).
+  assert.equal(conv([['the', ''], ['author', ''], ["'s", ''], ['published', ''], ['works', '']], "'s"), "'s");
+  assert.equal(conv([['today', ''], ["'s", ''], ['featured', ''], ['article', '']], "'s"), "'s");
+  assert.equal(conv([['the', ''], ['cat', ''], ["'s", ''], ['tail', '']], "'s"), "'s");
+});
+
 test('a determiner before a heteronym settles the noun reading', () => {
   // Regression: the adverb look-through used a loose prefix test, so "the"
   // (AT|…|RG42|RR22|RT42 — stray ditto-adverb tags) was mistaken for an adverb
