@@ -17,10 +17,6 @@ import { browser } from '../lib/browser.js';
   // want reformed.
   initDictation();
 
-  // The lexicon is fetched at runtime (dist/lexicon.data) rather than inlined
-  // into this bundle. Load it before any conversion.
-  await ensureLexicon();
-
   // <all_urls> also matches SVG/XML documents, which have no <body> — nothing to
   // convert or observe (and walkTextNodes/observe would throw on null).
   if (!document.body) return;
@@ -80,7 +76,30 @@ import { browser } from '../lib/browser.js';
     viewMode = 'original';
   }
 
-  if (enabled && !disabledSites.includes(location.hostname)) convertPage();
+  // The mode the settings/messages currently ask for, and the one entry point
+  // that applies it. 'euspell' first awaits the lexicon — fetched lazily HERE,
+  // so a page that never converts (disabled site, global off) never loads the
+  // 12.8 MB table at all — and rechecks wantedMode after the await, so a
+  // counter-order arriving mid-load wins over the slow path.
+  let wantedMode = 'original';
+  async function applyMode(mode) {
+    wantedMode = mode;
+    if (mode === 'original') {
+      if (viewMode === 'euspell') restorePage();
+      return;
+    }
+    try {
+      await ensureLexicon(); // memoised; a failed fetch resets so a later call retries
+    } catch (err) {
+      // Without the table a walk is a no-op — leave the page as it is, but keep
+      // every listener alive so a later toggle retries (and say why).
+      console.warn('Euspell: lexicon unavailable — page left unconverted.', err);
+      return;
+    }
+    if (wantedMode === 'euspell' && viewMode === 'original') convertPage();
+  }
+
+  if (enabled && !disabledSites.includes(location.hostname)) applyMode('euspell');
 
   // Live conversion toggle from the popup. The per-site checkbox (and the global
   // one) send 'euspell:setMode' so a site can be switched on/off without reloading
@@ -89,9 +108,26 @@ import { browser } from '../lib/browser.js';
   // the popup this page has no content script (a restricted page or the viewer).
   browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     if (!msg || msg.type !== 'euspell:setMode') return;
-    if (msg.mode === 'original' && viewMode === 'euspell') restorePage();
-    else if (msg.mode === 'euspell' && viewMode === 'original') convertPage();
-    sendResponse({ mode: viewMode });
+    applyMode(msg.mode === 'euspell' ? 'euspell' : 'original').then(() => sendResponse({ mode: viewMode }));
+    return true; // sendResponse is async — the euspell path awaits the lexicon
+  });
+
+  // Settings changed anywhere — the popup, the options page, or another synced
+  // device. The popup's setMode message reaches only the ACTIVE tab; this
+  // listener is what keeps background tabs honest (a global toggle-off restores
+  // every open tab, not just the front one — and the options page sends no
+  // messages at all). Same idempotent guards as the message path, so a tab that
+  // also got the popup's message simply no-ops here.
+  browser.storage.onChanged.addListener(async (changes, area) => {
+    if (area !== 'sync') return;
+    if (!('enabled' in changes) && !('disabledSites' in changes)) return;
+    // Re-read both keys rather than patching from `changes` (which carries only
+    // the changed one) — the mode depends on their combination.
+    const { enabled: on = true, disabledSites: sites = [] } = await browser.storage.sync.get([
+      'enabled',
+      'disabledSites',
+    ]);
+    applyMode(on && !sites.includes(location.hostname) ? 'euspell' : 'original');
   });
 
   // If the extension is disabled or removed, this already-injected content script

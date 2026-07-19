@@ -47,6 +47,25 @@ browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
   return true; // sendResponse is async (cross-browser: Chrome ignores a returned Promise)
 });
 
+// One-shot redirect bypasses, armed by the viewer's "Open original" link just
+// before it navigates (the click awaits this arming round-trip — see
+// bypassNextRedirect in ../pdf/host.js). Without this the link would land
+// right back in the viewer: both redirect paths below capture the same URL
+// again, leaving no way to ever reach the actual file. In-memory is enough —
+// the navigation follows the arming within milliseconds, while this worker is
+// still awake, and a lost entry costs one more redirect, never a stuck page.
+const bypassOnce = new Set();
+browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+  if (!msg || msg.type !== 'euspell:bypassOnce' || typeof msg.url !== 'string') return;
+  bypassOnce.add(msg.url);
+  sendResponse({ ok: true });
+});
+
+/** Whether this navigation was armed to skip the viewer (consumes the arming). */
+function consumeBypass(url) {
+  return bypassOnce.delete(url);
+}
+
 // Keyboard shortcut (chrome://extensions/shortcuts) toggles dictation in the
 // active tab. The content script owns the recognizer and inserts at the caret,
 // so we just forward the toggle; a page with no content script (chrome://, the
@@ -103,6 +122,7 @@ browser.webNavigation.onBeforeNavigate.addListener(
   async (details) => {
     if (details.frameId !== 0) return; // top-level only
     if (!isPdfUrl(details.url) || details.url.startsWith(VIEWER_URL)) return;
+    if (consumeBypass(details.url)) return; // "Open original" — let it through
     if (/^file:/i.test(details.url) && !CAN_VIEW_FILE_URLS) return; // leave local PDFs to Firefox
     if (await shouldConvert(details.url)) redirectToViewer(details.tabId, details.url);
   },
@@ -163,6 +183,7 @@ browser.webRequest.onHeadersReceived.addListener(
     if (details.method !== 'GET') return; // a re-fetched GET can't reproduce a POST's response
     if (details.url.startsWith(VIEWER_URL)) return;
     if (isPdfUrl(details.url)) return; // already handled by onBeforeNavigate
+    if (consumeBypass(details.url)) return; // "Open original" — let it through
 
     const headers = details.responseHeaders ?? [];
     const header = (name) =>
@@ -177,12 +198,13 @@ browser.webRequest.onHeadersReceived.addListener(
     if (isAttachmentDisposition(disposition)) return;
 
     let isPdf = isPdfContentType(contentType) || isPdfDisposition(disposition);
-    if (!isPdf && isAmbiguousType(contentType)) {
-      isPdf = await sniffPdfMagic(details.url);
-    }
-    if (!isPdf) return;
-
-    if (await shouldConvert(details.url)) redirectToViewer(details.tabId, details.url);
+    if (!isPdf && !isAmbiguousType(contentType)) return;
+    // Settings BEFORE the sniff: sniffPdfMagic is a real network request, and a
+    // user who has switched Euspell off (globally or for this site) must not
+    // have the extension fetching anything on their behalf.
+    if (!(await shouldConvert(details.url))) return;
+    if (!isPdf) isPdf = await sniffPdfMagic(details.url);
+    if (isPdf) redirectToViewer(details.tabId, details.url);
   },
   { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
   ['responseHeaders'],

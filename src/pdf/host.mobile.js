@@ -103,6 +103,10 @@ export async function prepareLexicon(root) {
   }
 }
 
+/** No redirect machinery in a WebView host — the viewer is the only PDF path,
+ * and generateViewerHtml drops the header carrying the "Open original" link. */
+export async function bypassNextRedirect(_url) {}
+
 // --- navigation channel ----------------------------------------------------
 // This viewer runs embedded in the Eupub reader (an iframe), which owns the
 // sidebar TOC, the status bar, and the saved reading position. viewer.js reports

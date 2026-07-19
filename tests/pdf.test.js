@@ -59,6 +59,9 @@ test('isPdfDisposition: detects a .pdf attachment filename', () => {
   assert.equal(isPdfDisposition('attachment; filename="data.csv"'), false);
   assert.equal(isPdfDisposition('attachment'), false);
   assert.equal(isPdfDisposition(undefined), false);
+  // RFC 6266: filename* wins over filename when both are present, in either order.
+  assert.equal(isPdfDisposition('inline; filename="export.bin"; filename*=UTF-8\'\'report.pdf'), true);
+  assert.equal(isPdfDisposition("inline; filename*=UTF-8''export.bin; filename=report.pdf"), false);
 });
 
 test('isAttachmentDisposition: detects the attachment disposition-type', () => {

@@ -32,7 +32,12 @@ export function isPdfContentType(value) {
  */
 export function isPdfDisposition(value) {
   if (!value) return false;
-  const m = /filename\*?=(?:[^']*'')?"?([^";]+)/i.exec(value);
+  // RFC 6266: when both forms are present, filename* wins regardless of the
+  // order they appear in the header — so try it first, not whichever comes
+  // first in the string.
+  const m =
+    /filename\*=(?:[^']*'')?"?([^";]+)/i.exec(value) ??
+    /filename=(?:[^']*'')?"?([^";]+)/i.exec(value);
   if (!m) return false;
   const name = m[1].trim();
   try {

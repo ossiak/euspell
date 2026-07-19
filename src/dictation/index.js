@@ -9,6 +9,7 @@
 import { convert } from '../content/converter.js';
 import { convertText } from '../content/dom-walker.js';
 import { normalize } from './normalize.js';
+import { ensureLexicon } from '../content/lexicon-load.js';
 import { insertText, isEditableTarget } from './insert.js';
 import { createRecognizer, isSupported } from './recognizer.js';
 import { createOverlay } from './overlay.js';
@@ -77,6 +78,12 @@ function start() {
     ui().error('Click into a text field, then start dictation.');
     return;
   }
+
+  // The lexicon loads lazily (a page on a disabled site never fetches it), and
+  // dictation converts text — so start the load now, in parallel with the mic
+  // spin-up; it lands well inside the seconds before a first final result. On
+  // failure dictated text stays in standard spelling (lookups just miss).
+  ensureLexicon().catch(() => {});
 
   stoppedByUser = false;
   clearTimeout(hideTimer); // a pending failOut hide must not kill this session's pill

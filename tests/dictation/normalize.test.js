@@ -26,6 +26,14 @@ test('the standalone pronoun i is uppercased for the converter', () => {
   assert.equal(normalize('this is fine'), 'This is fine');
 });
 
+test('an "i" opening an abbreviation is not the pronoun', () => {
+  // (the capital C is the sentence-opener rule seeing "e. c" — longstanding,
+  // separate behavior; the point here is the lowercase "i.e.")
+  assert.equal(normalize('they varied i.e. changed'), 'They varied i.e. Changed');
+  // a genuine sentence-final "i" still uppercases (next char is space, not a letter)
+  assert.equal(normalize('so did i period then we left'), 'So did I. Then we left');
+});
+
 test('multi-word marks win over their prefixes', () => {
   assert.equal(normalize('a new paragraph b new line c'), 'A\n\nB\nC');
 });

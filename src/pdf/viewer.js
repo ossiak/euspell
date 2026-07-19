@@ -57,7 +57,7 @@ import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
-import { assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand } from './host.js';
+import { assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect } from './host.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = assetURL('dist/pdfjs/pdf.worker.min.mjs');
 
@@ -361,12 +361,26 @@ async function main() {
   const filenameEl = document.getElementById('filename');
   if (filenameEl) filenameEl.textContent = name;
   const originalEl = document.getElementById('original');
-  if (originalEl) originalEl.href = fileUrl;
+  if (originalEl) {
+    originalEl.href = fileUrl;
+    // Arm a one-shot redirect bypass BEFORE navigating: this very URL is what
+    // the service worker redirects into this viewer, so an unarmed click would
+    // bounce straight back here — the escape hatch escaping to itself.
+    originalEl.addEventListener('click', (e) => {
+      e.preventDefault();
+      bypassNextRedirect(fileUrl).then(() => location.assign(fileUrl));
+    });
+  }
 
   let pdf;
   try {
     pdf = await pdfjsLib.getDocument({
       url: fileUrl,
+      // The browser's own navigation to this PDF carried the site's cookies;
+      // fetching here without them would 401 every login-gated PDF (statements,
+      // intranet docs) that the original tab would have rendered fine. Host
+      // permissions make the credentialed fetch legitimate.
+      withCredentials: true,
       // Errors only: real-world PDFs routinely trip PDF.js's spec-compliance
       // warnings (over-long /Name tokens, malformed objects, …) which it recovers
       // from. They are noise for a reader, so keep just genuine errors.

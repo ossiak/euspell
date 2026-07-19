@@ -55,6 +55,22 @@ export function prepareLexicon(_root) {
   return ensureLexicon();
 }
 
+/**
+ * Arm a one-shot pass-through for `url` in the service worker's PDF redirect,
+ * so the viewer's "Open original" link reaches the actual file instead of
+ * bouncing back into this viewer. Resolves once armed; the caller must await
+ * it before navigating (the worker consults in-memory state).
+ * @param {string} url
+ * @returns {Promise<void>}
+ */
+export async function bypassNextRedirect(url) {
+  try {
+    await browser.runtime.sendMessage({ type: 'euspell:bypassOnce', url });
+  } catch {
+    /* worker unreachable — navigate anyway; worst case is one more redirect */
+  }
+}
+
 // --- navigation channel ----------------------------------------------------
 // Lets an embedding host (Eupub's reader) show a table of contents, a page
 // readout, and remember the reading position. The extension viewer is a

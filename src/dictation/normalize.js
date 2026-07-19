@@ -56,8 +56,10 @@ export function normalize(transcript) {
 
   // The converter maps the pronoun only when it sees exactly "I" (uppercase);
   // recognizers sometimes emit a lowercase "i". Do this before capitalization so
-  // a sentence-initial "i" isn't handled twice.
-  text = text.replace(/\bi\b/g, 'I');
+  // a sentence-initial "i" isn't handled twice. The lookahead skips an "i" that
+  // opens an abbreviation ("i.e.") — that's not the pronoun; a genuine
+  // sentence-final "i." is followed by space or end, not a letter.
+  text = text.replace(/\bi\b(?!\.\p{L})/gu, 'I');
 
   text = text.replace(SENTENCE_OPENER, (_m, lead, letter) => lead + letter.toUpperCase());
 

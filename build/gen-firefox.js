@@ -9,9 +9,9 @@
 //   2. Only the extension's own runtime files. dist/ is shared output that also
 //      holds artifacts for other targets — the 4.6 MB sqlite lexicon, the 14 MB
 //      standalone lexicon.js, the hunspell .aff/.dic — none of which the web
-//      extension loads (content-bundle.js and pdf-viewer.js bundle their own
-//      copy of the lexicon). Copying dist/ wholesale would bloat the xpi ~4x, so
-//      we stage an explicit allowlist instead.
+//      extension loads (the bundles fetch their lexicon from dist/lexicon.data
+//      at runtime — staged below). Copying dist/ wholesale would bloat the xpi
+//      ~4x, so we stage an explicit allowlist instead.
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -66,8 +66,12 @@ function toFirefox(manifest) {
   m.background = { scripts: ['src/background/service-worker.js'], type: 'module' };
   // The bundles' .map files are dev-only and not shipped (see below), so drop the
   // web_accessible_resources entry that would otherwise point at a missing file.
+  // use_dynamic_url is Chrome's anti-fingerprinting serving mode (Chrome 130+);
+  // Firefox doesn't know the key — and doesn't need it, since moz-extension
+  // origins are per-install UUIDs already — so drop it too.
   for (const war of m.web_accessible_resources ?? []) {
     war.resources = war.resources.filter((r) => !r.endsWith('.map'));
+    delete war.use_dynamic_url;
   }
   return m;
 }
