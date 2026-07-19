@@ -49823,7 +49823,7 @@ disjunctures,NN2,000,[]
 disk,NN1|VV0,000,[]
 disked,VVD|VVN,021,diskd
 diskette,NN1,101,diskett
-diskettes,NN2,10,disketts
+diskettes,NN2,101,disketts
 disking,NN|VVG,000,[]
 disklike,JJ|NN1,000,[]
 disks,NN2|VVZ,012,disks|diskz
@@ -69001,8 +69001,8 @@ frisch,NP,000,[]
 frisco,NP,000,[]
 frise,NN1,000,[]
 frises,NN2,000,[]
-frisette,NN1,000,frisett
-frisettes,NN2,000,frisetts
+frisette,NN1,101,frisett
+frisettes,NN2,101,frisetts
 friseur,NN1,500,[]
 friseurs,NN2,500,[]
 frisian,JJ|NP1,000,[]
@@ -69081,8 +69081,8 @@ frizels,NN2,500,[]
 frizer,NN1,500,[]
 frizers,NN2,500,[]
 frizes,NN2|VVZ,012,frizes|frizez
-frizette,NN1,000,frizett
-frizettes,NN2,000,frizetts
+frizette,NN1,101,frizett
+frizettes,NN2,101,frizetts
 frizing,VVG,500,[]
 frizz,NN1|VV0,000,[]
 frizzed,JJ|VVD|VVN,021,frizzd
