@@ -39,6 +39,12 @@ _REVERSE = {}        # euspell reformed form -> traditional word (for revert)
 # written (KEEP_UNCHANGED in converter.js).
 _KEEP_UNCHANGED = {"bach", "chis", "ravined"}
 
+# POS heteronyms that take the VERB reading when the context vote is exactly
+# zero, instead of the global noun-first default — mirrors VV0_VERB_DEFAULT in
+# src/disambig/vv0-prior.js, which build/gen-vv0-prior.mjs learns from the
+# CLAWS corpus. Keep in step with that generated file.
+_VV0_VERB_DEFAULT = {"bear", "live", "mow", "refuse", "reuse"}
+
 # The ~70 surface words whose multi-spelling choice is decided by a semantic
 # (pronunciation) rule in the JS engine. Not ported in v1: route() defaults
 # them, and the proofreader offers their spellings as choices.
@@ -474,10 +480,17 @@ def _is_verbal_s(tokens, idx):
     return False
 
 
-def _is_verb_vv0(tokens, idx):
+def _vv0_score(tokens, idx):
+    """Signed hand-rule context vote for the POS-heteronym decision (> 0 => VV0).
+
+    Only a word that can EXCLUSIVELY be an adverb is looked through, exactly as
+    _vvz_score does: the tagger reports a full candidate set, and determiners
+    carry stray ditto-adverb tags ("the" is AT|...|RG42|RR22|RT42), so a loose
+    prefix test skipped them and discarded the decisive noun cue.
+    """
     win = _context_window(tokens, idx)
     w2b, w1b, w1a = win[1], win[2], win[4]
-    left = w2b if _any_prefix(w1b, _ADVERB) else w1b
+    left = w2b if _is_pure_adverb(w1b) else w1b
     vote = 0
     if _any_exact(left, ["TO"]):
         vote += 4
@@ -505,7 +518,21 @@ def _is_verb_vv0(tokens, idx):
         vote += 2
     if _any_prefix(w1a, _OBJECT_PRONOUN):
         vote += 2
-    return vote > 0
+    return vote
+
+
+def _is_verb_vv0(tokens, idx):
+    """Threshold _vv0_score; on a ZERO vote defer to the word's own base rate.
+
+    The context vote carries no per-word bias, so its single noun-first default
+    was wrong for verb-dominant words ("live" is ~87% verb). A word in
+    _VV0_VERB_DEFAULT takes the verb reading when context is silent; context
+    still wins wherever it has an opinion. Mirrors is_verb_VV0 in pos.js.
+    """
+    vote = _vv0_score(tokens, idx)
+    if vote != 0:
+        return vote > 0
+    return (tokens[idx].get("word") or "").lower() in _VV0_VERB_DEFAULT
 
 
 def _is_plural_noun(tokens, idx):

@@ -23,6 +23,12 @@ var Euspell = (function () {
 
   var KEEP_UNCHANGED = { bach: 1, chis: 1, ravined: 1 };
 
+  // POS heteronyms that take the VERB reading when the context vote is exactly
+  // zero, instead of the global noun-first default — mirrors VV0_VERB_DEFAULT in
+  // src/disambig/vv0-prior.js, which build/gen-vv0-prior.mjs learns from the
+  // CLAWS corpus. Keep in step with that generated file.
+  var VV0_VERB_DEFAULT = { bear: 1, live: 1, mow: 1, refuse: 1, reuse: 1 };
+
   // Surface words whose multi-spelling choice needs a semantic rule (not ported).
   var SEMANTIC_WORDS = {};
   ('barred bass beloved blessed bow bowed bowing bowman bowings bowmen bows ' +
@@ -361,10 +367,15 @@ var Euspell = (function () {
     if (anyPrefix(w1a, ['VVN', 'VVG'])) return !anyPrefix(w2a, ['NN', 'NP']);
     return false;
   }
-  function isVerbVv0(tokens, idx) {
+  // Signed context vote for the POS-heteronym decision (> 0 => verb). Only a
+  // word that can EXCLUSIVELY be an adverb is looked through, exactly as
+  // vvzScore does: the tagger reports a full candidate set, and determiners
+  // carry stray ditto-adverb tags ("the" is AT|…|RG42|RR22|RT42), so a loose
+  // prefix test skipped them and discarded the decisive noun cue.
+  function vv0Score(tokens, idx) {
     var win = contextWindow(tokens, idx);
     var w2b = win[1], w1b = win[2], w1a = win[4];
-    var left = anyPrefix(w1b, ADVERB) ? w2b : w1b;
+    var left = isPureAdverb(w1b) ? w2b : w1b;
     var vote = 0;
     if (anyExact(left, ['TO'])) vote += 4;
     if (anyPrefix(left, ['VM'])) vote += 4;
@@ -379,7 +390,16 @@ var Euspell = (function () {
     if (anyExact(w1b, DEGREE_ADVERB)) vote -= 3;
     if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2;
     if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 2;
-    return vote > 0;
+    return vote;
+  }
+  // Threshold the vote; on a ZERO vote defer to the word's own base rate. The
+  // context vote carries no per-word bias, so its single noun-first default was
+  // wrong for verb-dominant words ("live" is ~87% verb). Context still wins
+  // wherever it has an opinion. Mirrors is_verb_VV0 in pos.js.
+  function isVerbVv0(tokens, idx) {
+    var vote = vv0Score(tokens, idx);
+    if (vote !== 0) return vote > 0;
+    return !!VV0_VERB_DEFAULT[(tokens[idx].word || '').toLowerCase()];
   }
   function isPluralNoun(tokens, idx) {
     var win = contextWindow(tokens, idx);

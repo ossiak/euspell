@@ -12,6 +12,7 @@
 
 import { contextWindow, crossesSentenceBreak } from '../content/context.js';
 import { VVZ_SVM } from './vvz-svm.js';
+import { VV0_VERB_DEFAULT } from './vv0-prior.js';
 
 // --- Tag-class helpers -------------------------------------------------------
 // Context tokens carry the candidate CLAWS7 tag set imported from the lexicon,
@@ -416,15 +417,26 @@ const DEGREE_ADVERB = ['RG', 'RGR', 'RGT', 'RGQ'];
  * "…ate + bare noun" frame) it returns false, matching the lexicon's
  * noun/adjective-first spelling order.
  *
+ * Returns the signed context vote (> 0 ⇒ verb); {@link is_verb_VV0} thresholds
+ * it. Split out for the same reason as {@link vvzScore}: so the context rules
+ * can be read, tested, and measured in isolation from the decision boundary.
+ *
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {boolean}
+ * @returns {number}
  */
-export function is_verb_VV0(tokens, idx) {
+export function vv0Score(tokens, idx) {
   const [, w2b, w1b, , w1a] = contextWindow(tokens, idx);
   // Look through a single intervening adverb to the real pre-modifier
-  // ("they carefully separate", "the largely separate systems").
-  const left = anyPrefix(w1b, ADVERB) ? w2b : w1b;
+  // ("they carefully separate", "the largely separate systems"). Only a word
+  // that can EXCLUSIVELY be an adverb is skipped (isPureAdverb) — the same
+  // strictness vvzScore uses, and for the same reason: the tagger reports a
+  // word's full candidate set, and ordinary determiners carry stray ditto-adverb
+  // tags ("the" is AT|…|RG42|RR22|RT42). A loose prefix test treats those as
+  // adverbs and looks straight past them, discarding the determiner cue that
+  // settles the noun reading — which silently cost this rule its single most
+  // decisive signal on "the"/"a", the commonest left neighbours it sees.
+  const left = isPureAdverb(w1b) ? w2b : w1b;
   let vote = 0; // > 0 ⇒ VV0 (verb); ≤ 0 ⇒ noun / adjective
 
   // --- Pre-modifier: verb cues -------------------------------------------
@@ -446,7 +458,37 @@ export function is_verb_VV0(tokens, idx) {
   if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "separate the / his X"
   if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 2;    // "separate them"
 
-  return vote > 0;
+  return vote;
+}
+
+/**
+ * Thresholds {@link vv0Score}: true ⇒ the verb reading. On a ZERO vote — no
+ * contextual evidence either way — a listed word falls back to the verb
+ * reading instead of the global noun-first default.
+ *
+ * The context vote carries no per-word bias: it applies one noun-first default
+ * to every word, and measured on the CLAWS corpus that was its dominant error
+ * source — 75% of its mistakes were zero-vote cases. One default cannot serve a
+ * class whose base rates run from 0.1% verb ("mouth") to 98% ("mow"): the rule
+ * scored 46.7% on "live" (87% verb), worse than always guessing. Deferring
+ * those silent cases to the word's own base rate lifts held-out accuracy from
+ * 82.3% to 88.6% (see build/gen-vv0-prior.mjs).
+ *
+ * The default applies ONLY on a zero vote. Adding a scaled bias to the vote
+ * instead scores higher in aggregate (90.6%) but is the wrong trade: a bias big
+ * enough to fix "live" also outweighs a determiner, turning "the live
+ * broadcast" into "liv", and one big enough to fix "house" made its verb
+ * reading unreachable. Categorical context must win — the same principle by
+ * which the rule's negative votes veto the NN2|VVZ model in {@link is_VVZ_svm}.
+ *
+ * @param {Token[]} tokens
+ * @param {number} idx
+ * @returns {boolean}
+ */
+export function is_verb_VV0(tokens, idx) {
+  const vote = vv0Score(tokens, idx);
+  if (vote !== 0) return vote > 0; // context has an opinion — it wins
+  return VV0_VERB_DEFAULT.has((tokens[idx]?.word ?? '').toLowerCase());
 }
 
 /**

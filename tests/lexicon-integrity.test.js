@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import { readLexicon } from './helpers.js';
 import { SEMANTIC } from '../src/disambig/semantic/index.js';
 import { KEEP_UNCHANGED } from '../src/content/converter.js';
+import { VV0_VERB_DEFAULT } from '../src/disambig/vv0-prior.js';
 
 const lex = readLexicon(fs, new URL('../data/euspell_lexicon.csv', import.meta.url));
 
@@ -54,5 +55,40 @@ test('KEEP_UNCHANGED words exist in the lexicon and carry a multi-spelling encod
     const e = lex.find((x) => x.word === w);
     assert.ok(e, `${w} present in lexicon`);
     assert.ok(e.encoding % 10 >= 2, `${w} has a disambiguation encoding`);
+  }
+});
+
+test('the ports carry the same VV0 verb-default set as the generated table', () => {
+  // The set is generated into src/disambig/vv0-prior.js for the JS engine, and
+  // hand-mirrored in the LibreOffice and Apps Script ports, which load neither
+  // ES modules nor that file. Three copies drift silently, and a drifted copy
+  // would make the SAME sentence reform differently in Word/Docs than in the
+  // extension — so pin them to each other here.
+  const expected = [...VV0_VERB_DEFAULT].sort();
+
+  const py = fs.readFileSync(new URL('../libreoffice/euspell/engine.py', import.meta.url), 'utf8');
+  const pyMatch = /_VV0_VERB_DEFAULT = \{([^}]*)\}/.exec(py);
+  assert.ok(pyMatch, 'engine.py: _VV0_VERB_DEFAULT not found');
+  const pyWords = [...pyMatch[1].matchAll(/"([a-z]+)"/g)].map((m) => m[1]).sort();
+  assert.deepEqual(pyWords, expected, 'engine.py is out of step with vv0-prior.js');
+
+  const gas = fs.readFileSync(new URL('../apps-script/euspell-engine.gs', import.meta.url), 'utf8');
+  const gasMatch = /var VV0_VERB_DEFAULT = \{([^}]*)\}/.exec(gas);
+  assert.ok(gasMatch, 'euspell-engine.gs: VV0_VERB_DEFAULT not found');
+  const gasWords = [...gasMatch[1].matchAll(/([a-z]+)\s*:/g)].map((m) => m[1]).sort();
+  assert.deepEqual(gasWords, expected, 'euspell-engine.gs is out of step with vv0-prior.js');
+});
+
+test('every VV0 verb-default word is a POS-decided heteronym', () => {
+  // A word only reaches is_verb_VV0 through the 102/152 branch, so a default for
+  // anything else would be dead weight — and a sign the table was generated from
+  // a stale lexicon.
+  const byWord = new Map(lex.map((e) => [e.word.toLowerCase(), e]));
+  for (const w of VV0_VERB_DEFAULT) {
+    const e = byWord.get(w);
+    assert.ok(e, `${w} is in the lexicon`);
+    assert.ok([102, 152].includes(e.encoding), `${w} has a POS-heteronym encoding`);
+    assert.ok(e.pos.includes('VV0'), `${w} has a VV0 reading`);
+    assert.ok(!SEMANTIC.has(w), `${w} is not semantic (those never reach is_verb_VV0)`);
   }
 });

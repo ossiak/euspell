@@ -54,6 +54,30 @@ test('152 POS heteronym, non -ate (use): noun vs verb', () => {
   assert.equal(conv([['they', 'PPHS2'], ['use', ''], ['it', 'PPH1']], 'use'), 'uze');
 });
 
+test('a determiner before a heteronym settles the noun reading', () => {
+  // Regression: the adverb look-through used a loose prefix test, so "the"
+  // (AT|…|RG42|RR22|RT42 — stray ditto-adverb tags) was mistaken for an adverb
+  // and skipped, discarding the determiner cue entirely. "the live broadcast"
+  // then reformed as the verb. Only a word that can EXCLUSIVELY be an adverb
+  // may be looked through.
+  assert.equal(conv([['the', ''], ['live', ''], ['broadcast', '']], 'live'), 'live');
+  assert.equal(conv([['a', ''], ['live', ''], ['wire', '']], 'live'), 'live');
+  assert.equal(conv([['the', ''], ['refuse', ''], ['collection', '']], 'refuse'), 'refuse');
+});
+
+test('a verb-dominant heteronym defaults to the verb when context is silent', () => {
+  // With no cue either way the vote is 0; a word in VV0_VERB_DEFAULT (live is
+  // ~87% verb in the corpus) takes the verb reading rather than the global
+  // noun-first default. Context still wins wherever it has an opinion — see the
+  // determiner test above.
+  assert.equal(conv([['they', ''], ['live', ''], ['here', '']], 'live'), 'liv');
+  assert.equal(conv([['they', ''], ['refuse', ''], ['to', ''], ['go', '']], 'refuse'), 'refuze');
+  // "use" is NOT in the set — its context rule already beats its base rate — so
+  // it keeps the noun-first default and both readings still resolve by context.
+  assert.equal(conv([['the', ''], ['use', ''], ['of', ''], ['force', '']], 'use'), 'use');
+  assert.equal(conv([['we', ''], ['use', ''], ['it', '']], 'use'), 'uze');
+});
+
 test('102 POS heteronym, -ate stress pair (separate): adjective vs verb', () => {
   // The two heteronym encodings were split (150 "-ate" pairs stay 102, the 19
   // others became 152); both must still reach is_verb_VV0.
