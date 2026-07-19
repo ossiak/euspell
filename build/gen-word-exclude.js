@@ -19,7 +19,8 @@
 //
 // Word's own exclusion files are Unicode, so this is written UTF-16 LE with a
 // BOM and CRLF line endings; entries are lowercased (Word matches them without
-// regard to case) and sorted.
+// regard to case) and sorted. Contractions are listed with both a straight and
+// a curly apostrophe — see apostropheVariants below.
 //
 // Run: npm run gen:word-exclude
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -27,26 +28,43 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LEXICON = join(root, 'data/euspell_lexicon.csv');
+// The main lexicon holds no apostrophe words at all — every contraction lives
+// in its own file, so both are needed for the list to cover "could've" and the
+// rest.
+const SOURCES = ['data/euspell_lexicon.csv', 'data/euspell_lexicon_contractions.csv'];
 const OUT = join(root, 'dict/ExcludeDictionaryEN0409.lex');
 
+/**
+ * Both apostrophe forms of a word, or just the word when it has none. The data
+ * is entirely straight-apostrophe while Word AutoCorrects to curly U+2019, and
+ * a .lex file cannot normalize the way the engine does, so a straight-only
+ * entry would likely never match. Listing both flags the traditional
+ * contraction however the apostrophe reached the document.
+ */
+function apostropheVariants(word) {
+  return word.includes("'") ? [word, word.replace(/'/g, '’')] : [word];
+}
+
 const words = new Set();
-for (const line of readFileSync(LEXICON, 'utf8').split('\n')) {
-  const c = line.replace(/\r$/, '').split(',');
-  if (c.length < 4 || !/^[0-9]+$/.test(c[2])) continue; // skip header / blanks
-  const head = c[0];
-  const sp = c[3];
-  // The units digit decides whether column 4 holds euspellings at all. A 0 there
-  // means the word is never reformed, so it must not be flagged — abbreviations
-  // (9xx) carry an expansion in that column, and reading it as a euspelling put
-  // every one of dr, mr, mrs, etc … into the exclusion list, making Word mark
-  // them as misspellings.
-  if (+c[2] % 10 === 0) continue;
-  if (!sp || sp === '[]') continue; // no reform → nothing to flag
-  const spellings = sp.split('|');
-  // Flag the traditional spelling only when euspell never leaves it as written,
-  // i.e. the head is not itself one of the euspellings (skips homographs).
-  if (!spellings.includes(head)) words.add(head.toLowerCase());
+for (const src of SOURCES) {
+  for (const line of readFileSync(join(root, src), 'utf8').split('\n')) {
+    const c = line.replace(/\r$/, '').split(',');
+    if (c.length < 4 || !/^[0-9]+$/.test(c[2])) continue; // skip header / blanks
+    const head = c[0];
+    const sp = c[3];
+    // The units digit decides whether column 4 holds euspellings at all. A 0 there
+    // means the word is never reformed, so it must not be flagged — abbreviations
+    // (9xx) carry an expansion in that column, and reading it as a euspelling put
+    // every one of dr, mr, mrs, etc … into the exclusion list, making Word mark
+    // them as misspellings.
+    if (+c[2] % 10 === 0) continue;
+    if (!sp || sp === '[]') continue; // no reform → nothing to flag
+    const spellings = sp.split('|');
+    // Flag the traditional spelling only when euspell never leaves it as written,
+    // i.e. the head is not itself one of the euspellings (skips homographs).
+    if (spellings.includes(head)) continue;
+    for (const v of apostropheVariants(head.toLowerCase())) words.add(v);
+  }
 }
 
 const sorted = [...words].sort((a, b) => a.localeCompare(b));
