@@ -75,9 +75,15 @@ function recordPattern(word, euspelling) {
   suffixPatterns.set(key, (suffixPatterns.get(key) ?? 0) + 1);
 }
 
-function addEntry(word, euspelling) {
+function addEntry(word, euspelling, encoding) {
   if (!word) return;
-  if (!euspelling || euspelling === '[]') {
+  const variants = Number(encoding);
+  if (!Number.isFinite(variants)) return; // header or malformed row
+  // The units digit is what says how many euspellings a row has; column 4 is
+  // only a euspelling when that digit is non-zero. Abbreviations (9xx) put an
+  // EXPANSION there instead, so trusting the column alone admitted "also known
+  // as" to the dictionary while leaving "aka" itself out.
+  if (variants % 10 === 0 || !euspelling || euspelling === '[]') {
     validWords.add(word.toLowerCase());
     return;
   }
@@ -92,15 +98,19 @@ function addEntry(word, euspelling) {
 // ---------------------------------------------------------------------------
 
 for (const row of parseCsv('euspell_lexicon.csv', true)) {
-  addEntry(row.Word, row.euspelling);
+  addEntry(row.Word, row.euspelling, row.Encoding);
 }
 
 // ---------------------------------------------------------------------------
-// Abbreviations  (no header row — columns: [0]=abbr [1]=PoS [2]=Enc [3]=euspelling)
+// Abbreviations  (parsed positionally: [0]=abbr [1]=PoS [2]=Enc [3]=expansion)
+//
+// The file does have a header, which addEntry drops via its non-numeric
+// encoding guard. Every row is encoding 900, so only the abbreviation itself is
+// added — never the expansion in column 4.
 // ---------------------------------------------------------------------------
 
 for (const row of parseCsv('euspell_lexicon_abbreviations.csv', false)) {
-  addEntry(row[0], row[3]);
+  addEntry(row[0], row[3], row[2]);
 }
 
 // ---------------------------------------------------------------------------
@@ -108,7 +118,7 @@ for (const row of parseCsv('euspell_lexicon_abbreviations.csv', false)) {
 // ---------------------------------------------------------------------------
 
 for (const row of parseCsv('euspell_lexicon_contractions.csv', true)) {
-  addEntry(row.Contraction, row.euspelling);
+  addEntry(row.Contraction, row.euspelling, row.Encoding);
 }
 
 // ---------------------------------------------------------------------------

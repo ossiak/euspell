@@ -24,6 +24,10 @@ for (const line of readFileSync(LEXICON, 'utf8').split('\n')) {
   if (c.length < 4 || !/^[0-9]+$/.test(c[2])) continue; // skip header / blanks
   const head = c[0];
   const sp = c[3];
+  // Units digit 0 = no euspelling, whatever column 4 holds. Abbreviations (9xx)
+  // keep an expansion there, which otherwise entered the dictionary as if it
+  // were a reformed spelling ("Doctor", "also known as").
+  if (+c[2] % 10 === 0) continue;
   if (!sp || sp === '[]') continue;
   for (const w of sp.split('|')) {
     if (w && w !== head) words.add(w.toLowerCase()); // reformed spellings only

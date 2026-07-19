@@ -36,6 +36,12 @@ for (const line of readFileSync(LEXICON, 'utf8').split('\n')) {
   if (c.length < 4 || !/^[0-9]+$/.test(c[2])) continue; // skip header / blanks
   const head = c[0];
   const sp = c[3];
+  // The units digit decides whether column 4 holds euspellings at all. A 0 there
+  // means the word is never reformed, so it must not be flagged — abbreviations
+  // (9xx) carry an expansion in that column, and reading it as a euspelling put
+  // every one of dr, mr, mrs, etc … into the exclusion list, making Word mark
+  // them as misspellings.
+  if (+c[2] % 10 === 0) continue;
   if (!sp || sp === '[]') continue; // no reform → nothing to flag
   const spellings = sp.split('|');
   // Flag the traditional spelling only when euspell never leaves it as written,

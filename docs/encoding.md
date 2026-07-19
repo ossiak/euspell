@@ -268,17 +268,36 @@ handling. `converter.js` documents each branch at its `if`.
   `10`, which `% 10` reduces to `0`, so the row read as "no new spelling" and
   *diskettes* never reformed. Now fixed, and the file is currently clean:
 
+  Run it over **all four** lexicon files, not just the main one — `to've` sat
+  malformed in the contractions file for exactly as long as `diskettes` did in
+  the main one:
+
   ```sh
-  awk -F, 'NR>1 && $3 !~ /^[0-9][0-9][0-9]$/' data/euspell_lexicon.csv
+  for f in data/euspell_lexicon*.csv; do
+    awk -F, -v f="$f" 'NR>1 && NF>=4 && $3 !~ /^[0-9][0-9][0-9]$/ {print f": "$0}' "$f"
+  done
   ```
 
-## Outstanding: the wordlist generator
+## For anything that reads column 4
 
-`build/gen-wordlist.js` predates the `900` category and still reads column 4
-unconditionally, so every abbreviation expansion is emitted into
-`dict/euspell.dic` as a valid euspell word — five of them multi-word, which
-Hunspell cannot represent — while the abbreviations themselves are added only
-incidentally. The fix is now available and small: skip `9xx` rows when building
-the word list, and add the abbreviation's own surface form instead. Anything
-else reading column 4 (`gen-pls`, `gen-harper`, `gen-pos-lexicon`) is worth the
-same check.
+The units digit, not the presence of text in column 4, is what says whether a
+row has a euspelling. Every generator that reads that column must check it:
+
+```js
+if (+encoding % 10 === 0) continue;   // no euspelling, whatever column 4 holds
+```
+
+Skipping the check means reading an abbreviation's expansion as if it were a
+spelling. That went wrong in three shipped artifacts before `900` made it
+visible:
+
+| Artifact | Symptom |
+| --- | --- |
+| `dict/euspell.dic` | expansions admitted as valid euspell words, five of them multi-word (`also known as`, `et cetera`, …) which Hunspell cannot represent, while the abbreviations themselves were only added incidentally |
+| `dict/euspell-word.dic` | 40 expansions (`doctor`, `april`, `circa`, …) offered as reformed spellings |
+| `dict/ExcludeDictionaryEN0409.lex` | all 40 abbreviations listed as words euspell never leaves as written — so Word flagged `dr`, `mr`, `mrs`, `etc` as **misspellings** |
+
+`build/lib/euspell-pos.js` had the check from the start, which is why
+`gen-pos-lexicon` and `gen-harper-metadata` were never affected. `gen-pls` was
+missing it but no abbreviation reaches its IPA source; it has the guard now
+anyway.

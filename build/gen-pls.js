@@ -34,6 +34,10 @@ for (const raw of readFileSync(LEXICON, 'utf8').split('\n')) {
   if (c.length < 4 || Number.isNaN(+c[2])) continue; // skip header / blank rows
   headwords.add(c[0]);
   const sp = c[3];
+  // Units digit 0 = no euspelling; abbreviations (9xx) hold an expansion in
+  // column 4 rather than a spelling. No abbreviation currently appears in the
+  // IPA source, so nothing leaked here, but the guard belongs with the others.
+  if (+c[2] % 10 === 0) continue;
   if (!sp || sp === '[]') continue;
   spellings.set(c[0], sp.split('|'));
 }
