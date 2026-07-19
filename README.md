@@ -35,6 +35,10 @@ homographs whose spelling should reform differently by sense:
   take different euspellings, chosen based on the surrounding words using SVM.
 - `wind`, `bow`, `read`, `lead`, `bass`, `beloved`, … each split by meaning.
 
+Each entry also carries a three-digit **encoding** saying how many spellings the
+word has and what kind of ambiguity, if any, has to be resolved to choose between
+them — see [docs/encoding.md](docs/encoding.md) for the full scheme.
+
 So the engine (`src/content/converter.js` + `dom-walker.js`) walks a document's
 text nodes, tokenizes and tags them (`src/content/tagger.js`), and resolves the
 ambiguous cases with two layers of disambiguation in `src/disambig/`: a
