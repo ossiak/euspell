@@ -948,7 +948,7 @@ aburst,JJ,000,[]
 abusable,JJ,101,abuzable
 abusage,NN|NN1,101,abuzage
 abusages,NN2,101,abuzages
-abuse,NN1|VV0,102,abuse|abuze
+abuse,NN1|VV0,152,abuse|abuze
 abused,JJ|VVD|VVN,101,abuzed
 abuseful,JJ,000,[]
 abuser,NN1,101,abuzer
@@ -15121,7 +15121,7 @@ barrator,NN1,000,[]
 barrators,NN2,000,[]
 barratries,NN2,000,[]
 barratry,NN|NN1,000,[]
-barre,NN1|VV0,102,barre|barreh
+barre,NN1|VV0,152,barre|barreh
 barred,JJ|VVD|VVN,202,bardd|barrehd
 barreing,VVG,101,barrehing
 barrel,NN1|VV0,000,[]
@@ -15800,7 +15800,7 @@ beanpoles,NN2,000,[]
 beans,NN2|VVZ,012,beans|beanz
 beanstalk,NN1,101,beanstahk
 beanstalks,NN2,101,beanstahks
-bear,NN1|VV0,102,bair|baer
+bear,NN1|VV0,152,bair|baer
 bearability,NN,101,baerability
 bearable,JJ,101,baerable
 bearably,RR,101,baerably
@@ -22908,7 +22908,7 @@ buffer,NN1|VV0,000,[]
 buffered,JJ|VVD|VVN,021,bufferd
 buffering,JJ|NN|VVG,000,[]
 buffers,NN2|VVZ,012,buffers|bufferz
-buffet,NN1|VV0,102,buffeh|buffet
+buffet,NN1|VV0,152,buffeh|buffet
 buffeted,JJ|VVD|VVN,000,[]
 buffeter,NN1,500,[]
 buffeters,NN2,500,[]
@@ -50604,7 +50604,7 @@ disunites,VVZ,011,disunitez
 disunities,NN2,000,[]
 disuniting,VVG,000,[]
 disunity,NN|NN1,000,[]
-disuse,NN|VV0,102,disuse|disuze
+disuse,NN|VV0,152,disuse|disuze
 disused,JJ|VVD|VVN,101,disuzed
 disuses,VVZ,011,disuzez
 disusing,VVG,101,disuzing
@@ -54400,7 +54400,7 @@ effulgences,NN2,000,[]
 effulgent,JJ,000,[]
 effulges,NN2,000,[]
 effulging,VVG,000,[]
-effuse,JJ|VV0,102,effuse|effuze
+effuse,JJ|VV0,152,effuse|effuze
 effused,JJ|VVD|VVN,101,effuzed
 effuses,VVZ,111,effuzez
 effusing,VVG,101,effuzing
@@ -84973,7 +84973,7 @@ hourly,JJ|RR,000,[]
 hours,NNT2,000,[]
 housage,NN|NN1,000,[]
 housages,NN2,000,[]
-house,NN1|VV0,102,house|houze
+house,NN1|VV0,152,house|houze
 houseboat,NN1,000,[]
 houseboater,NN1,000,[]
 houseboaters,NN2,000,[]
@@ -103590,7 +103590,7 @@ livabilities,NN2,000,[]
 livability,NN|NN1,000,[]
 livable,JJ,000,[]
 livableness,NN,000,[]
-live,JJ|RR|VV0,102,live|liv
+live,JJ|RR|VV0,152,live|liv
 liveabilities,NN2,601,livabilities
 liveability,NN1,601,livability
 liveable,JJ,601,livable
@@ -113077,7 +113077,7 @@ misunion,NN|NN1,000,[]
 misunions,NN2,000,[]
 misusage,NN|NN1,000,[]
 misusages,NN2,000,[]
-misuse,NN|NN1|VV0,102,misuse|misuze
+misuse,NN|NN1|VV0,152,misuse|misuze
 misused,JJ|VVD|VVN,101,misuzed
 misuser,NN1,101,misuzer
 misusers,NN2,101,misuzers
@@ -115075,7 +115075,7 @@ moustachioed,JJ,101,mustashioed
 moustachioing,VVG,101,mustashioing
 moustachios,NN2|VVZ,112,mustashios|mustashioz
 mousy,JJ,000,[]
-mouth,NN1|VV0,102,mouth|mouthe
+mouth,NN1|VV0,152,mouth|mouthe
 mouthbreeder,NN1,000,[]
 mouthbreeders,NN2,000,[]
 mouthbrooder,NN1,000,[]
@@ -115140,7 +115140,7 @@ moving,JJ|NN|VVG,101,mooving
 movingly,RR,101,moovingly
 moviola,NN1|NP,000,[]
 moviolas,NN2,000,[]
-mow,NN1|VV0,102,muw|mow
+mow,NN1|VV0,152,muw|mow
 mowed,JJ|VVD|VVN,021,mowd
 mower,NN1,000,[]
 mowers,NN2,000,[]
@@ -128444,7 +128444,7 @@ overurge,VV0,000,[]
 overurged,VVD|VVN,000,[]
 overurges,VVZ,011,overurgez
 overurging,VVG,000,[]
-overuse,NN|NN1|VV0,102,overuse|overuze
+overuse,NN|NN1|VV0,152,overuse|overuze
 overused,JJ|VVD|VVN,101,overuzed
 overuses,VVZ,111,overuzez
 overusing,VVG,101,overuzing
@@ -150142,7 +150142,7 @@ refurnishment,NN,000,[]
 refusable,JJ,101,refuzable
 refusal,NN|NN1,101,refuzal
 refusals,NN2,101,refuzals
-refuse,NN|VV0,102,refuse|refuze
+refuse,NN|VV0,152,refuse|refuze
 refused,JJ|VVD|VVN,101,refuzed
 refusenik,NN1,101,refuzenik
 refuseniks,NN2,101,refuzeniks
@@ -154696,7 +154696,7 @@ reurging,VVG,000,[]
 reus,NP,000,[]
 reusability,NN,000,[]
 reusable,JJ,000,[]
-reuse,NN|NN1|VV0,102,reuse|reuze
+reuse,NN|NN1|VV0,152,reuse|reuze
 reused,JJ|VVD|VVN,101,reuzed
 reuses,NN2|VVZ,112,reuses|reuzez
 reusing,VVG,101,reuzing
@@ -157643,7 +157643,7 @@ roving,JJ|NN|NN1|VVG,000,[]
 rovingly,RR,000,[]
 rovingness,NN,000,[]
 rovings,NN2,000,[]
-row,NN1|VV0,102,row|ruw
+row,NN1|VV0,152,row|ruw
 rowable,JJ,000,[]
 rowan,NN1,000,[]
 rowanberries,NN2,000,[]
@@ -166104,7 +166104,7 @@ showcasing,VVG,000,[]
 showdown,NN|NN1,101,showduwn
 showdowns,NN2,101,showduwns
 showed,VVD|VVN,021,showd
-shower,NN1|VV0,102,shower|shuwer
+shower,NN1|VV0,152,shower|shuwer
 showered,VVD|VVN,121,shuwerd
 showerer,NN1,101,shuwerer
 showerers,NN2,101,shuwerers
@@ -170612,7 +170612,7 @@ sovranly,RR,500,[]
 sovrans,NN2,500,[]
 sovranties,NN2,500,[]
 sovranty,NN|NN1,500,[]
-sow,NN1|VV0,102,suw|sow
+sow,NN1|VV0,152,suw|sow
 sowable,JJ,000,[]
 sowans,NN2,000,[]
 sowar,NN1,000,[]
@@ -195998,7 +195998,7 @@ usagers,NN2,101,uzagers
 usages,NN2,101,uzages
 usance,NN1,101,uzance
 usances,NN2,101,uzances
-use,NN|NN1|VV0,102,use|uze
+use,NN|NN1|VV0,152,use|uze
 useable,JJ,101,uzable
 useably,RR,101,uzably
 used,JJ|VVD|VVN,101,uzed
@@ -200280,7 +200280,7 @@ wardsmen,NN2,000,[]
 ware,NN|NN1|NP,000,[]
 wareful,JJ,000,[]
 warefulness,NN,000,[]
-warehouse,NN1|VV0,102,warehouse|warehouze
+warehouse,NN1|VV0,152,warehouse|warehouze
 warehoused,JJ|VVD|VVN,101,warehouzed
 warehouseman,NN1,000,[]
 warehousemen,NN2,000,[]

@@ -414,7 +414,9 @@ var Euspell = (function () {
     }
     if (pos.indexOf('GE') !== -1) return isVerbalS(tokens, idx) ? 1 : 0;
     if (enc === 702 && pos.indexOf('NN2') !== -1) return isPluralNoun(tokens, idx) ? 1 : 0;
-    if (enc === 102 && pos.indexOf('VV0') !== -1 && !SEMANTIC_WORDS[key]) {
+    // 102 = the "-ate" stress pairs; 152 = the non-"-ate" heteronyms (use, house,
+    // live, ...). Same verb-vs-noun question, so one decision (see converter.js).
+    if ((enc === 102 || enc === 152) && pos.indexOf('VV0') !== -1 && !SEMANTIC_WORDS[key]) {
       return isVerbVv0(tokens, idx) ? 1 : 0;
     }
     if (SEMANTIC_WORDS[key]) return null; // left unchanged

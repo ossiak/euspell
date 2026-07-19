@@ -555,7 +555,9 @@ def _route(key, entry, tokens, idx):
         return 1 if _is_verbal_s(tokens, idx) else 0
     if enc == 702 and "NN2" in pos:
         return 1 if _is_plural_noun(tokens, idx) else 0
-    if enc == 102 and "VV0" in pos and key not in _SEMANTIC_WORDS:
+    # 102 = the "-ate" stress pairs; 152 = the non-"-ate" heteronyms (use, house,
+    # live, ...). Same verb-vs-noun question, so one decision (see converter.js).
+    if enc in (102, 152) and "VV0" in pos and key not in _SEMANTIC_WORDS:
         return 1 if _is_verb_vv0(tokens, idx) else 0
     if key in _SEMANTIC_WORDS:
         return None  # left to the user via word_candidates()

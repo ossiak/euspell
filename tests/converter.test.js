@@ -49,9 +49,16 @@ test('012 gap shape (NN|NN2|VVZ): the verb form is still reachable', () => {
   assert.equal(conv([['first', 'MD'], ['aids', 'NN2']], 'aids'), 'aids');
 });
 
-test('102 POS heteronym (use): noun vs verb', () => {
+test('152 POS heteronym, non -ate (use): noun vs verb', () => {
   assert.equal(conv([['the', 'AT'], ['use', 'NN1'], ['of', 'IO'], ['force', 'NN1']], 'use'), 'use');
   assert.equal(conv([['they', 'PPHS2'], ['use', ''], ['it', 'PPH1']], 'use'), 'uze');
+});
+
+test('102 POS heteronym, -ate stress pair (separate): adjective vs verb', () => {
+  // The two heteronym encodings were split (150 "-ate" pairs stay 102, the 19
+  // others became 152); both must still reach is_verb_VV0.
+  assert.equal(conv([['two', 'MC'], ['separate', 'JJ'], ['rooms', 'NN2']], 'separate'), 'separat');
+  assert.equal(conv([['they', 'PPHS2'], ['separate', ''], ['the', 'AT'], ['eggs', 'NN2']], 'separate'), 'separate');
 });
 
 test('702 French sg/pl (chassis): singular vs plural', () => {

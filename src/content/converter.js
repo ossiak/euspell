@@ -107,12 +107,25 @@ function route(key, entry, tokens, idx) {
   if (entry.encoding === 702 && pos.includes('NN2')) {
     return is_plural_noun(tokens, idx) ? 1 : 0;
   }
-  // Heteronyms split by part of speech (encoding 102): the verb reading takes
-  // the full-vowel spelling (spellings[1], e.g. "separate" /eɪt/, "use" /juːz/),
-  // the noun/adjective reading the reduced one (spellings[0]). A handful (row,
-  // shower) split by sense rather than POS — those carry a semantic rule, so
+  // Heteronyms split by part of speech (encodings 102 and 152): the verb reading
+  // takes the full-vowel spelling (spellings[1], e.g. "separate" /eɪt/, "use"
+  // /juːz/), the noun/adjective reading the reduced one (spellings[0]). A handful
+  // (row, shower) split by sense rather than POS — those carry a semantic rule, so
   // they are skipped here and fall through to the SEMANTIC dispatch below.
-  if (entry.encoding === 102 && pos.includes('VV0') && !SEMANTIC.has(key)) {
+  //
+  // The two encodings ask the SAME question (verb vs noun/adjective) and so share
+  // a decision today, but they are kept as separate branches because they are
+  // very different populations and are expected to diverge:
+  //   102 — the 150 "-ate" stress pairs (separate, advocate, delegate). One
+  //         uniform phonological pattern, and individually rare: in the CLAWS
+  //         corpus most have no usable instances of both readings, so they are
+  //         the case a hand-written contextual rule serves well.
+  //   152 — the 19 that are not "-ate" (use, house, live, bear, refuse, mouth,
+  //         mow/sow, the -use /s/~/z/ family). A grab-bag of alternations, but
+  //         individually COMMON — these carry the large majority of real-world
+  //         occurrences of the whole class, and have ample corpus support for a
+  //         learned model of the kind the NN2|VVZ diatones already use.
+  if ((entry.encoding === 102 || entry.encoding === 152) && pos.includes('VV0') && !SEMANTIC.has(key)) {
     return is_verb_VV0(tokens, idx) ? 1 : 0;
   }
   // Semantic (pronunciation) words, encoding 202 (e.g. "read"): the rule returns

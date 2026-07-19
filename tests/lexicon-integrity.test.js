@@ -14,7 +14,7 @@ function reachesDisambiguator(e) {
     ((e.encoding === 12 || e.encoding === 112) && e.pos.includes('VVZ')) ||
     e.pos.includes('GE') ||
     (e.encoding === 702 && e.pos.includes('NN2')) ||
-    (e.encoding === 102 && e.pos.includes('VV0')) ||
+    ((e.encoding === 102 || e.encoding === 152) && e.pos.includes('VV0')) ||
     SEMANTIC.has(k) ||
     KEEP_UNCHANGED.has(k)
   );
