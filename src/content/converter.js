@@ -109,9 +109,7 @@ function route(key, entry, tokens, idx) {
   }
   // Heteronyms split by part of speech (encodings 102 and 152): the verb reading
   // takes the full-vowel spelling (spellings[1], e.g. "separate" /eɪt/, "use"
-  // /juːz/), the noun/adjective reading the reduced one (spellings[0]). A handful
-  // (row, shower) split by sense rather than POS — those carry a semantic rule, so
-  // they are skipped here and fall through to the SEMANTIC dispatch below.
+  // /juːz/), the noun/adjective reading the reduced one (spellings[0]).
   //
   // The two encodings ask the SAME question (verb vs noun/adjective) and so share
   // a decision today, but they are kept as separate branches because they are
@@ -120,11 +118,17 @@ function route(key, entry, tokens, idx) {
   //         uniform phonological pattern, and individually rare: in the CLAWS
   //         corpus most have no usable instances of both readings, so they are
   //         the case a hand-written contextual rule serves well.
-  //   152 — the 19 that are not "-ate" (use, house, live, bear, refuse, mouth,
+  //   152 — the 17 that are not "-ate" (use, house, live, bear, refuse, mouth,
   //         mow/sow, the -use /s/~/z/ family). A grab-bag of alternations, but
   //         individually COMMON — these carry the large majority of real-world
   //         occurrences of the whole class, and have ample corpus support for a
   //         learned model of the kind the NN2|VVZ diatones already use.
+  //
+  // Both classes are now purely POS-decided: a word that splits by SENSE instead
+  // (row, shower — like bow) is encoded 202 and reaches the SEMANTIC dispatch
+  // below on its own. The !SEMANTIC guard is therefore dead for today's data, and
+  // kept deliberately: it is what stops a future 102/152 word that acquires a
+  // semantic rule from being silently decided by the wrong mechanism.
   if ((entry.encoding === 102 || entry.encoding === 152) && pos.includes('VV0') && !SEMANTIC.has(key)) {
     return is_verb_VV0(tokens, idx) ? 1 : 0;
   }
