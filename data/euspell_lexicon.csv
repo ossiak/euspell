@@ -4897,7 +4897,7 @@ ajowan,NN,000,[]
 ajuga,NN1|NP,000,[]
 ajugas,NN2,000,[]
 ajwain,NN,000,[]
-aka,RR,000,also known as
+aka,RR,900,also known as
 akbar,NP,000,[]
 akee,NN1,000,[]
 akees,NN2,000,[]
@@ -10057,7 +10057,7 @@ approvers,NN2,101,approovers
 approves,VVZ,111,approovz
 approving,JJ|VVG,101,approoving
 approvingly,RR,101,approovingly
-approx,RR,000,approximately
+approx,RR,900,approximately
 approximate,JJ|VV0,102,approximat|approximate
 approximated,JJ|VVD|VVN,000,[]
 approximately,RR,101,approximatly
@@ -10072,7 +10072,7 @@ appulses,NN2,000,[]
 appurtenance,NN1,000,[]
 appurtenances,NN2,000,[]
 appurtenant,JJ,000,[]
-apr,NP1,000,April
+apr,NP1,900,April
 apractic,JJ,000,[]
 apraxia,NN,000,[]
 apraxic,JJ,000,[]
@@ -11283,7 +11283,7 @@ asafoetida,NN1,601,asafetida
 asafoetidas,NN2,601,asafetidas
 asana,NN1,000,[]
 asanas,NN2,000,[]
-asap,RR,000,as soon as possible
+asap,RR,900,as soon as possible
 asarum,NN1|NP,000,[]
 asarums,NN2,000,[]
 asbestic,JJ,000,[]
@@ -12531,7 +12531,7 @@ audits,NN2|VVZ,012,audits|auditz
 audrey,NP,000,[]
 audubon,NP,000,[]
 auer,NP,000,[]
-aug,NP1,000,August
+aug,NP1,900,August
 augean,JJ,000,[]
 augeas,NP,000,[]
 augend,NN1,000,[]
@@ -23971,7 +23971,7 @@ byzantine,JJ,000,[]
 byzantium,NP,000,[]
 byzants,NP2,000,[]
 c,ZZ1,000,[]
-ca,II,000,circa
+ca,II,900,circa
 caaba,NP,000,[]
 cab,NN1|VV0,000,[]
 caba,NN1,000,[]
@@ -32379,7 +32379,7 @@ cnidarian,NN1,000,[]
 cnidarians,NN2,000,[]
 cnidus,NP,000,[]
 cnossus,NP,000,[]
-co,NNB,000,Company
+co,NNB,900,Company
 coacervate,JJ|NN1,101,coacervat
 coacervates,NN2,101,coacervats
 coacervation,NN|NN1,000,[]
@@ -43020,7 +43020,7 @@ debuting,VVG,701,debuing
 debuts,NN2|VVZ,112,debues|debuez
 debye,NNU1,000,[]
 debyes,NNU2,000,[]
-dec,NP1,000,December
+dec,NP1,900,December
 deca,NN,000,[]
 decadal,JJ,000,[]
 decade,NNT1,000,[]
@@ -45674,7 +45674,7 @@ deprogramming,NN|VVG,000,[]
 deprograms,VVZ,011,deprogramz
 depside,NN1,000,[]
 depsides,NN2,000,[]
-dept,NN1,000,department
+dept,NN1,900,department
 depth,NN|NN1,000,[]
 depthless,JJ,000,[]
 depths,NN2,000,[]
@@ -52000,7 +52000,7 @@ dozily,RR,000,[]
 doziness,NN,000,[]
 dozing,JJ|NN|VVG,000,[]
 dozy,JJ,000,[]
-dr,NNB,000,Doctor
+dr,NNB,900,Doctor
 drab,JJ|NN|NN1,000,[]
 drabbed,VVD|VVN,021,drabd
 drabber,JJR,000,[]
@@ -54097,7 +54097,7 @@ ecus,NNU2,000,[]
 eczema,NN|NN1,000,[]
 eczemas,NN2,000,[]
 eczematous,JJ,000,[]
-ed,NN1,000,edition/editor
+ed,NN1,900,edition/editor
 ed,NP,000,[]
 edacious,JJ,000,[]
 edacity,NN,000,[]
@@ -54210,7 +54210,7 @@ edoema,NN,601,edema
 edom,NP,000,[]
 edomite,JJ|NP1,000,[]
 edomites,NP2,000,[]
-eds,NN2,000,editions/editors
+eds,NN2,900,editions/editors
 edsel,NP,000,[]
 educability,NN,000,[]
 educable,JJ,000,[]
@@ -54414,7 +54414,7 @@ eft,NN1,000,[]
 efts,NN2,000,[]
 eftsoon,RR,500,[]
 eftsoons,RR,500,[]
-eg,REX,000,exempli gratia
+eg,REX,900,exempli gratia
 egad,UH,000,[]
 egads,UH,000,[]
 egal,JJ,500,[]
@@ -58816,7 +58816,7 @@ etatism,NN,000,[]
 etatist,NN1,000,[]
 etatists,NN2,000,[]
 etc,RA,000,[]
-etc,RR,000,et cetera
+etc,RR,900,et cetera
 etcetera,RA,000,[]
 etch,NN|VV0,000,[]
 etchant,JJ,000,[]
@@ -62648,7 +62648,7 @@ feazed,VVD|VVN,021,feazd
 feazes,VVZ,011,feazez
 feazing,VVG,000,[]
 feazings,NN2,000,[]
-feb,NP1,000,February
+feb,NP1,900,February
 febriculose,JJ,000,[]
 febrifacient,JJ,000,[]
 febriferous,JJ,000,[]
@@ -68840,7 +68840,7 @@ freud,NP,000,[]
 freudian,JJ,000,[]
 frey,NP,000,[]
 freya,NP,000,[]
-fri,NP1,000,Friday
+fri,NP1,900,Friday
 friability,NN,000,[]
 friable,JJ,000,[]
 friar,NN1,000,[]
@@ -75281,7 +75281,7 @@ goutiness,NN,000,[]
 goutweed,NN,000,[]
 goutwort,NN,000,[]
 gouty,JJ,000,[]
-gov,NNB,000,Governor
+gov,NNB,900,Governor
 gove,NN1,500,[]
 govern,VV0,000,[]
 governability,NN,000,[]
@@ -85160,7 +85160,7 @@ hoyle,NP,000,[]
 hoyman,NN1,000,[]
 hoymen,NN2,000,[]
 hoys,NN2,000,[]
-hr,NN1,000,hour
+hr,NN1,900,hour
 hrvatska,NP,000,[]
 hualapai,NP,000,[]
 huanaco,NN1,000,[]
@@ -87568,7 +87568,7 @@ idyllist,NN1,000,[]
 idyllists,NN2,000,[]
 idylls,NN2,000,[]
 idyls,NN2,000,[]
-ie,REX,000,id est
+ie,REX,900,id est
 if,CS|CS22|CSW|NN1,000,[]
 iffier,JJR,000,[]
 iffiest,JJT,000,[]
@@ -89058,7 +89058,7 @@ inburst,NN1,000,[]
 inbursts,NN2,000,[]
 inby,JJ|RR,000,[]
 inbye,JJ|RR,000,[]
-inc,NNB,000,Incorporated
+inc,NNB,900,Incorporated
 inca,JJ|NP|NP1,000,[]
 incage,VV0,000,[]
 incaged,JJ|VVD|VVN,000,[]
@@ -94623,7 +94623,7 @@ jams,NN2,000,[]
 jamshedpur,NP,000,[]
 jamshid,NP,000,[]
 jan,NP,000,[]
-jan,NP1,000,January
+jan,NP1,900,January
 jana,NP,000,[]
 janacek,NP,000,[]
 jane,NN1|NP,000,[]
@@ -100869,7 +100869,7 @@ lazying,JJ|VVG,000,[]
 lazyish,JJ,000,[]
 lazzarone,NN1,000,[]
 lazzaroni,NN2,000,[]
-lbs,NN2,000,pounds
+lbs,NN2,900,pounds
 le,NN131|NP,000,[]
 lea,NN1,000,[]
 leach,NN|NN1|VV0,101,leaqh
@@ -104735,7 +104735,7 @@ loyd,NP,000,[]
 loyola,NP,000,[]
 lozenge,NN1,000,[]
 lozenges,NN2,000,[]
-ltd,NNB,000,Limited
+ltd,NNB,900,Limited
 lu,NN,500,[]
 lua,NN,000,[]
 lualaba,NP,000,[]
@@ -111988,7 +111988,7 @@ misbutton,VV0,000,[]
 misbuttoned,JJ|VVD|VVN,021,misbuttond
 misbuttoning,NN|VVG,000,[]
 misbuttons,VVZ,011,misbuttonz
-misc,JJ,000,miscellaneous
+misc,JJ,900,miscellaneous
 miscalculate,VV0,000,[]
 miscalculated,JJ|VVD|VVN,000,[]
 miscalculates,VVZ,011,miscalculatez
@@ -113661,7 +113661,7 @@ momuses,NN2,000,[]
 momzer,NN1,000,[]
 momzers,NN2,000,[]
 mon,NNU1|NNU2,000,[]
-mon,NP1,000,Monday
+mon,NP1,900,Monday
 mona,NN1,000,[]
 monacan,JJ|NP1,000,[]
 monacans,NP2,000,[]
@@ -115178,13 +115178,13 @@ mozzarella,NN|NN1,000,[]
 mozzarellas,NN2,000,[]
 mozzetta,NN1,000,[]
 mozzettas,NN2,000,[]
-mr,NNB,000,Mister
+mr,NNB,900,Mister
 mridanga,NN1,000,[]
 mridangam,NN1,000,[]
 mridangams,NN2,000,[]
 mridangas,NN2,000,[]
-mrs,NNB,000,Missus
-ms,NNB,000,Ms
+mrs,NNB,900,Missus
+ms,NNB,900,Ms
 mu,ZZ1,000,[]
 mubarak,NP,000,[]
 much,CS43|DA1|RR|RR32,101,muqh
@@ -121903,7 +121903,7 @@ nous,NN,000,[]
 nouthe,RR,500,[]
 nouveau,JJ|NN121|NN122,701,nooveau
 nouvelle,JJ|NN121,701,noovelle
-nov,NP1,000,November
+nov,NP1,900,November
 nova,NN1,000,[]
 novaculite,NN1,000,[]
 novaculites,NN2,000,[]
@@ -123117,7 +123117,7 @@ ocotillos,NN2,000,[]
 ocrea,NN1,000,[]
 ocreae,NN2,000,[]
 ocreate,JJ,101,ocreat
-oct,NP1,000,October
+oct,NP1,900,October
 octad,NN1,000,[]
 octadic,JJ,000,[]
 octads,NN2,000,[]
@@ -128783,7 +128783,7 @@ oystering,NN|VVG,000,[]
 oysterman,NN1,000,[]
 oystermen,NN2,000,[]
 oysters,NN2|VVZ,012,oysters|oysterz
-oz,NN1,000,ounce
+oz,NN1,900,ounce
 ozark,NP,000,[]
 ozarks,NP2,000,[]
 ozocerite,NN,000,[]
@@ -139304,7 +139304,7 @@ pozzolanas,NN2,000,[]
 pozzolanic,JJ,000,[]
 pozzolans,NN2,000,[]
 pozzuoli,NP,000,[]
-pp,NN2,000,pages
+pp,NN2,900,pages
 praam,NN1,500,[]
 praams,NN2,500,[]
 practic,NN1,000,[]
@@ -141811,7 +141811,7 @@ proestrus,NN,000,[]
 proette,NN1,101,proett
 proettes,NN2,101,proetts
 prof,NN1,000,[]
-prof,NNB,000,Professor
+prof,NNB,900,Professor
 profanation,NN|NN1,000,[]
 profanations,NN2,000,[]
 profanatory,JJ,000,[]
@@ -152199,7 +152199,7 @@ reoxidized,VVD|VVN,000,[]
 reoxidizes,VVZ,011,reoxidizez
 reoxidizing,VVG,000,[]
 rep,NN1,000,[]
-rep,NNB,000,Representative
+rep,NNB,900,Representative
 repace,VV0,000,[]
 repaced,VVD|VVN,000,[]
 repaces,VVZ,011,repacez
@@ -163068,7 +163068,7 @@ sebring,NP,000,[]
 sebum,NN|NN1,000,[]
 sebums,NN2,000,[]
 sec,JJ,000,[]
-sec,NN1,000,second
+sec,NN1,900,second
 secalose,NN,000,[]
 secant,NN1,000,[]
 secantly,RR,000,[]
@@ -164191,7 +164191,7 @@ seppuku,NN,000,[]
 sepses,NN2,000,[]
 sepsis,NN|NN1,000,[]
 sept,NN1,000,[]
-sept,NP1,000,September
+sept,NP1,900,September
 septa,NN2,000,[]
 septal,JJ,000,[]
 septaria,NN2,000,[]
@@ -172608,7 +172608,7 @@ sradha,NN|NN1,000,[]
 sradhas,NN2,000,[]
 sri,NNB,000,[]
 srinagar,NP,000,[]
-st,NNB,000,Saint/Street
+st,NNB,900,Saint/Street
 stab,NN1|VV0,000,[]
 stabbed,JJ|VVD|VVN,021,stabd
 stabber,NN1,000,[]
@@ -183312,7 +183312,7 @@ thrustors,NN2,000,[]
 thrusts,NN2|VVZ,012,thrusts|thrustz
 thruway,NN1,101,thruhway
 thruways,RR,101,thruhways
-thu,NP1,000,Thursday
+thu,NP1,900,Thursday
 thucydides,NP,000,[]
 thud,NN1|VV0,000,[]
 thudded,VVD|VVN,000,[]
@@ -187839,7 +187839,7 @@ tucson,NP,000,[]
 tucuman,NP,000,[]
 tudor,JJ|NP1,000,[]
 tudors,NP2,000,[]
-tue,NP1,000,Tuesday
+tue,NP1,900,Tuesday
 tuesday,NPD1,000,[]
 tuesdays,NPD2,000,[]
 tufa,NN|NN1,000,[]
@@ -199567,7 +199567,7 @@ vrouw,NN1,101,vruw
 vrouws,NN2,101,vruw
 vrow,NN1,000,[]
 vrows,NN2,000,[]
-vs,CC,000,versus
+vs,CC,900,versus
 vug,NN1,000,[]
 vugg,NN1,000,[]
 vuggs,NN2,000,[]
