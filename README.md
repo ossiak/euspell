@@ -31,8 +31,8 @@ lexicon; most words are unchanged, and the reformed minority each carry their ne
 spelling **plus part-of-speech tags**. The tags matter because English is full of
 homographs whose spelling should reform differently by sense:
 
-- `records` is `NN2|VVZ` — the noun ("the recordz") and the verb ("she recordz")
-  take different euspellings, chosen from the surrounding words.
+- `records` is `NN2|VVZ` — the noun ("the records") and the verb ("she recordz")
+  take different euspellings, chosen based on the surrounding words using SVM.
 - `wind`, `bow`, `read`, `lead`, `bass`, `beloved`, … each split by meaning.
 
 So the engine (`src/content/converter.js` + `dom-walker.js`) walks a document's
