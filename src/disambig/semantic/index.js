@@ -41,6 +41,7 @@ import { disambiguate_outread } from './outread.js';
 import { disambiguate_primate } from './primate.js';
 import { disambiguate_primates } from './primates.js';
 import { disambiguate_proofread } from './proofread.js';
+import { disambiguate_putting } from './putting.js';
 import { disambiguate_ragged } from './ragged.js';
 import { disambiguate_read } from './read.js';
 import { disambiguate_reread } from './reread.js';
@@ -113,6 +114,7 @@ export const SEMANTIC = new Map([
   ['primate', disambiguate_primate],
   ['primates', disambiguate_primates],
   ['proofread', disambiguate_proofread],
+  ['putting', disambiguate_putting],
   ['ragged', disambiguate_ragged],
   ['read', disambiguate_read],
   ['reread', disambiguate_reread],

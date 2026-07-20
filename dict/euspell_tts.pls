@@ -4696,6 +4696,7 @@
   <lexeme><grapheme>collaborativs</grapheme><phoneme>kəˈlæbərətɪvz</phoneme></lexeme> <!-- collaboratives -->
   <lexeme><grapheme>collagez</grapheme><phoneme>kəˈlɑːʒəz</phoneme></lexeme> <!-- collages -->
   <lexeme><grapheme>collapsez</grapheme><phoneme>kəˈlæpsəz</phoneme></lexeme> <!-- collapses -->
+  <lexeme><grapheme>collardd</grapheme><phoneme>ˈkɑːlərd</phoneme></lexeme> <!-- collared -->
   <lexeme><grapheme>collarz</grapheme><phoneme>ˈkɑːlərz</phoneme></lexeme> <!-- collars -->
   <lexeme><grapheme>collateralizez</grapheme><phoneme>kəˈlætərəlˌaɪzəz</phoneme></lexeme> <!-- collateralizes -->
   <lexeme><grapheme>collatez</grapheme><phoneme>kəˈleɪts</phoneme></lexeme> <!-- collates -->
@@ -10488,7 +10489,7 @@
   <lexeme><grapheme>fordrivez</grapheme><phoneme>fɔrˈdraɪvz</phoneme></lexeme> <!-- fordrives -->
   <lexeme><grapheme>fordu</grapheme><phoneme>fɔrˈduː</phoneme></lexeme> <!-- fordo -->
   <lexeme><grapheme>forduing</grapheme><phoneme>fɔrˈduɪŋ</phoneme></lexeme> <!-- fordoing -->
-  <lexeme><grapheme>fordun</grapheme><phoneme>fɔrˈdʌn</phoneme></lexeme> <!-- fordone -->
+  <lexeme><grapheme>fordunn</grapheme><phoneme>fɔrˈdʌn</phoneme></lexeme> <!-- fordone -->
   <lexeme><grapheme>forduz</grapheme><phoneme>fɔrˈduːz</phoneme></lexeme> <!-- fordoes -->
   <lexeme><grapheme>fordwinez</grapheme><phoneme>fɔrˈdwaɪnz</phoneme></lexeme> <!-- fordwines -->
   <lexeme><grapheme>fordz</grapheme><phoneme>fɔrdz</phoneme></lexeme> <!-- fords -->
@@ -10527,7 +10528,7 @@
   <lexeme><grapheme>foredoomz</grapheme><phoneme>ˌfɔrˈduːmz</phoneme></lexeme> <!-- foredooms -->
   <lexeme><grapheme>foredu</grapheme><phoneme>fɔrˈduː</phoneme></lexeme> <!-- foredo -->
   <lexeme><grapheme>foreduing</grapheme><phoneme>fɔrˈduɪŋ</phoneme></lexeme> <!-- foredoing -->
-  <lexeme><grapheme>foredun</grapheme><phoneme>fɔrˈdʌn</phoneme></lexeme> <!-- foredone -->
+  <lexeme><grapheme>foredunn</grapheme><phoneme>fɔrˈdʌn</phoneme></lexeme> <!-- foredone -->
   <lexeme><grapheme>foreduz</grapheme><phoneme>fɔrˈduːz</phoneme></lexeme> <!-- foredoes -->
   <lexeme><grapheme>forefeelz</grapheme><phoneme>ˌfɔrˈfiːlz</phoneme></lexeme> <!-- forefeels -->
   <lexeme><grapheme>forefendz</grapheme><phoneme>ˌfɔrˈfɛndz</phoneme></lexeme> <!-- forefends -->
@@ -11442,6 +11443,7 @@
   <lexeme><grapheme>geekz</grapheme><phoneme>ɡiːks</phoneme></lexeme> <!-- geeks -->
   <lexeme><grapheme>gelatez</grapheme><phoneme>ˈdʒɛleɪts</phoneme></lexeme> <!-- gelates -->
   <lexeme><grapheme>gelatinizez</grapheme><phoneme>dʒəˈlætɪˌnaɪzɪz</phoneme></lexeme> <!-- gelatinises -->
+  <lexeme><grapheme>geldd</grapheme><phoneme>dʒɛld</phoneme></lexeme> <!-- gelled -->
   <lexeme><grapheme>geldz</grapheme><phoneme>ɡɛldz</phoneme></lexeme> <!-- gelds -->
   <lexeme><grapheme>gelz</grapheme><phoneme>dʒɛlz</phoneme></lexeme> <!-- gels -->
   <lexeme><grapheme>gemd</grapheme><phoneme>dʒɛmd</phoneme></lexeme> <!-- gemmed -->
@@ -14187,11 +14189,12 @@
   <lexeme><grapheme>inordinatly</grapheme><phoneme>ɪnˈɔɹdənətli</phoneme></lexeme> <!-- inordinately -->
   <lexeme><grapheme>inordinatness</grapheme><phoneme>ɪnˈɔɹdənətnəs</phoneme></lexeme> <!-- inordinateness -->
   <lexeme><grapheme>inosculatez</grapheme><phoneme>ɪˈnɑskjəˌleɪts</phoneme></lexeme> <!-- inosculates -->
+  <lexeme><grapheme>inpoots</grapheme><phoneme>ˈɪnˌpʊts</phoneme></lexeme> <!-- inputs -->
+  <lexeme><grapheme>inpootz</grapheme><phoneme>ˈɪnˌpʊts</phoneme></lexeme> <!-- inputs -->
   <lexeme><grapheme>inporr</grapheme><phoneme>ˈɪnˌpɔɹ</phoneme></lexeme> <!-- inpour -->
   <lexeme><grapheme>inporrd</grapheme><phoneme>ˈɪnˌpɔɹd</phoneme></lexeme> <!-- inpoured -->
   <lexeme><grapheme>inporring</grapheme><phoneme>ˈɪnˌpɔɹɪŋ</phoneme></lexeme> <!-- inpouring -->
   <lexeme><grapheme>inporrz</grapheme><phoneme>ˈɪnˌpɔɹz</phoneme></lexeme> <!-- inpours -->
-  <lexeme><grapheme>inputz</grapheme><phoneme>ˈɪnˌpʊts</phoneme></lexeme> <!-- inputs -->
   <lexeme><grapheme>inqh</grapheme><phoneme>ɪntʃ</phoneme></lexeme> <!-- inch -->
   <lexeme><grapheme>inqhd</grapheme><phoneme>ɪntʃt</phoneme></lexeme> <!-- inched -->
   <lexeme><grapheme>inqhes</grapheme><phoneme>ˈɪntʃɪz</phoneme></lexeme> <!-- inches -->
@@ -15356,6 +15359,7 @@
   <lexeme><grapheme>lagz</grapheme><phoneme>læɡz</phoneme></lexeme> <!-- lags -->
   <lexeme><grapheme>laicizez</grapheme><phoneme>ˈleɪəˌsaɪzɪz</phoneme></lexeme> <!-- laicises -->
   <lexeme><grapheme>laih</grapheme><phoneme>leɪ</phoneme></lexeme> <!-- lait -->
+  <lexeme><grapheme>lairdd</grapheme><phoneme>lɛɹd</phoneme></lexeme> <!-- laired -->
   <lexeme><grapheme>lairz</grapheme><phoneme>lɛɹz</phoneme></lexeme> <!-- lairs -->
   <lexeme><grapheme>lakez</grapheme><phoneme>leɪks</phoneme></lexeme> <!-- lakes -->
   <lexeme><grapheme>lalld</grapheme><phoneme>lɑld</phoneme></lexeme> <!-- lalled -->
@@ -16284,6 +16288,7 @@
   <lexeme><grapheme>mandamusd</grapheme><phoneme>ˈmændəməst</phoneme></lexeme> <!-- mandamused -->
   <lexeme><grapheme>mandamusez</grapheme><phoneme>ˈmændəməsɪz</phoneme></lexeme> <!-- mandamuses -->
   <lexeme><grapheme>mandatez</grapheme><phoneme>ˈmændeɪts</phoneme></lexeme> <!-- mandates -->
+  <lexeme><grapheme>mandd</grapheme><phoneme>mænd</phoneme></lexeme> <!-- manned -->
   <lexeme><grapheme>manderz</grapheme><phoneme>ˈmændərz</phoneme></lexeme> <!-- manders -->
   <lexeme><grapheme>mandibulat</grapheme><phoneme>mænˈdɪbjʊlət</phoneme></lexeme> <!-- mandibulate -->
   <lexeme><grapheme>mandrilz</grapheme><phoneme>ˈmændrɪlz</phoneme></lexeme> <!-- mandrils -->
@@ -16898,7 +16903,7 @@
   <lexeme><grapheme>misduers</grapheme><phoneme>ˌmɪsˈduːərz</phoneme></lexeme> <!-- misdoers -->
   <lexeme><grapheme>misduing</grapheme><phoneme>ˌmɪsˈduːɪŋ</phoneme></lexeme> <!-- misdoing -->
   <lexeme><grapheme>misduings</grapheme><phoneme>ˌmɪsˈduːɪŋz</phoneme></lexeme> <!-- misdoings -->
-  <lexeme><grapheme>misdun</grapheme><phoneme>ˌmɪsˈdʌn</phoneme></lexeme> <!-- misdone -->
+  <lexeme><grapheme>misdunn</grapheme><phoneme>ˌmɪsˈdʌn</phoneme></lexeme> <!-- misdone -->
   <lexeme><grapheme>misduz</grapheme><phoneme>ˌmɪsˈdʌz</phoneme></lexeme> <!-- misdoes -->
   <lexeme><grapheme>miseatz</grapheme><phoneme>ˌmɪsˈiːts</phoneme></lexeme> <!-- miseats -->
   <lexeme><grapheme>miseditz</grapheme><phoneme>ˌmɪsˈɛdɪts</phoneme></lexeme> <!-- misedits -->
@@ -17500,7 +17505,7 @@
   <lexeme><grapheme>multihedded</grapheme><phoneme>ˌmʌltiˈhɛdəd</phoneme></lexeme> <!-- multiheaded -->
   <lexeme><grapheme>multilayerd</grapheme><phoneme>ˌmʌltiˈleɪərd</phoneme></lexeme> <!-- multilayered -->
   <lexeme><grapheme>multileveld</grapheme><phoneme>ˌmʌltiˈlɛvəld</phoneme></lexeme> <!-- multileveled -->
-  <lexeme><grapheme>multimannd</grapheme><phoneme>ˌmʌltiˈmænd</phoneme></lexeme> <!-- multimanned -->
+  <lexeme><grapheme>multimandd</grapheme><phoneme>ˌmʌltiˈmænd</phoneme></lexeme> <!-- multimanned -->
   <lexeme><grapheme>multiplexd</grapheme><phoneme>ˈmʌltiˌplɛkst</phoneme></lexeme> <!-- multiplexed -->
   <lexeme><grapheme>multiplexez</grapheme><phoneme>ˈmʌltiˌplɛksɪz</phoneme></lexeme> <!-- multiplexes -->
   <lexeme><grapheme>multiplicat</grapheme><phoneme>ˈmʌltəpləkɪt</phoneme></lexeme> <!-- multiplicate -->
@@ -18670,7 +18675,7 @@
   <lexeme><grapheme>outduer</grapheme><phoneme>ˌaʊtˈduər</phoneme></lexeme> <!-- outdoer -->
   <lexeme><grapheme>outduers</grapheme><phoneme>ˌaʊtˈduərz</phoneme></lexeme> <!-- outdoers -->
   <lexeme><grapheme>outduing</grapheme><phoneme>ˌaʊtˈduɪŋ</phoneme></lexeme> <!-- outdoing -->
-  <lexeme><grapheme>outdun</grapheme><phoneme>ˌaʊtˈdən</phoneme></lexeme> <!-- outdone -->
+  <lexeme><grapheme>outdunn</grapheme><phoneme>ˌaʊtˈdən</phoneme></lexeme> <!-- outdone -->
   <lexeme><grapheme>outduz</grapheme><phoneme>ˌaʊtˈdʌz</phoneme></lexeme> <!-- outdoes -->
   <lexeme><grapheme>outeatz</grapheme><phoneme>ˌaʊtˈits</phoneme></lexeme> <!-- outeats -->
   <lexeme><grapheme>outechoez</grapheme><phoneme>ˌaʊtˈɛkoʊz</phoneme></lexeme> <!-- outechoes -->
@@ -18803,7 +18808,7 @@
   <lexeme><grapheme>outlov</grapheme><phoneme>ˌaʊtˈlʌv</phoneme></lexeme> <!-- outlove -->
   <lexeme><grapheme>outlovd</grapheme><phoneme>ˌaʊtˈlʌvd</phoneme></lexeme> <!-- outloved -->
   <lexeme><grapheme>outlovz</grapheme><phoneme>ˌaʊtˈlʌvz</phoneme></lexeme> <!-- outloves -->
-  <lexeme><grapheme>outmand</grapheme><phoneme>ˌaʊtˈmænd</phoneme></lexeme> <!-- outmanned -->
+  <lexeme><grapheme>outmandd</grapheme><phoneme>ˌaʊtˈmænd</phoneme></lexeme> <!-- outmanned -->
   <lexeme><grapheme>outmaneuverd</grapheme><phoneme>ˌaʊtməˈnuvərd</phoneme></lexeme> <!-- outmaneuvered -->
   <lexeme><grapheme>outmaneuverz</grapheme><phoneme>ˌaʊtməˈnuvərz</phoneme></lexeme> <!-- outmaneuvers -->
   <lexeme><grapheme>outmanipulatez</grapheme><phoneme>ˌaʊtməˈnɪpjəˌleɪts</phoneme></lexeme> <!-- outmanipulates -->
@@ -18844,6 +18849,8 @@
   <lexeme><grapheme>outpolitickz</grapheme><phoneme>ˌaʊtpəˈlɪtɪks</phoneme></lexeme> <!-- outpoliticks -->
   <lexeme><grapheme>outpolld</grapheme><phoneme>ˌaʊtˈpoʊld</phoneme></lexeme> <!-- outpolled -->
   <lexeme><grapheme>outpollz</grapheme><phoneme>ˌaʊtˈpoʊlz</phoneme></lexeme> <!-- outpolls -->
+  <lexeme><grapheme>outpoots</grapheme><phoneme>ˈaʊtˌpʊts</phoneme></lexeme> <!-- outputs -->
+  <lexeme><grapheme>outpootz</grapheme><phoneme>ˈaʊtˌpʊts</phoneme></lexeme> <!-- outputs -->
   <lexeme><grapheme>outpopulatez</grapheme><phoneme>ˌaʊtˈpɑpjəˌleɪts</phoneme></lexeme> <!-- outpopulates -->
   <lexeme><grapheme>outporr</grapheme><phoneme>ˈaʊtˌpɔr</phoneme></lexeme> <!-- outpour -->
   <lexeme><grapheme>outporrd</grapheme><phoneme>ˌaʊtˈpɔrd</phoneme></lexeme> <!-- outpoured -->
@@ -18875,7 +18882,6 @@
   <lexeme><grapheme>outpunqhing</grapheme><phoneme>ˌaʊtˈpʌntʃɪŋ</phoneme></lexeme> <!-- outpunching -->
   <lexeme><grapheme>outpushd</grapheme><phoneme>ˌaʊtˈpʊʃt</phoneme></lexeme> <!-- outpushed -->
   <lexeme><grapheme>outpushez</grapheme><phoneme>ˌaʊtˈpʊʃɪz</phoneme></lexeme> <!-- outpushes -->
-  <lexeme><grapheme>outputz</grapheme><phoneme>ˈaʊtˌpʊts</phoneme></lexeme> <!-- outputs -->
   <lexeme><grapheme>outpuwer</grapheme><phoneme>ˌaʊtˈpaʊər</phoneme></lexeme> <!-- outpower -->
   <lexeme><grapheme>outpuwerd</grapheme><phoneme>ˌaʊtˈpaʊərd</phoneme></lexeme> <!-- outpowered -->
   <lexeme><grapheme>outpuwering</grapheme><phoneme>ˌaʊtˈpaʊərɪŋ</phoneme></lexeme> <!-- outpowering -->
@@ -19231,7 +19237,7 @@
   <lexeme><grapheme>overduer</grapheme><phoneme>ˌoʊvərˈduər</phoneme></lexeme> <!-- overdoer -->
   <lexeme><grapheme>overduers</grapheme><phoneme>ˌoʊvərˈduərz</phoneme></lexeme> <!-- overdoers -->
   <lexeme><grapheme>overduing</grapheme><phoneme>ˌoʊvərˈduɪŋ</phoneme></lexeme> <!-- overdoing -->
-  <lexeme><grapheme>overdun</grapheme><phoneme>ˌoʊvərˈdən</phoneme></lexeme> <!-- overdone -->
+  <lexeme><grapheme>overdunn</grapheme><phoneme>ˌoʊvərˈdən</phoneme></lexeme> <!-- overdone -->
   <lexeme><grapheme>overduz</grapheme><phoneme>ˌoʊvərˈdʌz</phoneme></lexeme> <!-- overdoes -->
   <lexeme><grapheme>overdyez</grapheme><phoneme>ˌoʊvərˈdaɪz</phoneme></lexeme> <!-- overdyes -->
   <lexeme><grapheme>overeatz</grapheme><phoneme>ˌoʊvərˈits</phoneme></lexeme> <!-- overeats -->
@@ -19379,7 +19385,7 @@
   <lexeme><grapheme>overlovd</grapheme><phoneme>ˌoʊvərˈlʌvd</phoneme></lexeme> <!-- overloved -->
   <lexeme><grapheme>overlovz</grapheme><phoneme>ˌoʊvərˈlʌvz</phoneme></lexeme> <!-- overloves -->
   <lexeme><grapheme>overmanagez</grapheme><phoneme>ˌoʊvərˈmænɪdʒɪz</phoneme></lexeme> <!-- overmanages -->
-  <lexeme><grapheme>overmand</grapheme><phoneme>ˌoʊvərˈmænd</phoneme></lexeme> <!-- overmanned -->
+  <lexeme><grapheme>overmandd</grapheme><phoneme>ˌoʊvərˈmænd</phoneme></lexeme> <!-- overmanned -->
   <lexeme><grapheme>overmanz</grapheme><phoneme>ˌoʊvərˈmænz</phoneme></lexeme> <!-- overmans -->
   <lexeme><grapheme>overmasterd</grapheme><phoneme>ˌoʊvərˈmæstərd</phoneme></lexeme> <!-- overmastered -->
   <lexeme><grapheme>overmasterz</grapheme><phoneme>ˌoʊvərˈmæstərz</phoneme></lexeme> <!-- overmasters -->
@@ -20787,6 +20793,8 @@
   <lexeme><grapheme>poossettz</grapheme><phoneme>puːˈsɛts</phoneme></lexeme> <!-- poussettes -->
   <lexeme><grapheme>poossin</grapheme><phoneme>ˈpuːsæ̃</phoneme></lexeme> <!-- poussin -->
   <lexeme><grapheme>poossins</grapheme><phoneme>ˈpuːsæ̃z</phoneme></lexeme> <!-- poussins -->
+  <lexeme><grapheme>poots</grapheme><phoneme>pʊts</phoneme></lexeme> <!-- puts -->
+  <lexeme><grapheme>pootz</grapheme><phoneme>pʊts</phoneme></lexeme> <!-- puts -->
   <lexeme><grapheme>poovs</grapheme><phoneme>puːvz</phoneme></lexeme> <!-- pooves -->
   <lexeme><grapheme>popd</grapheme><phoneme>pɒpt</phoneme></lexeme> <!-- popped -->
   <lexeme><grapheme>popiyed</grapheme><phoneme>ˈpɒpaɪd</phoneme></lexeme> <!-- popeyed -->
@@ -21747,7 +21755,6 @@
   <lexeme><grapheme>putterd</grapheme><phoneme>ˈpʌtərd</phoneme></lexeme> <!-- puttered -->
   <lexeme><grapheme>putterz</grapheme><phoneme>ˈpʌtərz</phoneme></lexeme> <!-- putters -->
   <lexeme><grapheme>puttz</grapheme><phoneme>pʌts</phoneme></lexeme> <!-- putts -->
-  <lexeme><grapheme>putzd</grapheme><phoneme>pʌtst</phoneme></lexeme> <!-- putzed -->
   <lexeme><grapheme>puw</grapheme><phoneme>paʊ</phoneme></lexeme> <!-- pow -->
   <lexeme><grapheme>puwder</grapheme><phoneme>ˈpaʊdər</phoneme></lexeme> <!-- powder -->
   <lexeme><grapheme>puwderd</grapheme><phoneme>ˈpaʊdərd</phoneme></lexeme> <!-- powdered -->
@@ -24072,7 +24079,7 @@
   <lexeme><grapheme>reduih</grapheme><phoneme>ˈrɛdwɪt</phoneme></lexeme> <!-- reduit -->
   <lexeme><grapheme>reduihs</grapheme><phoneme>ˈrɛdwɪts</phoneme></lexeme> <!-- reduits -->
   <lexeme><grapheme>reduing</grapheme><phoneme>riːˈduːɪŋ</phoneme></lexeme> <!-- redoing -->
-  <lexeme><grapheme>redun</grapheme><phoneme>riːˈdʌn</phoneme></lexeme> <!-- redone -->
+  <lexeme><grapheme>redunn</grapheme><phoneme>riːˈdʌn</phoneme></lexeme> <!-- redone -->
   <lexeme><grapheme>reduplicatez</grapheme><phoneme>rɪˈduːplɪkeɪts</phoneme></lexeme> <!-- reduplicates -->
   <lexeme><grapheme>reduplicativ</grapheme><phoneme>rɪˈduːplɪkeɪtɪv</phoneme></lexeme> <!-- reduplicative -->
   <lexeme><grapheme>reduplicativly</grapheme><phoneme>rɪˈduːplɪkeɪtɪvli</phoneme></lexeme> <!-- reduplicatively -->
@@ -29727,8 +29734,8 @@
   <lexeme><grapheme>thruhly</grapheme><phoneme>ˈθruːli</phoneme></lexeme> <!-- throughly -->
   <lexeme><grapheme>thruhother</grapheme><phoneme>θruˈʌðər</phoneme></lexeme> <!-- throughother -->
   <lexeme><grapheme>thruhout</grapheme><phoneme>θruˈaʊt</phoneme></lexeme> <!-- throughout -->
-  <lexeme><grapheme>thruhput</grapheme><phoneme>ˈθruˌpʊt</phoneme></lexeme> <!-- throughput -->
-  <lexeme><grapheme>thruhputs</grapheme><phoneme>ˈθruˌpʊts</phoneme></lexeme> <!-- throughputs -->
+  <lexeme><grapheme>thruhpoot</grapheme><phoneme>ˈθruˌpʊt</phoneme></lexeme> <!-- throughput -->
+  <lexeme><grapheme>thruhpoots</grapheme><phoneme>ˈθruˌpʊts</phoneme></lexeme> <!-- throughputs -->
   <lexeme><grapheme>thruhway</grapheme><phoneme>ˈθruˌweɪ</phoneme></lexeme> <!-- throughway -->
   <lexeme><grapheme>thruhways</grapheme><phoneme>ˈθruˌweɪz</phoneme></lexeme> <!-- throughways -->
   <lexeme><grapheme>thrumd</grapheme><phoneme>θrʌmd</phoneme></lexeme> <!-- thrummed -->
@@ -31142,7 +31149,7 @@
   <lexeme><grapheme>underdu</grapheme><phoneme>ˈʌndərˈduː</phoneme></lexeme> <!-- underdo -->
   <lexeme><grapheme>underduer</grapheme><phoneme>ˈʌndərˈduːər</phoneme></lexeme> <!-- underdoer -->
   <lexeme><grapheme>underduing</grapheme><phoneme>ˈʌndərˈduːɪŋ</phoneme></lexeme> <!-- underdoing -->
-  <lexeme><grapheme>underdun</grapheme><phoneme>ˈʌndərˈdʌn</phoneme></lexeme> <!-- underdone -->
+  <lexeme><grapheme>underdunn</grapheme><phoneme>ˈʌndərˈdʌn</phoneme></lexeme> <!-- underdone -->
   <lexeme><grapheme>underduz</grapheme><phoneme>ˈʌndərˈdʌz</phoneme></lexeme> <!-- underdoes -->
   <lexeme><grapheme>undereatz</grapheme><phoneme>ˈʌndərˈiːts</phoneme></lexeme> <!-- undereats -->
   <lexeme><grapheme>underemphasizez</grapheme><phoneme>ˈʌndərˈɛmfəˌsaɪzɪz</phoneme></lexeme> <!-- underemphasises -->
@@ -31189,7 +31196,7 @@
   <lexeme><grapheme>underletz</grapheme><phoneme>ˈʌndərˈlɛts</phoneme></lexeme> <!-- underlets -->
   <lexeme><grapheme>underliez</grapheme><phoneme>ˈʌndərˈlaɪz</phoneme></lexeme> <!-- underlies -->
   <lexeme><grapheme>underlinez</grapheme><phoneme>ˈʌndərˈlaɪnz</phoneme></lexeme> <!-- underlines -->
-  <lexeme><grapheme>undermannd</grapheme><phoneme>ˈʌndərˈmænd</phoneme></lexeme> <!-- undermanned -->
+  <lexeme><grapheme>undermandd</grapheme><phoneme>ˈʌndərˈmænd</phoneme></lexeme> <!-- undermanned -->
   <lexeme><grapheme>underminez</grapheme><phoneme>ˈʌndərˈmaɪnz</phoneme></lexeme> <!-- undermines -->
   <lexeme><grapheme>undermonnied</grapheme><phoneme>ˈʌndərˈmʌnid</phoneme></lexeme> <!-- undermoneyed -->
   <lexeme><grapheme>undermoste</grapheme><phoneme>ˈʌndərˌmoʊst</phoneme></lexeme> <!-- undermost -->
@@ -31204,6 +31211,7 @@
   <lexeme><grapheme>underplantz</grapheme><phoneme>ˈʌndərˈplænts</phoneme></lexeme> <!-- underplants -->
   <lexeme><grapheme>underplayd</grapheme><phoneme>ˈʌndərˈpleɪd</phoneme></lexeme> <!-- underplayed -->
   <lexeme><grapheme>underplayz</grapheme><phoneme>ˈʌndərˈpleɪz</phoneme></lexeme> <!-- underplays -->
+  <lexeme><grapheme>underpootz</grapheme><phoneme>ˈʌndərˈpʊts</phoneme></lexeme> <!-- underputs -->
   <lexeme><grapheme>underpraisez</grapheme><phoneme>ˈʌndərˈpreɪzɪz</phoneme></lexeme> <!-- underpraises -->
   <lexeme><grapheme>underpricez</grapheme><phoneme>ˈʌndərˈpraɪsɪz</phoneme></lexeme> <!-- underprices -->
   <lexeme><grapheme>underprizez</grapheme><phoneme>ˈʌndərˈpraɪzɪz</phoneme></lexeme> <!-- underprizes -->
@@ -31211,7 +31219,6 @@
   <lexeme><grapheme>underpropz</grapheme><phoneme>ˈʌndərˈprɑːps</phoneme></lexeme> <!-- underprops -->
   <lexeme><grapheme>underpulld</grapheme><phoneme>ˈʌndərˈpʊld</phoneme></lexeme> <!-- underpulled -->
   <lexeme><grapheme>underpullz</grapheme><phoneme>ˈʌndərˈpʊlz</phoneme></lexeme> <!-- underpulls -->
-  <lexeme><grapheme>underputz</grapheme><phoneme>ˈʌndərˈpʊts</phoneme></lexeme> <!-- underputs -->
   <lexeme><grapheme>underpuwerd</grapheme><phoneme>ˈʌndərˈpaʊərd</phoneme></lexeme> <!-- underpowered -->
   <lexeme><grapheme>underqhamberlan</grapheme><phoneme>ˈʌndərˈtʃeɪmbərlɪn</phoneme></lexeme> <!-- underchamberlain -->
   <lexeme><grapheme>underqhamberlans</grapheme><phoneme>ˈʌndərˈtʃeɪmbərlɪnz</phoneme></lexeme> <!-- underchamberlains -->
@@ -31344,7 +31351,7 @@
   <lexeme><grapheme>undulativ</grapheme><phoneme>ˈʌndʒələtɪv</phoneme></lexeme> <!-- undulative -->
   <lexeme><grapheme>undulld</grapheme><phoneme>ˈʌnˈdʌld</phoneme></lexeme> <!-- undulled -->
   <lexeme><grapheme>undullz</grapheme><phoneme>ˈʌnˈdʌlz</phoneme></lexeme> <!-- undulls -->
-  <lexeme><grapheme>undun</grapheme><phoneme>ˈʌnˈdʌn</phoneme></lexeme> <!-- undone -->
+  <lexeme><grapheme>undunn</grapheme><phoneme>ˈʌnˈdʌn</phoneme></lexeme> <!-- undone -->
   <lexeme><grapheme>unduplicatez</grapheme><phoneme>ˈʌnˈduːplɪˌkeɪts</phoneme></lexeme> <!-- unduplicates -->
   <lexeme><grapheme>undustz</grapheme><phoneme>ˈʌnˈdʌsts</phoneme></lexeme> <!-- undusts -->
   <lexeme><grapheme>unearmarkd</grapheme><phoneme>ˈʌnˈɪərmɑːrkt</phoneme></lexeme> <!-- unearmarked -->
@@ -31710,7 +31717,7 @@
   <lexeme><grapheme>unmaidenz</grapheme><phoneme>ˈʌnˈmeɪdənz</phoneme></lexeme> <!-- unmaidens -->
   <lexeme><grapheme>unmakez</grapheme><phoneme>ˈʌnˈmeɪks</phoneme></lexeme> <!-- unmakes -->
   <lexeme><grapheme>unmanaclez</grapheme><phoneme>ˈʌnˈmænəkəlz</phoneme></lexeme> <!-- unmanacles -->
-  <lexeme><grapheme>unmannd</grapheme><phoneme>ˈʌnˈmænd</phoneme></lexeme> <!-- unmanned -->
+  <lexeme><grapheme>unmandd</grapheme><phoneme>ˈʌnˈmænd</phoneme></lexeme> <!-- unmanned -->
   <lexeme><grapheme>unmannerd</grapheme><phoneme>ˈʌnˈmænərd</phoneme></lexeme> <!-- unmannered -->
   <lexeme><grapheme>unmantlez</grapheme><phoneme>ˈʌnˈmæntəlz</phoneme></lexeme> <!-- unmantles -->
   <lexeme><grapheme>unmanz</grapheme><phoneme>ˈʌnˈmænz</phoneme></lexeme> <!-- unmans -->

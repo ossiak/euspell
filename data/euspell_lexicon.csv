@@ -33557,7 +33557,7 @@ collarbone,NN1,000,[]
 collarbones,NN2,000,[]
 collard,NN1,000,[]
 collards,NN2,000,[]
-collared,JJ|VVD|VVN,021,collard
+collared,JJ|VVD|VVN,021,collardd
 collaret,NN1,000,[]
 collarets,NN2,000,[]
 collaring,JJ|NN|VVG,000,[]
@@ -51373,7 +51373,7 @@ donau,NP,000,[]
 donax,NN1|NP,000,[]
 donaxes,NN2,000,[]
 doncaster,NP,000,[]
-done,VDN,101,dun
+done,VDN,101,dunn
 donee,NN1,000,[]
 donees,NN2,000,[]
 donegal,NP,000,[]
@@ -66973,7 +66973,7 @@ fordless,JJ,000,[]
 fordo,VV0,101,fordu
 fordoes,VVZ,111,forduz
 fordoing,JJ|NN|VVG,101,forduing
-fordone,JJ|VVN,101,fordun
+fordone,JJ|VVN,101,fordunn
 fordried,VVD|VVN,000,[]
 fordries,VVZ,011,fordriez
 fordrive,VV0,000,[]
@@ -67091,7 +67091,7 @@ foredisposing,JJ|VVG,000,[]
 foredo,VV0,101,foredu
 foredoes,VVZ,111,foreduz
 foredoing,VVG,101,foreduing
-foredone,JJ|VVD|VVN,101,foredun
+foredone,JJ|VVD|VVN,101,foredunn
 foredoom,NN|VV0,000,[]
 foredoomed,JJ|VVD|VVN,021,foredoomd
 foredooming,VVG,000,[]
@@ -71947,7 +71947,7 @@ gelidness,NN,000,[]
 gelignite,NN,000,[]
 gellant,NN1,000,[]
 gellants,NN2,000,[]
-gelled,JJ|VVD|VVN,021,geld
+gelled,JJ|VVD|VVN,021,geldd
 gelling,JJ|VVG,000,[]
 gelly,NN,500,[]
 geloscopy,NN,500,[]
@@ -91088,9 +91088,9 @@ inpour,VV0,101,inporr
 inpoured,VVD|VVN,121,inporrd
 inpouring,JJ|NN|VVG,101,inporring
 inpours,VVZ,111,inporrz
-input,NN1|VV0|VVD|VVN,000,[]
-inputs,NN2|VVZ,012,inputs|inputz
-inputting,NN|VVG,000,[]
+input,NN1|VV0|VVD|VVN,101,inpoot
+inputs,NN2|VVZ,112,inpoots|inpootz
+inputting,NN|VVG,101,inpooting
 inquest,NN1,000,[]
 inquests,NN2,000,[]
 inquiet,VV0,500,[]
@@ -99337,7 +99337,7 @@ laird,NN1,000,[]
 lairdly,RR,000,[]
 lairds,NN2,000,[]
 lairdship,NN1,000,[]
-laired,VVD|VVN,021,laird
+laired,VVD|VVN,021,lairdd
 lairing,VVG,000,[]
 lairs,NN2|VVZ,012,lairs|lairz
 laism,NN,000,[]
@@ -106798,7 +106798,7 @@ manciple,NN1,000,[]
 manciples,NN2,000,[]
 mancunian,JJ|NN1,000,[]
 mancunians,NN2,000,[]
-mand,NN1,000,[]
+mand,NN1|VV0,000,[]
 mandaeaism,NP,000,[]
 mandaean,JJ|NP1,000,[]
 mandaeans,NP2,000,[]
@@ -106836,6 +106836,7 @@ mandatory,JJ|NN1,000,[]
 mande,NP,000,[]
 mandean,NP1,000,[]
 mandeans,NP2,000,[]
+manded,JJ|VVD|VVN,000,[]
 mandela,NP,000,[]
 mander,VV0,000,[]
 mandered,VVD|VVN,000,[]
@@ -106868,6 +106869,7 @@ mandrill,NN1,000,[]
 mandrills,NN2,000,[]
 mandrillus,NP,000,[]
 mandrils,VVZ,011,mandrilz
+mands,NN2|VVZ,012,mands|mandz
 manduca,NP,000,[]
 mandy,NP,000,[]
 mane,NN1,000,[]
@@ -107050,7 +107052,7 @@ mann,NP,000,[]
 manna,NN,000,[]
 mannan,NN1,000,[]
 mannans,NN2,000,[]
-manned,JJ|VVD|VVN,021,mand
+manned,JJ|VVD|VVN,021,mandd
 mannequin,NN1,101,mannekin
 mannequins,NN2,101,mannekins
 manner,NN1,000,[]
@@ -112241,7 +112243,7 @@ misdoers,NN2,101,misduers
 misdoes,VVZ,111,misduz
 misdoing,NN|NN1|VVG,101,misduing
 misdoings,NN2,101,misduings
-misdone,JJ|VVN,101,misdun
+misdone,JJ|VVN,101,misdunn
 misdoubt,VV0,101,misdout
 misdoubted,VVD|VVN,101,misdouted
 misdoubting,NN|VVG,101,misdouting
@@ -115579,7 +115581,7 @@ multilingual,JJ,000,[]
 multilingualism,NN,000,[]
 multilingually,RR,000,[]
 multilobed,JJ,000,[]
-multimanned,JJ,021,multimannd
+multimanned,JJ,021,multimandd
 multimedia,JJ|NN,000,[]
 multimegaton,JJ,000,[]
 multimegatons,NN2,000,[]
@@ -123457,7 +123459,7 @@ offprint,NN1|VV0,000,[]
 offprinted,JJ|VVD|VVN,000,[]
 offprinting,VVG,000,[]
 offprints,NN2|VVZ,012,offprints|offprintz
-offputting,JJ,000,[]
+offputting,JJ,101,offpooting
 offramp,NN1,000,[]
 offramps,NN2,000,[]
 offroad,JJ,000,[]
@@ -125684,7 +125686,7 @@ outdoer,NN1,101,outduer
 outdoers,NN2,101,outduers
 outdoes,VVZ,111,outduz
 outdoing,VVG,101,outduing
-outdone,JJ|VVN,101,outdun
+outdone,JJ|VVN,101,outdunn
 outdoor,JJ,101,outdorr
 outdoors,NN|RL,101,outdorrs
 outdoorsman,NN1,101,outdorrsman
@@ -126049,7 +126051,7 @@ outmanipulate,VV0,000,[]
 outmanipulated,VVD|VVN,000,[]
 outmanipulates,VVZ,011,outmanipulatez
 outmanipulating,VVG,000,[]
-outmanned,JJ|VVD|VVN,021,outmand
+outmanned,JJ|VVD|VVN,021,outmandd
 outmanning,VVG,000,[]
 outmanoeuvre,VV0,101,outmaneuver
 outmanoeuvred,VVD|VVN,121,outmaneuverd
@@ -126202,10 +126204,10 @@ outpush,VV0,000,[]
 outpushed,VVD|VVN,021,outpushd
 outpushes,VVZ,011,outpushez
 outpushing,VVG,000,[]
-output,NN1|VV0|VVD|VVN,000,[]
-outputs,NN2|VVZ,012,outputs|outputz
-outputted,VVD|VVN,000,[]
-outputting,NN|VVG,000,[]
+output,NN1|VV0|VVD|VVN,101,outpoot
+outputs,NN2|VVZ,112,outpoots|outpootz
+outputted,VVD|VVN,101,outpooted
+outputting,NN|VVG,101,outpooting
 outquote,VV0,000,[]
 outquoted,VVD|VVN,000,[]
 outquotes,VVZ,011,outquotez
@@ -127201,7 +127203,7 @@ overdogs,NN2,000,[]
 overdoing,JJ|NN|VVG,101,overduing
 overdominance,NN,000,[]
 overdominant,JJ,000,[]
-overdone,JJ|VVN,101,overdun
+overdone,JJ|VVN,101,overdunn
 overdosage,NN1,000,[]
 overdosages,NN2,000,[]
 overdose,NN1|VV0,000,[]
@@ -127778,7 +127780,7 @@ overmanage,VV0,000,[]
 overmanaged,VVD|VVN,000,[]
 overmanages,VVZ,011,overmanagez
 overmanaging,VVG,000,[]
-overmanned,JJ|VVD|VVN,021,overmand
+overmanned,JJ|VVD|VVN,021,overmandd
 overmannered,VVD|VVN,000,[]
 overmanning,VVG,000,[]
 overmans,VVZ,011,overmanz
@@ -144246,7 +144248,7 @@ pustulations,NN2,000,[]
 pustule,NN1,000,[]
 pustuled,JJ,000,[]
 pustules,NN2,000,[]
-put,NN1|VV0|VVD|VVN,000,[]
+put,NN1|VV0|VVD|VVN,101,poot
 putamen,NN1,000,[]
 putamens,NN2,000,[]
 putamina,NN2,000,[]
@@ -144277,7 +144279,7 @@ putrid,JJ,000,[]
 putridities,NN2,000,[]
 putridity,NN|NN1,000,[]
 putridly,RR,000,[]
-puts,NN2|VVZ,012,puts|putz
+puts,NN2|VVZ,012,poots|pootz
 putsch,NN1,000,[]
 putsches,NN2,000,[]
 putschist,NN1,000,[]
@@ -144297,7 +144299,7 @@ puttied,JJ|VVD|VVN,000,[]
 puttier,NN1,000,[]
 puttiers,NN2,000,[]
 putties,NN2,000,[]
-putting,NN|VVG,000,[]
+putting,NN|VVG,202,putting|pooting
 putto,NN1,000,[]
 putts,NN2|VVZ,012,putts|puttz
 putty,NN|NN1,000,[]
@@ -144307,10 +144309,8 @@ puttylike,JJ,000,[]
 puttyroot,NN1,000,[]
 puttyroots,NN2,000,[]
 putumayo,NN1|NP1,000,[]
-putz,NN1|VV0,000,[]
-putzed,VVD|VVN,021,putzd
-putzes,NN2|VVZ,012,putzes|putzes
-putzing,NN|VVG,000,[]
+putz,NN1,000,[]
+putzes,NN2,000,[]
 puzo,NP,000,[]
 puzzle,NN1|VV0,000,[]
 puzzled,JJ|VVD|VVN,000,[]
@@ -149175,7 +149175,7 @@ redolency,NN1,000,[]
 redolent,JJ,000,[]
 redolently,RR,000,[]
 redon,VV0,000,[]
-redone,JJ|VVN,101,redun
+redone,JJ|VVN,101,redunn
 redonned,VVD|VVN,021,redond
 redonning,VVG,000,[]
 redons,VVZ,011,redonz
@@ -183267,8 +183267,8 @@ throughither,JJ,101,thruhither
 throughly,RR,101,thruhly
 throughother,JJ,101,thruhother
 throughout,II|RL,101,thruhout
-throughput,NN|NN1,101,thruhput
-throughputs,NN2,101,thruhputs
+throughput,NN|NN1,101,thruhpoot
+throughputs,NN2,101,thruhpoots
 throughway,NN1,101,thruhway
 throughways,NN2,101,thruhways
 throve,VVD,500,[]
@@ -183294,8 +183294,8 @@ thrummiest,JJT,000,[]
 thrumming,JJ|NN|VVG,000,[]
 thrummy,JJ,000,[]
 thrums,NN2|VVZ,012,thrums|thrumz
-thruput,NN1,101,thruhput
-thruputs,NN2,101,thruhputs
+thruput,NN1,101,thruhpoot
+thruputs,NN2,101,thruhpoots
 thrush,NN|NN1,000,[]
 thrushes,NN2,000,[]
 thrust,NN1|VV0|VVD|VVN,000,[]
@@ -190836,7 +190836,7 @@ underdog,NN1,000,[]
 underdogs,NN2,000,[]
 underdoing,VVG,101,underduing
 underdolven,NN1,000,[]
-underdone,JJ|VVN,101,underdun
+underdone,JJ|VVN,101,underdunn
 underdose,NN1,000,[]
 underdoses,NN2,000,[]
 underdrain,NN1,000,[]
@@ -191021,7 +191021,7 @@ underlit,JJ,000,[]
 underlock,NN1,000,[]
 underlocks,NN2,000,[]
 underlying,JJ|VVG,000,[]
-undermanned,JJ,021,undermannd
+undermanned,JJ,021,undermandd
 undermasted,JJ,000,[]
 undermaster,NN1,000,[]
 undermasters,NN2,000,[]
@@ -191115,9 +191115,9 @@ underpuller,NN1,000,[]
 underpullers,NN2,000,[]
 underpulling,NN|VVG,000,[]
 underpulls,NN2|VVZ,012,underpulls|underpullz
-underput,VV0|VVD|VVN,000,[]
-underputs,VVZ,011,underputz
-underputting,VVG,000,[]
+underput,VV0|VVD|VVN,101,underpoot
+underputs,VVZ,111,underpootz
+underputting,VVG,101,underpooting
 underqualified,JJ,000,[]
 underran,VVD,000,[]
 underrate,VV0,000,[]
@@ -191490,7 +191490,7 @@ undomesticate,VV0,000,[]
 undomesticated,JJ|VVD|VVN,000,[]
 undomesticates,VVZ,011,undomesticatez
 undomesticating,VVG,000,[]
-undone,JJ|VVN,101,undun
+undone,JJ|VVN,101,undunn
 undotted,JJ,000,[]
 undouble,VV0,101,undubble
 undoubled,JJ|VVD|VVN,101,undubbled
@@ -192934,7 +192934,7 @@ unmanlier,JJR,000,[]
 unmanliest,JJT,000,[]
 unmanliness,NN,000,[]
 unmanly,JJ,000,[]
-unmanned,JJ,021,unmannd
+unmanned,JJ,021,unmandd
 unmannered,JJ,021,unmannerd
 unmanneredly,RR,000,[]
 unmannerliness,NN,000,[]

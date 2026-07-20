@@ -34,7 +34,7 @@ var Euspell = (function () {
   ('barred bass beloved blessed bow bowed bowing bowman bowings bowmen bows ' +
    'chi cleanly close closer conch copyread does dogged dove foreread gets jagged ' +
    'lead leads learned longed looks makes means minute misread outread primate ' +
-   'primates proofread ragged read reread row rowed rows rowing secreted secreting ' +
+   'primates proofread putting ragged read reread row rowed rows rowing secreted secreting ' +
    'shower showers sightread slough sloughed sloughier sloughiest sloughiness ' +
    'sloughs sloughy sounds tear tearing tears thinks unbowed unbowing uncleanly ' +
    'wants wicked wind winding winds wound').split(' ').forEach(function (w) { SEMANTIC_WORDS[w] = 1; });
