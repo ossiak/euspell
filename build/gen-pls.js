@@ -47,35 +47,59 @@ for (const raw of readFileSync(LEXICON, 'utf8').split('\n')) {
 // placeholder (stopgapped,-,ˈstɑpˌɡæpt), and a few hold stray editorial tokens
 // (sermonizes,alignment,ˈsɜːrməˌlaɪzəz / synthesises,...,alignment,with,GA,...).
 //
-// Parse the row into [{ ipa, sense }] pairs. An IPA is a field carrying a
-// non-ASCII char (a stress/length mark or phonetic vowel), which also discards
-// stray ASCII editorial words. A "(noun)" / "(verb)" label immediately after an
-// IPA tags its sense; other parentheticals (present/past, sense glosses) are
-// dropped. Pure-ASCII rows ("bjut", "strikt") are handled by the ASCII branch.
-const NOUN_LABEL = new Set(['(noun)', '(nounadj)']);
-const VERB_LABEL = new Set(['(verb)']);
+// Sense labels are not consistent in the source. Three forms appear, all handled
+// here so the reading is tagged rather than mis-parsed:
+//   - "IPA,(verb),or,IPA,(noun)"      the standard label after each reading
+//   - "IPA,(v.),,IPA,(n.)|(adj.)"     abbreviated (separates, sophisticates)
+//   - "-,NOUN_IPA,(V:,VERB_IPA)"      the verb reading embedded in a parenthesis
+//                                     (subjects, transfers, subordinates, …);
+//                                     the bare leading reading is the noun.
+// Parse the row into [{ ipa, sense }]. An IPA is a field with a non-ASCII char (a
+// stress/length mark or phonetic vowel), which also discards stray ASCII tokens.
+const NOUN_LABEL = /^\((noun|nounadj|n|n\.|adj|adj\.)\)$/;
+const VERB_LABEL = /^\((verb|v|v\.)\)$/;
 function readingsOf(fields) {
   const out = [];
-  for (const raw of fields.slice(1)) {
-    const f = raw.trim();
+  const rest = fields.slice(1);
+  for (let i = 0; i < rest.length; i++) {
+    const f = rest[i].trim();
     if (!f || f === '-' || f === 'or') continue;
+    // "(V:,IPA)" — a verb reading inside a parenthesis, possibly split across
+    // fields by the comma. Gather until the closing ")".
+    if (/^\(V:/i.test(f)) {
+      let buf = f.replace(/^\(V:,?/i, '');
+      while (!/\)$/.test(buf) && i + 1 < rest.length) buf += ',' + rest[++i].trim();
+      buf = buf.replace(/\)$/, '').replace(/^,/, '').trim();
+      if (/[^\x00-\x7f]/.test(buf)) out.push({ ipa: buf, sense: 'verb' });
+      continue;
+    }
     if (/^\(.*\)$/.test(f)) {
-      if (out.length && NOUN_LABEL.has(f)) out[out.length - 1].sense = 'noun';
-      else if (out.length && VERB_LABEL.has(f)) out[out.length - 1].sense = 'verb';
-      continue; // a bare sense gloss, no IPA of its own
+      if (out.length && NOUN_LABEL.test(f)) out[out.length - 1].sense = 'noun';
+      else if (out.length && VERB_LABEL.test(f)) out[out.length - 1].sense = 'verb';
+      continue; // a present/past or sense gloss with no IPA of its own
     }
     if (/[^\x00-\x7f]/.test(f)) out.push({ ipa: f, sense: null });
   }
   if (out.length) return out;
   // Pure-ASCII fallback: the row is "word,IPA" or "word,-,IPA" with an ASCII IPA.
-  const ascii = fields.slice(1).map((x) => x.trim())
+  const ascii = rest.map((x) => x.trim())
     .filter((x) => x && x !== '-' && x !== 'or' && !/[()]/.test(x));
   return ascii.map((ipa) => ({ ipa, sense: null }));
 }
 
-// A euspelling's grammatical sense from its ending: -z is the 3rd-sg verb, -s
-// the plural noun (see the encoding doc). Only these carry a noun/verb contrast.
-const spellingSense = (s) => (s.endsWith('z') ? 'verb' : s.endsWith('s') ? 'noun' : null);
+// A euspelling's grammatical sense. The plural is unambiguous: -z is the 3rd-sg
+// verb, -s the plural noun. The SINGULAR of an "-ate" heteronym is trickier: the
+// verb keeps its /eɪt/-signalling 'e' (separate, graduate — usually the
+// traditional form, so dropped), while the emitted novel spelling is the reduced
+// noun (separat, graduat), ending in the stem consonant. So for a word flagged
+// as a noun/verb heteronym, a spelling ending in 'e' is the verb and anything
+// else the noun. `isHet` gates this: a non-heteronym's spelling has no sense.
+function spellingSense(s, isHet) {
+  if (s.endsWith('z')) return 'verb';
+  if (s.endsWith('s')) return 'noun';
+  if (!isHet) return null;
+  return s.endsWith('e') ? 'verb' : 'noun';
+}
 
 // A reading's sense, when it can be told. A "(noun)"/"(verb)" label is
 // authoritative. Failing that, for an "-ate" pair the vowel carries it: the verb
@@ -123,16 +147,30 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   // Does this word emit a noun/verb pair whose stem is the "-ate" stress
   // alternation, so the two spellings are genuinely different pronunciations
   // (graduats /-ɪts/ vs graduatez /-eɪts/)? Then a single reading fits only one.
-  const isNounVerbPair = news.length === 2
-    && news.some((s) => s.endsWith('z')) && news.some((s) => s.endsWith('s'));
-  const isAtePair = isNounVerbPair && /ates?$/.test(word);
+  // A noun/verb spelling pair whose two forms differ by MORE than the final
+  // sibilant is a genuine pronunciation heteronym: the "-ate" stress alternation
+  // spells the noun "graduats" (/-əts/) but the verb "graduatez" (/-eɪts/), so
+  // stripping the sibilant leaves "graduat" vs "graduate". A single reading fits
+  // only one. When the two forms differ ONLY in s↔z ("pirats"/"piratz",
+  // "tools"/"toolz") the stem is identical, the pronunciation is the same, and
+  // the one reading serves both. This catches "flocculates" (whose singular is
+  // 000, not 102) and excludes "pirates" (101) — a stem-encoding test does not.
+  const zSp = news.find((s) => s.endsWith('z'));
+  const sSp = news.find((s) => s.endsWith('s'));
+  const isAtePair = news.length === 2 && zSp && sSp
+    && zSp.slice(0, -1) !== sSp.slice(0, -1);
+  // A noun/verb heteronym is any word with genuinely distinct readings: an -ate
+  // pair, or a row that labels both a noun and a verb reading (which is how a
+  // SINGULAR -ate word — "separate", one novel spelling "separat" — is caught).
+  const senses = readings.map((r) => r.sense);
+  const isHet = isAtePair || (senses.includes('verb') && senses.includes('noun'));
 
   for (const grapheme of news) {
     // Pick the reading whose sense matches this spelling. A spelling with a
     // definite sense takes only a reading of that sense; if the sole reading is
     // the OTHER sense, the spelling gets no entry — a gap beats a wrong
     // pronunciation (the -z verb must never inherit the -s noun's vowel).
-    const want = spellingSense(grapheme);
+    const want = spellingSense(grapheme, isHet);
     let ipa;
     if (want) {
       const match = readings.find((r) => readingSense(r, isAtePair) === want);
