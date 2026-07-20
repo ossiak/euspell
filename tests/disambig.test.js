@@ -55,6 +55,44 @@ test('two-way semantic words (tear, wound)', () => {
   assert.equal(conv([['a', 'AT1'], ['ragged', 'JJ'], ['tear', ''], ['in', 'II'], ['the', 'AT'], ['cloth', 'NN1']], 'tear'), 'taer'); // rip
 });
 
+// --- Every rule's declared spellings must still exist in the lexicon. --------
+// route() maps a rule's return value back through spellings.indexOf() and falls
+// back to index 0 on -1, so a rule that returns a spelling the lexicon no longer
+// has fails SILENTLY — the branch just stops being reachable. barred.js sat that
+// way after 3b861e7 renamed its spelling ('barrd' -> 'bardd'), and nothing
+// caught it: 23 of the 70 semantic words have no corpus file, so the smoke test
+// below never ran for them.
+//
+// Every rule documents its outputs as a @returns union, so that contract is what
+// gets pinned. Checking the JSDoc rather than executing the rule covers branches
+// no test input happens to reach.
+test('every semantic rule\'s declared @returns spellings exist in the lexicon', () => {
+  const ruleDir = new URL('../src/disambig/semantic/', import.meta.url);
+  const bad = [];
+  for (const file of fs.readdirSync(ruleDir)) {
+    if (!file.endsWith('.js') || file === 'index.js') continue;
+    const word = file.replace(/\.js$/, '');
+    const entry = lexicon.get(word);
+    if (!entry || !entry.spellings.length) continue; // shared helper, not a word rule
+    const src = fs.readFileSync(new URL(file, ruleDir), 'utf8');
+    const declared = new Set();
+    for (const m of src.matchAll(/@returns\s*\{([^}]*)\}/g)) {
+      for (const part of m[1].split('|')) {
+        const s = part.trim().replace(/^['"]|['"]$/g, '');
+        if (s && s !== 'null' && s !== 'string' && !/[A-Z[\]<>]/.test(s)) declared.add(s);
+      }
+    }
+    if (!declared.size) continue;
+    for (const d of declared) {
+      if (!entry.spellings.includes(d)) bad.push(`${file}: declares '${d}', lexicon has {${entry.spellings.join('|')}}`);
+    }
+    for (const s of entry.spellings) {
+      if (!declared.has(s)) bad.push(`${file}: lexicon has '${s}', never declared — unreachable`);
+    }
+  }
+  assert.deepEqual(bad, []);
+});
+
 // --- Corpus smoke: every tagged token must resolve to a valid euspelling. ---
 const dir = new URL('../disambig/', import.meta.url);
 const corpora = fs.readdirSync(dir).filter((f) => f.endsWith('.txt'));
