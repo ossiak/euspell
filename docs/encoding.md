@@ -74,9 +74,16 @@ The regular cases: either nothing changes, or only an inflectional ending does.
 | `022` | `JJ\|VVD\|VVN` ending — **two spellings** | 5 | `blessed` → `blessd` / `blessed` |
 | `041` | doubling consonant before the ending | 3 | `reneging` → `renegging` |
 
-`011` is the single most characteristic rule in the reform: a `-s` pronounced
-/z/ becomes `-z`. `012` is what happens when that rule collides with a plural
-noun, which keeps its `-s` — the reason *the records* and *she recordz* diverge.
+`011` is the single most characteristic rule in the reform: the third-person
+singular verb ending becomes `-z`. It is a **grammatical** marker, not a
+phonetic one — `walks` → `wahkz` and `hits` → `hitz` take the `-z` even though
+the sibilant is a plain /s/. What it marks is the verb, and `012` is what
+happens when the same surface form is also a plural noun, which keeps its `-s`:
+the reason *the records* and *she recordz* diverge, and *hits* the noun sits
+beside *hitz* the verb.
+
+This matters when reading the generated pronunciation lexicon: a `-z` spelling
+frequently carries an /s/-final IPA, and that is correct rather than a defect.
 
 ### `1xx` — the stem is respelled
 
