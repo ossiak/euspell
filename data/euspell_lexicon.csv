@@ -15384,7 +15384,8 @@ bassi,NN2,000,[]
 bassinet,NN1,000,[]
 bassinets,NN2,000,[]
 bassinette,NN1,101,bassinett
-bassist,NN1,101,bassinetts
+bassinettes,NN2,101,bassinetts
+bassist,NN1,000,[]
 bassists,NN2,000,[]
 bassly,RR,101,bassely
 bassness,NN,101,basseness
@@ -93449,7 +93450,6 @@ ipomea,NN|NN1|NP,000,[]
 ipomeas,NN2,000,[]
 ipomoea,NN|NN1|NP,601,ipomea
 ipomoeas,NN2,601,ipomeas
-ipomoeeae,NP,601,ipomeeae
 iproniazid,JJ|NN1,000,[]
 iproniazids,NN,000,[]
 ipsilateral,JJ,000,[]
