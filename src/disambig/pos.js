@@ -337,7 +337,13 @@ const SUBJECT_HEAD = [
  */
 function endsIsolatedNounPhrase(tokens, idx) {
   if (idx + 1 < tokens.length && !crossesSentenceBreak(tokens, idx, idx + 1)) return false;
-  for (let k = idx - 1; k >= 0 && !crossesSentenceBreak(tokens, k, idx); k--) {
+  // Walk back to the start of this sentence. Testing breakAfter directly is
+  // equivalent to crossesSentenceBreak(k, idx) here — every slot between k and
+  // idx was cleared on an earlier step, so tokens[k] is the only new one — and
+  // it keeps the walk linear. The span form re-scanned k..idx every step, which
+  // made a long unbroken block (a list or table flattened into one text node)
+  // quadratic: 3,200 tokens cost 10ms against 1ms for 800.
+  for (let k = idx - 1; k >= 0 && !tokens[k]?.breakAfter; k--) {
     if (anyExact(tokens[k], SUBJECT_HEAD) || anyPrefix(tokens[k], ['NP'])) return false;
   }
   return true;
@@ -402,16 +408,87 @@ const SUBJECT_PRON = ['PPHS1', 'PPH1', 'PPHS2', 'PPIS1', 'PPIS2', 'PPY'];
  * @param {number} idx
  * @returns {boolean}
  */
+/**
+ * True when `token` can head a noun phrase — a noun reading that is not also an
+ * adverb or particle reading.
+ *
+ * The exclusion is the point. English post-verbal particles and adverbs almost
+ * all carry a noun candidate as well ("fast" JJ|NN1|RR|VV0, "over" II|JJ|NN1|RG|
+ * RP|VV0, and likewise down, well, home, back, hard), so a bare noun-candidate
+ * test finds a "noun" after the participle in "the horse's running fast" and
+ * calls the participle attributive — making the clitic a genitive. Requiring the
+ * word to be nominal AND not adverbial keeps the real attributive cases ("the
+ * author's published works", NN|VVZ; "today's featured article", NN1).
+ *
+ * @param {Token} token
+ * @returns {boolean}
+ */
+function isNounHead(token) {
+  return anyPrefixReal(token, ['NN', 'NP']) && !anyPrefixReal(token, ADVERB);
+}
+
+// Modifiers that can sit either ATTRIBUTIVELY before a noun (making the clitic a
+// genitive: "today's featured article", "the man's old car") or PREDICATIVELY
+// with nothing to modify (making it a verb: "the bus's arriving", "the man's
+// old"). Which one it is depends on whether a noun head follows.
+const AMBIGUOUS_MODIFIER = ['VVN', 'VVG', 'JJ', 'RR', 'RG'];
+
+// Categories that cannot open a noun phrase at all, so they cannot follow a
+// genitive — the clitic before them is a contracted is/has. Measured on the
+// held-out fifth of disambig/_corpus_clitic_s.txt: after a genitive, XX, DB,
+// PN1, VBN, VVGK, VDN, TO, DD* and APPGE occur ZERO times in 289,133 cases,
+// AT1 occurs 46 against 19,781 verbal, and II 34 against 6,824.
+// Split by how absolute the corpus evidence is, because the noun-head guard
+// below is itself fallible: function words pick up stray noun readings from the
+// lexicon ("not" is CSW33|NN|RA21|XX), and guarding on those suppresses a cue
+// that is never wrong.
+//
+// DECISIVE — zero genitives in 289,133, or close enough: DD*, DB, XX, PN1, TO,
+// APPGE, VBN, VVGK, VDN all literally never follow a genitive; AT1 does 46 times
+// against 19,781 verbal, AT 303 against 16,108.
+const NOT_NP_INITIAL_DECISIVE = [
+  'AT', 'DD', 'DB',         // a/the, this/that/which, all/both
+  'APPGE',                  // "the man's his own worst enemy"
+  'XX',                     // "the man's not here"
+  'PN1',                    // "the man's one of them"
+  'VB', 'VD', 'VVGK', 'TO', // "'s been", "'s done", "'s going to", "'s to blame"
+];
+// GUARDED — strongly verbal but not absolute, so a word that can head a noun
+// phrase keeps the genitive reading ("John's back" stays open, "the man's in the
+// car" does not).
+const NOT_NP_INITIAL_GUARDED = [
+  'PP',                     // "'s it", "'s he", "'s her friend"
+  ...PREPOSITION,           // II 6,824 verbal against 34 genitive
+];
+
 export function is_verbal_s(tokens, idx) {
-  const [, , w1b, , w1a, w2a] = contextWindow(tokens, idx);
+  const [, , w1b, , w1a, w2a, w3a] = contextWindow(tokens, idx);
   if (anyExact(w1b, SUBJECT_PRON)) return true;        // "he 's …" — contracted verb
-  // "'s" + participle: contracted is/has ("bus's arriving", "author's published a
-  // book") — unless the participle is attributive (a noun follows it), making the
-  // 's a genitive ("today's featured article", "author's published works").
-  // anyPrefixReal, not anyPrefix: both tests RETURN, so one spurious ditto match
+
+  // A modifier after the clitic is attributive — hence genitive — only when a
+  // noun head follows it; otherwise it is a predicate and the clitic is a verb.
+  // "the author's published works" vs "the author's published a book"; "the
+  // man's old car" vs "the man's old".
+  //
+  // anyPrefixReal, not anyPrefix: both arms RETURN, so one spurious ditto match
   // flips the answer. "a" carries NN132, which made "the author's published a
   // book" read as attributive — hence genitive — instead of "has published".
-  if (anyPrefixReal(w1a, ['VVN', 'VVG'])) return !anyPrefixReal(w2a, ['NN', 'NP']);
+  // The head can sit two slots out when modifiers stack ("the man's really nice
+  // car", "today's widely featured article"), so scan the modifier run rather
+  // than testing one slot.
+  if (anyPrefixReal(w1a, AMBIGUOUS_MODIFIER)) {
+    for (const w of [w2a, w3a]) {
+      if (isNounHead(w)) return false;                  // attributive → genitive
+      if (!anyPrefixReal(w, AMBIGUOUS_MODIFIER)) break; // run ended without a head
+    }
+    return true;                                        // predicative → verb
+  }
+
+  // Nothing that can head or open a noun phrase follows, so there is no genitive
+  // reading available: the clitic is a contracted verb.
+  if (anyPrefixReal(w1a, NOT_NP_INITIAL_DECISIVE)) return true;
+  if (!isNounHead(w1a) && anyPrefixReal(w1a, NOT_NP_INITIAL_GUARDED)) return true;
+
   return false;                                         // default: genitive
 }
 
@@ -447,7 +524,7 @@ const DEGREE_ADVERB = ['RG', 'RGR', 'RGT', 'RGQ'];
  * @returns {number}
  */
 export function vv0Score(tokens, idx) {
-  const [, w2b, w1b, , w1a] = contextWindow(tokens, idx);
+  const [, w2b, w1b, , w1a, w2a] = contextWindow(tokens, idx);
   // Look through a single intervening adverb to the real pre-modifier
   // ("they carefully separate", "the largely separate systems"). Only a word
   // that can EXCLUSIVELY be an adverb is skipped (isPureAdverb) — the same
@@ -476,8 +553,14 @@ export function vv0Score(tokens, idx) {
   if (anyExact(w1b, DEGREE_ADVERB)) vote -= 3;      // "very deliberate", "more appropriate"
 
   // --- Post-modifier: a following object NP argues for the verb ----------
-  if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2; // "separate the / his X"
-  if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 2;    // "separate them"
+  // Look through an intervening adverb here too ("separate carefully the eggs").
+  // Without this the object cue is simply lost, and because it is the ONLY verb
+  // cue in a frame with no subject pronoun the vote lands on exactly 0 — the one
+  // value is_verb_VV0 treats specially, handing the decision to the per-word
+  // default. So an adverb did not weaken the reading, it silently reversed it.
+  const right = isPureAdverb(w1a) ? w2a : w1a;
+  if (anyExact(right, DETERMINER) || anyPrefix(right, ['APPGE'])) vote += 2; // "separate the / his X"
+  if (anyPrefix(right, OBJECT_PRONOUN)) vote += 2;  // "separate them"
 
   return vote;
 }
@@ -512,27 +595,10 @@ export function is_verb_VV0(tokens, idx) {
   return VV0_VERB_DEFAULT.has((tokens[idx]?.word ?? '').toLowerCase());
 }
 
-/**
- * Returns true if the token at `idx` is functioning as a past-tense verb (VVD).
- * @param {Token[]} tokens
- * @param {number} idx
- * @returns {boolean}
- */
-export function is_past_tense(tokens, idx) {
-  // TODO: implement
-  return false;
-}
-
-/**
- * Returns true if the token at `idx` is functioning as a past participle (VVN).
- * @param {Token[]} tokens
- * @param {number} idx
- * @returns {boolean}
- */
-export function is_past_participle(tokens, idx) {
-  // TODO: implement
-  return false;
-}
+// Removed: is_past_tense and is_past_participle, unimplemented stubs that
+// returned false and had no callers. The JJ|VVD|VVN split (encoding 022:
+// blessed, dogged, jagged, learned) is decided by the per-word semantic rules in
+// src/disambig/semantic/ instead, which is where a real implementation would go.
 
 // Determiners/pre-modifiers that force a PLURAL head noun.
 const PLURAL_DET = ['DD2', 'DA2', 'DB2']; // these/those, many/several/few, both
@@ -584,13 +650,4 @@ export function is_plural_noun(tokens, idx) {
   return vote > 0;
 }
 
-/**
- * Returns true if the token at `idx` is functioning as an adjective (JJ).
- * @param {Token[]} tokens
- * @param {number} idx
- * @returns {boolean}
- */
-export function is_adjective(tokens, idx) {
-  // TODO: implement
-  return false;
-}
+// Removed: is_adjective, likewise an unimplemented stub with no callers.

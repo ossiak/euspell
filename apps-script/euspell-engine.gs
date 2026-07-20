@@ -370,12 +370,37 @@ var Euspell = (function () {
   }
 
   // --- POS predicates -------------------------------------------------------
+  // Modifiers that can sit attributively before a noun (genitive) or
+  // predicatively with nothing to modify (verb).
+  var AMBIGUOUS_MODIFIER = ['VVN', 'VVG', 'JJ', 'RR', 'RG'];
+  // Categories that cannot open a noun phrase, so cannot follow a genitive.
+  // Measured on the CLAWS clitic corpus: after a genitive, DD*, DB, XX, PN1, TO
+  // and APPGE occur ZERO times in 289,133 held-out cases.
+  var NOT_NP_INITIAL_DECISIVE = ['AT', 'DD', 'DB', 'APPGE', 'XX', 'PN1', 'VB', 'VD', 'VVGK', 'TO'];
+  var NOT_NP_INITIAL_GUARDED = ['PP'].concat(PREPOSITION);
+  // A noun reading that is not also an adverb/particle reading. English
+  // particles nearly all carry a noun candidate ("fast" JJ|NN1|RR|VV0), so a
+  // bare noun test read "the horse's running fast" as a genitive.
+  function isNounHead(token) {
+    return anyPrefixReal(token, ['NN', 'NP']) && !anyPrefixReal(token, ADVERB);
+  }
   function isVerbalS(tokens, idx) {
     var win = contextWindow(tokens, idx);
-    var w1b = win[2], w1a = win[4], w2a = win[5];
+    var w1b = win[2], w1a = win[4], rest = [win[5], win[6]];
     if (anyExact(w1b, SUBJECT_PRON)) return true;
-    // Ditto-aware: both tests return, so one spurious match flips the answer.
-    if (anyPrefixReal(w1a, ['VVN', 'VVG'])) return !anyPrefixReal(w2a, ['NN', 'NP']);
+    // A modifier after the clitic is attributive - hence genitive - only when a
+    // noun head follows; otherwise it is a predicate and the clitic is a verb.
+    // Ditto-aware: both arms return, so one spurious match flips the answer.
+    if (anyPrefixReal(w1a, AMBIGUOUS_MODIFIER)) {
+      for (var i = 0; i < rest.length; i++) {
+        if (isNounHead(rest[i])) return false;
+        if (!anyPrefixReal(rest[i], AMBIGUOUS_MODIFIER)) break;
+      }
+      return true;
+    }
+    // Nothing that can open a noun phrase follows, so no genitive reading exists.
+    if (anyPrefixReal(w1a, NOT_NP_INITIAL_DECISIVE)) return true;
+    if (!isNounHead(w1a) && anyPrefixReal(w1a, NOT_NP_INITIAL_GUARDED)) return true;
     return false;
   }
   // Signed context vote for the POS-heteronym decision (> 0 => verb). Only a
@@ -385,7 +410,7 @@ var Euspell = (function () {
   // prefix test skipped them and discarded the decisive noun cue.
   function vv0Score(tokens, idx) {
     var win = contextWindow(tokens, idx);
-    var w2b = win[1], w1b = win[2], w1a = win[4];
+    var w2b = win[1], w1b = win[2], w1a = win[4], w2a = win[5];
     var left = isPureAdverb(w1b) ? w2b : w1b;
     var vote = 0;
     if (anyExact(left, ['TO'])) vote += 4;
@@ -399,8 +424,13 @@ var Euspell = (function () {
     if (anyPrefix(left, PREPOSITION)) vote -= 3;
     if (anyPrefix(left, ['MC', 'MD', 'MF'])) vote -= 2;
     if (anyExact(w1b, DEGREE_ADVERB)) vote -= 3;
-    if (anyExact(w1a, DETERMINER) || anyPrefix(w1a, ['APPGE'])) vote += 2;
-    if (anyPrefix(w1a, OBJECT_PRONOUN)) vote += 2;
+    // Look through an intervening adverb on the object side too ("separate
+    // carefully the eggs"): without it the object cue is lost and the vote lands
+    // on exactly 0, the value that defers to the per-word default, so an adverb
+    // reversed the reading rather than weakening it.
+    var right = isPureAdverb(w1a) ? w2a : w1a;
+    if (anyExact(right, DETERMINER) || anyPrefix(right, ['APPGE'])) vote += 2;
+    if (anyPrefix(right, OBJECT_PRONOUN)) vote += 2;
     return vote;
   }
   // Threshold the vote; on a ZERO vote defer to the word's own base rate. The
