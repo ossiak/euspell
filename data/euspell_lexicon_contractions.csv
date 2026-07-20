@@ -82,7 +82,7 @@ ol',JJ,000,[]
 ought've,VM VH0,101,oht'v
 oughtn't've,VM XX VH0,101,ohtn't'v
 oughtn't,VM XX,101,ohtn't
-shan't,VM XX,101,shan't
+shan't,VM XX,000,[]
 she'd,PPHS1 VHD|PPHS1 VM,000,[]
 she'll,PPHS1 VM,000,[]
 she's,PPHS1 VBZ|PPHS1 VHZ,011,she'z
