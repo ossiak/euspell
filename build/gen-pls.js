@@ -39,28 +39,57 @@ for (const raw of readFileSync(LEXICON, 'utf8').split('\n')) {
   // IPA source, so nothing leaked here, but the guard belongs with the others.
   if (+c[2] % 10 === 0) continue;
   if (!sp || sp === '[]') continue;
-  spellings.set(c[0], sp.split('|'));
+  spellings.set(c[0], { list: sp.split('|'), enc: +c[2] });
 }
 
 // Most CSV rows are "word,IPA", but homographs carry several pronunciations
 // with sense labels (read,riːd,(present),or,rɛd,(past)), some rows use "-" as a
 // placeholder (stopgapped,-,ˈstɑpˌɡæpt), and a few hold stray editorial tokens
 // (sermonizes,alignment,ˈsɜːrməˌlaɪzəz / synthesises,...,alignment,with,GA,...).
-// Extract the pronunciation field(s) per row:
-//   1. drop fields that are empty, "-", "or", or a parenthetical sense label;
-//   2. if any survivor carries a non-ASCII char (stress/length mark or phonetic
-//      vowel) it is a real IPA -- prefer those, which also discards the stray
-//      ASCII editorial words that only ever sit beside a diacritic-bearing IPA;
-//   3. otherwise the row is a pure-ASCII IPA ("bjut", "strikt") -- the survivor
-//      is the IPA. (Pure-ASCII rows are only "word,IPA" or "word,-,IPA".)
-// The FIRST surviving reading is attached to every new spelling; homographs
-// with a second reading (records, read, tears, ...) are reported for hand-tuning.
-const ipasOf = (fields) => {
-  const kept = fields.slice(1).map((f) => f.trim())
-    .filter((f) => f && f !== '-' && f !== 'or' && !/[()]/.test(f));
-  const phon = kept.filter((f) => /[^\x00-\x7f]/.test(f));
-  return phon.length ? phon : kept;
-};
+//
+// Parse the row into [{ ipa, sense }] pairs. An IPA is a field carrying a
+// non-ASCII char (a stress/length mark or phonetic vowel), which also discards
+// stray ASCII editorial words. A "(noun)" / "(verb)" label immediately after an
+// IPA tags its sense; other parentheticals (present/past, sense glosses) are
+// dropped. Pure-ASCII rows ("bjut", "strikt") are handled by the ASCII branch.
+const NOUN_LABEL = new Set(['(noun)', '(nounadj)']);
+const VERB_LABEL = new Set(['(verb)']);
+function readingsOf(fields) {
+  const out = [];
+  for (const raw of fields.slice(1)) {
+    const f = raw.trim();
+    if (!f || f === '-' || f === 'or') continue;
+    if (/^\(.*\)$/.test(f)) {
+      if (out.length && NOUN_LABEL.has(f)) out[out.length - 1].sense = 'noun';
+      else if (out.length && VERB_LABEL.has(f)) out[out.length - 1].sense = 'verb';
+      continue; // a bare sense gloss, no IPA of its own
+    }
+    if (/[^\x00-\x7f]/.test(f)) out.push({ ipa: f, sense: null });
+  }
+  if (out.length) return out;
+  // Pure-ASCII fallback: the row is "word,IPA" or "word,-,IPA" with an ASCII IPA.
+  const ascii = fields.slice(1).map((x) => x.trim())
+    .filter((x) => x && x !== '-' && x !== 'or' && !/[()]/.test(x));
+  return ascii.map((ipa) => ({ ipa, sense: null }));
+}
+
+// A euspelling's grammatical sense from its ending: -z is the 3rd-sg verb, -s
+// the plural noun (see the encoding doc). Only these carry a noun/verb contrast.
+const spellingSense = (s) => (s.endsWith('z') ? 'verb' : s.endsWith('s') ? 'noun' : null);
+
+// A reading's sense, when it can be told. A "(noun)"/"(verb)" label is
+// authoritative. Failing that, for an "-ate" pair the vowel carries it: the verb
+// is /…eɪt(s)/ (advocate /-eɪt/), the noun the reduced /…ɪt(s)|…ət(s)/
+// (advocate /-ət/). This is the ONE regular alternation safe to read off the
+// IPA; every other pair (tools/toolz, /tuːlz/ either way) returns null so the
+// reading is used for both spellings rather than guessed at.
+function readingSense(reading, isAtePair) {
+  if (reading.sense) return reading.sense;
+  if (!isAtePair) return null;
+  if (/eɪts?$/.test(reading.ipa)) return 'verb';
+  if (/[ɪəiʊ]ts?$/.test(reading.ipa)) return 'noun';
+  return null;
+}
 
 // Walk the changed-words list. For each traditional word, look up its
 // euspellings and emit a lexeme for each one that differs from the headword.
@@ -70,26 +99,53 @@ let missing = 0;
 let noIpa = 0;
 let conflicts = 0;
 let primary = 0;
+let senseGaps = 0;
+const senseGapList = [];
 for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const fields = raw.replace(/\r$/, '').split(',');
   const word = fields[0];
   if (!word || word === 'Word') continue; // blank / header guard
-  const ipas = ipasOf(fields);
-  if (!ipas.length) { noIpa++; continue; }
-  if (ipas.length > 1) multiIpa.push({ word, ipas });
-  const ipa = ipas[0]; // primary reading
-  const sp = spellings.get(word) || spellings.get(word.toLowerCase());
-  if (!sp) { missing++; continue; }
+  const readings = readingsOf(fields);
+  if (!readings.length) { noIpa++; continue; }
+  if (readings.length > 1) multiIpa.push({ word, ipas: readings.map((r) => r.ipa) });
+  const entry = spellings.get(word) || spellings.get(word.toLowerCase());
+  if (!entry) { missing++; continue; }
   // New spellings only, and never a "primary" word: a grapheme that is itself a
   // lexicon headword (e.g. "programs", the standard form, from British
   // "programmes") is an existing word, not a euspell reform, so it needs no
   // pronunciation entry. Only the genuine novel spelling (e.g. "programz") is kept.
-  const news = sp.filter((s) => {
+  const news = entry.list.filter((s) => {
     if (s === word) return false;
     if (headwords.has(s)) { primary++; return false; }
     return true;
   });
+
+  // Does this word emit a noun/verb pair whose stem is the "-ate" stress
+  // alternation, so the two spellings are genuinely different pronunciations
+  // (graduats /-ɪts/ vs graduatez /-eɪts/)? Then a single reading fits only one.
+  const isNounVerbPair = news.length === 2
+    && news.some((s) => s.endsWith('z')) && news.some((s) => s.endsWith('s'));
+  const isAtePair = isNounVerbPair && /ates?$/.test(word);
+
   for (const grapheme of news) {
+    // Pick the reading whose sense matches this spelling. A spelling with a
+    // definite sense takes only a reading of that sense; if the sole reading is
+    // the OTHER sense, the spelling gets no entry — a gap beats a wrong
+    // pronunciation (the -z verb must never inherit the -s noun's vowel).
+    const want = spellingSense(grapheme);
+    let ipa;
+    if (want) {
+      const match = readings.find((r) => readingSense(r, isAtePair) === want);
+      if (match) ipa = match.ipa;
+      else if (readings.length === 1 && readingSense(readings[0], isAtePair) && readingSense(readings[0], isAtePair) !== want) {
+        senseGaps++;
+        senseGapList.push(`${grapheme} (${want}) — only reading is the ${readingSense(readings[0], isAtePair)} of ${word}: ${readings[0].ipa}`);
+        continue; // leave it for a hand-added second reading
+      } else ipa = readings[0].ipa; // sense undeterminable → the primary reading
+    } else {
+      ipa = readings[0].ipa;
+    }
+
     const prev = entries.get(grapheme);
     if (prev) {
       if (prev.ipa !== ipa) {
@@ -126,6 +182,11 @@ ${body}
 
 writeFileSync(OUT, pls, 'utf8');
 console.log(`[gen-pls] wrote ${OUT} (${entries.size} lexemes)`);
-console.log(`[gen-pls]   ${multiIpa.length} words have multiple readings (primary used; tune by hand)`);
+console.log(`[gen-pls]   ${multiIpa.length} words have multiple readings (routed by sense where labelled/-ate)`);
 console.log(`[gen-pls]   ${primary} primary-word graphemes dropped (grapheme is a lexicon headword)`);
 console.log(`[gen-pls]   ${missing} CSV words absent from lexicon; ${noIpa} rows with no IPA; ${conflicts} grapheme conflicts`);
+if (senseGaps) {
+  console.log(`[gen-pls]   ${senseGaps} noun/verb spellings left unwritten (source has only the other sense — add the second reading):`);
+  for (const g of senseGapList.slice(0, 8)) console.log(`[gen-pls]     ${g}`);
+  if (senseGapList.length > 8) console.log(`[gen-pls]     … and ${senseGapList.length - 8} more`);
+}
