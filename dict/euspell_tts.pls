@@ -3980,6 +3980,13 @@
   <lexeme><grapheme>carvd</grapheme><phoneme>kɑːrvd</phoneme></lexeme> <!-- carved -->
   <lexeme><grapheme>carvz</grapheme><phoneme>kɑːrvz</phoneme></lexeme> <!-- carves -->
   <lexeme><grapheme>cascadez</grapheme><phoneme>kæˈskeɪdz</phoneme></lexeme> <!-- cascades -->
+  <lexeme><grapheme>casch</grapheme><phoneme>kæʃ</phoneme></lexeme> <!-- cache -->
+  <lexeme><grapheme>caschd</grapheme><phoneme>kæʃt</phoneme></lexeme> <!-- cached -->
+  <lexeme><grapheme>casches</grapheme><phoneme>ˈkæʃɪz</phoneme></lexeme> <!-- caches -->
+  <lexeme><grapheme>caschez</grapheme><phoneme>ˈkæʃɪz</phoneme></lexeme> <!-- caches -->
+  <lexeme><grapheme>casching</grapheme><phoneme>ˈkæʃɪŋ</phoneme></lexeme> <!-- caching -->
+  <lexeme><grapheme>caschpot</grapheme><phoneme>ˈkæʃˌpɒt</phoneme></lexeme> <!-- cachepot -->
+  <lexeme><grapheme>caschpots</grapheme><phoneme>ˈkæʃˌpɒts</phoneme></lexeme> <!-- cachepots -->
   <lexeme><grapheme>caseatez</grapheme><phoneme>ˈkeɪsieɪts</phoneme></lexeme> <!-- caseates -->
   <lexeme><grapheme>casebaerer</grapheme><phoneme>ˈkeɪsˌbɛrər</phoneme></lexeme> <!-- casebearer -->
   <lexeme><grapheme>casebaerers</grapheme><phoneme>ˈkeɪsˌbɛrərz</phoneme></lexeme> <!-- casebearers -->
@@ -3989,16 +3996,12 @@
   <lexeme><grapheme>cashalot</grapheme><phoneme>ˈkæʃəˌlɒt</phoneme></lexeme> <!-- cachalot -->
   <lexeme><grapheme>cashalots</grapheme><phoneme>ˈkæʃəˌlɒts</phoneme></lexeme> <!-- cachalots -->
   <lexeme><grapheme>cashd</grapheme><phoneme>kæʃt</phoneme></lexeme> <!-- cashed -->
-  <lexeme><grapheme>cashe</grapheme><phoneme>kæʃ</phoneme></lexeme> <!-- cache -->
   <lexeme><grapheme>casheh</grapheme><phoneme>kæˈʃeɪ</phoneme></lexeme> <!-- cachet -->
   <lexeme><grapheme>cashehd</grapheme><phoneme>kæˈʃeɪɪd</phoneme></lexeme> <!-- cacheted -->
   <lexeme><grapheme>cashehing</grapheme><phoneme>kæˈʃeɪɪŋ</phoneme></lexeme> <!-- cacheting -->
   <lexeme><grapheme>cashehs</grapheme><phoneme>kæˈʃeɪz</phoneme></lexeme> <!-- cachets -->
   <lexeme><grapheme>cashehz</grapheme><phoneme>kæˈʃeɪz</phoneme></lexeme> <!-- cachets -->
-  <lexeme><grapheme>casheing</grapheme><phoneme>ˈkæʃɪŋ</phoneme></lexeme> <!-- caching -->
-  <lexeme><grapheme>cashepot</grapheme><phoneme>ˈkæʃˌpɒt</phoneme></lexeme> <!-- cachepot -->
-  <lexeme><grapheme>cashepots</grapheme><phoneme>ˈkæʃˌpɒts</phoneme></lexeme> <!-- cachepots -->
-  <lexeme><grapheme>cashez</grapheme><phoneme>ˈkæʃɪz</phoneme></lexeme> <!-- caches -->
+  <lexeme><grapheme>cashez</grapheme><phoneme>ˈkæʃɪz</phoneme></lexeme> <!-- cashes -->
   <lexeme><grapheme>cashierd</grapheme><phoneme>kæˈʃɪrd</phoneme></lexeme> <!-- cashiered -->
   <lexeme><grapheme>cashierz</grapheme><phoneme>kæˈʃɪrz</phoneme></lexeme> <!-- cashiers -->
   <lexeme><grapheme>caskd</grapheme><phoneme>kæskt</phoneme></lexeme> <!-- casked -->
@@ -4020,7 +4023,7 @@
   <lexeme><grapheme>catafalqs</grapheme><phoneme>ˈkætəˌfælks</phoneme></lexeme> <!-- catafalques -->
   <lexeme><grapheme>catalogd</grapheme><phoneme>ˈkætəˌlɒɡd</phoneme></lexeme> <!-- cataloged -->
   <lexeme><grapheme>catalogz</grapheme><phoneme>ˈkætəˌlɒɡz</phoneme></lexeme> <!-- catalogs -->
-  <lexeme><grapheme>catalyzez</grapheme><phoneme>ˈkætəlaɪzɪz</phoneme></lexeme> <!-- catalyzes -->
+  <lexeme><grapheme>catalyzez</grapheme><phoneme>ˈkætəlaɪzɪz</phoneme></lexeme> <!-- catalyses -->
   <lexeme><grapheme>catapultz</grapheme><phoneme>ˈkætəˌpʌlts</phoneme></lexeme> <!-- catapults -->
   <lexeme><grapheme>catcalld</grapheme><phoneme>ˈkætˌkɔːld</phoneme></lexeme> <!-- catcalled -->
   <lexeme><grapheme>catcallz</grapheme><phoneme>ˈkætˌkɔːlz</phoneme></lexeme> <!-- catcalls -->
@@ -4608,13 +4611,16 @@
   <lexeme><grapheme>cofavorit</grapheme><phoneme>ˌkoʊˈfeɪvərɪt</phoneme></lexeme> <!-- cofavorite -->
   <lexeme><grapheme>cofavorits</grapheme><phoneme>ˌkoʊˈfeɪvərɪts</phoneme></lexeme> <!-- cofavorites -->
   <lexeme><grapheme>cofeaturez</grapheme><phoneme>ˌkoʊˈfiːtʃərz</phoneme></lexeme> <!-- cofeatures -->
+  <lexeme><grapheme>coff</grapheme><phoneme>kɔːf</phoneme></lexeme> <!-- cough -->
   <lexeme><grapheme>coffd</grapheme><phoneme>kɔːft</phoneme></lexeme> <!-- coughed -->
   <lexeme><grapheme>cofferd</grapheme><phoneme>ˈkɒfərd</phoneme></lexeme> <!-- coffered -->
   <lexeme><grapheme>cofferz</grapheme><phoneme>ˈkɒfərz</phoneme></lexeme> <!-- coffers -->
   <lexeme><grapheme>coffind</grapheme><phoneme>ˈkɒfɪnd</phoneme></lexeme> <!-- coffined -->
+  <lexeme><grapheme>coffing</grapheme><phoneme>ˈkɔːfɪŋ</phoneme></lexeme> <!-- coughing -->
   <lexeme><grapheme>coffinz</grapheme><phoneme>ˈkɒfɪnz</phoneme></lexeme> <!-- coffins -->
   <lexeme><grapheme>cofflez</grapheme><phoneme>ˈkɒfəlz</phoneme></lexeme> <!-- coffles -->
-  <lexeme><grapheme>coffz</grapheme><phoneme>kɒfs</phoneme></lexeme> <!-- coffs -->
+  <lexeme><grapheme>coffs</grapheme><phoneme>kɔːfs</phoneme></lexeme> <!-- coughs -->
+  <lexeme><grapheme>coffz</grapheme><phoneme>kɔːfs</phoneme></lexeme> <!-- coughs -->
   <lexeme><grapheme>cofinancez</grapheme><phoneme>ˌkoʊˈfaɪnænsəz</phoneme></lexeme> <!-- cofinances -->
   <lexeme><grapheme>cofoundz</grapheme><phoneme>koʊˈfaʊndz</phoneme></lexeme> <!-- cofounds -->
   <lexeme><grapheme>cogd</grapheme><phoneme>kɒɡd</phoneme></lexeme> <!-- cogged -->
@@ -5847,6 +5853,7 @@
   <lexeme><grapheme>crouqhing</grapheme><phoneme>ˈkraʊtʃɪŋ</phoneme></lexeme> <!-- crouching -->
   <lexeme><grapheme>crowbard</grapheme><phoneme>ˈkroʊˌbɑːrd</phoneme></lexeme> <!-- crowbarred -->
   <lexeme><grapheme>crowbarz</grapheme><phoneme>ˈkroʊˌbɑːrz</phoneme></lexeme> <!-- crowbars -->
+  <lexeme><grapheme>crowdd</grapheme><phoneme>kroʊd</phoneme></lexeme> <!-- crowed -->
   <lexeme><grapheme>crowstepd</grapheme><phoneme>ˈkroʊˌstɛpt</phoneme></lexeme> <!-- crowstepped -->
   <lexeme><grapheme>crowz</grapheme><phoneme>kroʊz</phoneme></lexeme> <!-- crows -->
   <lexeme><grapheme>cruciat</grapheme><phoneme>ˈkruːʃiˌeɪt</phoneme></lexeme> <!-- cruciate -->
@@ -10197,10 +10204,11 @@
   <lexeme><grapheme>flenqhez</grapheme><phoneme>ˈflɛntʃɪz</phoneme></lexeme> <!-- flenches -->
   <lexeme><grapheme>flenqhing</grapheme><phoneme>ˈflɛntʃɪŋ</phoneme></lexeme> <!-- flenching -->
   <lexeme><grapheme>flensez</grapheme><phoneme>ˈflɛnsɪz</phoneme></lexeme> <!-- flenses -->
+  <lexeme><grapheme>flesch</grapheme><phoneme>flɛʃ</phoneme></lexeme> <!-- fleche -->
+  <lexeme><grapheme>flesches</grapheme><phoneme>ˈflɛʃɪz</phoneme></lexeme> <!-- fleches -->
+  <lexeme><grapheme>fleschett</grapheme><phoneme>flɛˈʃɛt</phoneme></lexeme> <!-- flechette -->
+  <lexeme><grapheme>fleschetts</grapheme><phoneme>flɛˈʃɛts</phoneme></lexeme> <!-- flechettes -->
   <lexeme><grapheme>fleshd</grapheme><phoneme>flɛʃt</phoneme></lexeme> <!-- fleshed -->
-  <lexeme><grapheme>fleshe</grapheme><phoneme>flɛʃ</phoneme></lexeme> <!-- fleche -->
-  <lexeme><grapheme>fleshett</grapheme><phoneme>flɛˈʃɛt</phoneme></lexeme> <!-- flechette -->
-  <lexeme><grapheme>fleshetts</grapheme><phoneme>flɛˈʃɛts</phoneme></lexeme> <!-- flechettes -->
   <lexeme><grapheme>fleshez</grapheme><phoneme>ˈflɛʃɪz</phoneme></lexeme> <!-- fleshes -->
   <lexeme><grapheme>fletchd</grapheme><phoneme>flɛtʃt</phoneme></lexeme> <!-- fletched -->
   <lexeme><grapheme>fletchez</grapheme><phoneme>ˈflɛtʃɪz</phoneme></lexeme> <!-- fletches -->
@@ -18624,7 +18632,7 @@
   <lexeme><grapheme>outcropz</grapheme><phoneme>ˈaʊtˌkrɑps</phoneme></lexeme> <!-- outcrops -->
   <lexeme><grapheme>outcrossd</grapheme><phoneme>ˌaʊtˈkrɔst</phoneme></lexeme> <!-- outcrossed -->
   <lexeme><grapheme>outcrossez</grapheme><phoneme>ˌaʊtˈkrɔsɪz</phoneme></lexeme> <!-- outcrosses -->
-  <lexeme><grapheme>outcrowd</grapheme><phoneme>ˌaʊtˈkroʊd</phoneme></lexeme> <!-- outcrowed -->
+  <lexeme><grapheme>outcrowdd</grapheme><phoneme>ˌaʊtˈkroʊd</phoneme></lexeme> <!-- outcrowed -->
   <lexeme><grapheme>outcrowz</grapheme><phoneme>ˌaʊtˈkroʊz</phoneme></lexeme> <!-- outcrows -->
   <lexeme><grapheme>outcursez</grapheme><phoneme>ˌaʊtˈkɜrsɪz</phoneme></lexeme> <!-- outcurses -->
   <lexeme><grapheme>outcurv</grapheme><phoneme>ˌaʊtˈkɜrv</phoneme></lexeme> <!-- outcurve -->

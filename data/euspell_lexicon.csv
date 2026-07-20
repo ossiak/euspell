@@ -24126,14 +24126,14 @@ cacciatore,JJ,000,[]
 cachaemia,NN,601,cachemia
 cachalot,NN1,701,cashalot
 cachalots,NN2,701,cashalots
-cache,NN1|VV0,701,cashe
+cache,NN1|VV0,701,casch
 cachectic,JJ|NN1,000,[]
 cachectical,JJ,000,[]
-cached,JJ|VVD|VVN,701,cashed
+cached,JJ|VVD|VVN,121,caschd
 cachemia,NN,500,[]
-cachepot,NN1,701,cashepot
-cachepots,NN2,701,cashepots
-caches,NN2|VVZ,112,cashes|cashez
+cachepot,NN1,701,caschpot
+cachepots,NN2,701,caschpots
+caches,NN2|VVZ,112,casches|caschez
 cachet,NN1|VV0,701,casheh
 cacheted,VVD|VVN,721,cashehd
 cacheting,VVG,701,cashehing
@@ -24143,7 +24143,7 @@ cachexias,NN2,000,[]
 cachexic,JJ,000,[]
 cachexies,NN2,500,[]
 cachexy,NN|NN1,500,[]
-caching,JJ|NN|VVG,701,casheing
+caching,JJ|NN|VVG,701,casching
 cachinnate,VV0,000,[]
 cachinnated,VVD|VVN,000,[]
 cachinnates,VVZ,011,cachinnatez
@@ -27131,7 +27131,7 @@ catalyse,VV0,601,catalyze
 catalysed,JJ|VVD|VVN,601,catalyzed
 catalyser,NN1,601,catalyzer
 catalysers,NN2,601,catalyzers
-catalyses,NN2|VVZ,012,catalyses|catalyzes
+catalyses,NN2|VVZ,012,catalyses|catalyzez
 catalysing,JJ|VVG,601,catalyzing
 catalysis,NN1,000,[]
 catalyst,NN1,000,[]
@@ -33137,7 +33137,6 @@ cofeature,NN1|VV0,000,[]
 cofeatured,VVD|VVN,000,[]
 cofeatures,NN2|VVZ,012,cofeatures|cofeaturez
 cofeaturing,VVG,000,[]
-coff,VV0,000,[]
 coffea,NP,000,[]
 coffee,NN|NN1,000,[]
 coffeecake,NN1,000,[]
@@ -33158,7 +33157,6 @@ coffers,NN2|VVZ,012,coffers|cofferz
 coffey,NP,000,[]
 coffin,NN1|VV0,000,[]
 coffined,JJ|VVD|VVN,021,coffind
-coffing,VVG,000,[]
 coffining,VVG,000,[]
 coffins,NN2|VVZ,012,coffins|coffinz
 coffle,NN1|VV0,000,[]
@@ -33167,7 +33165,6 @@ coffles,NN2|VVZ,012,coffles|cofflez
 coffling,VVG,000,[]
 coffret,NN1,000,[]
 coffrets,NN2,000,[]
-coffs,VVZ,011,coffz
 cofinance,VV0,000,[]
 cofinanced,VVD|VVN,000,[]
 cofinances,VVZ,011,cofinancez
@@ -40200,7 +40197,7 @@ crowdies,NN2,101,cruwdies
 crowding,JJ|NN|VVG,101,cruwding
 crowds,NN2|VVZ,112,cruwds|cruwdz
 crowdy,JJ,101,cruwdy
-crowed,VVD|VVN,021,crowd
+crowed,VVD|VVN,021,crowdd
 crower,NN1,000,[]
 crowers,NN2,000,[]
 crowfeet,NN2,000,[]
@@ -63638,8 +63635,8 @@ fibred,JJ,601,fiberd
 fibrefill,NN1,601,fiberfill
 fibrefills,NN2,601,fiberfills
 fibreglass,NN|NN1|VV0,601,fiberglass
-fibreglassed,NN1,601,fiberglassed
-fibreglasses,NN2|VVZ,012,fiberglasses|fiberglassez
+fibreglassed,NN1,121,fiberglassd
+fibreglasses,NN2|VVZ,112,fiberglasses|fiberglassez
 fibreglassing,NN|VVG,601,fiberglassing
 fibreless,JJ,601,fiberless
 fibres,NN2,601,fibers
@@ -65360,10 +65357,10 @@ flears,VVZ,511,flearz
 fleas,NN2,000,[]
 fleawort,NN1,000,[]
 fleaworts,NN2,000,[]
-fleche,NN1,701,fleshe
-fleches,NN2,701,fleshes
-flechette,NN1,701,fleshett
-flechettes,NN2,701,fleshetts
+fleche,NN1,701,flesch
+fleches,NN2,701,flesches
+flechette,NN1,701,fleschett
+flechettes,NN2,701,fleschetts
 fleck,NN1|VV0,000,[]
 flecked,JJ|VVD|VVN,021,fleckd
 flecker,NN1,000,[]
@@ -101980,9 +101977,9 @@ leucorrhea,NN|NN1,601,leukorrhea
 leucorrheal,JJ,601,leukorrheal
 leucorrheas,NN2,601,leukorrheas
 leucorrhinia,NP,000,[]
-leucorrhoea,NN|NN1,601,leukorrhoea
-leucorrhoeal,JJ,601,leukorrhoeal
-leucorrhoeas,NN2,601,leukorrhoeas
+leucorrhoea,NN|NN1,601,leukorrhea
+leucorrhoeal,JJ,601,leukorrheal
+leucorrhoeas,NN2,601,leukorrheas
 leucoryx,NN1|NN2,000,[]
 leucoscope,NN1,601,leukoscope
 leucoses,NN2,601,leukoses
@@ -114971,7 +114968,7 @@ mouldboard,NN1,601,moldboard
 mouldboards,NN2,601,moldboards
 moulded,JJ|VVD|VVN,601,molded
 moulder,NN1|VV0,601,molder
-mouldered,JJ|VVD|VVN,121,moldered
+mouldered,JJ|VVD|VVN,121,molderd
 mouldering,JJ|NN|VVG,601,moldering
 moulders,NN2|VVZ,012,molders|molderz
 mouldier,JJR,601,moldier
@@ -125632,7 +125629,7 @@ outcrosses,VVZ,011,outcrossez
 outcrossing,JJ|NN|NN1|VVG,000,[]
 outcrossings,NN2,000,[]
 outcrow,VV0,000,[]
-outcrowed,VVD|VVN,021,outcrowd
+outcrowed,VVD|VVN,021,outcrowdd
 outcrowing,VVG,000,[]
 outcrows,VVZ,011,outcrowz
 outcry,NN1|VV0,000,[]
@@ -157668,7 +157665,7 @@ rowel,NN1|VV0,101,ruwel
 roweled,JJ|VVD|VVN,121,ruweld
 roweling,VVG,101,ruweling
 rowelled,JJ|VVD|VVN,121,ruweld
-rowelling,VVG,131,roweling
+rowelling,VVG,131,ruweling
 rowels,NN2|VVZ,112,ruwels|ruwelz
 rowen,NN1,101,ruwen
 rowena,NP,000,[]
