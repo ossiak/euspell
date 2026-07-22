@@ -36,6 +36,38 @@
  * @returns {string} the text to measure and draw
  */
 export function padToFit(original, reformed) {
+  // A span is often a whole line, so the padding is decided WORD BY WORD. On the
+  // span as a whole it is not just imprecise but wrong: two words that each lose
+  // one letter make a span two letters shorter, which took the two-or-three rule
+  // and put a space at the FRONT of the line. A real page showed it —
+  //   "MacOS / Linux), immensely flexible, and easy to use and learn. … are"
+  // is one text item in which "learn"→"lern" and "are"→"ar" each drop one, and
+  // the line came out indented.
+  //
+  // Conversion never touches whitespace, so splitting both strings on runs of it
+  // yields matching arrays and each word can be paired with its own original.
+  const oParts = original.split(/(\s+)/);
+  const rParts = reformed.split(/(\s+)/);
+  const parts = oParts.length === rParts.length
+    ? rParts.map((part, i) => (/^\s*$/.test(part) ? part : padWord(oParts[i], part)))
+    : [padWord(original, reformed)]; // shape changed — fall back to the whole string
+  // Whatever the per-word rule decided, the span may not BEGIN with padding: a
+  // span starts at the left margin often enough that a leading space reads as an
+  // indented line. Only the first word can be affected, and only when it is two
+  // or three letters shorter — the case that pads on both sides. Its leading
+  // space is MOVED to the end rather than dropped, so the word still gets the
+  // same total slack and is fitted at the same scale; only the side changes.
+  const out = parts.join('');
+  return out.startsWith(' ') ? `${out.slice(1)} ` : out;
+}
+
+/**
+ * The padding rule for a single word.
+ * @param {string} original
+ * @param {string} reformed
+ * @returns {string}
+ */
+function padWord(original, reformed) {
   const drop = original.length - reformed.length;
   if (drop === 1) return `${reformed} `;
   if (drop === 2 || drop === 3) return ` ${reformed} `;
