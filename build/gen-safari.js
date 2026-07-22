@@ -39,11 +39,19 @@ const out = join(root, 'safari/Euspell Extension/Resources');
 // the service worker / popup / options pages import directly (not bundled), and
 // the popup/options/onboarding/viewer HTML + CSS + icons.
 const FILES = [
+  // Both icon states: the service worker swaps to the "-off" set when
+  // conversion is off. Omitting them fails silently — setIcon does nothing on a
+  // path it can't load — so the indicator would just never change.
   'icons/16.png', 'icons/48.png', 'icons/128.png',
+  'icons/16-off.png', 'icons/48-off.png', 'icons/128-off.png',
   'dist/content-bundle.js',
   'dist/pdf-viewer.js',
   'dist/lexicon.data',
   'src/lib/browser.js',
+  // The on/off toolbar-icon logic, imported by the service worker, popup and
+  // options page. Not bundled — those are loaded as raw ES modules — so it must
+  // be staged or every one of them throws on the missing import.
+  'src/lib/action-icon.js',
   'src/background/service-worker.js',
   'src/pdf/pdf-url.js', 'src/pdf/viewer.html', 'src/pdf/viewer.css',
   'src/popup/popup.html', 'src/popup/popup.js', 'src/popup/popup.css',
