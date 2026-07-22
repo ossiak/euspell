@@ -261,7 +261,15 @@ async function renderPage(pdf, n, dpr, wrap) {
   let spanIdx = 0;
   for (const it of textContent.items) {
     if (it.str === undefined) continue;
-    bySpan[spanIdx++] = { face: fontFace(page, it.fontName), width: it.width };
+    // The item's transform translation is the text origin, which in PDF is ON
+    // the baseline; pushing it through the viewport transform gives that
+    // baseline in the same CSS-px space this canvas draws in (ctx is scaled by
+    // dpr, so drawing coordinates are viewport units). This is the exact figure
+    // the page itself used, so a redrawn word sits on the same line as the
+    // glyphs around it.
+    const origin = [it.transform[4], it.transform[5]];
+    pdfjsLib.Util.applyTransform(origin, viewport.transform); // mutates in place
+    bySpan[spanIdx++] = { face: fontFace(page, it.fontName), width: it.width, baseline: origin[1] };
   }
 
   // Record each span's original text, laid-out box, and resolved font BEFORE
@@ -271,7 +279,8 @@ async function renderPage(pdf, n, dpr, wrap) {
   const spans = layer.textDivs;
   const originals = spans.map((s, i) => {
     const cs = getComputedStyle(s);
-    const info = bySpan[i] || { face: { weight: 'normal', style: 'normal', family: 'sans-serif' }, width: 0 };
+    const info = bySpan[i]
+      || { face: { weight: 'normal', style: 'normal', family: 'sans-serif' }, width: 0, baseline: null };
     // The extent the original glyphs occupy comes from the PDF's own advance
     // width, NOT from the span's offsetWidth. The span is laid out in the text
     // layer's font-family, which is a generic fallback whenever the page uses an
@@ -282,6 +291,7 @@ async function renderPage(pdf, n, dpr, wrap) {
     return {
       text: s.textContent,
       x: s.offsetLeft, y: s.offsetTop, w: info.width * scale, h: s.offsetHeight,
+      baseline: info.baseline,
       font: `${info.face.style} ${info.face.weight} ${cs.fontSize} ${info.face.family}`,
     };
   });
@@ -336,7 +346,14 @@ async function renderPage(pdf, n, dpr, wrap) {
     ctx.fillStyle = ink;
     ctx.font = o.font;
     const m = ctx.measureText(drawText);
-    const baseline = o.y + m.fontBoundingBoxAscent;
+    // Sit on the PDF's own baseline for this run. Deriving it instead from the
+    // span's top plus fontBoundingBoxAscent made the position depend on the FONT
+    // rather than the page: that ascent is a design metric of whichever face
+    // canvas resolves (often a generic fallback, since the page's embedded face
+    // is not what measureText is using), and where it disagrees with the ascent
+    // pdf.js used to place the span, every redrawn word lands a little off the
+    // line its untouched neighbours sit on.
+    const baseline = o.baseline ?? o.y + m.fontBoundingBoxAscent;
     ctx.save();
     ctx.translate(o.x, baseline);
     if (m.width > 0) ctx.scale(o.w / m.width, 1);
