@@ -56,8 +56,12 @@ import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
 import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
+import { padToFit } from './fit-text.js';
 import { sampleColors } from './sample-colors.js';
-import { assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect } from './host.js';
+import {
+  assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect,
+  conversionEnabled, onConversionChange,
+} from './host.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = assetURL('dist/pdfjs/pdf.worker.min.mjs');
 
@@ -197,6 +201,12 @@ function texGeneric(name) {
   return null;
 }
 
+// Whether pages render reformed. Seeded from the host before the first render
+// and updated live when the setting changes (see the wiring near the observers,
+// which re-renders the pages already on screen). Read at render time rather than
+// captured, so a page rasterized after a toggle uses the current answer.
+let converting = true;
+
 async function renderPage(pdf, n, dpr, wrap) {
   const t = phaseTimer(n);
   const page = await pdf.getPage(n);
@@ -251,7 +261,15 @@ async function renderPage(pdf, n, dpr, wrap) {
   let spanIdx = 0;
   for (const it of textContent.items) {
     if (it.str === undefined) continue;
-    bySpan[spanIdx++] = { face: fontFace(page, it.fontName), width: it.width };
+    // The item's transform translation is the text origin, which in PDF is ON
+    // the baseline; pushing it through the viewport transform gives that
+    // baseline in the same CSS-px space this canvas draws in (ctx is scaled by
+    // dpr, so drawing coordinates are viewport units). This is the exact figure
+    // the page itself used, so a redrawn word sits on the same line as the
+    // glyphs around it.
+    const origin = [it.transform[4], it.transform[5]];
+    pdfjsLib.Util.applyTransform(origin, viewport.transform); // mutates in place
+    bySpan[spanIdx++] = { face: fontFace(page, it.fontName), width: it.width, baseline: origin[1] };
   }
 
   // Record each span's original text, laid-out box, and resolved font BEFORE
@@ -261,7 +279,8 @@ async function renderPage(pdf, n, dpr, wrap) {
   const spans = layer.textDivs;
   const originals = spans.map((s, i) => {
     const cs = getComputedStyle(s);
-    const info = bySpan[i] || { face: { weight: 'normal', style: 'normal', family: 'sans-serif' }, width: 0 };
+    const info = bySpan[i]
+      || { face: { weight: 'normal', style: 'normal', family: 'sans-serif' }, width: 0, baseline: null };
     // The extent the original glyphs occupy comes from the PDF's own advance
     // width, NOT from the span's offsetWidth. The span is laid out in the text
     // layer's font-family, which is a generic fallback whenever the page uses an
@@ -272,9 +291,20 @@ async function renderPage(pdf, n, dpr, wrap) {
     return {
       text: s.textContent,
       x: s.offsetLeft, y: s.offsetTop, w: info.width * scale, h: s.offsetHeight,
+      baseline: info.baseline,
       font: `${info.face.style} ${info.face.weight} ${cs.fontSize} ${info.face.family}`,
     };
   });
+  // With conversion switched off the page is done: the text layer keeps the
+  // PDF's own words and the canvas keeps its own glyphs. Returning here also
+  // skips the full-page getImageData below, which is the expensive part of the
+  // reform and would otherwise be paid to repaint nothing.
+  if (!converting) {
+    t.done();
+    page.cleanup();
+    return;
+  }
+
   // Make this page's words looked-up-able before converting them. The extension
   // has one resident table and does this once; a mobile host with no resident
   // table fetches just this page's vocabulary. Must complete before convert(),
@@ -305,14 +335,9 @@ async function renderPage(pdf, n, dpr, wrap) {
     ctx.fillStyle = paper;
     ctx.fillRect(o.x - 1, o.y - 1, o.w + 2, o.h + 2);
 
-    // When the reform is a little shorter, pad it with spaces so it keeps near
-    // its natural proportions (the spaces take up the slack) instead of being
-    // stretched to fill the slot: one letter shorter gets a single leading space;
-    // two or three shorter get a leading and trailing space. Larger differences
-    // fall through to plain width-fitting.
-    const drop = o.text.length - text.length;
-    const drawText =
-      drop === 1 ? ` ${text}` : drop === 2 || drop === 3 ? ` ${text} ` : text;
+    // Pad a slightly shorter reform so it need not stretch to fill the slot —
+    // see padToFit for where the spaces go and why.
+    const drawText = padToFit(o.text, text);
 
     // Draw the reformed word in the original ink colour with the original font,
     // fitting it to the original word's box width. A shorter or longer reform then
@@ -321,7 +346,14 @@ async function renderPage(pdf, n, dpr, wrap) {
     ctx.fillStyle = ink;
     ctx.font = o.font;
     const m = ctx.measureText(drawText);
-    const baseline = o.y + m.fontBoundingBoxAscent;
+    // Sit on the PDF's own baseline for this run. Deriving it instead from the
+    // span's top plus fontBoundingBoxAscent made the position depend on the FONT
+    // rather than the page: that ascent is a design metric of whichever face
+    // canvas resolves (often a generic fallback, since the page's embedded face
+    // is not what measureText is using), and where it disagrees with the ascent
+    // pdf.js used to place the span, every redrawn word lands a little off the
+    // line its untouched neighbours sit on.
+    const baseline = o.baseline ?? o.y + m.fontBoundingBoxAscent;
     ctx.save();
     ctx.translate(o.x, baseline);
     if (m.width > 0) ctx.scale(o.w / m.width, 1);
@@ -359,7 +391,16 @@ async function main() {
   // "<base>.eu.pdf" (e.g. report.pdf → report.eu.pdf).
   document.title = `${name.replace(/\.pdf$/i, '')}.eu`;
   const filenameEl = document.getElementById('filename');
-  if (filenameEl) filenameEl.textContent = name;
+  if (filenameEl) {
+    filenameEl.textContent = name;
+    // The address bar shows this viewer's own chrome-extension:// URL, with the
+    // real one percent-encoded in ?file=, and it cannot show anything else: a
+    // redirect is the only way past the browser's built-in PDF plugin, and
+    // history.replaceState may not cross to another origin. So the document's
+    // actual URL is put where it can be read — hovering the filename, which is
+    // itself already truncated with an ellipsis when the name is long.
+    filenameEl.title = fileUrl;
+  }
   const originalEl = document.getElementById('original');
   if (originalEl) {
     originalEl.href = fileUrl;
@@ -401,6 +442,10 @@ async function main() {
   if (status) status.remove();
   const dpr = window.devicePixelRatio || 1;
 
+  // Settle the conversion state BEFORE any page renders, so a viewer opened
+  // while the switch is off never shows a reformed page and then correct itself.
+  converting = await conversionEnabled();
+
   // Lazy rendering: a placeholder per page (sized from page 1, corrected when
   // the page really renders), rasterized only as it approaches the viewport.
   // Rendering everything up front made a long PDF pay its whole rasterization
@@ -426,8 +471,14 @@ async function main() {
   const rendered = new WeakSet(); // holds a canvas right now
   const near = new WeakSet(); // inside the keep window (per evictIO, below)
 
+  // Printing needs every page on screen at once, which is exactly what the lazy
+  // renderer is built to avoid — so eviction is suspended for the duration and
+  // the keep window re-applied afterwards.
+  let printing = false;
+
   /** Back to an empty, still-correctly-sized placeholder. */
   function evict(wrap) {
+    if (printing) return;
     if (!rendered.has(wrap)) return;
     rendered.delete(wrap);
     // Keep the width/height renderPage corrected: an emptied page must still
@@ -507,6 +558,164 @@ async function main() {
     }
   }
   observe();
+
+  // The toolbar the browser's own PDF viewer would have shown. Redirecting the
+  // tab replaces that chrome wholesale, so the page readout and the download and
+  // print actions have to be provided here or they are simply lost. Each element
+  // is optional: an embedding host (Eupub) generates its own header without
+  // them, and owns those affordances itself.
+  setUpBar();
+
+  function setUpBar() {
+    // --- page readout -------------------------------------------------------
+    const counter = document.getElementById('pagecount');
+    if (counter) {
+      const update = () => {
+        // The page straddling the viewport's middle is the one being read —
+        // the same rule the nav channel reports to an embedding host.
+        const mid = window.scrollY + window.innerHeight / 2;
+        let i = wraps.findIndex((w) => w.offsetTop + w.offsetHeight > mid);
+        if (i < 0) i = wraps.length - 1;
+        counter.textContent = `${i + 1} of ${wraps.length}`;
+      };
+      counter.hidden = false;
+      update();
+      let timer = 0;
+      window.addEventListener(
+        'scroll',
+        () => {
+          clearTimeout(timer);
+          timer = setTimeout(update, 120);
+        },
+        { passive: true },
+      );
+    }
+
+    // --- download -----------------------------------------------------------
+    const downloadBtn = document.getElementById('download');
+    if (downloadBtn) {
+      downloadBtn.hidden = false;
+      downloadBtn.addEventListener('click', async () => {
+        // pdf.js already holds the file's bytes, so this neither refetches nor
+        // depends on the network. A blob URL is same-origin, which is what makes
+        // the download attribute work at all — pointed at the original
+        // cross-origin URL the browser ignores it and navigates instead, and the
+        // service worker would then redirect that navigation back into here.
+        //
+        // These are the ORIGINAL bytes: the reform is painted onto canvases at
+        // render time and was never written back into a PDF, so there is no
+        // reformed file to offer. The button says "original" for that reason.
+        downloadBtn.disabled = true;
+        try {
+          const data = await pdf.getData();
+          const url = URL.createObjectURL(new Blob([data], { type: 'application/pdf' }));
+          const a = document.createElement('a');
+          a.href = url;
+          // The ORIGINAL filename, deliberately without the ".eu" the tab title
+          // carries. That suffix marks euspell output — a Save-as-PDF from Print
+          // renders the reformed canvases and earns it — whereas these are the
+          // published bytes, unreformed. Naming them "report.eu.pdf" would
+          // promise a reform the file does not contain.
+          a.download = name;
+          // In the document, not detached: a programmatic click on an anchor
+          // that was never inserted is ignored by some engines.
+          a.style.display = 'none';
+          document.body.append(a);
+          a.click();
+          a.remove();
+          // Revoked on a timer, not immediately: the click starts the download
+          // asynchronously and a revoked URL would cancel it.
+          setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        } catch (e) {
+          console.warn('Euspell: could not prepare the download.', e);
+        } finally {
+          downloadBtn.disabled = false;
+        }
+      });
+    }
+
+    // --- print --------------------------------------------------------------
+    const printBtn = document.getElementById('print');
+
+    /**
+     * Rasterize every page, print, then let the keep window take over again.
+     *
+     * Pages are rendered only as they near the viewport, so printing without
+     * this emits blank sheets for everything off screen.
+     */
+    async function printAllPages() {
+      if (printing) return;
+      const label = printBtn?.textContent;
+      if (printBtn) {
+        printBtn.disabled = true;
+        printBtn.textContent = 'Preparing…';
+      }
+      printing = true;
+      try {
+        for (let n = 1; n <= wraps.length; n++) {
+          const wrap = wraps[n - 1];
+          if (rendered.has(wrap)) continue;
+          // Take it off the render observer first: rendering it here would
+          // otherwise leave it armed, and scrolling past it later would
+          // rasterize the same page a second time.
+          renderIO?.unobserve(wrap);
+          enqueueRender(wrap, n);
+        }
+        await queue; // the render queue is serial; this settles when all are done
+        window.print();
+      } finally {
+        printing = false;
+        if (printBtn) {
+          printBtn.disabled = false;
+          printBtn.textContent = label;
+        }
+        // Drop everything outside the keep window again — holding every page's
+        // canvas is precisely the memory cost lazy rendering exists to avoid.
+        for (const wrap of wraps) if (!near.has(wrap)) evict(wrap);
+      }
+    }
+
+    // Both bound only when the bar exists, i.e. in the standalone viewer. An
+    // embedding host (Eupub) strips the bar and owns its own chrome — taking its
+    // Ctrl+P and printing just this frame would be hijacking a key in someone
+    // else's window.
+    if (printBtn) {
+      printBtn.hidden = false;
+      printBtn.addEventListener('click', printAllPages);
+
+      // Ctrl/Cmd+P goes straight to the browser's print flow without touching
+      // the button, and `beforeprint` fires too late to help — it is
+      // synchronous, so there is no rasterizing the rest of the document before
+      // the dialog opens. Take the shortcut over instead and run the same
+      // prepare-then-print path, which is what it was meant to do.
+      //
+      // The browser's own menu (⋮ → Print) cannot be intercepted at all. For
+      // that route the print stylesheet drops pages that never rendered, so the
+      // output is short rather than padded with blank sheets.
+      window.addEventListener('keydown', (e) => {
+        if (e.key !== 'p' && e.key !== 'P') return;
+        if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return;
+        e.preventDefault();
+        printAllPages();
+      });
+    }
+  }
+
+  // "Convert pages" flipped while this PDF is open. A rendered page is a raster
+  // plus a text layer, both already committed to one spelling, so the only way
+  // to switch is to render again: evict every rendered page and let the
+  // observers re-render the ones on screen. evict() re-arms renderIO, and
+  // observing an element that is already intersecting fires the callback
+  // immediately, so visible pages come back at once while the rest stay
+  // placeholders until scrolled to.
+  //
+  // Evicting keeps each wrap's corrected width/height, so nothing below moves
+  // and the reading position holds.
+  onConversionChange((enabled) => {
+    if (enabled === converting) return;
+    converting = enabled;
+    for (const wrap of wraps) evict(wrap); // no-ops for pages not yet rendered
+  });
 
   // A host that fits pages to the screen (see host.mobile.js) changes scale when
   // the window does — a phone rotating is the real case. Every rendered canvas is

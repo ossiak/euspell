@@ -15,7 +15,8 @@
         <label class="row">
           <span>
             Convert pages
-            <small>Turn the whole extension on or off.</small>
+            <small>Turn the whole extension on or off. The toolbar icon shows
+              which it is: the normal mark while converting, inverted while off.</small>
           </span>
           <input type="checkbox" id="enabled" />
         </label>
@@ -29,17 +30,6 @@
           </span>
           <button type="button" id="grant" hidden>Grant access</button>
         </div>
-      </section>
-
-      <section>
-        <h2>Sites turned off</h2>
-        <p class="muted" id="empty">No sites turned off. Use the popup’s “On this
-          site” switch, or add one below.</p>
-        <ul id="sites"></ul>
-        <form id="addForm">
-          <input type="text" id="addInput" placeholder="example.com" autocomplete="off" />
-          <button type="submit">Add</button>
-        </form>
       </section>
 
       <p class="muted note">

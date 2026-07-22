@@ -107,6 +107,20 @@ export async function prepareLexicon(root) {
  * and generateViewerHtml drops the header carrying the "Open original" link. */
 export async function bypassNextRedirect(_url) {}
 
+// --- conversion switch -----------------------------------------------------
+// A WebView host has no extension storage and no "Convert pages" setting: this
+// viewer is only ever opened to read a PDF in euspell. Eupub's own euspell
+// toggle governs its EPUB chapters, and reloads the PDF frame when it changes,
+// so there is nothing to observe here.
+
+/** Always converting in a WebView host. @returns {Promise<boolean>} */
+export async function conversionEnabled() {
+  return true;
+}
+
+/** No setting to watch. @param {(enabled: boolean) => void} _cb */
+export function onConversionChange(_cb) {}
+
 // --- navigation channel ----------------------------------------------------
 // This viewer runs embedded in the Eupub reader (an iframe), which owns the
 // sidebar TOC, the status bar, and the saved reading position. viewer.js reports
