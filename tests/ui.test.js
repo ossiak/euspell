@@ -125,11 +125,15 @@ test('popup: offers a reload for a PDF the browser is rendering itself', async (
   assert.deepEqual(env.reloaded, [5], 'reloading re-navigates, which is what the worker redirects on');
 });
 
-test('popup: no reload offer once the PDF is already in our viewer', async () => {
+test('popup: our own PDF viewer is neither unconvertible nor in need of a reload', async () => {
+  // The viewer is a chrome-extension:// page, so a bare protocol test would call
+  // the one tab that is nothing BUT conversion "can't be converted" — and it
+  // follows the switch live, so the hint would be doubly wrong.
   const url = 'chrome-extension://abcdefgh/src/pdf/viewer.html?file=https%3A%2F%2Fx.test%2Fp.pdf';
   const env = makeEnv({ enabled: true }, { id: 5, url });
   await runScript('../src/popup/popup.js', env);
-  assert.equal(env.els.reloadRow.hidden, true);
+  assert.equal(env.els.reloadRow.hidden, true, 'already ours — nothing to hand over');
+  assert.equal(env.els.hint.textContent, '', 'and it certainly can be converted');
 });
 
 test('popup: no reload offer while conversion is off, or on a non-PDF', async () => {

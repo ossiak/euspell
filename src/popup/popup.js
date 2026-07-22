@@ -57,8 +57,14 @@ async function dictationStatus(tab) {
 
 /** True when the active tab is a page Euspell can convert at all. */
 function isConvertible(tab) {
+  const url = tab?.url ?? '';
+  // Our own PDF viewer is a chrome-extension:// page, so a bare protocol test
+  // calls it unconvertible — on the one tab that is nothing but conversion. It
+  // follows the switch live (see the host seam in src/pdf/host.js), so it must
+  // not carry the "can't be converted" hint.
+  if (url.startsWith(VIEWER_URL)) return true;
   try {
-    const u = new URL(tab.url);
+    const u = new URL(url);
     return u.protocol === 'http:' || u.protocol === 'https:' || u.protocol === 'file:';
   } catch {
     return false;
