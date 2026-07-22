@@ -79,8 +79,16 @@ function runWorker(env) {
   new Function(
     'browser', 'fetch',
     'isPdfUrl', 'isPdfContentType', 'isPdfDisposition', 'isAttachmentDisposition', 'looksLikePdfBytes',
+    'paintActionIcon', 'refreshActionIcon',
     src,
-  )(env.browser, env.fetchImpl, isPdfUrl, isPdfContentType, isPdfDisposition, isAttachmentDisposition, looksLikePdfBytes);
+  )(
+    env.browser, env.fetchImpl,
+    isPdfUrl, isPdfContentType, isPdfDisposition, isAttachmentDisposition, looksLikePdfBytes,
+    // Spies for the shared icon module (tested for real in action-icon.test.js):
+    // here we only care that the worker asks for the right state.
+    async (on) => { env.state.icons.push(on); },
+    async () => { env.state.icons.push((await env.browser.storage.sync.get('enabled')).enabled ?? true); },
+  );
 }
 
 const headerDetails = (url, headers, tabId = 1) => ({
@@ -179,35 +187,32 @@ test('bypass arming also covers the extensionless headers path', async () => {
 
 const settle = () => new Promise((r) => setTimeout(r, 0));
 
-test('the toolbar icon is painted from the setting on wake-up', async () => {
+test('the worker paints the icon from the setting on wake-up', async () => {
   const on = makeEnv({ enabled: true });
   runWorker(on);
   await settle();
-  assert.equal(on.state.icons.at(-1)[16], 'icons/16.png', 'converting → the normal mark');
+  assert.equal(on.state.icons.at(-1), true);
 
   const off = makeEnv({ enabled: false });
   runWorker(off);
   await settle();
-  assert.equal(off.state.icons.at(-1)[16], 'icons/16-off.png', 'off → the inverted mark');
-  assert.match(off.state.titles.at(-1), /off/i);
+  assert.equal(off.state.icons.at(-1), false);
 });
 
-test('flipping the setting repaints the icon', async () => {
+test('a setting change from any surface repaints the icon', async () => {
+  // This is the path that serves the options page and other synced devices; the
+  // popup paints for itself so its feedback never waits on this worker waking.
   const env = makeEnv({ enabled: true });
   runWorker(env);
   await settle();
-  const before = env.state.icons.length;
 
-  // The worker listens on storage.onChanged, so a change from ANY surface (the
-  // popup, the options page, another synced device) repaints the toolbar.
   for (const fn of env.state.changeListeners) fn({ enabled: { newValue: false } }, 'sync');
   await settle();
-  assert.ok(env.state.icons.length > before);
-  assert.equal(env.state.icons.at(-1)[16], 'icons/16-off.png');
+  assert.equal(env.state.icons.at(-1), false);
 
   for (const fn of env.state.changeListeners) fn({ enabled: { newValue: true } }, 'sync');
   await settle();
-  assert.equal(env.state.icons.at(-1)[16], 'icons/16.png');
+  assert.equal(env.state.icons.at(-1), true);
 });
 
 test('a change to an unrelated key leaves the icon alone', async () => {
@@ -220,20 +225,6 @@ test('a change to an unrelated key leaves the icon alone', async () => {
   assert.equal(env.state.icons.length, before);
 });
 
-test('every icon the worker can paint is a real file, and ships to Firefox', async () => {
-  // setIcon fails silently on a missing path, so a typo or a forgotten entry in
-  // the Firefox copy list would only show up as an indicator that never changes.
-  const worker = fs.readFileSync(new URL('../src/background/service-worker.js', import.meta.url), 'utf8');
-  const paths = [...worker.matchAll(/'(icons\/[\w-]+\.png)'/g)].map((m) => m[1]);
-  assert.ok(paths.length >= 6, `expected both icon sets, found ${paths.length}`);
-
-  const firefox = fs.readFileSync(new URL('../build/gen-firefox.js', import.meta.url), 'utf8');
-  for (const p of paths) {
-    assert.ok(fs.existsSync(new URL(`../${p}`, import.meta.url)), `${p} must exist (run npm run gen:icons)`);
-    assert.ok(firefox.includes(`'${p}'`), `${p} must be in the Firefox copy list`);
-  }
-});
-
 test('install drops the retired per-site list and seeds the one setting', async () => {
   // A profile upgrading from the per-site build still carries disabledSites in
   // synced storage; nothing reads it any more, so it is removed rather than left
@@ -244,5 +235,5 @@ test('install drops the retired per-site list and seeds the one setting', async 
   await env.state.installListeners[0]({ reason: 'update' });
   assert.equal('disabledSites' in store, false, 'the stale key must be removed');
   assert.equal(store.enabled, false, 'an existing choice is preserved');
-  assert.equal(env.state.icons.at(-1)[16], 'icons/16-off.png');
+  assert.equal(env.state.icons.at(-1), false, 'and the icon matches it');
 });

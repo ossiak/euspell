@@ -2,6 +2,7 @@
 // ({ enabled }) and stays in sync live via storage.onChanged.
 
 import { browser } from '../lib/browser.js';
+import { paintActionIcon } from '../lib/action-icon.js';
 
 const enabledBox = document.getElementById('enabled');
 const accessHint = document.getElementById('accessHint');
@@ -51,8 +52,10 @@ function render({ enabled = true }) {
   enabledBox.checked = enabled;
 }
 
-enabledBox.addEventListener('change', () => {
-  browser.storage.sync.set({ enabled: enabledBox.checked });
+enabledBox.addEventListener('change', async () => {
+  const on = enabledBox.checked;
+  await browser.storage.sync.set({ enabled: on });
+  await paintActionIcon(on); // immediate, without waiting on the service worker
 });
 
 // Keep the page current if the popup (or another options tab) changes the setting.

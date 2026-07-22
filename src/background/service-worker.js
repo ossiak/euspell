@@ -10,28 +10,7 @@ import {
   looksLikePdfBytes,
 } from '../pdf/pdf-url.js';
 import { browser } from '../lib/browser.js';
-
-// The toolbar icon carries the on/off state: the normal mark while converting,
-// the inverted one (a solid disc with the mark knocked out) while off. Inverting
-// rather than greying keeps it legible at 16px — see build/gen-icons.js.
-const ICON_ON = { 16: 'icons/16.png', 48: 'icons/48.png', 128: 'icons/128.png' };
-const ICON_OFF = { 16: 'icons/16-off.png', 48: 'icons/48-off.png', 128: 'icons/128-off.png' };
-
-/** Point the toolbar action at the icon set matching `enabled`. */
-async function paintIcon(enabled) {
-  try {
-    await browser.action.setIcon({ path: enabled ? ICON_ON : ICON_OFF });
-    await browser.action.setTitle({ title: enabled ? 'Euspell — converting pages' : 'Euspell — off' });
-  } catch {
-    /* action API unavailable (or the worker is shutting down) — cosmetic only */
-  }
-}
-
-/** Read the setting and repaint. Used wherever the worker may have restarted. */
-async function refreshIcon() {
-  const { enabled = true } = await browser.storage.sync.get('enabled');
-  await paintIcon(enabled);
-}
+import { paintActionIcon, refreshActionIcon } from '../lib/action-icon.js';
 
 browser.runtime.onInstalled.addListener(async (details) => {
   const current = await browser.storage.sync.get(['enabled', 'disabledSites']);
@@ -39,7 +18,7 @@ browser.runtime.onInstalled.addListener(async (details) => {
   // The per-site opt-out list is gone — one global switch now. Drop the stale
   // key so a synced profile doesn't carry it around forever.
   if (current.disabledSites !== undefined) await browser.storage.sync.remove('disabledSites');
-  await paintIcon(current.enabled ?? true);
+  await paintActionIcon(current.enabled ?? true);
   // On a fresh install, open the welcome page — it requests host access, which
   // needs a user gesture and so can't be granted from here. (Not on update.)
   if (details.reason === 'install') {
@@ -49,13 +28,15 @@ browser.runtime.onInstalled.addListener(async (details) => {
 
 // An MV3 worker is torn down when idle and restarted on the next event, and a
 // setIcon from a previous life does not necessarily survive a browser restart.
-// Repaint on startup and whenever the setting changes, so the toolbar can never
-// disagree with the switch.
-browser.runtime.onStartup?.addListener(refreshIcon);
+// Repaint on startup, on any wake-up, and whenever the setting changes — the
+// last of those covers surfaces that are not the popup (the options page, or
+// another synced device). The popup paints for itself the moment it is clicked,
+// so the icon never waits on this worker being woken.
+browser.runtime.onStartup?.addListener(refreshActionIcon);
 browser.storage.onChanged.addListener((changes, area) => {
-  if (area === 'sync' && 'enabled' in changes) paintIcon(changes.enabled.newValue ?? true);
+  if (area === 'sync' && 'enabled' in changes) paintActionIcon(changes.enabled.newValue ?? true);
 });
-refreshIcon(); // also covers a plain worker wake-up
+refreshActionIcon(); // also covers a plain worker wake-up
 
 // One-shot redirect bypasses, armed by the viewer's "Open original" link just
 // before it navigates (the click awaits this arming round-trip — see

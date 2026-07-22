@@ -19,6 +19,9 @@ function makeEnv(store, tab) {
   for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint'])
     els[id] = mkEl();
   const reloaded = [];
+  // Every icon repaint the page asks for, so a test can assert the popup gives
+  // immediate feedback rather than leaving it to the service worker.
+  const painted = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
   const browser = {
     storage: {
@@ -55,7 +58,7 @@ function makeEnv(store, tab) {
       async sendMessage() { return undefined; },
     },
   };
-  return { els, document, browser, reloaded };
+  return { els, document, browser, reloaded, painted };
 }
 
 async function runScript(relPath, env) {
@@ -65,7 +68,10 @@ async function runScript(relPath, env) {
   // strip it and inject the mock as `browser` — the same handle the shim exports.
   src = src.replace(/^\s*import\b.*$/gm, '');
   // eslint-disable-next-line no-new-func
-  new Function('document', 'browser', 'URL', 'console', src)(env.document, env.browser, URL, console);
+  new Function('document', 'browser', 'URL', 'console', 'paintActionIcon', src)(
+    env.document, env.browser, URL, console,
+    async (on) => { env.painted.push(on); },
+  );
   await flush();
   await flush();
 }
@@ -82,6 +88,10 @@ test('popup: reflects the setting and toggles it live (no reload)', async () => 
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);      // persisted
   assert.equal(env.reloaded.length, 0);    // switched live, not reloaded
+  // The popup repaints the toolbar itself. Leaving that to the service worker's
+  // storage.onChanged means the icon lags behind the click by a worker wake-up,
+  // and shows nothing at all if the worker fails to start.
+  assert.deepEqual(env.painted, [false]);
 });
 
 test('popup: the switch is global, so it stays usable on a restricted page', async () => {
@@ -113,13 +123,14 @@ test('options: with host access granted the grant button stays hidden', async ()
   assert.equal(env.els.grant.hidden, true);
 });
 
-test('options: the Convert pages toggle persists', async () => {
+test('options: the Convert pages toggle persists and repaints the icon', async () => {
   const store = { enabled: true };
   const env = makeEnv(store, null);
   await runScript('../src/options/options.js', env);
   env.els.enabled.checked = false;
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
+  assert.deepEqual(env.painted, [false]);
 });
 
 test('popup.css: [hidden] beats the display:flex rows (else toggled-off rows still render)', () => {

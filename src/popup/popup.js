@@ -6,6 +6,7 @@
 // granting lives on the onboarding + Options pages, not here.
 
 import { browser } from '../lib/browser.js';
+import { paintActionIcon } from '../lib/action-icon.js';
 
 const enabledBox = document.getElementById('enabled');
 const hint = document.getElementById('hint');
@@ -86,7 +87,13 @@ dictateBtn.addEventListener('click', async () => {
 });
 
 enabledBox.addEventListener('change', async () => {
-  await browser.storage.sync.set({ enabled: enabledBox.checked });
+  const on = enabledBox.checked;
+  await browser.storage.sync.set({ enabled: on });
+  // Paint from here rather than waiting for the service worker to observe the
+  // storage change: the worker may be asleep, and the icon is the feedback for
+  // this very click. The worker still repaints on its own events, which covers
+  // the options page and other synced devices.
+  await paintActionIcon(on);
   await applyLive();
 });
 

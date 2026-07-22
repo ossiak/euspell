@@ -34,6 +34,7 @@ const FILES = [
   'dist/pdf-viewer.js',
   'dist/lexicon.data',
   'src/lib/browser.js',
+  'src/lib/action-icon.js',
   'src/background/service-worker.js',
   'src/pdf/pdf-url.js', 'src/pdf/viewer.html', 'src/pdf/viewer.css',
   'src/popup/popup.html', 'src/popup/popup.js', 'src/popup/popup.css',
