@@ -14,6 +14,7 @@ import fs from 'node:fs';
 const calls = { icons: [], titles: [], warnings: [] };
 const cfg = { enabled: true, failSetIcon: false };
 globalThis.chrome = {
+  runtime: { getURL: (p) => `chrome-extension://abcdefgh/${p}` },
   action: {
     async setIcon(arg) {
       if (cfg.failSetIcon) throw new Error('Could not load icon');
@@ -47,23 +48,39 @@ async function capturingWarnings(fn) {
 test('paints the normal mark when converting and the inverted one when off', async () => {
   reset();
   await paintActionIcon(true);
-  assert.equal(calls.icons.at(-1)[16], 'icons/16.png');
+  assert.equal(calls.icons.at(-1)[16], 'chrome-extension://abcdefgh/icons/16.png');
   assert.match(calls.titles.at(-1), /converting/i);
 
   reset();
   await paintActionIcon(false);
-  assert.equal(calls.icons.at(-1)[16], 'icons/16-off.png');
+  assert.equal(calls.icons.at(-1)[16], 'chrome-extension://abcdefgh/icons/16-off.png');
   assert.match(calls.titles.at(-1), /off/i);
+});
+
+test('every path is an absolute extension URL, in every size', async () => {
+  // A relative path is resolved against the CALLING page, so 'icons/16-off.png'
+  // becomes src/popup/icons/16-off.png from the popup — Chrome then reports
+  // "Could not load action icon" and quietly leaves the previous artwork up,
+  // which looks exactly like an indicator that does not work.
+  for (const on of [true, false]) {
+    reset();
+    await paintActionIcon(on);
+    const paths = calls.icons.at(-1);
+    assert.deepEqual(Object.keys(paths).sort(), ['128', '16', '48']);
+    for (const p of Object.values(paths)) {
+      assert.match(p, /^chrome-extension:\/\//, `${p} must be absolute`);
+    }
+  }
 });
 
 test('refresh reads the stored setting', async () => {
   reset({ enabled: false });
   await refreshActionIcon();
-  assert.equal(calls.icons.at(-1)[16], 'icons/16-off.png');
+  assert.match(calls.icons.at(-1)[16], /16-off\.png$/);
 
   reset({ enabled: true });
   await refreshActionIcon();
-  assert.equal(calls.icons.at(-1)[16], 'icons/16.png');
+  assert.match(calls.icons.at(-1)[16], /16\.png$/);
 });
 
 test('a failed setIcon is reported, not swallowed', async () => {
@@ -76,7 +93,9 @@ test('a failed setIcon is reported, not swallowed', async () => {
 
 test('every named icon exists and ships in the Firefox build', () => {
   const src = fs.readFileSync(new URL('../src/lib/action-icon.js', import.meta.url), 'utf8');
-  const paths = [...src.matchAll(/'(icons\/[\w-]+\.png)'/g)].map((m) => m[1]);
+  // The module names files through at('16-off.png'); the 'icons/' prefix lives
+  // in that helper, so collect the arguments rather than whole paths.
+  const paths = [...src.matchAll(/\bat\('([\w-]+\.png)'\)/g)].map((m) => `icons/${m[1]}`);
   assert.equal(paths.length, 6, 'both icon sets, three sizes each');
 
   const firefox = fs.readFileSync(new URL('../build/gen-firefox.js', import.meta.url), 'utf8');

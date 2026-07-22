@@ -12,8 +12,14 @@
 
 import { browser } from './browser.js';
 
-const ON = { 16: 'icons/16.png', 48: 'icons/48.png', 128: 'icons/128.png' };
-const OFF = { 16: 'icons/16-off.png', 48: 'icons/48-off.png', 128: 'icons/128-off.png' };
+// setIcon resolves a RELATIVE path against the calling context's document URL,
+// not the extension root — so a bare 'icons/16-off.png' becomes
+// src/popup/icons/16-off.png from the popup and src/background/icons/… from the
+// service worker, and Chrome reports "Could not load action icon". Every path
+// therefore goes through runtime.getURL, which is unambiguous from any caller.
+const at = (file) => browser.runtime.getURL(`icons/${file}`);
+const ON = { 16: at('16.png'), 48: at('48.png'), 128: at('128.png') };
+const OFF = { 16: at('16-off.png'), 48: at('48-off.png'), 128: at('128-off.png') };
 
 /**
  * Point the toolbar action at the artwork matching `enabled`.
