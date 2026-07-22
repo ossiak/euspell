@@ -454,8 +454,14 @@ async function main() {
   const rendered = new WeakSet(); // holds a canvas right now
   const near = new WeakSet(); // inside the keep window (per evictIO, below)
 
+  // Printing needs every page on screen at once, which is exactly what the lazy
+  // renderer is built to avoid — so eviction is suspended for the duration and
+  // the keep window re-applied afterwards.
+  let printing = false;
+
   /** Back to an empty, still-correctly-sized placeholder. */
   function evict(wrap) {
+    if (printing) return;
     if (!rendered.has(wrap)) return;
     rendered.delete(wrap);
     // Keep the width/height renderPage corrected: an emptied page must still
@@ -535,6 +541,111 @@ async function main() {
     }
   }
   observe();
+
+  // The toolbar the browser's own PDF viewer would have shown. Redirecting the
+  // tab replaces that chrome wholesale, so the page readout and the download and
+  // print actions have to be provided here or they are simply lost. Each element
+  // is optional: an embedding host (Eupub) generates its own header without
+  // them, and owns those affordances itself.
+  setUpBar();
+
+  function setUpBar() {
+    // --- page readout -------------------------------------------------------
+    const counter = document.getElementById('pagecount');
+    if (counter) {
+      const update = () => {
+        // The page straddling the viewport's middle is the one being read —
+        // the same rule the nav channel reports to an embedding host.
+        const mid = window.scrollY + window.innerHeight / 2;
+        let i = wraps.findIndex((w) => w.offsetTop + w.offsetHeight > mid);
+        if (i < 0) i = wraps.length - 1;
+        counter.textContent = `${i + 1} of ${wraps.length}`;
+      };
+      counter.hidden = false;
+      update();
+      let timer = 0;
+      window.addEventListener(
+        'scroll',
+        () => {
+          clearTimeout(timer);
+          timer = setTimeout(update, 120);
+        },
+        { passive: true },
+      );
+    }
+
+    // --- download -----------------------------------------------------------
+    const downloadBtn = document.getElementById('download');
+    if (downloadBtn) {
+      downloadBtn.hidden = false;
+      downloadBtn.addEventListener('click', async () => {
+        // pdf.js already holds the file's bytes, so this neither refetches nor
+        // depends on the network. A blob URL is same-origin, which is what makes
+        // the download attribute work at all — pointed at the original
+        // cross-origin URL the browser ignores it and navigates instead, and the
+        // service worker would then redirect that navigation back into here.
+        //
+        // These are the ORIGINAL bytes: the reform is painted onto canvases at
+        // render time and was never written back into a PDF, so there is no
+        // reformed file to offer. The button says "original" for that reason.
+        downloadBtn.disabled = true;
+        try {
+          const data = await pdf.getData();
+          const url = URL.createObjectURL(new Blob([data], { type: 'application/pdf' }));
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = name;
+          // In the document, not detached: a programmatic click on an anchor
+          // that was never inserted is ignored by some engines.
+          a.style.display = 'none';
+          document.body.append(a);
+          a.click();
+          a.remove();
+          // Revoked on a timer, not immediately: the click starts the download
+          // asynchronously and a revoked URL would cancel it.
+          setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        } catch (e) {
+          console.warn('Euspell: could not prepare the download.', e);
+        } finally {
+          downloadBtn.disabled = false;
+        }
+      });
+    }
+
+    // --- print --------------------------------------------------------------
+    const printBtn = document.getElementById('print');
+    if (printBtn) {
+      printBtn.hidden = false;
+      printBtn.addEventListener('click', async () => {
+        // Pages are rasterized only as they near the viewport, so printing
+        // without this would emit blank sheets for everything off screen.
+        const label = printBtn.textContent;
+        printBtn.disabled = true;
+        printBtn.textContent = 'Preparing…';
+        printing = true;
+        try {
+          for (let n = 1; n <= wraps.length; n++) {
+            const wrap = wraps[n - 1];
+            if (rendered.has(wrap)) continue;
+            // Take it off the render observer first: rendering it here would
+            // otherwise leave it armed, and scrolling past it later would
+            // rasterize the same page a second time.
+            renderIO?.unobserve(wrap);
+            enqueueRender(wrap, n);
+          }
+          await queue; // the render queue is serial; this settles when all are done
+          window.print();
+        } finally {
+          printing = false;
+          printBtn.disabled = false;
+          printBtn.textContent = label;
+          // Drop everything outside the keep window again — holding every page's
+          // canvas is precisely the memory cost lazy rendering exists to avoid.
+          for (const wrap of wraps) if (!near.has(wrap)) evict(wrap);
+        }
+      });
+    }
+  }
 
   // "Convert pages" flipped while this PDF is open. A rendered page is a raster
   // plus a text layer, both already committed to one spelling, so the only way

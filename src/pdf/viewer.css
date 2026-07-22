@@ -36,9 +36,88 @@ body {
   cursor: help;
 }
 
+/* The page readout sits between the name and the actions, and must not be
+   squeezed out by a long filename. */
+#bar #pagecount {
+  flex: none;
+  margin-left: auto;
+  color: #cbd5e1;
+  font-variant-numeric: tabular-nums; /* the number must not jitter while scrolling */
+}
+
+/* A layout wrapper, deliberately a class: every id inside the bar is a control,
+   and a test holds each of them to being looked up and null-guarded. */
+#bar .actions {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 #bar a {
   flex: none;
   color: #93c5fd;
+}
+
+#bar button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #93c5fd;
+  font: inherit;
+  cursor: pointer;
+}
+
+#bar button:hover {
+  text-decoration: underline;
+}
+
+#bar button[disabled] {
+  color: #6b7280;
+  cursor: default;
+  text-decoration: none;
+}
+
+/* Printing. The bar is screen furniture, and each page must land on its own
+   sheet at its natural size rather than being scaled by the page gap/shadow
+   layout the screen uses. Pages are rasterized canvases, so they print as
+   images — printAllPages() renders every one first, since the lazy renderer
+   would otherwise leave everything off screen blank. */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  #bar {
+    display: none;
+  }
+
+  #pages {
+    display: block;
+    padding: 0;
+    gap: 0;
+  }
+
+  #pages > div {
+    box-shadow: none;
+    margin: 0;
+    /* Never split one page across two sheets. */
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  #pages > div:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  #pages canvas {
+    /* Fit the sheet without overflowing it, keeping the aspect ratio. */
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 #pages {
