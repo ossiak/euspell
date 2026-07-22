@@ -30,6 +30,10 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  /* Carries the document's real URL as a tooltip (the address bar can only show
+     this viewer's own). A tooltip is invisible until hovered, so the help cursor
+     is what says there is something to hover. */
+  cursor: help;
 }
 
 #bar a {

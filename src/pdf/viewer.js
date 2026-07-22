@@ -378,7 +378,16 @@ async function main() {
   // "<base>.eu.pdf" (e.g. report.pdf → report.eu.pdf).
   document.title = `${name.replace(/\.pdf$/i, '')}.eu`;
   const filenameEl = document.getElementById('filename');
-  if (filenameEl) filenameEl.textContent = name;
+  if (filenameEl) {
+    filenameEl.textContent = name;
+    // The address bar shows this viewer's own chrome-extension:// URL, with the
+    // real one percent-encoded in ?file=, and it cannot show anything else: a
+    // redirect is the only way past the browser's built-in PDF plugin, and
+    // history.replaceState may not cross to another origin. So the document's
+    // actual URL is put where it can be read — hovering the filename, which is
+    // itself already truncated with an ellipsis when the name is long.
+    filenameEl.title = fileUrl;
+  }
   const originalEl = document.getElementById('original');
   if (originalEl) {
     originalEl.href = fileUrl;
