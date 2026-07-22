@@ -57,7 +57,10 @@ import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { sampleColors } from './sample-colors.js';
-import { assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect } from './host.js';
+import {
+  assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect,
+  conversionEnabled, onConversionChange,
+} from './host.js';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = assetURL('dist/pdfjs/pdf.worker.min.mjs');
 
@@ -197,6 +200,12 @@ function texGeneric(name) {
   return null;
 }
 
+// Whether pages render reformed. Seeded from the host before the first render
+// and updated live when the setting changes (see the wiring near the observers,
+// which re-renders the pages already on screen). Read at render time rather than
+// captured, so a page rasterized after a toggle uses the current answer.
+let converting = true;
+
 async function renderPage(pdf, n, dpr, wrap) {
   const t = phaseTimer(n);
   const page = await pdf.getPage(n);
@@ -275,6 +284,16 @@ async function renderPage(pdf, n, dpr, wrap) {
       font: `${info.face.style} ${info.face.weight} ${cs.fontSize} ${info.face.family}`,
     };
   });
+  // With conversion switched off the page is done: the text layer keeps the
+  // PDF's own words and the canvas keeps its own glyphs. Returning here also
+  // skips the full-page getImageData below, which is the expensive part of the
+  // reform and would otherwise be paid to repaint nothing.
+  if (!converting) {
+    t.done();
+    page.cleanup();
+    return;
+  }
+
   // Make this page's words looked-up-able before converting them. The extension
   // has one resident table and does this once; a mobile host with no resident
   // table fetches just this page's vocabulary. Must complete before convert(),
@@ -401,6 +420,10 @@ async function main() {
   if (status) status.remove();
   const dpr = window.devicePixelRatio || 1;
 
+  // Settle the conversion state BEFORE any page renders, so a viewer opened
+  // while the switch is off never shows a reformed page and then correct itself.
+  converting = await conversionEnabled();
+
   // Lazy rendering: a placeholder per page (sized from page 1, corrected when
   // the page really renders), rasterized only as it approaches the viewport.
   // Rendering everything up front made a long PDF pay its whole rasterization
@@ -507,6 +530,22 @@ async function main() {
     }
   }
   observe();
+
+  // "Convert pages" flipped while this PDF is open. A rendered page is a raster
+  // plus a text layer, both already committed to one spelling, so the only way
+  // to switch is to render again: evict every rendered page and let the
+  // observers re-render the ones on screen. evict() re-arms renderIO, and
+  // observing an element that is already intersecting fires the callback
+  // immediately, so visible pages come back at once while the rest stay
+  // placeholders until scrolled to.
+  //
+  // Evicting keeps each wrap's corrected width/height, so nothing below moves
+  // and the reading position holds.
+  onConversionChange((enabled) => {
+    if (enabled === converting) return;
+    converting = enabled;
+    for (const wrap of wraps) evict(wrap); // no-ops for pages not yet rendered
+  });
 
   // A host that fits pages to the screen (see host.mobile.js) changes scale when
   // the window does — a phone rotating is the real case. Every rendered canvas is

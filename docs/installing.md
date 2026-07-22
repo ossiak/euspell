@@ -80,6 +80,10 @@ your desktop too.
 
 - **PDFs convert too.** Opening a PDF hands it to Euspell's own viewer, which
   reforms the text while keeping the page's real layout, graphics, and fonts.
+  The switch reaches an open PDF as well: turning it off redraws the pages on
+  screen in their original spelling, and turning it back on redraws them
+  reformed. (Turning Euspell *on* while a PDF is already open in the browser's
+  own viewer needs a reload — that hand-off happens when the page loads.)
 - **Local files.** To convert pages or PDFs stored on your own computer
   (`file://` URLs), go to `chrome://extensions` → Euspell → **Details** and turn
   on **Allow access to file URLs**. Chrome withholds this by default.
