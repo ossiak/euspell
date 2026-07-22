@@ -1,15 +1,13 @@
-// Popup control surface. The enable/disable state lives in browser.storage.sync
-// ({ enabled, disabledSites }). Toggling the global or per-site control writes the
-// setting and switches the active tab live — no reload — by messaging the content
-// script's view mode. Host-access granting lives on the onboarding + Options
-// pages, not here.
+// Popup control surface. Conversion is one global setting in
+// browser.storage.sync ({ enabled }); toggling it writes the setting and
+// switches the active tab live — no reload — by messaging the content script's
+// view mode. The toolbar icon follows the same setting (the service worker
+// repaints it), so the switch is visible without opening this popup. Host-access
+// granting lives on the onboarding + Options pages, not here.
 
 import { browser } from '../lib/browser.js';
 
 const enabledBox = document.getElementById('enabled');
-const siteRow = document.getElementById('siteRow');
-const siteBox = document.getElementById('site');
-const hostEl = document.getElementById('host');
 const hint = document.getElementById('hint');
 const dictateRow = document.getElementById('dictateRow');
 const dictateBtn = document.getElementById('dictate');
@@ -24,13 +22,13 @@ async function dictationStatus(tab) {
   }
 }
 
-/** The active tab's hostname, or null for restricted pages (chrome://, files…). */
-function hostnameOf(tab) {
+/** True when the active tab is a page Euspell can convert at all. */
+function isConvertible(tab) {
   try {
     const u = new URL(tab.url);
-    return u.protocol === 'http:' || u.protocol === 'https:' ? u.hostname : null;
+    return u.protocol === 'http:' || u.protocol === 'https:' || u.protocol === 'file:';
   } catch {
-    return null;
+    return false;
   }
 }
 
@@ -40,24 +38,13 @@ async function activeTab() {
 }
 
 async function load() {
-  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get(['enabled', 'disabledSites']);
+  const { enabled = true } = await browser.storage.sync.get('enabled');
   const tab = await activeTab();
-  const host = tab ? hostnameOf(tab) : null;
 
   enabledBox.checked = enabled;
-
-  if (host) {
-    hostEl.textContent = host;
-    siteBox.checked = !disabledSites.includes(host);
-    siteRow.hidden = false;
-    // Disable the control itself, not just the ARIA state — a per-site toggle
-    // means nothing while the extension is off globally.
-    siteBox.disabled = !enabled;
-    siteRow.setAttribute('aria-disabled', String(!enabled));
-  } else {
-    siteRow.hidden = true;
-    hint.textContent = 'This page can’t be converted.';
-  }
+  // The switch is global, so it stays usable everywhere; the hint just explains
+  // why this particular tab won't change (a chrome:// or web-store page).
+  hint.textContent = tab && !isConvertible(tab) ? 'This page can’t be converted.' : '';
 
   // Dictation: shown when the content script is present and the browser supports
   // speech recognition. Independent of the conversion toggle above.
@@ -71,16 +58,14 @@ async function load() {
 }
 
 /** Switch the active tab's conversion live (no reload) to match the stored
- *  settings, reusing the content script's view-mode machinery. Silently ignored
+ *  setting, reusing the content script's view-mode machinery. Silently ignored
  *  where there's no content script (a restricted page or the PDF viewer). */
 async function applyLive() {
   const tab = await activeTab();
   if (tab?.id == null) return;
-  const host = hostnameOf(tab);
-  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get(['enabled', 'disabledSites']);
-  const converting = enabled && !!host && !disabledSites.includes(host);
+  const { enabled = true } = await browser.storage.sync.get('enabled');
   try {
-    await browser.tabs.sendMessage(tab.id, { type: 'euspell:setMode', mode: converting ? 'euspell' : 'original' });
+    await browser.tabs.sendMessage(tab.id, { type: 'euspell:setMode', mode: enabled ? 'euspell' : 'original' });
   } catch {
     /* no content script on this page */
   }
@@ -102,18 +87,6 @@ dictateBtn.addEventListener('click', async () => {
 
 enabledBox.addEventListener('change', async () => {
   await browser.storage.sync.set({ enabled: enabledBox.checked });
-  siteBox.disabled = !enabledBox.checked;
-  siteRow.setAttribute('aria-disabled', String(!enabledBox.checked));
-  await applyLive();
-});
-
-siteBox.addEventListener('change', async () => {
-  const tab = await activeTab();
-  const host = tab ? hostnameOf(tab) : null;
-  if (!host) return;
-  // The service worker is the single writer for disabledSites (concurrent edits
-  // from the options page can't be interleaved away).
-  await browser.runtime.sendMessage({ type: 'euspell:setSiteDisabled', host, disabled: !siteBox.checked });
   await applyLive();
 });
 

@@ -25,7 +25,11 @@ const out = join(root, 'build/firefox');
 // the service worker / popup / options pages import (they are loaded directly,
 // not bundled), and the popup/options/viewer HTML + CSS + icons.
 const FILES = [
+  // Both icon states: the service worker swaps to the "-off" set when
+  // conversion is switched off, so omitting them breaks the indicator on
+  // Firefox only — setIcon fails silently on a missing path.
   'icons/16.png', 'icons/48.png', 'icons/128.png',
+  'icons/16-off.png', 'icons/48-off.png', 'icons/128-off.png',
   'dist/content-bundle.js',
   'dist/pdf-viewer.js',
   'dist/lexicon.data',

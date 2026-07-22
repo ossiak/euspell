@@ -85,7 +85,7 @@ async function changeSettings(env, store, patch) {
 }
 
 test('a global toggle-off restores a background tab (no message needed)', async () => {
-  const store = { enabled: true, disabledSites: [] };
+  const store = { enabled: true };
   const env = makeEnv(store);
   await runContentScript(env);
   assert.equal(env.state.converted, 1, 'page converts on load');
@@ -97,32 +97,19 @@ test('a global toggle-off restores a background tab (no message needed)', async 
   assert.equal(env.state.converted, 2, 'toggling back on reconverts live');
 });
 
-test('opting this site out restores it; opting back in reconverts', async () => {
-  const store = { enabled: true, disabledSites: [] };
-  const env = makeEnv(store, { hostname: 'news.test' });
-  await runContentScript(env);
-  assert.equal(env.state.converted, 1);
-
-  await changeSettings(env, store, { disabledSites: ['news.test'] });
-  assert.equal(env.state.restored, 1);
-
-  await changeSettings(env, store, { disabledSites: [] });
-  assert.equal(env.state.converted, 2);
-});
-
-test('a change to some other site leaves this tab alone', async () => {
-  const store = { enabled: true, disabledSites: [] };
+test('a change to an unrelated key leaves this tab alone', async () => {
+  const store = { enabled: true };
   const env = makeEnv(store);
   await runContentScript(env);
   assert.equal(env.state.converted, 1);
 
-  await changeSettings(env, store, { disabledSites: ['other.test'] });
-  assert.equal(env.state.restored, 0, 'unrelated site change must not restore');
+  await changeSettings(env, store, { someOtherSetting: 1 });
+  assert.equal(env.state.restored, 0, 'an unrelated change must not restore');
   assert.equal(env.state.converted, 1, 'and must not reconvert');
 });
 
 test('a page loaded while disabled converts when enabled later', async () => {
-  const store = { enabled: false, disabledSites: [] };
+  const store = { enabled: false };
   const env = makeEnv(store);
   await runContentScript(env);
   assert.equal(env.state.converted, 0, 'disabled at load — no conversion');
@@ -132,7 +119,7 @@ test('a page loaded while disabled converts when enabled later', async () => {
 });
 
 test('a lexicon failure leaves the page alone but keeps every listener alive', async () => {
-  const store = { enabled: true, disabledSites: [] };
+  const store = { enabled: true };
   const env = makeEnv(store);
   let fail = true;
   env.ensureLexicon = async () => {
@@ -150,23 +137,23 @@ test('a lexicon failure leaves the page alone but keeps every listener alive', a
 });
 
 test('the lexicon is never fetched for a page that does not convert', async () => {
-  const store = { enabled: true, disabledSites: ['x.test'] };
+  const store = { enabled: false };
   const env = makeEnv(store);
   let loads = 0;
   env.ensureLexicon = async () => {
     loads++;
   };
   await runContentScript(env);
-  assert.equal(loads, 0, 'disabled site must not pay the lexicon load');
+  assert.equal(loads, 0, 'a page that will not convert must not pay the lexicon load');
   assert.equal(env.state.converted, 0);
 
-  await changeSettings(env, store, { disabledSites: [] });
-  assert.equal(loads, 1, 'enabling the site loads it on demand');
+  await changeSettings(env, store, { enabled: true });
+  assert.equal(loads, 1, 'turning it on loads the lexicon on demand');
   assert.equal(env.state.converted, 1);
 });
 
 test('non-sync storage areas are ignored', async () => {
-  const store = { enabled: true, disabledSites: [] };
+  const store = { enabled: true };
   const env = makeEnv(store);
   await runContentScript(env);
 

@@ -43,13 +43,18 @@ you're looking at** — no reload.
 
 | Control | What it does |
 |---|---|
-| **Convert pages** | The master switch. Off means Euspell converts nothing, anywhere. |
-| **On `example.com`** | Turns conversion off for *just this site*, leaving the rest converted. Greyed out while the master switch is off, since it would mean nothing. |
+| **Convert pages** | The one switch. Off means Euspell converts nothing, anywhere. |
 | **Dictate euspell** | **Start**/**Stop** speech-to-text that types in reformed spelling at your cursor. Appears only on pages where your browser supports speech recognition. Click into a text box first, then press Start. |
 | **Options** | Opens the settings page below. |
 
+**The toolbar icon tells you the state at a glance**, so you don't have to open
+the popup to check: the normal blue mark while Euspell is converting, and the
+same mark inverted — a solid blue disc with the design knocked out — while it's
+off. Hovering the icon says which in words.
+
 If the popup says *"This page can't be converted"*, you're on a page no
-extension may touch — `chrome://` pages, the Web Store itself, and similar.
+extension may touch — `chrome://` pages, the Web Store itself, and similar. The
+switch itself still works; it governs every other tab.
 
 **Keyboard shortcut.** `Ctrl+Shift+9` (macOS: `Cmd+Shift+9`) starts and stops
 dictation without opening the popup. Change it at `chrome://extensions/shortcuts`.
@@ -59,7 +64,7 @@ dictation without opening the popup. Change it at `chrome://extensions/shortcuts
 Reach it from the popup's **Options** button, or via `chrome://extensions` →
 Euspell → **Details** → **Extension options**.
 
-**Convert pages** — the same master switch as the popup, kept in sync.
+**Convert pages** — the same switch as the popup, kept in sync.
 
 **Site access** — tells you whether Euspell can currently read pages. Normally
 it says *"Euspell can read and convert the pages you visit."* If you've revoked
@@ -67,16 +72,9 @@ access (or you're on Firefox and haven't granted it), a **Grant access** button
 appears here to restore it. This is the recovery path if conversion stops
 working everywhere at once.
 
-**Sites turned off** — every site you've excluded, in one list.
-- Add one by typing a hostname (`example.com`) and clicking **Add**. You don't
-  need the `https://` or a path — a full URL is trimmed to its hostname.
-- Click **Remove** next to a site to start converting it again.
-- The popup's *"On `example.com`"* switch writes to this same list, so a site you
-  turn off there shows up here.
-
 Settings are stored with your browser profile and **sync across the computers
-you're signed into**, so turning a site off on your laptop turns it off on your
-desktop too.
+you're signed into**, so switching Euspell off on your laptop switches it off on
+your desktop too.
 
 ## Good to know
 
@@ -88,15 +86,14 @@ desktop too.
 - **Privacy.** No account, no server, no telemetry. The dictionary is bundled in
   the extension and text never leaves your machine — including dictation, whose
   transcript is converted locally.
-- **Turning it off temporarily** is better done with the popup's master switch
-  than by uninstalling; your per-site list survives.
+- **Turning it off temporarily** is better done with the popup's switch than by
+  uninstalling — and the toolbar icon then shows, inverted, that it's off.
 
 ## If something looks wrong
 
 | Symptom | Try |
 |---|---|
-| Nothing converts, on any site | Options → **Site access**; click **Grant access** if it's offered. Check the master switch is on. |
-| One site won't convert | Options → **Sites turned off** — it may be listed. Remove it. |
+| Nothing converts, on any site | Check the toolbar icon — inverted means Euspell is switched off. If it's on, go to Options → **Site access** and click **Grant access** if it's offered. |
 | A page converts only partly | Text added by the page after loading is converted as it appears; a page that redraws its own text (some web apps) can win a race. Reloading usually settles it. |
 | Dictation row is missing | Your browser lacks speech recognition, or you're on a page with no content script (`chrome://`, the Web Store). |
 | A word looks wrong | Reforms are context-sensitive and a handful of ambiguous words are left alone deliberately. See the reform notes in the [README](../README.md). |

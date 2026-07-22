@@ -16,7 +16,7 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'siteRow', 'site', 'host', 'hint', 'sites', 'empty', 'addForm', 'addInput', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint'])
+  for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint'])
     els[id] = mkEl();
   const reloaded = [];
   const document = { getElementById: (id) => els[id], createElement: () => mkEl() };
@@ -52,19 +52,7 @@ function makeEnv(store, tab) {
     },
     runtime: {
       openOptionsPage() {},
-      // Emulates the service worker's single-writer disabledSites handler
-      // (popup/options send their edits there rather than read-modify-writing
-      // storage themselves — see service-worker.js).
-      async sendMessage(msg) {
-        if (msg?.type === 'euspell:setSiteDisabled') {
-          const set = new Set(store.disabledSites ?? []);
-          if (msg.disabled) set.add(msg.host);
-          else set.delete(msg.host);
-          store.disabledSites = [...set];
-          return { ok: true, disabledSites: store.disabledSites };
-        }
-        return undefined;
-      },
+      async sendMessage() { return undefined; },
     },
   };
   return { els, document, browser, reloaded };
@@ -82,34 +70,35 @@ async function runScript(relPath, env) {
   await flush();
 }
 
-test('popup: reflects state and toggles the per-site setting live (no reload)', async () => {
-  const store = { enabled: true, disabledSites: ['blocked.com'] };
+test('popup: reflects the setting and toggles it live (no reload)', async () => {
+  const store = { enabled: true };
   const env = makeEnv(store, { id: 7, url: 'https://example.com/page' });
   await runScript('../src/popup/popup.js', env);
 
   assert.equal(env.els.enabled.checked, true);
-  assert.equal(env.els.siteRow.hidden, false);
-  assert.equal(env.els.host.textContent, 'example.com');
-  assert.equal(env.els.site.checked, true);
+  assert.equal(env.els.hint.textContent, ''); // a convertible page needs no hint
 
-  env.els.site.checked = false;
-  await env.els.site.dispatch('change');
-  assert.ok(store.disabledSites.includes('example.com')); // opt-out persisted
-  assert.equal(env.reloaded.length, 0);                    // switched live, not reloaded
+  env.els.enabled.checked = false;
+  await env.els.enabled.dispatch('change');
+  assert.equal(store.enabled, false);      // persisted
+  assert.equal(env.reloaded.length, 0);    // switched live, not reloaded
 });
 
-test('popup: toggling global off disables the site row', async () => {
-  const store = { enabled: true, disabledSites: [] };
-  const env = makeEnv(store, { id: 1, url: 'https://a.com/' });
+test('popup: the switch is global, so it stays usable on a restricted page', async () => {
+  // There is no per-site control any more, so a chrome:// tab only earns an
+  // explanatory hint — the switch itself must still work, since it governs
+  // every other tab.
+  const store = { enabled: true };
+  const env = makeEnv(store, { id: 1, url: 'chrome://extensions' });
   await runScript('../src/popup/popup.js', env);
+  assert.ok(env.els.hint.textContent.length > 0);
   env.els.enabled.checked = false;
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
-  assert.equal(env.els.siteRow._attr['aria-disabled'], 'true');
 });
 
 test('options: offers the grant button when host access is missing; granting hides it', async () => {
-  const store = { enabled: true, disabledSites: [], __hostAccess: false };
+  const store = { enabled: true, __hostAccess: false };
   const env = makeEnv(store, null);
   await runScript('../src/options/options.js', env);
   assert.equal(env.els.grant.hidden, false);   // grant offered
@@ -119,29 +108,13 @@ test('options: offers the grant button when host access is missing; granting hid
 });
 
 test('options: with host access granted the grant button stays hidden', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] }, null);
+  const env = makeEnv({ enabled: true }, null);
   await runScript('../src/options/options.js', env);
   assert.equal(env.els.grant.hidden, true);
 });
 
-test('popup: restricted pages hide the site row', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] }, { id: 1, url: 'chrome://extensions' });
-  await runScript('../src/popup/popup.js', env);
-  assert.equal(env.els.siteRow.hidden, true);
-  assert.ok(env.els.hint.textContent.length > 0);
-});
-
-test('options: adds a site, normalizing a messy URL to a bare hostname', async () => {
-  const store = { enabled: true, disabledSites: ['z.com'] };
-  const env = makeEnv(store, null);
-  await runScript('../src/options/options.js', env);
-  env.els.addInput.value = 'https://Example.COM/some/path';
-  await env.els.addForm.dispatch('submit');
-  assert.ok(store.disabledSites.includes('example.com'));
-});
-
-test('options: global toggle persists', async () => {
-  const store = { enabled: true, disabledSites: [] };
+test('options: the Convert pages toggle persists', async () => {
+  const store = { enabled: true };
   const env = makeEnv(store, null);
   await runScript('../src/options/options.js', env);
   env.els.enabled.checked = false;

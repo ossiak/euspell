@@ -1,6 +1,7 @@
-// Seed default settings on install. The enable/disable controls live in the
-// popup (src/popup) and options page (src/options) — browser.action.onClicked is
-// intentionally NOT used, because it never fires while a default_popup is set.
+// Seed default settings on install and keep the toolbar icon in step with them.
+// The single "Convert pages" control lives in the popup (src/popup) and options
+// page (src/options) — browser.action.onClicked is intentionally NOT used,
+// because it never fires while a default_popup is set.
 import {
   isPdfUrl,
   isPdfContentType,
@@ -10,12 +11,35 @@ import {
 } from '../pdf/pdf-url.js';
 import { browser } from '../lib/browser.js';
 
+// The toolbar icon carries the on/off state: the normal mark while converting,
+// the inverted one (a solid disc with the mark knocked out) while off. Inverting
+// rather than greying keeps it legible at 16px — see build/gen-icons.js.
+const ICON_ON = { 16: 'icons/16.png', 48: 'icons/48.png', 128: 'icons/128.png' };
+const ICON_OFF = { 16: 'icons/16-off.png', 48: 'icons/48-off.png', 128: 'icons/128-off.png' };
+
+/** Point the toolbar action at the icon set matching `enabled`. */
+async function paintIcon(enabled) {
+  try {
+    await browser.action.setIcon({ path: enabled ? ICON_ON : ICON_OFF });
+    await browser.action.setTitle({ title: enabled ? 'Euspell — converting pages' : 'Euspell — off' });
+  } catch {
+    /* action API unavailable (or the worker is shutting down) — cosmetic only */
+  }
+}
+
+/** Read the setting and repaint. Used wherever the worker may have restarted. */
+async function refreshIcon() {
+  const { enabled = true } = await browser.storage.sync.get('enabled');
+  await paintIcon(enabled);
+}
+
 browser.runtime.onInstalled.addListener(async (details) => {
   const current = await browser.storage.sync.get(['enabled', 'disabledSites']);
-  await browser.storage.sync.set({
-    enabled: current.enabled ?? true,
-    disabledSites: current.disabledSites ?? [],
-  });
+  await browser.storage.sync.set({ enabled: current.enabled ?? true });
+  // The per-site opt-out list is gone — one global switch now. Drop the stale
+  // key so a synced profile doesn't carry it around forever.
+  if (current.disabledSites !== undefined) await browser.storage.sync.remove('disabledSites');
+  await paintIcon(current.enabled ?? true);
   // On a fresh install, open the welcome page — it requests host access, which
   // needs a user gesture and so can't be granted from here. (Not on update.)
   if (details.reason === 'install') {
@@ -23,29 +47,15 @@ browser.runtime.onInstalled.addListener(async (details) => {
   }
 });
 
-// Single writer for disabledSites. The popup and options page used to each do
-// their own read-modify-write on the array; two near-simultaneous edits (both
-// surfaces open) could interleave and silently drop one. They now send their
-// edit here, where a promise queue serializes the read→mutate→write cycles.
-let sitesQueue = Promise.resolve();
-browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
-  if (!msg || msg.type !== 'euspell:setSiteDisabled' || typeof msg.host !== 'string') return;
-  const run = sitesQueue.then(async () => {
-    const { disabledSites = [] } = await browser.storage.sync.get('disabledSites');
-    const set = new Set(disabledSites);
-    if (msg.disabled) set.add(msg.host);
-    else set.delete(msg.host);
-    const sites = [...set];
-    await browser.storage.sync.set({ disabledSites: sites });
-    return sites;
-  });
-  sitesQueue = run.catch(() => {}); // a failed write must not wedge the queue
-  run.then(
-    (sites) => sendResponse({ ok: true, disabledSites: sites }),
-    (e) => sendResponse({ ok: false, error: String(e) }),
-  );
-  return true; // sendResponse is async (cross-browser: Chrome ignores a returned Promise)
+// An MV3 worker is torn down when idle and restarted on the next event, and a
+// setIcon from a previous life does not necessarily survive a browser restart.
+// Repaint on startup and whenever the setting changes, so the toolbar can never
+// disagree with the switch.
+browser.runtime.onStartup?.addListener(refreshIcon);
+browser.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && 'enabled' in changes) paintIcon(changes.enabled.newValue ?? true);
 });
+refreshIcon(); // also covers a plain worker wake-up
 
 // One-shot redirect bypasses, armed by the viewer's "Open original" link just
 // before it navigates (the click awaits this arming round-trip — see
@@ -83,8 +93,8 @@ browser.commands.onCommand.addListener(async (command) => {
 
 // We render PDFs in our own PDF.js viewer (reformed text). Chrome's built-in
 // viewer is a native plugin a content script can't touch, so redirecting the tab
-// is the only way in. Both detection paths below honour the same enabled/
-// disabledSites settings as page conversion, and skip our own viewer.
+// is the only way in. Both detection paths below honour the same "Convert pages"
+// setting as page conversion, and skip our own viewer.
 const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 
 // Whether this browser lets our viewer read file:// PDFs. Firefox never allows
@@ -95,20 +105,10 @@ const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 // "Allow access to file URLs", and the viewer can then fetch it.
 const CAN_VIEW_FILE_URLS = !VIEWER_URL.startsWith('moz-extension:');
 
-/** Whether the global toggle / per-site opt-out allow converting this URL. */
-async function shouldConvert(url) {
-  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get([
-    'enabled',
-    'disabledSites',
-  ]);
-  if (!enabled) return false;
-  try {
-    if (disabledSites.includes(new URL(url).hostname)) return false;
-  } catch {
-    /* unparsable URL — nothing to match against the site list; convert.
-       (file:// parses fine, with an empty hostname that's never listed.) */
-  }
-  return true;
+/** Whether the "Convert pages" setting allows converting. */
+async function shouldConvert() {
+  const { enabled = true } = await browser.storage.sync.get('enabled');
+  return enabled;
 }
 
 /** Send the tab to our viewer with the original PDF URL in `?file=`. */
@@ -124,7 +124,7 @@ browser.webNavigation.onBeforeNavigate.addListener(
     if (!isPdfUrl(details.url) || details.url.startsWith(VIEWER_URL)) return;
     if (consumeBypass(details.url)) return; // "Open original" — let it through
     if (/^file:/i.test(details.url) && !CAN_VIEW_FILE_URLS) return; // leave local PDFs to Firefox
-    if (await shouldConvert(details.url)) redirectToViewer(details.tabId, details.url);
+    if (await shouldConvert()) redirectToViewer(details.tabId, details.url);
   },
   { url: [{ pathSuffix: '.pdf' }, { pathSuffix: '.PDF' }] },
 );
@@ -200,9 +200,9 @@ browser.webRequest.onHeadersReceived.addListener(
     let isPdf = isPdfContentType(contentType) || isPdfDisposition(disposition);
     if (!isPdf && !isAmbiguousType(contentType)) return;
     // Settings BEFORE the sniff: sniffPdfMagic is a real network request, and a
-    // user who has switched Euspell off (globally or for this site) must not
-    // have the extension fetching anything on their behalf.
-    if (!(await shouldConvert(details.url))) return;
+    // user who has switched Euspell off must not have the extension fetching
+    // anything on their behalf.
+    if (!(await shouldConvert())) return;
     if (!isPdf) isPdf = await sniffPdfMagic(details.url);
     if (isPdf) redirectToViewer(details.tabId, details.url);
   },

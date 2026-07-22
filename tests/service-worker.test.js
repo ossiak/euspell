@@ -15,12 +15,21 @@ import {
 } from '../src/pdf/pdf-url.js';
 
 function makeEnv(store) {
-  const state = { navListeners: [], headerListeners: [], msgListeners: [], updated: [], fetches: [] };
+  const state = {
+    navListeners: [], headerListeners: [], msgListeners: [], updated: [], fetches: [],
+    // Toolbar-icon calls, so a test can assert which artwork the worker painted.
+    icons: [], titles: [], installListeners: [], startupListeners: [], changeListeners: [],
+  };
   const browser = {
     runtime: {
       getURL: (p) => `chrome-extension://abcdefgh/${p}`,
-      onInstalled: { addListener() {} },
+      onInstalled: { addListener: (fn) => state.installListeners.push(fn) },
+      onStartup: { addListener: (fn) => state.startupListeners.push(fn) },
       onMessage: { addListener: (fn) => state.msgListeners.push(fn) },
+    },
+    action: {
+      async setIcon({ path }) { state.icons.push(path); },
+      async setTitle({ title }) { state.titles.push(title); },
     },
     storage: {
       sync: {
@@ -31,7 +40,9 @@ function makeEnv(store) {
         async set(obj) {
           Object.assign(store, obj);
         },
+        async remove(key) { delete store[key]; },
       },
+      onChanged: { addListener: (fn) => state.changeListeners.push(fn) },
     },
     tabs: {
       update: (tabId, props) => state.updated.push({ tabId, ...props }),
@@ -81,7 +92,7 @@ const headerDetails = (url, headers, tabId = 1) => ({
 });
 
 test('headers path: a pdf content-type redirects to the viewer when enabled', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] });
+  const env = makeEnv({ enabled: true });
   runWorker(env);
   await env.state.headerListeners[0](headerDetails('https://x.test/doc', { 'Content-Type': 'application/pdf' }));
   assert.equal(env.state.updated.length, 1);
@@ -90,7 +101,7 @@ test('headers path: a pdf content-type redirects to the viewer when enabled', as
 });
 
 test('headers path: the sniff never fires while the extension is off', async () => {
-  const env = makeEnv({ enabled: false, disabledSites: [], __pdfBytes: true });
+  const env = makeEnv({ enabled: false, __pdfBytes: true });
   runWorker(env);
   await env.state.headerListeners[0](
     headerDetails('https://x.test/download', { 'Content-Type': 'application/octet-stream' }),
@@ -99,18 +110,8 @@ test('headers path: the sniff never fires while the extension is off', async () 
   assert.equal(env.state.updated.length, 0);
 });
 
-test('headers path: the sniff never fires for an opted-out site', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: ['x.test'], __pdfBytes: true });
-  runWorker(env);
-  await env.state.headerListeners[0](
-    headerDetails('https://x.test/download', { 'Content-Type': 'application/octet-stream' }),
-  );
-  assert.equal(env.state.fetches.length, 0);
-  assert.equal(env.state.updated.length, 0);
-});
-
 test('headers path: an ambiguous type is sniffed when enabled, and %PDF redirects', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [], __pdfBytes: true });
+  const env = makeEnv({ enabled: true, __pdfBytes: true });
   runWorker(env);
   await env.state.headerListeners[0](
     headerDetails('https://x.test/download', { 'Content-Type': 'application/octet-stream' }),
@@ -120,7 +121,7 @@ test('headers path: an ambiguous type is sniffed when enabled, and %PDF redirect
 });
 
 test('headers path: an ambiguous non-PDF body is left alone', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [], __pdfBytes: false });
+  const env = makeEnv({ enabled: true, __pdfBytes: false });
   runWorker(env);
   await env.state.headerListeners[0](
     headerDetails('https://x.test/download', { 'Content-Type': 'application/octet-stream' }),
@@ -130,7 +131,7 @@ test('headers path: an ambiguous non-PDF body is left alone', async () => {
 });
 
 test('headers path: an attachment download is never redirected', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] });
+  const env = makeEnv({ enabled: true });
   runWorker(env);
   await env.state.headerListeners[0](
     headerDetails('https://x.test/report', {
@@ -149,7 +150,7 @@ function sendMessage(env, msg) {
 }
 
 test('bypass arming lets exactly one navigation through the .pdf redirect', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] });
+  const env = makeEnv({ enabled: true });
   runWorker(env);
   const url = 'https://x.test/paper.pdf';
 
@@ -164,7 +165,7 @@ test('bypass arming lets exactly one navigation through the .pdf redirect', asyn
 });
 
 test('bypass arming also covers the extensionless headers path', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] });
+  const env = makeEnv({ enabled: true });
   runWorker(env);
   const url = 'https://x.test/doc';
 
@@ -176,12 +177,72 @@ test('bypass arming also covers the extensionless headers path', async () => {
   assert.equal(env.state.updated.length, 1);
 });
 
-test('an unrelated message does not disturb the site-list handler', async () => {
-  const env = makeEnv({ enabled: true, disabledSites: [] });
+const settle = () => new Promise((r) => setTimeout(r, 0));
+
+test('the toolbar icon is painted from the setting on wake-up', async () => {
+  const on = makeEnv({ enabled: true });
+  runWorker(on);
+  await settle();
+  assert.equal(on.state.icons.at(-1)[16], 'icons/16.png', 'converting → the normal mark');
+
+  const off = makeEnv({ enabled: false });
+  runWorker(off);
+  await settle();
+  assert.equal(off.state.icons.at(-1)[16], 'icons/16-off.png', 'off → the inverted mark');
+  assert.match(off.state.titles.at(-1), /off/i);
+});
+
+test('flipping the setting repaints the icon', async () => {
+  const env = makeEnv({ enabled: true });
   runWorker(env);
-  const res = sendMessage(env, { type: 'euspell:setSiteDisabled', host: 'x.test', disabled: true });
-  // The single-writer handler responds asynchronously; wait a beat.
-  await new Promise((r) => setTimeout(r, 0));
-  assert.deepEqual(await env.browser.storage.sync.get('disabledSites'), { disabledSites: ['x.test'] });
-  void res;
+  await settle();
+  const before = env.state.icons.length;
+
+  // The worker listens on storage.onChanged, so a change from ANY surface (the
+  // popup, the options page, another synced device) repaints the toolbar.
+  for (const fn of env.state.changeListeners) fn({ enabled: { newValue: false } }, 'sync');
+  await settle();
+  assert.ok(env.state.icons.length > before);
+  assert.equal(env.state.icons.at(-1)[16], 'icons/16-off.png');
+
+  for (const fn of env.state.changeListeners) fn({ enabled: { newValue: true } }, 'sync');
+  await settle();
+  assert.equal(env.state.icons.at(-1)[16], 'icons/16.png');
+});
+
+test('a change to an unrelated key leaves the icon alone', async () => {
+  const env = makeEnv({ enabled: true });
+  runWorker(env);
+  await settle();
+  const before = env.state.icons.length;
+  for (const fn of env.state.changeListeners) fn({ somethingElse: { newValue: 1 } }, 'sync');
+  await settle();
+  assert.equal(env.state.icons.length, before);
+});
+
+test('every icon the worker can paint is a real file, and ships to Firefox', async () => {
+  // setIcon fails silently on a missing path, so a typo or a forgotten entry in
+  // the Firefox copy list would only show up as an indicator that never changes.
+  const worker = fs.readFileSync(new URL('../src/background/service-worker.js', import.meta.url), 'utf8');
+  const paths = [...worker.matchAll(/'(icons\/[\w-]+\.png)'/g)].map((m) => m[1]);
+  assert.ok(paths.length >= 6, `expected both icon sets, found ${paths.length}`);
+
+  const firefox = fs.readFileSync(new URL('../build/gen-firefox.js', import.meta.url), 'utf8');
+  for (const p of paths) {
+    assert.ok(fs.existsSync(new URL(`../${p}`, import.meta.url)), `${p} must exist (run npm run gen:icons)`);
+    assert.ok(firefox.includes(`'${p}'`), `${p} must be in the Firefox copy list`);
+  }
+});
+
+test('install drops the retired per-site list and seeds the one setting', async () => {
+  // A profile upgrading from the per-site build still carries disabledSites in
+  // synced storage; nothing reads it any more, so it is removed rather than left
+  // to sync between devices forever.
+  const store = { enabled: false, disabledSites: ['old.example'] };
+  const env = makeEnv(store);
+  runWorker(env);
+  await env.state.installListeners[0]({ reason: 'update' });
+  assert.equal('disabledSites' in store, false, 'the stale key must be removed');
+  assert.equal(store.enabled, false, 'an existing choice is preserved');
+  assert.equal(env.state.icons.at(-1)[16], 'icons/16-off.png');
 });
