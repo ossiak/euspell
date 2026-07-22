@@ -611,6 +611,11 @@ async function main() {
           const url = URL.createObjectURL(new Blob([data], { type: 'application/pdf' }));
           const a = document.createElement('a');
           a.href = url;
+          // The ORIGINAL filename, deliberately without the ".eu" the tab title
+          // carries. That suffix marks euspell output — a Save-as-PDF from Print
+          // renders the reformed canvases and earns it — whereas these are the
+          // published bytes, unreformed. Naming them "report.eu.pdf" would
+          // promise a reform the file does not contain.
           a.download = name;
           // In the document, not detached: a programmatic click on an anchor
           // that was never inserted is ignored by some engines.
