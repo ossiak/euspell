@@ -98,6 +98,15 @@ body {
     gap: 0;
   }
 
+  /* A page that never rendered is an empty placeholder — evict() empties it and
+     one that has not been reached yet was never filled. Printing it would put a
+     blank sheet in the output. The Print button and Ctrl+P both rasterize
+     everything first, so this only catches the browser's own menu, which cannot
+     be intercepted: better a short document than one padded with blanks. */
+  #pages > div:empty {
+    display: none;
+  }
+
   #pages > div {
     box-shadow: none;
     margin: 0;

@@ -636,35 +636,67 @@ async function main() {
 
     // --- print --------------------------------------------------------------
     const printBtn = document.getElementById('print');
-    if (printBtn) {
-      printBtn.hidden = false;
-      printBtn.addEventListener('click', async () => {
-        // Pages are rasterized only as they near the viewport, so printing
-        // without this would emit blank sheets for everything off screen.
-        const label = printBtn.textContent;
+
+    /**
+     * Rasterize every page, print, then let the keep window take over again.
+     *
+     * Pages are rendered only as they near the viewport, so printing without
+     * this emits blank sheets for everything off screen.
+     */
+    async function printAllPages() {
+      if (printing) return;
+      const label = printBtn?.textContent;
+      if (printBtn) {
         printBtn.disabled = true;
         printBtn.textContent = 'Preparing…';
-        printing = true;
-        try {
-          for (let n = 1; n <= wraps.length; n++) {
-            const wrap = wraps[n - 1];
-            if (rendered.has(wrap)) continue;
-            // Take it off the render observer first: rendering it here would
-            // otherwise leave it armed, and scrolling past it later would
-            // rasterize the same page a second time.
-            renderIO?.unobserve(wrap);
-            enqueueRender(wrap, n);
-          }
-          await queue; // the render queue is serial; this settles when all are done
-          window.print();
-        } finally {
-          printing = false;
+      }
+      printing = true;
+      try {
+        for (let n = 1; n <= wraps.length; n++) {
+          const wrap = wraps[n - 1];
+          if (rendered.has(wrap)) continue;
+          // Take it off the render observer first: rendering it here would
+          // otherwise leave it armed, and scrolling past it later would
+          // rasterize the same page a second time.
+          renderIO?.unobserve(wrap);
+          enqueueRender(wrap, n);
+        }
+        await queue; // the render queue is serial; this settles when all are done
+        window.print();
+      } finally {
+        printing = false;
+        if (printBtn) {
           printBtn.disabled = false;
           printBtn.textContent = label;
-          // Drop everything outside the keep window again — holding every page's
-          // canvas is precisely the memory cost lazy rendering exists to avoid.
-          for (const wrap of wraps) if (!near.has(wrap)) evict(wrap);
         }
+        // Drop everything outside the keep window again — holding every page's
+        // canvas is precisely the memory cost lazy rendering exists to avoid.
+        for (const wrap of wraps) if (!near.has(wrap)) evict(wrap);
+      }
+    }
+
+    // Both bound only when the bar exists, i.e. in the standalone viewer. An
+    // embedding host (Eupub) strips the bar and owns its own chrome — taking its
+    // Ctrl+P and printing just this frame would be hijacking a key in someone
+    // else's window.
+    if (printBtn) {
+      printBtn.hidden = false;
+      printBtn.addEventListener('click', printAllPages);
+
+      // Ctrl/Cmd+P goes straight to the browser's print flow without touching
+      // the button, and `beforeprint` fires too late to help — it is
+      // synchronous, so there is no rasterizing the rest of the document before
+      // the dialog opens. Take the shortcut over instead and run the same
+      // prepare-then-print path, which is what it was meant to do.
+      //
+      // The browser's own menu (⋮ → Print) cannot be intercepted at all. For
+      // that route the print stylesheet drops pages that never rendered, so the
+      // output is short rather than padded with blank sheets.
+      window.addEventListener('keydown', (e) => {
+        if (e.key !== 'p' && e.key !== 'P') return;
+        if (!(e.ctrlKey || e.metaKey) || e.altKey || e.shiftKey) return;
+        e.preventDefault();
+        printAllPages();
       });
     }
   }
