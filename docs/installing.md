@@ -45,6 +45,7 @@ you're looking at** — no reload.
 |---|---|
 | **Convert pages** | The one switch. Off means Euspell converts nothing, anywhere. |
 | **Dictate euspell** | **Start**/**Stop** speech-to-text that types in reformed spelling at your cursor. Appears only on pages where your browser supports speech recognition. Click into a text box first, then press Start. |
+| **Reload** | Appears only over a PDF the browser is rendering itself — one opened while Euspell was off. Reloading hands it to Euspell's viewer. |
 | **Options** | Opens the settings page below. |
 
 **The toolbar icon tells you the state at a glance**, so you don't have to open
@@ -82,8 +83,9 @@ your desktop too.
   reforms the text while keeping the page's real layout, graphics, and fonts.
   The switch reaches an open PDF as well: turning it off redraws the pages on
   screen in their original spelling, and turning it back on redraws them
-  reformed. (Turning Euspell *on* while a PDF is already open in the browser's
-  own viewer needs a reload — that hand-off happens when the page loads.)
+  reformed. A PDF that *opened* while Euspell was off is in the browser's own
+  viewer instead, which no extension can reach — the popup notices and offers a
+  **Reload** to hand it over.
 - **Local files.** To convert pages or PDFs stored on your own computer
   (`file://` URLs), go to `chrome://extensions` → Euspell → **Details** and turn
   on **Allow access to file URLs**. Chrome withholds this by default.

@@ -1,6 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { isPdfUrl } from '../src/pdf/pdf-url.js';
 
 const flush = () => new Promise((r) => setTimeout(r, 0));
 
@@ -16,7 +17,8 @@ function mkEl() {
 
 function makeEnv(store, tab) {
   const els = {};
-  for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint'])
+  for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint',
+    'reloadRow', 'reload'])
     els[id] = mkEl();
   const reloaded = [];
   // Every icon repaint the page asks for, so a test can assert the popup gives
@@ -54,6 +56,7 @@ function makeEnv(store, tab) {
       async request() { store.__hostAccess = true; return true; },
     },
     runtime: {
+      getURL: (p) => `chrome-extension://abcdefgh/${p}`,
       openOptionsPage() {},
       async sendMessage() { return undefined; },
     },
@@ -68,9 +71,11 @@ async function runScript(relPath, env) {
   // strip it and inject the mock as `browser` — the same handle the shim exports.
   src = src.replace(/^\s*import\b.*$/gm, '');
   // eslint-disable-next-line no-new-func
-  new Function('document', 'browser', 'URL', 'console', 'paintActionIcon', src)(
+  new Function('document', 'browser', 'URL', 'console', 'paintActionIcon', 'isPdfUrl', 'window', src)(
     env.document, env.browser, URL, console,
     async (on) => { env.painted.push(on); },
+    isPdfUrl, // the real predicate, so the popup's offer can't drift from the worker's redirect
+    { close() {} },
   );
   await flush();
   await flush();
@@ -105,6 +110,48 @@ test('popup: the switch is global, so it stays usable on a restricted page', asy
   env.els.enabled.checked = false;
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
+});
+
+// The hand-off to our PDF viewer is a navigation-time redirect, so a PDF opened
+// while Euspell was off stays in the browser's own viewer — which no extension
+// can reach — until the tab navigates again. The popup offers the reload rather
+// than performing it uninvited.
+test('popup: offers a reload for a PDF the browser is rendering itself', async () => {
+  const env = makeEnv({ enabled: true }, { id: 5, url: 'https://x.test/paper.pdf' });
+  await runScript('../src/popup/popup.js', env);
+  assert.equal(env.els.reloadRow.hidden, false);
+
+  await env.els.reload.dispatch('click');
+  assert.deepEqual(env.reloaded, [5], 'reloading re-navigates, which is what the worker redirects on');
+});
+
+test('popup: no reload offer once the PDF is already in our viewer', async () => {
+  const url = 'chrome-extension://abcdefgh/src/pdf/viewer.html?file=https%3A%2F%2Fx.test%2Fp.pdf';
+  const env = makeEnv({ enabled: true }, { id: 5, url });
+  await runScript('../src/popup/popup.js', env);
+  assert.equal(env.els.reloadRow.hidden, true);
+});
+
+test('popup: no reload offer while conversion is off, or on a non-PDF', async () => {
+  // Off: the native viewer is showing exactly what was asked for.
+  const off = makeEnv({ enabled: false }, { id: 5, url: 'https://x.test/paper.pdf' });
+  await runScript('../src/popup/popup.js', off);
+  assert.equal(off.els.reloadRow.hidden, true);
+
+  const page = makeEnv({ enabled: true }, { id: 5, url: 'https://x.test/article' });
+  await runScript('../src/popup/popup.js', page);
+  assert.equal(page.els.reloadRow.hidden, true);
+});
+
+test('popup: turning conversion on over a native PDF reveals the offer', async () => {
+  const store = { enabled: false };
+  const env = makeEnv(store, { id: 5, url: 'https://x.test/paper.pdf' });
+  await runScript('../src/popup/popup.js', env);
+  assert.equal(env.els.reloadRow.hidden, true);
+
+  env.els.enabled.checked = true;
+  await env.els.enabled.dispatch('change');
+  assert.equal(env.els.reloadRow.hidden, false, 'the offer must appear without reopening the popup');
 });
 
 test('options: offers the grant button when host access is missing; granting hides it', async () => {

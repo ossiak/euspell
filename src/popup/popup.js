@@ -7,11 +7,43 @@
 
 import { browser } from '../lib/browser.js';
 import { paintActionIcon } from '../lib/action-icon.js';
+import { isPdfUrl } from '../pdf/pdf-url.js';
 
 const enabledBox = document.getElementById('enabled');
 const hint = document.getElementById('hint');
 const dictateRow = document.getElementById('dictateRow');
 const dictateBtn = document.getElementById('dictate');
+const reloadRow = document.getElementById('reloadRow');
+const reloadBtn = document.getElementById('reload');
+
+const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
+// Firefox extensions may not fetch file:// URLs, so the worker leaves local PDFs
+// to the native viewer there — mirrors CAN_VIEW_FILE_URLS in service-worker.js.
+const CAN_VIEW_FILE_URLS = !VIEWER_URL.startsWith('moz-extension:');
+
+/**
+ * True when the active tab holds a PDF the browser is rendering itself, which
+ * a reload would hand to our viewer.
+ *
+ * The hand-off is a navigation-time redirect, so a PDF opened while Euspell was
+ * switched off stays in the native viewer — a plugin no extension can reach —
+ * until the tab navigates again. Rather than reload anyone's tab uninvited, the
+ * popup says so and offers the reload.
+ *
+ * This mirrors the worker's own .pdf-suffix test, so the offer is only made
+ * where it would actually work. An extensionless PDF is not detectable from the
+ * URL (the worker finds those by sniffing response headers, which the popup has
+ * no access to), so the notice simply does not appear for them.
+ *
+ * @param {{ url?: string } | undefined} tab
+ * @returns {boolean}
+ */
+function isUnconvertedPdf(tab) {
+  const url = tab?.url ?? '';
+  if (!isPdfUrl(url) || url.startsWith(VIEWER_URL)) return false;
+  if (/^file:/i.test(url) && !CAN_VIEW_FILE_URLS) return false; // a reload would not help
+  return true;
+}
 
 /** Ask the active tab's content script whether dictation is supported/active. */
 async function dictationStatus(tab) {
@@ -46,6 +78,10 @@ async function load() {
   // The switch is global, so it stays usable everywhere; the hint just explains
   // why this particular tab won't change (a chrome:// or web-store page).
   hint.textContent = tab && !isConvertible(tab) ? 'This page can’t be converted.' : '';
+
+  // Only worth offering while conversion is ON: with it off, the native viewer
+  // is showing exactly what the user asked for.
+  reloadRow.hidden = !(enabled && isUnconvertedPdf(tab));
 
   // Dictation: shown when the content script is present and the browser supports
   // speech recognition. Independent of the conversion toggle above.
@@ -86,6 +122,15 @@ dictateBtn.addEventListener('click', async () => {
   }
 });
 
+reloadBtn.addEventListener('click', async () => {
+  const tab = await activeTab();
+  if (tab?.id == null) return;
+  // A plain reload re-navigates the tab, which is what the worker's redirect
+  // listens for — no need to construct the viewer URL here.
+  await browser.tabs.reload(tab.id);
+  window.close();
+});
+
 enabledBox.addEventListener('change', async () => {
   const on = enabledBox.checked;
   await browser.storage.sync.set({ enabled: on });
@@ -94,6 +139,10 @@ enabledBox.addEventListener('change', async () => {
   // this very click. The worker still repaints on its own events, which covers
   // the options page and other synced devices.
   await paintActionIcon(on);
+  // Flipping the switch changes whether the reload offer is relevant: turning
+  // conversion on over a natively-rendered PDF is exactly when it applies.
+  const tab = await activeTab();
+  reloadRow.hidden = !(on && isUnconvertedPdf(tab));
   await applyLive();
 });
 
