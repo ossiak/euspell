@@ -21,10 +21,7 @@ import { browser } from '../lib/browser.js';
   // convert or observe (and walkTextNodes/observe would throw on null).
   if (!document.body) return;
 
-  const { enabled = true, disabledSites = [] } = await browser.storage.sync.get([
-    'enabled',
-    'disabledSites',
-  ]);
+  const { enabled = true } = await browser.storage.sync.get('enabled');
 
   // childList catches inserted content (SPA renders); characterData catches text
   // rewritten in place (live regions, re-renders). Watching characterData is what
@@ -99,13 +96,13 @@ import { browser } from '../lib/browser.js';
     if (wantedMode === 'euspell' && viewMode === 'original') convertPage();
   }
 
-  if (enabled && !disabledSites.includes(location.hostname)) applyMode('euspell');
+  if (enabled) applyMode('euspell');
 
-  // Live conversion toggle from the popup. The per-site checkbox (and the global
-  // one) send 'euspell:setMode' so a site can be switched on/off without reloading
-  // the tab. The listener is always registered — even on a page that loaded
-  // un-converted — so conversion can be turned on live. A missing responder tells
-  // the popup this page has no content script (a restricted page or the viewer).
+  // Live conversion toggle from the popup, which sends 'euspell:setMode' so the
+  // page switches without a reload. The listener is always registered — even on
+  // a page that loaded un-converted — so conversion can be turned on live. A
+  // missing responder tells the popup this page has no content script (a
+  // restricted page or the viewer).
   browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
     if (!msg || msg.type !== 'euspell:setMode') return;
     applyMode(msg.mode === 'euspell' ? 'euspell' : 'original').then(() => sendResponse({ mode: viewMode }));
@@ -114,20 +111,17 @@ import { browser } from '../lib/browser.js';
 
   // Settings changed anywhere — the popup, the options page, or another synced
   // device. The popup's setMode message reaches only the ACTIVE tab; this
-  // listener is what keeps background tabs honest (a global toggle-off restores
-  // every open tab, not just the front one — and the options page sends no
-  // messages at all). Same idempotent guards as the message path, so a tab that
-  // also got the popup's message simply no-ops here.
+  // listener is what keeps background tabs honest (a toggle-off restores every
+  // open tab, not just the front one — and the options page sends no messages at
+  // all). Same idempotent guards as the message path, so a tab that also got the
+  // popup's message simply no-ops here.
   browser.storage.onChanged.addListener(async (changes, area) => {
-    if (area !== 'sync') return;
-    if (!('enabled' in changes) && !('disabledSites' in changes)) return;
-    // Re-read both keys rather than patching from `changes` (which carries only
-    // the changed one) — the mode depends on their combination.
-    const { enabled: on = true, disabledSites: sites = [] } = await browser.storage.sync.get([
-      'enabled',
-      'disabledSites',
-    ]);
-    applyMode(on && !sites.includes(location.hostname) ? 'euspell' : 'original');
+    if (area !== 'sync' || !('enabled' in changes)) return;
+    // Re-read rather than trusting changes.newValue: two toggles in quick
+    // succession fire two events whose async work can interleave, and storage
+    // always holds the settled answer.
+    const { enabled: on = true } = await browser.storage.sync.get('enabled');
+    applyMode(on ? 'euspell' : 'original');
   });
 
   // If the extension is disabled or removed, this already-injected content script

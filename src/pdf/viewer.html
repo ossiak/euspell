@@ -9,7 +9,14 @@
   <body>
     <header id="bar">
       <span id="filename">Euspell PDF</span>
-      <a id="original" href="#" rel="noreferrer">Open original</a>
+      <span id="pagecount" hidden></span>
+      <span class="actions">
+        <button type="button" id="print" hidden
+                title="Print the reformed pages. Choosing Save as PDF gives you the euspell version, named “.eu.pdf”.">Print</button>
+        <button type="button" id="download" hidden
+                title="Save the PDF exactly as published, in its original spelling. For a euspell copy, use Print and choose Save as PDF.">Download original</button>
+        <a id="original" href="#" rel="noreferrer">Open original</a>
+      </span>
     </header>
     <main id="pages">
       <p id="status">Loading…</p>

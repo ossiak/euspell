@@ -71,6 +71,38 @@ export async function bypassNextRedirect(url) {
   }
 }
 
+// --- conversion switch -----------------------------------------------------
+// The viewer is an extension PAGE, not a content-scripted one, so the popup's
+// setMode message never reaches it and nothing here reacts to the "Convert
+// pages" setting on its own. Without this seam an open PDF stayed reformed
+// after the switch was turned off — and stayed reformed across reloads too,
+// because the service worker never redirects a viewer URL away from itself.
+
+/**
+ * Whether conversion is on right now. Read once at startup; changes arrive
+ * through {@link onConversionChange}.
+ * @returns {Promise<boolean>}
+ */
+export async function conversionEnabled() {
+  try {
+    const { enabled = true } = await browser.storage.sync.get('enabled');
+    return enabled;
+  } catch {
+    return true; // storage unreadable — convert, matching the content script
+  }
+}
+
+/**
+ * Subscribe to "Convert pages" changes from any surface (popup, options page,
+ * another synced device).
+ * @param {(enabled: boolean) => void} cb
+ */
+export function onConversionChange(cb) {
+  browser.storage.onChanged.addListener((changes, area) => {
+    if (area === 'sync' && 'enabled' in changes) cb(changes.enabled.newValue ?? true);
+  });
+}
+
 // --- navigation channel ----------------------------------------------------
 // Lets an embedding host (Eupub's reader) show a table of contents, a page
 // readout, and remember the reading position. The extension viewer is a
