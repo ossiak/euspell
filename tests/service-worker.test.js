@@ -91,11 +91,14 @@ function runWorker(env) {
   );
 }
 
-const headerDetails = (url, headers, tabId = 1) => ({
-  type: 'main_frame',
+const headerDetails = (url, headers, opts = {}) => ({
+  type: opts.type ?? 'main_frame',
   method: 'GET',
   url,
-  tabId,
+  tabId: opts.tabId ?? 1,
+  // -1 for the main frame; a real frame id for a sub_frame (0 == child of the
+  // main frame, which is the only sub_frame depth the worker acts on).
+  parentFrameId: opts.parentFrameId ?? -1,
   responseHeaders: Object.entries(headers).map(([name, value]) => ({ name, value })),
 });
 
@@ -136,6 +139,35 @@ test('headers path: an ambiguous non-PDF body is left alone', async () => {
   );
   assert.equal(env.state.fetches.length, 1);
   assert.equal(env.state.updated.length, 0);
+});
+
+test('headers path: a PDF in a first-level iframe promotes the whole tab', async () => {
+  // The wrapper-page shape: an HTML page whose body is one <iframe> holding an
+  // extensionless PDF. We can't touch a framed PDF, so the whole tab is sent to
+  // the viewer on the frame's own URL.
+  const env = makeEnv({ enabled: true });
+  runWorker(env);
+  await env.state.headerListeners[0](
+    headerDetails('https://x.test/announcement/asx/abc', { 'Content-Type': 'application/pdf' },
+      { type: 'sub_frame', parentFrameId: 0, tabId: 7 }),
+  );
+  assert.equal(env.state.updated.length, 1);
+  assert.equal(env.state.updated[0].tabId, 7, 'navigates the whole tab, not just the frame');
+  assert.match(
+    env.state.updated[0].url,
+    /viewer\.html\?file=https%3A%2F%2Fx\.test%2Fannouncement%2Fasx%2Fabc$/,
+  );
+});
+
+test('headers path: a PDF in a deeply-nested frame is left alone', async () => {
+  // Guard against a deep ad/tracking frame that serves a PDF hijacking the tab.
+  const env = makeEnv({ enabled: true });
+  runWorker(env);
+  await env.state.headerListeners[0](
+    headerDetails('https://ads.test/banner', { 'Content-Type': 'application/pdf' },
+      { type: 'sub_frame', parentFrameId: 9 }),
+  );
+  assert.equal(env.state.updated.length, 0, 'only direct children of the main frame promote');
 });
 
 test('headers path: an attachment download is never redirected', async () => {
