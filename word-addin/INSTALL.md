@@ -79,6 +79,8 @@ Use this if Method A fails.
 
 - On the **Home** ribbon tab, click the **Euspell** button — the taskpane opens.
 - Click **Convert document** or **Convert selection**.
+- To go back, use **Revert document / selection to English** (a lexicon-based
+  reverse conversion; it also turns Word's proofing back on).
 - The first conversion takes a few seconds (it loads the dictionary); after that
   it's quick. Status shows how many paragraphs changed.
 
