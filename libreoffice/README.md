@@ -91,6 +91,46 @@ if you use one; menus and dialogs render through LibreOffice's KDE (kf5/kf6)
 integration with no extra setup. If a dialog ever misbehaves, launch once with
 `SAL_USE_VCLPLUGIN=gtk3 libreoffice` as a fallback.
 
+### Install on macOS
+
+The same two-part install. macOS ships LibreOffice as a single application
+bundle that **bundles its own Python**, so — unlike native Linux — there is no
+separate script-provider package to install. `unopkg` lives inside the bundle
+at `Contents/MacOS`, and the user profile is under
+`~/Library/Application Support`.
+
+```bash
+npm run gen:lo && npm run gen:lo:oxt   # build the engine data + the .oxt (once)
+libreoffice/install-macos.sh           # finds LibreOffice.app automatically
+```
+
+Quit LibreOffice first (⌘Q, including the Start Center — the install writes to
+its profile). Re-run any time to update; `libreoffice/install-macos.sh
+--uninstall` removes it. If the app isn't in `/Applications` or `~/Applications`,
+point at it with `--app /path/to/LibreOffice.app`.
+
+| | Path |
+|---|---|
+| Profile it targets | `~/Library/Application Support/LibreOffice/4/user` |
+| `unopkg` used | `/Applications/LibreOffice.app/Contents/MacOS/unopkg` |
+
+Prefer to do it by hand? The steps mirror the Windows two-part install above with
+the macOS profile path and the bundled `unopkg`:
+
+```bash
+app="/Applications/LibreOffice.app"
+dst="$HOME/Library/Application Support/LibreOffice/4/user/Scripts/python"
+mkdir -p "$dst"
+cp libreoffice/Scripts/python/euspell_convert.py "$dst"/
+cp -r libreoffice/euspell "$dst"/
+"$app/Contents/MacOS/unopkg" add --force dict/euspell-libreoffice.oxt
+```
+
+Restart, then use **Euspell ▸ Convert Document** / **Convert Selection**. On the
+first launch after install, macOS Gatekeeper may need LibreOffice itself
+approved (right-click ▸ Open once) if it was moved from a downloaded copy — the
+extension adds nothing to that.
+
 ## Build
 
 ```

@@ -93,6 +93,14 @@ npm run gen:lo && npm run gen:lo:oxt
 libreoffice/install-linux.sh
 ```
 
+On **macOS**, one command does both and finds `LibreOffice.app` automatically
+(the macOS build bundles its own Python — nothing extra to install):
+
+```bash
+npm run gen:lo && npm run gen:lo:oxt
+libreoffice/install-macos.sh
+```
+
 On **Windows**:
 
 ```powershell
