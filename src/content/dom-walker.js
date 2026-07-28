@@ -221,7 +221,7 @@ function* classifyRun(run) {
  * @param {(word: string, tokens: Token[], idx: number) => string} convertFn
  */
 function convertBlock(textNodes, convertFn) {
-  /** @type {{ node: Text, text: string, wordIdx: number }[]} */
+  /** @type {{ start: number, origLen: number, text: string, wordIdx: number }[]} */
   const pieces = [];
   /** @type {Token[]} */
   const tokens = [];
@@ -234,34 +234,50 @@ function convertBlock(textNodes, convertFn) {
   /** @type {Map<Text, string>} */
   const sourceByNode = new Map();
 
+  // Concatenate the block's nodes into ONE source and tokenize that, so a word
+  // split across text-node boundaries — a drop-cap "<span>I</span>celand", inline
+  // styling mid-word — stays one token ("Iceland") instead of the fragments
+  // "I" (which alone reforms to the pronoun "Ih") + "celand". Each piece remembers
+  // its offset and original length in the block; the write-back below maps it back
+  // to the node(s) it came from, splitting a spanning word by prefix.
+  let blockText = '';
+  /** @type {{ node: Text, start: number }[]} */
+  const bounds = [];
   for (const node of textNodes) {
     const source = sourceOf(node);
     sourceByNode.set(node, source);
-    for (const seg of tokenize(source)) {
-      if (seg.kind === 'sep') {
-        pieces.push({ node, text: seg.text, wordIdx: -1 });
-        // A separator carrying ./!/? ends the preceding word's sentence.
-        if (tokens.length && SENTENCE_BREAK.test(seg.text)) {
-          tokens[tokens.length - 1].breakAfter = true;
-        }
-      } else if (seg.kind === 'contraction') {
-        const pieceIdx = pieces.push({ node, text: seg.text, wordIdx: tokens.length }) - 1;
-        const components = contractionComponents(seg.text);
-        if (components.length) {
-          // One pseudo-token per sequence position; identity rides on the first.
-          components.forEach((tag, i) => {
-            pieceOfToken.push(i === 0 ? pieceIdx : -1);
-            tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false });
-          });
-        } else {
-          pieceOfToken.push(pieceIdx);
-          tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
-        }
+    bounds.push({ node, start: blockText.length });
+    blockText += source;
+  }
+
+  let off = 0;
+  for (const seg of tokenize(blockText)) {
+    const start = off;
+    off += seg.text.length;
+    const origLen = seg.text.length;
+    if (seg.kind === 'sep') {
+      pieces.push({ start, origLen, text: seg.text, wordIdx: -1 });
+      // A separator carrying ./!/? ends the preceding word's sentence.
+      if (tokens.length && SENTENCE_BREAK.test(seg.text)) {
+        tokens[tokens.length - 1].breakAfter = true;
+      }
+    } else if (seg.kind === 'contraction') {
+      const pieceIdx = pieces.push({ start, origLen, text: seg.text, wordIdx: tokens.length }) - 1;
+      const components = contractionComponents(seg.text);
+      if (components.length) {
+        // One pseudo-token per sequence position; identity rides on the first.
+        components.forEach((tag, i) => {
+          pieceOfToken.push(i === 0 ? pieceIdx : -1);
+          tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false });
+        });
       } else {
-        const pieceIdx = pieces.push({ node, text: seg.text, wordIdx: tokens.length }) - 1;
         pieceOfToken.push(pieceIdx);
         tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
       }
+    } else {
+      const pieceIdx = pieces.push({ start, origLen, text: seg.text, wordIdx: tokens.length }) - 1;
+      pieceOfToken.push(pieceIdx);
+      tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
     }
   }
   if (tokens.length === 0) return;
@@ -283,14 +299,42 @@ function convertBlock(textNodes, convertFn) {
     }
   }
 
-  // Reassemble each node from its (possibly rewritten) fragments.
+  // Reassemble each node from the pieces (or piece fragments) that originally fell
+  // in it. A piece whose original span crosses a node boundary — a word split by
+  // inline markup — is divided by prefix: each node takes a share of the converted
+  // text proportional to its share of the original characters. So a drop-cap "I"
+  // keeps the reformed word's first letter and the rest lands in the next node.
   /** @type {Map<Text, string[]>} */
   const byNode = new Map();
+  for (const b of bounds) byNode.set(b.node, []);
+
+  const nodeIndexAt = (offset) => {
+    let idx = 0;
+    for (let i = 0; i < bounds.length; i++) {
+      if (bounds[i].start <= offset) idx = i;
+      else break;
+    }
+    return idx;
+  };
+  const nodeEnd = (i) => (i + 1 < bounds.length ? bounds[i + 1].start : blockText.length);
+
   for (const piece of pieces) {
-    let parts = byNode.get(piece.node);
-    if (!parts) byNode.set(piece.node, (parts = []));
-    parts.push(piece.text);
+    const startIdx = nodeIndexAt(piece.start);
+    const endIdx = nodeIndexAt(piece.start + Math.max(1, piece.origLen) - 1);
+    if (startIdx === endIdx) {
+      byNode.get(bounds[startIdx].node).push(piece.text);
+      continue;
+    }
+    let taken = 0;
+    for (let i = startIdx; i <= endIdx; i++) {
+      const origInNode = Math.min(nodeEnd(i), piece.start + piece.origLen) - Math.max(bounds[i].start, piece.start);
+      const share =
+        i === endIdx ? piece.text.length - taken : Math.round((origInNode / piece.origLen) * piece.text.length);
+      byNode.get(bounds[i].node).push(piece.text.slice(taken, taken + share));
+      taken += share;
+    }
   }
+
   for (const [node, parts] of byNode) {
     const joined = parts.join('');
     if (joined !== node.nodeValue) node.nodeValue = joined;
