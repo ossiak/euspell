@@ -97,7 +97,17 @@ function route(key, entry, tokens, idx) {
     return is_VVZ_svm(tokens, idx) ? 1 : 0;
   }
   // The clitic 's: genitive ('s, spellings[0]) vs contracted is/has ('z, [1]).
-  if (pos.includes('GE')) {
+  // GE (the genitive marker) is the FINAL tag of the reading — a bare tag for the
+  // standalone "'s" (pos "GE|VBZ|VHZ|…"), the last of a sequence for a whole-word
+  // possessive contraction ("anyone's" pos "PN1 GE|PN1 VBZ|PN1 VHZ", likewise
+  // everyone's, someone's, somebody's, nobody's, no one's). Testing the final tag
+  // catches both; a bare pos.includes('GE') matched only the standalone clitic, so
+  // the whole-word contractions never reached is_verbal_s and always took the
+  // genitive spelling ("anyone's coming" → "anywun's"). The exact 'GE' match skips
+  // the possessive-pronoun tags APPGE/PPGE/DDQGE. For a whole-word contraction the
+  // possessor is inside the token, so is_verbal_s decides on the post-clitic
+  // context it reads after idx — the same slots it uses for the bare clitic.
+  if (pos.some((reading) => reading.split(/\s+/).pop() === 'GE')) {
     return is_verbal_s(tokens, idx) ? 1 : 0;
   }
   // French loanwords (encoding 702) whose singular and plural share one current

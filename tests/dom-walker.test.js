@@ -94,6 +94,23 @@ test('walkTextNodes skips text nested inside skip tags (syntax-highlighted code)
   assert.equal(span.childNodes[0].nodeValue, 'this is a test');
 });
 
+test('walkTextNodes keeps a word split across text nodes whole (drop cap)', () => {
+  // <p><span class="dropcap">I</span>celand</p> — "Iceland" is split across two
+  // text nodes. It must convert as ONE word (unchanged), not the fragments
+  // "I" (-> the pronoun "Ih") + "celand" == "Ihceland".
+  const cap = tx('I');
+  const rest = tx('celand');
+  walkTextNodes(el('p', el('span', cap), rest), convert);
+  assert.equal(cap.nodeValue + rest.nodeValue, 'Iceland');
+  assert.equal(cap.nodeValue, 'I'); // drop-cap letter stays in its own node
+
+  // A split word that DOES reform stays correct: "Island" -> "Ihland".
+  const cap2 = tx('I');
+  const rest2 = tx('sland');
+  walkTextNodes(el('p', el('span', cap2), rest2), convert);
+  assert.equal(cap2.nodeValue + rest2.nodeValue, 'Ihland');
+});
+
 test('walkTextNodes is idempotent on a normal re-walk', () => {
   const node = tx('this is a test');
   const root = el('p', node);

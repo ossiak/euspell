@@ -66,6 +66,23 @@ test("the clitic 's: a determiner after a participle is not an attributive noun"
   assert.equal(conv([['the', ''], ['cat', ''], ["'s", ''], ['tail', '']], "'s"), "'s");
 });
 
+test("whole-word possessive contractions route the clitic like the bare 's", () => {
+  // Regression: anyone's/everyone's/someone's/somebody's/nobody's reach route()
+  // with pos ["PN1 GE","PN1 VBZ","PN1 VHZ"], where the genitive marker GE is the
+  // FINAL tag of a reading, not a bare tag — so a plain pos.includes('GE') missed
+  // them and they always took spellings[0] (the genitive 's), never the 'z. Now
+  // routed through is_verbal_s, to parity with the bare clitic above: a following
+  // noun head is the genitive, a following participle/predicate the contracted verb.
+  assert.equal(conv([["anyone's", ''], ['guess', 'NN1']], "anyone's"), "anywun's");   // genitive
+  assert.equal(conv([["anyone's", ''], ['coming', 'VVG']], "anyone's"), "anywun'z");  // is/has
+  assert.equal(conv([["someone's", ''], ['house', 'NN1']], "someone's"), "somwun's"); // genitive
+  assert.equal(conv([["nobody's", ''], ['business', 'NN1']], "nobody's"), "nobody's");// genitive
+  assert.equal(conv([["nobody's", ''], ['looking', 'VVG']], "nobody's"), "nobody'z"); // is/has
+  assert.equal(conv([["everyone's", ''], ['ready', 'JJ']], "everyone's"), "evrywun'z");// predicate → is
+  assert.equal(conv([["everyone's", ''], ['here', 'RL']], "everyone's"), "evrywun'z"); // locative → is
+  assert.equal(conv([["someone's", ''], ['there', 'EX']], "someone's"), "somwun'z");   // existential → is
+});
+
 test('a determiner before a heteronym settles the noun reading', () => {
   // Regression: the adverb look-through used a loose prefix test, so "the"
   // (AT|…|RG42|RR22|RT42 — stray ditto-adverb tags) was mistaken for an adverb

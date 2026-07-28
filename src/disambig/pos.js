@@ -395,8 +395,9 @@ const SUBJECT_PRON = ['PPHS1', 'PPH1', 'PPHS2', 'PPIS1', 'PPIS2', 'PPY'];
  * For the clitic 's (lexicon tag `GE|VBZ|VHZ|…`): true when it is a contracted
  * verb (is/has → 'z), false when it is the genitive marker ('s).
  *
- * Verbal 's attaches to a pronoun subject ("he's") or precedes a predicative
- * participle ("the bus's arriving", "she's gone"); genitive 's links a noun to a
+ * Verbal 's attaches to a pronoun subject ("he's"), precedes a predicative
+ * participle ("the bus's arriving", "she's gone"), or precedes a deictic locative
+ * predicate ("the cat's here", "everyone's there"); genitive 's links a noun to a
  * following noun phrase ("the cat's tail"). The participle cue alone is
  * ambiguous, because a participle right after the 's can instead be ATTRIBUTIVE,
  * modifying a following noun — which makes the 's a genitive ("today's featured
@@ -461,6 +462,14 @@ const NOT_NP_INITIAL_GUARDED = [
   ...PREPOSITION,           // II 6,824 verbal against 34 genitive
 ];
 
+// Locative/directional adverbs (here, away, abroad, upstairs) — a predicate of
+// place, never a possessed noun. Guarded by a no-noun test in is_verbal_s so the
+// words that are ALSO nouns ("home", "back", "upstairs") keep their genitive
+// default, since "the family's home" is a genuine genitive the tags can't rule
+// out. The existential/locative "there" (EX|NN1|RL) is handled separately: its EX
+// reading marks it verbal despite the noun reading ("everyone's there").
+const PREDICATE_LOCATIVE = ['RL'];
+
 export function is_verbal_s(tokens, idx) {
   const [, , w1b, , w1a, w2a, w3a] = contextWindow(tokens, idx);
   if (anyExact(w1b, SUBJECT_PRON)) return true;        // "he 's …" — contracted verb
@@ -488,6 +497,19 @@ export function is_verbal_s(tokens, idx) {
   // reading available: the clitic is a contracted verb.
   if (anyPrefixReal(w1a, NOT_NP_INITIAL_DECISIVE)) return true;
   if (!isNounHead(w1a) && anyPrefixReal(w1a, NOT_NP_INITIAL_GUARDED)) return true;
+
+  // A deictic locative/existential predicate after the clitic: a pure locative
+  // adverb with no noun reading ("here", "away") or existential/locative "there"
+  // (EX). It heads a place-predicate, not a possessed noun, so the clitic is a
+  // contracted verb ("the cat's here" = "is here", "everyone's there" = "is
+  // there"). The no-noun guard keeps "home"/"back" (NN1|RL) on the genitive
+  // default; the EX arm still catches "there" despite its NN1 reading.
+  if (
+    (anyPrefixReal(w1a, PREDICATE_LOCATIVE) && !anyPrefixReal(w1a, ['NN', 'NP'])) ||
+    anyExact(w1a, ['EX'])
+  ) {
+    return true;
+  }
 
   return false;                                         // default: genitive
 }
