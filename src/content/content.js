@@ -9,8 +9,15 @@ import { browser } from '../lib/browser.js';
 // content script), which forbids top-level await — so the storage read lives
 // inside this function. A re-injection returns early.
 (async () => {
-  if (window.__euspellLoaded) return;
-  window.__euspellLoaded = true;
+  // Ownership of the page, not a plain "loaded" flag. Reloading or updating the
+  // extension orphans this script but leaves its globals in the isolated world,
+  // so a boolean would make the re-injection that follows a silent no-op — the
+  // page would stay unconverted until the tab itself reloaded. The service worker
+  // clears this before injecting; the orphan then sees it no longer owns the page
+  // and leaves the newcomer's work alone (see lifecheck below).
+  const OWNER = {};
+  if (window.__euspellOwner) return;
+  window.__euspellOwner = OWNER;
 
   // Dictation is an authoring feature independent of page conversion, so it is
   // wired up first — a user can dictate euspell on a site whose pages they don't
@@ -104,6 +111,13 @@ import { browser } from '../lib/browser.js';
   // missing responder tells the popup this page has no content script (a
   // restricted page or the viewer).
   browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+    // A live script answers; an orphaned one cannot (its runtime belongs to the
+    // previous extension instance), and a restricted page has none at all. That
+    // is how the worker decides which tabs still need injecting.
+    if (msg && msg.type === 'euspell:ping') {
+      sendResponse({ alive: true });
+      return false;
+    }
     if (!msg || msg.type !== 'euspell:setMode') return;
     applyMode(msg.mode === 'euspell' ? 'euspell' : 'original').then(() => sendResponse({ mode: viewMode }));
     return true; // sendResponse is async — the euspell path awaits the lexicon
@@ -140,6 +154,11 @@ import { browser } from '../lib/browser.js';
     }
     if (!alive) {
       clearInterval(lifecheck);
+      // Only undo our own work. If the worker has already cleared ownership and
+      // injected a replacement, this poll is arriving late and restoring here
+      // would strip the reformed text the new instance just applied.
+      if (window.__euspellOwner !== OWNER) return;
+      window.__euspellOwner = null; // release the page for a future injection
       restorePage();
     }
   }, 3000);

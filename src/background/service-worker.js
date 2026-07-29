@@ -12,6 +12,52 @@ import {
 import { browser } from '../lib/browser.js';
 import { paintActionIcon, refreshActionIcon } from '../lib/action-icon.js';
 
+// Declarative content_scripts run only when a page loads, so reloading, updating
+// or re-enabling the extension leaves every ALREADY-OPEN tab without a working
+// script: the old one is orphaned the moment its runtime is invalidated, and
+// Chrome does not re-inject. Pages then sit unconverted until the user reloads
+// each tab — which looks like the extension is simply broken after an update.
+//
+// Inject into those tabs ourselves. Each is pinged first, because a tab that
+// still has a LIVE script must not get a second one; only silence (no script, an
+// orphan, or a restricted page) earns an injection.
+const CONTENT_BUNDLE = 'dist/content-bundle.js';
+
+async function injectInto(tabId) {
+  try {
+    const reply = await browser.tabs.sendMessage(tabId, { type: 'euspell:ping' });
+    if (reply?.alive) return false; // a live script already owns this tab
+  } catch {
+    /* no responder: nothing there, or an orphan from the previous instance */
+  }
+  try {
+    // Release the previous instance's claim first. Its globals outlive it in the
+    // isolated world, and the bundle returns early on a claimed page — so without
+    // this the injection below would do nothing at all.
+    await browser.scripting.executeScript({
+      target: { tabId },
+      func: () => { window.__euspellOwner = null; },
+    });
+    await browser.scripting.executeScript({ target: { tabId }, files: [CONTENT_BUNDLE] });
+    return true;
+  } catch {
+    // Restricted by design — chrome://, the Web Store, PDF viewers, other
+    // extensions' pages. Nothing to report; those tabs are simply not ours.
+    return false;
+  }
+}
+
+/** Re-inject into every tab that has no live content script. */
+async function reinjectAllTabs() {
+  let tabs = [];
+  try {
+    tabs = await browser.tabs.query({ url: ['http://*/*', 'https://*/*', 'file://*/*'] });
+  } catch {
+    return;
+  }
+  await Promise.all(tabs.map((t) => (t.id === undefined ? false : injectInto(t.id))));
+}
+
 browser.runtime.onInstalled.addListener(async (details) => {
   const current = await browser.storage.sync.get(['enabled', 'disabledSites']);
   await browser.storage.sync.set({ enabled: current.enabled ?? true });
@@ -24,6 +70,9 @@ browser.runtime.onInstalled.addListener(async (details) => {
   if (details.reason === 'install') {
     browser.tabs.create({ url: browser.runtime.getURL('src/onboarding/onboarding.html') });
   }
+  // Fires for a first install, a version update, and a manual reload of an
+  // unpacked build — every case that strands open tabs without a script.
+  await reinjectAllTabs();
 });
 
 // An MV3 worker is torn down when idle and restarted on the next event, and a

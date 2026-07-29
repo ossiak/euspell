@@ -19,6 +19,8 @@ function makeEnv(store) {
     navListeners: [], headerListeners: [], msgListeners: [], updated: [], fetches: [],
     // Toolbar-icon calls, so a test can assert which artwork the worker painted.
     icons: [], titles: [], installListeners: [], startupListeners: [], changeListeners: [],
+    // Re-injection bookkeeping: what was pinged, and what was executed where.
+    pings: [], injected: [],
   };
   const browser = {
     runtime: {
@@ -48,9 +50,29 @@ function makeEnv(store) {
       update: (tabId, props) => state.updated.push({ tabId, ...props }),
       create() {},
       async query() {
+        return store.__tabs ?? [];
+      },
+      async sendMessage(tabId, msg) {
+        state.pings.push({ tabId, type: msg?.type });
+        if (msg?.type === 'euspell:ping') {
+          // Only tabs listed alive answer; the rest reject the way Chrome does
+          // when there is no receiver (no script, or one orphaned by a reload).
+          if (store.__alive?.includes(tabId)) return { alive: true };
+          throw new Error('Could not establish connection. Receiving end does not exist.');
+        }
+        return undefined;
+      },
+    },
+    scripting: {
+      async executeScript({ target, files }) {
+        if (store.__restricted?.includes(target.tabId)) {
+          throw new Error('Cannot access contents of the page');
+        }
+        // `func` is not invoked: it dereferences `window`, which does not exist
+        // here. What matters is that the clear is ordered before the bundle.
+        state.injected.push({ tabId: target.tabId, what: files ? files[0] : 'clear-owner' });
         return [];
       },
-      async sendMessage() {},
     },
     commands: { onCommand: { addListener() {} } },
     webNavigation: { onBeforeNavigate: { addListener: (fn) => state.navListeners.push(fn) } },
@@ -268,4 +290,58 @@ test('install drops the retired per-site list and seeds the one setting', async 
   assert.equal('disabledSites' in store, false, 'the stale key must be removed');
   assert.equal(store.enabled, false, 'an existing choice is preserved');
   assert.equal(env.state.icons.at(-1), false, 'and the icon matches it');
+});
+
+// --- re-injection after an extension reload ---------------------------------
+// Declarative content_scripts run only at page load, so reloading or updating
+// the extension leaves open tabs with an orphaned script and no conversion until
+// the user reloads each tab. The worker injects into those tabs itself.
+
+const openTabs = (...ids) => ids.map((id) => ({ id, url: 'https://site' + id + '.example/' }));
+
+test('reload injects into a tab whose script is orphaned', async () => {
+  const store = { enabled: true, __tabs: openTabs(1), __alive: [] };
+  const env = makeEnv(store);
+  runWorker(env);
+  await env.state.installListeners[0]({ reason: 'update' });
+
+  assert.deepEqual(env.state.pings, [{ tabId: 1, type: 'euspell:ping' }]);
+  assert.deepEqual(
+    env.state.injected,
+    [{ tabId: 1, what: 'clear-owner' }, { tabId: 1, what: 'dist/content-bundle.js' }],
+  );
+});
+
+test('the previous owner is cleared BEFORE the bundle is injected', async () => {
+  // The bundle returns early on a page that is already claimed, and an orphan's
+  // claim outlives it in the isolated world. Injecting first and clearing second
+  // would be a silent no-op -- exactly the bug this fixes.
+  const store = { enabled: true, __tabs: openTabs(7), __alive: [] };
+  const env = makeEnv(store);
+  runWorker(env);
+  await env.state.installListeners[0]({ reason: 'update' });
+
+  const order = env.state.injected.filter((i) => i.tabId === 7).map((i) => i.what);
+  assert.deepEqual(order, ['clear-owner', 'dist/content-bundle.js']);
+});
+
+test('a tab with a live script is left alone', async () => {
+  // Injecting a second copy over a working one would double-convert the page.
+  const store = { enabled: true, __tabs: openTabs(1, 2), __alive: [2] };
+  const env = makeEnv(store);
+  runWorker(env);
+  await env.state.installListeners[0]({ reason: 'update' });
+
+  assert.deepEqual(env.state.injected.map((i) => i.tabId), [1, 1], 'only tab 1 is injected');
+});
+
+test('a restricted tab is skipped without throwing', async () => {
+  // chrome://, the Web Store and other extensions' pages reject executeScript.
+  // One unreachable tab must not abort the sweep over the rest.
+  const store = { enabled: true, __tabs: openTabs(1, 2), __alive: [], __restricted: [1] };
+  const env = makeEnv(store);
+  runWorker(env);
+  await env.state.installListeners[0]({ reason: 'update' });
+
+  assert.deepEqual(env.state.injected.map((i) => i.tabId), [2, 2], 'tab 2 still gets injected');
 });
