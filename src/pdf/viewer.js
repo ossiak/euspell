@@ -31,9 +31,10 @@
  * 'sans-serif' for Computer Modern — a serif face — because CM declares itself
  * Symbolic and never sets the Serif flag, so isSerifFont is false. But the font
  * NAME is honest where the flags are not (RYDCUL+CMBX12), so fontFace derives the
- * generic AND the weight from it (see texGeneric/texBold): the stray sans-serif q
- * becomes a serif one, bold in a bold heading, that reads almost as the heading's
- * own glyph. That is cosmetic, not a fix — the outline is still not in the file.
+ * generic AND the weight AND the slant from it (see font-style.js): the stray
+ * sans-serif q becomes a serif one, bold in a bold heading and slanted in an
+ * italic run, so it reads almost as the heading's own glyph. That is cosmetic,
+ * not a fix — the outline is still not in the file.
  *
  * Family and weight match; SIZE does not, and cannot here. The generic resolves
  * to a different face per platform (Times on Chrome, Noto/Roboto Serif on
@@ -58,6 +59,7 @@ import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
 import { padToFit } from './fit-text.js';
 import { sampleColors } from './sample-colors.js';
+import { texGeneric, nameBold, nameBlack, nameItalic } from './font-style.js';
 import {
   assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect,
   conversionEnabled, onConversionChange,
@@ -141,10 +143,16 @@ function fontFace(page, fontName) {
   try {
     const f = page.commonObjs.get(fontName);
     const fallback = texGeneric(f.name) || f.fallbackName || 'sans-serif';
-    const bold = f.black || f.bold || texBold(f.name);
+    // Flags first, name second: pdf.js sets f.bold/f.italic/f.black for some
+    // faces and leaves them undefined for most embedded subsets, where the name
+    // is all we have. Without the name fallback an italic or black face resolved
+    // to normal/normal, and every letter a reform introduced that the subset
+    // lacked was drawn upright and regular beside the page's own glyphs.
+    const black = f.black || nameBlack(f.name);
+    const bold = black || f.bold || nameBold(f.name);
     return {
-      weight: f.black ? '900' : bold ? 'bold' : 'normal',
-      style: f.italic ? 'italic' : 'normal',
+      weight: black ? '900' : bold ? 'bold' : 'normal',
+      style: f.italic || nameItalic(f.name) ? 'italic' : 'normal',
       // Quoted, then the fallback — the same shape pdf.js gives its own ctx.font,
       // so an unloaded face degrades exactly the way the rest of the page does.
       family: `"${f.loadedName}", ${fallback}`,
@@ -154,52 +162,7 @@ function fontFace(page, fontName) {
   }
 }
 
-/**
- * Whether a TeX font is bold, from its NAME — same reasoning as texGeneric.
- * Computer Modern's bold faces (cmb, cmbx, cmbsy, cmssbx) and Latin Modern's
- * (lmbx…, or a human name ending -Bold) leave fontObj.bold unset, so the weight
- * has to come from the name too. cmbx12 -> bold; cmr12, cmss10 -> not.
- *
- * @param {string} name
- * @returns {boolean}
- */
-function texBold(name) {
-  if (!name) return false;
-  const n = name.replace(/^[A-Z]{6}\+/, '').toLowerCase();
-  return /^(cm|lm)(b|ssb)/.test(n) || /bold/.test(n);
-}
 
-/**
- * A better generic fallback for a font than pdf.js's fallbackName, read from the
- * font's NAME — or null to keep pdf.js's guess.
- *
- * This exists because the descriptor flags are exactly what is wrong. Computer
- * Modern declares itself Symbolic and never sets the Serif flag, so isSerifFont
- * is false and pdf.js derives fallbackName 'sans-serif' for a serif face. The
- * name is honest where the flags are not: the TeX convention encodes the style,
- * so cmr/cmbx/cmti are roman (serif), cmss is sans, cmtt is typewriter (mono),
- * and Latin Modern (lmroman/lmsans/lmmono) mirrors it. When the name is a family
- * we recognise, trust it over the flags.
- *
- * The generic only ever backs a glyph the embedded subset is MISSING, in a word
- * we draw (see fontFace) — the rest of the page is untouched raster. So the blast
- * radius is one substituted letter, and an unrecognised name returns null and
- * keeps today's behaviour. Deliberately narrow: CM and Latin Modern cover almost
- * all academic PDFs, and guessing past them buys little for real risk.
- *
- * @param {string} name  the font's PostScript name, e.g. "RYDCUL+CMBX12"
- * @returns {'serif' | 'sans-serif' | 'monospace' | null}
- */
-function texGeneric(name) {
-  if (!name) return null;
-  const n = name.replace(/^[A-Z]{6}\+/, '').toLowerCase(); // drop the subset prefix
-  // Order matters: the mono and sans families also start with cm/lm, so they
-  // must be matched before the serif catch-all.
-  if (/^(cmtt|cmsltt|cmitt|cmtex|cmvtt|lmmono|lmtt)/.test(n)) return 'monospace';
-  if (/^(cmss|lmss|lmsans)/.test(n)) return 'sans-serif';
-  if (/^(cm|lm)/.test(n)) return 'serif';
-  return null;
-}
 
 // Whether pages render reformed. Seeded from the host before the first render
 // and updated live when the setting changes (see the wiring near the observers,
