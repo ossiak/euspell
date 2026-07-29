@@ -6,6 +6,15 @@ node_modules/
 build/firefox/
 build/euspell-firefox.zip
 web-ext-artifacts/
+
+# Safari extension: the Xcode project in safari/ is committed, but the staged
+# web-extension payload is regenerable (via `npm run build:safari`) and stays out
+# of git, exactly like dist/ at the repo root. Also ignore Xcode's per-user state
+# and any local build output.
+safari/Euspell Extension/Resources/
+safari/build/
+safari/**/xcuserdata/
+safari/**/*.xcuserstate
 .DS_Store
 Thumbs.db
 desktop.ini

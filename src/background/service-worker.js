@@ -78,13 +78,17 @@ browser.commands.onCommand.addListener(async (command) => {
 // setting as page conversion, and skip our own viewer.
 const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 
-// Whether this browser lets our viewer read file:// PDFs. Firefox never allows
-// extensions to fetch file:// URLs, so redirecting a local PDF there would
-// replace Firefox's native viewer with an error page the user can't even
-// escape (moz-extension pages may not navigate to file: links). On Chrome a
-// file: navigation only reaches us when the user has explicitly enabled
-// "Allow access to file URLs", and the viewer can then fetch it.
-const CAN_VIEW_FILE_URLS = !VIEWER_URL.startsWith('moz-extension:');
+// Whether this browser lets our viewer read file:// PDFs. Firefox and Safari
+// both refuse to let an extension page fetch file:// URLs, so redirecting a
+// local PDF into our viewer there would replace the browser's own native
+// viewer with an error page the user can't escape — Firefox: moz-extension
+// pages may not navigate to file: links; Safari: a file:// fetch from a
+// safari-web-extension page fails with "Unexpected server response (0)", and
+// there is no per-extension "allow file access" grant as on Chrome. On Chrome a
+// file: navigation only reaches us when the user has explicitly enabled "Allow
+// access to file URLs", and the viewer can then fetch it.
+const CAN_VIEW_FILE_URLS =
+  !VIEWER_URL.startsWith('moz-extension:') && !VIEWER_URL.startsWith('safari-web-extension:');
 
 /** Whether the "Convert pages" setting allows converting. */
 async function shouldConvert() {

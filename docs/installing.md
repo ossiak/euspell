@@ -36,6 +36,12 @@ extensions from other stores. **Firefox** needs a different build (see
 site access is opt-in, so the welcome tab shows a **Grant access** button you
 must click before pages convert.
 
+**Safari** (macOS) ships as a small app you build once and enable in Safari's
+settings — there's no store listing yet. Web pages and remote PDFs convert just
+as on Chrome; the only platform limits are that Safari extensions can't read
+local `file://` pages or PDFs (those stay in Safari's own viewer). Full steps
+are in [safari/README.md](../safari/README.md).
+
 > **Not the Google Play Store.** Play distributes Android apps, not browser
 > extensions. (Eupub, the standalone euspell e-reader, *is* an Android app — a
 > separate product with its own install.)

@@ -139,3 +139,49 @@ if (typeof Uint8Array.fromBase64 !== 'function') {
     enumerable: false,
   });
 }
+
+// ReadableStream async iteration — `for await (const chunk of stream)` and
+// stream.values(), the ES2024 async-iterator protocol on ReadableStream. PDF.js
+// 6's page.getTextContent() async-iterates the text stream, and WebKit/Safari
+// still ships ReadableStream WITHOUT Symbol.asyncIterator (a long-standing gap,
+// absent through Safari 26 — https://bugs.webkit.org/show_bug.cgi?id=194379).
+// Without it, text extraction throws "undefined is not a function" AFTER the
+// page has rasterized, and the viewer's per-page catch then blanks every
+// otherwise-rendered page. Standards-matching shim per the WHATWG spec, guarded
+// so it stays inert where the engine already ships it (Chrome, newer WebViews).
+if (
+  typeof ReadableStream !== 'undefined' &&
+  typeof ReadableStream.prototype[Symbol.asyncIterator] !== 'function'
+) {
+  const values = function ({ preventCancel = false } = {}) {
+    const reader = this.getReader();
+    return {
+      async next() {
+        try {
+          const result = await reader.read();
+          if (result.done) reader.releaseLock();
+          return result;
+        } catch (e) {
+          reader.releaseLock();
+          throw e;
+        }
+      },
+      async return(value) {
+        if (preventCancel) {
+          reader.releaseLock();
+        } else {
+          const cancelPromise = reader.cancel(value);
+          reader.releaseLock();
+          await cancelPromise;
+        }
+        return { done: true, value };
+      },
+      [Symbol.asyncIterator]() {
+        return this;
+      },
+    };
+  };
+  const prop = { value: values, writable: true, configurable: true, enumerable: false };
+  Object.defineProperty(ReadableStream.prototype, 'values', prop);
+  Object.defineProperty(ReadableStream.prototype, Symbol.asyncIterator, prop);
+}
