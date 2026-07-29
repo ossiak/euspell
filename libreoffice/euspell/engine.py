@@ -646,8 +646,42 @@ def _route(key, entry, tokens, idx):
     return 0  # non-semantic, undecidable -> lexicon default (matches JS)
 
 
+# A standalone capital "I" is usually the pronoun, which reforms to "ih" -- but
+# it is also the Roman numeral one, and reforming a section number produces
+# nonsense ("SECTION I" -> "SECTION ih"). Decide from the word before it: a
+# title-style label ("Section I", "Part II") is capitalized and takes no article,
+# while the same noun with a determiner is an ordinary noun phrase whose "I" is
+# the pronoun ("the section I wrote"). Mirrors src/disambig/roman-i.js.
+_LABEL_NOUNS = {
+    "act", "annex", "appendix", "article", "book", "chapter", "class", "clause",
+    "division", "edition", "exhibit", "figure", "form", "grade", "group", "item",
+    "level", "paragraph", "part", "phase", "round", "schedule", "section",
+    "series", "stage", "step", "table", "tier", "title", "type", "unit",
+    "volume", "war",
+}
+_LABEL_DETERMINERS = {
+    "a", "an", "the", "this", "that", "these", "those", "each", "every", "any",
+    "some", "which", "whichever", "another",
+}
+
+
+def _is_roman_numeral_i(tokens, idx):
+    win = _context_window(tokens, idx)
+    before, prev = win[1], win[2]
+    noun = prev["word"]
+    if not noun or noun.lower() not in _LABEL_NOUNS:
+        return False
+    if noun[0] != noun[0].upper():
+        return False
+    if before["word"] and before["word"].lower() in _LABEL_DETERMINERS:
+        return False
+    return True
+
+
 def _convert(word, tokens, idx):
     if word == "I":
+        if _is_roman_numeral_i(tokens, idx):
+            return word
         return "Ih" if _is_sentence_start(tokens, idx) else "ih"
     key = word.lower()
     if key in _KEEP_UNCHANGED:

@@ -94,6 +94,11 @@ const SENTENCES = [
   'Through the door they walked.',
   'Enough is enough, she thought.',
   'The daughter caught the ball.',
+  // The Roman numeral one vs the pronoun: a capitalized label noun with no
+  // article marks the numeral, which must survive; everything else stays the
+  // pronoun. Pinned across engines because all three carry the rule.
+  'Section I applies to every employer.',
+  'He signed the section I finished.',
 ];
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');

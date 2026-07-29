@@ -483,8 +483,37 @@ var Euspell = (function () {
     if (SEMANTIC_WORDS[key]) return null; // left unchanged
     return 0;
   }
+  // A standalone capital "I" is usually the pronoun, which reforms to "ih" -- but
+  // it is also the Roman numeral one, and reforming a section number produces
+  // nonsense ("SECTION I" -> "SECTION ih"). Decide from the word before it: a
+  // title-style label ("Section I") is capitalized and takes no article, while
+  // the same noun with a determiner is an ordinary noun phrase whose "I" is the
+  // pronoun ("the section I wrote"). Mirrors src/disambig/roman-i.js.
+  var LABEL_NOUNS = {
+    act: 1, annex: 1, appendix: 1, article: 1, book: 1, chapter: 1, "class": 1,
+    clause: 1, division: 1, edition: 1, exhibit: 1, figure: 1, form: 1, grade: 1,
+    group: 1, item: 1, level: 1, paragraph: 1, part: 1, phase: 1, round: 1,
+    schedule: 1, section: 1, series: 1, stage: 1, step: 1, table: 1, tier: 1,
+    title: 1, type: 1, unit: 1, volume: 1, war: 1
+  };
+  var LABEL_DETERMINERS = {
+    a: 1, an: 1, "the": 1, "this": 1, "that": 1, these: 1, those: 1, each: 1,
+    every: 1, any: 1, some: 1, which: 1, whichever: 1, another: 1
+  };
+  function isRomanNumeralI(tokens, idx) {
+    var win = contextWindow(tokens, idx);
+    var before = win[1], prev = win[2];
+    var noun = prev.word;
+    if (!noun || !LABEL_NOUNS[noun.toLowerCase()]) return false;
+    if (noun.charAt(0) !== noun.charAt(0).toUpperCase()) return false;
+    if (before.word && LABEL_DETERMINERS[before.word.toLowerCase()]) return false;
+    return true;
+  }
   function convert(word, tokens, idx) {
-    if (word === 'I') return isSentenceStart(tokens, idx) ? 'Ih' : 'ih';
+    if (word === 'I') {
+      if (isRomanNumeralI(tokens, idx)) return word;
+      return isSentenceStart(tokens, idx) ? 'Ih' : 'ih';
+    }
     var key = word.toLowerCase();
     if (KEEP_UNCHANGED[key]) return word;
     var entry = LEXICON[key] || getContraction(word);
