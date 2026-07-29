@@ -121,6 +121,14 @@ npm run gen:lo && npm run gen:lo:oxt
 libreoffice/install-linux.sh
 ```
 
+On **macOS**, likewise; the script locates `LibreOffice.app` in `/Applications`
+or `~/Applications`:
+
+```
+npm run gen:lo && npm run gen:lo:oxt
+libreoffice/install-macos.sh
+```
+
 On **Windows**:
 
 ```
@@ -137,13 +145,23 @@ Selection**, or **Revert Document / Selection to English**.
 
 The extension itself is platform-neutral — it contains only configuration, no
 compiled code — so the same `.oxt` installs everywhere. Only the profile location
-differs: `%APPDATA%\LibreOffice\4\user` on Windows,
-`~/.config/libreoffice/4/user` on native Linux, and
-`~/Library/Application Support/LibreOffice/4/user` on macOS, where `unopkg` lives
-inside the application bundle rather than on the path.
+differs, as shown in Table C2.
 
-**Native Linux builds need the Python script provider**, which Flatpak bundles
-already. If the Euspell menu does not appear after restarting, install
+**Table C2. LibreOffice user profile locations**
+
+| Platform | Profile |
+|---|---|
+| Windows | `%APPDATA%\LibreOffice\4\user` |
+| Linux (native) | `~/.config/libreoffice/4/user` |
+| Linux (Flatpak) | `~/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user` |
+| macOS | `~/Library/Application Support/LibreOffice/4/user` |
+
+On macOS, `unopkg` and `soffice` live inside the application bundle at
+`Contents/MacOS` rather than on the path, which the installer handles.
+
+**Only native Linux builds need the Python script provider** — the Flatpak and
+the macOS application bundle both ship their own Python. If the Euspell menu does
+not appear after restarting a native Linux install, add
 `libreoffice-script-provider-python` on Debian and Ubuntu, or `libreoffice-pyuno`
 on Fedora and openSUSE; Arch includes it.
 
