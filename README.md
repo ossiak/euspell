@@ -7,9 +7,13 @@ to a server.
 The flagship is a **browser extension** (Chrome and Firefox) that rewrites web
 pages and PDFs in place, but the same conversion engine drives a family of
 integrations: a bundled PDF viewer, a LibreOffice extension, a Microsoft Word
-add-in, a Google Docs script, downloadable dictionaries for other spell-checkers,
-and the sibling [Eupub](../Eupub) EPUB/PDF reader. One engine, many surfaces —
-none of them re-implement the reform.
+add-in, a Google Docs script, an Apple Pages converter, downloadable dictionaries
+for other spell-checkers, and the sibling [Eupub](../Eupub) EPUB/PDF reader. One
+engine, many surfaces — none of them re-implement the reform.
+
+**Installing it:** the browser extension is covered by
+[docs/installing.md](docs/installing.md); the four word-processor tools by
+[docs/installing-addins.md](docs/installing-addins.md).
 
 ## What it runs on
 
@@ -21,6 +25,7 @@ none of them re-implement the reform.
 | LibreOffice extension | `libreoffice/` | `npm run gen:lo` → `dict/euspell-libreoffice.oxt` |
 | Microsoft Word add-in | `word-addin/` | `npm run gen:word` (Office.js taskpane) |
 | Google Docs | `apps-script/` | the Apps Script port |
+| Apple Pages (macOS) | `pages/` | `npm run gen:pages` (JXA, reuses the Apps Script engine) |
 | Dictionary exports | `dict/` | Hunspell `.aff`/`.dic`, `.oxt`, Word `.dic`, Harper, TTS `.pls` |
 | Eupub reader (sibling) | `../Eupub` | the mobile engine build |
 

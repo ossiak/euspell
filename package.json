@@ -1,6 +1,6 @@
 {
   "name": "euspell",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Chrome extension for euspell English spelling reform",
   "type": "module",
   "engines": {
@@ -34,6 +34,7 @@
     "gen:lo:oxt": "npm run gen:lo && node build/gen-lo-oxt.js",
     "test:lo": "node build/gen-lo-fixtures.mjs && python libreoffice/tests/test_engine.py",
     "gen:gas": "npm run gen:lo && node build/gen-gas.js",
+    "gen:pages": "npm run gen:gas && node build/gen-pages.js",
     "test:gas": "node build/gen-lo-fixtures.mjs && node build/test-gas.mjs",
     "gen:word": "npm run gen:lo && node build/gen-word.js",
     "gen:word-dict": "node build/gen-word-dict.js",
@@ -55,5 +56,9 @@
     "type": "git",
     "url": "https://github.com/ossiak/euspell.git"
   },
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "sharp@0.33.5": true
+  }
 }

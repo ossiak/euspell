@@ -176,6 +176,18 @@ test('is_verbal_s: a predicative participle or pronoun marks the contracted verb
   assert.equal(is_verbal_s([t('author', 'NN1'), t("'s", 'GE'), t('published', 'VVN'), t('a', 'AT1'), t('book', 'NN1')], 1), true);
 });
 
+test('is_verbal_s: a deictic locative predicate marks the contracted verb', () => {
+  // "the cat's here" / "the dog's away" — a place-predicate, not a possessed noun.
+  assert.equal(is_verbal_s([t('the', 'AT'), t('cat', 'NN1'), t("'s", 'GE'), t('here', 'RL')], 2), true);
+  assert.equal(is_verbal_s([t('the', 'AT'), t('dog', 'NN1'), t("'s", 'GE'), t('away', 'RL')], 2), true);
+  // Existential/locative "there" is verbal even though it carries a noun reading.
+  assert.equal(is_verbal_s([t('everyone', 'PN1'), t("'s", 'GE'), t('there', 'EX|NN1|RL')], 1), true);
+  // A word that is BOTH a locative adverb and a noun ("home", "back") keeps the
+  // genitive default — the no-noun guard leaves "the family's home" a genitive
+  // here (the JJ-bearing real tag set routes it verbal earlier; this checks the guard).
+  assert.equal(is_verbal_s([t('the', 'AT'), t('family', 'NN1'), t("'s", 'GE'), t('home', 'NN1|RL')], 2), false);
+});
+
 test('is_plural_noun: a cardinal before marks a plural', () => {
   // "two chassis" -> plural
   assert.equal(is_plural_noun([t('two', 'MC'), t('chassis', '')], 1), true);

@@ -10,9 +10,9 @@ Contraction,PoS,Encoding,euspelling
 'tween,II|II22|JJ22|RL|RL22,000,[]
 'twere,PPH1 VBDR,101,'twer
 ain't,VBM XX|VBR XX|VBZ XX|VDD XX|VH0 XX|VHZ XX,000,[]
-anybody's,PN1 GE|PN1 VBZ|PN1 VHZ,112,enybody's|enybody'z
-anyone's,PN1 GE|PN1 VBZ|PN1 VHZ,112,enywun's|enywun'z
-anything's,PN1 VBZ|PN1 VHZ,111,enything'z
+anybody's,PN1 GE|PN1 VBZ|PN1 VHZ,012,anybody's|anybody'z
+anyone's,PN1 GE|PN1 VBZ|PN1 VHZ,112,anywun's|anywun'z
+anything's,PN1 VBZ|PN1 VHZ,011,anything'z
 aren't,VBR XX,000,[]
 c'mon,UH,000,[]
 can't,VM XX,000,[]

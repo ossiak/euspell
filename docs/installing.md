@@ -5,6 +5,10 @@ entirely on your own device. This page is for people installing it from a
 browser store. If you want to build it from source instead, see "Build & load"
 in the [README](../README.md).
 
+To reform **documents** rather than web pages — in Word, LibreOffice Writer,
+Google Docs, or Apple Pages — see
+[installing-addins.md](installing-addins.md) instead.
+
 ## Install
 
 1. Open the Euspell listing on the **Chrome Web Store**:
