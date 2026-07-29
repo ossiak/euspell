@@ -58,6 +58,7 @@ Three lengths, ready to paste.
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
 | **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |
+| **Current versions** | Browser extension 0.2.0 (unreleased); Eupub 0.2.1 |
 | **Contact** | kamranossia@euspell.org |
 
 ---
@@ -169,6 +170,7 @@ One engine, many surfaces. None of them re-implement the reform.
 | Product | Platforms | Status |
 |---|---|---|
 | **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | Built, **not yet published to any store** |
+| **Safari extension** | macOS — an Xcode host app built once and enabled in Safari's settings | Built; **not distributed** (no notarized or App Store build) |
 | **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts | Ships with the extension |
 | **Eupub e-reader** | Windows, macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.1 released** |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
@@ -258,7 +260,7 @@ read, download, or link to**:
 | Website | [euspell.org](https://euspell.org) is **live**, but serves only a "Coming soon" splash |
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one currently returns 404 |
 | Source repositories | **Private** — although the white paper states the source and lexicons are GPL-3 and available at `github.com/ossiak/` |
-| Browser extension | **Not published** — the Chrome Web Store link is still a placeholder |
+| Browser extension | **Not published** — the Chrome Web Store link is still a placeholder. The Safari build is development-signed only: no notarized or App Store build exists |
 | Eupub v0.2.1 | Released, but **on a private repo**, so downloads are not publicly reachable |
 
 **The cheapest fix by far is deploying the site**, whose writing is already done.
