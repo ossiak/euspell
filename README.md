@@ -4,8 +4,8 @@ Convert English text into **euspell** — a reformed, more regular spelling —
 everywhere you read and write, **entirely on your device**. Nothing is ever sent
 to a server.
 
-The flagship is a **browser extension** (Chrome and Firefox) that rewrites web
-pages and PDFs in place, but the same conversion engine drives a family of
+The flagship is a **browser extension** (Chrome, Firefox, and Safari) that
+rewrites web pages and PDFs in place, but the same conversion engine drives a family of
 integrations: a bundled PDF viewer, a LibreOffice extension, a Microsoft Word
 add-in, a Google Docs script, an Apple Pages converter, downloadable dictionaries
 for other spell-checkers, and the sibling [Eupub](../Eupub) EPUB/PDF reader. One
@@ -22,6 +22,7 @@ engine, many surfaces — none of them re-implement the reform.
 | Browser extension (web pages) | `src/content/` | `npm run build`, then load unpacked |
 | PDF viewer (in-browser) | `src/pdf/` | same build (`dist/pdf-viewer.js`) |
 | Firefox build | — | `npm run build:firefox` → `build/firefox/` |
+| Safari build (macOS) | `safari/` | `npm run build:safari` → Xcode host app |
 | LibreOffice extension | `libreoffice/` | `npm run gen:lo` → `dict/euspell-libreoffice.oxt` |
 | Microsoft Word add-in | `word-addin/` | `npm run gen:word` (Office.js taskpane) |
 | Google Docs | `apps-script/` | the Apps Script port |
@@ -63,6 +64,7 @@ Then load it unpacked:
 
 - **Chrome**: `chrome://extensions` → enable Developer mode → *Load unpacked* → pick this folder (it reads `manifest.json` and `dist/`).
 - **Firefox**: `npm run build:firefox`, then `npm run run:firefox` (web-ext) or load `build/firefox/` via `about:debugging`.
+- **Safari** (macOS): `npm run build:safari`, then open `safari/Euspell.xcodeproj` in Xcode and Run. See [safari/README.md](safari/README.md) for enabling it in Safari.
 
 `dist/` is generated (git-ignored); rebuild after changing anything under `src/`
 or the lexicon data.
@@ -95,6 +97,7 @@ reformed spellings, so Word stops flagging them) comes from `npm run gen:word-di
 | `src/dictation/` | speech-to-euspell dictation |
 | `data/`, `dict/`, `disambig/` | lexicon source, generated dictionaries, training corpora |
 | `build/` | generators for every integration above |
+| `safari/` | the macOS Safari web-extension host app (Xcode project) |
 | `apps-script/`, `libreoffice/`, `word-addin/` | the non-browser ports |
 | `tests/` | unit + pipeline tests |
 
