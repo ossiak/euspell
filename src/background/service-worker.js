@@ -146,12 +146,21 @@ async function sniffPdfMagic(url) {
   }
 }
 
-// Path 2: extensionless PDFs. A URL with no .pdf suffix can still be a PDF, and
-// onBeforeNavigate can't know that — it has no response yet. Inspect each
-// top-level response's headers: Content-Type (the server's MIME type) and
-// Content-Disposition (an attachment filename) are the reliable signals; when the
-// type is an ambiguous binary blob, fall back to sniffing the leading bytes for
-// the %PDF- structure. Any hit promotes the page to our viewer.
+// Path 2: extensionless PDFs, and PDFs embedded in a first-level iframe. A URL
+// with no .pdf suffix can still be a PDF, and onBeforeNavigate can't know that —
+// it has no response yet. Inspect each response's headers: Content-Type (the
+// server's MIME type) and Content-Disposition (an attachment filename) are the
+// reliable signals; when the type is an ambiguous binary blob, fall back to
+// sniffing the leading bytes for the %PDF- structure. Any hit promotes the page
+// to our viewer.
+//
+// This also covers the common "wrapper" page whose body is a single <iframe>
+// holding the real PDF (a sub_frame response). A PDF the browser renders in its
+// native plugin inside a frame is unreachable to a content script, so we redirect
+// the WHOLE tab to our viewer on that frame's URL. Restricted to direct children
+// of the main frame (parentFrameId 0) so a deep ad/tracking frame that happens to
+// serve a PDF can't hijack the tab; a page embedding a PDF as one element among
+// others is taken over too, which is the accepted cost of converting it at all.
 //
 // Known tradeoff: detecting this way means the original response is already
 // in flight (headers, then body) by the time we redirect, and the viewer then
@@ -164,10 +173,17 @@ async function sniffPdfMagic(url) {
 // headers of one real request through, so this is accepted rather than fixed.
 browser.webRequest.onHeadersReceived.addListener(
   async (details) => {
-    if (details.type !== 'main_frame') return;
+    const topLevel = details.type === 'main_frame';
+    // A PDF loaded directly inside the page — a first-level iframe, the shape a
+    // site uses to preview/host a PDF behind an extensionless wrapper URL.
+    const embedded = details.type === 'sub_frame' && details.parentFrameId === 0;
+    if (!topLevel && !embedded) return;
     if (details.method !== 'GET') return; // a re-fetched GET can't reproduce a POST's response
     if (details.url.startsWith(VIEWER_URL)) return;
-    if (isPdfUrl(details.url)) return; // already handled by onBeforeNavigate
+    // A main-frame .pdf is already handled by onBeforeNavigate; a framed .pdf is
+    // not (that listener is top-level only), so let an embedded one through and
+    // count the suffix as a positive signal below.
+    if (topLevel && isPdfUrl(details.url)) return;
     if (consumeBypass(details.url)) return; // "Open original" — let it through
 
     const headers = details.responseHeaders ?? [];
@@ -182,15 +198,18 @@ browser.webRequest.onHeadersReceived.addListener(
     // of the file the browser is downloading, so leave it alone.
     if (isAttachmentDisposition(disposition)) return;
 
-    let isPdf = isPdfContentType(contentType) || isPdfDisposition(disposition);
+    let isPdf =
+      isPdfContentType(contentType) || isPdfDisposition(disposition) || isPdfUrl(details.url);
     if (!isPdf && !isAmbiguousType(contentType)) return;
     // Settings BEFORE the sniff: sniffPdfMagic is a real network request, and a
     // user who has switched Euspell off must not have the extension fetching
     // anything on their behalf.
     if (!(await shouldConvert())) return;
     if (!isPdf) isPdf = await sniffPdfMagic(details.url);
+    // Redirect the whole tab; for an embedded PDF this navigates the tab away
+    // from the wrapper page to our viewer on the framed PDF's own URL.
     if (isPdf) redirectToViewer(details.tabId, details.url);
   },
-  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
+  { urls: ['http://*/*', 'https://*/*'], types: ['main_frame', 'sub_frame'] },
   ['responseHeaders'],
 );
