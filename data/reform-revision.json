@@ -1,0 +1,7 @@
+{
+  "revision": 1,
+  "date": "2026-07-27",
+  "summary": "Baseline reform revision. Latest change: bear respelling (verb -> behr, animal -> baer); Behring proper noun removed.",
+  "appliesTo": "data/euspell_lexicon.csv",
+  "note": "The euspell spelling-reform standard, versioned independently of the app versions. Increment on any change to the reformed spellings in the lexicon, then re-release the products that embed it (extension, Eupub, office add-ins). Apps embed this value to declare which spelling standard a build was compiled against."
+}

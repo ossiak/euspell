@@ -11,10 +11,6 @@
   <lexeme><grapheme>aahz</grapheme><phoneme>ɑːz</phoneme></lexeme> <!-- aahs -->
   <lexeme><grapheme>aardwolvs</grapheme><phoneme>ˈɑrdˌwʊlvz</phoneme></lexeme> <!-- aardwolves -->
   <lexeme><grapheme>abacinatez</grapheme><phoneme>əˈbæsəˌneɪts</phoneme></lexeme> <!-- abacinates -->
-  <lexeme><grapheme>abaer</grapheme><phoneme>əˈbɛr</phoneme></lexeme> <!-- abear -->
-  <lexeme><grapheme>abaerance</grapheme><phoneme>əˈbɛrəns</phoneme></lexeme> <!-- abearance -->
-  <lexeme><grapheme>abaering</grapheme><phoneme>əˈbɛrɪŋ</phoneme></lexeme> <!-- abearing -->
-  <lexeme><grapheme>abaerz</grapheme><phoneme>əˈbɛrz</phoneme></lexeme> <!-- abears -->
   <lexeme><grapheme>abalienatez</grapheme><phoneme>æˈbeɪliəˌneɪts</phoneme></lexeme> <!-- abalienates -->
   <lexeme><grapheme>abandond</grapheme><phoneme>əˈbændənd</phoneme></lexeme> <!-- abandoned -->
   <lexeme><grapheme>abandonz</grapheme><phoneme>əˈbændənz</phoneme></lexeme> <!-- abandons -->
@@ -34,6 +30,10 @@
   <lexeme><grapheme>abductivly</grapheme><phoneme>æbˈdʌktɪvli</phoneme></lexeme> <!-- abductively -->
   <lexeme><grapheme>abductz</grapheme><phoneme>æbˈdʌkts</phoneme></lexeme> <!-- abducts -->
   <lexeme><grapheme>abeggez</grapheme><phoneme>əˈbɛɡɪz</phoneme></lexeme> <!-- abegges -->
+  <lexeme><grapheme>abehr</grapheme><phoneme>əˈbɛr</phoneme></lexeme> <!-- abear -->
+  <lexeme><grapheme>abehrance</grapheme><phoneme>əˈbɛrəns</phoneme></lexeme> <!-- abearance -->
+  <lexeme><grapheme>abehring</grapheme><phoneme>əˈbɛrɪŋ</phoneme></lexeme> <!-- abearing -->
+  <lexeme><grapheme>abehrz</grapheme><phoneme>əˈbɛrz</phoneme></lexeme> <!-- abears -->
   <lexeme><grapheme>aberratez</grapheme><phoneme>ˈæbəˌreɪts</phoneme></lexeme> <!-- aberrates -->
   <lexeme><grapheme>aberrd</grapheme><phoneme>əˈbɛrd</phoneme></lexeme> <!-- aberred -->
   <lexeme><grapheme>aberrz</grapheme><phoneme>əˈbɛrz</phoneme></lexeme> <!-- aberrs -->
@@ -963,8 +963,8 @@
   <lexeme><grapheme>ansers</grapheme><phoneme>ˈænsərz</phoneme></lexeme> <!-- answers -->
   <lexeme><grapheme>anserz</grapheme><phoneme>ˈænsərz</phoneme></lexeme> <!-- answers -->
   <lexeme><grapheme>antagonizez</grapheme><phoneme>ænˈtæɡəˌnaɪzɪz</phoneme></lexeme> <!-- antagonises -->
-  <lexeme><grapheme>antbair</grapheme><phoneme>ˈæntˌbɛr</phoneme></lexeme> <!-- antbear -->
-  <lexeme><grapheme>antbairs</grapheme><phoneme>ˈæntˌbɛrz</phoneme></lexeme> <!-- antbears -->
+  <lexeme><grapheme>antbaer</grapheme><phoneme>ˈæntˌbɛr</phoneme></lexeme> <!-- antbear -->
+  <lexeme><grapheme>antbaers</grapheme><phoneme>ˈæntˌbɛrz</phoneme></lexeme> <!-- antbears -->
   <lexeme><grapheme>antecedez</grapheme><phoneme>ˌæntəˈsidz</phoneme></lexeme> <!-- antecedes -->
   <lexeme><grapheme>antedatez</grapheme><phoneme>ˈæntiˌdeɪts</phoneme></lexeme> <!-- antedates -->
   <lexeme><grapheme>antepenultimat</grapheme><phoneme>ˌæntipiˈnʌltəmɪt</phoneme></lexeme> <!-- antepenultimate -->
@@ -1196,8 +1196,8 @@
   <lexeme><grapheme>arkwriht</grapheme><phoneme>ˈɑrkˌraɪt</phoneme></lexeme> <!-- arkwright -->
   <lexeme><grapheme>arkwrihts</grapheme><phoneme>ˈɑrkˌraɪts</phoneme></lexeme> <!-- arkwrights -->
   <lexeme><grapheme>armd</grapheme><phoneme>ɑrmd</phoneme></lexeme> <!-- armed -->
-  <lexeme><grapheme>armorbaerer</grapheme><phoneme>ˈɑrmərˌbɛrər</phoneme></lexeme> <!-- armorbearer -->
-  <lexeme><grapheme>armorbaerers</grapheme><phoneme>ˈɑrmərˌbɛrərz</phoneme></lexeme> <!-- armorbearers -->
+  <lexeme><grapheme>armorbehrer</grapheme><phoneme>ˈɑrmərˌbɛrər</phoneme></lexeme> <!-- armorbearer -->
+  <lexeme><grapheme>armorbehrers</grapheme><phoneme>ˈɑrmərˌbɛrərz</phoneme></lexeme> <!-- armorbearers -->
   <lexeme><grapheme>armord</grapheme><phoneme>ˈɑrmərd</phoneme></lexeme> <!-- armored -->
   <lexeme><grapheme>armorz</grapheme><phoneme>ˈɑrmərz</phoneme></lexeme> <!-- armors -->
   <lexeme><grapheme>armqhair</grapheme><phoneme>ˈɑrmˌtʃɛr</phoneme></lexeme> <!-- armchair -->
@@ -1622,14 +1622,22 @@
   <lexeme><grapheme>badmouthd</grapheme><phoneme>ˈbædˌmaʊθt</phoneme></lexeme> <!-- badmouthed -->
   <lexeme><grapheme>badmouthz</grapheme><phoneme>ˈbædˌmaʊθs</phoneme></lexeme> <!-- badmouths -->
   <lexeme><grapheme>baer</grapheme><phoneme>bɛr</phoneme></lexeme> <!-- bear -->
-  <lexeme><grapheme>baerability</grapheme><phoneme>ˌbɛrəˈbɪləti</phoneme></lexeme> <!-- bearability -->
-  <lexeme><grapheme>baerable</grapheme><phoneme>ˈbɛrəbəl</phoneme></lexeme> <!-- bearable -->
-  <lexeme><grapheme>baerably</grapheme><phoneme>ˈbɛrəbli</phoneme></lexeme> <!-- bearably -->
-  <lexeme><grapheme>baerer</grapheme><phoneme>ˈbɛrər</phoneme></lexeme> <!-- bearer -->
-  <lexeme><grapheme>baerers</grapheme><phoneme>ˈbɛrərz</phoneme></lexeme> <!-- bearers -->
-  <lexeme><grapheme>baering</grapheme><phoneme>ˈbɛrɪŋ</phoneme></lexeme> <!-- bearing -->
-  <lexeme><grapheme>baerings</grapheme><phoneme>ˈbɛrɪŋz</phoneme></lexeme> <!-- bearings -->
-  <lexeme><grapheme>baerz</grapheme><phoneme>bɛrz</phoneme></lexeme> <!-- bears -->
+  <lexeme><grapheme>baerbaiting</grapheme><phoneme>ˈbɛrˌbeɪtɪŋ</phoneme></lexeme> <!-- bearbaiting -->
+  <lexeme><grapheme>baerberries</grapheme><phoneme>ˈbɛrˌbɛriz</phoneme></lexeme> <!-- bearberries -->
+  <lexeme><grapheme>baerberry</grapheme><phoneme>ˈbɛrˌbɛri</phoneme></lexeme> <!-- bearberry -->
+  <lexeme><grapheme>baercat</grapheme><phoneme>ˈbɛrˌkæt</phoneme></lexeme> <!-- bearcat -->
+  <lexeme><grapheme>baercats</grapheme><phoneme>ˈbɛrˌkæts</phoneme></lexeme> <!-- bearcats -->
+  <lexeme><grapheme>baerhug</grapheme><phoneme>ˈbɛrˌhʌɡ</phoneme></lexeme> <!-- bearhug -->
+  <lexeme><grapheme>baerhugs</grapheme><phoneme>ˈbɛrˌhʌɡz</phoneme></lexeme> <!-- bearhugs -->
+  <lexeme><grapheme>baerish</grapheme><phoneme>ˈbɛrɪʃ</phoneme></lexeme> <!-- bearish -->
+  <lexeme><grapheme>baerishly</grapheme><phoneme>ˈbɛrɪʃli</phoneme></lexeme> <!-- bearishly -->
+  <lexeme><grapheme>baerishness</grapheme><phoneme>ˈbɛrɪʃnəs</phoneme></lexeme> <!-- bearishness -->
+  <lexeme><grapheme>baerlike</grapheme><phoneme>ˈbɛrˌlaɪk</phoneme></lexeme> <!-- bearlike -->
+  <lexeme><grapheme>baers</grapheme><phoneme>bɛrz</phoneme></lexeme> <!-- bears -->
+  <lexeme><grapheme>baerskin</grapheme><phoneme>ˈbɛrˌskɪn</phoneme></lexeme> <!-- bearskin -->
+  <lexeme><grapheme>baerskins</grapheme><phoneme>ˈbɛrˌskɪnz</phoneme></lexeme> <!-- bearskins -->
+  <lexeme><grapheme>baerwood</grapheme><phoneme>ˈbɛrˌwʊd</phoneme></lexeme> <!-- bearwood -->
+  <lexeme><grapheme>baerwoods</grapheme><phoneme>ˈbɛrˌwʊdz</phoneme></lexeme> <!-- bearwoods -->
   <lexeme><grapheme>baffd</grapheme><phoneme>bæft</phoneme></lexeme> <!-- baffed -->
   <lexeme><grapheme>bafflez</grapheme><phoneme>ˈbæfəlz</phoneme></lexeme> <!-- baffles -->
   <lexeme><grapheme>baffz</grapheme><phoneme>bæfs</phoneme></lexeme> <!-- baffs -->
@@ -1661,23 +1669,6 @@
   <lexeme><grapheme>bahmy</grapheme><phoneme>ˈbɑmi</phoneme></lexeme> <!-- balmy -->
   <lexeme><grapheme>baild</grapheme><phoneme>beɪld</phoneme></lexeme> <!-- bailed -->
   <lexeme><grapheme>bailz</grapheme><phoneme>beɪlz</phoneme></lexeme> <!-- bails -->
-  <lexeme><grapheme>bair</grapheme><phoneme>bɛr</phoneme></lexeme> <!-- bear -->
-  <lexeme><grapheme>bairbaiting</grapheme><phoneme>ˈbɛrˌbeɪtɪŋ</phoneme></lexeme> <!-- bearbaiting -->
-  <lexeme><grapheme>bairberries</grapheme><phoneme>ˈbɛrˌbɛriz</phoneme></lexeme> <!-- bearberries -->
-  <lexeme><grapheme>bairberry</grapheme><phoneme>ˈbɛrˌbɛri</phoneme></lexeme> <!-- bearberry -->
-  <lexeme><grapheme>baircat</grapheme><phoneme>ˈbɛrˌkæt</phoneme></lexeme> <!-- bearcat -->
-  <lexeme><grapheme>baircats</grapheme><phoneme>ˈbɛrˌkæts</phoneme></lexeme> <!-- bearcats -->
-  <lexeme><grapheme>bairhug</grapheme><phoneme>ˈbɛrˌhʌɡ</phoneme></lexeme> <!-- bearhug -->
-  <lexeme><grapheme>bairhugs</grapheme><phoneme>ˈbɛrˌhʌɡz</phoneme></lexeme> <!-- bearhugs -->
-  <lexeme><grapheme>bairish</grapheme><phoneme>ˈbɛrɪʃ</phoneme></lexeme> <!-- bearish -->
-  <lexeme><grapheme>bairishly</grapheme><phoneme>ˈbɛrɪʃli</phoneme></lexeme> <!-- bearishly -->
-  <lexeme><grapheme>bairishness</grapheme><phoneme>ˈbɛrɪʃnəs</phoneme></lexeme> <!-- bearishness -->
-  <lexeme><grapheme>bairlike</grapheme><phoneme>ˈbɛrˌlaɪk</phoneme></lexeme> <!-- bearlike -->
-  <lexeme><grapheme>bairs</grapheme><phoneme>bɛrz</phoneme></lexeme> <!-- bears -->
-  <lexeme><grapheme>bairskin</grapheme><phoneme>ˈbɛrˌskɪn</phoneme></lexeme> <!-- bearskin -->
-  <lexeme><grapheme>bairskins</grapheme><phoneme>ˈbɛrˌskɪnz</phoneme></lexeme> <!-- bearskins -->
-  <lexeme><grapheme>bairwood</grapheme><phoneme>ˈbɛrˌwʊd</phoneme></lexeme> <!-- bearwood -->
-  <lexeme><grapheme>bairwoods</grapheme><phoneme>ˈbɛrˌwʊdz</phoneme></lexeme> <!-- bearwoods -->
   <lexeme><grapheme>baitz</grapheme><phoneme>beɪts</phoneme></lexeme> <!-- baits -->
   <lexeme><grapheme>bakez</grapheme><phoneme>beɪks</phoneme></lexeme> <!-- bakes -->
   <lexeme><grapheme>balancez</grapheme><phoneme>ˈbælənsɪz</phoneme></lexeme> <!-- balances -->
@@ -2097,6 +2088,15 @@
   <lexeme><grapheme>behoovd</grapheme><phoneme>bɪˈhuvd</phoneme></lexeme> <!-- behooved -->
   <lexeme><grapheme>behoovz</grapheme><phoneme>bɪˈhuvz</phoneme></lexeme> <!-- behooves -->
   <lexeme><grapheme>behovez</grapheme><phoneme>bɪˈhoʊvz</phoneme></lexeme> <!-- behoves -->
+  <lexeme><grapheme>behr</grapheme><phoneme>bɛr</phoneme></lexeme> <!-- bear -->
+  <lexeme><grapheme>behrability</grapheme><phoneme>ˌbɛrəˈbɪləti</phoneme></lexeme> <!-- bearability -->
+  <lexeme><grapheme>behrable</grapheme><phoneme>ˈbɛrəbəl</phoneme></lexeme> <!-- bearable -->
+  <lexeme><grapheme>behrably</grapheme><phoneme>ˈbɛrəbli</phoneme></lexeme> <!-- bearably -->
+  <lexeme><grapheme>behrer</grapheme><phoneme>ˈbɛrər</phoneme></lexeme> <!-- bearer -->
+  <lexeme><grapheme>behrers</grapheme><phoneme>ˈbɛrərz</phoneme></lexeme> <!-- bearers -->
+  <lexeme><grapheme>behring</grapheme><phoneme>ˈbɛrɪŋ</phoneme></lexeme> <!-- bearing -->
+  <lexeme><grapheme>behrings</grapheme><phoneme>ˈbɛrɪŋz</phoneme></lexeme> <!-- bearings -->
+  <lexeme><grapheme>behrz</grapheme><phoneme>bɛrz</phoneme></lexeme> <!-- bears -->
   <lexeme><grapheme>behuwl</grapheme><phoneme>bɪˈhaʊl</phoneme></lexeme> <!-- behowl -->
   <lexeme><grapheme>behuwld</grapheme><phoneme>bɪˈhaʊld</phoneme></lexeme> <!-- behowled -->
   <lexeme><grapheme>behuwling</grapheme><phoneme>bɪˈhaʊlɪŋ</phoneme></lexeme> <!-- behowling -->
@@ -3490,8 +3490,8 @@
   <lexeme><grapheme>bufflehedd</grapheme><phoneme>ˈbʌfəlˌhɛd</phoneme></lexeme> <!-- bufflehead -->
   <lexeme><grapheme>bufflehedds</grapheme><phoneme>ˈbʌfəlˌhɛdz</phoneme></lexeme> <!-- buffleheads -->
   <lexeme><grapheme>buffz</grapheme><phoneme>bʌfs</phoneme></lexeme> <!-- buffs -->
-  <lexeme><grapheme>bugbaer</grapheme><phoneme>ˈbʌɡˌbɛr</phoneme></lexeme> <!-- bugbear -->
-  <lexeme><grapheme>bugbaers</grapheme><phoneme>ˈbʌɡˌbɛrz</phoneme></lexeme> <!-- bugbears -->
+  <lexeme><grapheme>bugbehr</grapheme><phoneme>ˈbʌɡˌbɛr</phoneme></lexeme> <!-- bugbear -->
+  <lexeme><grapheme>bugbehrs</grapheme><phoneme>ˈbʌɡˌbɛrz</phoneme></lexeme> <!-- bugbears -->
   <lexeme><grapheme>bugd</grapheme><phoneme>bʌɡd</phoneme></lexeme> <!-- bugged -->
   <lexeme><grapheme>buggerd</grapheme><phoneme>ˈbʌɡərd</phoneme></lexeme> <!-- buggered -->
   <lexeme><grapheme>buggerz</grapheme><phoneme>ˈbʌɡərz</phoneme></lexeme> <!-- buggers -->
@@ -4025,8 +4025,8 @@
   <lexeme><grapheme>caschpot</grapheme><phoneme>ˈkæʃˌpɒt</phoneme></lexeme> <!-- cachepot -->
   <lexeme><grapheme>caschpots</grapheme><phoneme>ˈkæʃˌpɒts</phoneme></lexeme> <!-- cachepots -->
   <lexeme><grapheme>caseatez</grapheme><phoneme>ˈkeɪsieɪts</phoneme></lexeme> <!-- caseates -->
-  <lexeme><grapheme>casebaerer</grapheme><phoneme>ˈkeɪsˌbɛrər</phoneme></lexeme> <!-- casebearer -->
-  <lexeme><grapheme>casebaerers</grapheme><phoneme>ˈkeɪsˌbɛrərz</phoneme></lexeme> <!-- casebearers -->
+  <lexeme><grapheme>casebehrer</grapheme><phoneme>ˈkeɪsˌbɛrər</phoneme></lexeme> <!-- casebearer -->
+  <lexeme><grapheme>casebehrers</grapheme><phoneme>ˈkeɪsˌbɛrərz</phoneme></lexeme> <!-- casebearers -->
   <lexeme><grapheme>casefiez</grapheme><phoneme>ˈkeɪsɪˌfaɪz</phoneme></lexeme> <!-- casefies -->
   <lexeme><grapheme>caseinatez</grapheme><phoneme>ˈkeɪsɪneɪts</phoneme></lexeme> <!-- caseinates -->
   <lexeme><grapheme>casett</grapheme><phoneme>kəˈsɛt</phoneme></lexeme> <!-- casette -->
@@ -5874,11 +5874,11 @@
   <lexeme><grapheme>croshehz</grapheme><phoneme>kroʊˈʃeɪz</phoneme></lexeme> <!-- crochets -->
   <lexeme><grapheme>crosheter</grapheme><phoneme>kroʊˈʃeɪtər</phoneme></lexeme> <!-- crocheter -->
   <lexeme><grapheme>crosheters</grapheme><phoneme>kroʊˈʃeɪtərz</phoneme></lexeme> <!-- crocheters -->
-  <lexeme><grapheme>crossbaerer</grapheme><phoneme>ˈkrɔːsˌbɛrər</phoneme></lexeme> <!-- crossbearer -->
-  <lexeme><grapheme>crossbaerers</grapheme><phoneme>ˈkrɔːsˌbɛrərz</phoneme></lexeme> <!-- crossbearers -->
   <lexeme><grapheme>crossbandz</grapheme><phoneme>ˈkrɔːsˌbændz</phoneme></lexeme> <!-- crossbands -->
   <lexeme><grapheme>crossbard</grapheme><phoneme>ˈkrɔːsˌbɑːrd</phoneme></lexeme> <!-- crossbarred -->
   <lexeme><grapheme>crossbarz</grapheme><phoneme>ˈkrɔːsˌbɑːrz</phoneme></lexeme> <!-- crossbars -->
+  <lexeme><grapheme>crossbehrer</grapheme><phoneme>ˈkrɔːsˌbɛrər</phoneme></lexeme> <!-- crossbearer -->
+  <lexeme><grapheme>crossbehrers</grapheme><phoneme>ˈkrɔːsˌbɛrərz</phoneme></lexeme> <!-- crossbearers -->
   <lexeme><grapheme>crossbreedz</grapheme><phoneme>ˈkrɔːsˌbriːdz</phoneme></lexeme> <!-- crossbreeds -->
   <lexeme><grapheme>crosscontry</grapheme><phoneme>ˈkrɔːsˌkʌntri</phoneme></lexeme> <!-- crosscountry -->
   <lexeme><grapheme>crosscort</grapheme><phoneme>ˈkrɔːsˌkɔːrt</phoneme></lexeme> <!-- crosscourt -->
@@ -5986,8 +5986,8 @@
   <lexeme><grapheme>cuckoopynts</grapheme><phoneme>ˈkʊkuːˌpɪnts</phoneme></lexeme> <!-- cuckoopints -->
   <lexeme><grapheme>cuckooz</grapheme><phoneme>ˈkʊkuːz</phoneme></lexeme> <!-- cuckoos -->
   <lexeme><grapheme>cucullat</grapheme><phoneme>ˈkjuːkjəˌleɪt</phoneme></lexeme> <!-- cucullate -->
-  <lexeme><grapheme>cudbaer</grapheme><phoneme>ˈkʌdˌbɛər</phoneme></lexeme> <!-- cudbear -->
-  <lexeme><grapheme>cudbaers</grapheme><phoneme>ˈkʌdˌbɛərz</phoneme></lexeme> <!-- cudbears -->
+  <lexeme><grapheme>cudbehr</grapheme><phoneme>ˈkʌdˌbɛər</phoneme></lexeme> <!-- cudbear -->
+  <lexeme><grapheme>cudbehrs</grapheme><phoneme>ˈkʌdˌbɛərz</phoneme></lexeme> <!-- cudbears -->
   <lexeme><grapheme>cuddlesom</grapheme><phoneme>ˈkʌdəlsəm</phoneme></lexeme> <!-- cuddlesome -->
   <lexeme><grapheme>cuddlez</grapheme><phoneme>ˈkʌdəlz</phoneme></lexeme> <!-- cuddles -->
   <lexeme><grapheme>cudgeld</grapheme><phoneme>ˈkʌdʒəld</phoneme></lexeme> <!-- cudgeled -->
@@ -6022,8 +6022,8 @@
   <lexeme><grapheme>cumz</grapheme><phoneme>kʌmz</phoneme></lexeme> <!-- cums -->
   <lexeme><grapheme>cunctativ</grapheme><phoneme>ˈkʌŋktətɪv</phoneme></lexeme> <!-- cunctative -->
   <lexeme><grapheme>cuneat</grapheme><phoneme>ˈkjuːniˌeɪt</phoneme></lexeme> <!-- cuneate -->
-  <lexeme><grapheme>cupbaerer</grapheme><phoneme>ˈkʌpˌbɛrər</phoneme></lexeme> <!-- cupbearer -->
-  <lexeme><grapheme>cupbaerers</grapheme><phoneme>ˈkʌpˌbɛrərz</phoneme></lexeme> <!-- cupbearers -->
+  <lexeme><grapheme>cupbehrer</grapheme><phoneme>ˈkʌpˌbɛrər</phoneme></lexeme> <!-- cupbearer -->
+  <lexeme><grapheme>cupbehrers</grapheme><phoneme>ˈkʌpˌbɛrərz</phoneme></lexeme> <!-- cupbearers -->
   <lexeme><grapheme>cupd</grapheme><phoneme>kʌpt</phoneme></lexeme> <!-- cupped -->
   <lexeme><grapheme>cupeld</grapheme><phoneme>ˈkjuːpəld</phoneme></lexeme> <!-- cupeled -->
   <lexeme><grapheme>cupelz</grapheme><phoneme>ˈkjuːpəlz</phoneme></lexeme> <!-- cupels -->
@@ -10546,15 +10546,15 @@
   <lexeme><grapheme>forasmuqh</grapheme><phoneme>ˌfɔrəzˈmʌtʃ</phoneme></lexeme> <!-- forasmuch -->
   <lexeme><grapheme>forayd</grapheme><phoneme>ˈfɔreɪd</phoneme></lexeme> <!-- forayed -->
   <lexeme><grapheme>forayz</grapheme><phoneme>ˈfɔreɪz</phoneme></lexeme> <!-- forays -->
-  <lexeme><grapheme>forbaer</grapheme><phoneme>fɔrˈbɛr</phoneme></lexeme> <!-- forbear -->
-  <lexeme><grapheme>forbaerance</grapheme><phoneme>fɔrˈbɛrəns</phoneme></lexeme> <!-- forbearance -->
-  <lexeme><grapheme>forbaerances</grapheme><phoneme>fɔrˈbɛrənsɪz</phoneme></lexeme> <!-- forbearances -->
-  <lexeme><grapheme>forbaerant</grapheme><phoneme>fɔrˈbɛrənt</phoneme></lexeme> <!-- forbearant -->
-  <lexeme><grapheme>forbaerer</grapheme><phoneme>fɔrˈbɛrər</phoneme></lexeme> <!-- forbearer -->
-  <lexeme><grapheme>forbaerers</grapheme><phoneme>fɔrˈbɛrərz</phoneme></lexeme> <!-- forbearers -->
-  <lexeme><grapheme>forbaering</grapheme><phoneme>fɔrˈbɛrɪŋ</phoneme></lexeme> <!-- forbearing -->
-  <lexeme><grapheme>forbaerz</grapheme><phoneme>fɔrˈbɛrz</phoneme></lexeme> <!-- forbears -->
   <lexeme><grapheme>forbathez</grapheme><phoneme>fɔrˈbeɪðz</phoneme></lexeme> <!-- forbathes -->
+  <lexeme><grapheme>forbehr</grapheme><phoneme>fɔrˈbɛr</phoneme></lexeme> <!-- forbear -->
+  <lexeme><grapheme>forbehrance</grapheme><phoneme>fɔrˈbɛrəns</phoneme></lexeme> <!-- forbearance -->
+  <lexeme><grapheme>forbehrances</grapheme><phoneme>fɔrˈbɛrənsɪz</phoneme></lexeme> <!-- forbearances -->
+  <lexeme><grapheme>forbehrant</grapheme><phoneme>fɔrˈbɛrənt</phoneme></lexeme> <!-- forbearant -->
+  <lexeme><grapheme>forbehrer</grapheme><phoneme>fɔrˈbɛrər</phoneme></lexeme> <!-- forbearer -->
+  <lexeme><grapheme>forbehrers</grapheme><phoneme>fɔrˈbɛrərz</phoneme></lexeme> <!-- forbearers -->
+  <lexeme><grapheme>forbehring</grapheme><phoneme>fɔrˈbɛrɪŋ</phoneme></lexeme> <!-- forbearing -->
+  <lexeme><grapheme>forbehrz</grapheme><phoneme>fɔrˈbɛrz</phoneme></lexeme> <!-- forbears -->
   <lexeme><grapheme>forbidz</grapheme><phoneme>fɔrˈbɪdz</phoneme></lexeme> <!-- forbids -->
   <lexeme><grapheme>forbodez</grapheme><phoneme>fɔrˈboʊdz</phoneme></lexeme> <!-- forbodes -->
   <lexeme><grapheme>forcarv</grapheme><phoneme>fɔrˈkɑrv</phoneme></lexeme> <!-- forcarve -->
@@ -10575,10 +10575,10 @@
   <lexeme><grapheme>foreappointz</grapheme><phoneme>ˌfɔrəˈpɔɪnts</phoneme></lexeme> <!-- foreappoints -->
   <lexeme><grapheme>forearmd</grapheme><phoneme>ˌfɔrˈɑrmd</phoneme></lexeme> <!-- forearmed -->
   <lexeme><grapheme>forearmz</grapheme><phoneme>ˌfɔrˈɑrmz</phoneme></lexeme> <!-- forearms -->
-  <lexeme><grapheme>forebaer</grapheme><phoneme>ˌfɔrˈbɛr</phoneme></lexeme> <!-- forebear -->
-  <lexeme><grapheme>forebaerer</grapheme><phoneme>ˌfɔrˈbɛrər</phoneme></lexeme> <!-- forebearer -->
-  <lexeme><grapheme>forebaerers</grapheme><phoneme>ˌfɔrˈbɛrərz</phoneme></lexeme> <!-- forebearers -->
-  <lexeme><grapheme>forebaers</grapheme><phoneme>ˌfɔrˈbɛrz</phoneme></lexeme> <!-- forebears -->
+  <lexeme><grapheme>forebehr</grapheme><phoneme>ˌfɔrˈbɛr</phoneme></lexeme> <!-- forebear -->
+  <lexeme><grapheme>forebehrer</grapheme><phoneme>ˌfɔrˈbɛrər</phoneme></lexeme> <!-- forebearer -->
+  <lexeme><grapheme>forebehrers</grapheme><phoneme>ˌfɔrˈbɛrərz</phoneme></lexeme> <!-- forebearers -->
+  <lexeme><grapheme>forebehrs</grapheme><phoneme>ˌfɔrˈbɛrz</phoneme></lexeme> <!-- forebears -->
   <lexeme><grapheme>forebodez</grapheme><phoneme>ˌfɔrˈboʊdz</phoneme></lexeme> <!-- forebodes -->
   <lexeme><grapheme>forecastz</grapheme><phoneme>ˈfɔrˌkæsts</phoneme></lexeme> <!-- forecasts -->
   <lexeme><grapheme>forecloze</grapheme><phoneme>fɔrˈkloʊz</phoneme></lexeme> <!-- foreclose -->
@@ -11212,8 +11212,8 @@
   <lexeme><grapheme>funneld</grapheme><phoneme>ˈfʌnəld</phoneme></lexeme> <!-- funneled -->
   <lexeme><grapheme>funnelz</grapheme><phoneme>ˈfʌnəlz</phoneme></lexeme> <!-- funnels -->
   <lexeme><grapheme>funz</grapheme><phoneme>fʌnz</phoneme></lexeme> <!-- funs -->
-  <lexeme><grapheme>furbaerer</grapheme><phoneme>ˈfɜrˌbɛrər</phoneme></lexeme> <!-- furbearer -->
-  <lexeme><grapheme>furbaerers</grapheme><phoneme>ˈfɜrˌbɛrərz</phoneme></lexeme> <!-- furbearers -->
+  <lexeme><grapheme>furbehrer</grapheme><phoneme>ˈfɜrˌbɛrər</phoneme></lexeme> <!-- furbearer -->
+  <lexeme><grapheme>furbehrers</grapheme><phoneme>ˈfɜrˌbɛrərz</phoneme></lexeme> <!-- furbearers -->
   <lexeme><grapheme>furbelowd</grapheme><phoneme>ˈfɜrbɪˌloʊd</phoneme></lexeme> <!-- furbelowed -->
   <lexeme><grapheme>furbelowz</grapheme><phoneme>ˈfɜrbɪˌloʊz</phoneme></lexeme> <!-- furbelows -->
   <lexeme><grapheme>furbishd</grapheme><phoneme>ˈfɜrbɪʃt</phoneme></lexeme> <!-- furbished -->
@@ -18160,7 +18160,7 @@
   <lexeme><grapheme>nonattaqhment</grapheme><phoneme>ˌnɑnəˈtætʃmənt</phoneme></lexeme> <!-- nonattachment -->
   <lexeme><grapheme>nonattaqhments</grapheme><phoneme>ˌnɑnəˈtætʃmənts</phoneme></lexeme> <!-- nonattachments -->
   <lexeme><grapheme>nonautomotiv</grapheme><phoneme>ˌnɑnˌɔtəˈmoʊtɪv</phoneme></lexeme> <!-- nonautomotive -->
-  <lexeme><grapheme>nonbaering</grapheme><phoneme>ˌnɑnˈbɛrɪŋ</phoneme></lexeme> <!-- nonbearing -->
+  <lexeme><grapheme>nonbehring</grapheme><phoneme>ˌnɑnˈbɛrɪŋ</phoneme></lexeme> <!-- nonbearing -->
   <lexeme><grapheme>nonbilding</grapheme><phoneme>ˌnɑnˈbɪldɪŋ</phoneme></lexeme> <!-- nonbuilding -->
   <lexeme><grapheme>nonbildings</grapheme><phoneme>ˌnɑnˈbɪldɪŋz</phoneme></lexeme> <!-- nonbuildings -->
   <lexeme><grapheme>nonbisness</grapheme><phoneme>ˌnɑnˈbɪznəs</phoneme></lexeme> <!-- nonbusiness -->
@@ -19311,13 +19311,13 @@
   <lexeme><grapheme>overaw</grapheme><phoneme>ˌoʊvərˈɔ</phoneme></lexeme> <!-- overawe -->
   <lexeme><grapheme>overawd</grapheme><phoneme>ˌoʊvərˈɔd</phoneme></lexeme> <!-- overawed -->
   <lexeme><grapheme>overawz</grapheme><phoneme>ˌoʊvərˈɔz</phoneme></lexeme> <!-- overawes -->
-  <lexeme><grapheme>overbaer</grapheme><phoneme>ˌoʊvərˈbɛr</phoneme></lexeme> <!-- overbear -->
-  <lexeme><grapheme>overbaering</grapheme><phoneme>ˌoʊvərˈbɛrɪŋ</phoneme></lexeme> <!-- overbearing -->
-  <lexeme><grapheme>overbaeringly</grapheme><phoneme>ˌoʊvərˈbɛrɪŋli</phoneme></lexeme> <!-- overbearingly -->
-  <lexeme><grapheme>overbaerz</grapheme><phoneme>ˌoʊvərˈbɛrz</phoneme></lexeme> <!-- overbears -->
   <lexeme><grapheme>overbakez</grapheme><phoneme>ˌoʊvərˈbeɪks</phoneme></lexeme> <!-- overbakes -->
   <lexeme><grapheme>overbalancez</grapheme><phoneme>ˌoʊvərˈbælənsɪz</phoneme></lexeme> <!-- overbalances -->
   <lexeme><grapheme>overbeatz</grapheme><phoneme>ˌoʊvərˈbits</phoneme></lexeme> <!-- overbeats -->
+  <lexeme><grapheme>overbehr</grapheme><phoneme>ˌoʊvərˈbɛr</phoneme></lexeme> <!-- overbear -->
+  <lexeme><grapheme>overbehring</grapheme><phoneme>ˌoʊvərˈbɛrɪŋ</phoneme></lexeme> <!-- overbearing -->
+  <lexeme><grapheme>overbehringly</grapheme><phoneme>ˌoʊvərˈbɛrɪŋli</phoneme></lexeme> <!-- overbearingly -->
+  <lexeme><grapheme>overbehrz</grapheme><phoneme>ˌoʊvərˈbɛrz</phoneme></lexeme> <!-- overbears -->
   <lexeme><grapheme>overbejeweld</grapheme><phoneme>ˌoʊvərbɪˈdʒuəld</phoneme></lexeme> <!-- overbejeweled -->
   <lexeme><grapheme>overbetz</grapheme><phoneme>ˌoʊvərˈbɛts</phoneme></lexeme> <!-- overbets -->
   <lexeme><grapheme>overbidz</grapheme><phoneme>ˌoʊvərˈbɪdz</phoneme></lexeme> <!-- overbids -->
@@ -23393,10 +23393,10 @@
   <lexeme><grapheme>qhuwtimes</grapheme><phoneme>ˈtʃaʊˌtaɪmz</phoneme></lexeme> <!-- chowtimes -->
   <lexeme><grapheme>qhuwz</grapheme><phoneme>tʃaʊz</phoneme></lexeme> <!-- chows -->
   <lexeme><grapheme>qhyld</grapheme><phoneme>tʃaɪld</phoneme></lexeme> <!-- child -->
-  <lexeme><grapheme>qhyldbaering</grapheme><phoneme>ˈtʃaɪldˌbɛrɪŋ</phoneme></lexeme> <!-- childbearing -->
-  <lexeme><grapheme>qhyldbaerings</grapheme><phoneme>ˈtʃaɪldˌbɛrɪŋz</phoneme></lexeme> <!-- childbearings -->
   <lexeme><grapheme>qhyldbed</grapheme><phoneme>ˈtʃaɪldˌbɛd</phoneme></lexeme> <!-- childbed -->
   <lexeme><grapheme>qhyldbeds</grapheme><phoneme>ˈtʃaɪldˌbɛdz</phoneme></lexeme> <!-- childbeds -->
+  <lexeme><grapheme>qhyldbehring</grapheme><phoneme>ˈtʃaɪldˌbɛrɪŋ</phoneme></lexeme> <!-- childbearing -->
+  <lexeme><grapheme>qhyldbehrings</grapheme><phoneme>ˈtʃaɪldˌbɛrɪŋz</phoneme></lexeme> <!-- childbearings -->
   <lexeme><grapheme>qhyldbirth</grapheme><phoneme>ˈtʃaɪldˌbɜːrθ</phoneme></lexeme> <!-- childbirth -->
   <lexeme><grapheme>qhyldbirths</grapheme><phoneme>ˈtʃaɪldˌbɜːrθs</phoneme></lexeme> <!-- childbirths -->
   <lexeme><grapheme>qhylde</grapheme><phoneme>tʃaɪld</phoneme></lexeme> <!-- childe -->
@@ -29666,10 +29666,10 @@
   <lexeme><grapheme>takez</grapheme><phoneme>teɪks</phoneme></lexeme> <!-- takes -->
   <lexeme><grapheme>talcd</grapheme><phoneme>tælkt</phoneme></lexeme> <!-- talced -->
   <lexeme><grapheme>talcz</grapheme><phoneme>tælks</phoneme></lexeme> <!-- talcs -->
-  <lexeme><grapheme>talebaerer</grapheme><phoneme>ˈteɪlˌbɛərər</phoneme></lexeme> <!-- talebearer -->
-  <lexeme><grapheme>talebaerers</grapheme><phoneme>ˈteɪlˌbɛərərz</phoneme></lexeme> <!-- talebearers -->
-  <lexeme><grapheme>talebaering</grapheme><phoneme>ˈteɪlˌbɛərɪŋ</phoneme></lexeme> <!-- talebearing -->
-  <lexeme><grapheme>talebaerings</grapheme><phoneme>ˈteɪlˌbɛərɪŋz</phoneme></lexeme> <!-- talebearings -->
+  <lexeme><grapheme>talebehrer</grapheme><phoneme>ˈteɪlˌbɛərər</phoneme></lexeme> <!-- talebearer -->
+  <lexeme><grapheme>talebehrers</grapheme><phoneme>ˈteɪlˌbɛərərz</phoneme></lexeme> <!-- talebearers -->
+  <lexeme><grapheme>talebehring</grapheme><phoneme>ˈteɪlˌbɛərɪŋ</phoneme></lexeme> <!-- talebearing -->
+  <lexeme><grapheme>talebehrings</grapheme><phoneme>ˈteɪlˌbɛərɪŋz</phoneme></lexeme> <!-- talebearings -->
   <lexeme><grapheme>tallagez</grapheme><phoneme>ˈtælɪdʒəz</phoneme></lexeme> <!-- tallages -->
   <lexeme><grapheme>talliez</grapheme><phoneme>ˈtæliz</phoneme></lexeme> <!-- tallies -->
   <lexeme><grapheme>tallowd</grapheme><phoneme>ˈtæloʊd</phoneme></lexeme> <!-- tallowed -->
@@ -30292,8 +30292,8 @@
   <lexeme><grapheme>torqer</grapheme><phoneme>ˈtɔrkər</phoneme></lexeme> <!-- torquer -->
   <lexeme><grapheme>torqers</grapheme><phoneme>ˈtɔrkərz</phoneme></lexeme> <!-- torquers -->
   <lexeme><grapheme>torqh</grapheme><phoneme>tɔrtʃ</phoneme></lexeme> <!-- torch -->
-  <lexeme><grapheme>torqhbaerer</grapheme><phoneme>ˈtɔrtʃˌbɛərər</phoneme></lexeme> <!-- torchbearer -->
-  <lexeme><grapheme>torqhbaerers</grapheme><phoneme>ˈtɔrtʃˌbɛərərz</phoneme></lexeme> <!-- torchbearers -->
+  <lexeme><grapheme>torqhbehrer</grapheme><phoneme>ˈtɔrtʃˌbɛərər</phoneme></lexeme> <!-- torchbearer -->
+  <lexeme><grapheme>torqhbehrers</grapheme><phoneme>ˈtɔrtʃˌbɛərərz</phoneme></lexeme> <!-- torchbearers -->
   <lexeme><grapheme>torqhd</grapheme><phoneme>tɔrtʃt</phoneme></lexeme> <!-- torched -->
   <lexeme><grapheme>torqhes</grapheme><phoneme>ˈtɔrtʃərz</phoneme></lexeme> <!-- torches -->
   <lexeme><grapheme>torqhez</grapheme><phoneme>ˈtɔrtʃərz</phoneme></lexeme> <!-- torches -->
@@ -30369,8 +30369,8 @@
   <lexeme><grapheme>trailhedd</grapheme><phoneme>ˈtreɪlˌhɛd</phoneme></lexeme> <!-- trailhead -->
   <lexeme><grapheme>trailhedds</grapheme><phoneme>ˈtreɪlˌhɛdz</phoneme></lexeme> <!-- trailheads -->
   <lexeme><grapheme>trailz</grapheme><phoneme>treɪlz</phoneme></lexeme> <!-- trails -->
-  <lexeme><grapheme>trainbaerer</grapheme><phoneme>ˈtreɪnˌbɛərər</phoneme></lexeme> <!-- trainbearer -->
-  <lexeme><grapheme>trainbaerers</grapheme><phoneme>ˈtreɪnˌbɛərərz</phoneme></lexeme> <!-- trainbearers -->
+  <lexeme><grapheme>trainbehrer</grapheme><phoneme>ˈtreɪnˌbɛərər</phoneme></lexeme> <!-- trainbearer -->
+  <lexeme><grapheme>trainbehrers</grapheme><phoneme>ˈtreɪnˌbɛərərz</phoneme></lexeme> <!-- trainbearers -->
   <lexeme><grapheme>traind</grapheme><phoneme>treɪnd</phoneme></lexeme> <!-- trained -->
   <lexeme><grapheme>trainz</grapheme><phoneme>treɪnz</phoneme></lexeme> <!-- trains -->
   <lexeme><grapheme>traipsd</grapheme><phoneme>treɪpst</phoneme></lexeme> <!-- traipsed -->
@@ -31069,11 +31069,6 @@
   <lexeme><grapheme>unawd</grapheme><phoneme>ˈʌnˈɔːd</phoneme></lexeme> <!-- unawed -->
   <lexeme><grapheme>unawsom</grapheme><phoneme>ˈʌnˈɔːsəm</phoneme></lexeme> <!-- unawesome -->
   <lexeme><grapheme>unbackd</grapheme><phoneme>ˈʌnˈbækt</phoneme></lexeme> <!-- unbacked -->
-  <lexeme><grapheme>unbaer</grapheme><phoneme>ˈʌnˈbɛər</phoneme></lexeme> <!-- unbear -->
-  <lexeme><grapheme>unbaerable</grapheme><phoneme>ˈʌnˈbɛərəbəl</phoneme></lexeme> <!-- unbearable -->
-  <lexeme><grapheme>unbaerably</grapheme><phoneme>ˈʌnˈbɛərəbli</phoneme></lexeme> <!-- unbearably -->
-  <lexeme><grapheme>unbaering</grapheme><phoneme>ˈʌnˈbɛərɪŋ</phoneme></lexeme> <!-- unbearing -->
-  <lexeme><grapheme>unbaerz</grapheme><phoneme>ˈʌnˈbɛərz</phoneme></lexeme> <!-- unbears -->
   <lexeme><grapheme>unbagd</grapheme><phoneme>ˈʌnˈbæɡd</phoneme></lexeme> <!-- unbagged -->
   <lexeme><grapheme>unbagz</grapheme><phoneme>ˈʌnˈbæɡz</phoneme></lexeme> <!-- unbags -->
   <lexeme><grapheme>unbalancez</grapheme><phoneme>ˈʌnˈbælənsɪz</phoneme></lexeme> <!-- unbalances -->
@@ -31099,6 +31094,11 @@
   <lexeme><grapheme>unbeghiled</grapheme><phoneme>ˈʌnbɪˈɡaɪld</phoneme></lexeme> <!-- unbeguiled -->
   <lexeme><grapheme>unbeghilez</grapheme><phoneme>ˈʌnbɪˈɡaɪlz</phoneme></lexeme> <!-- unbeguiles -->
   <lexeme><grapheme>unbeghiling</grapheme><phoneme>ˈʌnbɪˈɡaɪlɪŋ</phoneme></lexeme> <!-- unbeguiling -->
+  <lexeme><grapheme>unbehr</grapheme><phoneme>ˈʌnˈbɛər</phoneme></lexeme> <!-- unbear -->
+  <lexeme><grapheme>unbehrable</grapheme><phoneme>ˈʌnˈbɛərəbəl</phoneme></lexeme> <!-- unbearable -->
+  <lexeme><grapheme>unbehrably</grapheme><phoneme>ˈʌnˈbɛərəbli</phoneme></lexeme> <!-- unbearably -->
+  <lexeme><grapheme>unbehring</grapheme><phoneme>ˈʌnˈbɛərɪŋ</phoneme></lexeme> <!-- unbearing -->
+  <lexeme><grapheme>unbehrz</grapheme><phoneme>ˈʌnˈbɛərz</phoneme></lexeme> <!-- unbears -->
   <lexeme><grapheme>unbelievd</grapheme><phoneme>ˈʌnbɪˈliːvd</phoneme></lexeme> <!-- unbelieved -->
   <lexeme><grapheme>unbelovd</grapheme><phoneme>ˈʌnbɪˈlʌvd</phoneme></lexeme> <!-- unbeloved -->
   <lexeme><grapheme>unbeltz</grapheme><phoneme>ˈʌnˈbɛlts</phoneme></lexeme> <!-- unbelts -->
@@ -31428,10 +31428,10 @@
   <lexeme><grapheme>underaqhievment</grapheme><phoneme>ˈʌndərəˈtʃiːvmənt</phoneme></lexeme> <!-- underachievement -->
   <lexeme><grapheme>underaqhievments</grapheme><phoneme>ˈʌndərəˈtʃiːvmənts</phoneme></lexeme> <!-- underachievements -->
   <lexeme><grapheme>underaqhievz</grapheme><phoneme>ˈʌndərəˈtʃiːvz</phoneme></lexeme> <!-- underachieves -->
-  <lexeme><grapheme>underbaer</grapheme><phoneme>ˈʌndərˈbɛər</phoneme></lexeme> <!-- underbear -->
-  <lexeme><grapheme>underbaerer</grapheme><phoneme>ˈʌndərˈbɛrər</phoneme></lexeme> <!-- underbearer -->
-  <lexeme><grapheme>underbaerers</grapheme><phoneme>ˈʌndərˈbɛrərz</phoneme></lexeme> <!-- underbearers -->
-  <lexeme><grapheme>underbaerz</grapheme><phoneme>ˈʌndərˈbɛərz</phoneme></lexeme> <!-- underbears -->
+  <lexeme><grapheme>underbehr</grapheme><phoneme>ˈʌndərˈbɛər</phoneme></lexeme> <!-- underbear -->
+  <lexeme><grapheme>underbehrer</grapheme><phoneme>ˈʌndərˈbɛrər</phoneme></lexeme> <!-- underbearer -->
+  <lexeme><grapheme>underbehrers</grapheme><phoneme>ˈʌndərˈbɛrərz</phoneme></lexeme> <!-- underbearers -->
+  <lexeme><grapheme>underbehrz</grapheme><phoneme>ˈʌndərˈbɛərz</phoneme></lexeme> <!-- underbears -->
   <lexeme><grapheme>underbidz</grapheme><phoneme>ˈʌndərˈbɪdz</phoneme></lexeme> <!-- underbids -->
   <lexeme><grapheme>underbild</grapheme><phoneme>ˈʌndərˈbɪld</phoneme></lexeme> <!-- underbuild -->
   <lexeme><grapheme>underbilder</grapheme><phoneme>ˈʌndərˈbɪldər</phoneme></lexeme> <!-- underbuilder -->
@@ -32801,11 +32801,11 @@
   <lexeme><grapheme>unyung</grapheme><phoneme>ʌnˈjʌŋ</phoneme></lexeme> <!-- unyoung -->
   <lexeme><grapheme>unzipd</grapheme><phoneme>ʌnˈzɪpt</phoneme></lexeme> <!-- unzipped -->
   <lexeme><grapheme>unzipz</grapheme><phoneme>ʌnˈzɪps</phoneme></lexeme> <!-- unzips -->
-  <lexeme><grapheme>upbaer</grapheme><phoneme>ʌpˈbɛr</phoneme></lexeme> <!-- upbear -->
-  <lexeme><grapheme>upbaerer</grapheme><phoneme>ʌpˈbɛrər</phoneme></lexeme> <!-- upbearer -->
-  <lexeme><grapheme>upbaerers</grapheme><phoneme>ʌpˈbɛrərz</phoneme></lexeme> <!-- upbearers -->
-  <lexeme><grapheme>upbaering</grapheme><phoneme>ʌpˈbɛrɪŋ</phoneme></lexeme> <!-- upbearing -->
-  <lexeme><grapheme>upbaerz</grapheme><phoneme>ʌpˈbɛrz</phoneme></lexeme> <!-- upbears -->
+  <lexeme><grapheme>upbehr</grapheme><phoneme>ʌpˈbɛr</phoneme></lexeme> <!-- upbear -->
+  <lexeme><grapheme>upbehrer</grapheme><phoneme>ʌpˈbɛrər</phoneme></lexeme> <!-- upbearer -->
+  <lexeme><grapheme>upbehrers</grapheme><phoneme>ʌpˈbɛrərz</phoneme></lexeme> <!-- upbearers -->
+  <lexeme><grapheme>upbehring</grapheme><phoneme>ʌpˈbɛrɪŋ</phoneme></lexeme> <!-- upbearing -->
+  <lexeme><grapheme>upbehrz</grapheme><phoneme>ʌpˈbɛrz</phoneme></lexeme> <!-- upbears -->
   <lexeme><grapheme>upbild</grapheme><phoneme>ʌpˈbɪld</phoneme></lexeme> <!-- upbuild -->
   <lexeme><grapheme>upbilding</grapheme><phoneme>ʌpˈbɪldɪŋ</phoneme></lexeme> <!-- upbuilding -->
   <lexeme><grapheme>upbildz</grapheme><phoneme>ʌpˈbɪldz</phoneme></lexeme> <!-- upbuilds -->
