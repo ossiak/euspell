@@ -1,6 +1,6 @@
 # Euspell — Press Kit
 
-**Last updated:** 28 July 2026 · **Status:** pre-launch — see
+**Last updated:** 29 July 2026 · **Status:** pre-launch — see
 [Availability](#availability-the-honest-status) before pitching.
 
 The primary source document is the white paper, *Spelling Reform: An Engineering
@@ -58,7 +58,7 @@ Three lengths, ready to paste.
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
 | **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |
-| **Current versions** | Browser extension 0.2.0 (unreleased); Eupub 0.2.1 |
+| **Current versions** | Browser extension 0.2.0 (unreleased); Eupub 0.2.2 |
 | **Contact** | kamranossia@euspell.org |
 
 ---
@@ -130,6 +130,10 @@ The extreme case is four spellings for one written form:
 a support-vector classifier with **94% accuracy**; the paper is candid that it
 struggles with minimalist headlines and short phrases where context is thin.
 
+A neat case of the reform choosing meaning over etymology: **bear** splits into
+`baer` for the animal — which is what German already writes — and `behr` for
+*carry* or *tolerate*, a single letter apart.
+
 **Some reforms are restorations.** A number of words simply revert to spellings
 English once used: *debt → dett*, *tongue → tung*, *aghast → agast*,
 *anchor → ancor*, *build → bild*, *guard → gard*, *victual → vittle*.
@@ -144,17 +148,17 @@ niht*, *friend → frend*, *people → peeple*, *one → wun*.
 
 | | |
 |---|---|
-| Lexicon entries | **205,484** |
-| Entries whose spelling changes | **41,291** — about **1 in 5** |
+| Lexicon entries | **205,483** |
+| Entries whose spelling changes | **41,293** — about **1 in 5** |
 | — of which merge into an existing American spelling (*colour → color*) | 6,051 |
 | — leaving genuinely **new** spellings | ≈ 35,000 |
-| Entries left exactly as they are | **164,193** (79.9%) |
+| Entries left exactly as they are | **164,190** (79.9%) |
 | Words needing context to choose between spellings | **5,904** |
 | Noun/verb `-s` disambiguation accuracy | **94%** (SVM) |
 | Pronunciation lexicon (PLS/XML, with IPA) | **34,000+** words |
 | Part-of-speech lexicon (Penn Treebank, for grammar checkers) | **46,000+** entries |
 | Part-of-speech tagset | CLAWS-7 (138 tags), University of Lancaster |
-| Automated tests · cross-engine fixtures | 187 · 35/35 per port |
+| Automated tests · cross-engine fixtures | 217 · 43/43 per port |
 
 The reform is re-implemented in Python (LibreOffice) and Apps Script (Google
 Docs, Apple Pages), and each port is pinned to the JavaScript engine by a shared
@@ -171,8 +175,8 @@ One engine, many surfaces. None of them re-implement the reform.
 |---|---|---|
 | **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | Built, **not yet published to any store** |
 | **Safari extension** | macOS — an Xcode host app built once and enabled in Safari's settings | Built; **not distributed** (no notarized or App Store build) |
-| **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts | Ships with the extension |
-| **Eupub e-reader** | Windows, macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.1 released** |
+| **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts, with its own zoom and print | Ships with the extension |
+| **Eupub e-reader** | Windows, macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.2 released** |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
 | **LibreOffice Writer** | Windows, Linux, macOS | Built, source-install |
 | **Google Docs** | Any browser (Apps Script) | Built, source-install |
@@ -252,7 +256,7 @@ phonetic spelling would disrupt hundreds of scientific words.
 
 ## Availability: the honest status
 
-As of 28 July 2026 the project has a live domain but **little a journalist can
+As of 29 July 2026 the project has a live domain but **little a journalist can
 read, download, or link to**:
 
 | | |
@@ -261,13 +265,18 @@ read, download, or link to**:
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one currently returns 404 |
 | Source repositories | **Private** — although the white paper states the source and lexicons are GPL-3 and available at `github.com/ossiak/` |
 | Browser extension | **Not published** — the Chrome Web Store link is still a placeholder. The Safari build is development-signed only: no notarized or App Store build exists |
-| Eupub v0.2.1 | Released, but **on a private repo**, so downloads are not publicly reachable |
+| Eupub v0.2.2 | Released, but **on a private repo**, so downloads are not publicly reachable |
 
 **The cheapest fix by far is deploying the site**, whose writing is already done.
 The most urgent, though, is the repository visibility: the white paper publicly
 promises GPL-3 source at a URL that currently 404s for everyone but the author.
 Anyone who reads the paper and follows that link will conclude the project is
 vapourware.
+
+**The paper is deliberately being held until the repositories are public**, which
+is the right order — publishing it first would spend credibility that is hard to
+win back. This kit becomes sendable at the same moment the paper does, and the
+table above is what has to change before then.
 
 **Minimum before outreach:** deploy the content pages, make the repositories
 public (or publish the extension), and put real product links in this kit. Until
