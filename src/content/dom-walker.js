@@ -46,6 +46,17 @@ const BLOCK_TAGS = new Set([
   'SECTION', 'TABLE', 'TD', 'TH', 'TR', 'UL',
 ]);
 
+// Elements that end a line without being a block of their own. A <br> holds no
+// text, so it can never fall out of the text-node grouping below on its own —
+// but the text on either side of it is NOT contiguous, and concatenating across
+// it glues the last word of one line to the first of the next ("Guide
+// to<br>Workers'" -> "toWorkers'", which then matches nothing in the lexicon and
+// silently passes through unreformed). This matters most in the PDF viewer,
+// where pdf.js emits one absolutely-positioned span per text item and a
+// <br role="presentation"> after every item whose hasEOL is set, so EVERY line
+// boundary on the page is exactly this shape.
+const LINE_BREAK_TAGS = new Set(['BR']);
+
 // A "run" is a word that may carry apostrophes (contractions, clitics): an
 // optional leading apostrophe ('tis, 'em), word chars, and any number of
 // apostrophe-joined word chars (don't, couldn't've), plus an optional trailing
@@ -136,8 +147,13 @@ export function convertText(text, convertFn) {
  * @returns {Text[][]}
  */
 function collectBlocks(root) {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
     acceptNode(node) {
+      // Elements are visited only to notice line breaks; SKIP (not REJECT) so
+      // the walk still descends into every other element's text.
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        return LINE_BREAK_TAGS.has(node.tagName) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+      }
       const parent = node.parentElement;
       if (!parent || inSkippedTag(parent) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
       if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
@@ -145,16 +161,27 @@ function collectBlocks(root) {
     },
   });
 
-  /** @type {Map<Node, Text[]>} */
-  const groups = new Map();
+  // Each block holds one or more RUNS of contiguous text; a <br> closes the open
+  // run so the next text starts a fresh one. Runs, not blocks, are what get
+  // concatenated into a single token stream, so a line break stops words meeting
+  // across it while inline splits within a line still join.
+  /** @type {Map<Node, Text[][]>} */
+  const runsByBlock = new Map();
+  /** Blocks whose open run was just ended by a <br>. */
+  const broken = new Set();
   while (walker.nextNode()) {
-    const node = /** @type {Text} */ (walker.currentNode);
+    const node = walker.currentNode;
     const block = nearestBlock(node.parentElement, root);
-    let group = groups.get(block);
-    if (!group) groups.set(block, (group = []));
-    group.push(node);
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      broken.add(block);
+      continue;
+    }
+    let runs = runsByBlock.get(block);
+    if (!runs) runsByBlock.set(block, (runs = [[]]));
+    if (broken.delete(block)) runs.push([]);
+    runs[runs.length - 1].push(/** @type {Text} */ (node));
   }
-  return [...groups.values()];
+  return [...runsByBlock.values()].flat().filter((run) => run.length);
 }
 
 /**

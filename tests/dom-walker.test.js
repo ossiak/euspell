@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 // --- Minimal DOM shim sufficient for dom-walker.js (no jsdom dependency) ------
-const NodeFilter = { SHOW_TEXT: 4, FILTER_ACCEPT: 1, FILTER_REJECT: 2, FILTER_SKIP: 3 };
+const NodeFilter = { SHOW_TEXT: 4, SHOW_ELEMENT: 1, FILTER_ACCEPT: 1, FILTER_REJECT: 2, FILTER_SKIP: 3 };
 const Node = { ELEMENT_NODE: 1, TEXT_NODE: 3 };
 
 class TextNode {
@@ -18,12 +18,18 @@ const el = (tag, ...kids) => new ElementNode(tag).append(...kids);
 const editable = (elem) => { elem._editable = true; return elem; };
 const tx = (v) => new TextNode(v);
 
-function createTreeWalker(root, _show, filter) {
+function createTreeWalker(root, show, filter) {
   const out = [];
+  const wantElements = (show & NodeFilter.SHOW_ELEMENT) !== 0;
   (function visit(node) {
     if (node.nodeType === Node.TEXT_NODE) {
       if (filter.acceptNode(node) === NodeFilter.FILTER_ACCEPT) out.push(node);
       return;
+    }
+    // An accepted element is emitted before its children, matching TreeWalker's
+    // document order; SKIP still descends, which is how non-<br> elements behave.
+    if (wantElements && node !== root && filter.acceptNode(node) === NodeFilter.FILTER_ACCEPT) {
+      out.push(node);
     }
     for (const c of node.childNodes) visit(c);
   })(root);
@@ -109,6 +115,29 @@ test('walkTextNodes keeps a word split across text nodes whole (drop cap)', () =
   const rest2 = tx('sland');
   walkTextNodes(el('p', el('span', cap2), rest2), convert);
   assert.equal(cap2.nodeValue + rest2.nodeValue, 'Ihland');
+});
+
+test('a <br> stops the line-end word gluing to the next line', () => {
+  // The flip side of the drop-cap case: text either side of a <br> is NOT
+  // contiguous. Joining it produced "throughnight", which matches nothing, so
+  // BOTH words silently passed through unreformed.
+  const a = tx('walk through');
+  const b = tx('night air');
+  walkTextNodes(el('div', a, el('br'), b), convert);
+  assert.equal(a.nodeValue, 'wahk thruh');
+  assert.equal(b.nodeValue, 'niht air');
+});
+
+test('pdf.js text-layer lines convert independently', () => {
+  // The PDF viewer's real shape: one absolutely-positioned span per text item,
+  // and a <br role="presentation"> after every item whose hasEOL is set — so
+  // every line boundary on the page is a <br> between sibling spans, all under
+  // one container. "to" ends line 1 and used to glue into "toWorkers'".
+  const l1 = tx('Pocket Guide to');
+  const l2 = tx("Workers' Compensation");
+  walkTextNodes(el('div', el('span', l1), el('br'), el('span', l2), el('br')), convert);
+  assert.equal(l1.nodeValue, 'Pocket Ghide tu');
+  assert.equal(l2.nodeValue, "Workers' Compensation");
 });
 
 test('walkTextNodes is idempotent on a normal re-walk', () => {
