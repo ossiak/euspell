@@ -203,7 +203,7 @@ var Euspell = (function () {
   }
 
   // --- context window -------------------------------------------------------
-  var BOUNDARY = { word: '', tag: 'ZB', breakAfter: true };
+  var BOUNDARY = { word: '', tag: 'ZB', breakAfter: true, sepAfter: '' };
 
   function crossesSentenceBreak(tokens, from, to) {
     var lo = Math.min(from, to), hi = Math.max(from, to);
@@ -500,6 +500,12 @@ var Euspell = (function () {
     a: 1, an: 1, "the": 1, "this": 1, "that": 1, these: 1, those: 1, each: 1,
     every: 1, any: 1, some: 1, which: 1, whichever: 1, another: 1
   };
+  var FREE_AFTER = /[\s.,;:!?]/;
+  // The letter bound to what follows (I&A, I-beam, I/O, I)), not the pronoun.
+  function isBoundI(tokens, idx) {
+    var sep = (tokens[idx] && tokens[idx].sepAfter) || '';
+    return sep !== '' && !FREE_AFTER.test(sep);
+  }
   function isRomanNumeralI(tokens, idx) {
     var win = contextWindow(tokens, idx);
     var before = win[1], prev = win[2];
@@ -511,7 +517,7 @@ var Euspell = (function () {
   }
   function convert(word, tokens, idx) {
     if (word === 'I') {
-      if (isRomanNumeralI(tokens, idx)) return word;
+      if (isBoundI(tokens, idx) || isRomanNumeralI(tokens, idx)) return word;
       return isSentenceStart(tokens, idx) ? 'Ih' : 'ih';
     }
     var key = word.toLowerCase();
@@ -537,19 +543,24 @@ var Euspell = (function () {
       if (seg.kind === 'sep') {
         pieces.push({ text: seg.text, wordIdx: -1 });
         if (tokens.length && SENTENCE_BREAK.test(seg.text)) tokens[tokens.length - 1].breakAfter = true;
+        // The character immediately after the word; only the first separator
+        // after a word is its own. See src/disambig/pronoun-i.js.
+        if (tokens.length && tokens[tokens.length - 1].sepAfter === '') {
+          tokens[tokens.length - 1].sepAfter = seg.text.charAt(0);
+        }
       } else if (seg.kind === 'contraction') {
         pieces.push({ text: seg.text, wordIdx: tokens.length });
         var comps = contractionComponents(seg.text);
         if (comps.length) {
           for (var j = 0; j < comps.length; j++) {
-            tokens.push({ word: j === 0 ? seg.text : '', tag: comps[j], breakAfter: false });
+            tokens.push({ word: j === 0 ? seg.text : '', tag: comps[j], breakAfter: false, sepAfter: '' });
           }
         } else {
-          tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
+          tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false, sepAfter: '' });
         }
       } else {
         pieces.push({ text: seg.text, wordIdx: tokens.length });
-        tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
+        tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false, sepAfter: '' });
       }
     }
     if (tokens.length) tokens[tokens.length - 1].breakAfter = true;

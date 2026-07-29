@@ -248,7 +248,7 @@ def _tokenize(text):
 
 # --- context window ---------------------------------------------------------
 
-_BOUNDARY = {"word": "", "tag": "ZB", "breakAfter": True}
+_BOUNDARY = {"word": "", "tag": "ZB", "breakAfter": True, "sepAfter": ""}
 
 
 def _crosses_sentence_break(tokens, frm, to):
@@ -665,6 +665,15 @@ _LABEL_DETERMINERS = {
 }
 
 
+_FREE_AFTER = re.compile(r"[\s.,;:!?]")
+
+
+def _is_bound_i(tokens, idx):
+    """The letter bound to what follows (I&A, I-beam, I/O, I)), not the pronoun."""
+    sep = tokens[idx].get("sepAfter", "") if idx < len(tokens) else ""
+    return sep != "" and not _FREE_AFTER.search(sep)
+
+
 def _is_roman_numeral_i(tokens, idx):
     win = _context_window(tokens, idx)
     before, prev = win[1], win[2]
@@ -680,7 +689,7 @@ def _is_roman_numeral_i(tokens, idx):
 
 def _convert(word, tokens, idx):
     if word == "I":
-        if _is_roman_numeral_i(tokens, idx):
+        if _is_bound_i(tokens, idx) or _is_roman_numeral_i(tokens, idx):
             return word
         return "Ih" if _is_sentence_start(tokens, idx) else "ih"
     key = word.lower()
@@ -707,24 +716,28 @@ def _build_tokens(text):
     output and tokens are the tagged stream (with contraction pseudo-tokens).
     Mirrors dom-walker.convertBlock minus phrase collapsing."""
     pieces = []   # {'text': str, 'wordIdx': int}
-    tokens = []   # {'word','tag','breakAfter'}
+    tokens = []   # {'word','tag','breakAfter','sepAfter'}
     for kind, seg in _tokenize(text):
         if kind == "sep":
             pieces.append({"text": seg, "wordIdx": -1})
             if tokens and _SENTENCE_BREAK.search(seg):
                 tokens[-1]["breakAfter"] = True
+            # The character immediately after the word; only the first separator
+            # after a word is its own. See src/disambig/pronoun-i.js.
+            if tokens and tokens[-1]["sepAfter"] == "":
+                tokens[-1]["sepAfter"] = seg[:1]
         elif kind == "contraction":
             piece_idx = len(pieces)
             pieces.append({"text": seg, "wordIdx": len(tokens)})
             components = _contraction_components(seg)
             if components:
                 for i, tag in enumerate(components):
-                    tokens.append({"word": seg if i == 0 else "", "tag": tag, "breakAfter": False})
+                    tokens.append({"word": seg if i == 0 else "", "tag": tag, "breakAfter": False, "sepAfter": ""})
             else:
-                tokens.append({"word": seg, "tag": tag_word(seg), "breakAfter": False})
+                tokens.append({"word": seg, "tag": tag_word(seg), "breakAfter": False, "sepAfter": ""})
         else:  # word
             pieces.append({"text": seg, "wordIdx": len(tokens)})
-            tokens.append({"word": seg, "tag": tag_word(seg), "breakAfter": False})
+            tokens.append({"word": seg, "tag": tag_word(seg), "breakAfter": False, "sepAfter": ""})
     if tokens:
         tokens[-1]["breakAfter"] = True
     return pieces, tokens

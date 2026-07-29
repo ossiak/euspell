@@ -99,6 +99,9 @@ const SENTENCES = [
   // pronoun. Pinned across engines because all three carry the rule.
   'Section I applies to every employer.',
   'He signed the section I finished.',
+  // An "I" bound to what follows is the letter, not the pronoun.
+  'Contact your local I&A Unit for help.',
+  'The I-beam was steel.',
 ];
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');

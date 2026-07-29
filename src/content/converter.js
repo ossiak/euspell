@@ -2,7 +2,7 @@ import { lookupEntry } from './lexicon-source.js';
 import { getContraction } from './contractions.js';
 import { is_VVZ_svm, is_verbal_s, is_plural_noun, is_verb_VV0 } from '../disambig/pos.js';
 import { SEMANTIC } from '../disambig/semantic/index.js';
-import { isRomanNumeralI } from '../disambig/roman-i.js';
+import { isPronounI } from '../disambig/pronoun-i.js';
 
 /** @typedef {import('./context.js').Token} Token */
 
@@ -25,9 +25,9 @@ export function convert(word, tokens, idx) {
   // common word, so it follows normal capitalization — lowercase mid-sentence,
   // capitalized only at the start of a sentence.
   if (word === 'I') {
-    // …unless it is the Roman numeral one ("Section I"), which is not a word and
-    // must survive untouched.
-    if (isRomanNumeralI(tokens, idx)) return word;
+    // …unless it is the Roman numeral ("Section I") or the letter bound to what
+    // follows ("I&A", "I-beam"), neither of which is a word to reform.
+    if (!isPronounI(tokens, idx)) return word;
     return isSentenceStart(tokens, idx) ? 'Ih' : 'ih';
   }
 

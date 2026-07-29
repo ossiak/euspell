@@ -288,6 +288,13 @@ function convertBlock(textNodes, convertFn) {
       if (tokens.length && SENTENCE_BREAK.test(seg.text)) {
         tokens[tokens.length - 1].breakAfter = true;
       }
+      // The character immediately after the word. A word followed by punctuation
+      // with no space is BOUND to what comes next (I&A, I-beam, I)) rather than
+      // standing alone, which is how the pronoun "I" is told from the letter and
+      // the numeral. Only the first separator after a word is its own.
+      if (tokens.length && tokens[tokens.length - 1].sepAfter === '') {
+        tokens[tokens.length - 1].sepAfter = seg.text.charAt(0);
+      }
     } else if (seg.kind === 'contraction') {
       const pieceIdx = pieces.push({ start, origLen, text: seg.text, wordIdx: tokens.length }) - 1;
       const components = contractionComponents(seg.text);
@@ -295,16 +302,16 @@ function convertBlock(textNodes, convertFn) {
         // One pseudo-token per sequence position; identity rides on the first.
         components.forEach((tag, i) => {
           pieceOfToken.push(i === 0 ? pieceIdx : -1);
-          tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false });
+          tokens.push({ word: i === 0 ? seg.text : '', tag, breakAfter: false, sepAfter: '' });
         });
       } else {
         pieceOfToken.push(pieceIdx);
-        tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
+        tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false, sepAfter: '' });
       }
     } else {
       const pieceIdx = pieces.push({ start, origLen, text: seg.text, wordIdx: tokens.length }) - 1;
       pieceOfToken.push(pieceIdx);
-      tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false });
+      tokens.push({ word: seg.text, tag: tagWord(seg.text), breakAfter: false, sepAfter: '' });
     }
   }
   if (tokens.length === 0) return;

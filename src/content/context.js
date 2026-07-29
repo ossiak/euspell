@@ -2,10 +2,13 @@
  * Token-context utilities shared by the converter and the disambiguation rules.
  *
  * A Token carries its surface word, a CLAWS7 PoS tag (empty until a tagger
- * runs), and `breakAfter` — true when a sentence boundary sits immediately
- * after this token.
+ * runs), `breakAfter` — true when a sentence boundary sits immediately after
+ * this token — and `sepAfter`, the single source character that follows it
+ * ('' at the end of a block). `sepAfter` is what separates a word standing on
+ * its own from one bound to whatever comes next, which is how the pronoun "I"
+ * is told apart from the letter in "I&A" or "I-beam".
  *
- * @typedef {{ word: string, tag: string, breakAfter: boolean }} Token
+ * @typedef {{ word: string, tag: string, breakAfter: boolean, sepAfter: string }} Token
  */
 
 /**
@@ -15,7 +18,7 @@
  * than as missing data it has to guard against.
  * @type {Readonly<Token>}
  */
-export const BOUNDARY = Object.freeze({ word: '', tag: 'ZB', breakAfter: true });
+export const BOUNDARY = Object.freeze({ word: '', tag: 'ZB', breakAfter: true, sepAfter: '' });
 
 /**
  * Builds the fixed `[w-3, w-2, w-1, target, w+1, w+2, w+3]` context window around
