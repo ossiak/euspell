@@ -78,6 +78,28 @@ body {
   text-decoration: none;
 }
 
+/* The zoom group sits tighter than the 12px gap between actions, so −/100%/+
+   read as one control rather than three separate links. Fixed widths and
+   tabular figures keep the rest of the bar from shifting as the readout goes
+   80% -> 100% -> 156%. */
+#zoom-out,
+#zoom-in,
+#zoom-level {
+  margin: 0 -4px; /* pulls the trio in from the .actions gap */
+}
+
+#zoom-out,
+#zoom-in {
+  min-width: 1.5ch;
+  text-align: center;
+}
+
+#zoom-level {
+  min-width: 4.5ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Printing. The bar is screen furniture, and each page must land on its own
    sheet at its natural size rather than being scaled by the page gap/shadow
    layout the screen uses. Pages are rasterized canvases, so they print as

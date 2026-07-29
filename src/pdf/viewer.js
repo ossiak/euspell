@@ -107,6 +107,26 @@ function containerWidth() {
   return root.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
 }
 
+// User zoom, applied on top of whatever the host's renderScale decides. It is
+// kept HERE rather than in host.renderScale because that function is the shared
+// contract with the embedding host (Eupub), which strips this bar and drives its
+// own scale — folding a viewer-only control into it would change that build too.
+//
+// A fixed ladder rather than a multiplier. Repeatedly multiplying and dividing
+// by a step is only symmetric until it meets a bound: four steps out from 1.0
+// lands on the 0.5 floor, and four steps back in reaches 1.22, so zooming out
+// and back never returns to 100%. Stepping an index cannot drift, and every
+// stop is a round percentage instead of 156%.
+//
+// The top is bounded because the raster grows with the square of the zoom: the
+// canvas is viewport.width * dpr, so 3x on a 2x-dpr display is 9x the linear
+// size of scale 1 and ~81x the pixels, which is where large pages start meeting
+// the browser's maximum canvas dimensions.
+const ZOOM_LEVELS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
+const ZOOM_DEFAULT = ZOOM_LEVELS.indexOf(1);
+let zoomIdx = ZOOM_DEFAULT;
+let zoom = ZOOM_LEVELS[zoomIdx];
+
 /**
  * The scale to rasterize a page at. Asked per page rather than fixed once: pages
  * within one PDF can differ in size and rotation, and getViewport({scale:1})
@@ -116,7 +136,7 @@ function containerWidth() {
  * @returns {number}
  */
 function scaleFor(page) {
-  return renderScale({
+  return zoom * renderScale({
     naturalWidth: page.getViewport({ scale: 1 }).width,
     containerWidth: containerWidth(),
   });
@@ -717,6 +737,54 @@ async function main() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(relayout, 200);
   });
+
+  // --- zoom -----------------------------------------------------------------
+  // Re-rasterizing is the whole per-page pipeline (render, text layer, convert,
+  // snapshot, redraw each changed word), not just a resize, so held-down clicks
+  // are coalesced the way rotation's resizes are. relayout() already evicts every
+  // canvas, keeps the reading position as a page plus a fraction, and re-arms the
+  // lazy observer, so zoom only has to move the number and call it.
+  const zoomOutBtn = document.getElementById('zoom-out');
+  const zoomInBtn = document.getElementById('zoom-in');
+  const zoomLevelBtn = document.getElementById('zoom-level');
+  let zoomTimer = 0;
+
+  function setZoom(idx) {
+    const next = Math.min(ZOOM_LEVELS.length - 1, Math.max(0, idx));
+    if (next === zoomIdx) return; // already at that stop, or at a bound
+    zoomIdx = next;
+    zoom = ZOOM_LEVELS[zoomIdx];
+    if (zoomLevelBtn) zoomLevelBtn.textContent = `${Math.round(zoom * 100)}%`;
+    if (zoomOutBtn) zoomOutBtn.disabled = zoomIdx === 0;
+    if (zoomInBtn) zoomInBtn.disabled = zoomIdx === ZOOM_LEVELS.length - 1;
+    clearTimeout(zoomTimer);
+    zoomTimer = setTimeout(relayout, 150);
+  }
+
+  if (zoomOutBtn && zoomInBtn && zoomLevelBtn) {
+    for (const b of [zoomOutBtn, zoomInBtn, zoomLevelBtn]) b.hidden = false;
+    zoomOutBtn.addEventListener('click', () => setZoom(zoomIdx - 1));
+    zoomInBtn.addEventListener('click', () => setZoom(zoomIdx + 1));
+    zoomLevelBtn.addEventListener('click', () => setZoom(ZOOM_DEFAULT));
+
+    // Ctrl/Cmd +/-/0. Taken over only in the standalone viewer, for the same
+    // reason as Ctrl+P below: in an embedding host these keys belong to the host.
+    // Browser zoom would scale the bar and blur the canvas; this re-rasterizes.
+    window.addEventListener('keydown', (e) => {
+      if (!(e.ctrlKey || e.metaKey) || e.altKey) return;
+      // '=' is the unshifted key that carries '+' on most layouts.
+      const step = e.key === '+' || e.key === '=' ? 1
+        : e.key === '-' || e.key === '_' ? -1
+          : 0;
+      if (step) {
+        e.preventDefault();
+        setZoom(zoomIdx + step);
+      } else if (e.key === '0') {
+        e.preventDefault();
+        setZoom(ZOOM_DEFAULT);
+      }
+    });
+  }
 
   // Navigation channel — only when an embedding host wants it (Eupub's reader).
   // The extension viewer has no TOC/status chrome, so wantsNav is false there and
