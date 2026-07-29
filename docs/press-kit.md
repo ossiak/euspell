@@ -51,7 +51,8 @@ Three lengths, ready to paste.
 | **Price** | Free |
 | **Privacy** | No account, no server, no telemetry. The dictionary ships inside each product; text never leaves the device |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
-| **Website** | *domain TBD* — hosting is set up (Hostinger), currently serving a splash page |
+| **Tagline** | Spelling Reform: An Engineering Approach |
+| **Website** | [euspell.org](https://euspell.org) — live, currently serving a splash page |
 
 ---
 
@@ -214,28 +215,35 @@ spellings applies in context.
 
 ## Availability: the honest status
 
-**This press kit cannot be sent to anyone yet.** As of 28 July 2026 there is no
-public URL a journalist could visit, link to, or download from:
+As of 28 July 2026 the project has a live domain but **nothing a journalist can
+read, download, or link to beyond the front page**:
 
 | | |
 |---|---|
+| Website | [euspell.org](https://euspell.org) is **live**, but serves only a "Coming soon" splash |
+| Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one currently returns 404 |
 | Source repositories | **Private** (`ossiak/euspell`, `ossiak/eupub`) — despite the GPL license |
 | Browser extension | **Not published** — the Chrome Web Store link in the docs is still a placeholder |
 | Eupub v0.2.1 | Released, but **on a private repo**, so the download links are not publicly reachable |
-| Website | **Splash page only** — a full content site exists in the codebase but is behind a "Coming soon" screen |
 
-**Minimum before outreach:** make at least one repository public *or* publish the
-extension, put the real product links in this kit, and swap the website splash
-for the existing content pages. Until then the strongest realistic play is a
-private preview — this kit plus a demo video, sent directly.
+**The cheapest fix by far is deploying the site.** The hard part — the writing —
+is already done and sitting in the repository; publishing it turns euspell.org
+from a placeholder into somewhere press can actually be sent. That alone makes
+this kit usable, before any decision about opening the repos or shipping to the
+Chrome Web Store.
+
+**Minimum before outreach:** deploy the content pages, then make at least one
+repository public *or* publish the extension, and put the real product links in
+this kit. Until then the strongest realistic play is a private preview — this kit
+plus a demo video, sent directly.
 
 ---
 
 ## Contact
 
-- **Press contact:** *TBD* — worth setting up a dedicated address on the project
-  domain rather than publishing a personal one.
-- **Website:** *domain TBD*
+- **Press contact:** *TBD* — worth setting up `press@euspell.org` rather than
+  publishing a personal address.
+- **Website:** [euspell.org](https://euspell.org)
 - **Source:** github.com/ossiak/euspell *(currently private)*
 
 *Press are welcome to quote any text in this kit verbatim.*
