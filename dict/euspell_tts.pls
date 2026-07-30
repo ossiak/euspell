@@ -1616,8 +1616,8 @@
   <lexeme><grapheme>bacterizez</grapheme><phoneme>ˈbæktəˌraɪzɪz</phoneme></lexeme> <!-- bacterises -->
   <lexeme><grapheme>badgerd</grapheme><phoneme>ˈbædʒərd</phoneme></lexeme> <!-- badgered -->
   <lexeme><grapheme>badgerz</grapheme><phoneme>ˈbædʒərz</phoneme></lexeme> <!-- badgers -->
-  <lexeme><grapheme>badijen</grapheme><phoneme>bəˈdɪdʒən</phoneme></lexeme> <!-- badigeon -->
-  <lexeme><grapheme>badijens</grapheme><phoneme>bəˈdɪdʒənz</phoneme></lexeme> <!-- badigeons -->
+  <lexeme><grapheme>badidgen</grapheme><phoneme>bəˈdɪdʒən</phoneme></lexeme> <!-- badigeon -->
+  <lexeme><grapheme>badidgens</grapheme><phoneme>bəˈdɪdʒənz</phoneme></lexeme> <!-- badigeons -->
   <lexeme><grapheme>badinagez</grapheme><phoneme>ˈbædəˌnɑʒɪz</phoneme></lexeme> <!-- badinages -->
   <lexeme><grapheme>badmouthd</grapheme><phoneme>ˈbædˌmaʊθt</phoneme></lexeme> <!-- badmouthed -->
   <lexeme><grapheme>badmouthz</grapheme><phoneme>ˈbædˌmaʊθs</phoneme></lexeme> <!-- badmouths -->
@@ -2764,6 +2764,13 @@
   <lexeme><grapheme>bluddy</grapheme><phoneme>ˈblʌdi</phoneme></lexeme> <!-- bloody -->
   <lexeme><grapheme>bluddying</grapheme><phoneme>ˈblʌdiɪŋ</phoneme></lexeme> <!-- bloodying -->
   <lexeme><grapheme>bluddz</grapheme><phoneme>blʌdz</phoneme></lexeme> <!-- bloods -->
+  <lexeme><grapheme>bludgen</grapheme><phoneme>ˈblʌdʒən</phoneme></lexeme> <!-- bludgeon -->
+  <lexeme><grapheme>bludgend</grapheme><phoneme>ˈblʌdʒənd</phoneme></lexeme> <!-- bludgeoned -->
+  <lexeme><grapheme>bludgener</grapheme><phoneme>ˈblʌdʒənər</phoneme></lexeme> <!-- bludgeoner -->
+  <lexeme><grapheme>bludgeners</grapheme><phoneme>ˈblʌdʒənərz</phoneme></lexeme> <!-- bludgeoners -->
+  <lexeme><grapheme>bludgening</grapheme><phoneme>ˈblʌdʒənɪŋ</phoneme></lexeme> <!-- bludgeoning -->
+  <lexeme><grapheme>bludgens</grapheme><phoneme>ˈblʌdʒənz</phoneme></lexeme> <!-- bludgeons -->
+  <lexeme><grapheme>bludgenz</grapheme><phoneme>ˈblʌdʒənz</phoneme></lexeme> <!-- bludgeons -->
   <lexeme><grapheme>bluehedd</grapheme><phoneme>ˈbluːhɛd</phoneme></lexeme> <!-- bluehead -->
   <lexeme><grapheme>bluehedds</grapheme><phoneme>ˈbluːhɛdz</phoneme></lexeme> <!-- blueheads -->
   <lexeme><grapheme>blueprintz</grapheme><phoneme>ˈbluːˌprɪnts</phoneme></lexeme> <!-- blueprints -->
@@ -2771,13 +2778,6 @@
   <lexeme><grapheme>bluetungs</grapheme><phoneme>ˈbluːtʌŋz</phoneme></lexeme> <!-- bluetongues -->
   <lexeme><grapheme>bluffd</grapheme><phoneme>blʌft</phoneme></lexeme> <!-- bluffed -->
   <lexeme><grapheme>bluffz</grapheme><phoneme>blʌfs</phoneme></lexeme> <!-- bluffs -->
-  <lexeme><grapheme>blujjen</grapheme><phoneme>ˈblʌdʒən</phoneme></lexeme> <!-- bludgeon -->
-  <lexeme><grapheme>blujjend</grapheme><phoneme>ˈblʌdʒənd</phoneme></lexeme> <!-- bludgeoned -->
-  <lexeme><grapheme>blujjener</grapheme><phoneme>ˈblʌdʒənər</phoneme></lexeme> <!-- bludgeoner -->
-  <lexeme><grapheme>blujjeners</grapheme><phoneme>ˈblʌdʒənərz</phoneme></lexeme> <!-- bludgeoners -->
-  <lexeme><grapheme>blujjening</grapheme><phoneme>ˈblʌdʒənɪŋ</phoneme></lexeme> <!-- bludgeoning -->
-  <lexeme><grapheme>blujjens</grapheme><phoneme>ˈblʌdʒənz</phoneme></lexeme> <!-- bludgeons -->
-  <lexeme><grapheme>blujjenz</grapheme><phoneme>ˈblʌdʒənz</phoneme></lexeme> <!-- bludgeons -->
   <lexeme><grapheme>blunderd</grapheme><phoneme>ˈblʌndərd</phoneme></lexeme> <!-- blundered -->
   <lexeme><grapheme>blunderz</grapheme><phoneme>ˈblʌndərz</phoneme></lexeme> <!-- blunders -->
   <lexeme><grapheme>blungez</grapheme><phoneme>ˈblʌndʒɪz</phoneme></lexeme> <!-- blunges -->
@@ -3583,6 +3583,10 @@
   <lexeme><grapheme>burdensomly</grapheme><phoneme>ˈbɜːrdənsəmli</phoneme></lexeme> <!-- burdensomely -->
   <lexeme><grapheme>burdensomness</grapheme><phoneme>ˈbɜːrdənsəmnəs</phoneme></lexeme> <!-- burdensomeness -->
   <lexeme><grapheme>burdenz</grapheme><phoneme>ˈbɜːrdənz</phoneme></lexeme> <!-- burdens -->
+  <lexeme><grapheme>burdgen</grapheme><phoneme>ˈbʊərdʒən</phoneme></lexeme> <!-- bourgeon -->
+  <lexeme><grapheme>burdgend</grapheme><phoneme>ˈbʊərdʒənd</phoneme></lexeme> <!-- bourgeoned -->
+  <lexeme><grapheme>burdgening</grapheme><phoneme>ˈbʊərdʒənɪŋ</phoneme></lexeme> <!-- bourgeoning -->
+  <lexeme><grapheme>burdgenz</grapheme><phoneme>ˈbʊərdʒənz</phoneme></lexeme> <!-- bourgeons -->
   <lexeme><grapheme>burdon</grapheme><phoneme>ˈbʊərdən</phoneme></lexeme> <!-- bourdon -->
   <lexeme><grapheme>burdons</grapheme><phoneme>ˈbʊərdənz</phoneme></lexeme> <!-- bourdons -->
   <lexeme><grapheme>bureaucratizez</grapheme><phoneme>bjuːˈrɒkrətaɪzɪz</phoneme></lexeme> <!-- bureaucratises -->
@@ -3593,10 +3597,6 @@
   <lexeme><grapheme>burglarproofd</grapheme><phoneme>ˈbɜːrɡlərˌpruːft</phoneme></lexeme> <!-- burglarproofed -->
   <lexeme><grapheme>burglarproofz</grapheme><phoneme>ˈbɜːrɡlərˌpruːfs</phoneme></lexeme> <!-- burglarproofs -->
   <lexeme><grapheme>burglez</grapheme><phoneme>ˈbɜːrɡəlz</phoneme></lexeme> <!-- burgles -->
-  <lexeme><grapheme>burjen</grapheme><phoneme>ˈbʊərdʒən</phoneme></lexeme> <!-- bourgeon -->
-  <lexeme><grapheme>burjend</grapheme><phoneme>ˈbʊərdʒənd</phoneme></lexeme> <!-- bourgeoned -->
-  <lexeme><grapheme>burjening</grapheme><phoneme>ˈbʊərdʒənɪŋ</phoneme></lexeme> <!-- bourgeoning -->
-  <lexeme><grapheme>burjenz</grapheme><phoneme>ˈbʊərdʒənz</phoneme></lexeme> <!-- bourgeons -->
   <lexeme><grapheme>burkd</grapheme><phoneme>bɜːrkt</phoneme></lexeme> <!-- burked -->
   <lexeme><grapheme>burkez</grapheme><phoneme>bɜːrks</phoneme></lexeme> <!-- burkes -->
   <lexeme><grapheme>burld</grapheme><phoneme>bɜːrld</phoneme></lexeme> <!-- burled -->
@@ -5978,8 +5978,8 @@
   <lexeme><grapheme>cryopreservd</grapheme><phoneme>ˈkraɪoʊprɪˌzɜːrvd</phoneme></lexeme> <!-- cryopreserved -->
   <lexeme><grapheme>cryopreservz</grapheme><phoneme>ˈkraɪoʊprɪˌzɜːrvz</phoneme></lexeme> <!-- cryopreserves -->
   <lexeme><grapheme>cryoprotectiv</grapheme><phoneme>ˈkraɪoʊprəˌtɛktɪv</phoneme></lexeme> <!-- cryoprotective -->
-  <lexeme><grapheme>cryosurjen</grapheme><phoneme>ˈkraɪoʊˌsɜːrdʒən</phoneme></lexeme> <!-- cryosurgeon -->
-  <lexeme><grapheme>cryosurjens</grapheme><phoneme>ˈkraɪoʊˌsɜːrdʒənz</phoneme></lexeme> <!-- cryosurgeons -->
+  <lexeme><grapheme>cryosurdgen</grapheme><phoneme>ˈkraɪoʊˌsɜːrdʒən</phoneme></lexeme> <!-- cryosurgeon -->
+  <lexeme><grapheme>cryosurdgens</grapheme><phoneme>ˈkraɪoʊˌsɜːrdʒənz</phoneme></lexeme> <!-- cryosurgeons -->
   <lexeme><grapheme>crystallizez</grapheme><phoneme>ˈkrɪstəˌlaɪzəz</phoneme></lexeme> <!-- crystalises -->
   <lexeme><grapheme>cubez</grapheme><phoneme>kjuːbz</phoneme></lexeme> <!-- cubes -->
   <lexeme><grapheme>cuckoopynt</grapheme><phoneme>ˈkʊkuːˌpɪnt</phoneme></lexeme> <!-- cuckoopint -->
@@ -6061,10 +6061,10 @@
   <lexeme><grapheme>curld</grapheme><phoneme>kɜːrld</phoneme></lexeme> <!-- curled -->
   <lexeme><grapheme>curlicuez</grapheme><phoneme>ˈkɜːrliˌkjuːz</phoneme></lexeme> <!-- curlicues -->
   <lexeme><grapheme>curlz</grapheme><phoneme>kɜːrlz</phoneme></lexeme> <!-- curls -->
-  <lexeme><grapheme>curmujjen</grapheme><phoneme>kɜːrˈmʌdʒən</phoneme></lexeme> <!-- curmudgeon -->
-  <lexeme><grapheme>curmujjenliness</grapheme><phoneme>kɜːrˈmʌdʒənlɪnəs</phoneme></lexeme> <!-- curmudgeonliness -->
-  <lexeme><grapheme>curmujjenly</grapheme><phoneme>kɜːrˈmʌdʒənli</phoneme></lexeme> <!-- curmudgeonly -->
-  <lexeme><grapheme>curmujjens</grapheme><phoneme>kɜːrˈmʌdʒənz</phoneme></lexeme> <!-- curmudgeons -->
+  <lexeme><grapheme>curmudgen</grapheme><phoneme>kɜːrˈmʌdʒən</phoneme></lexeme> <!-- curmudgeon -->
+  <lexeme><grapheme>curmudgenliness</grapheme><phoneme>kɜːrˈmʌdʒənlɪnəs</phoneme></lexeme> <!-- curmudgeonliness -->
+  <lexeme><grapheme>curmudgenly</grapheme><phoneme>kɜːrˈmʌdʒənli</phoneme></lexeme> <!-- curmudgeonly -->
+  <lexeme><grapheme>curmudgens</grapheme><phoneme>kɜːrˈmʌdʒənz</phoneme></lexeme> <!-- curmudgeons -->
   <lexeme><grapheme>curqh</grapheme><phoneme>kɜːrtʃ</phoneme></lexeme> <!-- curch -->
   <lexeme><grapheme>curqhes</grapheme><phoneme>ˈkɜːrtʃəz</phoneme></lexeme> <!-- curches -->
   <lexeme><grapheme>currage</grapheme><phoneme>ˈkɜːrɪdʒ</phoneme></lexeme> <!-- courage -->
@@ -8269,6 +8269,8 @@
   <lexeme><grapheme>duckz</grapheme><phoneme>dʌks</phoneme></lexeme> <!-- ducks -->
   <lexeme><grapheme>ductz</grapheme><phoneme>dʌkts</phoneme></lexeme> <!-- ducts -->
   <lexeme><grapheme>dudez</grapheme><phoneme>dudz</phoneme></lexeme> <!-- dudes -->
+  <lexeme><grapheme>dudgen</grapheme><phoneme>ˈdʌdʒən</phoneme></lexeme> <!-- dudgeon -->
+  <lexeme><grapheme>dudgens</grapheme><phoneme>ˈdʌdʒənz</phoneme></lexeme> <!-- dudgeons -->
   <lexeme><grapheme>dueld</grapheme><phoneme>ˈduəld</phoneme></lexeme> <!-- dueled -->
   <lexeme><grapheme>duelz</grapheme><phoneme>ˈduəlz</phoneme></lexeme> <!-- duels -->
   <lexeme><grapheme>duer</grapheme><phoneme>ˈduər</phoneme></lexeme> <!-- doer -->
@@ -8278,8 +8280,6 @@
   <lexeme><grapheme>duetz</grapheme><phoneme>duˈɛts</phoneme></lexeme> <!-- duets -->
   <lexeme><grapheme>duing</grapheme><phoneme>ˈduɪŋ</phoneme></lexeme> <!-- doing -->
   <lexeme><grapheme>duings</grapheme><phoneme>ˈduɪŋz</phoneme></lexeme> <!-- doings -->
-  <lexeme><grapheme>dujjen</grapheme><phoneme>ˈdʌdʒən</phoneme></lexeme> <!-- dudgeon -->
-  <lexeme><grapheme>dujjens</grapheme><phoneme>ˈdʌdʒənz</phoneme></lexeme> <!-- dudgeons -->
   <lexeme><grapheme>dukez</grapheme><phoneme>duks</phoneme></lexeme> <!-- dukes -->
   <lexeme><grapheme>dula</grapheme><phoneme>ˈdulə</phoneme></lexeme> <!-- doula -->
   <lexeme><grapheme>dulcifiez</grapheme><phoneme>ˈdʌlsəˌfaɪz</phoneme></lexeme> <!-- dulcifies -->
@@ -8320,13 +8320,13 @@
   <lexeme><grapheme>dunderhedded</grapheme><phoneme>ˈdʌndərˌhɛdəd</phoneme></lexeme> <!-- dunderheaded -->
   <lexeme><grapheme>dunderheddedness</grapheme><phoneme>ˈdʌndərˌhɛdədnəs</phoneme></lexeme> <!-- dunderheadedness -->
   <lexeme><grapheme>dunderhedds</grapheme><phoneme>ˈdʌndərˌhɛdz</phoneme></lexeme> <!-- dunderheads -->
+  <lexeme><grapheme>dundgen</grapheme><phoneme>ˈdʌndʒən</phoneme></lexeme> <!-- dungeon -->
+  <lexeme><grapheme>dundgend</grapheme><phoneme>ˈdʌndʒənd</phoneme></lexeme> <!-- dungeoned -->
+  <lexeme><grapheme>dundgening</grapheme><phoneme>ˈdʌndʒənɪŋ</phoneme></lexeme> <!-- dungeoning -->
+  <lexeme><grapheme>dundgens</grapheme><phoneme>ˈdʌndʒənz</phoneme></lexeme> <!-- dungeons -->
+  <lexeme><grapheme>dundgenz</grapheme><phoneme>ˈdʌndʒənz</phoneme></lexeme> <!-- dungeons -->
   <lexeme><grapheme>dungd</grapheme><phoneme>dʌŋd</phoneme></lexeme> <!-- dunged -->
   <lexeme><grapheme>dungz</grapheme><phoneme>dʌŋz</phoneme></lexeme> <!-- dungs -->
-  <lexeme><grapheme>dunjen</grapheme><phoneme>ˈdʌndʒən</phoneme></lexeme> <!-- dungeon -->
-  <lexeme><grapheme>dunjend</grapheme><phoneme>ˈdʌndʒənd</phoneme></lexeme> <!-- dungeoned -->
-  <lexeme><grapheme>dunjening</grapheme><phoneme>ˈdʌndʒənɪŋ</phoneme></lexeme> <!-- dungeoning -->
-  <lexeme><grapheme>dunjens</grapheme><phoneme>ˈdʌndʒənz</phoneme></lexeme> <!-- dungeons -->
-  <lexeme><grapheme>dunjenz</grapheme><phoneme>ˈdʌndʒənz</phoneme></lexeme> <!-- dungeons -->
   <lexeme><grapheme>dunkd</grapheme><phoneme>dʌŋkt</phoneme></lexeme> <!-- dunked -->
   <lexeme><grapheme>dunkz</grapheme><phoneme>dʌŋks</phoneme></lexeme> <!-- dunks -->
   <lexeme><grapheme>dunqh</grapheme><phoneme>dʌntʃ</phoneme></lexeme> <!-- dunch -->
@@ -11962,6 +11962,8 @@
   <lexeme><grapheme>gongd</grapheme><phoneme>ɡɑŋd</phoneme></lexeme> <!-- gonged -->
   <lexeme><grapheme>gongz</grapheme><phoneme>ɡɑŋz</phoneme></lexeme> <!-- gongs -->
   <lexeme><grapheme>gonness</grapheme><phoneme>ˈɡɔnnəs</phoneme></lexeme> <!-- goneness -->
+  <lexeme><grapheme>goodgen</grapheme><phoneme>ˈɡʊdʒən</phoneme></lexeme> <!-- goodgeon -->
+  <lexeme><grapheme>goodgens</grapheme><phoneme>ˈɡʊdʒənz</phoneme></lexeme> <!-- goodgeons -->
   <lexeme><grapheme>goodharted</grapheme><phoneme>ˌɡʊdˈhɑrtɪd</phoneme></lexeme> <!-- goodhearted -->
   <lexeme><grapheme>goodlihedd</grapheme><phoneme>ˈɡʊdliˌhɛd</phoneme></lexeme> <!-- goodlihead -->
   <lexeme><grapheme>goodlyhedd</grapheme><phoneme>ˈɡʊdliˌhɛd</phoneme></lexeme> <!-- goodlyhead -->
@@ -11970,8 +11972,6 @@
   <lexeme><grapheme>goofd</grapheme><phoneme>ɡuːft</phoneme></lexeme> <!-- goofed -->
   <lexeme><grapheme>goofz</grapheme><phoneme>ɡuːfs</phoneme></lexeme> <!-- goofs -->
   <lexeme><grapheme>googlez</grapheme><phoneme>ˈɡuːɡəlz</phoneme></lexeme> <!-- googles -->
-  <lexeme><grapheme>goojjen</grapheme><phoneme>ˈɡʊdʒən</phoneme></lexeme> <!-- goodgeon -->
-  <lexeme><grapheme>goojjens</grapheme><phoneme>ˈɡʊdʒənz</phoneme></lexeme> <!-- goodgeons -->
   <lexeme><grapheme>goord</grapheme><phoneme>ɡɔrd</phoneme></lexeme> <!-- gourd -->
   <lexeme><grapheme>goordiness</grapheme><phoneme>ˈɡɔrdinəs</phoneme></lexeme> <!-- gourdiness -->
   <lexeme><grapheme>goords</grapheme><phoneme>ɡʊrdz</phoneme></lexeme> <!-- gourdes -->
@@ -12255,14 +12255,14 @@
   <lexeme><grapheme>guashe</grapheme><phoneme>ɡuˈɑʃ</phoneme></lexeme> <!-- gouache -->
   <lexeme><grapheme>guashes</grapheme><phoneme>ɡuˈɑʃɪz</phoneme></lexeme> <!-- gouaches -->
   <lexeme><grapheme>gubernativ</grapheme><phoneme>ˈɡubərnətɪv</phoneme></lexeme> <!-- gubernative -->
+  <lexeme><grapheme>gudgen</grapheme><phoneme>ˈɡʌdʒən</phoneme></lexeme> <!-- gudgeon -->
+  <lexeme><grapheme>gudgend</grapheme><phoneme>ˈɡʌdʒənd</phoneme></lexeme> <!-- gudgeoned -->
+  <lexeme><grapheme>gudgening</grapheme><phoneme>ˈɡʌdʒənɪŋ</phoneme></lexeme> <!-- gudgeoning -->
+  <lexeme><grapheme>gudgens</grapheme><phoneme>ˈɡʌdʒənz</phoneme></lexeme> <!-- gudgeons -->
+  <lexeme><grapheme>gudgenz</grapheme><phoneme>ˈɡʌdʒənz</phoneme></lexeme> <!-- gudgeons -->
   <lexeme><grapheme>guffawd</grapheme><phoneme>ɡəˈfɔd</phoneme></lexeme> <!-- guffawed -->
   <lexeme><grapheme>guffawz</grapheme><phoneme>ɡəˈfɔz</phoneme></lexeme> <!-- guffaws -->
   <lexeme><grapheme>gugglez</grapheme><phoneme>ˈɡʌɡəlz</phoneme></lexeme> <!-- guggles -->
-  <lexeme><grapheme>gujjen</grapheme><phoneme>ˈɡʌdʒən</phoneme></lexeme> <!-- gudgeon -->
-  <lexeme><grapheme>gujjend</grapheme><phoneme>ˈɡʌdʒənd</phoneme></lexeme> <!-- gudgeoned -->
-  <lexeme><grapheme>gujjening</grapheme><phoneme>ˈɡʌdʒənɪŋ</phoneme></lexeme> <!-- gudgeoning -->
-  <lexeme><grapheme>gujjens</grapheme><phoneme>ˈɡʌdʒənz</phoneme></lexeme> <!-- gudgeons -->
-  <lexeme><grapheme>gujjenz</grapheme><phoneme>ˈɡʌdʒənz</phoneme></lexeme> <!-- gudgeons -->
   <lexeme><grapheme>gulash</grapheme><phoneme>ˈɡuːlɑʃ</phoneme></lexeme> <!-- goulash -->
   <lexeme><grapheme>gulashes</grapheme><phoneme>ˈɡuːlɑʃɪz</phoneme></lexeme> <!-- goulashes -->
   <lexeme><grapheme>gulfd</grapheme><phoneme>ɡʌlft</phoneme></lexeme> <!-- gulfed -->
@@ -12299,10 +12299,10 @@
   <lexeme><grapheme>gurami</grapheme><phoneme>ɡʊˈrɑmi</phoneme></lexeme> <!-- gourami -->
   <lexeme><grapheme>guramies</grapheme><phoneme>ɡʊˈrɑmiːz</phoneme></lexeme> <!-- gouramies -->
   <lexeme><grapheme>guramis</grapheme><phoneme>ɡʊˈrɑmiːz</phoneme></lexeme> <!-- gouramis -->
+  <lexeme><grapheme>gurdgen</grapheme><phoneme>ˈɡɜrdʒən</phoneme></lexeme> <!-- gurgeon -->
+  <lexeme><grapheme>gurdgens</grapheme><phoneme>ˈɡɜrdʒənz</phoneme></lexeme> <!-- gurgeons -->
   <lexeme><grapheme>gurgez</grapheme><phoneme>ˈɡɜrdʒəz</phoneme></lexeme> <!-- gurges -->
   <lexeme><grapheme>gurglez</grapheme><phoneme>ˈɡɜrɡəlz</phoneme></lexeme> <!-- gurgles -->
-  <lexeme><grapheme>gurjen</grapheme><phoneme>ˈɡɜrdʒən</phoneme></lexeme> <!-- gurgeon -->
-  <lexeme><grapheme>gurjens</grapheme><phoneme>ˈɡɜrdʒənz</phoneme></lexeme> <!-- gurgeons -->
   <lexeme><grapheme>gushd</grapheme><phoneme>ɡʌʃt</phoneme></lexeme> <!-- gushed -->
   <lexeme><grapheme>gushez</grapheme><phoneme>ˈɡʌʃəz</phoneme></lexeme> <!-- gushes -->
   <lexeme><grapheme>gussetz</grapheme><phoneme>ˈɡʌsəts</phoneme></lexeme> <!-- gussets -->
@@ -12343,8 +12343,8 @@
   <lexeme><grapheme>gyvez</grapheme><phoneme>dʒaɪvz</phoneme></lexeme> <!-- gyves -->
   <lexeme><grapheme>haberdashd</grapheme><phoneme>ˈhæbərˌdæʃt</phoneme></lexeme> <!-- haberdashed -->
   <lexeme><grapheme>haberdashez</grapheme><phoneme>ˈhæbərˌdæʃəz</phoneme></lexeme> <!-- haberdashes -->
-  <lexeme><grapheme>haberjen</grapheme><phoneme>ˈhæbərdʒən</phoneme></lexeme> <!-- habergeon -->
-  <lexeme><grapheme>haberjens</grapheme><phoneme>ˈhæbərdʒənz</phoneme></lexeme> <!-- habergeons -->
+  <lexeme><grapheme>haberdgen</grapheme><phoneme>ˈhæbərdʒən</phoneme></lexeme> <!-- habergeon -->
+  <lexeme><grapheme>haberdgens</grapheme><phoneme>ˈhæbərdʒənz</phoneme></lexeme> <!-- habergeons -->
   <lexeme><grapheme>habilitatez</grapheme><phoneme>həˈbɪləˌteɪts</phoneme></lexeme> <!-- habilitates -->
   <lexeme><grapheme>habituatez</grapheme><phoneme>həˈbɪtʃuˌeɪts</phoneme></lexeme> <!-- habituates -->
   <lexeme><grapheme>habitz</grapheme><phoneme>ˈhæbɪts</phoneme></lexeme> <!-- habits -->
@@ -12657,8 +12657,8 @@
   <lexeme><grapheme>hatchetz</grapheme><phoneme>ˈhætʃəts</phoneme></lexeme> <!-- hatchets -->
   <lexeme><grapheme>hatchez</grapheme><phoneme>ˈhætʃəz</phoneme></lexeme> <!-- hatches -->
   <lexeme><grapheme>hatez</grapheme><phoneme>heɪts</phoneme></lexeme> <!-- hates -->
-  <lexeme><grapheme>hauberjen</grapheme><phoneme>ˈhɔbərdʒən</phoneme></lexeme> <!-- haubergeon -->
-  <lexeme><grapheme>hauberjens</grapheme><phoneme>ˈhɔbərdʒənz</phoneme></lexeme> <!-- haubergeons -->
+  <lexeme><grapheme>hauberdgen</grapheme><phoneme>ˈhɔbərdʒən</phoneme></lexeme> <!-- haubergeon -->
+  <lexeme><grapheme>hauberdgens</grapheme><phoneme>ˈhɔbərdʒənz</phoneme></lexeme> <!-- haubergeons -->
   <lexeme><grapheme>haubwa</grapheme><phoneme>ˈhoʊbɔɪ</phoneme></lexeme> <!-- hautbois -->
   <lexeme><grapheme>hauff</grapheme><phoneme>hɔ</phoneme></lexeme> <!-- haugh -->
   <lexeme><grapheme>hauffs</grapheme><phoneme>hɔz</phoneme></lexeme> <!-- haughs -->
@@ -17975,8 +17975,8 @@
   <lexeme><grapheme>neuroactiv</grapheme><phoneme>ˌnʊroʊˈæktɪv</phoneme></lexeme> <!-- neuroactive -->
   <lexeme><grapheme>neurodegenerativ</grapheme><phoneme>ˌnʊroʊdɪˈdʒɛnərətɪv</phoneme></lexeme> <!-- neurodegenerative -->
   <lexeme><grapheme>neuroendocrin</grapheme><phoneme>ˌnʊroʊˈɛndəkrɪn</phoneme></lexeme> <!-- neuroendocrine -->
-  <lexeme><grapheme>neurosurjen</grapheme><phoneme>ˈnʊroʊˌsɜrdʒən</phoneme></lexeme> <!-- neurosurgeon -->
-  <lexeme><grapheme>neurosurjens</grapheme><phoneme>ˈnʊroʊˌsɜrdʒənz</phoneme></lexeme> <!-- neurosurgeons -->
+  <lexeme><grapheme>neurosurdgen</grapheme><phoneme>ˈnʊroʊˌsɜrdʒən</phoneme></lexeme> <!-- neurosurgeon -->
+  <lexeme><grapheme>neurosurdgens</grapheme><phoneme>ˈnʊroʊˌsɜrdʒənz</phoneme></lexeme> <!-- neurosurgeons -->
   <lexeme><grapheme>neuterd</grapheme><phoneme>ˈnutərd</phoneme></lexeme> <!-- neutered -->
   <lexeme><grapheme>neuterz</grapheme><phoneme>ˈnutərz</phoneme></lexeme> <!-- neuters -->
   <lexeme><grapheme>neutralizez</grapheme><phoneme>ˈnutrəˌlaɪzɪz</phoneme></lexeme> <!-- neutralises -->
@@ -20554,6 +20554,22 @@
   <lexeme><grapheme>picturez</grapheme><phoneme>ˈpɪktʃərz</phoneme></lexeme> <!-- pictures -->
   <lexeme><grapheme>picturizez</grapheme><phoneme>ˈpɪktʃəraɪzɪz</phoneme></lexeme> <!-- picturises -->
   <lexeme><grapheme>piddlez</grapheme><phoneme>ˈpɪdəlz</phoneme></lexeme> <!-- piddles -->
+  <lexeme><grapheme>pidgen</grapheme><phoneme>ˈpɪdʒən</phoneme></lexeme> <!-- pigeon -->
+  <lexeme><grapheme>pidgend</grapheme><phoneme>ˈpɪdʒənd</phoneme></lexeme> <!-- pigeoned -->
+  <lexeme><grapheme>pidgenhole</grapheme><phoneme>ˈpɪdʒənhoʊl</phoneme></lexeme> <!-- pigeonhole -->
+  <lexeme><grapheme>pidgenholed</grapheme><phoneme>ˈpɪdʒənhoʊld</phoneme></lexeme> <!-- pigeonholed -->
+  <lexeme><grapheme>pidgenholer</grapheme><phoneme>ˈpɪdʒənhoʊlər</phoneme></lexeme> <!-- pigeonholer -->
+  <lexeme><grapheme>pidgenholers</grapheme><phoneme>ˈpɪdʒənhoʊlərz</phoneme></lexeme> <!-- pigeonholers -->
+  <lexeme><grapheme>pidgenholes</grapheme><phoneme>ˈpɪdʒənhoʊlz</phoneme></lexeme> <!-- pigeonholes -->
+  <lexeme><grapheme>pidgenholez</grapheme><phoneme>ˈpɪdʒənhoʊlz</phoneme></lexeme> <!-- pigeonholes -->
+  <lexeme><grapheme>pidgenholing</grapheme><phoneme>ˈpɪdʒənhoʊlɪŋ</phoneme></lexeme> <!-- pigeonholing -->
+  <lexeme><grapheme>pidgening</grapheme><phoneme>ˈpɪdʒənɪŋ</phoneme></lexeme> <!-- pigeoning -->
+  <lexeme><grapheme>pidgenite</grapheme><phoneme>ˈpɪdʒənaɪt</phoneme></lexeme> <!-- pigeonite -->
+  <lexeme><grapheme>pidgenites</grapheme><phoneme>ˈpɪdʒənaɪts</phoneme></lexeme> <!-- pigeonites -->
+  <lexeme><grapheme>pidgens</grapheme><phoneme>ˈpɪdʒənz</phoneme></lexeme> <!-- pigeons -->
+  <lexeme><grapheme>pidgenwing</grapheme><phoneme>ˈpɪdʒənwɪŋ</phoneme></lexeme> <!-- pigeonwing -->
+  <lexeme><grapheme>pidgenwings</grapheme><phoneme>ˈpɪdʒənwɪŋz</phoneme></lexeme> <!-- pigeonwings -->
+  <lexeme><grapheme>pidgenz</grapheme><phoneme>ˈpɪdʒənz</phoneme></lexeme> <!-- pigeons -->
   <lexeme><grapheme>pidginizez</grapheme><phoneme>ˈpɪdʒɪnaɪzɪz</phoneme></lexeme> <!-- pidginises -->
   <lexeme><grapheme>piecez</grapheme><phoneme>ˈpiːsɪz</phoneme></lexeme> <!-- pieces -->
   <lexeme><grapheme>piercez</grapheme><phoneme>ˈpɪərsɪz</phoneme></lexeme> <!-- pierces -->
@@ -20569,22 +20585,6 @@
   <lexeme><grapheme>pigstickz</grapheme><phoneme>ˈpɪɡstɪks</phoneme></lexeme> <!-- pigsticks -->
   <lexeme><grapheme>pigtaild</grapheme><phoneme>ˈpɪɡteɪld</phoneme></lexeme> <!-- pigtailed -->
   <lexeme><grapheme>pigz</grapheme><phoneme>pɪɡz</phoneme></lexeme> <!-- pigs -->
-  <lexeme><grapheme>pijjen</grapheme><phoneme>ˈpɪdʒən</phoneme></lexeme> <!-- pigeon -->
-  <lexeme><grapheme>pijjend</grapheme><phoneme>ˈpɪdʒənd</phoneme></lexeme> <!-- pigeoned -->
-  <lexeme><grapheme>pijjenhole</grapheme><phoneme>ˈpɪdʒənhoʊl</phoneme></lexeme> <!-- pigeonhole -->
-  <lexeme><grapheme>pijjenholed</grapheme><phoneme>ˈpɪdʒənhoʊld</phoneme></lexeme> <!-- pigeonholed -->
-  <lexeme><grapheme>pijjenholer</grapheme><phoneme>ˈpɪdʒənhoʊlər</phoneme></lexeme> <!-- pigeonholer -->
-  <lexeme><grapheme>pijjenholers</grapheme><phoneme>ˈpɪdʒənhoʊlərz</phoneme></lexeme> <!-- pigeonholers -->
-  <lexeme><grapheme>pijjenholes</grapheme><phoneme>ˈpɪdʒənhoʊlz</phoneme></lexeme> <!-- pigeonholes -->
-  <lexeme><grapheme>pijjenholez</grapheme><phoneme>ˈpɪdʒənhoʊlz</phoneme></lexeme> <!-- pigeonholes -->
-  <lexeme><grapheme>pijjenholing</grapheme><phoneme>ˈpɪdʒənhoʊlɪŋ</phoneme></lexeme> <!-- pigeonholing -->
-  <lexeme><grapheme>pijjening</grapheme><phoneme>ˈpɪdʒənɪŋ</phoneme></lexeme> <!-- pigeoning -->
-  <lexeme><grapheme>pijjenite</grapheme><phoneme>ˈpɪdʒənaɪt</phoneme></lexeme> <!-- pigeonite -->
-  <lexeme><grapheme>pijjenites</grapheme><phoneme>ˈpɪdʒənaɪts</phoneme></lexeme> <!-- pigeonites -->
-  <lexeme><grapheme>pijjens</grapheme><phoneme>ˈpɪdʒənz</phoneme></lexeme> <!-- pigeons -->
-  <lexeme><grapheme>pijjenwing</grapheme><phoneme>ˈpɪdʒənwɪŋ</phoneme></lexeme> <!-- pigeonwing -->
-  <lexeme><grapheme>pijjenwings</grapheme><phoneme>ˈpɪdʒənwɪŋz</phoneme></lexeme> <!-- pigeonwings -->
-  <lexeme><grapheme>pijjenz</grapheme><phoneme>ˈpɪdʒənz</phoneme></lexeme> <!-- pigeons -->
   <lexeme><grapheme>pikestavvs</grapheme><phoneme>ˈpaɪksteɪvz</phoneme></lexeme> <!-- pikestaves -->
   <lexeme><grapheme>pikez</grapheme><phoneme>paɪks</phoneme></lexeme> <!-- pikes -->
   <lexeme><grapheme>pileat</grapheme><phoneme>ˈpaɪliət</phoneme></lexeme> <!-- pileate -->
@@ -21852,8 +21852,8 @@
   <lexeme><grapheme>psychoanalyzez</grapheme><phoneme>ˌsaɪkoʊəˈnæləsiːz</phoneme></lexeme> <!-- psychoanalyses -->
   <lexeme><grapheme>psychobabblez</grapheme><phoneme>ˈsaɪkoʊbæbəlz</phoneme></lexeme> <!-- psychobabbles -->
   <lexeme><grapheme>psychologizez</grapheme><phoneme>saɪˈkɑːlədʒaɪzɪz</phoneme></lexeme> <!-- psychologises -->
-  <lexeme><grapheme>psychosurjen</grapheme><phoneme>ˌsaɪkoʊˈsɜːrdʒən</phoneme></lexeme> <!-- psychosurgeon -->
-  <lexeme><grapheme>psychosurjens</grapheme><phoneme>ˌsaɪkoʊˈsɜːrdʒənz</phoneme></lexeme> <!-- psychosurgeons -->
+  <lexeme><grapheme>psychosurdgen</grapheme><phoneme>ˌsaɪkoʊˈsɜːrdʒən</phoneme></lexeme> <!-- psychosurgeon -->
+  <lexeme><grapheme>psychosurdgens</grapheme><phoneme>ˌsaɪkoʊˈsɜːrdʒənz</phoneme></lexeme> <!-- psychosurgeons -->
   <lexeme><grapheme>psychz</grapheme><phoneme>saɪks</phoneme></lexeme> <!-- psychs -->
   <lexeme><grapheme>publicizez</grapheme><phoneme>ˈpʌblɪsaɪzɪz</phoneme></lexeme> <!-- publicises -->
   <lexeme><grapheme>publishd</grapheme><phoneme>ˈpʌblɪʃt</phoneme></lexeme> <!-- published -->
@@ -27844,8 +27844,6 @@
   <lexeme><grapheme>smeltz</grapheme><phoneme>smɛlts</phoneme></lexeme> <!-- smelts -->
   <lexeme><grapheme>smerkd</grapheme><phoneme>smɜːrkt</phoneme></lexeme> <!-- smerked -->
   <lexeme><grapheme>smerkz</grapheme><phoneme>smɜːrks</phoneme></lexeme> <!-- smerks -->
-  <lexeme><grapheme>smijjen</grapheme><phoneme>ˈsmɪdʒən</phoneme></lexeme> <!-- smidgeon -->
-  <lexeme><grapheme>smijjens</grapheme><phoneme>ˈsmɪdʒənz</phoneme></lexeme> <!-- smidgeons -->
   <lexeme><grapheme>smilez</grapheme><phoneme>smaɪlz</phoneme></lexeme> <!-- smiles -->
   <lexeme><grapheme>smirkd</grapheme><phoneme>smɜːrkt</phoneme></lexeme> <!-- smirked -->
   <lexeme><grapheme>smirkz</grapheme><phoneme>smɜːrks</phoneme></lexeme> <!-- smirks -->
@@ -28957,8 +28955,8 @@
   <lexeme><grapheme>stuntz</grapheme><phoneme>stʌnts</phoneme></lexeme> <!-- stunts -->
   <lexeme><grapheme>stunz</grapheme><phoneme>stʌnz</phoneme></lexeme> <!-- stuns -->
   <lexeme><grapheme>stupefiez</grapheme><phoneme>ˈstupəfaɪz</phoneme></lexeme> <!-- stupefies -->
-  <lexeme><grapheme>sturjen</grapheme><phoneme>ˈstɜrdʒən</phoneme></lexeme> <!-- sturgeon -->
-  <lexeme><grapheme>sturjens</grapheme><phoneme>ˈstɜrdʒənz</phoneme></lexeme> <!-- sturgeons -->
+  <lexeme><grapheme>sturdgen</grapheme><phoneme>ˈstɜrdʒən</phoneme></lexeme> <!-- sturgeon -->
+  <lexeme><grapheme>sturdgens</grapheme><phoneme>ˈstɜrdʒənz</phoneme></lexeme> <!-- sturgeons -->
   <lexeme><grapheme>stutterd</grapheme><phoneme>ˈstʌtərd</phoneme></lexeme> <!-- stuttered -->
   <lexeme><grapheme>stutterz</grapheme><phoneme>ˈstʌtərz</phoneme></lexeme> <!-- stutters -->
   <lexeme><grapheme>stylat</grapheme><phoneme>ˈstaɪleɪt</phoneme></lexeme> <!-- stylate -->
@@ -29291,8 +29289,8 @@
   <lexeme><grapheme>supersizez</grapheme><phoneme>ˈsupərˌsaɪzəz</phoneme></lexeme> <!-- supersizes -->
   <lexeme><grapheme>superspecializez</grapheme><phoneme>ˌsupərˈspɛʃəˌlaɪzəz</phoneme></lexeme> <!-- superspecialises -->
   <lexeme><grapheme>superstimulatez</grapheme><phoneme>ˌsupərˈstɪmjəˌleɪts</phoneme></lexeme> <!-- superstimulates -->
-  <lexeme><grapheme>supersurjen</grapheme><phoneme>ˈsupərˌsɜrdʒən</phoneme></lexeme> <!-- supersurgeon -->
-  <lexeme><grapheme>supersurjens</grapheme><phoneme>ˈsupərˌsɜrdʒənz</phoneme></lexeme> <!-- supersurgeons -->
+  <lexeme><grapheme>supersurdgen</grapheme><phoneme>ˈsupərˌsɜrdʒən</phoneme></lexeme> <!-- supersurgeon -->
+  <lexeme><grapheme>supersurdgens</grapheme><phoneme>ˈsupərˌsɜrdʒənz</phoneme></lexeme> <!-- supersurgeons -->
   <lexeme><grapheme>supersuttle</grapheme><phoneme>ˌsupərˈsʌtəl</phoneme></lexeme> <!-- supersubtle -->
   <lexeme><grapheme>supersuttleties</grapheme><phoneme>ˌsupərˈsʌtəltiz</phoneme></lexeme> <!-- supersubtleties -->
   <lexeme><grapheme>supersuttlety</grapheme><phoneme>ˌsupərˈsʌtəlti</phoneme></lexeme> <!-- supersubtlety -->
@@ -29330,6 +29328,10 @@
   <lexeme><grapheme>suqhongs</grapheme><phoneme>ˈsuːˌʃɔːŋz</phoneme></lexeme> <!-- souchongs -->
   <lexeme><grapheme>suqhwise</grapheme><phoneme>ˈsʌtʃˌwaɪz</phoneme></lexeme> <!-- suchwise -->
   <lexeme><grapheme>surceasez</grapheme><phoneme>sərˈsisez</phoneme></lexeme> <!-- surceases -->
+  <lexeme><grapheme>surdgen</grapheme><phoneme>ˈsɜrdʒən</phoneme></lexeme> <!-- surgeon -->
+  <lexeme><grapheme>surdgenfish</grapheme><phoneme>ˈsɜrdʒənˌfɪʃ</phoneme></lexeme> <!-- surgeonfish -->
+  <lexeme><grapheme>surdgenfishes</grapheme><phoneme>ˈsɜrdʒənˌfɪʃəz</phoneme></lexeme> <!-- surgeonfishes -->
+  <lexeme><grapheme>surdgens</grapheme><phoneme>ˈsɜrdʒənz</phoneme></lexeme> <!-- surgeons -->
   <lexeme><grapheme>surfacez</grapheme><phoneme>ˈsɜrfəsəz</phoneme></lexeme> <!-- surfaces -->
   <lexeme><grapheme>surfboardz</grapheme><phoneme>ˈsɜrfˌbɔrdz</phoneme></lexeme> <!-- surfboards -->
   <lexeme><grapheme>surfd</grapheme><phoneme>sɜrft</phoneme></lexeme> <!-- surfed -->
@@ -29345,10 +29347,6 @@
   <lexeme><grapheme>surfz</grapheme><phoneme>sɜrfs</phoneme></lexeme> <!-- surfs -->
   <lexeme><grapheme>surgez</grapheme><phoneme>ˈsɜrdʒəz</phoneme></lexeme> <!-- surges -->
   <lexeme><grapheme>surjectiv</grapheme><phoneme>sərˈdʒɛktɪv</phoneme></lexeme> <!-- surjective -->
-  <lexeme><grapheme>surjen</grapheme><phoneme>ˈsɜrdʒən</phoneme></lexeme> <!-- surgeon -->
-  <lexeme><grapheme>surjenfish</grapheme><phoneme>ˈsɜrdʒənˌfɪʃ</phoneme></lexeme> <!-- surgeonfish -->
-  <lexeme><grapheme>surjenfishes</grapheme><phoneme>ˈsɜrdʒənˌfɪʃəz</phoneme></lexeme> <!-- surgeonfishes -->
-  <lexeme><grapheme>surjens</grapheme><phoneme>ˈsɜrdʒənz</phoneme></lexeme> <!-- surgeons -->
   <lexeme><grapheme>surmisez</grapheme><phoneme>sərˈmaɪzəz</phoneme></lexeme> <!-- surmises -->
   <lexeme><grapheme>surmountz</grapheme><phoneme>sərˈmaʊnts</phoneme></lexeme> <!-- surmounts -->
   <lexeme><grapheme>surnamez</grapheme><phoneme>ˈsɜrˌneɪmz</phoneme></lexeme> <!-- surnames -->
@@ -30653,8 +30651,6 @@
   <lexeme><grapheme>truelov</grapheme><phoneme>ˈtruːˌlʌv</phoneme></lexeme> <!-- truelove -->
   <lexeme><grapheme>truelovs</grapheme><phoneme>ˈtruːˌlʌvz</phoneme></lexeme> <!-- trueloves -->
   <lexeme><grapheme>truez</grapheme><phoneme>truːz</phoneme></lexeme> <!-- trues -->
-  <lexeme><grapheme>trujjen</grapheme><phoneme>ˈtrʌdʒən</phoneme></lexeme> <!-- trudgeon -->
-  <lexeme><grapheme>trujjens</grapheme><phoneme>ˈtrʌdʒənz</phoneme></lexeme> <!-- trudgeons -->
   <lexeme><grapheme>trumpd</grapheme><phoneme>trʌmpt</phoneme></lexeme> <!-- trumped -->
   <lexeme><grapheme>trumpetz</grapheme><phoneme>ˈtrʌmpɪts</phoneme></lexeme> <!-- trumpets -->
   <lexeme><grapheme>trumpz</grapheme><phoneme>trʌmps</phoneme></lexeme> <!-- trumps -->
@@ -33875,6 +33871,8 @@
   <lexeme><grapheme>widend</grapheme><phoneme>ˈwaɪdənd</phoneme></lexeme> <!-- widened -->
   <lexeme><grapheme>widenz</grapheme><phoneme>ˈwaɪdənz</phoneme></lexeme> <!-- widens -->
   <lexeme><grapheme>widespredd</grapheme><phoneme>ˈwaɪtˌsprɛd</phoneme></lexeme> <!-- widespread -->
+  <lexeme><grapheme>widgen</grapheme><phoneme>ˈwɪdʒən</phoneme></lexeme> <!-- widgeon -->
+  <lexeme><grapheme>widgens</grapheme><phoneme>ˈwɪdʒənz</phoneme></lexeme> <!-- widgeons -->
   <lexeme><grapheme>widowd</grapheme><phoneme>ˈwɪdoʊd</phoneme></lexeme> <!-- widowed -->
   <lexeme><grapheme>widowz</grapheme><phoneme>ˈwɪdoʊz</phoneme></lexeme> <!-- widows -->
   <lexeme><grapheme>wieldz</grapheme><phoneme>wildz</phoneme></lexeme> <!-- wields -->
@@ -33885,8 +33883,6 @@
   <lexeme><grapheme>wigz</grapheme><phoneme>wɪɡz</phoneme></lexeme> <!-- wigs -->
   <lexeme><grapheme>wiht</grapheme><phoneme>waɪt</phoneme></lexeme> <!-- wight -->
   <lexeme><grapheme>wihts</grapheme><phoneme>waɪts</phoneme></lexeme> <!-- wights -->
-  <lexeme><grapheme>wijjen</grapheme><phoneme>ˈwɪdʒən</phoneme></lexeme> <!-- widgeon -->
-  <lexeme><grapheme>wijjens</grapheme><phoneme>ˈwɪdʒənz</phoneme></lexeme> <!-- widgeons -->
   <lexeme><grapheme>wilez</grapheme><phoneme>waɪlz</phoneme></lexeme> <!-- wiles -->
   <lexeme><grapheme>willd</grapheme><phoneme>wɪld</phoneme></lexeme> <!-- willed -->
   <lexeme><grapheme>williez</grapheme><phoneme>ˈwɪliz</phoneme></lexeme> <!-- willies -->
