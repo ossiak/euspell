@@ -1,6 +1,5 @@
 Word,PoS,Encoding,euspelling
 abstracts,NN2|VVZ,012,abstracts|abstractz
-abuse,NN1|VV0,102,abuse|abuze
 accents,NN2|VVZ,012,accents|accentz
 acuate,JJ|VV0,102,acuat|acuate
 acuminate,JJ|VV0,102,acuminat|acuminate
@@ -38,11 +37,8 @@ associate,JJ|NN1|VV0,102,associat|associate
 associates,NN2|VVZ,112,associats|associatez
 attributes,NN2|VVZ,012,attributes|attributez
 augments,NN2|VVZ,012,augments|augmentz
-barre,NN1|VV0,102,barre|barreh
-bear,NN1|VV0,102,bair|baer
 bioreplicate,NN1|VV0,102,bioreplicat|bioreplicate
 brachiate,JJ|VV0,102,brachiat|brachiate
-buffet,NN1|VV0,102,buffeh|buffet
 bypasses,NN2|VVZ,012,bypasses|bypassez
 capsules,NN2|VVZ,012,capsules|capsulez
 centuplicate,JJ|NN1|VV0,102,centuplicat|centuplicate
@@ -126,14 +122,12 @@ dissents,NN2|VVZ,012,dissents|dissentz
 distastes,NN2|VVZ,012,distastes|distastez
 distresses,NN2|VVZ,012,distresses|distressez
 districts,NN2|VVZ,012,districts|districtz
-disuse,NN|VV0,102,disuse|disuze
 divorces,NN2|VVZ,012,divorces|divorcez
 documents,NN2|VVZ,012,documents|documentz
 downloads,NN2|VVZ,112,duwnloads|duwnloadz
 duplicate,JJ|NN1|VV0,102,duplicat|duplicate
 duplicates,NN2|VVZ,112,duplicats|duplicatez
 effeminate,JJ|VV0,102,effeminat|effeminate
-effuse,JJ|VV0,102,effuse|effuze
 ejaculate,NN|NN1|VV0,102,ejaculat|ejaculate
 elaborate,JJ|VV0,102,elaborat|elaborate
 eluate,NN|NN1|VV0,102,eluat|eluate
@@ -176,7 +170,6 @@ graduate,NN1|VV0,102,graduat|graduate
 graduates,NN2|VVZ,112,graduats|graduatez
 granulate,JJ|NN|VV0,102,granulat|granulate
 guesstimate,NN1|VV0,102,ghesstimat|ghesstimate
-house,NN1|VV0,102,house|houze
 illegitimate,JJ|NN1|VV0,102,illegitimat|illegitimate
 imbricate,JJ|VV0,102,imbricat|imbricate
 immunoprecipitate,NN1|VV0,102,immunoprecipitat|immunoprecipitate
@@ -216,7 +209,6 @@ laureate,JJ|NN1|VV0,102,laureat|laureate
 legate,NN1|VV0,102,legat|legate
 legitimate,JJ|NN1|VV0,102,legitimat|legitimate
 levigate,JJ|VV0,102,levigat|levigate
-live,JJ|RR|VV0,102,live|liv
 loricate,NN1|VV0,102,loricat|loricate
 marginate,JJ|VV0,102,marginat|marginate
 matriculate,NN1|VV0,102,matriculat|matriculate
@@ -224,11 +216,8 @@ mediate,JJ|VV0,102,mediat|mediate
 misconducts,NN2|VVZ,012,misconducts|misconductz
 misestimate,NN1|VV0,102,misestimat|misestimate
 misprints,NN2|VVZ,012,misprints|misprintz
-misuse,NN|NN1|VV0,102,misuse|misuze
 moderate,JJ|VV0,102,moderat|moderate
 moderates,NN2|VVZ,112,moderats|moderatez
-mouth,NN1|VV0,102,mouth|mouthe
-mow,NN1|VV0,102,muw|mow
 multiplicate,JJ|VV0,102,multiplicat|multiplicate
 mutilate,JJ|VV0,102,mutilat|mutilate
 nominate,JJ|VV0,102,nominat|nominate
@@ -243,7 +232,7 @@ opiate,JJ|NN1|VV0,102,opiat|opiate
 ornaments,NN2|VVZ,012,ornaments|ornamentz
 outlays,NN2|VVZ,012,outlays|outlayz
 outlines,NN2|VVZ,012,outlines|outlinez
-outputs,NN2|VVZ,012,outputs|outputz
+outputs,NN2|VVZ,112,outpoots|outpootz
 overcharges,NN2|VVZ,112,overqharges|overqhargez
 overdoses,NN2|VVZ,012,overdoses|overdosez
 overestimate,NN1|VV0,102,overestimat|overestimate
@@ -255,7 +244,6 @@ overlooks,NN2|VVZ,012,overlooks|overlookz
 overrides,NN2|VVZ,012,overrides|overridez
 overruns,NN2|VVZ,012,overruns|overrunz
 overturns,NN2|VVZ,012,overturns|overturnz
-overuse,NN|NN1|VV0,102,overuse|overuze
 papillate,JJ|VV0,102,papillat|papillate
 perfects,NN2|VVZ,012,perfects|perfectz
 perforate,JJ|VV0,102,perforat|perforate
@@ -296,7 +284,6 @@ records,NN2|VVZ,012,records|recordz
 recounts,NN2|VVZ,012,recounts|recountz
 refills,NN2|VVZ,012,refills|refillz
 refunds,NN2|VVZ,012,refunds|refundz
-refuse,NN|VV0,102,refuse|refuze
 regenerate,JJ|NN1|VV0,102,regenerat|regenerate
 regresses,NN2|VVZ,012,regresses|regressez
 rejects,NN2|VVZ,012,rejects|rejectz
@@ -307,8 +294,6 @@ replays,NN2|VVZ,012,replays|replayz
 replicate,JJ|NN1|VV0,102,replicat|replicate
 reruns,NN2|VVZ,012,reruns|rerunz
 reticulate,JJ|VV0,102,reticulat|reticulate
-reuse,NN|NN1|VV0,102,reuse|reuze
-row,NN1|VV0,102,row|ruw
 saturate,JJ|NN1|VV0,102,saturat|saturate
 separate,JJ|NN1|VV0,102,separat|separate
 separates,NN2|VVZ,112,separats|separatez
@@ -317,9 +302,7 @@ seriate,JJ|VV0,102,seriat|seriate
 serrate,JJ|VV0,102,serrat|serrate
 sextuplicate,JJ|NN1|VV0,102,sextuplicat|sextuplicate
 showcases,NN2|VVZ,012,showcases|showcasez
-shower,NN1|VV0,102,shower|shuwer
 sophisticate,JJ|NN1|VV0,102,sophisticat|sophisticate
-sow,NN1|VV0,102,suw|sow
 spiculate,JJ|VV0,102,spiculat|spiculate
 stipulate,JJ|VV0,102,stipulat|stipulate
 striate,JJ|VV0,102,striat|striate
@@ -354,10 +337,8 @@ upgrades,NN2|VVZ,012,upgrades|upgradez
 uplifts,NN2|VVZ,012,uplifts|upliftz
 upsets,NN2|VVZ,012,upsets|upsetz
 upturns,NN2|VVZ,012,upturns|upturnz
-use,NN|NN1|VV0,102,use|uze
 variate,NN1|VV0,102,variat|variate
 variolate,JJ|VV0,102,variolat|variolate
 vermiculate,JJ|VV0,102,vermiculat|vermiculate
 vertiginate,JJ|VV0,102,vertiginat|vertiginate
 vesiculate,JJ|VV0,102,vesiculat|vesiculate
-warehouse,NN1|VV0,102,warehouse|warehouze
