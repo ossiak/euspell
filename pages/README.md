@@ -1,7 +1,7 @@
 # Euspell for Apple Pages (JXA)
 
 Converts the frontmost Pages document into euspell reformed spelling — or reverts
-it back to English — from a single script, using the euspell engine ported to
+it back to traditional spelling — from a single script, using the euspell engine ported to
 Apps Script and reused verbatim under **JavaScript for Automation (JXA)**.
 
 Pages has no add-in model (no equivalent of Word's Office.js or Google Docs'
@@ -46,7 +46,7 @@ Because Pages has no menu to hang a command on, invoke the script from one of:
    Script menu in menu bar**.
 3. Open a Pages document, then from the Script menu (top-right of the screen)
    choose **Euspell**. A dialog asks **Convert to euspell** or **Revert to
-   English**; pick one and it rewrites the body in place.
+   traditional**; pick one and it rewrites the body in place.
 
 **B. Terminal (for quick testing)**
 
@@ -69,7 +69,7 @@ dictionary data, so expect a couple of seconds before it acts.
 | Context-free reforms (*above → abov*, *night → niht*) | converted |
 | NN2\|VVZ diatones, 702 plurals, 102 heteronyms | converted from context (SVM + POS rules) |
 | ~70 semantic homographs (*read, bow, tear, are, …*) | left unchanged |
-| Revert (euspell → English) | supported (lexicon reverse) |
+| Revert (euspell → traditional) | supported (lexicon reverse) |
 | Selection only | **not** supported — Pages exposes no scriptable text selection; whole document only |
 | Text in text boxes / shapes / table cells | not reached (only the main body flow) |
 | Inline character formatting | the whole body resets to its default run formatting (whole-document rewrite, see below) |

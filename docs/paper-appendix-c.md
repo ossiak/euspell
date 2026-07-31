@@ -29,7 +29,7 @@ uploaded.
 
 **Table C1. Word processor add-in capabilities**
 
-| Word processor | Platforms | Whole document | Selection | Revert to English |
+| Word processor | Platforms | Whole document | Selection | Revert to traditional |
 |---|---|---|---|---|
 | Microsoft Word | Windows, macOS, web | yes | yes | yes |
 | LibreOffice Writer | Windows, Linux, macOS | yes | yes | yes |
@@ -84,7 +84,7 @@ server running on your own machine.
 
 5. On the **Home** ribbon tab click **Euspell** to open the task pane. Use
    **Convert document** or **Convert selection**, and **Revert document /
-   selection to English** to go back.
+   selection to traditional** to go back.
 
 If step 4 fails, Word can instead load the manifest from a shared-folder catalog:
 **File ▸ Options ▸ Trust Center ▸ Trust Center Settings ▸ Trusted Add-in
@@ -141,7 +141,7 @@ unopkg add --force .\dict\euspell-libreoffice.oxt
 ```
 
 Restart LibreOffice and use **Euspell ▸ Convert Document** or **Convert
-Selection**, or **Revert Document / Selection to English**.
+Selection**, or **Revert Document / Selection to Traditional**.
 
 The extension itself is platform-neutral — it contains only configuration, no
 compiled code — so the same `.oxt` installs everywhere. Only the profile location
@@ -209,7 +209,7 @@ cp pages/euspell-pages.js ~/Library/Scripts/Applications/Pages/Euspell.js
 
 Enable the Script menu in **Script Editor ▸ Settings ▸ General ▸ Show Script menu
 in menu bar**. Open a Pages document and choose **Euspell** from that menu; a
-dialog offers **Convert to euspell** or **Revert to English**.
+dialog offers **Convert to euspell** or **Revert to traditional**.
 
 The first run asks permission to control Pages, granted in **System Settings ▸
 Privacy & Security ▸ Automation**. Only the main body flow is reached: text in

@@ -7,7 +7,7 @@ Converts a Google Doc (or selection) into euspell reformed spelling from an
 The browser extension can't do this — Google Docs renders the document text to
 `<canvas>`, so a DOM-walking content script never sees it. Apps Script goes
 through Google's document API (`DocumentApp`) instead, so it can read and replace
-the actual text. It also **reverts** euspell back to English (Extensions ▸
+the actual text. It also **reverts** euspell back to traditional spelling (Extensions ▸
 Euspell ▸ Revert Document / Selection), a lexicon-based reverse conversion. Like
 the LibreOffice converter, it's a one-pass command (Docs
 exposes no live third-party spell/grammar hook).

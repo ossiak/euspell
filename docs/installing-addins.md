@@ -18,7 +18,7 @@ bundled into each tool.
 
 ## Which tool does what
 
-| Word processor | Platforms | Whole document | Selection | Revert to English | Setup |
+| Word processor | Platforms | Whole document | Selection | Revert to traditional | Setup |
 |---|---|---|---|---|---|
 | **Microsoft Word** | Windows, macOS, web | ✅ | ✅ | ✅ | hardest — HTTPS cert + a server that stays running |
 | **LibreOffice Writer** | Windows, Linux, macOS | ✅ | ✅ | ✅ | copy two things into your profile |
@@ -60,7 +60,7 @@ npx office-addin-debugging start word-addin\manifest.xml
 
 Word opens with the add-in loaded. On the **Home** ribbon click **Euspell** to
 open the taskpane, then use **Convert document** / **Convert selection**, or
-**Revert document / selection to English**.
+**Revert document / selection to traditional**.
 
 > **The dev server must stay running** the whole time you use the add-in. To
 > avoid that — and to use Word on the web, which usually blocks a `localhost`
@@ -112,7 +112,7 @@ unopkg add --force .\dict\euspell-libreoffice.oxt
 ```
 
 Restart LibreOffice, then use **Euspell ▸ Convert Document** / **Convert
-Selection**, or **Revert Document / Selection to English**.
+Selection**, or **Revert Document / Selection to Traditional**.
 
 > **Native Linux builds need the Python script provider** (Flatpak bundles it).
 > If the Euspell menu never appears, install
@@ -165,7 +165,7 @@ cp pages/euspell-pages.js ~/Library/Scripts/Applications/Pages/Euspell.js
 Turn on the Script menu — **Script Editor ▸ Settings ▸ General ▸ Show Script menu
 in menu bar** — then open a Pages document and choose **Euspell** from that menu
 (top-right of the screen). A dialog offers **Convert to euspell** or **Revert to
-English**.
+traditional**.
 
 The first run asks permission to control Pages (**System Settings ▸ Privacy &
 Security ▸ Automation**). Whole document only, and only the main body flow — text

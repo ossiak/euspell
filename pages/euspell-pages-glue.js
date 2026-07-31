@@ -36,14 +36,14 @@ function run() {
   var choice;
   try {
     choice = Pages.displayDialog('Transform the frontmost Pages document?', {
-      buttons: ['Cancel', 'Revert to English', 'Convert to euspell'],
+      buttons: ['Cancel', 'Revert to traditional', 'Convert to euspell'],
       defaultButton: 'Convert to euspell',
       withTitle: 'Euspell',
     }).buttonReturned;
   } catch (e) {
     return; // Cancel or Esc throws — nothing to do
   }
-  var reverting = choice === 'Revert to English';
+  var reverting = choice === 'Revert to traditional';
   var transform = reverting ? Euspell.revertText : Euspell.convertText;
 
   // Per-paragraph text-suite access (`.text()` / `.text =`) throws "Can't

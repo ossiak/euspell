@@ -43,7 +43,7 @@ Leave the server running, then **sideload** `manifest.xml` into Word:
 
 Then on the **Home** tab click **Euspell** to open the taskpane, and use
 **Convert document** / **Convert selection**. To go the other way, use
-**Revert document / selection to English** (a lexicon-based reverse conversion;
+**Revert document / selection to traditional** (a lexicon-based reverse conversion;
 it also turns Word's proofing back on).
 
 ## Sharing it (hosting) — and Word on the web

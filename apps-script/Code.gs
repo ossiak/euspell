@@ -14,8 +14,8 @@ function onOpen() {
     .addItem('Convert Document', 'convertDocument')
     .addItem('Convert Selection', 'convertSelection')
     .addSeparator()
-    .addItem('Revert Document to English', 'revertDocument')
-    .addItem('Revert Selection to English', 'revertSelection')
+    .addItem('Revert Document to Traditional', 'revertDocument')
+    .addItem('Revert Selection to Traditional', 'revertSelection')
     .addToUi();
 }
 
