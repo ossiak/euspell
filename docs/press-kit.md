@@ -58,6 +58,7 @@ Three lengths, ready to paste.
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
 | **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |
+| **Shop** | [shop.euspell.org](https://shop.euspell.org) — live; logo tees and hoodies, fulfilled by Fourthwall |
 | **Current versions** | Browser extension 0.2.0 (unreleased); Eupub 0.2.2 |
 | **Contact** | kamranossia@euspell.org |
 
@@ -256,12 +257,13 @@ phonetic spelling would disrupt hundreds of scientific words.
 
 ## Availability: the honest status
 
-As of 29 July 2026 the project has a live domain but **little a journalist can
+As of 31 July 2026 the project has a live domain but **little a journalist can
 read, download, or link to**:
 
 | | |
 |---|---|
-| Website | [euspell.org](https://euspell.org) is **live**, but serves only a "Coming soon" splash |
+| Website | [euspell.org](https://euspell.org) is **live**, but serves only a "Coming soon" splash. `www.euspell.org` does not resolve at all |
+| Shop | [shop.euspell.org](https://shop.euspell.org) is **live** — a Fourthwall storefront selling logo tees and hoodies. It is currently the only public page with real content on it, and it carries no explanation of what euspell is |
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one currently returns 404 |
 | Source repositories | **Private** — although the white paper states the source and lexicons are GPL-3 and available at `github.com/ossiak/` |
 | Browser extension | **Not published** — the Chrome Web Store link is still a placeholder. The Safari build is development-signed only: no notarized or App Store build exists |
@@ -289,6 +291,7 @@ paper, and a demo video, sent directly.
 
 - **Press contact:** kamranossia@euspell.org
 - **Website:** [euspell.org](https://euspell.org)
+- **Shop:** [shop.euspell.org](https://shop.euspell.org)
 - **Source:** github.com/ossiak/ *(currently private)*
 
 *Press are welcome to quote any text in this kit verbatim.*
