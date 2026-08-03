@@ -114,7 +114,7 @@ console.log(
   ' verbP'.padStart(7),
   'verbR'.padStart(6)
 );
-let T = { tp: 0, fp: 0, tn: 0, fn: 0 };
+const T = { tp: 0, fp: 0, tn: 0, fn: 0 }; // mutated in place, never reassigned
 for (const [w, s] of rows) {
   const n = s.tp + s.fp + s.tn + s.fn;
   const verbs = s.tp + s.fn;

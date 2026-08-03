@@ -25,7 +25,7 @@ test('rate guard: a slowly updating node never freezes (window keeps resetting)'
 });
 
 test('rate guard: nodes are tracked independently', () => {
-  let now = 0;
+  const now = 0; // this test holds the clock still; only the node identity varies
   const allow = createRateGuard({ windowMs: 1000, maxPerWindow: 1, now: () => now });
   const a = {}, b = {};
   assert.equal(allow(a), true);
