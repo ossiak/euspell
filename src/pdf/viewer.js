@@ -56,9 +56,10 @@ import './polyfills.js'; // shim toHex / getOrInsert for older WebViews — must
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
 import { convert } from '../content/converter.js';
 import { walkTextNodes } from '../content/dom-walker.js';
-import { fileParam, isAllowedViewerUrl } from './pdf-url.js';
+import { fileParam, isAllowedViewerUrl, pdfFileName } from './pdf-url.js';
 import { padToFit } from './fit-text.js';
 import { sampleColors } from './sample-colors.js';
+import { createPageState } from './render-state.js';
 import { texGeneric, nameBold, nameBlack, nameItalic } from './font-style.js';
 import {
   assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect,
@@ -71,7 +72,12 @@ const root = document.getElementById('pages');
 const status = document.getElementById('status');
 
 function setStatus(msg) {
-  if (status) status.textContent = msg;
+  if (!status) return;
+  status.textContent = msg;
+  // The loading line is REMOVED once the document opens, so a failure reported
+  // after that point would be written into a detached node and seen by nobody —
+  // a blank grey page with the reason nowhere on it. Put the element back.
+  if (!status.isConnected) (root ?? document.body)?.prepend(status);
 }
 
 // ?debug=1 turns on per-phase timings for each page. Off by default: the marks
@@ -219,7 +225,14 @@ async function renderPage(pdf, n, dpr, wrap) {
   textLayerDiv.style.setProperty('--scale-factor', String(scale));
   textLayerDiv.style.setProperty('--total-scale-factor', String(scale));
 
-  wrap.append(canvas, textLayerDiv);
+  // replaceChildren, not append: this must leave the wrapper holding exactly one
+  // canvas and one text layer however it was called. A page can be rendered onto
+  // a wrapper that is not empty — a render already in flight when the scale
+  // changes is re-queued — and appending there stacked a second canvas below the
+  // first (.page canvas is display:block), overflowing into the page beneath it,
+  // with two absolutely-positioned text layers so selection returned every word
+  // twice.
+  wrap.replaceChildren(canvas, textLayerDiv);
 
   // Opaque white background so blank areas are sampled as paper, not transparent.
   await page.render({ canvasContext: ctx, viewport, background: '#ffffff' }).promise;
@@ -360,15 +373,10 @@ async function main() {
     return;
   }
 
-  // "Open original" escape hatch — the redirect captures every PDF, so the
-  // unconverted file must stay one click away.
-  let name = (fileUrl.split('/').pop() || 'PDF').replace(/[?#].*$/, '');
-  try {
-    name = decodeURIComponent(name);
-  } catch {
-    /* a literal % in the filename — keep it as-is rather than die before the
-       escape-hatch link below is wired up */
-  }
+  // The document's filename, shared by the tab title, the bar and the download.
+  // Derived from the URL's path (see pdfFileName), so a query string can neither
+  // contribute to it nor replace it outright.
+  const name = pdfFileName(fileUrl);
   // The tab title doubles as the default filename when the page is printed or
   // saved as PDF, so title it "<base>.eu" — a Save-as-PDF then yields
   // "<base>.eu.pdf" (e.g. report.pdf → report.eu.pdf).
@@ -384,6 +392,8 @@ async function main() {
     // itself already truncated with an ellipsis when the name is long.
     filenameEl.title = fileUrl;
   }
+  // "Open original" escape hatch — the redirect captures every PDF, so the
+  // unconverted file must stay one click away.
   const originalEl = document.getElementById('original');
   if (originalEl) {
     originalEl.href = fileUrl;
@@ -451,8 +461,12 @@ async function main() {
   // being empty placeholders and re-rendered if the reader returns. Without this,
   // memory grows for the whole length of the document and a long PDF eventually
   // takes the renderer down with it.
-  const rendered = new WeakSet(); // holds a canvas right now
-  const near = new WeakSet(); // inside the keep window (per evictIO, below)
+  //
+  // The tracker also knows which pages have a render IN FLIGHT, which is what
+  // keeps zoom and the conversion toggle honest: both invalidate every raster,
+  // and a page rasterizing at that moment is finishing at the old scale (or the
+  // old spelling). See render-state.js.
+  const pages = createPageState();
 
   // Printing needs every page on screen at once, which is exactly what the lazy
   // renderer is built to avoid — so eviction is suspended for the duration and
@@ -462,28 +476,44 @@ async function main() {
   /** Back to an empty, still-correctly-sized placeholder. */
   function evict(wrap) {
     if (printing) return;
-    if (!rendered.has(wrap)) return;
-    rendered.delete(wrap);
+    if (!pages.isRendered(wrap)) return;
+    pages.clear(wrap);
     // Keep the width/height renderPage corrected: an emptied page must still
     // occupy its own space, or everything below it jumps as you scroll.
     wrap.replaceChildren();
     renderIO.observe(wrap); // re-arm — coming back into view renders it again
   }
 
+  /** Drop every raster: they are all at the wrong scale, or the wrong spelling. */
+  function invalidateAll() {
+    for (const wrap of wraps) {
+      pages.invalidate(wrap); // a render in flight finishes stale and is re-done
+      evict(wrap); // no-op for a page not currently holding a canvas
+    }
+  }
+
   // Serialize renders so a fast scroll queues pages instead of rasterizing many
   // at once (each render holds a full-page snapshot while it works).
   let queue = Promise.resolve();
   function enqueueRender(wrap, n) {
+    // Claimed at QUEUE time, not when the render starts: everything that decides
+    // whether a page still needs rendering (the observer re-arm in observe(),
+    // printAllPages) runs while this is only queued, and would otherwise queue
+    // it a second time.
+    pages.begin(wrap);
     queue = queue.then(async () => {
       try {
         await renderPage(pdf, n, dpr, wrap);
-        rendered.add(wrap);
-        // A fast scroll can leave a page queued until it is already far behind,
-        // and evictIO won't fire again for something that never re-entered the
-        // keep window — so a page that finished out of view is dropped here
-        // rather than kept forever.
-        if (!near.has(wrap)) evict(wrap);
+        // Two reasons to throw the fresh canvas away immediately. It may be
+        // stale on arrival — the scale or the conversion setting changed while
+        // it rendered — in which case evicting re-arms the observer and renders
+        // it again at the current one. Or a fast scroll left it queued until it
+        // was already far behind, and evictIO won't fire again for something
+        // that never re-entered the keep window, so it would be kept forever.
+        const fresh = pages.finish(wrap);
+        if (!fresh || !pages.isNear(wrap)) evict(wrap);
       } catch (e) {
+        pages.clear(wrap); // failed, so it holds no canvas — relayout may retry
         const err = document.createElement('div');
         err.className = 'page-error';
         err.textContent = `Page ${n} could not be rendered (${e?.message ?? e}).`;
@@ -524,19 +554,18 @@ async function main() {
     evictIO = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            near.add(entry.target);
-          } else {
-            near.delete(entry.target);
-            evict(entry.target);
-          }
+          pages.setNear(entry.target, entry.isIntersecting);
+          if (!entry.isIntersecting) evict(entry.target);
         }
       },
       { rootMargin: `${Math.ceil(estimate.height * 3)}px 0px` },
     );
 
     for (const wrap of wraps) {
-      if (!rendered.has(wrap)) renderIO.observe(wrap);
+      // needsRender, not "holds no canvas": a page whose render is already
+      // queued must not be armed, or the immediate initial notification an
+      // intersecting target gets would queue the very same page again.
+      if (pages.needsRender(wrap)) renderIO.observe(wrap);
       evictIO.observe(wrap); // observed for the whole session, unlike renderIO
     }
   }
@@ -637,7 +666,7 @@ async function main() {
       try {
         for (let n = 1; n <= wraps.length; n++) {
           const wrap = wraps[n - 1];
-          if (rendered.has(wrap)) continue;
+          if (!pages.needsRender(wrap)) continue; // rendered, or already queued
           // Take it off the render observer first: rendering it here would
           // otherwise leave it armed, and scrolling past it later would
           // rasterize the same page a second time.
@@ -654,7 +683,7 @@ async function main() {
         }
         // Drop everything outside the keep window again — holding every page's
         // canvas is precisely the memory cost lazy rendering exists to avoid.
-        for (const wrap of wraps) if (!near.has(wrap)) evict(wrap);
+        for (const wrap of wraps) if (!pages.isNear(wrap)) evict(wrap);
       }
     }
 
@@ -686,18 +715,23 @@ async function main() {
 
   // "Convert pages" flipped while this PDF is open. A rendered page is a raster
   // plus a text layer, both already committed to one spelling, so the only way
-  // to switch is to render again: evict every rendered page and let the
-  // observers re-render the ones on screen. evict() re-arms renderIO, and
-  // observing an element that is already intersecting fires the callback
-  // immediately, so visible pages come back at once while the rest stay
-  // placeholders until scrolled to.
+  // to switch is to render again: invalidate every page and let the observers
+  // re-render the ones on screen. evict() re-arms renderIO, and observing an
+  // element that is already intersecting fires the callback immediately, so
+  // visible pages come back at once while the rest stay placeholders until
+  // scrolled to.
+  //
+  // Invalidating rather than only evicting is what catches the page that is
+  // rasterizing at the moment of the flip: `converting` is read at render time,
+  // so that page is committing to the OLD spelling and its canvas is wrong the
+  // instant it lands.
   //
   // Evicting keeps each wrap's corrected width/height, so nothing below moves
   // and the reading position holds.
   onConversionChange((enabled) => {
     if (enabled === converting) return;
     converting = enabled;
-    for (const wrap of wraps) evict(wrap); // no-ops for pages not yet rendered
+    invalidateAll();
   });
 
   // A host that fits pages to the screen (see host.mobile.js) changes scale when
@@ -720,8 +754,8 @@ async function main() {
       : 0;
 
     estimate = next;
+    invalidateAll(); // every canvas, and every render in flight, is at the old scale
     for (const wrap of wraps) {
-      evict(wrap); // every canvas is at the old scale
       wrap.style.width = `${estimate.width}px`;
       wrap.style.height = `${estimate.height}px`;
     }
@@ -790,7 +824,14 @@ async function main() {
   // The extension viewer has no TOC/status chrome, so wantsNav is false there and
   // none of this runs. The host owns the sidebar and status bar; we feed it the
   // outline and the current page, and take jump commands back.
-  if (wantsNav) setUpNav();
+  //
+  // Caught on its own because it is NOT awaited: a rejection would escape
+  // main()'s catch entirely. And logged rather than surfaced — the document
+  // reads perfectly well without a table of contents, so a host that cannot
+  // supply one must not cost the reader the PDF.
+  if (wantsNav) {
+    setUpNav().catch((e) => console.warn('Euspell: navigation channel unavailable.', e));
+  }
 
   async function setUpNav() {
     // Current page: the wrap straddling the viewport's vertical middle.
@@ -847,4 +888,15 @@ async function main() {
   }
 }
 
-main();
+// Everything main() does after the document opens runs unguarded — page 1's
+// viewport, the placeholder layout, the observers, the bar. A throw in any of it
+// (a malformed page tree, a host seam that rejects) became an unhandled
+// rejection behind a blank grey page: the loading line had already been removed,
+// so the viewer showed nothing at all and said nothing about why.
+//
+// The escape hatch survives this, which is what makes the message honest: the
+// "Open original" link is wired up before the document is even fetched.
+main().catch((e) => {
+  console.error('Euspell: the PDF viewer failed to start.', e);
+  setStatus(`Couldn’t display this PDF (${e?.message ?? e}). You can open the original instead.`);
+});

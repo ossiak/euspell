@@ -12,6 +12,7 @@ import {
   isPdfDisposition,
   isAttachmentDisposition,
   looksLikePdfBytes,
+  canViewFileUrls,
 } from '../src/pdf/pdf-url.js';
 
 function makeEnv(store) {
@@ -101,11 +102,12 @@ function runWorker(env) {
   new Function(
     'browser', 'fetch',
     'isPdfUrl', 'isPdfContentType', 'isPdfDisposition', 'isAttachmentDisposition', 'looksLikePdfBytes',
-    'paintActionIcon', 'refreshActionIcon',
+    'canViewFileUrls', 'paintActionIcon', 'refreshActionIcon',
     src,
   )(
     env.browser, env.fetchImpl,
     isPdfUrl, isPdfContentType, isPdfDisposition, isAttachmentDisposition, looksLikePdfBytes,
+    canViewFileUrls,
     // Spies for the shared icon module (tested for real in action-icon.test.js):
     // here we only care that the worker asks for the right state.
     async (on) => { env.state.icons.push(on); },

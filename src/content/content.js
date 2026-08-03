@@ -5,10 +5,14 @@ import { initDictation } from '../dictation/index.js';
 import { ensureLexicon } from './lexicon-load.js';
 import { browser } from '../lib/browser.js';
 
-// Wrapped in an async IIFE: the content bundle is emitted as an iife (classic
-// content script), which forbids top-level await — so the storage read lives
-// inside this function. A re-injection returns early.
-(async () => {
+// Wrapped in an IIFE: the content bundle is emitted as an iife (classic content
+// script), so this is the module's own scope. Deliberately NOT async — the whole
+// body must run to completion in one synchronous turn, because everything in it
+// registers a listener and any await would leave the page half-wired while the
+// browser is already delivering events. The one asynchronous thing, reading the
+// stored setting, is fired off at the end (applyFromSettings) rather than
+// awaited. A re-injection returns early.
+(() => {
   // Ownership of the page, not a plain "loaded" flag. Reloading or updating the
   // extension orphans this script but leaves its globals in the isolated world,
   // so a boolean would make the re-injection that follows a silent no-op — the
@@ -25,10 +29,16 @@ import { browser } from '../lib/browser.js';
   initDictation();
 
   // <all_urls> also matches SVG/XML documents, which have no <body> — nothing to
-  // convert or observe (and walkTextNodes/observe would throw on null).
-  if (!document.body) return;
-
-  const { enabled = true } = await browser.storage.sync.get('enabled');
+  // convert or observe (walkTextNodes/observe would throw on null), so applyMode
+  // stops short of converting on one.
+  //
+  // Returning outright here is what this replaces. It left the page without the
+  // ping responder registered below, so the service worker read it as having no
+  // content script and injected a second copy on every install, update and
+  // unpacked reload (see injectInto) — each injection stacking another dictation
+  // message listener and another focusin listener in the isolated world, so one
+  // dictation toggle ended up handled N times.
+  const convertible = !!document.body;
 
   // childList catches inserted content (SPA renders); characterData catches text
   // rewritten in place (live regions, re-renders). Watching characterData is what
@@ -76,7 +86,9 @@ import { browser } from '../lib/browser.js';
     // otherwise re-reform those subtrees and re-observe (its timeout still fires
     // — flush() also checks viewMode as a backstop).
     pending.clear();
-    restoreOriginals(document.body);
+    // Guarded for the body-less documents that never converted: the orphan
+    // lifecheck calls this unconditionally.
+    if (document.body) restoreOriginals(document.body);
     viewMode = 'original';
   }
 
@@ -92,6 +104,7 @@ import { browser } from '../lib/browser.js';
       if (viewMode === 'euspell') restorePage();
       return;
     }
+    if (!convertible) return; // no <body> — nothing to walk, and no lexicon needed
     try {
       await ensureLexicon(); // memoised; a failed fetch resets so a later call retries
     } catch (err) {
@@ -103,7 +116,17 @@ import { browser } from '../lib/browser.js';
     if (wantedMode === 'euspell' && viewMode === 'original') convertPage();
   }
 
-  if (enabled) applyMode('euspell');
+  /**
+   * Apply whatever the stored setting currently says. Both the initial
+   * application and every later change go through this single re-read rather
+   * than trusting a captured value or changes.newValue: two toggles in quick
+   * succession fire events whose async work can interleave, and storage always
+   * holds the settled answer.
+   */
+  async function applyFromSettings() {
+    const { enabled = true } = await browser.storage.sync.get('enabled');
+    return applyMode(enabled ? 'euspell' : 'original');
+  }
 
   // Live conversion toggle from the popup, which sends 'euspell:setMode' so the
   // page switches without a reload. The listener is always registered — even on
@@ -129,14 +152,18 @@ import { browser } from '../lib/browser.js';
   // open tab, not just the front one — and the options page sends no messages at
   // all). Same idempotent guards as the message path, so a tab that also got the
   // popup's message simply no-ops here.
-  browser.storage.onChanged.addListener(async (changes, area) => {
+  browser.storage.onChanged.addListener((changes, area) => {
     if (area !== 'sync' || !('enabled' in changes)) return;
-    // Re-read rather than trusting changes.newValue: two toggles in quick
-    // succession fire two events whose async work can interleave, and storage
-    // always holds the settled answer.
-    const { enabled: on = true } = await browser.storage.sync.get('enabled');
-    applyMode(on ? 'euspell' : 'original');
+    applyFromSettings();
   });
+
+  // Only NOW go and read the setting. Every listener above is registered
+  // SYNCHRONOUSLY, ahead of this first await, because the window it opens is not
+  // dead time: a 'euspell:ping' arriving inside it would go unanswered, and
+  // silence is exactly how the service worker decides a tab needs a content
+  // script injected (see injectInto) — earning this page a second one on top of
+  // the one still starting up.
+  applyFromSettings();
 
   // If the extension is disabled or removed, this already-injected content script
   // is orphaned: its observer keeps converting and the page stays reformed until

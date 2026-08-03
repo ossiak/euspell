@@ -40,6 +40,20 @@ document.addEventListener(
 
 let active = false;
 let stoppedByUser = false;
+/**
+ * Identity of the listening session that currently owns the recognizer.
+ *
+ * A recognizer keeps delivering events after it has been asked to stop —
+ * `onend` in particular arrives asynchronously — so a stop followed quickly by
+ * a start leaves the OLD session's callbacks firing while the NEW one is live.
+ * Without an identity to check they act on module state that no longer belongs
+ * to them: the old onEnd saw `active && !stoppedByUser`, restarted what it
+ * thought was its own recognizer (in fact the new one, already started), got
+ * InvalidStateError, and ran finish() — clearing the state and hiding the pill
+ * while the new session's microphone stayed open and kept inserting text.
+ * @type {object | null}
+ */
+let currentSession = null;
 /** Delayed overlay-hide from a failOut, cancelled if a new session starts. */
 let hideTimer = 0;
 /** @type {ReturnType<typeof createRecognizer> | null} */
@@ -87,6 +101,11 @@ function start() {
 
   stoppedByUser = false;
   clearTimeout(hideTimer); // a pending failOut hide must not kill this session's pill
+  // This session's identity, checked by every callback below so a superseded
+  // recognizer's late events can never act on its successor's state.
+  const session = {};
+  currentSession = session;
+  const mine = () => currentSession === session;
   // Circuit breaker for the restart-on-end loop below: a persistent failure
   // (e.g. 'network' while offline) otherwise cycles error → end → restart
   // forever. Consecutive errors trip it; any successful result resets it.
@@ -94,20 +113,24 @@ function start() {
   let consecutiveErrors = 0;
   recognizer = createRecognizer({
     onInterim: (text) => {
+      if (!mine()) return;
       consecutiveErrors = 0;
       ui().show(text);
     },
     onFinal: (transcript) => {
+      if (!mine()) return;
       consecutiveErrors = 0;
       handleFinal(transcript);
     },
     onError: (error) => {
+      if (!mine()) return;
       if (error === 'aborted') return; // our own stop()
       if (error !== 'no-speech') consecutiveErrors++;
       if (ERROR_MESSAGE[error]) ui().error(ERROR_MESSAGE[error]);
       if (FATAL.has(error)) failOut();
     },
     onEnd: () => {
+      if (!mine()) return;
       // Chrome ends a session after silence or its own time limit; keep the
       // mic open while the user still wants it, unless a fatal error stopped
       // us or errors keep recurring with no successful result between them.
@@ -126,6 +149,8 @@ function start() {
   try {
     recognizer.start();
   } catch {
+    currentSession = null; // never listened, so it owns nothing
+    recognizer = null;
     ui().error('Could not start dictation.');
     return;
   }
@@ -148,6 +173,7 @@ function stop() {
 /** Tear down listening state and hide the overlay. */
 function finish() {
   active = false;
+  currentSession = null; // the recognizer's remaining events are now nobody's
   recognizer = null;
   overlay?.hide();
 }
@@ -164,6 +190,7 @@ function failOut() {
     /* already stopped */
   }
   active = false;
+  currentSession = null;
   recognizer = null;
   clearTimeout(hideTimer);
   hideTimer = setTimeout(() => overlay?.hide(), 4000);

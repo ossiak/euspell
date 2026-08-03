@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { isPdfUrl } from '../src/pdf/pdf-url.js';
+import { isPdfUrl, canViewFileUrls } from '../src/pdf/pdf-url.js';
 
 const flush = () => new Promise((r) => setTimeout(r, 0));
 
@@ -15,7 +15,11 @@ function mkEl() {
   };
 }
 
-function makeEnv(store, tab) {
+// The extension URL scheme the page sees, which is how a build tells which
+// browser it is running on: Chrome/Chromium chrome-extension:, Firefox
+// moz-extension:, Safari safari-web-extension:. The popup reads it to decide
+// whether local PDFs can reach our viewer at all.
+function makeEnv(store, tab, { scheme = 'chrome-extension' } = {}) {
   const els = {};
   for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint',
     'reloadRow', 'reload'])
@@ -56,7 +60,7 @@ function makeEnv(store, tab) {
       async request() { store.__hostAccess = true; return true; },
     },
     runtime: {
-      getURL: (p) => `chrome-extension://abcdefgh/${p}`,
+      getURL: (p) => `${scheme}://abcdefgh/${p}`,
       openOptionsPage() {},
       async sendMessage() { return undefined; },
     },
@@ -71,10 +75,15 @@ async function runScript(relPath, env) {
   // strip it and inject the mock as `browser` — the same handle the shim exports.
   src = src.replace(/^\s*import\b.*$/gm, '');
   // eslint-disable-next-line no-new-func
-  new Function('document', 'browser', 'URL', 'console', 'paintActionIcon', 'isPdfUrl', 'window', src)(
+  new Function(
+    'document', 'browser', 'URL', 'console', 'paintActionIcon',
+    'isPdfUrl', 'canViewFileUrls', 'window', src,
+  )(
     env.document, env.browser, URL, console,
     async (on) => { env.painted.push(on); },
-    isPdfUrl, // the real predicate, so the popup's offer can't drift from the worker's redirect
+    // The real predicates, so the popup's offer can't drift from the worker's
+    // redirect — the two used to test file:// support separately and disagreed.
+    isPdfUrl, canViewFileUrls,
     { close() {} },
   );
   await flush();
@@ -145,6 +154,42 @@ test('popup: no reload offer while conversion is off, or on a non-PDF', async ()
   const page = makeEnv({ enabled: true }, { id: 5, url: 'https://x.test/article' });
   await runScript('../src/popup/popup.js', page);
   assert.equal(page.els.reloadRow.hidden, true);
+});
+
+// A local PDF is the one case where the offer depends on the BROWSER, not the
+// URL: Firefox and Safari extension pages may not fetch file://, so the worker
+// deliberately leaves those to the native viewer. The popup must reach the same
+// conclusion — it once tested only for Firefox, so on Safari it offered a reload
+// the worker then declined to act on, and the offer returned after every reload.
+test('popup: a local PDF earns a reload offer only where the viewer could fetch it', async () => {
+  const local = 'file:///home/me/paper.pdf';
+  for (const [scheme, offered] of [
+    ['chrome-extension', true],
+    ['moz-extension', false],
+    ['safari-web-extension', false],
+  ]) {
+    const env = makeEnv({ enabled: true }, { id: 5, url: local }, { scheme });
+    await runScript('../src/popup/popup.js', env);
+    assert.equal(
+      env.els.reloadRow.hidden,
+      !offered,
+      `${scheme}: reload offer should be ${offered ? 'shown' : 'hidden'} for a file:// PDF`,
+    );
+  }
+});
+
+test('popup and worker decide file:// support with the same shared predicate', () => {
+  // Two copies of this test drifted once already. Neither surface may re-derive
+  // it from the URL scheme on its own.
+  const popup = fs.readFileSync(new URL('../src/popup/popup.js', import.meta.url), 'utf8');
+  const worker = fs.readFileSync(new URL('../src/background/service-worker.js', import.meta.url), 'utf8');
+  for (const [name, src] of [['popup.js', popup], ['service-worker.js', worker]]) {
+    assert.match(src, /canViewFileUrls\(/, `${name} must use the shared predicate`);
+    assert.ok(
+      !/startsWith\('(moz|safari)-/.test(src),
+      `${name} must not test the extension scheme itself`,
+    );
+  }
 });
 
 test('popup: turning conversion on over a native PDF reveals the offer', async () => {
