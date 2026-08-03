@@ -8,8 +8,16 @@
 // Free-text input types dictation may target. 'number' is deliberately absent
 // (prose is never a valid value, and number inputs reject the selection API);
 // 'email' is kept for address fields but needs the selection-API guard below.
+//
+// 'password' is deliberately absent too, for two independent reasons. The
+// overlay pill renders the live interim transcript as ordinary on-screen text
+// (see overlay.js), so dictating into a masked field would put the secret in
+// plain sight — undoing the masking the field exists for. And the text arrives
+// REFORMED: dictation runs every utterance through the euspell converter, so
+// the value typed would not be the value spoken, which for a password is silent
+// corruption rather than a spelling choice.
 const TEXT_INPUT_TYPES = new Set([
-  'text', 'search', 'url', 'tel', 'email', 'password', '', undefined,
+  'text', 'search', 'url', 'tel', 'email', '', undefined,
 ]);
 
 /**

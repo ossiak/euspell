@@ -161,3 +161,100 @@ test('walkTextNodes does not double-convert a non-idempotent word on re-walk', (
   walkTextNodes(root, convert);
   assert.equal(node.nodeValue, once);                 // still stable after re-walks
 });
+
+// --- the collapsed token stream every rule reads -----------------------------
+// A matched phrase becomes ONE token in the stream handed to the converter, so
+// its shape is what the neighbouring words' rules see. Assembling that token by
+// hand is easy to do incompletely: it carried no sepAfter at all, and nothing
+// noticed only because a phrase is rendered whole and never itself converted.
+// isPronounI already reads sepAfter; the next rule to read a NEIGHBOUR's would
+// have silently got undefined and read a bound word as free-standing.
+
+/** Convert `text` and return every token stream the converter was handed. */
+function streamsFor(text) {
+  const seen = [];
+  walkTextNodes(el('p', tx(text)), (word, tokens, idx) => {
+    seen.push(tokens);
+    return convert(word, tokens, idx);
+  });
+  return seen;
+}
+
+test('every token in the collapsed stream has the full Token shape', () => {
+  // "according to" is a known phrase (encoding 101), so it collapses to one
+  // token sitting between two ordinary words.
+  const seen = streamsFor('I read according to the plan.');
+  assert.ok(seen.length > 0, 'the converter must have been called');
+
+  for (const tokens of seen) {
+    for (const t of tokens) {
+      const where = JSON.stringify(t);
+      assert.equal(typeof t.word, 'string', `word missing on ${where}`);
+      assert.equal(typeof t.tag, 'string', `tag missing on ${where}`);
+      assert.equal(typeof t.breakAfter, 'boolean', `breakAfter missing on ${where}`);
+      assert.equal(typeof t.sepAfter, 'string', `sepAfter missing on ${where}`);
+    }
+  }
+  // …and the phrase really did collapse, or the loop above proved nothing.
+  const collapsed = seen.find((tokens) => tokens.some((t) => t.word === 'according to'));
+  assert.ok(collapsed, 'the phrase must appear in the stream as a single token');
+});
+
+test('a phrase token takes its edge properties from its last word', () => {
+  // The phrase ends the sentence here, so the token standing for it must carry
+  // the break — a later word would otherwise draw context across the boundary.
+  const seen = streamsFor('It went according to. Then it stopped.');
+  const stream = seen.find((tokens) => tokens.some((t) => t.word === 'according to'));
+  assert.ok(stream, 'the phrase must appear as a single token');
+  const phrase = stream.find((t) => t.word === 'according to');
+  assert.equal(phrase.breakAfter, true, 'the phrase ends the sentence');
+  assert.equal(phrase.sepAfter, '.', 'and the character following it is its own');
+});
+
+// --- write-back across many text nodes ---------------------------------------
+// Mapping each converted piece back to the node it came from needs the node an
+// offset falls in, looked up twice per piece. That lookup is a binary search
+// over the block's node boundaries; a linear scan made the write-back quadratic
+// in the number of nodes, which is exactly the shape of a PDF text layer —
+// pdf.js emits one span, and so one text node, per glyph run.
+test('a block split into many text nodes converts as if it were one', () => {
+  const words = 'this is a test of the conversion engine and it is a good test '.repeat(12).trim();
+  const oneNode = tx(words);
+  walkTextNodes(el('p', oneNode), convert);
+
+  // The same text with one node per word — over a hundred boundaries to search.
+  const parts = words.split(' ').map((w, i, a) => tx(i === a.length - 1 ? w : `${w} `));
+  assert.ok(parts.length > 100, 'enough nodes to exercise the search');
+  walkTextNodes(el('p', ...parts), convert);
+
+  assert.equal(parts.map((n) => n.nodeValue).join(''), oneNode.nodeValue);
+  assert.match(oneNode.nodeValue, /\biz\b/, 'and it really did convert');
+
+  // Each word must land back in ITS OWN node. The join above cannot see this:
+  // characters attributed to the wrong node still concatenate to the same
+  // string, so a search that is off by one at a node boundary reads as correct
+  // until you look at where the text actually went — and it is the DOM that
+  // decides which half of a word is inside the <b> and which is outside.
+  parts.forEach((node, i) => {
+    assert.match(
+      node.nodeValue,
+      /^\S+ ?$/,
+      `node ${i} should hold exactly one word, got ${JSON.stringify(node.nodeValue)}`,
+    );
+  });
+});
+
+test('a word split across text nodes is still converted whole', () => {
+  // The drop-cap shape: one word spanning several nodes. Each node takes a share
+  // of the converted text proportional to its share of the original, so the node
+  // boundaries fall INSIDE a single piece — the search's awkward case.
+  const a = tx('convers');
+  const b = tx('at');
+  const c = tx('ion is a test');
+  walkTextNodes(el('p', el('span', a), el('span', b), c), convert);
+
+  const whole = tx('conversation is a test');
+  walkTextNodes(el('p', whole), convert);
+  assert.equal(a.nodeValue + b.nodeValue + c.nodeValue, whole.nodeValue,
+    'splitting a word by markup must not change what the block converts to');
+});

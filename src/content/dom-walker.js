@@ -342,13 +342,22 @@ function convertBlock(textNodes, convertFn) {
   const byNode = new Map();
   for (const b of bounds) byNode.set(b.node, []);
 
+  // The node an offset in blockText falls in: the LAST bound starting at or
+  // before it. Binary search rather than a scan — this is called twice per piece
+  // over every node in the block, so a scan makes the write-back quadratic in a
+  // block's size. That is the shape of the two documents this walker cares most
+  // about: a long paragraph broken up by inline markup, and a PDF text layer,
+  // where pdf.js emits one span (and so one text node) per glyph run.
+  // `bounds` is built by accumulating lengths, so it is sorted by construction.
   const nodeIndexAt = (offset) => {
-    let idx = 0;
-    for (let i = 0; i < bounds.length; i++) {
-      if (bounds[i].start <= offset) idx = i;
-      else break;
+    let lo = 0;
+    let hi = bounds.length - 1;
+    while (lo < hi) {
+      const mid = (lo + hi + 1) >> 1;
+      if (bounds[mid].start <= offset) lo = mid;
+      else hi = mid - 1;
     }
-    return idx;
+    return lo;
   };
   const nodeEnd = (i) => (i + 1 < bounds.length ? bounds[i + 1].start : blockText.length);
 
@@ -480,7 +489,20 @@ function collapseTokens(tokens, spans) {
     const s = spanAt[k];
     if (s && k === s.start) {
       const word = tokens.slice(s.start, s.end + 1).map((t) => t.word).join(' ');
-      collapsed.push({ word, tag: s.entry.pos.join('|'), breakAfter: tokens[s.end].breakAfter });
+      // Both edge properties come from the span's LAST token, since that is the
+      // one the following text actually abuts. sepAfter is easy to leave out —
+      // no rule reads it for a phrase today, because a phrase is rendered whole
+      // and never reaches convert() — but the collapsed stream is what every
+      // neighbouring word's rules see, and a Token without it is a Token whose
+      // shape lies (see the typedef in context.js). isPronounI already reads
+      // sepAfter; the next rule to read a NEIGHBOUR's would silently get
+      // undefined and treat a bound word as free-standing.
+      collapsed.push({
+        word,
+        tag: s.entry.pos.join('|'),
+        breakAfter: tokens[s.end].breakAfter,
+        sepAfter: tokens[s.end].sepAfter,
+      });
       for (let j = s.start; j <= s.end; j++) collapsedOf[j] = collapsed.length - 1;
     } else if (!s) {
       collapsed.push(tokens[k]);
