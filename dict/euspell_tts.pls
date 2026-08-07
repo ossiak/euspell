@@ -8890,11 +8890,11 @@
   <lexeme><grapheme>endangerz</grapheme><phoneme>ɪnˈdeɪndʒərz</phoneme></lexeme> <!-- endangers -->
   <lexeme><grapheme>endeard</grapheme><phoneme>ɪnˈdɪrd</phoneme></lexeme> <!-- endeared -->
   <lexeme><grapheme>endearz</grapheme><phoneme>ɪnˈdɪrz</phoneme></lexeme> <!-- endears -->
-  <lexeme><grapheme>endevor</grapheme><phoneme>ɪnˈdɛvər</phoneme></lexeme> <!-- endeavor -->
-  <lexeme><grapheme>endevord</grapheme><phoneme>ɪnˈdɛvərd</phoneme></lexeme> <!-- endeavored -->
-  <lexeme><grapheme>endevoring</grapheme><phoneme>ɪnˈdɛvərɪŋ</phoneme></lexeme> <!-- endeavoring -->
-  <lexeme><grapheme>endevors</grapheme><phoneme>ɪnˈdɛvərz</phoneme></lexeme> <!-- endeavors -->
-  <lexeme><grapheme>endevorz</grapheme><phoneme>ɪnˈdɛvərz</phoneme></lexeme> <!-- endeavors -->
+  <lexeme><grapheme>endevvor</grapheme><phoneme>ɪnˈdɛvər</phoneme></lexeme> <!-- endeavor -->
+  <lexeme><grapheme>endevvord</grapheme><phoneme>ɪnˈdɛvərd</phoneme></lexeme> <!-- endeavored -->
+  <lexeme><grapheme>endevvoring</grapheme><phoneme>ɪnˈdɛvərɪŋ</phoneme></lexeme> <!-- endeavoring -->
+  <lexeme><grapheme>endevvors</grapheme><phoneme>ɪnˈdɛvərz</phoneme></lexeme> <!-- endeavors -->
+  <lexeme><grapheme>endevvorz</grapheme><phoneme>ɪnˈdɛvərz</phoneme></lexeme> <!-- endeavors -->
   <lexeme><grapheme>endleavs</grapheme><phoneme>ˈɛndˌliːvz</phoneme></lexeme> <!-- endleaves -->
   <lexeme><grapheme>endmoste</grapheme><phoneme>ˈɛndˌmoʊst</phoneme></lexeme> <!-- endmost -->
   <lexeme><grapheme>endorsez</grapheme><phoneme>ɪnˈdɔːrsɪz</phoneme></lexeme> <!-- endorses -->
@@ -13051,36 +13051,36 @@
   <lexeme><grapheme>hether</grapheme><phoneme>ˈhɛðər</phoneme></lexeme> <!-- heather -->
   <lexeme><grapheme>hethers</grapheme><phoneme>ˈhɛðərz</phoneme></lexeme> <!-- heathers -->
   <lexeme><grapheme>hethery</grapheme><phoneme>ˈhɛðəri</phoneme></lexeme> <!-- heathery -->
-  <lexeme><grapheme>heven</grapheme><phoneme>ˈhɛvən</phoneme></lexeme> <!-- heaven -->
-  <lexeme><grapheme>hevend</grapheme><phoneme>ˈhɛvənd</phoneme></lexeme> <!-- heavened -->
-  <lexeme><grapheme>hevening</grapheme><phoneme>ˈhɛvənɪŋ</phoneme></lexeme> <!-- heavening -->
-  <lexeme><grapheme>hevenize</grapheme><phoneme>ˈhɛvəˌnaɪz</phoneme></lexeme> <!-- heavenize -->
-  <lexeme><grapheme>hevenized</grapheme><phoneme>ˈhɛvəˌnaɪzd</phoneme></lexeme> <!-- heavenized -->
-  <lexeme><grapheme>hevenizez</grapheme><phoneme>ˈhɛvəˌnaɪzəz</phoneme></lexeme> <!-- heavenizes -->
-  <lexeme><grapheme>hevenizing</grapheme><phoneme>ˈhɛvəˌnaɪzɪŋ</phoneme></lexeme> <!-- heavenizing -->
-  <lexeme><grapheme>hevenless</grapheme><phoneme>ˈhɛvənləs</phoneme></lexeme> <!-- heavenless -->
-  <lexeme><grapheme>hevenlier</grapheme><phoneme>ˈhɛvənliər</phoneme></lexeme> <!-- heavenlier -->
-  <lexeme><grapheme>hevenliest</grapheme><phoneme>ˈhɛvənliɪst</phoneme></lexeme> <!-- heavenliest -->
-  <lexeme><grapheme>hevenliness</grapheme><phoneme>ˈhɛvənlinəs</phoneme></lexeme> <!-- heavenliness -->
-  <lexeme><grapheme>hevenly</grapheme><phoneme>ˈhɛvənli</phoneme></lexeme> <!-- heavenly -->
-  <lexeme><grapheme>hevens</grapheme><phoneme>ˈhɛvənz</phoneme></lexeme> <!-- heavens -->
-  <lexeme><grapheme>hevenward</grapheme><phoneme>ˈhɛvənwərd</phoneme></lexeme> <!-- heavenward -->
-  <lexeme><grapheme>hevenwards</grapheme><phoneme>ˈhɛvənwərdz</phoneme></lexeme> <!-- heavenwards -->
-  <lexeme><grapheme>hevenz</grapheme><phoneme>ˈhɛvənz</phoneme></lexeme> <!-- heavens -->
-  <lexeme><grapheme>hevier</grapheme><phoneme>ˈhɛviər</phoneme></lexeme> <!-- heavier -->
-  <lexeme><grapheme>hevies</grapheme><phoneme>ˈhɛviz</phoneme></lexeme> <!-- heavies -->
-  <lexeme><grapheme>heviest</grapheme><phoneme>ˈhɛviɪst</phoneme></lexeme> <!-- heaviest -->
-  <lexeme><grapheme>hevily</grapheme><phoneme>ˈhɛvɪli</phoneme></lexeme> <!-- heavily -->
-  <lexeme><grapheme>heviness</grapheme><phoneme>ˈhɛvinəs</phoneme></lexeme> <!-- heaviness -->
-  <lexeme><grapheme>hevisom</grapheme><phoneme>ˈhɛvisəm</phoneme></lexeme> <!-- heavisome -->
-  <lexeme><grapheme>hevy</grapheme><phoneme>ˈhɛvi</phoneme></lexeme> <!-- heavy -->
-  <lexeme><grapheme>hevyhandedness</grapheme><phoneme>ˈhɛviˌhændɪdnəs</phoneme></lexeme> <!-- heavyhandedness -->
-  <lexeme><grapheme>hevyharted</grapheme><phoneme>ˈhɛviˈhɑrtɪd</phoneme></lexeme> <!-- heavyhearted -->
-  <lexeme><grapheme>hevyhartedly</grapheme><phoneme>ˈhɛviˈhɑrtɪdli</phoneme></lexeme> <!-- heavyheartedly -->
-  <lexeme><grapheme>hevyhartedness</grapheme><phoneme>ˈhɛviˈhɑrtɪdnəs</phoneme></lexeme> <!-- heavyheartedness -->
-  <lexeme><grapheme>hevyset</grapheme><phoneme>ˈhɛviˌsɛt</phoneme></lexeme> <!-- heavyset -->
-  <lexeme><grapheme>hevyweiht</grapheme><phoneme>ˈhɛviˌweɪt</phoneme></lexeme> <!-- heavyweight -->
-  <lexeme><grapheme>hevyweihts</grapheme><phoneme>ˈhɛviˌweɪts</phoneme></lexeme> <!-- heavyweights -->
+  <lexeme><grapheme>hevven</grapheme><phoneme>ˈhɛvən</phoneme></lexeme> <!-- heaven -->
+  <lexeme><grapheme>hevvend</grapheme><phoneme>ˈhɛvənd</phoneme></lexeme> <!-- heavened -->
+  <lexeme><grapheme>hevvening</grapheme><phoneme>ˈhɛvənɪŋ</phoneme></lexeme> <!-- heavening -->
+  <lexeme><grapheme>hevvenize</grapheme><phoneme>ˈhɛvəˌnaɪz</phoneme></lexeme> <!-- heavenize -->
+  <lexeme><grapheme>hevvenized</grapheme><phoneme>ˈhɛvəˌnaɪzd</phoneme></lexeme> <!-- heavenized -->
+  <lexeme><grapheme>hevvenizez</grapheme><phoneme>ˈhɛvəˌnaɪzəz</phoneme></lexeme> <!-- heavenizes -->
+  <lexeme><grapheme>hevvenizing</grapheme><phoneme>ˈhɛvəˌnaɪzɪŋ</phoneme></lexeme> <!-- heavenizing -->
+  <lexeme><grapheme>hevvenless</grapheme><phoneme>ˈhɛvənləs</phoneme></lexeme> <!-- heavenless -->
+  <lexeme><grapheme>hevvenlier</grapheme><phoneme>ˈhɛvənliər</phoneme></lexeme> <!-- heavenlier -->
+  <lexeme><grapheme>hevvenliest</grapheme><phoneme>ˈhɛvənliɪst</phoneme></lexeme> <!-- heavenliest -->
+  <lexeme><grapheme>hevvenliness</grapheme><phoneme>ˈhɛvənlinəs</phoneme></lexeme> <!-- heavenliness -->
+  <lexeme><grapheme>hevvenly</grapheme><phoneme>ˈhɛvənli</phoneme></lexeme> <!-- heavenly -->
+  <lexeme><grapheme>hevvens</grapheme><phoneme>ˈhɛvənz</phoneme></lexeme> <!-- heavens -->
+  <lexeme><grapheme>hevvenward</grapheme><phoneme>ˈhɛvənwərd</phoneme></lexeme> <!-- heavenward -->
+  <lexeme><grapheme>hevvenwards</grapheme><phoneme>ˈhɛvənwərdz</phoneme></lexeme> <!-- heavenwards -->
+  <lexeme><grapheme>hevvenz</grapheme><phoneme>ˈhɛvənz</phoneme></lexeme> <!-- heavens -->
+  <lexeme><grapheme>hevvier</grapheme><phoneme>ˈhɛviər</phoneme></lexeme> <!-- heavier -->
+  <lexeme><grapheme>hevvies</grapheme><phoneme>ˈhɛviz</phoneme></lexeme> <!-- heavies -->
+  <lexeme><grapheme>hevviest</grapheme><phoneme>ˈhɛviɪst</phoneme></lexeme> <!-- heaviest -->
+  <lexeme><grapheme>hevvily</grapheme><phoneme>ˈhɛvɪli</phoneme></lexeme> <!-- heavily -->
+  <lexeme><grapheme>hevviness</grapheme><phoneme>ˈhɛvinəs</phoneme></lexeme> <!-- heaviness -->
+  <lexeme><grapheme>hevvisom</grapheme><phoneme>ˈhɛvisəm</phoneme></lexeme> <!-- heavisome -->
+  <lexeme><grapheme>hevvy</grapheme><phoneme>ˈhɛvi</phoneme></lexeme> <!-- heavy -->
+  <lexeme><grapheme>hevvyhandedness</grapheme><phoneme>ˈhɛviˌhændɪdnəs</phoneme></lexeme> <!-- heavyhandedness -->
+  <lexeme><grapheme>hevvyharted</grapheme><phoneme>ˈhɛviˈhɑrtɪd</phoneme></lexeme> <!-- heavyhearted -->
+  <lexeme><grapheme>hevvyhartedly</grapheme><phoneme>ˈhɛviˈhɑrtɪdli</phoneme></lexeme> <!-- heavyheartedly -->
+  <lexeme><grapheme>hevvyhartedness</grapheme><phoneme>ˈhɛviˈhɑrtɪdnəs</phoneme></lexeme> <!-- heavyheartedness -->
+  <lexeme><grapheme>hevvyset</grapheme><phoneme>ˈhɛviˌsɛt</phoneme></lexeme> <!-- heavyset -->
+  <lexeme><grapheme>hevvyweiht</grapheme><phoneme>ˈhɛviˌweɪt</phoneme></lexeme> <!-- heavyweight -->
+  <lexeme><grapheme>hevvyweihts</grapheme><phoneme>ˈhɛviˌweɪts</phoneme></lexeme> <!-- heavyweights -->
   <lexeme><grapheme>hewd</grapheme><phoneme>hjud</phoneme></lexeme> <!-- hewed -->
   <lexeme><grapheme>hewz</grapheme><phoneme>hjuz</phoneme></lexeme> <!-- hews -->
   <lexeme><grapheme>hexd</grapheme><phoneme>hɛkst</phoneme></lexeme> <!-- hexed -->
@@ -13281,7 +13281,6 @@
   <lexeme><grapheme>holsterd</grapheme><phoneme>ˈhoʊlstərd</phoneme></lexeme> <!-- holstered -->
   <lexeme><grapheme>holsterz</grapheme><phoneme>ˈhoʊlstərz</phoneme></lexeme> <!-- holsters -->
   <lexeme><grapheme>holystonez</grapheme><phoneme>ˈhoʊliˌstoʊnz</phoneme></lexeme> <!-- holystones -->
-  <lexeme><grapheme>homagez</grapheme><phoneme>ˈhɒmɪdʒəz</phoneme></lexeme> <!-- homages -->
   <lexeme><grapheme>homebilder</grapheme><phoneme>ˈhoʊmˌbɪldər</phoneme></lexeme> <!-- homebuilder -->
   <lexeme><grapheme>homebilders</grapheme><phoneme>ˈhoʊmˌbɪldərz</phoneme></lexeme> <!-- homebuilders -->
   <lexeme><grapheme>homebilding</grapheme><phoneme>ˈhoʊmˌbɪldɪŋ</phoneme></lexeme> <!-- homebuilding -->
@@ -13304,6 +13303,7 @@
   <lexeme><grapheme>hometuwns</grapheme><phoneme>ˈhoʊmˌtaʊnz</phoneme></lexeme> <!-- hometowns -->
   <lexeme><grapheme>homez</grapheme><phoneme>hoʊmz</phoneme></lexeme> <!-- homes -->
   <lexeme><grapheme>hominizez</grapheme><phoneme>ˈhɒmɪˌnaɪzəz</phoneme></lexeme> <!-- hominizes -->
+  <lexeme><grapheme>hommagez</grapheme><phoneme>ˈhɒmɪdʒəz</phoneme></lexeme> <!-- homages -->
   <lexeme><grapheme>homogangliat</grapheme><phoneme>ˌhoʊmoʊˈɡæŋɡliˌeɪt</phoneme></lexeme> <!-- homogangliate -->
   <lexeme><grapheme>homogenat</grapheme><phoneme>hoʊˈmɒdʒəˌneɪt</phoneme></lexeme> <!-- homogenate -->
   <lexeme><grapheme>homogenats</grapheme><phoneme>hoʊˈmɒdʒəˌneɪts</phoneme></lexeme> <!-- homogenates -->
@@ -15885,12 +15885,6 @@
   <lexeme><grapheme>levelheddedness</grapheme><phoneme>ˌlɛvəlˈhɛdɪdnəs</phoneme></lexeme> <!-- levelheadedness -->
   <lexeme><grapheme>levelizez</grapheme><phoneme>ˈlɛvəlaɪzɪz</phoneme></lexeme> <!-- levelises -->
   <lexeme><grapheme>levelz</grapheme><phoneme>ˈlɛvəlz</phoneme></lexeme> <!-- levels -->
-  <lexeme><grapheme>levend</grapheme><phoneme>ˈlɛvənd</phoneme></lexeme> <!-- leavened -->
-  <lexeme><grapheme>levening</grapheme><phoneme>ˈlɛvənɪŋ</phoneme></lexeme> <!-- leavening -->
-  <lexeme><grapheme>levenings</grapheme><phoneme>ˈlɛvənɪŋz</phoneme></lexeme> <!-- leavenings -->
-  <lexeme><grapheme>levenous</grapheme><phoneme>ˈlɛvənəs</phoneme></lexeme> <!-- leavenous -->
-  <lexeme><grapheme>levens</grapheme><phoneme>ˈlɛvənz</phoneme></lexeme> <!-- leavens -->
-  <lexeme><grapheme>levenz</grapheme><phoneme>ˈlɛvənz</phoneme></lexeme> <!-- leavens -->
   <lexeme><grapheme>leveragez</grapheme><phoneme>ˈlɛvərɪdʒɪz</phoneme></lexeme> <!-- leverages -->
   <lexeme><grapheme>leverd</grapheme><phoneme>ˈlɛvərd</phoneme></lexeme> <!-- levered -->
   <lexeme><grapheme>leverz</grapheme><phoneme>ˈlɛvərz</phoneme></lexeme> <!-- levers -->
@@ -15902,6 +15896,13 @@
   <lexeme><grapheme>levitatez</grapheme><phoneme>ˈlɛvɪteɪts</phoneme></lexeme> <!-- levitates -->
   <lexeme><grapheme>levo</grapheme><phoneme>ˈleɪvoʊ</phoneme></lexeme> <!-- laevo -->
   <lexeme><grapheme>levorotation</grapheme><phoneme>ˌliːvoʊroʊˈteɪʃən</phoneme></lexeme> <!-- laevorotation -->
+  <lexeme><grapheme>levven</grapheme><phoneme>ˈlɛvən</phoneme></lexeme> <!-- leaven -->
+  <lexeme><grapheme>levvend</grapheme><phoneme>ˈlɛvənd</phoneme></lexeme> <!-- leavened -->
+  <lexeme><grapheme>levvening</grapheme><phoneme>ˈlɛvənɪŋ</phoneme></lexeme> <!-- leavening -->
+  <lexeme><grapheme>levvenings</grapheme><phoneme>ˈlɛvənɪŋz</phoneme></lexeme> <!-- leavenings -->
+  <lexeme><grapheme>levvenous</grapheme><phoneme>ˈlɛvənəs</phoneme></lexeme> <!-- leavenous -->
+  <lexeme><grapheme>levvens</grapheme><phoneme>ˈlɛvənz</phoneme></lexeme> <!-- leavens -->
+  <lexeme><grapheme>levvenz</grapheme><phoneme>ˈlɛvənz</phoneme></lexeme> <!-- leavens -->
   <lexeme><grapheme>lexez</grapheme><phoneme>ˈlɛksɪz</phoneme></lexeme> <!-- lexes -->
   <lexeme><grapheme>lexicalizez</grapheme><phoneme>ˈlɛksɪkəlaɪzɪz</phoneme></lexeme> <!-- lexicalises -->
   <lexeme><grapheme>liaisez</grapheme><phoneme>liˈeɪzɪz</phoneme></lexeme> <!-- liaises -->
@@ -29242,9 +29243,9 @@
   <lexeme><grapheme>superhardend</grapheme><phoneme>ˌsupərˈhɑrdənd</phoneme></lexeme> <!-- superhardened -->
   <lexeme><grapheme>superhardenz</grapheme><phoneme>ˌsupərˈhɑrdənz</phoneme></lexeme> <!-- superhardens -->
   <lexeme><grapheme>superheatz</grapheme><phoneme>ˌsupərˈhits</phoneme></lexeme> <!-- superheats -->
-  <lexeme><grapheme>superhevy</grapheme><phoneme>ˌsupərˈhɛvi</phoneme></lexeme> <!-- superheavy -->
-  <lexeme><grapheme>superhevyweiht</grapheme><phoneme>ˌsupərˈhɛviˌweɪt</phoneme></lexeme> <!-- superheavyweight -->
-  <lexeme><grapheme>superhevyweihts</grapheme><phoneme>ˌsupərˈhɛviˌweɪts</phoneme></lexeme> <!-- superheavyweights -->
+  <lexeme><grapheme>superhevvy</grapheme><phoneme>ˌsupərˈhɛvi</phoneme></lexeme> <!-- superheavy -->
+  <lexeme><grapheme>superhevvyweiht</grapheme><phoneme>ˌsupərˈhɛviˌweɪt</phoneme></lexeme> <!-- superheavyweight -->
+  <lexeme><grapheme>superhevvyweihts</grapheme><phoneme>ˌsupərˈhɛviˌweɪts</phoneme></lexeme> <!-- superheavyweights -->
   <lexeme><grapheme>superhihway</grapheme><phoneme>ˌsupərˈhaɪweɪ</phoneme></lexeme> <!-- superhighway -->
   <lexeme><grapheme>superhihways</grapheme><phoneme>ˌsupərˈhaɪweɪz</phoneme></lexeme> <!-- superhighways -->
   <lexeme><grapheme>superimposez</grapheme><phoneme>ˌsupərɪmˈpoʊzəz</phoneme></lexeme> <!-- superimposes -->
@@ -30974,7 +30975,7 @@
   <lexeme><grapheme>ultrafishe</grapheme><phoneme>ˈʌltrəˌfiːʃ</phoneme></lexeme> <!-- ultrafiche -->
   <lexeme><grapheme>ultrafishes</grapheme><phoneme>ˈʌltrəˌfiːʃɪz</phoneme></lexeme> <!-- ultrafiches -->
   <lexeme><grapheme>ultraheatz</grapheme><phoneme>ˈʌltrəˈhiːts</phoneme></lexeme> <!-- ultraheats -->
-  <lexeme><grapheme>ultrahevy</grapheme><phoneme>ˈʌltrəˈhɛvi</phoneme></lexeme> <!-- ultraheavy -->
+  <lexeme><grapheme>ultrahevvy</grapheme><phoneme>ˈʌltrəˈhɛvi</phoneme></lexeme> <!-- ultraheavy -->
   <lexeme><grapheme>ultrahih</grapheme><phoneme>ˈʌltrəˈhaɪ</phoneme></lexeme> <!-- ultrahigh -->
   <lexeme><grapheme>ultraliht</grapheme><phoneme>ˈʌltrəˌlaɪt</phoneme></lexeme> <!-- ultralight -->
   <lexeme><grapheme>ultralihts</grapheme><phoneme>ˈʌltrəˌlaɪts</phoneme></lexeme> <!-- ultralights -->
@@ -31992,7 +31993,7 @@
   <lexeme><grapheme>unletterd</grapheme><phoneme>ˈʌnˈlɛtərd</phoneme></lexeme> <!-- unlettered -->
   <lexeme><grapheme>unleveld</grapheme><phoneme>ˈʌnˈlɛvəld</phoneme></lexeme> <!-- unleveled -->
   <lexeme><grapheme>unlevelz</grapheme><phoneme>ˈʌnˈlɛvəlz</phoneme></lexeme> <!-- unlevels -->
-  <lexeme><grapheme>unlevend</grapheme><phoneme>ˈʌnˈlɛvənd</phoneme></lexeme> <!-- unleavened -->
+  <lexeme><grapheme>unlevvend</grapheme><phoneme>ˈʌnˈlɛvənd</phoneme></lexeme> <!-- unleavened -->
   <lexeme><grapheme>unlickd</grapheme><phoneme>ˈʌnˈlɪkt</phoneme></lexeme> <!-- unlicked -->
   <lexeme><grapheme>unlihted</grapheme><phoneme>ˈʌnˈlaɪtɪd</phoneme></lexeme> <!-- unlighted -->
   <lexeme><grapheme>unlikend</grapheme><phoneme>ˈʌnˈlaɪkənd</phoneme></lexeme> <!-- unlikened -->

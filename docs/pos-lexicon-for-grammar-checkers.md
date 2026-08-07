@@ -123,10 +123,13 @@ aahz       aahz       VBZ      # single-spelling reform, full POS
 aardwolvs  aardwolvs  NNS
 ```
 
-Current run: **34,944 reformed words → 35,669 new spellings → 46,451 tagged lines**
-(11,295 unchanged members skipped). Only **6 tag-occurrences** across 5 CLAWS7 tags
-are unmapped — non-standard or typo'd tags (`VVF`, `VVNK`, `1VVG`, `III`, `N1`),
-reported at build time and safely skipped.
+Current run: **35,209 reformed words → 35,943 new spellings → 46,786 tagged lines**
+(11,289 unchanged members skipped). **No tag-occurrence is unmapped** — the
+non-standard and typo'd tags this once reported (`VVF`, `VVNK`, `1VVG`, `III`,
+`N1`) have since been corrected in the lexicon. The build still reports any that
+reappear, and `tests/lexicon-integrity.test.js` now validates the whole PoS column
+against `data/claws7-tagset.csv`, so a bad tag is caught even when it sits on an
+unchanged row the emitter never reaches.
 
 To use it in LanguageTool, compile the source to a binary FSA dictionary and point a
 tagger-dictionary `.info` at it, e.g.
@@ -175,7 +178,7 @@ writing `dict/euspell-harper.json` keyed by spelling:
 
 A verb accumulates every form its readings carry (`ment` = *meant* is past **and**
 past-participle); a spelling that is several parts of speech gets one object with
-each (`separat` = adjective and noun). Current run: **34,111 spellings** (duplicate
+each (`separat` = adjective and noun). Current run: **34,371 spellings** (duplicate
 spellings across headwords merge to one key), no unmapped tags.
 
 Two caveats specific to Harper:
