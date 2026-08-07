@@ -30,7 +30,7 @@ const svg = readFileSync(fileURLToPath(SVG_SRC), 'utf8');
 
 // The artwork is one colour throughout (fill on the group, stroke on the ring
 // path), which is what makes a clean inversion possible.
-const BLUE = '#0000f0';
+const BLUE = '#0000ff';
 
 /**
  * The inverted artwork: a blue disc behind the mark, with the mark itself
@@ -42,9 +42,11 @@ const BLUE = '#0000f0';
  */
 function invert(source) {
   const disc = `<circle cx="300" cy="299.5" r="299.5" fill="${BLUE}"/>`;
+  // Matched off BLUE rather than a repeated literal: the guard below turns a
+  // recoloured source into a build failure, but only if these stay in step.
   return source
-    .replace(/fill="#0000f0"/g, 'fill="#ffffff"')
-    .replace(/stroke="#0000f0"/g, 'stroke="#ffffff"')
+    .replaceAll(`fill="${BLUE}"`, 'fill="#ffffff"')
+    .replaceAll(`stroke="${BLUE}"`, 'stroke="#ffffff"')
     .replace(/(<g\s+transform)/, `${disc}$1`);
 }
 
