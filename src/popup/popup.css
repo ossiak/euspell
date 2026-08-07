@@ -50,6 +50,194 @@ header h1 {
   margin: 0;
 }
 
+/* ------------------------------------------------------------------ lookup */
+
+.search {
+  display: block;
+  width: 100%;
+  padding: 7px 9px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--fg);
+  font: 13.5px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.search::placeholder {
+  color: var(--muted);
+}
+
+.search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Empty at rest, so it carries the gap above the switch itself rather than
+   leaving a stray rule under the field. */
+.result {
+  padding: 11px 0 4px;
+}
+
+.result:empty {
+  padding: 0 0 11px;
+}
+
+/* The switch sat directly under the header before the field existed, so it had
+   nothing to be separated from; now it does. */
+.search ~ .row {
+  border-top: 1px solid var(--border);
+}
+
+.answer {
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+/* A word Euspell leaves alone is set muted: it says "nothing happens here"
+   without spending a line of text on it. */
+.answer.same {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.answer-row,
+.sense {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.answer-row {
+  justify-content: space-between;
+}
+
+.senses {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sense b {
+  font-size: 15.5px;
+  font-weight: 600;
+  flex: none;
+}
+
+.sense b.same {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Wraps rather than pushing the spelling out of the row: the widest list in the
+   lexicon is "preposition, noun, adverb, verb" (means, 202). */
+.sense .pos {
+  font-size: 11.5px;
+  line-height: 1.3;
+  color: var(--muted);
+  margin-left: auto;
+  min-width: 0;
+  text-align: right;
+}
+
+.note,
+.parts {
+  margin: 8px 0 0;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+/* The parts of speech sit tight under the word they belong to, rather than at
+   the note's arm's length. */
+.parts {
+  margin-top: 3px;
+}
+
+.miss {
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+/* The encoding is the one thing on screen that maps straight back to the paper,
+   so it gets a control of its own rather than a trailing clause. Focusable,
+   because a hover-only affordance hides the description from the keyboard. */
+.code,
+.gutter {
+  width: 32px;
+  flex: none;
+}
+
+.code {
+  position: relative;
+  z-index: 4;
+  display: block;
+  padding: 3px 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+  font-size: 10.5px;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  background: none;
+  cursor: help;
+}
+
+.code:hover,
+.code:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Opens downward: upward would cover the word just typed. Sized to hold the
+   longest description in euspell_encoding.csv (64 characters) in two lines. */
+.tip {
+  position: absolute;
+  right: -1px;
+  top: calc(100% + 7px);
+  z-index: 5;
+  width: max-content;
+  max-width: 216px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  background: var(--fg);
+  color: var(--bg);
+  font: 11.5px/1.35 system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s ease;
+}
+
+.tip::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 100%;
+  border: 5px solid transparent;
+  border-bottom-color: var(--fg);
+}
+
+.code:hover .tip,
+.code:focus-visible .tip {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tip {
+    transition: none;
+  }
+}
+
 .row {
   display: flex;
   align-items: center;
