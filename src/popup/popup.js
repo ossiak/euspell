@@ -8,8 +8,12 @@
 import { browser } from '../lib/browser.js';
 import { paintActionIcon } from '../lib/action-icon.js';
 import { isPdfUrl, canViewFileUrls } from '../pdf/pdf-url.js';
+import { lookup, setLexicon, hasLexicon, normalise } from './lookup.js';
+import { renderResult } from './render.js';
 
 const enabledBox = document.getElementById('enabled');
+const queryBox = document.getElementById('query');
+const resultBox = document.getElementById('result');
 const hint = document.getElementById('hint');
 const dictateRow = document.getElementById('dictateRow');
 const dictateBtn = document.getElementById('dictate');
@@ -157,5 +161,78 @@ enabledBox.addEventListener('change', async () => {
 document.getElementById('options').addEventListener('click', () => {
   browser.runtime.openOptionsPage();
 });
+
+/* -------------------------------------------------------------------- lookup
+ * The popup is its own document, so it does not share the content script's
+ * loaded lexicon — it fetches the same dist/lexicon.data itself. That costs
+ * ~400 ms, which is why it waits for the first keystroke rather than running on
+ * open: most popup opens are someone reaching for the switch.
+ */
+
+/** @type {Promise<void> | null} */
+let loadingLexicon = null;
+
+function ensureLexicon() {
+  if (!loadingLexicon) {
+    loadingLexicon = fetch(browser.runtime.getURL('dist/lexicon.data'))
+      .then((res) => {
+        if (!res.ok) throw new Error(`lexicon fetch failed: ${res.status}`);
+        return res.json();
+      })
+      .then((entries) => setLexicon(new Map(entries)))
+      .catch((err) => {
+        loadingLexicon = null; // let the next keystroke retry
+        throw err;
+      });
+  }
+  return loadingLexicon;
+}
+
+/** @param {import('./lookup.js').Result} r */
+function render(r) {
+  resultBox.replaceChildren(...renderResult(r));
+}
+
+let queryTimer = 0;
+let inFlight = '';
+
+async function runLookup() {
+  const typed = queryBox.value;
+  if (!normalise(typed)) {
+    render({ kind: 'empty' });
+    return;
+  }
+  if (!hasLexicon()) {
+    render({ kind: 'loading' });
+    inFlight = typed;
+    try {
+      await ensureLexicon();
+    } catch {
+      const failed = document.createElement('p');
+      failed.className = 'note';
+      failed.textContent = 'The lexicon could not be loaded. Try again.';
+      resultBox.replaceChildren(failed);
+      return;
+    }
+    // Someone kept typing while it loaded; that keystroke owns the result.
+    if (queryBox.value !== inFlight) return;
+  }
+  render(lookup(queryBox.value));
+}
+
+queryBox.addEventListener('input', () => {
+  clearTimeout(queryTimer);
+  queryTimer = setTimeout(runLookup, 120);
+});
+
+// Enter skips the debounce, for anyone who types faster than they read.
+queryBox.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    clearTimeout(queryTimer);
+    runLookup();
+  }
+});
+
+queryBox.focus();
 
 load();

@@ -2,6 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { isPdfUrl, canViewFileUrls } from '../src/pdf/pdf-url.js';
+import { lookup, setLexicon, hasLexicon, normalise } from '../src/popup/lookup.js';
+import { renderResult } from '../src/popup/render.js';
 
 const flush = () => new Promise((r) => setTimeout(r, 0));
 
@@ -10,8 +12,10 @@ function mkEl() {
     checked: false, textContent: '', hidden: false, value: '', _on: {}, _attr: {},
     addEventListener(ev, fn) { this._on[ev] = fn; },
     setAttribute(k, v) { this._attr[k] = v; },
-    async dispatch(ev) { if (this._on[ev]) await this._on[ev]({ preventDefault() {} }); },
-    append() {}, replaceChildren() {},
+    async dispatch(ev, detail) {
+      if (this._on[ev]) await this._on[ev]({ preventDefault() {}, ...detail });
+    },
+    append() {}, replaceChildren() {}, focus() { this._focused = true; },
   };
 }
 
@@ -22,7 +26,7 @@ function mkEl() {
 function makeEnv(store, tab, { scheme = 'chrome-extension' } = {}) {
   const els = {};
   for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint',
-    'reloadRow', 'reload'])
+    'reloadRow', 'reload', 'query', 'result'])
     els[id] = mkEl();
   const reloaded = [];
   // Every icon repaint the page asks for, so a test can assert the popup gives
@@ -77,7 +81,11 @@ async function runScript(relPath, env) {
   // eslint-disable-next-line no-new-func
   new Function(
     'document', 'browser', 'URL', 'console', 'paintActionIcon',
-    'isPdfUrl', 'canViewFileUrls', 'window', src,
+    'isPdfUrl', 'canViewFileUrls', 'window',
+    // The popup's lookup, injected real rather than stubbed: the point of
+    // stripping imports is to dodge module resolution, not to swap behaviour.
+    'lookup', 'setLexicon', 'hasLexicon', 'normalise', 'renderResult',
+    src,
   )(
     env.document, env.browser, URL, console,
     async (on) => { env.painted.push(on); },
@@ -85,6 +93,7 @@ async function runScript(relPath, env) {
     // redirect — the two used to test file:// support separately and disagreed.
     isPdfUrl, canViewFileUrls,
     { close() {} },
+    lookup, setLexicon, hasLexicon, normalise, renderResult,
   );
   await flush();
   await flush();
@@ -227,6 +236,24 @@ test('options: the Convert pages toggle persists and repaints the icon', async (
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
   assert.deepEqual(env.painted, [false]);
+});
+
+test('every element popup.js reaches for exists in popup.html', () => {
+  // The tests above hand popup.js a stub document that manufactures whatever id
+  // is asked for, so they pass against markup that has lost one. The real popup
+  // gets null, and popup.js binds listeners without a null check — so a dropped
+  // id does not degrade the lookup, it throws on load and takes the whole popup
+  // down, on/off switch included. Cheaper to assert the markup than to guard
+  // eight lookups that are only optional in a build that does not exist.
+  const dir = new URL('../src/popup/', import.meta.url);
+  const js = fs.readFileSync(new URL('popup.js', dir), 'utf8');
+  const html = fs.readFileSync(new URL('popup.html', dir), 'utf8');
+
+  const wanted = [...js.matchAll(/getElementById\('([\w-]+)'\)/g)].map((m) => m[1]);
+  assert.ok(wanted.length >= 8, `only ${wanted.length} lookups found — has popup.js changed shape?`);
+
+  const present = new Set([...html.matchAll(/\bid="([\w-]+)"/g)].map((m) => m[1]));
+  assert.deepEqual(wanted.filter((id) => !present.has(id)), []);
 });
 
 test('popup.css: [hidden] beats the display:flex rows (else toggled-off rows still render)', () => {

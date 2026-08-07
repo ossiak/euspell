@@ -54,6 +54,71 @@ function reachesDisambiguator(e) {
   );
 }
 
+/* ------------------------------------------------------------- PoS column */
+
+/** CLAWS7 tags defined in data/claws7-tagset.csv — the authority on what is
+ *  valid, as euspell_encoding.csv is for the encoding column. */
+const TAGS = new Set(
+  fs.readFileSync(new URL('../data/claws7-tagset.csv', import.meta.url), 'utf8')
+    .split(/\r?\n/)
+    .filter((l) => l && !l.startsWith('#') && !l.startsWith('Tag,'))
+    .map((l) => l.split(',')[0]),
+);
+
+/**
+ * One tag, with or without a ditto suffix. The tagset allows any tag to carry
+ * two extra digits marking a word inside a multiword unit — the first the
+ * length of the sequence, the second the position in it, so "in terms of" is
+ * in_II31 terms_II32 of_II33. A position outside its own sequence (NN12 on a
+ * one-word unit) is malformed, not merely unusual.
+ */
+function validAtom(tag) {
+  if (TAGS.has(tag)) return true;
+  const m = /^([A-Z][A-Z0-9$]*?)(\d)(\d)$/.exec(tag);
+  if (!m || !TAGS.has(m[1])) return false;
+  const [, , total, position] = m;
+  return +position >= 1 && +position <= +total;
+}
+
+/**
+ * One field of the PoS column. Two conventions beyond a bare tag:
+ *   - an enclitic carries a tag per part, space-separated ("can't" = VM XX);
+ *   - the phrase table appends the word count, which compile-lexicon.js strips
+ *     in reducePhraseEntry ("as well as" = II3), so one trailing digit is
+ *     allowed there and nowhere else.
+ */
+function validTag(tag, source) {
+  const atoms = tag.split(' ');
+  if (atoms.every(validAtom)) return true;
+  return source === 'phrases' && atoms.map((a) => a.replace(/\d$/, '')).every(validAtom);
+}
+
+test('every PoS tag is a CLAWS7 tag from claws7-tagset.csv', () => {
+  // Caught a Penn tag (shem/NNP), four tags run together (JJNN, JJVVD, VVNN,
+  // VMXX), truncations (N1, V0, VD, NNT, PNQ), a tag that does not exist
+  // (NNM1 for a month, which is NPM1), and six miscased ones (jj, Jj, Nn, Np,
+  // Np2, VVg). None of them are visible at conversion time: the encoding
+  // decides whether a word changes, so a bad tag simply sits there.
+  const bad = all.flatMap((e) => e.pos
+    .filter((tag) => !validTag(tag, e.source))
+    .map((tag) => `${label(e)}(${tag || 'empty'})`));
+  assert.deepEqual(bad, []);
+});
+
+test('no entry carries an empty PoS tag', () => {
+  // A stray double pipe: "least,DAT||NN1|..." reads as a tag with no name.
+  const bad = all.filter((e) => e.pos.some((tag) => tag === ''));
+  assert.deepEqual(bad.map(label), []);
+});
+
+test('no entry repeats a PoS tag', () => {
+  // A repeat is usually a mistyped neighbour rather than a duplicate:
+  // "underfunded,JJ|VVD|VVD" wanted JJ|VVD|VVN, and every comparable -ed entry
+  // carries both the past tense and the participle.
+  const bad = all.filter((e) => new Set(e.pos).size !== e.pos.length);
+  assert.deepEqual(bad.map((e) => `${label(e)}(${e.pos.join('|')})`), []);
+});
+
 test('every encoding is a three-digit code defined in euspell_encoding.csv', () => {
   // Guards the shape as WRITTEN, before parseInt hides it: "10" parses fine and
   // then behaves as 0. Runs over every file, which is where to've was hiding.

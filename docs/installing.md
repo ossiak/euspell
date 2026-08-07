@@ -52,7 +52,8 @@ Click the Euspell toolbar icon. Changes take effect **immediately on the page
 you're looking at** — no reload.
 
 | Control | What it does |
-|---|---|
+| --- | --- |
+| **Look up a word** | Type any word to see what Euspell does to it. Described below. |
 | **Convert pages** | The one switch. Off means Euspell converts nothing, anywhere. |
 | **Dictate euspell** | **Start**/**Stop** speech-to-text that types in reformed spelling at your cursor. Appears only on pages where your browser supports speech recognition. Click into a text box first, then press Start. |
 | **Reload** | Appears only over a PDF the browser is rendering itself — one opened while Euspell was off. Reloading hands it to Euspell's viewer. |
@@ -66,6 +67,42 @@ off. Hovering the icon says which in words.
 If the popup says *"This page can't be converted"*, you're on a page no
 extension may touch — `chrome://` pages, the Web Store itself, and similar. The
 switch itself still works; it governs every other tab.
+
+### Looking a word up
+
+The box at the top of the popup answers "what does Euspell do to *this* word?"
+without your having to find it on a page. It reads the same lexicon the
+converter does, so the answer is the shipping one, not an approximation.
+
+Where converting a page differs is that the page has a sentence to read and the
+lookup does not. About 1 word in 35 has more than one reformed spelling
+depending on how it is used, and on a page Euspell has to pick one. The lookup
+never picks — it shows **every** spelling and says which is which, so it cannot
+be wrong in the way a conversion can:
+
+| You type | You get |
+| --- | --- |
+| `heavy` | **hevvy** — adjective, noun, adverb |
+| `separate` | **separat** (adjective, noun) and **separate** (verb) |
+| `anybody's` | **anybody's** (possessive — unchanged) and **anybody'z** (*anybody is/has*) |
+| `chassis` | **shassi** (singular) and **shassis** (plural) |
+| `garden` | unchanged — most words are |
+| `dr` | unchanged, short for *Doctor* |
+
+A spelling shown in muted type is one the reform leaves alone, so you can see at
+a glance which half of a pair actually changes.
+
+Every answer carries a three-digit **code**; hover it for the plain-English
+meaning of that category, straight from the reform's own table. Contractions,
+abbreviations and set phrases are searched too, so `'tis` and `a bit` work.
+
+It also runs **backwards**: type a reformed spelling you have met while reading
+and it tells you the traditional word it came from.
+
+A word that isn't in the lexicon reports *"Not in the lexicon"* — which is
+also exactly what Euspell does with it on a page: leaves it alone. The first
+lookup after opening the popup takes about half a second while the lexicon
+loads; the rest are instant.
 
 **Keyboard shortcut.** `Ctrl+Shift+9` (macOS: `Cmd+Shift+9`) starts and stops
 dictation without opening the popup. Change it at `chrome://extensions/shortcuts`.
@@ -108,7 +145,7 @@ your desktop too.
 ## If something looks wrong
 
 | Symptom | Try |
-|---|---|
+| --- | --- |
 | Nothing converts, on any site | Check the toolbar icon — inverted means Euspell is switched off. If it's on, go to Options → **Site access** and click **Grant access** if it's offered. |
 | A page converts only partly | Text added by the page after loading is converted as it appears; a page that redraws its own text (some web apps) can win a race. Reloading usually settles it. |
 | Dictation row is missing | Your browser lacks speech recognition, or you're on a page with no content script (`chrome://`, the Web Store). |

@@ -9,13 +9,15 @@ class TextNode {
   constructor(value) { this.nodeType = 3; this.nodeValue = value; this.parentElement = null; }
 }
 class ElementNode {
-  constructor(tag) { this.nodeType = 1; this.tagName = tag.toUpperCase(); this.childNodes = []; this.parentElement = null; this._editable = false; }
+  constructor(tag) { this.nodeType = 1; this.tagName = tag.toUpperCase(); this.childNodes = []; this.parentElement = null; this._editable = false; this._attrs = {}; }
   append(...kids) { for (const k of kids) { k.parentElement = this; this.childNodes.push(k); } return this; }
+  getAttribute(name) { return this._attrs[name] ?? null; }
   // Mirror the DOM: contenteditable is inherited by descendants.
   get isContentEditable() { return this._editable || (this.parentElement?.isContentEditable ?? false); }
 }
 const el = (tag, ...kids) => new ElementNode(tag).append(...kids);
 const editable = (elem) => { elem._editable = true; return elem; };
+const optOut = (elem, value = 'off') => { elem._attrs['data-euspell'] = value; return elem; };
 const tx = (v) => new TextNode(v);
 
 function createTreeWalker(root, show, filter) {
@@ -257,4 +259,27 @@ test('a word split across text nodes is still converted whole', () => {
   walkTextNodes(el('p', whole), convert);
   assert.equal(a.nodeValue + b.nodeValue + c.nodeValue, whole.nodeValue,
     'splitting a word by markup must not change what the block converts to');
+});
+
+// A page opts a subtree out with data-euspell="off" — the mechanism the euspell
+// white paper will use on euspell.org, where converting the text would rewrite
+// the traditional spellings it quotes against their reformed counterparts.
+test('walkTextNodes leaves a data-euspell="off" subtree in traditional spelling', () => {
+  const optedOut = tx('this is a test');
+  const normal = tx('this is a test');
+  walkTextNodes(el('div', optOut(el('article', el('p', optedOut))), el('p', normal)), convert);
+  assert.equal(optedOut.nodeValue, 'this is a test'); // untouched, attribute honoured
+  assert.match(normal.nodeValue, /\biz\b/);           // the rest of the page still converts
+});
+
+test('the opt-out covers deep descendants and is matched case-insensitively', () => {
+  const deep = tx('this is a test');
+  walkTextNodes(optOut(el('main', el('section', el('p', el('span', deep)))), 'OFF'), convert);
+  assert.equal(deep.nodeValue, 'this is a test');
+});
+
+test('data-euspell with any other value does not opt out', () => {
+  const node = tx('this is a test');
+  walkTextNodes(optOut(el('div', el('p', node)), 'on'), convert);
+  assert.match(node.nodeValue, /\biz\b/);
 });

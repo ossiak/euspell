@@ -47,6 +47,9 @@ const FILES = [
   'dist/content-bundle.js',
   'dist/pdf-viewer.js',
   'dist/lexicon.data',
+  // The popup's lookup imports the three small tables outright rather than
+  // fetching them; they are ~53 KB together, against 12 MB for the lexicon.
+  'dist/abbreviations.js', 'dist/contractions.js', 'dist/phrases.js',
   'src/lib/browser.js',
   // The on/off toolbar-icon logic, imported by the service worker, popup and
   // options page. Not bundled — those are loaded as raw ES modules — so it must
@@ -55,6 +58,7 @@ const FILES = [
   'src/background/service-worker.js',
   'src/pdf/pdf-url.js', 'src/pdf/viewer.html', 'src/pdf/viewer.css',
   'src/popup/popup.html', 'src/popup/popup.js', 'src/popup/popup.css',
+  'src/popup/lookup.js', 'src/popup/render.js', 'src/popup/encodings.js',
   'src/options/options.html', 'src/options/options.js', 'src/options/options.css',
   'src/onboarding/onboarding.html', 'src/onboarding/onboarding.js', 'src/onboarding/onboarding.css',
 ];

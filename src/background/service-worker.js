@@ -133,6 +133,20 @@ const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 // lives there and both read it from one place.
 const CAN_VIEW_FILE_URLS = canViewFileUrls(VIEWER_URL);
 
+// The PDF counterpart of the DOM's data-euspell="off": a site keeps a document
+// out of our viewer by linking it with `euspell=off` in the query string. A PDF
+// has no markup for an attribute to live in, and the .pdf path below fires on
+// onBeforeNavigate — before any response exists — so the URL is the only signal
+// available in time. Used for the euspell white paper itself, which quotes
+// traditional spellings and must not be reformed.
+function isOptedOut(url) {
+  try {
+    return new URL(url).searchParams.get('euspell')?.toLowerCase() === 'off';
+  } catch {
+    return false; // not a parseable URL — nothing to opt out of
+  }
+}
+
 /** Whether the "Convert pages" setting allows converting. */
 async function shouldConvert() {
   const { enabled = true } = await browser.storage.sync.get('enabled');
@@ -150,6 +164,7 @@ browser.webNavigation.onBeforeNavigate.addListener(
   async (details) => {
     if (details.frameId !== 0) return; // top-level only
     if (!isPdfUrl(details.url) || details.url.startsWith(VIEWER_URL)) return;
+    if (isOptedOut(details.url)) return; // the page asked to stay traditional
     if (consumeBypass(details.url)) return; // "Open original" — let it through
     if (/^file:/i.test(details.url) && !CAN_VIEW_FILE_URLS) return; // leave local PDFs to Firefox/Safari
     if (await shouldConvert()) redirectToViewer(details.tabId, details.url);
@@ -227,6 +242,7 @@ browser.webRequest.onHeadersReceived.addListener(
     // not (that listener is top-level only), so let an embedded one through and
     // count the suffix as a positive signal below.
     if (topLevel && isPdfUrl(details.url)) return;
+    if (isOptedOut(details.url)) return; // the page asked to stay traditional
     if (consumeBypass(details.url)) return; // "Open original" — let it through
 
     const headers = details.responseHeaders ?? [];

@@ -10,6 +10,18 @@
       <h1>Euspell</h1>
     </header>
 
+    <input
+      type="search"
+      id="query"
+      class="search"
+      placeholder="Look up a word"
+      autocomplete="off"
+      autocapitalize="off"
+      spellcheck="false"
+      aria-label="Look up a word"
+    />
+    <div class="result" id="result" role="status" aria-live="polite"></div>
+
     <div class="notice" id="reloadRow" hidden>
       <span>This PDF opened in the browser’s own viewer.</span>
       <button type="button" id="reload" class="link">Reload</button>

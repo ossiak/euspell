@@ -347,3 +347,34 @@ test('a restricted tab is skipped without throwing', async () => {
 
   assert.deepEqual(env.state.injected.map((i) => i.tabId), [2, 2], 'tab 2 still gets injected');
 });
+
+// `euspell=off` in the query string is the PDF counterpart of the DOM's
+// data-euspell="off": the euspell white paper is served this way so the viewer
+// never reforms the traditional spellings it quotes.
+test('nav path: a pdf linked with euspell=off is left to the browser', async () => {
+  const env = makeEnv({ enabled: true });
+  runWorker(env);
+  await env.state.navListeners[0]({ frameId: 0, url: 'https://euspell.org/paper.pdf?euspell=off', tabId: 2 });
+  assert.equal(env.state.updated.length, 0, 'opted-out PDF must not reach the viewer');
+
+  // The same file without the marker still converts, so the opt-out is doing the work.
+  await env.state.navListeners[0]({ frameId: 0, url: 'https://euspell.org/paper.pdf', tabId: 2 });
+  assert.equal(env.state.updated.length, 1);
+});
+
+test('headers path: euspell=off also blocks an extensionless pdf', async () => {
+  const env = makeEnv({ enabled: true });
+  runWorker(env);
+  await env.state.headerListeners[0](
+    headerDetails('https://euspell.org/paper?euspell=off', { 'Content-Type': 'application/pdf' }),
+  );
+  assert.equal(env.state.updated.length, 0);
+  assert.equal(env.state.fetches.length, 0, 'and no sniff request is made for it');
+});
+
+test('an unrelated euspell query value does not opt out', async () => {
+  const env = makeEnv({ enabled: true });
+  runWorker(env);
+  await env.state.navListeners[0]({ frameId: 0, url: 'https://x.test/doc.pdf?euspell=on', tabId: 2 });
+  assert.equal(env.state.updated.length, 1);
+});

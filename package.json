@@ -24,6 +24,8 @@
     "gen:vv0-prior": "node build/gen-vv0-prior.mjs",
     "eval:vv0": "node build/rule-vv0.mjs",
     "eval:clitic-s": "node build/rule-clitic-s.mjs",
+    "gen:claws7-tagset": "node build/gen-claws7-tagset.mjs",
+    "gen:popup-encodings": "node build/gen-popup-encodings.mjs",
     "gen:pls": "node build/gen-pls.js",
     "gen:pos": "node build/gen-pos-lexicon.js",
     "gen:harper": "node build/gen-harper-metadata.js",
