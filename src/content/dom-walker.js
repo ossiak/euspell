@@ -6,6 +6,14 @@ import { getPhrase, MAX_PHRASE_WORDS } from './phrases.js';
 
 const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'CODE', 'PRE']);
 
+// A page's own opt-out: any element carrying data-euspell="off" keeps its whole
+// subtree in traditional spelling. Writing *about* the reform is the case that
+// needs this — the euspell white paper sets `through` against `thruh` in the
+// same table, and converting it would reform the "traditional" column too,
+// erasing the comparison. Conversion is not idempotent for every word either, so
+// a pass over text that is already euspell over-transforms it.
+const OPT_OUT_ATTR = 'data-euspell';
+
 /**
  * True when text under `el` is user-editable — inside a contenteditable region
  * (isContentEditable is true for any descendant and respects nested
@@ -20,17 +28,19 @@ function isEditable(el) {
 }
 
 /**
- * True when `el` or any ancestor is a skipped tag. The direct parent alone is
- * not enough: syntax-highlighted code is `<pre><span>…</span></pre>` (every
- * Prism/highlight.js page), and reforming span-wrapped code would corrupt what
- * a reader copies. Climbs the full chain — past the walk root too, so re-walking
- * a subtree that lives inside a skipped region stays skipped.
+ * True when `el` or any ancestor is a skipped tag, or has opted its subtree out
+ * with `data-euspell="off"`. The direct parent alone is not enough: syntax-
+ * highlighted code is `<pre><span>…</span></pre>` (every Prism/highlight.js
+ * page), and reforming span-wrapped code would corrupt what a reader copies.
+ * Climbs the full chain — past the walk root too, so re-walking a subtree that
+ * lives inside a skipped region stays skipped.
  * @param {Element} el
  * @returns {boolean}
  */
-function inSkippedTag(el) {
+function inSkippedRegion(el) {
   for (let cur = el; cur; cur = cur.parentElement) {
     if (SKIP_TAGS.has(cur.tagName)) return true;
+    if (cur.getAttribute?.(OPT_OUT_ATTR)?.toLowerCase() === 'off') return true;
   }
   return false;
 }
@@ -155,7 +165,7 @@ function collectBlocks(root) {
         return LINE_BREAK_TAGS.has(node.tagName) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
       }
       const parent = node.parentElement;
-      if (!parent || inSkippedTag(parent) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
+      if (!parent || inSkippedRegion(parent) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
       if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
       return NodeFilter.FILTER_ACCEPT;
     },
