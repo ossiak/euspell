@@ -27,10 +27,11 @@ Two things distinguish these from the browser extension (Appendix A) and Eupub
 Everything runs locally. The lexicon is bundled into each add-in, and no text is
 uploaded.
 
+<!-- markdownlint-disable-next-line MD036 -->
 **Table C1. Word processor add-in capabilities**
 
 | Word processor | Platforms | Whole document | Selection | Revert to traditional |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Microsoft Word | Windows, macOS, web | yes | yes | yes |
 | LibreOffice Writer | Windows, Linux, macOS | yes | yes | yes |
 | Google Docs | any browser | yes | yes | yes |
@@ -44,7 +45,7 @@ exposes no scriptable text selection.
 
 Clone the repository and install dependencies once:
 
-```
+```bash
 npm install
 ```
 
@@ -59,26 +60,26 @@ server running on your own machine.
 
 1. Build the add-in files:
 
-   ```
+   ```powershell
    npm run gen:word
    ```
 
 2. Create and trust a local development certificate (once only). Accept the
    prompt your system shows:
 
-   ```
+   ```powershell
    npx office-addin-dev-certs install
    ```
 
 3. Start the local server, and **leave it running** while you use the add-in:
 
-   ```
+   ```powershell
    npm run word:serve
    ```
 
 4. In a second terminal, register the manifest and open Word:
 
-   ```
+   ```powershell
    npx office-addin-debugging start word-addin\manifest.xml
    ```
 
@@ -116,7 +117,7 @@ for part two**. Close LibreOffice before installing.
 On **Linux**, one script does both and detects native versus Flatpak
 installations automatically:
 
-```
+```bash
 npm run gen:lo && npm run gen:lo:oxt
 libreoffice/install-linux.sh
 ```
@@ -124,14 +125,14 @@ libreoffice/install-linux.sh
 On **macOS**, likewise; the script locates `LibreOffice.app` in `/Applications`
 or `~/Applications`:
 
-```
+```bash
 npm run gen:lo && npm run gen:lo:oxt
 libreoffice/install-macos.sh
 ```
 
 On **Windows**:
 
-```
+```powershell
 npm run gen:lo && npm run gen:lo:oxt
 $dst = "$env:APPDATA\LibreOffice\4\user\Scripts\python"
 New-Item -ItemType Directory -Force $dst | Out-Null
@@ -147,10 +148,11 @@ The extension itself is platform-neutral — it contains only configuration, no
 compiled code — so the same `.oxt` installs everywhere. Only the profile location
 differs, as shown in Table C2.
 
+<!-- markdownlint-disable-next-line MD036 -->
 **Table C2. LibreOffice user profile locations**
 
 | Platform | Profile |
-|---|---|
+| --- | --- |
 | Windows | `%APPDATA%\LibreOffice\4\user` |
 | Linux (native) | `~/.config/libreoffice/4/user` |
 | Linux (Flatpak) | `~/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user` |
@@ -177,7 +179,7 @@ documents would mean publishing a Google editor add-on.
    **Script ID** from **Project Settings**.
 2. From the repository:
 
-   ```
+   ```bash
    npm install -g @google/clasp
    clasp login
    npm run gen:gas
@@ -201,7 +203,7 @@ Google's Apps Script — so Euspell cannot run inside it. Instead a script drive
 Pages from outside through macOS automation, reusing the Apps Script engine
 unchanged.
 
-```
+```bash
 npm run gen:pages
 mkdir -p ~/Library/Scripts/Applications/Pages
 cp pages/euspell-pages.js ~/Library/Scripts/Applications/Pages/Euspell.js
@@ -236,7 +238,7 @@ text boxes, shapes, and table cells is left alone.
 ## C.7 Troubleshooting
 
 | Symptom | Try |
-|---|---|
+| --- | --- |
 | **Word:** task pane blank, or "can't load add-in" | The development server is not running, or the certificate is untrusted. Repeat steps 2 and 3, and confirm `https://localhost:3000/src/taskpane.html` loads without warning. |
 | **Word:** no Euspell button on the Home tab | The manifest did not register. Use the shared-folder catalog method, and reopen Word. |
 | **LibreOffice:** no Euspell menu | On native Linux, install the Python script provider. Otherwise the user-profile copy is missing — repeat part one with LibreOffice closed. |

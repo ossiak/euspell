@@ -19,7 +19,7 @@ bundled into each tool.
 ## Which tool does what
 
 | Word processor | Platforms | Whole document | Selection | Revert to traditional | Setup |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Microsoft Word** | Windows, macOS, web | ✅ | ✅ | ✅ | hardest — HTTPS cert + a server that stays running |
 | **LibreOffice Writer** | Windows, Linux, macOS | ✅ | ✅ | ✅ | copy two things into your profile |
 | **Google Docs** | any browser | ✅ | ✅ | ✅ | `clasp` upload, **per document** |
@@ -33,7 +33,7 @@ text selection.
 
 Clone the repo and install dependencies once:
 
-```
+```bash
 npm install
 ```
 
@@ -135,7 +135,7 @@ which is out of scope.
    from **Project Settings**.
 2. Locally:
 
-   ```
+   ```bash
    npm install -g @google/clasp
    clasp login
    npm run gen:gas
@@ -156,7 +156,7 @@ The 5 MB data file is why this needs `clasp` rather than copy-paste. Details:
 **macOS only.** Pages has no add-in model at all, so instead of running *inside*
 Pages, a script drives it from outside through macOS automation.
 
-```
+```bash
 npm run gen:pages       # writes the single ~5 MB pages/euspell-pages.js
 mkdir -p ~/Library/Scripts/Applications/Pages
 cp pages/euspell-pages.js ~/Library/Scripts/Applications/Pages/Euspell.js
@@ -194,7 +194,7 @@ in text boxes, shapes, and table cells isn't reached. Details:
 ## If something looks wrong
 
 | Symptom | Try |
-|---|---|
+| --- | --- |
 | **Word:** taskpane blank, or "can't load add-in" | The dev server isn't running, or the certificate isn't trusted. Re-run steps 2–3 and confirm `https://localhost:3000/src/taskpane.html` loads cleanly in a browser. |
 | **Word:** no Euspell button on the Home tab | The manifest didn't register. Try the manual shared-folder method, and make sure you reopened Word. |
 | **LibreOffice:** no Euspell menu | On native Linux, install the Python script provider (above). Otherwise the user-profile copy is missing — redo part one, and confirm LibreOffice was closed when you copied. |
