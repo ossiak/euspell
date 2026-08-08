@@ -1,10 +1,39 @@
 # Installing the Euspell Word add-in
 
-A step-by-step guide for **Word on Windows desktop**. (Notes for Word on the web
-and Mac are at the end.) An Office add-in is a small web app, so installing it
-means: build the files, serve them locally over HTTPS, and tell Word to load the
-manifest. Nothing is installed system-wide — removing the manifest removes the
+An Office add-in is a small web app, so installing it means pointing Word at a
+manifest that says where to load it from. Where it loads from gives two routes:
+
+- **[Use the hosted copy](#use-the-hosted-copy)** — nothing to build, nothing to
+  keep running. The one to pick if you only want to *use* the add-in.
+- **Run it locally** — the numbered steps from
+  [Prerequisites](#0-prerequisites) on, for *changing* it. Written for Word on
+  Windows desktop, with notes for the web and Mac at the end.
+
+Nothing is installed system-wide either way; removing the manifest removes the
 add-in.
+
+## Use the hosted copy
+
+The add-in is published to GitHub Pages by
+[pages.yml](../.github/workflows/pages.yml), so there is a manifest you can point
+Word at as it stands:
+
+```text
+https://ossiak.github.io/euspell/manifest.xml
+```
+
+No build, no certificate, no server. Sideload it:
+
+- **Word on the web** — **Insert ▸ Add-ins ▸ Upload My Add-in** and give it that
+  URL. This is the *only* route the web version accepts: it blocks a `localhost`
+  taskpane, so the local route below cannot serve it.
+- **Windows** — save the file somewhere, then follow **Method B** in step 4
+  below, pointing the catalog at the folder you saved it in.
+- **Mac** — save it into
+  `~/Library/Containers/com.microsoft.Word/Data/Documents/wef` and restart Word.
+
+What you get is whatever was last deployed. To run your own changes, use the
+steps below instead.
 
 ## 0. Prerequisites
 
@@ -98,9 +127,10 @@ Use this if Method A fails.
 
 ## Troubleshooting
 
-- **Taskpane is blank / "can't load add-in":** the dev server (step 3) isn't
-  running, or the certificate isn't trusted — redo steps 2–3 and confirm
-  `https://localhost:3000/src/taskpane.html` loads cleanly in a browser.
+- **Taskpane is blank / "can't load add-in":** running locally, the dev server
+  (step 3) isn't running or the certificate isn't trusted — redo steps 2–3 and
+  confirm `https://localhost:3000/src/taskpane.html` loads cleanly in a browser.
+  On the hosted copy, confirm the manifest URL itself resolves in a browser.
 - **No Euspell button on the Home tab:** the manifest didn't register — try the
   other method in step 4, and make sure you reopened Word.
 - **Nothing converts:** check the taskpane status line for an error; ensure the
@@ -108,9 +138,14 @@ Use this if Method A fails.
 
 ## Word on the web / Mac
 
-- **Web:** open a document at office.com ▸ **Insert ▸ Add-ins ▸ Upload My Add-in**
-  ▸ choose `word-addin\manifest.xml`. (Still needs the dev server running, or a
-  hosted copy — see "Sharing it" in [README.md](README.md).)
-- **Mac:** copy `manifest.xml` into
-  `~/Library/Containers/com.microsoft.Word/Data/Documents/wef`, then restart Word
-  and use **Insert ▸ My Add-ins**.
+Both are covered by [the hosted copy](#use-the-hosted-copy), which is the simpler
+answer for each and the only one the web version has.
+
+If you are running locally and want these to load your own build:
+
+- **Web:** not possible. Word on the web blocks a `localhost` taskpane, so a
+  local server cannot serve it however the manifest is sideloaded. Deploy your
+  changes and use the hosted copy.
+- **Mac:** copy the repo's `manifest.xml` — the one pointing at `localhost:3000`
+  — into `~/Library/Containers/com.microsoft.Word/Data/Documents/wef`, restart
+  Word, and use **Insert ▸ My Add-ins**, with the dev server running.
