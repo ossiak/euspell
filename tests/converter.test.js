@@ -73,6 +73,13 @@ test("whole-word possessive contractions route the clitic like the bare 's", () 
   // them and they always took spellings[0] (the genitive 's), never the 'z. Now
   // routed through is_verbal_s, to parity with the bare clitic above: a following
   // noun head is the genitive, a following participle/predicate the contracted verb.
+  //
+  // This covers route()'s DISPATCH only. The stream is hand-built, so the target
+  // is one token — whereas the tokenizer gives a whole-word contraction one
+  // pseudo-token per PoS position, which is the alignment the rule actually has to
+  // read past. That gap hid a bug this test went on passing through: see "a
+  // whole-word possessive contraction decides on its post-clitic context" in
+  // dom-walker.test.js, which drives the same words through the real tokenizer.
   assert.equal(conv([["anyone's", ''], ['guess', 'NN1']], "anyone's"), "anywun's");   // genitive
   assert.equal(conv([["anyone's", ''], ['coming', 'VVG']], "anyone's"), "anywun'z");  // is/has
   assert.equal(conv([["someone's", ''], ['house', 'NN1']], "someone's"), "somwun's"); // genitive

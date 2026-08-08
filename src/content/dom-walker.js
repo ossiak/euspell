@@ -166,7 +166,15 @@ function collectBlocks(root) {
       }
       const parent = node.parentElement;
       if (!parent || inSkippedRegion(parent) || isEditable(parent)) return NodeFilter.FILTER_REJECT;
-      if (node.nodeValue.trim() === '') return NodeFilter.FILTER_SKIP;
+      // A whitespace-only node is KEPT, even though it holds no word of its own.
+      // convertBlock concatenates a run's nodes into one source string, so
+      // dropping this node would delete the space it carries and glue the words
+      // on either side of it — pretty-printed markup ("<span>The</span>\n
+      // <span>research</span>") tokenizes as one run "Theresearch", which matches
+      // nothing and silently passes through unreformed. Worse, where the glued
+      // string DOES hit the lexicon ("<b>book</b> <b>keeper</b>"), the reform is
+      // split back across the nodes by share and the text is corrupted. Kept, the
+      // node is simply a separator piece and is written back unchanged.
       return NodeFilter.FILTER_ACCEPT;
     },
   });
