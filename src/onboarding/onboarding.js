@@ -9,6 +9,8 @@ import { browser } from '../lib/browser.js';
 const grantSection = document.getElementById('grantSection');
 const readySection = document.getElementById('readySection');
 const grantBtn = document.getElementById('grant');
+const pinSection = document.getElementById('pinSection');
+const pinHow = document.getElementById('pinHow');
 
 // Broad-host patterns any of which means "can read all sites". The extension
 // only ever holds <all_urls>; Chrome may report it verbatim or as expanded
@@ -44,4 +46,28 @@ grantBtn.addEventListener('click', async () => {
   await refresh();
 });
 
+/**
+ * Ask the user to pin the toolbar icon.
+ *
+ * There is no way to do it for them: Chrome has had no manifest key or API for
+ * this since it stopped pinning new extensions in 88, and the only mechanism
+ * that can is the enterprise ExtensionSettings policy (toolbar_pin), set by an
+ * administrator on managed machines. So the page asks.
+ *
+ * Worded per browser, told apart by the scheme of our own extension URLs — the
+ * same test service-worker.js uses for file:// support. Safari is skipped
+ * outright: it puts an enabled extension's button in the toolbar itself, so
+ * there is nothing to ask for and the instruction would be wrong.
+ */
+function offerPinning() {
+  const scheme = browser.runtime.getURL('');
+  if (scheme.startsWith('safari-web-extension:')) return;
+
+  pinHow.textContent = scheme.startsWith('moz-extension:')
+    ? 'Open the extensions button in the toolbar, then use the gear beside Euspell → Pin to Toolbar.'
+    : 'Click the extensions button (the puzzle piece) right of the address bar, then the pin beside Euspell.';
+  pinSection.hidden = false;
+}
+
+offerPinning();
 refresh();

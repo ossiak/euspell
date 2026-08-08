@@ -26,7 +26,9 @@ function mkEl() {
 function makeEnv(store, tab, { scheme = 'chrome-extension' } = {}) {
   const els = {};
   for (const id of ['enabled', 'hint', 'options', 'dictateRow', 'dictate', 'grant', 'accessHint',
-    'reloadRow', 'reload', 'query', 'result'])
+    'reloadRow', 'reload', 'query', 'result',
+    // onboarding.html
+    'grantSection', 'readySection', 'pinSection', 'pinHow'])
     els[id] = mkEl();
   const reloaded = [];
   // Every icon repaint the page asks for, so a test can assert the popup gives
@@ -236,6 +238,54 @@ test('options: the Convert pages toggle persists and repaints the icon', async (
   await env.els.enabled.dispatch('change');
   assert.equal(store.enabled, false);
   assert.deepEqual(env.painted, [false]);
+});
+
+// Pinning cannot be done for the user — no manifest key, no API — so onboarding
+// asks. The icon is Euspell's on/off readout, which is invisible while it sits in
+// the browser's overflow menu, so the ask is worth getting right per browser.
+test('onboarding asks Chrome users to pin, with Chrome wording', async () => {
+  const env = makeEnv({});
+  await runScript('../src/onboarding/onboarding.js', env);
+  assert.equal(env.els.pinSection.hidden, false, 'the pin step must be shown');
+  assert.match(env.els.pinHow.textContent, /puzzle piece/);
+});
+
+test('onboarding words the pin step differently on Firefox', async () => {
+  const env = makeEnv({});
+  env.browser.runtime.getURL = (p) => `moz-extension://abcdefgh/${p}`;
+  await runScript('../src/onboarding/onboarding.js', env);
+  assert.equal(env.els.pinSection.hidden, false);
+  // Firefox has no puzzle-piece pin affordance; it is the gear in the panel.
+  assert.match(env.els.pinHow.textContent, /Pin to Toolbar/);
+  assert.doesNotMatch(env.els.pinHow.textContent, /puzzle piece/);
+});
+
+test('onboarding does not ask on Safari, which pins for you', async () => {
+  const env = makeEnv({});
+  env.browser.runtime.getURL = (p) => `safari-web-extension://abcdefgh/${p}`;
+  // mkEl() defaults hidden to false; the markup carries hidden on this section
+  // and only onboarding.js reveals it. Model that, or "still hidden" and "never
+  // touched" are indistinguishable here.
+  env.els.pinSection.hidden = true;
+  await runScript('../src/onboarding/onboarding.js', env);
+  assert.equal(env.els.pinSection.hidden, true, 'Safari toolbars carry the button already');
+  assert.equal(env.els.pinHow.textContent, '', 'and no instruction is written');
+});
+
+test('every element onboarding.js reaches for exists in onboarding.html', () => {
+  // Same guard, and same reason, as the popup one below: the harness above hands
+  // the script a document that manufactures any id asked for, so it would pass
+  // against markup that had lost one. The real page gets null and throws on load,
+  // which would take the host-access grant down with the pin step.
+  const dir = new URL('../src/onboarding/', import.meta.url);
+  const js = fs.readFileSync(new URL('onboarding.js', dir), 'utf8');
+  const html = fs.readFileSync(new URL('onboarding.html', dir), 'utf8');
+
+  const wanted = [...js.matchAll(/getElementById\('([\w-]+)'\)/g)].map((m) => m[1]);
+  assert.ok(wanted.length >= 5, `only ${wanted.length} lookups found — has onboarding.js changed shape?`);
+
+  const present = new Set([...html.matchAll(/\bid="([\w-]+)"/g)].map((m) => m[1]));
+  assert.deepEqual(wanted.filter((id) => !present.has(id)), []);
 });
 
 test('every element popup.js reaches for exists in popup.html', () => {

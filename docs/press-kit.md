@@ -1,11 +1,10 @@
 # Euspell — Press Kit
 
-**Last updated:** 29 July 2026 · **Status:** pre-launch — see
-[Availability](#availability-the-honest-status) before pitching.
+**Last updated:** 31 July 2026 · **Reform revision:** r1
 
 The primary source document is the white paper, *Spelling Reform: An Engineering
-Approach* (Kamran Ossia). Figures below are generated from the repository and
-cross-checked against it.
+Approach* (Kamran Ossia). Every spelling and figure below was read from the
+shipping lexicon and cross-checked against the paper.
 
 ---
 
@@ -13,13 +12,13 @@ cross-checked against it.
 
 Three lengths, ready to paste.
 
-**One line**
+### One line
 
 > Euspell is a conservative reform of English spelling that exists as working
 > software — a browser extension, an e-reader, and word-processor add-ins that
 > convert what you read and write, entirely on your own device.
 
-**Short (≈50 words)**
+### Short (≈50 words)
 
 > Euspell is a reformed English spelling delivered as software rather than a
 > proposal. A 205,000-word lexicon and a context-aware converter rewrite English
@@ -27,7 +26,7 @@ Three lengths, ready to paste.
 > Word, LibreOffice and Apple Pages. Everything runs locally; no text is ever
 > uploaded.
 
-**Full (≈120 words)**
+### Full (≈120 words)
 
 > Euspell is a reform of English spelling built as an engineering project rather
 > than a manifesto. Where past reforms handed people tables of rules to apply by
@@ -46,7 +45,7 @@ Three lengths, ready to paste.
 ## Fact sheet
 
 | | |
-|---|---|
+| --- | --- |
 | **Name** | Euspell (the reform and the browser extension); **Eupub** (the e-reader) |
 | **Tagline** | Spelling Reform: An Engineering Approach |
 | **Creator** | Kamran Ossia |
@@ -59,8 +58,8 @@ Three lengths, ready to paste.
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
 | **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |
 | **Shop** | [shop.euspell.org](https://shop.euspell.org) — live; logo tees and hoodies, fulfilled by Fourthwall |
-| **Current versions** | Browser extension 0.2.0 (unreleased); Eupub 0.2.2 |
-| **Contact** | kamranossia@euspell.org |
+| **Current versions** | Browser extension 0.3.0 (unreleased); Eupub 0.2.3 |
+| **Contact** | [kamran@euspell.org](mailto:kamran@euspell.org) |
 
 ---
 
@@ -101,7 +100,7 @@ the reform's disambiguation value, and it produces the most quotable line in the
 project:
 
 | Traditional | Euspell | |
-|---|---|---|
+| --- | --- | --- |
 | Jim's home | Jim's home | the house of Jim (possessive — unchanged) |
 | Jim's home | Jim'z home | Jim has returned (contraction) |
 | it's | **it'z** | *it's* ceases to exist; **its** stays as it is |
@@ -110,7 +109,7 @@ project:
 **The `-ough` problem, resolved**
 
 | Traditional | Euspell | | Traditional | Euspell |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | through | thruh | | thought | thoht |
 | though | thoh | | bough | bouh |
 | tough | tuff | | rough | ruff |
@@ -148,18 +147,18 @@ niht*, *friend → frend*, *people → peeple*, *one → wun*.
 ## By the numbers
 
 | | |
-|---|---|
-| Lexicon entries | **205,483** |
-| Entries whose spelling changes | **41,293** — about **1 in 5** |
-| — of which merge into an existing American spelling (*colour → color*) | 6,051 |
+| --- | --- |
+| Lexicon entries | **205,500** |
+| Entries whose spelling changes | **41,310** — about **1 in 5** |
+| — of which merge into an existing American spelling (*colour → color*) | 6,065 |
 | — leaving genuinely **new** spellings | ≈ 35,000 |
 | Entries left exactly as they are | **164,190** (79.9%) |
-| Words needing context to choose between spellings | **5,904** |
+| Words needing context to choose between spellings | **5,905** |
 | Noun/verb `-s` disambiguation accuracy | **94%** (SVM) |
 | Pronunciation lexicon (PLS/XML, with IPA) | **34,000+** words |
 | Part-of-speech lexicon (Penn Treebank, for grammar checkers) | **46,000+** entries |
 | Part-of-speech tagset | CLAWS-7 (138 tags), University of Lancaster |
-| Automated tests · cross-engine fixtures | 217 · 43/43 per port |
+| Automated tests · cross-engine fixtures | 251 · 43/43 per port |
 
 The reform is re-implemented in Python (LibreOffice) and Apps Script (Google
 Docs, Apple Pages), and each port is pinned to the JavaScript engine by a shared
@@ -173,11 +172,11 @@ the browser.
 One engine, many surfaces. None of them re-implement the reform.
 
 | Product | Platforms | Status |
-|---|---|---|
+| --- | --- | --- |
 | **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | Built, **not yet published to any store** |
 | **Safari extension** | macOS — an Xcode host app built once and enabled in Safari's settings | Built; **not distributed** (no notarized or App Store build) |
 | **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts, with its own zoom and print | Ships with the extension |
-| **Eupub e-reader** | Windows, macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.2 released** |
+| **Eupub e-reader** | Windows (signed), macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.3 released** |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
 | **LibreOffice Writer** | Windows, Linux, macOS | Built, source-install |
 | **Google Docs** | Any browser (Apps Script) | Built, source-install |
@@ -244,52 +243,19 @@ phonetic spelling would disrupt hundreds of scientific words.
 
 ## Assets
 
-| Asset | Status |
-|---|---|
-| White paper (*Spelling Reform: An Engineering Approach*) | ✅ The primary press document |
-| Logo (800×800 JPG) | ✅ Available |
-| Logo — SVG / transparent PNG | ❌ **Needed** — a JPG on a white field is a weak press asset |
-| Product screenshots | ❌ **Needed** — before/after web page, Eupub, Word task pane |
-| Demo video / GIF | ❌ **Needed** — the reform is best understood in motion |
-| Founder photo + bio | ❌ Needed |
+| Asset | |
+| --- | --- |
+| White paper — *Spelling Reform: An Engineering Approach* | The primary press document |
+| Logo — vector | SVG, transparent, no embedded fonts |
+| Logo — raster | PNG, 1250×1248, transparent background |
 
----
-
-## Availability: the honest status
-
-As of 31 July 2026 the project has a live domain but **little a journalist can
-read, download, or link to**:
-
-| | |
-|---|---|
-| Website | [euspell.org](https://euspell.org) is **live**, but serves only a "Coming soon" splash. `www.euspell.org` does not resolve at all |
-| Shop | [shop.euspell.org](https://shop.euspell.org) is **live** — a Fourthwall storefront selling logo tees and hoodies. It is currently the only public page with real content on it, and it carries no explanation of what euspell is |
-| Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one currently returns 404 |
-| Source repositories | **Private** — although the white paper states the source and lexicons are GPL-3 and available at `github.com/ossiak/` |
-| Browser extension | **Not published** — the Chrome Web Store link is still a placeholder. The Safari build is development-signed only: no notarized or App Store build exists |
-| Eupub v0.2.2 | Released, but **on a private repo**, so downloads are not publicly reachable |
-
-**The cheapest fix by far is deploying the site**, whose writing is already done.
-The most urgent, though, is the repository visibility: the white paper publicly
-promises GPL-3 source at a URL that currently 404s for everyone but the author.
-Anyone who reads the paper and follows that link will conclude the project is
-vapourware.
-
-**The paper is deliberately being held until the repositories are public**, which
-is the right order — publishing it first would spend credibility that is hard to
-win back. This kit becomes sendable at the same moment the paper does, and the
-table above is what has to change before then.
-
-**Minimum before outreach:** deploy the content pages, make the repositories
-public (or publish the extension), and put real product links in this kit. Until
-then the strongest realistic play is a private preview — this kit, the white
-paper, and a demo video, sent directly.
+Product screenshots, a demo video, and a founder bio are available on request.
 
 ---
 
 ## Contact
 
-- **Press contact:** kamranossia@euspell.org
+- **Press contact:** [kamran@euspell.org](mailto:kamran@euspell.org)
 - **Website:** [euspell.org](https://euspell.org)
 - **Shop:** [shop.euspell.org](https://shop.euspell.org)
 - **Source:** github.com/ossiak/ *(currently private)*

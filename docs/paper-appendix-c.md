@@ -15,8 +15,10 @@ identically wherever it is converted.
 Two things distinguish these from the browser extension (Appendix A) and Eupub
 (Appendix B), both of which install from a store or a released binary:
 
-- **They are built from source.** There is no marketplace listing for any of the
-  four. Each needs a one-time build on your own machine with Node 24 or newer.
+- **They are installed from source, not a store.** There is no marketplace
+  listing for any of the four. Three need a one-time build on your own machine
+  with Node 24 or newer; Word alone can also be loaded from a hosted copy with
+  nothing built locally (C.2).
 - **They are one-pass converters, not live spell-checkers.** You invoke a
   command and the document is rewritten, the way "translate this document" works.
   Nothing is underlined as you type. Neither Word nor LibreOffice will host a
@@ -27,10 +29,11 @@ Two things distinguish these from the browser extension (Appendix A) and Eupub
 Everything runs locally. The lexicon is bundled into each add-in, and no text is
 uploaded.
 
+<!-- markdownlint-disable-next-line MD036 -->
 **Table C1. Word processor add-in capabilities**
 
 | Word processor | Platforms | Whole document | Selection | Revert to traditional |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | Microsoft Word | Windows, macOS, web | yes | yes | yes |
 | LibreOffice Writer | Windows, Linux, macOS | yes | yes | yes |
 | Google Docs | any browser | yes | yes | yes |
@@ -44,7 +47,7 @@ exposes no scriptable text selection.
 
 Clone the repository and install dependencies once:
 
-```
+```bash
 npm install
 ```
 
@@ -54,48 +57,46 @@ when the lexicon changes.
 
 ## C.2 Microsoft Word
 
-An Office add-in is a small web application, so Word loads it over HTTPS from a
-server running on your own machine.
+An Office add-in is a small web application, so Word loads it over HTTPS from
+somewhere. There are two routes, and the choice is whether you intend to change
+the add-in.
 
-1. Build the add-in files:
+**Using the hosted copy.** The add-in is published to GitHub Pages, so there is a
+manifest to point Word at with nothing to build, no certificate, and no server:
 
-   ```
-   npm run gen:word
-   ```
+```text
+https://ossiak.github.io/euspell/manifest.xml
+```
 
-2. Create and trust a local development certificate (once only). Accept the
-   prompt your system shows:
+Sideload it as the platform requires: on the web, **Insert ▸ Add-ins ▸ Upload My
+Add-in**; on Windows, save the file and add its folder under **File ▸ Options ▸
+Trust Center ▸ Trust Center Settings ▸ Trusted Add-in Catalogs**, tick **Show in
+Menu**, restart Word, then **Insert ▸ My Add-ins ▸ Shared Folder ▸ Euspell**; on
+macOS, save it into `~/Library/Containers/com.microsoft.Word/Data/Documents/wef`
+and restart Word. This is the only route available to **Word on the web**, which
+blocks a `localhost` task pane.
 
-   ```
-   npx office-addin-dev-certs install
-   ```
+**Running it locally**, which is what you need to change it:
 
-3. Start the local server, and **leave it running** while you use the add-in:
+```powershell
+npm run gen:word                     # engine, data, icons
+npx office-addin-dev-certs install   # once — accept the prompt
+npm run word:serve                   # leave running
+```
 
-   ```
-   npm run word:serve
-   ```
+Then, in a second terminal:
 
-4. In a second terminal, register the manifest and open Word:
+```powershell
+npx office-addin-debugging start word-addin\manifest.xml
+```
 
-   ```
-   npx office-addin-debugging start word-addin\manifest.xml
-   ```
+The committed `manifest.xml` points at `https://localhost:3000`, which is what
+makes this work — and what the publishing workflow rewrites to produce the hosted
+copy above. The server must stay running for as long as the add-in is in use.
 
-5. On the **Home** ribbon tab click **Euspell** to open the task pane. Use
-   **Convert document** or **Convert selection**, and **Revert document /
-   selection to traditional** to go back.
-
-If step 4 fails, Word can instead load the manifest from a shared-folder catalog:
-**File ▸ Options ▸ Trust Center ▸ Trust Center Settings ▸ Trusted Add-in
-Catalogs**, add the folder holding `manifest.xml`, tick **Show in Menu**, restart
-Word, then **Insert ▸ My Add-ins ▸ Shared Folder ▸ Euspell**.
-
-**Word on the web and macOS.** On the web, use **Insert ▸ Add-ins ▸ Upload My
-Add-in**. On macOS, copy `manifest.xml` into
-`~/Library/Containers/com.microsoft.Word/Data/Documents/wef` and restart Word.
-Both still need the development server, or a hosted copy of the add-in on any
-HTTPS origin, which removes the need to keep a server running locally.
+Either way, on the **Home** ribbon tab click **Euspell** to open the task pane:
+**Convert document** or **Convert selection**, and **Revert document / selection
+to traditional** to go back.
 
 **Stopping Word underlining euspell words.** Euspell words are not in Word's
 dictionary, so the spell checker marks them. Either leave the task pane's
@@ -116,7 +117,7 @@ for part two**. Close LibreOffice before installing.
 On **Linux**, one script does both and detects native versus Flatpak
 installations automatically:
 
-```
+```bash
 npm run gen:lo && npm run gen:lo:oxt
 libreoffice/install-linux.sh
 ```
@@ -124,14 +125,14 @@ libreoffice/install-linux.sh
 On **macOS**, likewise; the script locates `LibreOffice.app` in `/Applications`
 or `~/Applications`:
 
-```
+```bash
 npm run gen:lo && npm run gen:lo:oxt
 libreoffice/install-macos.sh
 ```
 
 On **Windows**:
 
-```
+```powershell
 npm run gen:lo && npm run gen:lo:oxt
 $dst = "$env:APPDATA\LibreOffice\4\user\Scripts\python"
 New-Item -ItemType Directory -Force $dst | Out-Null
@@ -147,10 +148,11 @@ The extension itself is platform-neutral — it contains only configuration, no
 compiled code — so the same `.oxt` installs everywhere. Only the profile location
 differs, as shown in Table C2.
 
+<!-- markdownlint-disable-next-line MD036 -->
 **Table C2. LibreOffice user profile locations**
 
 | Platform | Profile |
-|---|---|
+| --- | --- |
 | Windows | `%APPDATA%\LibreOffice\4\user` |
 | Linux (native) | `~/.config/libreoffice/4/user` |
 | Linux (Flatpak) | `~/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user` |
@@ -177,7 +179,7 @@ documents would mean publishing a Google editor add-on.
    **Script ID** from **Project Settings**.
 2. From the repository:
 
-   ```
+   ```bash
    npm install -g @google/clasp
    clasp login
    npm run gen:gas
@@ -201,7 +203,7 @@ Google's Apps Script — so Euspell cannot run inside it. Instead a script drive
 Pages from outside through macOS automation, reusing the Apps Script engine
 unchanged.
 
-```
+```bash
 npm run gen:pages
 mkdir -p ~/Library/Scripts/Applications/Pages
 cp pages/euspell-pages.js ~/Library/Scripts/Applications/Pages/Euspell.js
@@ -236,8 +238,8 @@ text boxes, shapes, and table cells is left alone.
 ## C.7 Troubleshooting
 
 | Symptom | Try |
-|---|---|
-| **Word:** task pane blank, or "can't load add-in" | The development server is not running, or the certificate is untrusted. Repeat steps 2 and 3, and confirm `https://localhost:3000/src/taskpane.html` loads without warning. |
+| --- | --- |
+| **Word:** task pane blank, or "can't load add-in" | Running locally: the server is not running, or its certificate is untrusted — re-run `office-addin-dev-certs install` and `word:serve`, and confirm `https://localhost:3000/src/taskpane.html` loads without warning. Using the hosted copy: confirm the manifest URL itself resolves. |
 | **Word:** no Euspell button on the Home tab | The manifest did not register. Use the shared-folder catalog method, and reopen Word. |
 | **LibreOffice:** no Euspell menu | On native Linux, install the Python script provider. Otherwise the user-profile copy is missing — repeat part one with LibreOffice closed. |
 | **Google Docs:** no Euspell menu | The add-on is bound to the document it was pushed to. Reload the page after `clasp push`. |

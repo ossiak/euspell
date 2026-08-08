@@ -68,6 +68,13 @@ function toFirefox(manifest) {
       // add it back — and raise strict_min_version to 140 — when you publish,
       // building against a 140+ baseline. See https://mzl.la/firefox-builtin-data-consent.
     },
+    // Marks the add-on installable on Firefox for Android. Without this key AMO
+    // signs it desktop-only and the listing shows no Android install button, no
+    // matter how well the code runs on a phone. The empty object means "every
+    // Android version Firefox supports" — the real floor is gecko's
+    // strict_min_version above, which applies to both platforms. (gecko_android
+    // is unknown to Firefox < 78; harmless here, the floor is already 128.)
+    gecko_android: {},
   };
   // Firefox has no extension service worker; it runs the MV3 background as a
   // non-persistent ES-module event page. Chrome keeps using the root manifest's

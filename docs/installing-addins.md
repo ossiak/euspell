@@ -19,7 +19,7 @@ bundled into each tool.
 ## Which tool does what
 
 | Word processor | Platforms | Whole document | Selection | Revert to traditional | Setup |
-|---|---|---|---|---|---|
+| --- | --- | --- | --- | --- | --- |
 | **Microsoft Word** | Windows, macOS, web | ✅ | ✅ | ✅ | hardest — HTTPS cert + a server that stays running |
 | **LibreOffice Writer** | Windows, Linux, macOS | ✅ | ✅ | ✅ | copy two things into your profile |
 | **Google Docs** | any browser | ✅ | ✅ | ✅ | `clasp` upload, **per document** |
@@ -33,7 +33,7 @@ text selection.
 
 Clone the repo and install dependencies once:
 
-```
+```bash
 npm install
 ```
 
@@ -43,8 +43,34 @@ changes.
 
 ## Microsoft Word
 
-**Build, trust a certificate, serve, sideload.** An Office add-in is a small web
-app, so Word loads it over HTTPS from a server on your own machine.
+An Office add-in is a small web app, so Word loads it over HTTPS from somewhere.
+That gives two routes, and **which you want depends on whether you intend to
+change the add-in**.
+
+### A. Use the hosted copy — nothing to build or run
+
+The add-in is published to GitHub Pages by
+[pages.yml](../.github/workflows/pages.yml), so there is a manifest you can point
+Word at directly:
+
+```text
+https://ossiak.github.io/euspell/manifest.xml
+```
+
+No build, no certificate, no server to keep alive. Sideload it by the method for
+your platform:
+
+| Where | How |
+| --- | --- |
+| Word on the web | **Insert ▸ Add-ins ▸ Upload My Add-in**, and give it the URL above |
+| Windows | save the file, then **File ▸ Options ▸ Trust Center ▸ Trust Center Settings ▸ Trusted Add-in Catalogs**, add the containing folder, tick **Show in Menu**, restart Word, then **Insert ▸ My Add-ins ▸ Shared Folder ▸ Euspell** |
+| macOS | save it into `~/Library/Containers/com.microsoft.Word/Data/Documents/wef` and restart Word |
+
+This is the only route that works for **Word on the web**, which blocks a
+`localhost` taskpane. What you get is whatever was last deployed — to run your
+own changes, use B.
+
+### B. Run it locally — for changing the add-in
 
 ```powershell
 npm run gen:word                        # engine + data + icons
@@ -58,15 +84,13 @@ Then, in a second terminal:
 npx office-addin-debugging start word-addin\manifest.xml
 ```
 
-Word opens with the add-in loaded. On the **Home** ribbon click **Euspell** to
-open the taskpane, then use **Convert document** / **Convert selection**, or
-**Revert document / selection to traditional**.
+The committed `word-addin/manifest.xml` points at `https://localhost:3000`, which
+is what makes this work — and what `pages.yml` rewrites when publishing route A.
+**The dev server must stay running** the whole time you use the add-in.
 
-> **The dev server must stay running** the whole time you use the add-in. To
-> avoid that — and to use Word on the web, which usually blocks a `localhost`
-> taskpane — host the add-in instead: the repo's
-> [pages.yml](../.github/workflows/pages.yml) workflow publishes it to GitHub
-> Pages and rewrites the manifest URLs for you.
+Either way: on the **Home** ribbon click **Euspell** to open the taskpane, then
+use **Convert document** / **Convert selection**, or **Revert document /
+selection to traditional**.
 
 **Stop Word underlining euspell words.** Pick one:
 
@@ -135,7 +159,7 @@ which is out of scope.
    from **Project Settings**.
 2. Locally:
 
-   ```
+   ```bash
    npm install -g @google/clasp
    clasp login
    npm run gen:gas
@@ -156,7 +180,7 @@ The 5 MB data file is why this needs `clasp` rather than copy-paste. Details:
 **macOS only.** Pages has no add-in model at all, so instead of running *inside*
 Pages, a script drives it from outside through macOS automation.
 
-```
+```bash
 npm run gen:pages       # writes the single ~5 MB pages/euspell-pages.js
 mkdir -p ~/Library/Scripts/Applications/Pages
 cp pages/euspell-pages.js ~/Library/Scripts/Applications/Pages/Euspell.js
@@ -194,8 +218,8 @@ in text boxes, shapes, and table cells isn't reached. Details:
 ## If something looks wrong
 
 | Symptom | Try |
-|---|---|
-| **Word:** taskpane blank, or "can't load add-in" | The dev server isn't running, or the certificate isn't trusted. Re-run steps 2–3 and confirm `https://localhost:3000/src/taskpane.html` loads cleanly in a browser. |
+| --- | --- |
+| **Word:** taskpane blank, or "can't load add-in" | On route B: the dev server isn't running, or its certificate isn't trusted — re-run `office-addin-dev-certs install` and `word:serve`, then confirm `https://localhost:3000/src/taskpane.html` loads cleanly in a browser. On route A: confirm the manifest URL itself resolves. |
 | **Word:** no Euspell button on the Home tab | The manifest didn't register. Try the manual shared-folder method, and make sure you reopened Word. |
 | **LibreOffice:** no Euspell menu | On native Linux, install the Python script provider (above). Otherwise the user-profile copy is missing — redo part one, and confirm LibreOffice was closed when you copied. |
 | **Google Docs:** no Euspell menu | You're in a different document — the add-on is bound to the one you pushed it to. Reload the page after `clasp push`. |

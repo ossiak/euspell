@@ -26,6 +26,19 @@
           euspell.</p>
       </section>
 
+      <!-- Pinning is a browser UI action with nothing behind it: no manifest key,
+           no permission, no API. Asking is the only option available, and it is
+           worth asking because the toolbar icon is how Euspell reports whether it
+           is converting — the mark inverts when it is off — and that readout is
+           invisible while the icon sits in the overflow menu. Filled in and
+           revealed by onboarding.js, which words it per browser. -->
+      <section id="pinSection" hidden>
+        <p><strong>Pin Euspell to your toolbar.</strong>
+          <span id="pinHow"></span></p>
+        <p class="muted">The icon is also the on/off readout: the blue mark while
+          Euspell is converting, inverted while it’s off.</p>
+      </section>
+
       <p class="muted">You can change site access any time from the extension’s
         Options page.</p>
     </main>
