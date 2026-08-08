@@ -62,6 +62,29 @@ test('the Firefox and Safari builds stage the same runtime allowlist', () => {
   assert.deepEqual(safari, firefox);
 });
 
+/* --------------------------------------------------------------- word manifest */
+
+test('the Word manifest points at the dev server, not a published host', () => {
+  // pages.yml publishes word-addin/ and rewrites this file to the Pages origin at
+  // deploy time, by replacing the literal https://localhost:3000. Committing a
+  // rewritten copy back breaks that in the quietest possible way: the replacement
+  // then matches nothing and silently succeeds, while Word loads the hosted copy
+  // and ignores the dev server the install guides tell you to run — so editing
+  // local files appears to do nothing. That is exactly what happened in ddd4623,
+  // whose subject was about the spell checker, and it went unnoticed for months.
+  const xml = fs.readFileSync(new URL('word-addin/manifest.xml', root), 'utf8');
+
+  assert.ok(
+    xml.includes('https://localhost:3000'),
+    'manifest.xml must carry the localhost URLs pages.yml rewrites — a published copy has been committed back',
+  );
+
+  // SourceLocation is the one Word actually loads, so pin it by name rather than
+  // trusting the count above.
+  const source = /<SourceLocation DefaultValue="([^"]+)"/.exec(xml)?.[1];
+  assert.equal(source, 'https://localhost:3000/src/taskpane.html');
+});
+
 /* -------------------------------------------------------------------- version */
 
 const readJson = (rel) => JSON.parse(fs.readFileSync(new URL(rel, root), 'utf8'));

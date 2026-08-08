@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Euspell Word add-in (Office.js taskpane). URLs point at the local dev server
-     (https://ossiak.github.io/euspell); change them to your static host to share it. -->
+     (https://localhost:3000); change them to your static host to share it. -->
 <OfficeApp
     xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,14 +13,14 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Euspell" />
   <Description DefaultValue="Convert a Word document to euspell reformed spelling." />
-  <IconUrl DefaultValue="https://ossiak.github.io/euspell/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://ossiak.github.io/euspell/assets/icon-80.png" />
+  <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-80.png" />
   <SupportUrl DefaultValue="https://github.com/ossiak/euspell" />
   <Hosts>
     <Host Name="Document" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://ossiak.github.io/euspell/src/taskpane.html" />
+    <SourceLocation DefaultValue="https://localhost:3000/src/taskpane.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 
@@ -61,12 +61,12 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon16" DefaultValue="https://ossiak.github.io/euspell/assets/icon-16.png" />
-        <bt:Image id="Icon32" DefaultValue="https://ossiak.github.io/euspell/assets/icon-32.png" />
-        <bt:Image id="Icon80" DefaultValue="https://ossiak.github.io/euspell/assets/icon-80.png" />
+        <bt:Image id="Icon16" DefaultValue="https://localhost:3000/assets/icon-16.png" />
+        <bt:Image id="Icon32" DefaultValue="https://localhost:3000/assets/icon-32.png" />
+        <bt:Image id="Icon80" DefaultValue="https://localhost:3000/assets/icon-80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="TaskpaneUrl" DefaultValue="https://ossiak.github.io/euspell/src/taskpane.html" />
+        <bt:Url id="TaskpaneUrl" DefaultValue="https://localhost:3000/src/taskpane.html" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GroupLabel" DefaultValue="Euspell" />
