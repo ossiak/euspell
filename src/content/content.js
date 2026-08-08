@@ -19,6 +19,32 @@ import { browser } from '../lib/browser.js';
   if (window.__euspellOwner) return;
   window.__euspellOwner = OWNER;
 
+  // Answer the worker's liveness probe FIRST — before the storage read below, and
+  // before the no-<body> bail-out. The worker injects into every tab that does not
+  // answer, and clears __euspellOwner in order to do it (see injectInto in the
+  // service worker), so any window where this script is running but silent is a
+  // window where a SECOND copy lands on top of it. Two copies means two module
+  // instances, two observers, and two independent dom-walker `memory` maps — so
+  // neither sees the other's source→output record, already-reformed text is taken
+  // for fresh source, and the few non-idempotent words drift on the second pass
+  // ("cached" → "cashed" → "cashd"). The two silent windows this closes:
+  //
+  //   - the await on storage.sync below, which used to precede the responder;
+  //   - a document with no <body> (SVG/XML), which returns before it — a live
+  //     script with nothing to convert is still live, and re-injecting it just
+  //     stacks duplicate listeners.
+  //
+  // Registered on its own rather than folded into the setMode listener further
+  // down, which cannot move up: it closes over applyMode and viewMode.
+  browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
+    // A live script answers; an orphaned one cannot (its runtime belongs to the
+    // previous extension instance), and a restricted page has none at all. That
+    // is how the worker decides which tabs still need injecting.
+    if (!msg || msg.type !== 'euspell:ping') return false;
+    sendResponse({ alive: true });
+    return false;
+  });
+
   // Dictation is an authoring feature independent of page conversion, so it is
   // wired up first — a user can dictate euspell on a site whose pages they don't
   // want reformed.
@@ -109,15 +135,9 @@ import { browser } from '../lib/browser.js';
   // page switches without a reload. The listener is always registered — even on
   // a page that loaded un-converted — so conversion can be turned on live. A
   // missing responder tells the popup this page has no content script (a
-  // restricted page or the viewer).
+  // restricted page or the viewer). The liveness probe is answered separately,
+  // at the top of this IIFE, so it is live before this point is reached.
   browser.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
-    // A live script answers; an orphaned one cannot (its runtime belongs to the
-    // previous extension instance), and a restricted page has none at all. That
-    // is how the worker decides which tabs still need injecting.
-    if (msg && msg.type === 'euspell:ping') {
-      sendResponse({ alive: true });
-      return false;
-    }
     if (!msg || msg.type !== 'euspell:setMode') return;
     applyMode(msg.mode === 'euspell' ? 'euspell' : 'original').then(() => sendResponse({ mode: viewMode }));
     return true; // sendResponse is async — the euspell path awaits the lexicon
