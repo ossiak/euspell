@@ -35,6 +35,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # AMO rejects a version it has already accepted, and there is no way to
+      # replace one — so submitting the wrong number costs a version rather than
+      # a re-run. On a release trigger the tag states the intended version; check
+      # manifest.json agrees before spending the build on it. (npm test separately
+      # holds manifest.json and package.json to each other.)
+      - name: Check the release tag matches manifest.json
+        if: github.event_name == 'release'
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          man="$(node -p "require('./manifest.json').version")"
+          if [ "$tag" != "$man" ]; then
+            echo "::error::release tag $GITHUB_REF_NAME != manifest.json $man — bump manifest.json to match the tag"
+            exit 1
+          fi
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
