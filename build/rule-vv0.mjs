@@ -114,7 +114,7 @@ console.log(
   ' verbP'.padStart(7),
   'verbR'.padStart(6)
 );
-let T = { tp: 0, fp: 0, tn: 0, fn: 0 };
+const T = { tp: 0, fp: 0, tn: 0, fn: 0 };
 for (const [w, s] of rows) {
   const n = s.tp + s.fp + s.tn + s.fn;
   const verbs = s.tp + s.fn;
@@ -155,8 +155,8 @@ console.log(
   pct(Math.max(verbs, N - verbs) / N),
   pct((T.tp + T.tn) / N),
   '',
-  '  verbP ' + pct(T.tp / (T.tp + T.fp)),
-  ' verbR ' + pct(T.tp / verbs)
+  `  verbP ${pct(T.tp / (T.tp + T.fp))}`,
+  ` verbR ${pct(T.tp / verbs)}`
 );
 console.log(`\nconfusion: tp ${T.tp}  fp ${T.fp}  tn ${T.tn}  fn ${T.fn}`);
 console.log(`\nglobal majority (always the commoner reading overall): ${pct(Math.max(verbs, N - verbs) / N)}`);

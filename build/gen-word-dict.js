@@ -57,5 +57,5 @@ for (const src of SOURCES) {
 
 const sorted = [...words].sort((a, b) => a.localeCompare(b));
 // CRLF line endings, matching Word's own dictionary files.
-writeFileSync(OUT, sorted.join('\r\n') + '\r\n', 'utf8');
+writeFileSync(OUT, `${sorted.join('\r\n')}\r\n`, 'utf8');
 console.log(`[gen-word-dict] wrote ${OUT} — ${sorted.length} words`);

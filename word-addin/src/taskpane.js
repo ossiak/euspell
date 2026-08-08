@@ -32,7 +32,7 @@ async function run(scope, mode) {
     const verb = mode === 'revert' ? 'Reverted' : 'Converted';
     setStatus(`${verb} ${n} paragraph${n === 1 ? '' : 's'}.`);
   } catch (err) {
-    setStatus('Error: ' + (err && err.message ? err.message : err));
+    setStatus(`Error: ${err && err.message ? err.message : err}`);
     console.error(err);
   }
 }

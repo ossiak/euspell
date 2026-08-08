@@ -36,7 +36,7 @@ for (const [src, dst] of copies) {
 // (they are 'bias', 'cap', '<int>=<FAMILY>', 'w=<lowercase-word>').
 const lines = [];
 for (const [feat, weight] of VVZ_SVM) lines.push(`${feat}\t${weight}`);
-writeFileSync(join(OUT, 'vvz_svm.tsv'), lines.join('\n') + '\n', 'utf8');
+writeFileSync(join(OUT, 'vvz_svm.tsv'), `${lines.join('\n')}\n`, 'utf8');
 
 console.log(`[gen-lo] data ready in ${OUT}`);
 console.log(`[gen-lo]   lexicon.csv, abbreviations.csv, contractions.csv copied`);

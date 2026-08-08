@@ -62,7 +62,7 @@ function insertionTarget() {
 function handleFinal(transcript) {
   const euspell = convertText(normalize(transcript), convert);
   const dest = insertionTarget();
-  if (dest) insertText(dest, euspell.endsWith(' ') ? euspell : euspell + ' ');
+  if (dest) insertText(dest, euspell.endsWith(' ') ? euspell : `${euspell} `);
   ui().show('Listening…');
 }
 

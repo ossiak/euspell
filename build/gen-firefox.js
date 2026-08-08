@@ -115,7 +115,7 @@ for (const rel of DIRS) {
 }
 
 const manifest = JSON.parse(readFileSync(join(root, 'manifest.json'), 'utf8'));
-writeFileSync(join(out, 'manifest.json'), JSON.stringify(toFirefox(manifest), null, 2) + '\n');
+writeFileSync(join(out, 'manifest.json'), `${JSON.stringify(toFirefox(manifest), null, 2)}\n`);
 
 const zip = new AdmZip();
 zip.addLocalFolder(out);

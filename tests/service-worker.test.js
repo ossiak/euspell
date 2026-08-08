@@ -297,7 +297,7 @@ test('install drops the retired per-site list and seeds the one setting', async 
 // the extension leaves open tabs with an orphaned script and no conversion until
 // the user reloads each tab. The worker injects into those tabs itself.
 
-const openTabs = (...ids) => ids.map((id) => ({ id, url: 'https://site' + id + '.example/' }));
+const openTabs = (...ids) => ids.map((id) => ({ id, url: `https://site${id}.example/` }));
 
 test('reload injects into a tab whose script is orphaned', async () => {
   const store = { enabled: true, __tabs: openTabs(1), __alive: [] };

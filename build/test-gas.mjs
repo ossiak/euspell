@@ -46,7 +46,7 @@ for (const w of ['organizes', 'colors', 'acknowledgment', 'judgment', 'defenses'
   if (Euspell.revertText(Euspell.convertText(w)) !== w) { afail++; console.log('AMERICAN FAIL', w, '->', Euspell.revertText(Euspell.convertText(w))); }
 }
 if (Euspell.revertText('ruff') !== 'rough' || Euspell.revertText('dorr') !== 'door') { afail++; console.log('COLLISION-REVERT FAIL'); }
-console.log(`american-consistent revert: ${afail === 0 ? 'pass' : afail + ' FAILED'}`);
+console.log(`american-consistent revert: ${afail === 0 ? 'pass' : `${afail} FAILED`}`);
 
 // Word-level candidates (parity with the Python port's checks).
 const eq = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -61,5 +61,5 @@ for (const [w, exp] of checks) if (!eq(Euspell.wordCandidates(w), exp)) { cfail+
 if (Euspell.convertText('They read it.') !== 'They read it.') { cfail++; console.log('semantic-unchanged FAIL'); }
 if (Euspell.convertText('They are here.') !== 'They ar here.') { cfail++; console.log('are-conversion FAIL'); }
 
-console.log(`\nGAS engine: ${fixtures.length - fail}/${fixtures.length} fixtures pass; candidate checks ${cfail ? cfail + ' FAILED' : 'pass'}`);
+console.log(`\nGAS engine: ${fixtures.length - fail}/${fixtures.length} fixtures pass; candidate checks ${cfail ? `${cfail} FAILED` : 'pass'}`);
 process.exit(fail || cfail || rfail || afail ? 1 : 0);

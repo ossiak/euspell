@@ -68,7 +68,7 @@ function readingsOf(fields) {
     // fields by the comma. Gather until the closing ")".
     if (/^\(V:/i.test(f)) {
       let buf = f.replace(/^\(V:,?/i, '');
-      while (!/\)$/.test(buf) && i + 1 < rest.length) buf += ',' + rest[++i].trim();
+      while (!/\)$/.test(buf) && i + 1 < rest.length) buf += `,${rest[++i].trim()}`;
       buf = buf.replace(/\)$/, '').replace(/^,/, '').trim();
       if (/[^\x00-\x7f]/.test(buf)) out.push({ ipa: buf, sense: 'verb' });
       continue;

@@ -89,7 +89,7 @@ test('looksLikePdfBytes: finds the %PDF- signature in a leading prefix', () => {
 
 test('fileParam: extracts and decodes the ?file= query', () => {
   const raw = 'https://example.com/a.pdf?x=1';
-  assert.equal(fileParam('?file=' + encodeURIComponent(raw)), raw);
+  assert.equal(fileParam(`?file=${encodeURIComponent(raw)}`), raw);
   assert.equal(fileParam(''), null);
   assert.equal(fileParam('?foo=bar'), null);
 });

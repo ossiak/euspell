@@ -20,6 +20,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # Before the build, so a style failure is reported in seconds rather than
+      # after the lexicon compile. eslint.config.js ignores dist/ and
+      # build/firefox/, so it needs nothing built.
+      - run: npm run lint
       # dist/ is gitignored, so build first: several tests import dist/lexicon.js,
       # and the Firefox package is staged from the build output.
       - run: npm run build

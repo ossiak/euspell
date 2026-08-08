@@ -282,7 +282,7 @@ function slotFams(tok) {
 function svmFeatures(tokens, idx) {
   const win = contextWindow(tokens, idx);
   const word = tokens[idx]?.word ?? '';
-  const feats = ['bias', 'w=' + word.toLowerCase()];
+  const feats = ['bias', `w=${word.toLowerCase()}`];
   if (/^\p{Lu}/u.test(word)) feats.push('cap');
   /** @type {Map<number, Set<string> | null>} */
   const perOff = new Map();
@@ -292,15 +292,15 @@ function svmFeatures(tokens, idx) {
     perOff.set(off, fams);
     if ((off === -1 || off === 1) && tok.tag !== 'ZB' && tok.tag !== '') {
       const closed = tok.tag.split('|').some((t) => !DITTO.test(t) && CLOSED_CLASS.test(t));
-      if (closed) feats.push(off + 'w=' + tok.word.toLowerCase());
+      if (closed) feats.push(`${off}w=${tok.word.toLowerCase()}`);
     }
     if (fams === null) continue;
-    for (const f of fams) feats.push(off + '=' + f);
+    for (const f of fams) feats.push(`${off}=${f}`);
   }
   const before2 = perOff.get(-2);
   const before1 = perOff.get(-1);
   if (before2 && before1) {
-    for (const fa of before2) for (const fb of before1) feats.push('p=' + fa + '~' + fb);
+    for (const fa of before2) for (const fb of before1) feats.push(`p=${fa}~${fb}`);
   }
   return feats;
 }

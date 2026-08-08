@@ -110,6 +110,6 @@ mkdirSync(outDir, { recursive: true });
 const kept = SENTENCES.filter((s) => !hasSemantic(s));
 const skipped = SENTENCES.length - kept.length;
 const rows = kept.map((s) => `${s}\t${jsConvert(s)}`);
-writeFileSync(join(outDir, 'fixtures.tsv'), rows.join('\n') + '\n', 'utf8');
+writeFileSync(join(outDir, 'fixtures.tsv'), `${rows.join('\n')}\n`, 'utf8');
 console.log(`[gen-lo-fixtures] wrote ${rows.length} fixtures (skipped ${skipped} with semantic words)`);
-for (const r of rows) console.log('  ' + r.replace('\t', '  =>  '));
+for (const r of rows) console.log(`  ${r.replace('\t', '  =>  ')}`);

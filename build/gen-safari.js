@@ -101,7 +101,7 @@ for (const rel of DIRS) {
 }
 
 const manifest = JSON.parse(readFileSync(join(root, 'manifest.json'), 'utf8'));
-writeFileSync(join(out, 'manifest.json'), JSON.stringify(toSafari(manifest), null, 2) + '\n');
+writeFileSync(join(out, 'manifest.json'), `${JSON.stringify(toSafari(manifest), null, 2)}\n`);
 
 console.log('[euspell-build] Staged Safari web extension -> safari/Euspell Extension/Resources/');
 console.log('[euspell-build] Build the app: open safari/Euspell.xcodeproj in Xcode (or xcodebuild).');
