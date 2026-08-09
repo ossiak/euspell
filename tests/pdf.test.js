@@ -8,6 +8,8 @@ import {
   isAttachmentDisposition,
   looksLikePdfBytes,
   isAllowedViewerUrl,
+  canViewFileUrls,
+  pdfFileName,
 } from '../src/pdf/pdf-url.js';
 
 test('isAllowedViewerUrl: accepts fetchable document schemes only', () => {
@@ -92,4 +94,68 @@ test('fileParam: extracts and decodes the ?file= query', () => {
   assert.equal(fileParam(`?file=${encodeURIComponent(raw)}`), raw);
   assert.equal(fileParam(''), null);
   assert.equal(fileParam('?foo=bar'), null);
+});
+
+test('canViewFileUrls: only Chromium extension pages may fetch file://', () => {
+  assert.equal(canViewFileUrls('chrome-extension://abc/src/pdf/viewer.html'), true);
+  assert.equal(canViewFileUrls('moz-extension://abc/src/pdf/viewer.html'), false);
+  assert.equal(canViewFileUrls('safari-web-extension://abc/src/pdf/viewer.html'), false);
+});
+
+test('pdfFileName: names the document from the URL path', () => {
+  assert.equal(pdfFileName('https://example.com/docs/report.pdf'), 'report.pdf');
+  assert.equal(pdfFileName('https://example.com/DOC.PDF'), 'DOC.PDF'); // extension left alone
+  assert.equal(pdfFileName('file:///home/u/manual.pdf'), 'manual.pdf');
+  assert.equal(pdfFileName('file:///C:/My%20Docs/annual%20report.pdf'), 'annual report.pdf');
+});
+
+test('pdfFileName: the query string can neither supply nor replace the name', () => {
+  // The bug this function exists for. Slicing the raw URL at its last "/" let a
+  // query containing a slash decide the filename: this one was named "a", so the
+  // tab read "a.eu" and Download original saved a file called "a".
+  assert.equal(pdfFileName('https://example.com/get.pdf?redirect=/home/a'), 'get.pdf');
+  assert.equal(pdfFileName('https://example.com/a/b.pdf#page=3'), 'b.pdf');
+  // …and a query that merely mentions a .pdf does not get to name the download.
+  assert.equal(pdfFileName('https://example.com/download?path=/files/report.pdf'), 'download.pdf');
+});
+
+test('pdfFileName: an extensionless PDF still downloads as one', () => {
+  // Extensionless PDFs are a whole detection path in the service worker, and a
+  // saved file the OS cannot recognise is not much use.
+  assert.equal(pdfFileName('https://example.com/download'), 'download.pdf');
+  assert.equal(pdfFileName('https://example.com/view/1234'), '1234.pdf');
+  assert.equal(pdfFileName('https://example.com/paper.php?id=7'), 'paper.php.pdf');
+});
+
+test('pdfFileName: a decoded separator cannot turn a name into a path', () => {
+  // %2F is a literal slash inside ONE path segment (isPdfUrl already handles
+  // these), so decoding has to be followed by another split or the download
+  // name carries a directory in it.
+  assert.equal(pdfFileName('https://example.com/path%2Freport.pdf'), 'report.pdf');
+  assert.equal(pdfFileName('https://example.com/dir%5Cfile.pdf'), 'file.pdf');
+});
+
+test('pdfFileName: falls back rather than producing an empty name', () => {
+  assert.equal(pdfFileName('https://example.com/files/'), 'PDF.pdf');
+  assert.equal(pdfFileName('https://example.com'), 'PDF.pdf');
+  assert.equal(pdfFileName('not a url'), 'PDF.pdf');
+  // A literal % that is not an escape must not throw — keep the raw segment.
+  assert.equal(pdfFileName('https://example.com/100%discount.pdf'), '100%discount.pdf');
+});
+
+test('pdfFileName: always yields a name the tab title can build on', () => {
+  // viewer.js titles the tab `${name.replace(/\.pdf$/i, '')}.eu`, so that a
+  // Save-as-PDF lands on "<base>.eu.pdf". That only holds if every name ends in
+  // .pdf and has something in front of it.
+  for (const url of [
+    'https://example.com/docs/report.pdf',
+    'https://example.com/get.pdf?redirect=/home/a',
+    'https://example.com/download',
+    'https://example.com/files/',
+    'not a url',
+  ]) {
+    const name = pdfFileName(url);
+    assert.match(name, /\.pdf$/i, `${url} -> ${name} must end in .pdf`);
+    assert.ok(name.replace(/\.pdf$/i, '').length > 0, `${url} -> ${name} must have a base`);
+  }
 });

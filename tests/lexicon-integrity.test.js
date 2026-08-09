@@ -41,7 +41,12 @@ function reachesDisambiguator(e) {
   const k = e.word.toLowerCase();
   return (
     ((e.encoding === 12 || e.encoding === 112) && e.pos.includes('VVZ')) ||
-    e.pos.includes('GE') ||
+    // The FINAL tag of a reading, exactly as route() tests it. A bare
+    // includes('GE') matched only the standalone clitic — the very bug route()
+    // was fixed for (whole-word possessives like "anyone's" carry "PN1 GE") — so
+    // mirroring it loosely is how this check drifts back out of step with the
+    // code it claims to mirror.
+    e.pos.some((reading) => reading.split(/\s+/).pop() === 'GE') ||
     (e.encoding === 702 && e.pos.includes('NN2')) ||
     ((e.encoding === 102 || e.encoding === 152) && e.pos.includes('VV0')) ||
     SEMANTIC.has(k) ||

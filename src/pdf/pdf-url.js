@@ -89,11 +89,86 @@ export function fileParam(search) {
 }
 
 /**
+ * The document's filename, for the viewer's tab title, its bar, and the
+ * "Download original" button.
+ *
+ * Taken from the URL's PATH, which is the same rule the browser's own download
+ * manager applies in the absence of a Content-Disposition. Slicing the raw URL
+ * at the last "/" instead — as the viewer used to — lets the QUERY STRING supply
+ * the name whenever it contains a slash of its own, and those are common on
+ * exactly the download endpoints this viewer sees:
+ * `/get.pdf?redirect=/home/a` came out as "a", so the tab was titled "a.eu" and
+ * Download original saved a file called "a" with no extension at all.
+ *
+ * A `.pdf` suffix is added when the path has none. Extensionless PDFs are a
+ * whole detection path in the service worker (`/download`, `/view/1234`), and a
+ * downloaded file the OS cannot recognise is not much use — the bytes are a PDF
+ * whatever the URL called them.
+ *
+ * Percent-escapes are decoded, and the result re-split on any separator they
+ * reveal: `%2F` is a literal slash INSIDE one path segment, so decoding first
+ * and splitting after keeps a path out of a filename.
+ *
+ * @param {string} url  the document's own URL (not the viewer's)
+ * @returns {string} a filename ending in .pdf; "PDF.pdf" when the URL offers none
+ */
+export function pdfFileName(url) {
+  const FALLBACK = 'PDF.pdf';
+  let path;
+  try {
+    path = new URL(url).pathname;
+  } catch {
+    return FALLBACK; // unparseable — the viewer rejects these before asking
+  }
+  try {
+    path = decodeURIComponent(path);
+  } catch {
+    /* a literal % that is not an escape — name it from the raw form */
+  }
+  const base = path.split(/[/\\]/).pop().trim();
+  if (!base) return FALLBACK; // a directory-style URL has no last segment
+  return /\.pdf$/i.test(base) ? base : `${base}.pdf`;
+}
+
+/**
+ * Whether this browser lets our viewer read `file://` PDFs, decided from the
+ * viewer's own extension URL.
+ *
+ * Firefox and Safari both refuse to let an extension page fetch a file:// URL,
+ * so redirecting a local PDF into our viewer there would replace the browser's
+ * own native viewer with an error page the user can't escape — Firefox:
+ * moz-extension pages may not navigate to file: links; Safari: a file:// fetch
+ * from a safari-web-extension page fails with "Unexpected server response (0)",
+ * and there is no per-extension "allow file access" grant as on Chrome. On
+ * Chrome a file: navigation only reaches us when the user has explicitly
+ * enabled "Allow access to file URLs", and the viewer can then fetch it.
+ *
+ * Shared rather than duplicated because TWO surfaces have to agree: the service
+ * worker decides whether to redirect a local PDF, and the popup decides whether
+ * to offer "reload and I'll convert this". They drifted — the popup tested only
+ * for Firefox — so on Safari the popup offered a reload that the worker then
+ * declined to act on, and the offer came back after every reload, forever.
+ *
+ * @param {string} viewerUrl  runtime.getURL() of any page of this extension
+ * @returns {boolean}
+ */
+export function canViewFileUrls(viewerUrl) {
+  return !/^(moz-extension|safari-web-extension):/i.test(viewerUrl);
+}
+
+/**
  * True when a viewer `?file=` target is a scheme the viewer may fetch and link
- * to. viewer.html is web-accessible, so any page can open it with an arbitrary
- * value — this keeps `javascript:`/`data:`/extension URLs out of both the
- * PDF.js fetch and the "Open original" anchor (the extension CSP would block a
+ * to. This keeps `javascript:`/`data:`/extension URLs out of both the PDF.js
+ * fetch and the "Open original" anchor (the extension CSP would block a
  * javascript: link's execution anyway, but the URL should never get that far).
+ *
+ * Defence in depth rather than a live hole: viewer.html is NOT listed in the
+ * manifest's web_accessible_resources — only dist/lexicon.data is — so a web
+ * page cannot navigate to it and hand it a `?file=` of its own choosing. What it
+ * guards is the value's provenance being indirect: the query is assembled by the
+ * service worker from whatever URL a tab navigated to, and an embedding host
+ * (Eupub) builds the same URL itself. A scheme check at the point of use costs
+ * nothing and does not depend on every producer staying careful.
  *
  * Beyond the fetchable web schemes, a target on THIS page's own origin is
  * allowed whatever the scheme: an embedding host may serve both the viewer and

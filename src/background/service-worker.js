@@ -8,6 +8,7 @@ import {
   isPdfDisposition,
   isAttachmentDisposition,
   looksLikePdfBytes,
+  canViewFileUrls,
 } from '../pdf/pdf-url.js';
 import { browser } from '../lib/browser.js';
 import { paintActionIcon, refreshActionIcon } from '../lib/action-icon.js';
@@ -127,17 +128,10 @@ browser.commands.onCommand.addListener(async (command) => {
 // setting as page conversion, and skip our own viewer.
 const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
 
-// Whether this browser lets our viewer read file:// PDFs. Firefox and Safari
-// both refuse to let an extension page fetch file:// URLs, so redirecting a
-// local PDF into our viewer there would replace the browser's own native
-// viewer with an error page the user can't escape — Firefox: moz-extension
-// pages may not navigate to file: links; Safari: a file:// fetch from a
-// safari-web-extension page fails with "Unexpected server response (0)", and
-// there is no per-extension "allow file access" grant as on Chrome. On Chrome a
-// file: navigation only reaches us when the user has explicitly enabled "Allow
-// access to file URLs", and the viewer can then fetch it.
-const CAN_VIEW_FILE_URLS =
-  !VIEWER_URL.startsWith('moz-extension:') && !VIEWER_URL.startsWith('safari-web-extension:');
+// Whether this browser lets our viewer read file:// PDFs — see pdf-url.js. The
+// popup asks the same question to decide whether to offer a reload, so the test
+// lives there and both read it from one place.
+const CAN_VIEW_FILE_URLS = canViewFileUrls(VIEWER_URL);
 
 // The PDF counterpart of the DOM's data-euspell="off": a site keeps a document
 // out of our viewer by linking it with `euspell=off` in the query string. A PDF
@@ -172,7 +166,7 @@ browser.webNavigation.onBeforeNavigate.addListener(
     if (!isPdfUrl(details.url) || details.url.startsWith(VIEWER_URL)) return;
     if (isOptedOut(details.url)) return; // the page asked to stay traditional
     if (consumeBypass(details.url)) return; // "Open original" — let it through
-    if (/^file:/i.test(details.url) && !CAN_VIEW_FILE_URLS) return; // leave local PDFs to Firefox
+    if (/^file:/i.test(details.url) && !CAN_VIEW_FILE_URLS) return; // leave local PDFs to Firefox/Safari
     if (await shouldConvert()) redirectToViewer(details.tabId, details.url);
   },
   { url: [{ pathSuffix: '.pdf' }, { pathSuffix: '.PDF' }] },

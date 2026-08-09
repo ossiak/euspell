@@ -51,7 +51,6 @@
     "adm-zip": "^0.5.17",
     "csv-parse": "^5.0.0",
     "eslint": "^9.39.5",
-    "globals": "^14.0.0",
     "pdfjs-dist": "^6.0.227",
     "rollup": "^4.0.0",
     "sharp": "^0.33.5",

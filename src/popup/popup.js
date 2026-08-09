@@ -7,7 +7,7 @@
 
 import { browser } from '../lib/browser.js';
 import { paintActionIcon } from '../lib/action-icon.js';
-import { isPdfUrl } from '../pdf/pdf-url.js';
+import { isPdfUrl, canViewFileUrls } from '../pdf/pdf-url.js';
 import { lookup, setLexicon, hasLexicon, normalise } from './lookup.js';
 import { renderResult } from './render.js';
 
@@ -21,9 +21,11 @@ const reloadRow = document.getElementById('reloadRow');
 const reloadBtn = document.getElementById('reload');
 
 const VIEWER_URL = browser.runtime.getURL('src/pdf/viewer.html');
-// Firefox extensions may not fetch file:// URLs, so the worker leaves local PDFs
-// to the native viewer there — mirrors CAN_VIEW_FILE_URLS in service-worker.js.
-const CAN_VIEW_FILE_URLS = !VIEWER_URL.startsWith('moz-extension:');
+// Firefox and Safari extensions may not fetch file:// URLs, so the worker leaves
+// local PDFs to the native viewer there. Shared with the worker (see pdf-url.js)
+// rather than re-tested here: offering a reload the worker will not act on gives
+// the user a button that can never work.
+const CAN_VIEW_FILE_URLS = canViewFileUrls(VIEWER_URL);
 
 /**
  * True when the active tab holds a PDF the browser is rendering itself, which
