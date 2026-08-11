@@ -4453,7 +4453,7 @@
   <lexeme><grapheme>clenlier</grapheme><phoneme>ˈkliːnliər</phoneme></lexeme> <!-- cleanlier -->
   <lexeme><grapheme>clenliest</grapheme><phoneme>ˈkliːnliəst</phoneme></lexeme> <!-- cleanliest -->
   <lexeme><grapheme>clenliness</grapheme><phoneme>ˈkliːnlɪnəs</phoneme></lexeme> <!-- cleanliness -->
-  <lexeme><grapheme>clenly</grapheme><phoneme>ˈkliːnli</phoneme></lexeme> <!-- cleanly -->
+  <lexeme><grapheme>clenly</grapheme><phoneme>ˈklɛnli</phoneme></lexeme> <!-- cleanly -->
   <lexeme><grapheme>clenqh</grapheme><phoneme>klɛntʃ</phoneme></lexeme> <!-- clench -->
   <lexeme><grapheme>clenqhd</grapheme><phoneme>klɛntʃt</phoneme></lexeme> <!-- clenched -->
   <lexeme><grapheme>clenqher</grapheme><phoneme>ˈklɛntʃər</phoneme></lexeme> <!-- clencher -->
@@ -15991,6 +15991,7 @@
   <lexeme><grapheme>lazaretts</grapheme><phoneme>ˌlæzəˈrɛts</phoneme></lexeme> <!-- lazarettes -->
   <lexeme><grapheme>lazez</grapheme><phoneme>ˈleɪzɪz</phoneme></lexeme> <!-- lazes -->
   <lexeme><grapheme>laziez</grapheme><phoneme>ˈleɪziz</phoneme></lexeme> <!-- lazies -->
+  <lexeme><grapheme>lead</grapheme><phoneme>liːd</phoneme></lexeme> <!-- lead -->
   <lexeme><grapheme>leadz</grapheme><phoneme>liːdz</phoneme></lexeme> <!-- leads -->
   <lexeme><grapheme>leafd</grapheme><phoneme>lift</phoneme></lexeme> <!-- leafed -->
   <lexeme><grapheme>leafleted</grapheme><phoneme>ˈliflətəd</phoneme></lexeme> <!-- leafletted -->
@@ -16046,7 +16047,7 @@
   <lexeme><grapheme>leavs</grapheme><phoneme>liːvz</phoneme></lexeme> <!-- leaves -->
   <lexeme><grapheme>leavz</grapheme><phoneme>liːvz</phoneme></lexeme> <!-- leaves -->
   <lexeme><grapheme>lecturez</grapheme><phoneme>ˈlɛktʃərz</phoneme></lexeme> <!-- lectures -->
-  <lexeme><grapheme>ledd</grapheme><phoneme>lid</phoneme></lexeme> <!-- lead -->
+  <lexeme><grapheme>ledd</grapheme><phoneme>lɛd</phoneme></lexeme> <!-- lead -->
   <lexeme><grapheme>ledded</grapheme><phoneme>ˈlɛdəd</phoneme></lexeme> <!-- leaded -->
   <lexeme><grapheme>ledden</grapheme><phoneme>ˈlɛdən</phoneme></lexeme> <!-- leaden -->
   <lexeme><grapheme>leddenly</grapheme><phoneme>ˈlɛdənli</phoneme></lexeme> <!-- leadenly -->
@@ -16455,6 +16456,7 @@
   <lexeme><grapheme>litterz</grapheme><phoneme>ˈlɪtərz</phoneme></lexeme> <!-- litters -->
   <lexeme><grapheme>liv</grapheme><phoneme>lɪv</phoneme></lexeme> <!-- live -->
   <lexeme><grapheme>livd</grapheme><phoneme>lɪvd</phoneme></lexeme> <!-- lived -->
+  <lexeme><grapheme>live</grapheme><phoneme>laɪv</phoneme></lexeme> <!-- live -->
   <lexeme><grapheme>livend</grapheme><phoneme>ˈlaɪvənd</phoneme></lexeme> <!-- livened -->
   <lexeme><grapheme>livenz</grapheme><phoneme>ˈlaɪvənz</phoneme></lexeme> <!-- livens -->
   <lexeme><grapheme>liveriez</grapheme><phoneme>ˈlɪvəriz</phoneme></lexeme> <!-- liveries -->
@@ -21977,6 +21979,7 @@
   <lexeme><grapheme>preselectz</grapheme><phoneme>priːsɪˈlɛkts</phoneme></lexeme> <!-- preselects -->
   <lexeme><grapheme>presentativ</grapheme><phoneme>prɪˈzɛntətɪv</phoneme></lexeme> <!-- presentative -->
   <lexeme><grapheme>presentencez</grapheme><phoneme>priˈsɛntənsɪz</phoneme></lexeme> <!-- presentences -->
+  <lexeme><grapheme>presents</grapheme><phoneme>ˈprɛzənts</phoneme></lexeme> <!-- presents -->
   <lexeme><grapheme>presentz</grapheme><phoneme>prɪˈzɛnts</phoneme></lexeme> <!-- presents -->
   <lexeme><grapheme>preserv</grapheme><phoneme>prɪˈzɜːrv</phoneme></lexeme> <!-- preserve -->
   <lexeme><grapheme>preservativ</grapheme><phoneme>prɪˈzɜːrvətɪv</phoneme></lexeme> <!-- preservative -->
@@ -22145,6 +22148,7 @@
   <lexeme><grapheme>probativ</grapheme><phoneme>ˈproʊbətɪv</phoneme></lexeme> <!-- probative -->
   <lexeme><grapheme>probez</grapheme><phoneme>proʊbz</phoneme></lexeme> <!-- probes -->
   <lexeme><grapheme>problematizez</grapheme><phoneme>ˌprɑːbləmətaɪzɪz</phoneme></lexeme> <!-- problematises -->
+  <lexeme><grapheme>proceeds</grapheme><phoneme>ˈproʊsiːdz</phoneme></lexeme> <!-- proceeds -->
   <lexeme><grapheme>proceedz</grapheme><phoneme>proʊˈsiːdz</phoneme></lexeme> <!-- proceeds -->
   <lexeme><grapheme>processd</grapheme><phoneme>ˈprɑːsɛst</phoneme></lexeme> <!-- processed -->
   <lexeme><grapheme>processez</grapheme><phoneme>ˈprɑːsɛsɪz</phoneme></lexeme> <!-- processes -->
@@ -22195,6 +22199,7 @@
   <lexeme><grapheme>programs</grapheme><phoneme>ˈproʊɡræmz</phoneme></lexeme> <!-- programmes -->
   <lexeme><grapheme>programz</grapheme><phoneme>ˈproʊɡræmz</phoneme></lexeme> <!-- programmes -->
   <lexeme><grapheme>progressd</grapheme><phoneme>prəˈɡrɛst</phoneme></lexeme> <!-- progressed -->
+  <lexeme><grapheme>progresses</grapheme><phoneme>ˈprɑːɡrɛsɪz</phoneme></lexeme> <!-- progresses -->
   <lexeme><grapheme>progressez</grapheme><phoneme>prəˈɡrɛsɪz</phoneme></lexeme> <!-- progresses -->
   <lexeme><grapheme>progressiv</grapheme><phoneme>prəˈɡrɛsɪv</phoneme></lexeme> <!-- progressive -->
   <lexeme><grapheme>progressivly</grapheme><phoneme>prəˈɡrɛsɪvli</phoneme></lexeme> <!-- progressively -->
@@ -22206,6 +22211,7 @@
   <lexeme><grapheme>prohibitz</grapheme><phoneme>proʊˈhɪbɪts</phoneme></lexeme> <!-- prohibits -->
   <lexeme><grapheme>projectiv</grapheme><phoneme>prəˈdʒɛktɪv</phoneme></lexeme> <!-- projective -->
   <lexeme><grapheme>projectivly</grapheme><phoneme>prəˈdʒɛktɪvli</phoneme></lexeme> <!-- projectively -->
+  <lexeme><grapheme>projects</grapheme><phoneme>ˈprɑːdʒɛkts</phoneme></lexeme> <!-- projects -->
   <lexeme><grapheme>projectz</grapheme><phoneme>prəˈdʒɛkts</phoneme></lexeme> <!-- projects -->
   <lexeme><grapheme>prolapsez</grapheme><phoneme>proʊˈlæpsɪz</phoneme></lexeme> <!-- prolapses -->
   <lexeme><grapheme>proletarianizez</grapheme><phoneme>ˌproʊlɪˈtɛriənaɪzɪz</phoneme></lexeme> <!-- proletarianises -->
@@ -22302,6 +22308,7 @@
   <lexeme><grapheme>protendz</grapheme><phoneme>proʊˈtɛndz</phoneme></lexeme> <!-- protends -->
   <lexeme><grapheme>protensiv</grapheme><phoneme>proʊˈtɛnsɪv</phoneme></lexeme> <!-- protensive -->
   <lexeme><grapheme>protensivly</grapheme><phoneme>proʊˈtɛnsɪvli</phoneme></lexeme> <!-- protensively -->
+  <lexeme><grapheme>protests</grapheme><phoneme>ˈproʊtɛsts</phoneme></lexeme> <!-- protests -->
   <lexeme><grapheme>protestz</grapheme><phoneme>prəˈtɛsts</phoneme></lexeme> <!-- protests -->
   <lexeme><grapheme>protonatez</grapheme><phoneme>ˈproʊtəneɪts</phoneme></lexeme> <!-- protonates -->
   <lexeme><grapheme>prototypez</grapheme><phoneme>ˈproʊtətaɪps</phoneme></lexeme> <!-- prototypes -->
@@ -24262,6 +24269,7 @@
   <lexeme><grapheme>reactivly</grapheme><phoneme>riˈæktɪvli</phoneme></lexeme> <!-- reactively -->
   <lexeme><grapheme>reactivness</grapheme><phoneme>riˈæktɪvnəs</phoneme></lexeme> <!-- reactiveness -->
   <lexeme><grapheme>reactz</grapheme><phoneme>riˈækts</phoneme></lexeme> <!-- reacts -->
+  <lexeme><grapheme>read</grapheme><phoneme>riːd</phoneme></lexeme> <!-- read -->
   <lexeme><grapheme>readaptz</grapheme><phoneme>ˌriːəˈdæpts</phoneme></lexeme> <!-- readapts -->
   <lexeme><grapheme>readdictz</grapheme><phoneme>riːˈædɪkts</phoneme></lexeme> <!-- readdicts -->
   <lexeme><grapheme>readdressd</grapheme><phoneme>ˌriːəˈdrɛst</phoneme></lexeme> <!-- readdressed -->
@@ -24279,6 +24287,7 @@
   <lexeme><grapheme>readoptz</grapheme><phoneme>ˌriːəˈdɑːpts</phoneme></lexeme> <!-- readopts -->
   <lexeme><grapheme>readornd</grapheme><phoneme>ˌriːəˈdɔːrnd</phoneme></lexeme> <!-- readorned -->
   <lexeme><grapheme>readornz</grapheme><phoneme>ˌriːəˈdɔːrnz</phoneme></lexeme> <!-- readorns -->
+  <lexeme><grapheme>reads</grapheme><phoneme>riːdz</phoneme></lexeme> <!-- reads -->
   <lexeme><grapheme>readvancez</grapheme><phoneme>ˌriːədˈvænsɪz</phoneme></lexeme> <!-- readvances -->
   <lexeme><grapheme>readz</grapheme><phoneme>riːdz</phoneme></lexeme> <!-- reads -->
   <lexeme><grapheme>reaffirmd</grapheme><phoneme>ˌriːəˈfɜːrmd</phoneme></lexeme> <!-- reaffirmed -->
@@ -24399,11 +24408,13 @@
   <lexeme><grapheme>rebarbarizez</grapheme><phoneme>riːˈbɑːrbəraɪzɪz</phoneme></lexeme> <!-- rebarbarises -->
   <lexeme><grapheme>rebarbativ</grapheme><phoneme>rɪˈbɑːrbətɪv</phoneme></lexeme> <!-- rebarbative -->
   <lexeme><grapheme>rebarbativly</grapheme><phoneme>rɪˈbɑːrbətɪvli</phoneme></lexeme> <!-- rebarbatively -->
+  <lexeme><grapheme>rebates</grapheme><phoneme>ˈriːbeɪts</phoneme></lexeme> <!-- rebates -->
   <lexeme><grapheme>rebatez</grapheme><phoneme>rɪˈbeɪts</phoneme></lexeme> <!-- rebates -->
   <lexeme><grapheme>rebeginz</grapheme><phoneme>ˌriːbɪˈɡɪnz</phoneme></lexeme> <!-- rebegins -->
   <lexeme><grapheme>rebeld</grapheme><phoneme>rɪˈbɛld</phoneme></lexeme> <!-- rebelled -->
   <lexeme><grapheme>rebellowd</grapheme><phoneme>riːˈbɛloʊd</phoneme></lexeme> <!-- rebellowed -->
   <lexeme><grapheme>rebellowz</grapheme><phoneme>riːˈbɛloʊz</phoneme></lexeme> <!-- rebellows -->
+  <lexeme><grapheme>rebels</grapheme><phoneme>ˈrɛbəlz</phoneme></lexeme> <!-- rebels -->
   <lexeme><grapheme>rebelz</grapheme><phoneme>rɪˈbɛlz</phoneme></lexeme> <!-- rebels -->
   <lexeme><grapheme>rebidz</grapheme><phoneme>riːˈbɪdz</phoneme></lexeme> <!-- rebids -->
   <lexeme><grapheme>rebild</grapheme><phoneme>riːˈbɪld</phoneme></lexeme> <!-- rebuild -->
@@ -24431,6 +24442,7 @@
   <lexeme><grapheme>rebootz</grapheme><phoneme>riːˈbuːts</phoneme></lexeme> <!-- reboots -->
   <lexeme><grapheme>reborez</grapheme><phoneme>riːˈbɔːrz</phoneme></lexeme> <!-- rebores -->
   <lexeme><grapheme>rebottlez</grapheme><phoneme>riːˈbɑːtəlz</phoneme></lexeme> <!-- rebottles -->
+  <lexeme><grapheme>rebounds</grapheme><phoneme>ˈriːbaʊndz</phoneme></lexeme> <!-- rebounds -->
   <lexeme><grapheme>reboundz</grapheme><phoneme>rɪˈbaʊndz</phoneme></lexeme> <!-- rebounds -->
   <lexeme><grapheme>rebracez</grapheme><phoneme>riːˈbreɪsɪz</phoneme></lexeme> <!-- rebraces -->
   <lexeme><grapheme>rebranqh</grapheme><phoneme>riːˈbræntʃ</phoneme></lexeme> <!-- rebranch -->
@@ -24507,6 +24519,7 @@
   <lexeme><grapheme>receptivness</grapheme><phoneme>rɪˈsɛptɪvnəs</phoneme></lexeme> <!-- receptiveness -->
   <lexeme><grapheme>recertifiez</grapheme><phoneme>riːˈsɜːrtɪfaɪz</phoneme></lexeme> <!-- recertifies -->
   <lexeme><grapheme>recessd</grapheme><phoneme>ˈriːsɛst</phoneme></lexeme> <!-- recessed -->
+  <lexeme><grapheme>recesses</grapheme><phoneme>ˈriːsɛsɪz</phoneme></lexeme> <!-- recesses -->
   <lexeme><grapheme>recessez</grapheme><phoneme>rɪˈsɛsɪz</phoneme></lexeme> <!-- recesses -->
   <lexeme><grapheme>recessiv</grapheme><phoneme>rɪˈsɛsɪv</phoneme></lexeme> <!-- recessive -->
   <lexeme><grapheme>recessivly</grapheme><phoneme>rɪˈsɛsɪvli</phoneme></lexeme> <!-- recessively -->
@@ -24633,12 +24646,14 @@
   <lexeme><grapheme>recookd</grapheme><phoneme>riːˈkʊkt</phoneme></lexeme> <!-- recooked -->
   <lexeme><grapheme>recookz</grapheme><phoneme>riːˈkʊks</phoneme></lexeme> <!-- recooks -->
   <lexeme><grapheme>recopiez</grapheme><phoneme>riːˈkɑːpiz</phoneme></lexeme> <!-- recopies -->
+  <lexeme><grapheme>records</grapheme><phoneme>ˈrɛkərdz</phoneme></lexeme> <!-- records -->
   <lexeme><grapheme>recordz</grapheme><phoneme>rɪˈkɔːrdz</phoneme></lexeme> <!-- records -->
   <lexeme><grapheme>recorkd</grapheme><phoneme>riːˈkɔːrkt</phoneme></lexeme> <!-- recorked -->
   <lexeme><grapheme>recorkz</grapheme><phoneme>riːˈkɔːrktz</phoneme></lexeme> <!-- recorks -->
   <lexeme><grapheme>recorse</grapheme><phoneme>ˈriːkɔːrs</phoneme></lexeme> <!-- recourse -->
   <lexeme><grapheme>recorseful</grapheme><phoneme>rɪˈkɔːrsfəl</phoneme></lexeme> <!-- recourseful -->
   <lexeme><grapheme>recorses</grapheme><phoneme>ˈriːkɔːrsɪz</phoneme></lexeme> <!-- recourses -->
+  <lexeme><grapheme>recounts</grapheme><phoneme>ˈriːkaʊnts</phoneme></lexeme> <!-- recounts -->
   <lexeme><grapheme>recountz</grapheme><phoneme>rɪˈkaʊnts</phoneme></lexeme> <!-- recounts -->
   <lexeme><grapheme>recoupd</grapheme><phoneme>rɪˈkuːpt</phoneme></lexeme> <!-- recouped -->
   <lexeme><grapheme>recoupz</grapheme><phoneme>rɪˈkuːps</phoneme></lexeme> <!-- recoups -->
@@ -24705,7 +24720,7 @@
   <lexeme><grapheme>redbaitz</grapheme><phoneme>ˈrɛdbaɪts</phoneme></lexeme> <!-- redbaits -->
   <lexeme><grapheme>redbrest</grapheme><phoneme>ˈrɛdbrɛst</phoneme></lexeme> <!-- redbreast -->
   <lexeme><grapheme>redbrests</grapheme><phoneme>ˈrɛdbrɛsts</phoneme></lexeme> <!-- redbreasts -->
-  <lexeme><grapheme>redd</grapheme><phoneme>riːd</phoneme></lexeme> <!-- read -->
+  <lexeme><grapheme>redd</grapheme><phoneme>rɛd</phoneme></lexeme> <!-- read -->
   <lexeme><grapheme>reddend</grapheme><phoneme>ˈrɛdənd</phoneme></lexeme> <!-- reddened -->
   <lexeme><grapheme>reddenz</grapheme><phoneme>ˈrɛdənz</phoneme></lexeme> <!-- reddens -->
   <lexeme><grapheme>reddied</grapheme><phoneme>ˈrɛdid</phoneme></lexeme> <!-- readied -->
@@ -25050,11 +25065,13 @@
   <lexeme><grapheme>refueling</grapheme><phoneme>riːˈfjuːəlɪŋ</phoneme></lexeme> <!-- refuelling -->
   <lexeme><grapheme>refuelz</grapheme><phoneme>riːˈfjuːəlz</phoneme></lexeme> <!-- refuels -->
   <lexeme><grapheme>refugez</grapheme><phoneme>ˈrɛfjuːdʒɪz</phoneme></lexeme> <!-- refuges -->
+  <lexeme><grapheme>refunds</grapheme><phoneme>ˈriːfʌndz</phoneme></lexeme> <!-- refunds -->
   <lexeme><grapheme>refundz</grapheme><phoneme>rɪˈfʌndz</phoneme></lexeme> <!-- refunds -->
   <lexeme><grapheme>refurbishd</grapheme><phoneme>riːˈfɜːrbɪʃt</phoneme></lexeme> <!-- refurbished -->
   <lexeme><grapheme>refurbishez</grapheme><phoneme>riːˈfɜːrbɪʃɪz</phoneme></lexeme> <!-- refurbishes -->
   <lexeme><grapheme>refurnishd</grapheme><phoneme>riːˈfɜːrnɪʃt</phoneme></lexeme> <!-- refurnished -->
   <lexeme><grapheme>refurnishez</grapheme><phoneme>riːˈfɜːrnɪʃɪz</phoneme></lexeme> <!-- refurnishes -->
+  <lexeme><grapheme>refuse</grapheme><phoneme>ˈɹɛfjuːs</phoneme></lexeme> <!-- refuse -->
   <lexeme><grapheme>refutez</grapheme><phoneme>rɪˈfjuːts</phoneme></lexeme> <!-- refutes -->
   <lexeme><grapheme>refuzable</grapheme><phoneme>rɪˈfjuːzəbəl</phoneme></lexeme> <!-- refusable -->
   <lexeme><grapheme>refuzal</grapheme><phoneme>rɪˈfjuːzəl</phoneme></lexeme> <!-- refusal -->
@@ -27399,6 +27416,7 @@
   <lexeme><grapheme>sentinelz</grapheme><phoneme>ˈsɛntɪnəlz</phoneme></lexeme> <!-- sentinels -->
   <lexeme><grapheme>sepald</grapheme><phoneme>ˈsɛpəld</phoneme></lexeme> <!-- sepaled -->
   <lexeme><grapheme>separat</grapheme><phoneme>ˈsɛpərɪt</phoneme></lexeme> <!-- separate -->
+  <lexeme><grapheme>separate</grapheme><phoneme>ˈsɛpəˌreɪt</phoneme></lexeme> <!-- separate -->
   <lexeme><grapheme>separatez</grapheme><phoneme>ˈsɛpəˌreɪts</phoneme></lexeme> <!-- separates -->
   <lexeme><grapheme>separativ</grapheme><phoneme>ˈsɛpəˌreɪtɪv</phoneme></lexeme> <!-- separative -->
   <lexeme><grapheme>separatly</grapheme><phoneme>ˈsɛpərɪtli</phoneme></lexeme> <!-- separately -->
@@ -28706,6 +28724,7 @@
   <lexeme><grapheme>soovlakis</grapheme><phoneme>suːvˈlɑːkiz</phoneme></lexeme> <!-- souvlakis -->
   <lexeme><grapheme>sopd</grapheme><phoneme>sɑːpt</phoneme></lexeme> <!-- sopped -->
   <lexeme><grapheme>sophisticat</grapheme><phoneme>səˈfɪstəkɪt</phoneme></lexeme> <!-- sophisticate -->
+  <lexeme><grapheme>sophisticate</grapheme><phoneme>səˈfɪstəˌkeɪt</phoneme></lexeme> <!-- sophisticate -->
   <lexeme><grapheme>sophisticatez</grapheme><phoneme>səˈfɪstəˌkeɪts</phoneme></lexeme> <!-- sophisticates -->
   <lexeme><grapheme>sophisticats</grapheme><phoneme>səˈfɪstəkɪts</phoneme></lexeme> <!-- sophisticates -->
   <lexeme><grapheme>sopitez</grapheme><phoneme>soʊˈpaɪts</phoneme></lexeme> <!-- sopites -->
@@ -28771,6 +28790,7 @@
   <lexeme><grapheme>soverenties</grapheme><phoneme>ˈsɒvrɪntiz</phoneme></lexeme> <!-- sovereignties -->
   <lexeme><grapheme>soverenty</grapheme><phoneme>ˈsɑvɹəntiː</phoneme></lexeme> <!-- sovereignty -->
   <lexeme><grapheme>sovietizez</grapheme><phoneme>ˈsoʊviəˌtaɪzəz</phoneme></lexeme> <!-- sovietises -->
+  <lexeme><grapheme>sow</grapheme><phoneme>soʊ</phoneme></lexeme> <!-- sow -->
   <lexeme><grapheme>sowarz</grapheme><phoneme>soʊˈwɑːrz</phoneme></lexeme> <!-- sowars -->
   <lexeme><grapheme>sowd</grapheme><phoneme>soʊd</phoneme></lexeme> <!-- sowed -->
   <lexeme><grapheme>sowz</grapheme><phoneme>soʊz</phoneme></lexeme> <!-- sows -->
@@ -29556,6 +29576,7 @@
   <lexeme><grapheme>subclassez</grapheme><phoneme>ˈsʌbˌklæsəz</phoneme></lexeme> <!-- subclasses -->
   <lexeme><grapheme>subclassifiez</grapheme><phoneme>ˌsʌbˈklæsəfaɪz</phoneme></lexeme> <!-- subclassifies -->
   <lexeme><grapheme>subcollegiat</grapheme><phoneme>ˌsʌbkəˈlidʒət</phoneme></lexeme> <!-- subcollegiate -->
+  <lexeme><grapheme>subcontracts</grapheme><phoneme>ˌsʌbˈkɑnˌtrækts</phoneme></lexeme> <!-- subcontracts -->
   <lexeme><grapheme>subcontractz</grapheme><phoneme>ˌsʌbkənˈtrækts</phoneme></lexeme> <!-- subcontracts -->
   <lexeme><grapheme>subcoold</grapheme><phoneme>ˌsʌbˈkuld</phoneme></lexeme> <!-- subcooled -->
   <lexeme><grapheme>subcoolz</grapheme><phoneme>ˌsʌbˈkulz</phoneme></lexeme> <!-- subcools -->
@@ -29584,6 +29605,7 @@
   <lexeme><grapheme>subjectivly</grapheme><phoneme>səbˈdʒɛktɪvli</phoneme></lexeme> <!-- subjectively -->
   <lexeme><grapheme>subjectivness</grapheme><phoneme>səbˈdʒɛktɪvnəs</phoneme></lexeme> <!-- subjectiveness -->
   <lexeme><grapheme>subjectivs</grapheme><phoneme>səbˈdʒɛktɪvz</phoneme></lexeme> <!-- subjectives -->
+  <lexeme><grapheme>subjects</grapheme><phoneme>ˈsʌbdʒɪkts</phoneme></lexeme> <!-- subjects -->
   <lexeme><grapheme>subjectz</grapheme><phoneme>səbˈdʒɛkts</phoneme></lexeme> <!-- subjects -->
   <lexeme><grapheme>subjoind</grapheme><phoneme>səbˈdʒɔɪnd</phoneme></lexeme> <!-- subjoined -->
   <lexeme><grapheme>subjoinz</grapheme><phoneme>səbˈdʒɔɪnz</phoneme></lexeme> <!-- subjoins -->
@@ -29592,7 +29614,9 @@
   <lexeme><grapheme>subjunctiv</grapheme><phoneme>səbˈdʒʌŋktɪv</phoneme></lexeme> <!-- subjunctive -->
   <lexeme><grapheme>subjunctivs</grapheme><phoneme>səbˈdʒʌŋktɪvz</phoneme></lexeme> <!-- subjunctives -->
   <lexeme><grapheme>sublatez</grapheme><phoneme>səˈleɪts</phoneme></lexeme> <!-- sublates -->
+  <lexeme><grapheme>subleases</grapheme><phoneme>ˈsʌbˌlisəz</phoneme></lexeme> <!-- subleases -->
   <lexeme><grapheme>subleasez</grapheme><phoneme>ˌsʌbˈlisəz</phoneme></lexeme> <!-- subleases -->
+  <lexeme><grapheme>sublets</grapheme><phoneme>ˈsʌbˌlɛts</phoneme></lexeme> <!-- sublets -->
   <lexeme><grapheme>subletz</grapheme><phoneme>ˌsʌbˈlɛts</phoneme></lexeme> <!-- sublets -->
   <lexeme><grapheme>sublicensez</grapheme><phoneme>ˈsʌbˌlaɪsənsəz</phoneme></lexeme> <!-- sublicenses -->
   <lexeme><grapheme>sublimatez</grapheme><phoneme>ˈsʌbləˌmeɪts</phoneme></lexeme> <!-- sublimates -->
@@ -29611,6 +29635,7 @@
   <lexeme><grapheme>subnishes</grapheme><phoneme>ˈsʌbˌnɪtʃəz</phoneme></lexeme> <!-- subniches -->
   <lexeme><grapheme>suboptimizez</grapheme><phoneme>ˌsʌbˈɑptəˌmaɪzəz</phoneme></lexeme> <!-- suboptimises -->
   <lexeme><grapheme>subordinat</grapheme><phoneme>səˈbɔrdənət</phoneme></lexeme> <!-- subordinate -->
+  <lexeme><grapheme>subordinate</grapheme><phoneme>səˈbɔɹdənˌeɪt</phoneme></lexeme> <!-- subordinate -->
   <lexeme><grapheme>subordinatez</grapheme><phoneme>səˈbɔrdənˌeɪts</phoneme></lexeme> <!-- subordinates -->
   <lexeme><grapheme>subordinativ</grapheme><phoneme>səˈbɔrdənətɪv</phoneme></lexeme> <!-- subordinative -->
   <lexeme><grapheme>subordinatly</grapheme><phoneme>səˈbɔrdənətli</phoneme></lexeme> <!-- subordinately -->
@@ -29962,10 +29987,12 @@
   <lexeme><grapheme>surveild</grapheme><phoneme>sərˈveɪld</phoneme></lexeme> <!-- surveilled -->
   <lexeme><grapheme>surveilz</grapheme><phoneme>sərˈveɪlz</phoneme></lexeme> <!-- surveils -->
   <lexeme><grapheme>surveyd</grapheme><phoneme>sərˈveɪd</phoneme></lexeme> <!-- surveyed -->
+  <lexeme><grapheme>surveys</grapheme><phoneme>ˈsɜrveɪz</phoneme></lexeme> <!-- surveys -->
   <lexeme><grapheme>surveyz</grapheme><phoneme>sərˈveɪz</phoneme></lexeme> <!-- surveys -->
   <lexeme><grapheme>survivez</grapheme><phoneme>sərˈvaɪvz</phoneme></lexeme> <!-- survives -->
   <lexeme><grapheme>susceptiv</grapheme><phoneme>səˈsɛptɪv</phoneme></lexeme> <!-- susceptive -->
   <lexeme><grapheme>susceptivness</grapheme><phoneme>səˈsɛptɪvnəs</phoneme></lexeme> <!-- susceptiveness -->
+  <lexeme><grapheme>suspects</grapheme><phoneme>ˈsʌspɛkts</phoneme></lexeme> <!-- suspects -->
   <lexeme><grapheme>suspectz</grapheme><phoneme>səˈspɛkts</phoneme></lexeme> <!-- suspects -->
   <lexeme><grapheme>suspendz</grapheme><phoneme>səˈspɛndz</phoneme></lexeme> <!-- suspends -->
   <lexeme><grapheme>suspensiv</grapheme><phoneme>səˈspɛnsɪv</phoneme></lexeme> <!-- suspensive -->
@@ -30000,7 +30027,7 @@
   <lexeme><grapheme>suttlety</grapheme><phoneme>ˈsʌtəlti</phoneme></lexeme> <!-- subtlety -->
   <lexeme><grapheme>suttly</grapheme><phoneme>ˈsʌtli</phoneme></lexeme> <!-- subtly -->
   <lexeme><grapheme>suturez</grapheme><phoneme>ˈsutʃərz</phoneme></lexeme> <!-- sutures -->
-  <lexeme><grapheme>suw</grapheme><phoneme>soʊ</phoneme></lexeme> <!-- sow -->
+  <lexeme><grapheme>suw</grapheme><phoneme>saʊ</phoneme></lexeme> <!-- sow -->
   <lexeme><grapheme>suwbellies</grapheme><phoneme>ˈsaʊˌbɛliz</phoneme></lexeme> <!-- sowbellies -->
   <lexeme><grapheme>suwbelly</grapheme><phoneme>ˈsaʊˌbɛli</phoneme></lexeme> <!-- sowbelly -->
   <lexeme><grapheme>suwbredd</grapheme><phoneme>ˈsaʊərˌbred</phoneme></lexeme> <!-- sowbread -->
@@ -30166,6 +30193,7 @@
   <lexeme><grapheme>syncopativ</grapheme><phoneme>ˈsɪŋkəˌpeɪtɪv</phoneme></lexeme> <!-- syncopative -->
   <lexeme><grapheme>syncretizez</grapheme><phoneme>ˈsɪŋkrəˌtaɪzəz</phoneme></lexeme> <!-- syncretises -->
   <lexeme><grapheme>syndicat</grapheme><phoneme>ˈsɪndɪkət</phoneme></lexeme> <!-- syndicate -->
+  <lexeme><grapheme>syndicate</grapheme><phoneme>ˈsɪndɪˌkeɪt</phoneme></lexeme> <!-- syndicate -->
   <lexeme><grapheme>syndicatez</grapheme><phoneme>ˈsɪndɪˌkeɪts</phoneme></lexeme> <!-- syndicates -->
   <lexeme><grapheme>syndicats</grapheme><phoneme>ˈsɪndɪkəts</phoneme></lexeme> <!-- syndicates -->
   <lexeme><grapheme>synestheses</grapheme><phoneme>ˌsɪnəsˈθiːsiːz</phoneme></lexeme> <!-- synaestheses -->
@@ -30363,10 +30391,12 @@
   <lexeme><grapheme>teaqhez</grapheme><phoneme>ˈtitʃəz</phoneme></lexeme> <!-- teaches -->
   <lexeme><grapheme>teaqhing</grapheme><phoneme>ˈtitʃɪŋ</phoneme></lexeme> <!-- teaching -->
   <lexeme><grapheme>teaqhings</grapheme><phoneme>ˈtitʃɪŋz</phoneme></lexeme> <!-- teachings -->
+  <lexeme><grapheme>tear</grapheme><phoneme>tɪɹ</phoneme></lexeme> <!-- tear -->
   <lexeme><grapheme>teard</grapheme><phoneme>tɪərd</phoneme></lexeme> <!-- teared -->
   <lexeme><grapheme>teargasd</grapheme><phoneme>ˈtɪrˌɡæst</phoneme></lexeme> <!-- teargassed -->
   <lexeme><grapheme>teargasez</grapheme><phoneme>ˈtɪrˌɡæsəz</phoneme></lexeme> <!-- teargases -->
   <lexeme><grapheme>teargassez</grapheme><phoneme>ˈtɪrˌɡæsəz</phoneme></lexeme> <!-- teargasses -->
+  <lexeme><grapheme>tears</grapheme><phoneme>tɪɹz</phoneme></lexeme> <!-- tears -->
   <lexeme><grapheme>tearstaind</grapheme><phoneme>ˈtɪrˌsteɪnd</phoneme></lexeme> <!-- tearstained -->
   <lexeme><grapheme>tearz</grapheme><phoneme>tɪɹz</phoneme></lexeme> <!-- tears -->
   <lexeme><grapheme>teaseld</grapheme><phoneme>ˈtizəld</phoneme></lexeme> <!-- teaseled -->
@@ -30652,7 +30682,7 @@
   <lexeme><grapheme>throbd</grapheme><phoneme>tʃrɑbd</phoneme></lexeme> <!-- throbbed -->
   <lexeme><grapheme>throbz</grapheme><phoneme>θrɑbz</phoneme></lexeme> <!-- throbs -->
   <lexeme><grapheme>thrombosez</grapheme><phoneme>θrɑmˈboʊsiz</phoneme></lexeme> <!-- thromboses -->
-  <lexeme><grapheme>thronez</grapheme><phoneme>θoʊnz</phoneme></lexeme> <!-- thrones -->
+  <lexeme><grapheme>thronez</grapheme><phoneme>θroʊnz</phoneme></lexeme> <!-- thrones -->
   <lexeme><grapheme>throngd</grapheme><phoneme>θrɔŋd</phoneme></lexeme> <!-- thronged -->
   <lexeme><grapheme>throngz</grapheme><phoneme>θrɔŋz</phoneme></lexeme> <!-- throngs -->
   <lexeme><grapheme>throttlez</grapheme><phoneme>ˈθrɑtəlz</phoneme></lexeme> <!-- throttles -->
@@ -30914,6 +30944,7 @@
   <lexeme><grapheme>toqeh</grapheme><phoneme>toʊˈkeɪ</phoneme></lexeme> <!-- toquet -->
   <lexeme><grapheme>toqehs</grapheme><phoneme>toʊˈkeɪz</phoneme></lexeme> <!-- toquets -->
   <lexeme><grapheme>toqes</grapheme><phoneme>toʊks</phoneme></lexeme> <!-- toques -->
+  <lexeme><grapheme>torments</grapheme><phoneme>ˈtɔrmɛnts</phoneme></lexeme> <!-- torments -->
   <lexeme><grapheme>tormentz</grapheme><phoneme>tɔrˈmɛnts</phoneme></lexeme> <!-- torments -->
   <lexeme><grapheme>torpedoez</grapheme><phoneme>tɔrˈpidoʊz</phoneme></lexeme> <!-- torpedoes -->
   <lexeme><grapheme>torpedoz</grapheme><phoneme>tɔrˈpidoʊz</phoneme></lexeme> <!-- torpedos -->
@@ -31026,6 +31057,7 @@
   <lexeme><grapheme>transducez</grapheme><phoneme>trænzˈdusəz</phoneme></lexeme> <!-- transduces -->
   <lexeme><grapheme>transectz</grapheme><phoneme>trænˈsɛkts</phoneme></lexeme> <!-- transects -->
   <lexeme><grapheme>transferd</grapheme><phoneme>trænsˈfɜrd</phoneme></lexeme> <!-- transferred -->
+  <lexeme><grapheme>transfers</grapheme><phoneme>ˈtrænsfɜrz</phoneme></lexeme> <!-- transfers -->
   <lexeme><grapheme>transferz</grapheme><phoneme>trænsˈfɜrz</phoneme></lexeme> <!-- transfers -->
   <lexeme><grapheme>transfigurez</grapheme><phoneme>trænsˈfɪɡjərz</phoneme></lexeme> <!-- transfigures -->
   <lexeme><grapheme>transfixd</grapheme><phoneme>trænsˈfɪkst</phoneme></lexeme> <!-- transfixed -->
@@ -31067,7 +31099,9 @@
   <lexeme><grapheme>transparentizez</grapheme><phoneme>trænsˈpærəntˌaɪzəz</phoneme></lexeme> <!-- transparentises -->
   <lexeme><grapheme>transpiercez</grapheme><phoneme>trænsˈpɪrsəz</phoneme></lexeme> <!-- transpierces -->
   <lexeme><grapheme>transpirez</grapheme><phoneme>trænˈspaɪərz</phoneme></lexeme> <!-- transpires -->
+  <lexeme><grapheme>transplants</grapheme><phoneme>ˈtrænsˌplænts</phoneme></lexeme> <!-- transplants -->
   <lexeme><grapheme>transplantz</grapheme><phoneme>trænsˈplænts</phoneme></lexeme> <!-- transplants -->
+  <lexeme><grapheme>transports</grapheme><phoneme>ˈtrænsˌpɔrts</phoneme></lexeme> <!-- transports -->
   <lexeme><grapheme>transportz</grapheme><phoneme>trænsˈpɔrts</phoneme></lexeme> <!-- transports -->
   <lexeme><grapheme>transposez</grapheme><phoneme>trænsˈpoʊzəz</phoneme></lexeme> <!-- transposes -->
   <lexeme><grapheme>transshapez</grapheme><phoneme>trænsˈʃeɪps</phoneme></lexeme> <!-- transshapes -->
@@ -31094,6 +31128,7 @@
   <lexeme><grapheme>travelers</grapheme><phoneme>ˈtrævələrz</phoneme></lexeme> <!-- travellers -->
   <lexeme><grapheme>traveling</grapheme><phoneme>ˈtrævəlɪŋ</phoneme></lexeme> <!-- travelling -->
   <lexeme><grapheme>travelz</grapheme><phoneme>ˈtrævəlz</phoneme></lexeme> <!-- travels -->
+  <lexeme><grapheme>traverses</grapheme><phoneme>ˈtrævərsəz</phoneme></lexeme> <!-- traverses -->
   <lexeme><grapheme>traversez</grapheme><phoneme>trəˈvɜrsəz</phoneme></lexeme> <!-- traverses -->
   <lexeme><grapheme>travestiez</grapheme><phoneme>ˈtrævəstiz</phoneme></lexeme> <!-- travesties -->
   <lexeme><grapheme>travwa</grapheme><phoneme>trəˈvɔɪ</phoneme></lexeme> <!-- travois -->

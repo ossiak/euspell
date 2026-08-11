@@ -139,6 +139,39 @@ etiolate,ˈiːtiəˌleɪt,aetiolate
 levigat,ˈlɛvɪɡət,laevigate
 levigate,ˈlɛvɪˌɡeɪt,laevigate
 #
+# --- retained spellings ------------------------------------------------------
+# Added 10 Aug 2026 with the gen-pls.js change that emits a traditional spelling
+# when the reform keeps it as one half of a split. Twenty-seven of the
+# thirty-four route correctly on their own; these are the seven that do not, plus
+# the words whose second reading is missing from the source entirely.
+#
+# refuse: the retained spelling is the NOUN (rubbish). The -ate heuristic reads a
+# final e as the verb, which is right for graduate and wrong here.
+refuse,ˈɹɛfjuːs,refuse
+# subordinate/syndicate: the source tags only the verb, via the (V:) form, so the
+# entry never registers as a heteronym and both spellings take the first reading.
+subordinate,səˈbɔɹdənˌeɪt,subordinate
+syndicate,ˈsɪndɪˌkeɪt,syndicate
+# sow/suw and tear: sense labels in free text -- (seed)/(pig), "for teardrop" --
+# which nothing can match to a spelling.
+suw,saʊ,sow
+tear,tɪɹ,tear
+tears,tɪɹz,tears
+# lead and live keep their traditional spelling for one sense, and the source has
+# only the other sense's reading, so nothing can be derived for them at all.
+lead,liːd,lead
+live,laɪv,live
+#
+# --- the ea homographs, for episode 4 -----------------------------------------
+# Same shape as barre: the traditional spelling is kept for one sense and only
+# the other gets a new one, so the lone novel spelling inherited the retained
+# sense's reading. read/redd is the clearest -- `redd` is the PAST tense and was
+# being pronounced "reed". `lead` and `cleanly` have only the other reading in
+# the source at all.
+redd,rɛd,read
+ledd,lɛd,lead
+clenly,ˈklɛnli,cleanly
+#
 # --- barre: the ballet rail keeps its spelling, the guitar term gets barreh ---
 # barre the rail is said "bar" and is a noun only; the guitar barre is /bæˈɹeɪ/,
 # noun and verb. Only the guitar sense gets a new spelling, so the lone reading

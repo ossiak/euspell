@@ -41,6 +41,16 @@ for (const raw of readFileSync(LEXICON, 'utf8').split('\n')) {
   // IPA source, so nothing leaked here, but the guard belongs with the others.
   if (+c[2] % 10 === 0) continue;
   if (!sp || sp === '[]') continue;
+  // Column 2 (PoS) is deliberately not read, and must not be paired positionally
+  // with the spellings in column 4. The two lists are not parallel arrays: PoS is
+  // alphabetical and says which grammatical roles the word can play, while the
+  // spelling list says which alternative spellings exist, and the counts often
+  // differ. "sloughy,JJ,sluffy|slouhy|sluhy" is one tag against three spellings;
+  // "bows,NN2|VVZ,bows|bowz|buws|buwz" is two against four; and slough's three
+  // spellings are three MEANINGS (shed, bog, inlet) while its NN|NN1|VV0 is three
+  // grammatical roles — orthogonal things that happen to number the same. Sense is
+  // inferred from the spelling itself (spellingSense, below) or stated by hand in
+  // the overrides; never from this column's order.
   spellings.set(c[0], { list: sp.split('|'), enc: +c[2] });
 }
 
@@ -128,7 +138,8 @@ let primary = 0;
 let senseGaps = 0;
 const senseGapList = [];
 const underdet = [];          // spellings refused for want of a reading
-const novelGraphemes = new Set(); // every grapheme the lexicon can legitimately emit
+let retained = 0;                  // traditional spellings kept as one half of a split
+const knownGraphemes = new Set();  // every grapheme the lexicon can legitimately hold
 for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const fields = raw.replace(/\r$/, '').split(',');
   const word = fields[0];
@@ -138,8 +149,23 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   if (readings.length > 1) multiIpa.push({ word, ipas: readings.map((r) => r.ipa) });
   const entry = spellings.get(word) || spellings.get(word.toLowerCase());
   if (!entry) { missing++; continue; }
-  // New spellings only: a grapheme identical to the headword is the word itself,
-  // not a reform of it.
+  // Every spelling this entry can produce is a legitimate target for a curated
+  // override, whether or not it is derived below. Without this, an override for
+  // a retained spelling ("live", "tears") is rejected as a grapheme the lexicon
+  // never emits, and the only way to state its pronunciation is an inline SSML
+  // pin in whatever script happens to say it.
+  for (const s of entry.list) knownGraphemes.add(s);
+
+  // A grapheme identical to the headword is normally the word itself rather than
+  // a reform of it, and is skipped. The exception is a word carrying two or more
+  // readings: there the retained spelling is one half of a split the reform has
+  // just made — `records` keeps its spelling for the noun while the verb becomes
+  // `recordz` — so in euspell text it is no longer ambiguous, and this file's
+  // stated job is "reading euspell-converted text aloud". Saying nothing about it
+  // throws away the disambiguation the reform exists to create, and leaves a
+  // synthesiser guessing at a word that no longer needs guessing at. The sense
+  // routing below places it: the readings for these are labelled, and their order
+  // is not reliable — `records` lists the verb first, `projects` the noun.
   //
   // A grapheme that is *another* lexicon headword ("programs" from British
   // "programmes", "color" from "colour") used to be dropped here too, on the
@@ -157,7 +183,7 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   // agree. Where a grapheme genuinely arrives from two differently-sounding
   // words, the conflict pass below still catches it.
   const news = entry.list.filter((s) => {
-    if (s === word) return false;
+    if (s === word) { if (readings.length > 1) retained++; return readings.length > 1; }
     if (headwords.has(s)) primary++; // still counted, no longer discarded
     return true;
   });
@@ -203,7 +229,6 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const underdetermined = stems.size > 1 && readings.length < stems.size;
 
   for (const grapheme of news) {
-    novelGraphemes.add(grapheme);
     // Pick the reading whose sense matches this spelling. A spelling with a
     // definite sense takes only a reading of that sense; if the sole reading is
     // the OTHER sense, the spelling gets no entry — a gap beats a wrong
@@ -255,7 +280,7 @@ for (const raw of readFileSync(OVERRIDES, 'utf8').split('\n')) {
   if (!grapheme || !ipa) continue;
   // A grapheme the lexicon never emits would be dead weight in the shipped file
   // and is much more likely to be a typo, so say so rather than ship it.
-  if (!novelGraphemes.has(grapheme)) { unknownOverrides.push(grapheme); continue; }
+  if (!knownGraphemes.has(grapheme)) { unknownOverrides.push(grapheme); continue; }
   entries.set(grapheme, { grapheme, ipa, word: gloss || grapheme });
   overrides++;
 }
@@ -395,6 +420,7 @@ for (const u of unmappable.slice(0, 12)) console.log(`[gen-pls]     unmappable: 
 console.log(`[gen-pls]   ${multiIpa.length} words have multiple readings (routed by sense where labelled/-ate)`);
 console.log(`[gen-pls]   ${primary} graphemes that are also lexicon headwords (kept; revivals live here)`);
 console.log(`[gen-pls]   ${missing} CSV words absent from lexicon; ${noIpa} rows with no IPA; ${conflicts} grapheme conflicts`);
+console.log(`[gen-pls]   ${retained} traditional spellings kept as one half of a split (records, presents, …)`);
 console.log(`[gen-pls]   ${overrides} curated overrides applied (data/euspell_ipa_overrides.csv)`);
 if (unknownOverrides.length) {
   console.warn(`[gen-pls]   ${unknownOverrides.length} override(s) for graphemes the lexicon never emits: ${unknownOverrides.join(', ')}`);
