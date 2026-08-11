@@ -23,7 +23,9 @@ import { dirname, join } from 'node:path';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const LEXICON = join(root, 'data/euspell_lexicon.csv');
 const IPA_CSV = join(root, 'data/changed_words_IPA.csv');
+const OVERRIDES = join(root, 'data/euspell_ipa_overrides.csv');
 const OUT = join(root, 'dict/euspell_tts.pls');
+const OUT_ARPA = join(root, 'dict/euspell_tts_arpabet.pls');
 
 // traditional headword -> its euspellings (lexicon column 4, pipe-separated),
 // plus the set of every headword (a "primary" / standard dictionary word).
@@ -125,6 +127,8 @@ let conflicts = 0;
 let primary = 0;
 let senseGaps = 0;
 const senseGapList = [];
+const underdet = [];          // spellings refused for want of a reading
+const novelGraphemes = new Set(); // every grapheme the lexicon can legitimately emit
 for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const fields = raw.replace(/\r$/, '').split(',');
   const word = fields[0];
@@ -134,13 +138,27 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   if (readings.length > 1) multiIpa.push({ word, ipas: readings.map((r) => r.ipa) });
   const entry = spellings.get(word) || spellings.get(word.toLowerCase());
   if (!entry) { missing++; continue; }
-  // New spellings only, and never a "primary" word: a grapheme that is itself a
-  // lexicon headword (e.g. "programs", the standard form, from British
-  // "programmes") is an existing word, not a euspell reform, so it needs no
-  // pronunciation entry. Only the genuine novel spelling (e.g. "programz") is kept.
+  // New spellings only: a grapheme identical to the headword is the word itself,
+  // not a reform of it.
+  //
+  // A grapheme that is *another* lexicon headword ("programs" from British
+  // "programmes", "color" from "colour") used to be dropped here too, on the
+  // reasoning that an existing English word needs no pronunciation entry. That
+  // held for the standard forms it was written for and failed for the revivals:
+  // Table 1 respells "aghast" to the older "agast", "victual" to "vittle",
+  // "boulder" to "bowlder" — all existing words, none of which a synthesiser can
+  // be trusted to know. Eleven of Table 1's twenty-four were lost this way,
+  // "wynd" among them, which is the one word whose whole purpose is to state a
+  // pronunciation the reader cannot otherwise get.
+  //
+  // Emitting them is safe because euspell text gives each grapheme one reading by
+  // construction: a collision is only permitted where the two words are
+  // homophones, so the entry the engine already had and the entry we supply
+  // agree. Where a grapheme genuinely arrives from two differently-sounding
+  // words, the conflict pass below still catches it.
   const news = entry.list.filter((s) => {
     if (s === word) return false;
-    if (headwords.has(s)) { primary++; return false; }
+    if (headwords.has(s)) primary++; // still counted, no longer discarded
     return true;
   });
 
@@ -165,7 +183,27 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
   const senses = readings.map((r) => r.sense);
   const isHet = isAtePair || (senses.includes('verb') && senses.includes('noun'));
 
+  // Underdetermined: the spellings differ by more than a final sibilant — so
+  // they are NOT homophones and genuinely want different sounds — but the source
+  // has fewer readings than there are distinct stems. `slough` is the clear case:
+  // three spellings, two readings, and no /sluː/ anywhere in the data. Nothing
+  // can be routed here because the pronunciation does not exist to route, so the
+  // fallback below must not reach for readings[0] — that is what told the
+  // synthesiser to pronounce `ledds` (the metal) as "leedz". These are emitted
+  // from data/euspell_ipa_overrides.csv instead, keyed by grapheme.
+  // Counted over the novel spellings only. Widening it to entry.list also catches
+  // the case where a word keeps its traditional spelling for one sense and gains
+  // one for another — barre the ballet rail stays "barre", the guitar barre
+  // becomes "barreh" — but it then swallows the whole "-ate" class as well
+  // (undulat/undulate and ~200 more), where spellingSense CAN tell the two
+  // spellings apart and only the second reading is missing. Refusing those
+  // trades a correct entry for a missing one, so the narrow test stands and the
+  // single-novel-spelling splits are handled by override instead.
+  const stems = new Set(news.map((s) => s.replace(/[sz]$/, '')));
+  const underdetermined = stems.size > 1 && readings.length < stems.size;
+
   for (const grapheme of news) {
+    novelGraphemes.add(grapheme);
     // Pick the reading whose sense matches this spelling. A spelling with a
     // definite sense takes only a reading of that sense; if the sole reading is
     // the OTHER sense, the spelling gets no entry — a gap beats a wrong
@@ -179,7 +217,11 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
         senseGaps++;
         senseGapList.push(`${grapheme} (${want}) — only reading is the ${readingSense(readings[0], isAtePair)} of ${word}: ${readings[0].ipa}`);
         continue; // leave it for a hand-added second reading
-      } else ipa = readings[0].ipa; // sense undeterminable → the primary reading
+      } else if (underdetermined) { underdet.push({ grapheme, word }); continue; }
+      else ipa = readings[0].ipa; // sense undeterminable → the primary reading
+    } else if (underdetermined) {
+      underdet.push({ grapheme, word });
+      continue;
     } else {
       ipa = readings[0].ipa;
     }
@@ -194,6 +236,105 @@ for (const raw of readFileSync(IPA_CSV, 'utf8').split('\n')) {
     }
     entries.set(grapheme, { grapheme, ipa, word });
   }
+}
+
+// ---------------------------------------------------------------------------
+// Curated overrides, applied last so they beat anything derived above.
+//
+// This file is keyed on the GRAPHEME rather than the traditional headword, which
+// is what makes it the answer to the underdetermined cases: no sense has to be
+// inferred, because the spelling that wants the pronunciation is the key. Its
+// header has claimed since it was written that gen-pls.js applies it; until now
+// nothing read it at all.
+let overrides = 0;
+const unknownOverrides = [];
+for (const raw of readFileSync(OVERRIDES, 'utf8').split('\n')) {
+  const line = raw.replace(/\r$/, '').trim();
+  if (!line || line.startsWith('#') || line.startsWith('grapheme,')) continue;
+  const [grapheme, ipa, gloss] = line.split(',');
+  if (!grapheme || !ipa) continue;
+  // A grapheme the lexicon never emits would be dead weight in the shipped file
+  // and is much more likely to be a typo, so say so rather than ship it.
+  if (!novelGraphemes.has(grapheme)) { unknownOverrides.push(grapheme); continue; }
+  entries.set(grapheme, { grapheme, ipa, word: gloss || grapheme });
+  overrides++;
+}
+
+// ---------------------------------------------------------------------------
+// IPA -> CMU Arpabet, for the second lexicon.
+//
+// ElevenLabs honours a PLS in either alphabet but recommends Arpabet, saying IPA
+// is less reliable on its v2 models; Polly and Azure take IPA. So both files are
+// written and the engine picks.
+//
+// This is a reverse map, not a re-derivation: changed_words_IPA.csv is the only
+// source in the tree keyed on every reformable headword, and its IPA has been
+// hand-repaired over many commits, so it — not CMUdict — is what the shipped
+// pronunciations actually are. The cost is that the column is not uniform. It
+// carries both rhotic conventions (r and ɹ), the r-coloured ɚ/ɝ that
+// derive-ipa.py deliberately avoids, a non-GenAm ɒ, and a few characters that
+// are simply wrong: ǝ (U+01DD turned e) where ə (U+0259) was meant, one plain g
+// for script ɡ, and stray editorial residue (V, x, >, ø, ā, |).
+//
+// Everything real is mapped. Anything left unmapped is refused rather than
+// guessed at — a wrong phoneme is worse than no entry, since an absent word
+// falls back to the engine's own dictionary — and the count is reported.
+const ARPABET = [
+  // Longest first: diphthongs and r-coloured vowels before their components.
+  ['aʊ', 'AW'], ['aɪ', 'AY'], ['eɪ', 'EY'], ['oʊ', 'OW'], ['ɔɪ', 'OY'],
+  ['iː', 'IY'], ['uː', 'UW'],
+  // ɜːr / ɜr / ər collapse to ER, which is how CMUdict writes the rhotic vowel
+  // (bouldered = B OW1 L D ER0). A schwa that merely precedes a syllable-initial
+  // r is not caught here, because the stress mark sits between them.
+  ['ɜːr', 'ER'], ['ɜɹ', 'ER'], ['ɜr', 'ER'], ['ɜː', 'ER'], ['ɜ', 'ER'],
+  ['ər', 'ER'], ['əɹ', 'ER'], ['ɚ', 'ER'], ['ɝ', 'ER'],
+  ['ɪ', 'IH'], ['ʊ', 'UH'], ['ɛ', 'EH'], ['æ', 'AE'], ['ʌ', 'AH'],
+  ['ə', 'AH'], ['ǝ', 'AH'], ['ɑ', 'AA'], ['ɔ', 'AO'],
+  ['ɒ', 'AA'],  // LOT: GenAm has no ɒ, and CMUdict writes cot as K AA1 T
+  ['i', 'IY'], ['u', 'UW'], ['e', 'EY'], ['o', 'OW'], ['a', 'AA'],
+  ['tʃ', 'CH'], ['dʒ', 'JH'], ['ʃ', 'SH'], ['ʒ', 'ZH'], ['θ', 'TH'],
+  ['ð', 'DH'], ['ŋ', 'NG'], ['ɡ', 'G'], ['g', 'G'], ['ɹ', 'R'], ['j', 'Y'],
+  ['h', 'HH'], // Arpabet writes /h/ as HH; a bare H is not a phoneme in the set
+  ...'bdfklmnpstvwz'.split('').map((c) => [c, c.toUpperCase()]),
+  ['r', 'R'],
+];
+const VOWELS = new Set(['AW', 'AY', 'EY', 'OW', 'OY', 'IY', 'UW', 'ER', 'IH',
+  'UH', 'EH', 'AE', 'AH', 'AA', 'AO']);
+// Diacritics that carry no phoneme of their own: the syllabic mark and nasal
+// tilde ride on the segment before them. Length is ignored too — Arpabet has no
+// length distinction, and every vowel here maps the same long or short (ɑː and ɑ
+// are both AA, ɔː and ɔ both AO), so dropping the mark loses nothing. The
+// explicit iː/uː/ɜː rows above stay only because ɜːr must absorb its r.
+const IGNORE = new Set(['̩', '̃', 'ˑ', 'ː']);
+
+function toArpabet(ipa) {
+  const out = [];
+  let stress = '0'; // set by ˈ/ˌ, spent on the next vowel
+  let i = 0;
+  while (i < ipa.length) {
+    const ch = ipa[i];
+    if (ch === 'ˈ') { stress = '1'; i += 1; continue; }
+    if (ch === 'ˌ') { stress = '2'; i += 1; continue; }
+    if (IGNORE.has(ch) || ch === ' ') { i += 1; continue; }
+    const hit = ARPABET.find(([from]) => ipa.startsWith(from, i));
+    if (!hit) return null; // unmappable: refuse the whole entry
+    const [from, to] = hit;
+    out.push(VOWELS.has(to) ? to + stress : to);
+    if (VOWELS.has(to)) stress = '0';
+    i += from.length;
+  }
+  if (!out.length) return null;
+  // The IPA leaves monosyllables unmarked on purpose — one syllable carries no
+  // contrastive stress, so derive-ipa.py writes no ˈ and there is nothing here
+  // to read. Arpabet has no such convention: CMUdict writes chum as CH AH1 M,
+  // and an engine reading AH0 hears an unstressed syllable. Promote the lone
+  // vowel to primary.
+  const vowels = out.filter((p) => VOWELS.has(p.slice(0, -1)));
+  if (vowels.length === 1 && vowels[0].endsWith('0')) {
+    const at = out.indexOf(vowels[0]);
+    out[at] = `${vowels[0].slice(0, -1)}1`;
+  }
+  return out.join(' ');
 }
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -219,10 +360,51 @@ ${body}
 `;
 
 writeFileSync(OUT, pls, 'utf8');
+
+// The Arpabet twin. Same graphemes, same join, same order — only the alphabet
+// differs, so the two files can be diffed against each other entry for entry.
+const unmappable = [];
+const arpaBody = [...entries.values()]
+  .sort((a, b) => a.grapheme.localeCompare(b.grapheme))
+  .map((e) => {
+    const arpa = toArpabet(e.ipa);
+    if (!arpa) { unmappable.push(`${e.grapheme} (${e.word}): ${e.ipa}`); return null; }
+    return lexeme({ grapheme: e.grapheme, ipa: arpa, word: e.word });
+  })
+  .filter(Boolean)
+  .join('\n');
+
+writeFileSync(OUT_ARPA, `<?xml version="1.0" encoding="UTF-8"?>
+<!-- GENERATED by build/gen-pls.js from data/changed_words_IPA.csv + the lexicon. -->
+<!-- The Arpabet twin of euspell_tts.pls, for engines that prefer it (ElevenLabs
+     recommends Arpabet over IPA on its v2 models). Same graphemes, same order. -->
+<lexicon version="1.0"
+    xmlns="http://www.w3.org/2005/01/pronunciation-lexicon"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2005/01/pronunciation-lexicon
+      http://www.w3.org/TR/2008/REC-pronunciation-lexicon-20081014/pls.xsd"
+    alphabet="cmu-arpabet" xml:lang="en">
+${arpaBody}
+</lexicon>
+`, 'utf8');
+
 console.log(`[gen-pls] wrote ${OUT} (${entries.size} lexemes)`);
+console.log(`[gen-pls] wrote ${OUT_ARPA} (${entries.size - unmappable.length} lexemes, `
+  + `${unmappable.length} refused as unmappable)`);
+for (const u of unmappable.slice(0, 12)) console.log(`[gen-pls]     unmappable: ${u}`);
 console.log(`[gen-pls]   ${multiIpa.length} words have multiple readings (routed by sense where labelled/-ate)`);
-console.log(`[gen-pls]   ${primary} primary-word graphemes dropped (grapheme is a lexicon headword)`);
+console.log(`[gen-pls]   ${primary} graphemes that are also lexicon headwords (kept; revivals live here)`);
 console.log(`[gen-pls]   ${missing} CSV words absent from lexicon; ${noIpa} rows with no IPA; ${conflicts} grapheme conflicts`);
+console.log(`[gen-pls]   ${overrides} curated overrides applied (data/euspell_ipa_overrides.csv)`);
+if (unknownOverrides.length) {
+  console.warn(`[gen-pls]   ${unknownOverrides.length} override(s) for graphemes the lexicon never emits: ${unknownOverrides.join(', ')}`);
+}
+// Reported after the override pass, so only the ones still without a
+// pronunciation are named — those are the rows somebody has to write.
+const stillOpen = underdet.filter((u) => !entries.has(u.grapheme));
+console.log(`[gen-pls]   ${underdet.length} spelling(s) had more spellings than readings; `
+  + `${underdet.length - stillOpen.length} supplied by override, ${stillOpen.length} left unstated`);
+for (const u of stillOpen) console.log(`[gen-pls]       needs an override: ${u.grapheme} (${u.word})`);
 if (senseGaps) {
   console.log(`[gen-pls]   ${senseGaps} noun/verb spellings left unwritten (source has only the other sense — add the second reading):`);
   for (const g of senseGapList.slice(0, 8)) console.log(`[gen-pls]     ${g}`);

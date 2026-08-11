@@ -56,3 +56,111 @@ sihtseez,ˈsaɪtˌsiːz,sightsees
 subseezure,sʌbˈsiːʒəɹ,subseizure
 subseezures,sʌbˈsiːʒəɹz,subseizures
 unseezed,ʌnˈsiːzd,unseized
+#
+# --- underdetermined spellings ------------------------------------------------
+# Added 10 Aug 2026. Each of these is a word whose euspellings are NOT homophones
+# but whose row in changed_words_IPA.csv holds fewer readings than there are
+# spellings, so gen-pls.js can no longer guess and refuses them. Keyed by
+# grapheme, the sense is decided by the spelling and nothing has to be inferred.
+#
+# --- slough: shed /slʌf/, bog /slaʊ/, inlet /sluː/ ----------------------------
+# The paper's three senses. Only two readings exist in the source and none of
+# them is the inlet, so all three are stated here.
+sluff,slʌf,slough
+slouh,slaʊ,slough
+sluh,sluː,slough
+sluffd,slʌft,sloughed
+slouhd,slaʊd,sloughed
+sluhd,sluːd,sloughed
+sluffs,slʌfs,sloughs
+sluffz,slʌfs,sloughs
+slouhs,slaʊz,sloughs
+sluhs,sluːz,sloughs
+sluffy,ˈslʌfi,sloughy
+slouhy,ˈslaʊi,sloughy
+sluhy,ˈsluːi,sloughy
+sluffier,ˈslʌfiəɹ,sloughier
+slouhier,ˈslaʊiəɹ,sloughier
+sluhier,ˈsluːiəɹ,sloughier
+sluffiest,ˈslʌfiəst,sloughiest
+slouhiest,ˈslaʊiəst,sloughiest
+sluhiest,ˈsluːiəst,sloughiest
+sluffiness,ˈslʌfinəs,sloughiness
+slouhiness,ˈslaʊinəs,sloughiness
+sluhiness,ˈsluːinəs,sloughiness
+#
+# --- the uw graphemes: uw is /aʊ/, ow stays /oʊ/ ------------------------------
+# bow the ribbon vs bow the bend; row the line vs row the argument; mow.
+bowz,boʊz,bows
+buws,baʊz,bows
+buwz,baʊz,bows
+bowd,boʊd,bowed
+buwd,baʊd,bowed
+unbowd,ˌʌnˈboʊd,unbowed
+unbuwd,ˌʌnˈbaʊd,unbowed
+rowz,roʊz,rows
+ruws,raʊz,rows
+ruwz,raʊz,rows
+rowd,roʊd,rowed
+ruwd,raʊd,rowed
+mowz,moʊz,mows
+muws,maʊz,mows
+#
+# --- bear: baer is the animal, behr is carry/tolerate -------------------------
+# A rare case where the split is purely semantic and both are said the same way.
+baer,bɛɹ,bear
+behr,bɛɹ,bear
+baers,bɛɹz,bears
+behrz,bɛɹz,bears
+#
+# --- the heteronyms whose whole purpose is to sound different -----------------
+# tears has BOTH readings in the source, but they sit inside a free-text
+# parenthetical -- "-,tɛərz,(or,tɪərz,for,teardrops)" -- so nothing can match
+# them to spellings and all three took the ripping reading. taers and taerz are
+# genuinely homophones (the rip, noun and verb); only tearz is the teardrop.
+taers,tɛɹz,tears
+taerz,tɛɹz,tears
+tearz,tɪɹz,tears
+# ledds is the metal. Without this row the synthesiser said "leedz".
+ledds,lɛdz,leads
+leadz,liːdz,leads
+windz,wɪndz,winds
+wyndz,waɪndz,winds
+lerned,ˈlɜːɹnəd,learned
+lernd,lɜːɹnd,learned
+sihtread,ˈsaɪtˌɹiːd,sightread
+sihtredd,ˈsaɪtˌɹɛd,sightread
+#
+# --- -ate pairs: the reduced noun/adjective vs the /eɪt/ verb -----------------
+ghesstimat,ˈɡɛstəmɪt,guesstimate
+ghesstimate,ˈɡɛstəˌmeɪt,guesstimate
+etiolat,ˈiːtiələt,aetiolate
+etiolate,ˈiːtiəˌleɪt,aetiolate
+levigat,ˈlɛvɪɡət,laevigate
+levigate,ˈlɛvɪˌɡeɪt,laevigate
+#
+# --- barre: the ballet rail keeps its spelling, the guitar term gets barreh ---
+# barre the rail is said "bar" and is a noun only; the guitar barre is /bæˈɹeɪ/,
+# noun and verb. Only the guitar sense gets a new spelling, so the lone reading
+# in the source is the rail's and every barreh form was inheriting it.
+barreh,bæˈɹeɪ,barre
+barrehz,bæˈɹeɪz,barres
+barrehd,bæˈɹeɪd,barred
+barrd,bɑɹd,barred
+#
+# --- manque: the roulette section vs the French manqué ------------------------
+# manq is the noun, sections 1-18 on a roulette table. manqeh is the adjective,
+# unfulfilled or missed, and keeps the French nasal vowel -- which Arpabet has no
+# phoneme for, so the tilde is dropped on that side and it comes out as AA.
+manq,mɑːŋk,manque
+manqeh,mɑ̃ˈkeɪ,manque
+#
+# --- remaining noun/verb pairs with one reading between them ------------------
+attashehs,ˌætəˈʃeɪz,attaches
+attaqhez,əˈtætʃɪz,attaches
+buffehs,bəˈfeɪz,buffets
+buffetz,ˈbʌfɪts,buffets
+deddbolts,ˈdɛdˌboʊlts,deadbolts
+deddbolz,ˈdɛdˌboʊlts,deadbolts
+hemolyses,hiˈmɑləsiːz,haemolyses
+hemolyzez,ˈhiməˌlaɪzɪz,haemolyses
