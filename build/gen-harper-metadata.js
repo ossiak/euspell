@@ -158,7 +158,7 @@ for (const spelling of [...tagsBySpelling.keys()].sort((a, b) => a.localeCompare
   if (Object.keys(meta).length) out[spelling] = meta;
 }
 
-writeFileSync(OUT, JSON.stringify(out, null, 0) + '\n', 'utf8');
+writeFileSync(OUT, `${JSON.stringify(out, null, 0)}\n`, 'utf8');
 
 console.log(`[gen-harper] wrote ${OUT}`);
 console.log(`[gen-harper]   ${Object.keys(out).length} spellings with metadata`);

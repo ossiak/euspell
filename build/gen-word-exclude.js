@@ -69,7 +69,7 @@ for (const src of SOURCES) {
 
 const sorted = [...words].sort((a, b) => a.localeCompare(b));
 // UTF-16 LE + BOM, CRLF — matching the exclusion dictionaries Word writes itself.
-const body = sorted.join('\r\n') + '\r\n';
+const body = `${sorted.join('\r\n')}\r\n`;
 // Prepend the UTF-16 LE byte-order mark (FF FE) explicitly, then the body.
 writeFileSync(OUT, Buffer.concat([Buffer.from([0xff, 0xfe]), Buffer.from(body, 'utf16le')]));
 console.log(`[gen-word-exclude] wrote ${OUT} — ${sorted.length} words`);

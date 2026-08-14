@@ -62,13 +62,13 @@ function run() {
     }
   } catch (e) {
     Pages.displayAlert('Euspell — could not rewrite the document', {
-      message: String(e) + '\n\nThis is usually the text-suite access; see pages/README.md.',
+      message: `${String(e)}\n\nThis is usually the text-suite access; see pages/README.md.`,
     });
     return;
   }
 
   Pages.displayNotification(
-    changed ? 'Document ' + (reverting ? 'reverted' : 'reformed') : 'No changes',
+    changed ? `Document ${reverting ? 'reverted' : 'reformed'}` : 'No changes',
     { withTitle: 'Euspell' }
   );
 }

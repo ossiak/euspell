@@ -130,7 +130,7 @@ for (const row of parseCsv('euspell_lexicon_contractions.csv', true)) {
 // ---------------------------------------------------------------------------
 
 const sorted = [...validWords].sort((a, b) => a.localeCompare(b, 'en'));
-const dicContent = [sorted.length.toString(), ...sorted].join('\n') + '\n';
+const dicContent = `${[sorted.length.toString(), ...sorted].join('\n')}\n`;
 writeFileSync(fileURLToPath(new URL('euspell.dic', DIST)), dicContent, 'utf8');
 console.log(`[euspell-build] dict/euspell.dic  — ${sorted.length.toLocaleString()} words`);
 

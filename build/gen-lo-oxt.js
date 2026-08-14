@@ -118,4 +118,4 @@ zip.addFile('Addons.xcu', Buffer.from(ADDONS, 'utf8'));
 const out = join(root, 'dict', 'euspell-libreoffice.oxt');
 zip.writeZip(out);
 console.log(`[gen-lo-oxt] wrote ${out} (v${version})`);
-for (const e of zip.getEntries()) console.log('  ' + e.entryName);
+for (const e of zip.getEntries()) console.log(`  ${e.entryName}`);

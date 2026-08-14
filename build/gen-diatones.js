@@ -247,6 +247,6 @@ const hits = rows.filter(row => {
 
 const header = 'Word,PoS,Encoding,euspelling';
 const lines = hits.map(r => `${r.Word},${r.PoS},${r.Encoding},${r.euspelling}`);
-writeFileSync(new URL('diatones.csv', DATA), [header, ...lines].join('\n') + '\n');
+writeFileSync(new URL('diatones.csv', DATA), `${[header, ...lines].join('\n')}\n`);
 
 console.log(`Written ${hits.length} diatone entries to data/diatones.csv`);

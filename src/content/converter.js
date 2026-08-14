@@ -109,15 +109,23 @@ function route(key, entry, tokens, idx) {
   // GE (the genitive marker) is the FINAL tag of the reading — a bare tag for the
   // standalone "'s" (pos "GE|VBZ|VHZ|…"), the last of a sequence for a whole-word
   // possessive contraction ("anyone's" pos "PN1 GE|PN1 VBZ|PN1 VHZ", likewise
-  // everyone's, someone's, somebody's, nobody's, no one's). Testing the final tag
-  // catches both; a bare pos.includes('GE') matched only the standalone clitic, so
-  // the whole-word contractions never reached is_verbal_s and always took the
+  // everyone's, someone's, somebody's, nobody's). Testing the final tag catches
+  // both; a bare pos.includes('GE') matched only the standalone clitic, so the
+  // whole-word contractions never reached is_verbal_s and always took the
   // genitive spelling ("anyone's coming" → "anywun's"). The exact 'GE' match skips
-  // the possessive-pronoun tags APPGE/PPGE/DDQGE. For a whole-word contraction the
-  // possessor is inside the token, so is_verbal_s decides on the post-clitic
-  // context it reads after idx — the same slots it uses for the bare clitic.
+  // the possessive-pronoun tags APPGE/PPGE/DDQGE.
+  //
+  // is_verbal_s must be asked about the CLITIC's slot, which for a whole-word
+  // contraction is not `idx`: the tokenizer expands a contraction to one
+  // pseudo-token per PoS position, and identity rides on the first, so "anyone's"
+  // occupies [PN1, GE|VBZ|VHZ] and idx points at the PN1. Asked at idx the rule
+  // reads the contraction's OWN second pseudo-token as the following word, sees
+  // its VBZ, and returns "contracted verb" unconditionally — every genitive came
+  // out wrong ("Anybody's guess" → "Anybody'z ghess"). cliticSlot walks to the
+  // last pseudo-token so the rule sees the real post-clitic context, which is the
+  // slot it already gets for the bare "'s".
   if (pos.some((reading) => reading.split(/\s+/).pop() === 'GE')) {
-    return is_verbal_s(tokens, idx) ? 1 : 0;
+    return is_verbal_s(tokens, cliticSlot(tokens, idx)) ? 1 : 0;
   }
   // French loanwords (encoding 702) whose singular and plural share one current
   // spelling (e.g. "chassis", "corps", "travois"): the reform gives the plural a
@@ -159,6 +167,30 @@ function route(key, entry, tokens, idx) {
     return i === -1 ? 0 : i;
   }
   return 0;
+}
+
+/**
+ * The slot holding a contraction's final component — its clitic — given the slot
+ * holding its identity.
+ *
+ * Read from the token stream rather than counted off the entry's PoS sequence, so
+ * it cannot drift from what the tokenizer actually pushed (an entry from the
+ * lexicon rather than the contractions table occupies one slot however many
+ * positions its PoS names). A continuation pseudo-token is the only token carrying
+ * an empty word — every real word and every collapsed phrase has text — so the run
+ * of them after `idx` is exactly this contraction's remaining components.
+ *
+ * A single-component contraction (the bare "'s") has no continuation, so this
+ * returns `idx` unchanged.
+ *
+ * @param {Token[]} tokens
+ * @param {number} idx
+ * @returns {number}
+ */
+function cliticSlot(tokens, idx) {
+  let i = idx;
+  while (tokens[i + 1]?.word === '') i++;
+  return i;
 }
 
 /**

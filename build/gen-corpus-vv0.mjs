@@ -67,10 +67,10 @@ for (const [suffix, dir] of SOURCES) {
       if (!hit) continue;
       buf.push(line.trim());
       kept++;
-      if (buf.length >= 4096) { fs.writeSync(fd, buf.join('\n') + '\n'); buf = []; }
+      if (buf.length >= 4096) { fs.writeSync(fd, `${buf.join('\n')}\n`); buf = []; }
     }
   }
-  if (buf.length) fs.writeSync(fd, buf.join('\n') + '\n');
+  if (buf.length) fs.writeSync(fd, `${buf.join('\n')}\n`);
   fs.closeSync(fd);
   const mb = (fs.statSync(out).size / 1048576).toFixed(1);
   console.log(`  ${path.basename(out)} — ${kept.toLocaleString()} lines from ${files.length.toLocaleString()} files (${mb} MB)`);

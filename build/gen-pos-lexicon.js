@@ -97,7 +97,7 @@ for (const { word, spelling, tags } of newSpellings()) {
 }
 
 const body = [...lines].sort((a, b) => a.localeCompare(b)).join('\n');
-writeFileSync(OUT, body + '\n', 'utf8');
+writeFileSync(OUT, `${body}\n`, 'utf8');
 
 const unmappedTotal = [...unmapped.values()].reduce((a, b) => a + b, 0);
 console.log(`[gen-pos] wrote ${OUT}`);

@@ -27,7 +27,7 @@ const polyfills = readFileSync(join(root, 'src/pdf/polyfills.js'), 'utf8');
 mkdirSync(wasmDir, { recursive: true });
 mkdirSync(fontDir, { recursive: true });
 const worker = readFileSync(join(pkg, 'build/pdf.worker.min.mjs'), 'utf8');
-writeFileSync(join(destDir, 'pdf.worker.min.mjs'), polyfills + '\n' + worker);
+writeFileSync(join(destDir, 'pdf.worker.min.mjs'), `${polyfills}\n${worker}`);
 
 let wasmCount = 0;
 for (const file of readdirSync(join(pkg, 'wasm'))) {
