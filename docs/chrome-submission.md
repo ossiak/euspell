@@ -157,27 +157,21 @@ communications, the fix is to check that box, not to argue.
 
 ### Privacy policy URL
 
-⚠ **Required, and does not exist yet.** Draft text, to be published at
-`euspell.org/privacy` before submitting:
+`https://euspell.org/privacy/`
 
-> **Euspell collects nothing.** There is no account, no server, and no
-> analytics. The extension makes no network request to us, because there is
-> nothing on our side to request from.
->
-> **Page content stays in the page.** Converting a page means rewriting text in
-> the browser, using a lexicon that ships inside the extension. The text of what
-> you read is never sent anywhere.
->
-> **Your settings.** One preference — whether conversion is on — is stored in
-> Chrome's own `storage.sync`, which syncs through your Google account, not
-> through us. Removing the extension removes it.
->
-> **Dictation is the exception.** When you start dictation, the extension uses
-> your browser's built-in speech recognition. In Chrome, that sends the audio to
-> Google's speech service for transcription, under Google's privacy policy, not
-> ours — the same as any site that uses the Web Speech API. We never receive the
-> audio or the transcript; the text is converted to euspell locally and typed
-> into the page. Dictation runs only while you have started it.
+**Written, not yet live.** The page exists in the website repo at
+`src/app/privacy/page.tsx` and builds into the static export; the trailing slash
+is not optional, since the site exports each route as a folder. It covers every
+tool rather than the extension alone — what each one stores and where, that page
+text never leaves the device, the dictation exception in full, and the fact that
+the web host keeps ordinary access logs. It also explains the `<all_urls>`
+request in the same terms as the justification above, which is worth keeping
+consistent if either is reworded.
+
+⚠ **Deploying it publishes the whole site.** The export contains all 20 routes,
+and only `/` is the coming-soon splash — so uploading `out/` reveals the 17
+content pages at the same moment. That is a launch decision, not a side effect
+to stumble into. To put the policy up alone, upload `out/privacy/` by itself.
 
 ---
 
@@ -200,7 +194,7 @@ communications, the fix is to check that box, not to argue.
 ## Blockers, in the order they bind
 
 1. **Screenshots** — at least one, and they need product that looks finished.
-2. **Privacy policy at a live URL** — the text above needs `euspell.org` to serve
-   a real page, which currently returns the coming-soon splash. This makes the
-   site deploy a dependency of the Chrome submission, not a parallel task.
+2. **Deploying the privacy policy** — the page is written; `euspell.org/privacy/`
+   still 404s until the export is uploaded. This makes a site deploy a
+   dependency of the Chrome submission, not a parallel task.
 3. **Developer account registration** (US$5, one-time) if not already done.
