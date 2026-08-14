@@ -53,7 +53,7 @@ Three lengths, ready to paste.
 | **In development since** | June 2026 |
 | **License** | GPL-3.0-or-later (all source and lexicons) |
 | **Price** | Free |
-| **Privacy** | No account, no server, no telemetry. The lexicon ships inside each product; text never leaves the device |
+| **Privacy** | No account, no server, no telemetry. The lexicon ships inside each product; text never leaves the device. Dictation is the one exception — it uses the browser's built-in speech recognition, which transcribes in the cloud |
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
 | **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |

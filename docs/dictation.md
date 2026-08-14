@@ -9,6 +9,18 @@ feature is small because the hard part (conversion) is already built, and it
 specifies the one genuinely new piece: a speech front-end that feeds clean,
 sentence-shaped text to `convertText`.
 
+**Privacy — the one place euspell is not local.** Everything else in the project
+runs on the device; this does not. The recognizer is the browser's Web Speech
+API, and Chrome implements it by streaming microphone audio to Google's speech
+service (Safari, likewise, to Apple's). That is the browser's transport, not
+ours: the extension never touches the audio, and the transcript is converted to
+euspell locally after it comes back. But it means the blanket "nothing is ever
+sent to a server" that fits the rest of the project is **false while dictation is
+running**, and every user-facing claim now says so — the README, the onboarding
+page, the press kit, and the Chrome Web Store privacy disclosure
+([chrome-submission.md](chrome-submission.md)). Audio is captured only while the
+user has started a dictation session.
+
 ## Why this is not a speech problem
 
 The instinct is that euspell's respellings — `recordz`, `wynd`, `dictatez`, `ih` —

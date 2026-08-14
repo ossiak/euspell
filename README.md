@@ -1,8 +1,11 @@
 # Euspell
 
 Convert English text into **euspell** — a reformed, more regular spelling —
-everywhere you read and write, **entirely on your device**. Nothing is ever sent
-to a server.
+everywhere you read and write, **entirely on your device**. No account, no
+server, no telemetry: the lexicon ships inside each product and your text never
+leaves it. (One exception, and only while you use it: dictation hands the
+microphone to the browser's own speech recognition, which on Chrome transcribes
+in the cloud. See [docs/dictation.md](docs/dictation.md).)
 
 The flagship is a **browser extension** (Chrome, Firefox, and Safari) that
 rewrites web pages and PDFs in place, but the same conversion engine drives a family of
@@ -111,3 +114,10 @@ npm test        # node --test over tests/**/*.test.js
 
 GPL-3.0-or-later. All conversion runs locally — no page text, no telemetry, and no
 network requests leave the device.
+
+Dictation is the single exception, and worth stating plainly because the claim
+above is otherwise absolute: it calls the browser's Web Speech API, and Chrome
+implements that by streaming the audio to Google's speech service. The extension
+never receives the audio and never sees the transcript before the browser returns
+it; the euspell conversion still happens locally. Nothing is captured unless you
+start dictation.

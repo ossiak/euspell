@@ -2,7 +2,10 @@ dist/
 .next/
 node_modules/
 
-# Firefox build staging + packaged xpi/zip (regenerable via `npm run build:firefox`)
+# Store build staging + packaged zips (regenerable via `npm run build:chrome`
+# and `npm run build:firefox`)
+build/chrome/
+build/euspell-chrome.zip
 build/firefox/
 build/euspell-firefox.zip
 web-ext-artifacts/

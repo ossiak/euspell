@@ -1,11 +1,12 @@
 // The toolbar on/off indicator. Exercises the real src/lib/action-icon.js
 // against a mock extension API, and pins the artwork it names to files that
 // exist and ship — setIcon reports a bad path only by doing nothing, so a typo
-// or a missing entry in the Firefox copy list would surface as an icon that
+// or a missing entry in the staged copy list would surface as an icon that
 // silently never changes.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { FILES } from '../build/lib/runtime-files.js';
 
 // ONE mock, installed before the module is loaded, then reconfigured per test.
 // src/lib/browser.js resolves globalThis.chrome once at module evaluation and
@@ -91,16 +92,15 @@ test('a failed setIcon is reported, not swallowed', async () => {
   assert.match(calls.warnings[0], /toolbar icon/i);
 });
 
-test('every named icon exists and ships in the Firefox build', () => {
+test('every named icon exists and ships in the store builds', () => {
   const src = fs.readFileSync(new URL('../src/lib/action-icon.js', import.meta.url), 'utf8');
   // The module names files through at('16-off.png'); the 'icons/' prefix lives
   // in that helper, so collect the arguments rather than whole paths.
   const paths = [...src.matchAll(/\bat\('([\w-]+\.png)'\)/g)].map((m) => `icons/${m[1]}`);
   assert.equal(paths.length, 6, 'both icon sets, three sizes each');
 
-  const firefox = fs.readFileSync(new URL('../build/gen-firefox.js', import.meta.url), 'utf8');
   for (const p of paths) {
     assert.ok(fs.existsSync(new URL(`../${p}`, import.meta.url)), `${p} must exist (run npm run gen:icons)`);
-    assert.ok(firefox.includes(`'${p}'`), `${p} must be in the Firefox copy list`);
+    assert.ok(FILES.includes(p), `${p} must be in the staged runtime allowlist`);
   }
 });
