@@ -1,6 +1,6 @@
 /**
  * Disambiguates 'sloughed' (encoding 123, JJ|VVD|VVN) three ways:
- *   sloffd — /slʌft/ shed / cast off (dead skin, "sloughed off")
+ *   sluffd — /slʌft/ shed / cast off (dead skin, "sloughed off")
  *   slouhd — /slaʊd/ relating to a bog or mire
  *   sluhd  — /sluːd/ relating to a backwater swamp (chiefly N. American)
  * Corpus: none — rules from register/collocation (see slough-sense.js).
@@ -15,12 +15,12 @@
 
 import { sloughSense } from './slough-sense.js';
 
-const SPELLING = { shed: 'sloffd', mire: 'slouhd', backwater: 'sluhd' };
+const SPELLING = { shed: 'sluffd', mire: 'slouhd', backwater: 'sluhd' };
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'sloffd' | 'slouhd' | 'sluhd'}
+ * @returns {'sluffd' | 'slouhd' | 'sluhd'}
  */
 export function disambiguate_sloughed(tokens, idx) {
   return SPELLING[sloughSense(tokens, idx, 'shed')];

@@ -25,6 +25,10 @@ import { disambiguate_copyread } from './copyread.js';
 import { disambiguate_does } from './does.js';
 import { disambiguate_dogged } from './dogged.js';
 import { disambiguate_dove } from './dove.js';
+import { disambiguate_fillet } from './fillet.js';
+import { disambiguate_filleted } from './filleted.js';
+import { disambiguate_filleting } from './filleting.js';
+import { disambiguate_fillets } from './fillets.js';
 import { disambiguate_foreread } from './foreread.js';
 import { disambiguate_gets } from './gets.js';
 import { disambiguate_jagged } from './jagged.js';
@@ -37,6 +41,8 @@ import { disambiguate_makes } from './makes.js';
 import { disambiguate_means } from './means.js';
 import { disambiguate_minute } from './minute.js';
 import { disambiguate_misread } from './misread.js';
+import { disambiguate_moire } from './moire.js';
+import { disambiguate_moires } from './moires.js';
 import { disambiguate_outread } from './outread.js';
 import { disambiguate_primate } from './primate.js';
 import { disambiguate_primates } from './primates.js';
@@ -98,6 +104,10 @@ export const SEMANTIC = new Map([
   ['does', disambiguate_does],
   ['dogged', disambiguate_dogged],
   ['dove', disambiguate_dove],
+  ['fillet', disambiguate_fillet],
+  ['filleted', disambiguate_filleted],
+  ['filleting', disambiguate_filleting],
+  ['fillets', disambiguate_fillets],
   ['foreread', disambiguate_foreread],
   ['gets', disambiguate_gets],
   ['jagged', disambiguate_jagged],
@@ -110,6 +120,8 @@ export const SEMANTIC = new Map([
   ['means', disambiguate_means],
   ['minute', disambiguate_minute],
   ['misread', disambiguate_misread],
+  ['moire', disambiguate_moire],
+  ['moires', disambiguate_moires],
   ['outread', disambiguate_outread],
   ['primate', disambiguate_primate],
   ['primates', disambiguate_primates],

@@ -31,7 +31,7 @@ test('rows: four-way (line/boat vs quarrel)', () => {
 test('sloughs: sense-first (mire/backwater/shed)', () => {
   assert.equal(conv([['falling', 'VVG'], ['into', 'II'], ['sloughs', ''], ['of', 'IO'], ['despond', 'NN1']], 'sloughs'), 'slouhs');
   assert.equal(conv([['channels', 'NN2'], ['sloughs', ''], ['and', 'CC'], ['levees', 'NN2']], 'sloughs'), 'sluhs');
-  assert.equal(conv([['the', 'AT'], ['mucosa', 'NN1'], ['sloughs', ''], ['off', 'RP']], 'sloughs'), 'sloffz');
+  assert.equal(conv([['the', 'AT'], ['mucosa', 'NN1'], ['sloughs', ''], ['off', 'RP']], 'sloughs'), 'sluffz');
 });
 
 test('light-verb stubs (202): verb-default, noun on a noun-phrase cue', () => {
@@ -59,7 +59,7 @@ test('two-way semantic words (tear, wound)', () => {
 // route() maps a rule's return value back through spellings.indexOf() and falls
 // back to index 0 on -1, so a rule that returns a spelling the lexicon no longer
 // has fails SILENTLY — the branch just stops being reachable. barred.js sat that
-// way after 3b861e7 renamed its spelling ('barrd' -> 'bardd'), and nothing
+// way after 3b861e7 renamed its spelling ('barrd' -> 'barrd'), and nothing
 // caught it: 23 of the 70 semantic words have no corpus file, so the smoke test
 // below never ran for them.
 //

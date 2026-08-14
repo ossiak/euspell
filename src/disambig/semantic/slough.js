@@ -1,6 +1,6 @@
 /**
  * Disambiguates 'slough' (encoding 103, NN|NN1|VV0) three ways:
- *   sloff — /slʌf/ to shed / cast off (a snake's skin, dead cells); the cast-off
+ *   sluff — /slʌf/ to shed / cast off (a snake's skin, dead cells); the cast-off
  *           layer itself; figurative "slough off" (discard)
  *   slouh — /slaʊ/ a bog or mire; the figurative "Slough of Despond"; the
  *           English town Slough
@@ -24,17 +24,17 @@ import { is_verb_VV0 } from '../pos.js';
 import { sloughSense } from './slough-sense.js';
 
 /** sense → euspelling for the base noun/verb form. */
-const SPELLING = { shed: 'sloff', mire: 'slouh', backwater: 'sluh' };
+const SPELLING = { shed: 'sluff', mire: 'slouh', backwater: 'sluh' };
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'sloff' | 'slouh' | 'sluh'}
+ * @returns {'sluff' | 'slouh' | 'sluh'}
  */
 export function disambiguate_slough(tokens, idx) {
   // The verb reading is always the shed sense ("to slough off", "snakes slough
   // their skin") — the swamp senses are nouns only.
-  if (is_verb_VV0(tokens, idx)) return 'sloff';
+  if (is_verb_VV0(tokens, idx)) return 'sluff';
 
   // "Steamboat Slough", "Elkhorn Slough" — a capitalised name + "Slough" is the
   // North-American waterway, regardless of nearby mire vocabulary.

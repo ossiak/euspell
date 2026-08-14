@@ -1,6 +1,6 @@
 /**
  * Disambiguates 'sloughiest' (encoding 103, JJT — superlative adjective) three ways:
- *   sloffiest — /ˈslʌfiəst/ most covered in shed / dead skin
+ *   sluffiest — /ˈslʌfiəst/ most covered in shed / dead skin
  *   slouhiest — /ˈslaʊiəst/ most boggy or mire-like
  *   sluhiest  — /ˈsluːiəst/ most swamp-like (chiefly N. American)
  * Corpus: none — rules from register/collocation (see slough-sense.js).
@@ -15,12 +15,12 @@
 
 import { sloughSense } from './slough-sense.js';
 
-const SPELLING = { shed: 'sloffiest', mire: 'slouhiest', backwater: 'sluhiest' };
+const SPELLING = { shed: 'sluffiest', mire: 'slouhiest', backwater: 'sluhiest' };
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'sloffiest' | 'slouhiest' | 'sluhiest'}
+ * @returns {'sluffiest' | 'slouhiest' | 'sluhiest'}
  */
 export function disambiguate_sloughiest(tokens, idx) {
   return SPELLING[sloughSense(tokens, idx, 'mire')];

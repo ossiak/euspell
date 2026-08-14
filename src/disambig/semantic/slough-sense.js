@@ -2,7 +2,7 @@
  * Shared sense classifier for the 'slough' word family (slough, sloughed,
  * sloughy, sloughier, sloughiest, sloughiness). Each of these splits three ways
  * along the same axis:
- *   'shed'      — /slʌf/  cast-off skin / dead tissue (sloff…)
+ *   'shed'      — /slʌf/  cast-off skin / dead tissue (sluff…)
  *   'mire'      — /slaʊ/  a bog or mire; figurative "Slough of Despond" (slouh…)
  *   'backwater' — /sluː/  a backwater swamp / marshy channel (sluh…)
  *

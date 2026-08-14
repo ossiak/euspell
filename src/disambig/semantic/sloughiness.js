@@ -1,6 +1,6 @@
 /**
  * Disambiguates 'sloughiness' (encoding 103, NN) three ways:
- *   sloffiness — /ˈslʌfinəs/ the quality of being covered in shed / dead skin
+ *   sluffiness — /ˈslʌfinəs/ the quality of being covered in shed / dead skin
  *   slouhiness — /ˈslaʊinəs/ the quality of being boggy or mire-like
  *   sluhiness  — /ˈsluːinəs/ the quality of being swamp-like (chiefly N. American)
  * Corpus: none — rules from register/collocation (see slough-sense.js).
@@ -15,12 +15,12 @@
 
 import { sloughSense } from './slough-sense.js';
 
-const SPELLING = { shed: 'sloffiness', mire: 'slouhiness', backwater: 'sluhiness' };
+const SPELLING = { shed: 'sluffiness', mire: 'slouhiness', backwater: 'sluhiness' };
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'sloffiness' | 'slouhiness' | 'sluhiness'}
+ * @returns {'sluffiness' | 'slouhiness' | 'sluhiness'}
  */
 export function disambiguate_sloughiness(tokens, idx) {
   return SPELLING[sloughSense(tokens, idx, 'mire')];

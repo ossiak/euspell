@@ -7,10 +7,15 @@ import { isPronounI } from '../disambig/pronoun-i.js';
 /** @typedef {import('./context.js').Token} Token */
 
 // Words carrying a disambiguation encoding (202/022) that are nonetheless left
-// exactly as written — their euspellings aren't worth choosing between (a
-// surname, the Greek-letter plural, an archaic disyllabic), so the original
-// surface form is kept regardless of context.
-export const KEEP_UNCHANGED = new Set(['bach', 'chis', 'ravined']);
+// exactly as written — their euspellings aren't worth choosing between (the
+// Greek-letter plural, an archaic disyllabic), so the original surface form is
+// kept regardless of context.
+//
+// "bach" was here until 11 Aug 2026, when the lexicon dropped its second sense:
+// it is now NP/000, the composer and nothing else, so there is no longer a
+// choice to decline. A word with no disambiguation encoding does not belong in
+// this set, and lexicon-integrity.test.js asserts as much.
+export const KEEP_UNCHANGED = new Set(['chis', 'ravined']);
 
 /**
  * Converts a single word to its euspelling given surrounding token context.

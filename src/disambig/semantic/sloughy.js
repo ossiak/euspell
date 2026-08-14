@@ -1,6 +1,6 @@
 /**
  * Disambiguates 'sloughy' (encoding 103, JJ) three ways:
- *   sloffy — /ˈslʌfi/ covered in shed / dead skin (a "sloughy wound")
+ *   sluffy — /ˈslʌfi/ covered in shed / dead skin (a "sloughy wound")
  *   slouhy — /ˈslaʊi/ boggy or mire-like
  *   sluhy  — /ˈsluːi/ swamp-like (chiefly N. American)
  * Corpus: none — rules from register/collocation (see slough-sense.js).
@@ -16,12 +16,12 @@
 
 import { sloughSense } from './slough-sense.js';
 
-const SPELLING = { shed: 'sloffy', mire: 'slouhy', backwater: 'sluhy' };
+const SPELLING = { shed: 'sluffy', mire: 'slouhy', backwater: 'sluhy' };
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'sloffy' | 'slouhy' | 'sluhy'}
+ * @returns {'sluffy' | 'slouhy' | 'sluhy'}
  */
 export function disambiguate_sloughy(tokens, idx) {
   return SPELLING[sloughSense(tokens, idx, 'mire')];

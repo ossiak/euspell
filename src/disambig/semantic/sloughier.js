@@ -1,6 +1,6 @@
 /**
  * Disambiguates 'sloughier' (encoding 103, JJR — comparative adjective) three ways:
- *   sloffier — /ˈslʌfiər/ more covered in shed / dead skin
+ *   sluffier — /ˈslʌfiər/ more covered in shed / dead skin
  *   slouhier — /ˈslaʊiər/ more boggy or mire-like
  *   sluhier  — /ˈsluːiər/ more swamp-like (chiefly N. American)
  * Corpus: none — rules from register/collocation (see slough-sense.js).
@@ -15,12 +15,12 @@
 
 import { sloughSense } from './slough-sense.js';
 
-const SPELLING = { shed: 'sloffier', mire: 'slouhier', backwater: 'sluhier' };
+const SPELLING = { shed: 'sluffier', mire: 'slouhier', backwater: 'sluhier' };
 
 /**
  * @param {Token[]} tokens
  * @param {number} idx
- * @returns {'sloffier' | 'slouhier' | 'sluhier'}
+ * @returns {'sluffier' | 'slouhier' | 'sluhier'}
  */
 export function disambiguate_sloughier(tokens, idx) {
   return SPELLING[sloughSense(tokens, idx, 'mire')];
