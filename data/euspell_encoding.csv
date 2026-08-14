@@ -1,34 +1,34 @@
 Encoding,Description,Count
-000,unchanged common word,158885
-011,unambiguous VVZ ending -s → -z,5975
-012,NN2|VVZ -s ending disambiguated,4929
-021,JJ|VVD|VVN ending -ed → -d when warranted,4713
+000,unchanged common word,158854
+011,unambiguous VVZ ending -s → -z,5974
+012,NN2|VVZ -s ending disambiguated,4926
+021,JJ|VVD|VVN ending -ed → -d when warranted,4711
 022,JJ|VVD|VVN ending disambiguated e.g. blessd/blessed,5
 041,doubling consonant before ending,3
-101,stem change,14851
-102,stem disambiguated: ending in -ate,150
+101,stem change,14646
+102,stem disambiguated: ending in -ate,152
 103,stem disambiguated three ways,5
 111,stem change + unambiguous VVZ ending -s → -z,1470
-112,stem change + NN2|VVZ ending: disambiguated,728
+112,stem change + NN2|VVZ ending: disambiguated,730
 113,stem change + NN2|VVZ ending: disambiguated three ways,3
-114,stem change + NN2|VVZ ending: disambiguated four ways,4
-121,stem change + JJ|VVD|VVN ending -ed → -d when warranted,945
+114,stem change + NN2|VVZ ending: disambiguated four ways,5
+121,stem change + JJ|VVD|VVN ending -ed → -d when warranted,946
 123,stem change + JJ|VVD|VVN ending: disambiguated three ways,1
-131,stem change: undoubling consonant before ending,22
+131,stem change: undoubling consonant before ending,21
 152,stem disambiguated: not ending in -ate,17
-202,stem change – semantic disambiguation needed,55
-500,unchanged rare or archaic word,5098
-501,stem change – rare or archaic word,91
+202,stem change – semantic disambiguation needed,59
+500,unchanged rare or archaic word,5089
+501,stem change – rare or archaic word,85
 511,VVZ ending -s → -z – rare or archaic word,295
 521,JJ|VVD|VVN ending -ed → -d when warranted – rare or archaic word,131
-601,merges with existing word (mostly British → American),5716
-631,merges with existing word: undoubling consonant before ending,308
-641,merges with existing word: doubling consonant before ending,41
-700,unchanged word – French pronunciation,124
-701,stem change – French pronunciation,805
+601,merges with existing word (mostly British → American),5946
+631,merges with existing word: undoubling consonant before ending,307
+641,merges with existing word: doubling consonant before ending,42
+700,unchanged word – French pronunciation,123
+701,stem change – French pronunciation,818
 702,NN1|NN2 disambiguation – French pronunciation,8
 711,VVZ ending -s → -z – French pronunciation,4
-721,JJ|VVD|VVN ending -ed → -d when warranted – French pronunciation,27
+721,JJ|VVD|VVN ending -ed → -d when warranted – French pronunciation,26
 800,unchanged word – Scottish pronunciation,43
 811,VVZ ending ending -s → -z – Scottish pronunciation,2
 821,VVD|VVN ending -ed → -d when warranted – Scottish pronunciation,6

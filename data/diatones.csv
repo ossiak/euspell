@@ -1,6 +1,7 @@
 Word,PoS,Encoding,euspelling
 abstracts,NN2|VVZ,012,abstracts|abstractz
 accents,NN2|VVZ,012,accents|accentz
+acerbate,JJ|VV0,102,acerbat|acerbate
 acuate,JJ|VV0,102,acuat|acuate
 acuminate,JJ|VV0,102,acuminat|acuminate
 addicts,NN2|VVZ,012,addicts|addictz
@@ -186,6 +187,7 @@ incurvate,JJ|VV0,102,incurvat|incurvate
 indurate,JJ|VV0,102,indurat|indurate
 inebriate,JJ|NN1|VV0,102,inebriat|inebriate
 infatuate,JJ|NN1|VV0,102,infatuat|infatuate
+initiate,NN1|VV0,102,initiat|initiate
 inlays,NN2|VVZ,012,inlays|inlayz
 inlets,NN2|VVZ,012,inlets|inletz
 inserts,NN2|VVZ,012,inserts|insertz

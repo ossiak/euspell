@@ -13,12 +13,12 @@ WORDCHARS '
 # these rules help Hunspell suggest the correct euspelling.
 # Patterns are end-of-word anchored ($ suffix).
 # ---------------------------------------------------------------------------
-REP 95
+REP 94
 REP s$ z
 REP ed$ d
 REP sed$ zed
-REP se$ ze
 REP sing$ zing
+REP se$ ze
 REP ses$ zez
 REP es$ s
 REP ely$ ly
@@ -31,8 +31,8 @@ REP ght$ ht
 REP led$ d
 REP ched$ qhd
 REP es$ z
-REP ches$ qhes
 REP ching$ qhing
+REP ches$ qhes
 REP ches$ qhez
 REP ads$ dds
 REP ling$ ing
@@ -46,10 +46,10 @@ REP med$ d
 REP ur$ r
 REP cher$ qher
 REP ower$ uwer
+REP ues$ s
+REP ghting$ hting
 REP chers$ qhers
 REP ned$ d
-REP ghting$ hting
-REP ues$ s
 REP red$ d
 REP ghted$ hted
 REP aded$ dded
@@ -73,31 +73,32 @@ REP ghter$ hter
 REP lk$ hk
 REP lers$ ers
 REP aemic$ emic
-REP ches$ shes
 REP ading$ dding
 REP inding$ ynding
+REP ches$ shes
 REP ear$ aer
 REP uring$ ring
 REP urs$ rz
 REP o$ u
+REP s$ es
 REP chy$ qhy
 REP x$ s
 REP ads$ ddz
 REP ghters$ hters
 REP gh$ h
 REP inds$ yndz
-REP s$ es
 REP it$ ht
 REP mes$ s
 REP owed$ uwd
-REP ows$ uws
 REP ues$ es
 REP t$ h
+REP ows$ uws
 REP lks$ hks
 REP owered$ uwerd
 REP its$ hts
 REP ue$ he
 REP chable$ qhable
+REP ts$ hs
 REP owers$ uwerz
 REP earted$ arted
 REP ved$ ovd
@@ -105,7 +106,5 @@ REP owing$ uwing
 REP ows$ uwz
 REP chier$ qhier
 REP chiest$ qhiest
-REP che$ she
 REP ghtly$ htly
-REP ts$ hs
 REP eye$ iye
