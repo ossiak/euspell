@@ -155,28 +155,43 @@ scaling to the full respelled vocabulary.
 
 ## Status — what is built
 
-The lexicon is built **one encoding category at a time**, in **General American**
-(CMUdict's dialect), with one IPA file per stage.
+**Rewritten 14 Aug 2026.** This section described a staged pipeline that no
+longer exists: the lexicon was once built one encoding category at a time into
+`data/euspell_ipa_*.csv` files, which `gen-pls.js` then merged. Those stage files
+have been removed — nothing read them any more — and the PLS is no longer
+generated at all.
 
-- **`build/derive-ipa.py`** — derives a category's IPA from **CMUdict** (123K
-  entries, ARPABET + stress) via an ARPABET→IPA converter. Args
-  `--enc <code> --syllables <n>`. For a `101` entry the euspelling is a homophone
-  of the headword (only novel euspell graphemes are `qh` = /tʃ/, `uw` = /aʊ/), so
-  the pronunciation is the headword's; the CMUdict vowel count also gives a
-  correct syllable filter.
-- **`data/euspell_ipa_101.csv`** — stage 1: the 568 one-syllable `101`
-  euspellings whose headword is in CMUdict.
-- **`data/euspell_ipa.csv`** — the dialect-neutral function-word reforms (`iz`,
-  `ih`, + sentence-initial capitals). The stress-shifting NN2|VVZ diatones are
-  deferred to the **012 stage**, where they will be built from CMUdict's
-  noun/verb stress variants.
-- **`build/gen-pls.js`** (`npm run gen:pls`) — reads every `data/euspell_ipa*.csv`
-  category file, dedups, validates each grapheme against the lexicon's headwords
-  and new spellings (allowing sentence-initial capitals), and emits
-  **`dict/euspell_tts.pls`** (W3C PLS 1.0, one role-free `<lexeme>` per grapheme).
-- **`dict/euspell_tts.pls`** — the generated lexicon (currently 572 lexemes).
+`dict/euspell_tts.pls` is **hand-maintained**, 35,503 lexemes, General American
+throughout. `npm run gen:pls` does not write it. What that command now does:
 
-Known gaps in stage 1: **286 one-syllable `101` euspellings are missing from
-CMUdict** — obscure/archaic stems (`chough`, `gowk`, `qualm`) and inflected forms
-(`brights`, `chards`). The regular plurals can be derived from their singular by
-the `-s`/`-z`/`-ɪz` rule; the rare stems need manual IPA or another source.
+- reads the PLS and the lexicon and prints a **drift report** — spellings the
+  lexicon has that the PLS lacks, graphemes the PLS holds that no lexicon row
+  mentions, and readings that differ from what it would derive;
+- transliterates the PLS into **`dict/euspell_tts_arpabet.pls`**, which *is*
+  generated and should never be edited by hand;
+- applies **`data/euspell_ipa_overrides.csv`** (155 curated readings) and reads
+  **`data/changed_words_IPA.csv`** as its derivation source.
+
+Contractions are covered by **`build/gen-pls-contractions.py`**, because
+`gen-pls.js` reads only the main lexicon. Its 104 readings have been merged into
+`euspell_tts.pls`; re-running it writes a separate file that is no longer needed.
+
+**`build/derive-ipa.py`** is kept as the tool that derives IPA from CMUdict
+(123K entries, ARPABET + stress) if a category ever needs rebuilding, but it is
+not part of any build and its outputs are no longer committed.
+
+### Maintaining it by hand
+
+Two invariants catch most faults, and neither is visible by reading:
+
+- **A reform grapheme must match its phoneme.** Every `qh` should have a `tʃ`,
+  every `uw` an `aʊ`. Scanning both directions found 49 wrong readings and 44
+  suspect spellings — including a whole family where `blowsy` read /oʊ/ while
+  `blowzy`, the same word, read /aʊ/ correctly.
+- **Only IPA characters.** Latin look-alikes cannot be fixed by eye or by
+  find-and-replace — typing `g` produces U+0067, the character already there, not
+  IPA `ɡ` U+0261; `ǝ` U+01DD is pixel-identical to schwa. 17 of these were found
+  by codepoint scan.
+
+One trap worth stating: the `z` in a euspelling is **grammatical, not phonetic**.
+After a voiceless consonant it is /s/ — `getz` is /ɡɛts/ and `it'z` is /ɪts/.
