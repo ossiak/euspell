@@ -64,12 +64,11 @@ you would rather be shelved next to language tools.
 **Store icon** — `icons/128.png` (already in the package).
 
 **Screenshots** — 1280×800 or 640×400, at least one, up to five. ⚠ **These do
-not exist yet** and are a hard blocker. The obvious four:
-
-1. A news article, half converted — the before/after split is the whole pitch.
-2. The popup's word lookup, showing an encoding and its reason.
-3. The bundled PDF viewer on a converted paper.
-4. The options page, to show it switches off.
+not exist, and the work is on hold** as of 14 August 2026: the planned
+disambiguation demo page would produce better imagery than a converted web page
+can, so shooting them now risks shooting them twice. The brief — which four
+shots, what to photograph, and the capture mechanics — moved to
+`euspell_game/store-screenshots.md`.
 
 ---
 
@@ -193,8 +192,10 @@ to stumble into. To put the policy up alone, upload `out/privacy/` by itself.
 
 ## Blockers, in the order they bind
 
-1. **Screenshots** — at least one, and they need product that looks finished.
+1. **Screenshots** — at least one. **On hold** behind the demo page; brief in
+   `euspell_game/store-screenshots.md`. This is now the long pole, and it is
+   parked deliberately rather than forgotten.
 2. **Deploying the privacy policy** — the page is written; `euspell.org/privacy/`
-   still 404s until the export is uploaded. This makes a site deploy a
-   dependency of the Chrome submission, not a parallel task.
+   still 404s until the export is uploaded. It goes up with the site reveal, so
+   this is not a separate task.
 3. **Developer account registration** (US$5, one-time) if not already done.
