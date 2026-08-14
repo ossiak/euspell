@@ -130,6 +130,62 @@ test('a <br> stops the line-end word gluing to the next line', () => {
   assert.equal(b.nodeValue, 'niht air');
 });
 
+test('a whitespace-only text node keeps its neighbours apart', () => {
+  // The inverse of the drop-cap case. A block's nodes are concatenated into one
+  // source string, so a whitespace-only node dropped from the walk takes its
+  // space with it and glues the words either side: "<span>The</span> <span>
+  // research</span>" tokenized as "Theresearch", matched nothing, and BOTH words
+  // passed through unreformed. Pretty-printed markup is the common shape.
+  const gap = tx(' ');
+  const a = tx('The');
+  const b = tx('research');
+  walkTextNodes(el('p', el('span', a), gap, el('span', b)), convert);
+  assert.equal(a.nodeValue, 'The');
+  assert.equal(b.nodeValue, 'reserqh');
+  assert.equal(gap.nodeValue, ' '); // the separator itself is written back as-is
+
+  // Newline-indented markup, the same shape as it comes out of a formatter.
+  const c = tx('The');
+  const d = tx('research');
+  walkTextNodes(el('p', tx('\n  '), el('span', c), tx('\n  '), el('span', d), tx('\n')), convert);
+  assert.equal(c.nodeValue, 'The');
+  assert.equal(d.nodeValue, 'reserqh');
+
+  // The damaging case: a glued pair that DOES hit the lexicon was reformed as one
+  // word and split back across the nodes by share, corrupting both.
+  const e = tx('book');
+  const f = tx('keeper');
+  walkTextNodes(el('p', el('b', e), tx(' '), el('b', f)), convert);
+  assert.equal(e.nodeValue, 'book');
+  assert.equal(f.nodeValue, 'keeper');
+});
+
+test("a whole-word possessive contraction decides on its post-clitic context", () => {
+  // Driven through the tokenizer, not a hand-built token array: the bug lived in
+  // exactly the step a synthetic stream skips. The tokenizer expands a
+  // contraction to one pseudo-token per PoS position and puts identity on the
+  // FIRST, so "anyone's" occupies [PN1, GE|VBZ|VHZ]. Routing is_verbal_s at that
+  // first slot made it read the contraction's own second pseudo-token as the
+  // following word, see its VBZ, and answer "contracted verb" every time — every
+  // genitive came out as 'z ("Anybody's guess" -> "Anybody'z ghess").
+  const conv = (s) => {
+    const node = tx(s);
+    walkTextNodes(el('p', node), convert);
+    return node.nodeValue;
+  };
+  assert.equal(conv("Anybody's guess is good."), "Anybody's ghess iz good.");
+  assert.equal(conv("Anybody's coming along."), "Anybody'z coming along.");
+  assert.equal(conv("Everyone's opinion counts."), "Evrywun's opinion counts.");
+  assert.equal(conv("Everyone's going home."), "Evrywun'z going home.");
+  assert.equal(conv("Nobody's fault but mine."), "Nobody's fault but mine.");
+  assert.equal(conv("Nobody's here."), "Nobody'z here.");
+
+  // The bare productive clitic is one component, so its slot is unchanged — it
+  // decided correctly before and must still.
+  assert.equal(conv("The cat's tail is long."), "The cat's tail iz long.");
+  assert.equal(conv("The cat's sleeping."), "The cat'z sleeping.");
+});
+
 test('pdf.js text-layer lines convert independently', () => {
   // The PDF viewer's real shape: one absolutely-positioned span per text item,
   // and a <br role="presentation"> after every item whose hasEOL is set — so

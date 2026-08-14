@@ -36,5 +36,5 @@ for (const dir of DIRS) {
     }
   }
 }
-writeFileSync(OUT, lines.join('\n') + '\n');
+writeFileSync(OUT, `${lines.join('\n')}\n`);
 console.log(`[gen-corpus-clitic-s] ${files} files -> ${lines.length} lines`);
