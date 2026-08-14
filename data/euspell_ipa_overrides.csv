@@ -139,6 +139,46 @@ etiolate,ˈiːtiəˌleɪt,aetiolate
 levigat,ˈlɛvɪɡət,laevigate
 levigate,ˈlɛvɪˌɡeɪt,laevigate
 #
+# --- single-novel-spelling splits, the mechanically decidable half ------------
+# Added 10 Aug 2026. Each of these contradicts a sound the paper assigns to a
+# grapheme, so it is wrong whichever sense the split runs in and needs no
+# judgement about meaning. Only the diagnostic sound is changed; the rest of each
+# reading is as it shipped.
+#
+# uw is /aʊ/ (the paper: "the form uw ... replacing the ambiguous ow")
+buwman,ˈbaʊmən,bowman
+buwmen,ˈbaʊmɪn,bowmen
+muw,maʊ,mow
+ruw,ɹaʊ,row
+ruwing,ˈɹaʊɪŋ,rowing
+# qh is /tʃ/, leaving ch to the k sound
+qhi,tʃiː,chi
+conqh,kɑːntʃ,conch
+# edd is a short e -- these are all past tenses of read
+foreredd,ˌfɔɹˈɹɛd,foreread
+misredd,ˌmɪsˈɹɛd,misread
+outredd,ˌaʊtˈɹɛd,outread
+proofredd,ˈpɹuːfˌɹɛd,proofread
+reredd,ˌɹiːˈɹɛd,reread
+# a stem s->z is a voicing change, unlike the -z verb ending, which follows the
+# consonant before it (getz really is /ɡɛts/)
+houze,haʊz,house
+disuze,dɪsˈjuːz,disuse
+overuze,ˌoʊvəɹˈjuːz,overuse
+warehouze,ˈwɛɹˌhaʊz,warehouse
+# a reduced -at is /-ɪt/, against the verb's /-eɪt/
+primat,ˈpɹaɪmɪt,primate
+primats,ˈpɹaɪmɪts,primates
+# oo is the /uː/ of food or the /ʊ/ of put; this is the golfing sense
+pooting,ˈpʊtɪŋ,putting
+# "-th is voiceless and -the is voiced" (paper, The final th)
+mouthe,maʊð,mouth
+# "add only -d, unless the e in -ed is needed for correct pronunciation" (paper,
+# Past tense ending). A bare -d adds no syllable, so a /-ɪd/ reading is the -ed
+# adjective the split left on the traditional spelling.
+belovd,bɪˈlʌvd,beloved
+ragd,ɹæɡd,ragged
+#
 # --- retained spellings ------------------------------------------------------
 # Added 10 Aug 2026 with the gen-pls.js change that emits a traditional spelling
 # when the reform keeps it as one half of a split. Twenty-seven of the
