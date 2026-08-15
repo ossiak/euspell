@@ -126,6 +126,34 @@ test('every encoding is a three-digit code defined in euspell_encoding.csv', () 
   assert.deepEqual(bad.map((c) => `${c.source}:${c.word}(${c.code})`), []);
 });
 
+test('euspell_encoding.csv Count column matches the lexicon', () => {
+  // Nothing regenerates that column, so it drifts silently and stays wrong.
+  // It was last found claiming 5,946 for 601 after the British merges landed —
+  // and moving on 700 and 701 too, codes that change had not touched, which
+  // means it had already been stale before it. The descriptions are the source
+  // of record for what a code MEANS; the counts are derived, so they can be
+  // checked. Main lexicon only: the counts describe that file.
+  const counted = new Map();
+  for (const e of lex) {
+    const code = String(e.encoding).padStart(3, '0');
+    counted.set(code, (counted.get(code) ?? 0) + 1);
+  }
+  const rows = fs.readFileSync(new URL('../data/euspell_encoding.csv', import.meta.url), 'utf8')
+    .split(/\r?\n/).filter(Boolean).slice(1)
+    .map((l) => l.split(','));
+
+  const wrong = rows
+    .filter((c) => c.length >= 3 && +c[2] !== (counted.get(c[0]) ?? 0))
+    .map((c) => `${c[0]}: table says ${c[2]}, lexicon has ${counted.get(c[0]) ?? 0}`);
+  // A code the lexicon uses but the table never lists would escape the check
+  // above, since it iterates the table.
+  const undeclared = [...counted.keys()]
+    .filter((code) => !rows.some((c) => c[0] === code))
+    .map((code) => `${code}: used ${counted.get(code)} times, not in the table`);
+
+  assert.deepEqual([...wrong, ...undeclared], []);
+});
+
 test('every entry: euspelling count matches the declared variant count', () => {
   const bad = all.filter((e) => e.encoding % 10 >= 1 && e.spellings.length !== e.encoding % 10
     // encoding%10==0 entries may carry an abbreviation expansion in the field
