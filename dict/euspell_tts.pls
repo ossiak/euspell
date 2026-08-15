@@ -11628,10 +11628,8 @@
   <lexeme><grapheme>fuwlz</grapheme><phoneme>faʊlz</phoneme></lexeme> <!-- fowls -->
   <lexeme><grapheme>fuze</grapheme><phoneme>fjuːz</phoneme></lexeme> <!-- fuse -->
   <lexeme><grapheme>fuzed</grapheme><phoneme>fjuːzd</phoneme></lexeme> <!-- fused -->
-  <lexeme><grapheme>fuzeless</grapheme><phoneme>ˈfjuːsləs</phoneme></lexeme> <!-- fuseless -->
   <lexeme><grapheme>fuzes</grapheme><phoneme>ˈfjuːzɪz</phoneme></lexeme> <!-- fuses -->
   <lexeme><grapheme>fuzez</grapheme><phoneme>ˈfjuːzɪz</phoneme></lexeme> <!-- fuses -->
-  <lexeme><grapheme>fuzible</grapheme><phoneme>ˈfjuːzəbəl</phoneme></lexeme> <!-- fusible -->
   <lexeme><grapheme>fuzzd</grapheme><phoneme>fʌzd</phoneme></lexeme> <!-- fuzzed -->
   <lexeme><grapheme>fuzzez</grapheme><phoneme>ˈfʌzɪz</phoneme></lexeme> <!-- fuzzes -->
   <lexeme><grapheme>fuzzlez</grapheme><phoneme>ˈfʌzəlz</phoneme></lexeme> <!-- fuzzles -->
@@ -17046,9 +17044,9 @@
   <lexeme><grapheme>maqhicolatez</grapheme><phoneme>məˈtʃɪkəleɪts</phoneme></lexeme> <!-- machicolates -->
   <lexeme><grapheme>maqhicolating</grapheme><phoneme>məˈtʃɪkəleɪtɪŋ</phoneme></lexeme> <!-- machicolating -->
   <lexeme><grapheme>maqhicolation</grapheme><phoneme>mətʃɪkəˈleɪʃən</phoneme></lexeme> <!-- machicolation -->
-  <lexeme><grapheme>maqhicolations</grapheme><phoneme>mətʃɪkəˈleɪʃənz</phoneme></lexeme> <!-- machicolations -->
-  <lexeme><grapheme>maqhiculis</grapheme><phoneme>ˌmæʃɪˈkuːli</phoneme></lexeme> <!-- machicoulis -->
-  <lexeme><grapheme>maqhiculises</grapheme><phoneme>ˌmæʃɪˈkuːlɪz</phoneme></lexeme> <!-- machicoulises -->
+  <lexeme><grapheme>mashicolations</grapheme><phoneme>mətʃɪkəˈleɪʃənz</phoneme></lexeme> <!-- machicolations -->
+  <lexeme><grapheme>mashiculis</grapheme><phoneme>ˌmæʃɪˈkuːli</phoneme></lexeme> <!-- machicoulis -->
+  <lexeme><grapheme>mashiculises</grapheme><phoneme>ˌmæʃɪˈkuːlɪz</phoneme></lexeme> <!-- machicoulises -->
   <lexeme><grapheme>maqhismo</grapheme><phoneme>mɑˈtʃiːzmoʊ</phoneme></lexeme> <!-- machismo -->
   <lexeme><grapheme>maqhismos</grapheme><phoneme>mɑˈtʃiːzmoʊz</phoneme></lexeme> <!-- machismos -->
   <lexeme><grapheme>maqho</grapheme><phoneme>ˈmɑtʃoʊ</phoneme></lexeme> <!-- macho -->
@@ -22915,8 +22913,6 @@
   <lexeme><grapheme>qhallengez</grapheme><phoneme>ˈtʃælɪndʒɪz</phoneme></lexeme> <!-- challenges -->
   <lexeme><grapheme>qhallenging</grapheme><phoneme>ˈtʃælɪndʒɪŋ</phoneme></lexeme> <!-- challenging -->
   <lexeme><grapheme>qhallengingly</grapheme><phoneme>ˈtʃælɪndʒɪŋli</phoneme></lexeme> <!-- challengingly -->
-  <lexeme><grapheme>qhallis</grapheme><phoneme>ˈʃæli</phoneme></lexeme> <!-- challis -->
-  <lexeme><grapheme>qhallises</grapheme><phoneme>ˈʃæliz</phoneme></lexeme> <!-- challises -->
   <lexeme><grapheme>qhamber</grapheme><phoneme>ˈtʃeɪmbər</phoneme></lexeme> <!-- chamber -->
   <lexeme><grapheme>qhamberd</grapheme><phoneme>ˈtʃeɪmbərd</phoneme></lexeme> <!-- chambered -->
   <lexeme><grapheme>qhambering</grapheme><phoneme>ˈtʃeɪmbərɪŋ</phoneme></lexeme> <!-- chambering -->
@@ -23045,8 +23041,8 @@
   <lexeme><grapheme>qhanty</grapheme><phoneme>ˈtʃænti</phoneme></lexeme> <!-- chanty -->
   <lexeme><grapheme>qhantz</grapheme><phoneme>tʃænts</phoneme></lexeme> <!-- chants -->
   <lexeme><grapheme>qhap</grapheme><phoneme>tʃæp</phoneme></lexeme> <!-- chap -->
-  <lexeme><grapheme>qhaparral</grapheme><phoneme>ˌʃæpəˈræl</phoneme></lexeme> <!-- chaparral -->
-  <lexeme><grapheme>qhaparrals</grapheme><phoneme>ˌʃæpəˈrælz</phoneme></lexeme> <!-- chaparrals -->
+  <lexeme><grapheme>shaparral</grapheme><phoneme>ˌʃæpəˈræl</phoneme></lexeme> <!-- chaparral -->
+  <lexeme><grapheme>shaparrals</grapheme><phoneme>ˌʃæpəˈrælz</phoneme></lexeme> <!-- chaparrals -->
   <lexeme><grapheme>qhapati</grapheme><phoneme>tʃəˈpɑːti</phoneme></lexeme> <!-- chapati -->
   <lexeme><grapheme>qhapatis</grapheme><phoneme>tʃəˈpɑːtiz</phoneme></lexeme> <!-- chapatis -->
   <lexeme><grapheme>qhapatti</grapheme><phoneme>tʃəˈpɑːti</phoneme></lexeme> <!-- chapatti -->
@@ -23134,8 +23130,6 @@
   <lexeme><grapheme>qharitably</grapheme><phoneme>ˈtʃærɪtəbli</phoneme></lexeme> <!-- charitably -->
   <lexeme><grapheme>qharities</grapheme><phoneme>ˈtʃærɪtiz</phoneme></lexeme> <!-- charities -->
   <lexeme><grapheme>qharity</grapheme><phoneme>ˈtʃærɪti</phoneme></lexeme> <!-- charity -->
-  <lexeme><grapheme>qharivari</grapheme><phoneme>ˌʃɑːrɪˈvɑːri</phoneme></lexeme> <!-- charivari -->
-  <lexeme><grapheme>qharivaris</grapheme><phoneme>ˌʃɑːrɪˈvɑːriz</phoneme></lexeme> <!-- charivaris -->
   <lexeme><grapheme>qhark</grapheme><phoneme>tʃɑːrk</phoneme></lexeme> <!-- chark -->
   <lexeme><grapheme>qharka</grapheme><phoneme>ˈtʃɑːrkə</phoneme></lexeme> <!-- charka -->
   <lexeme><grapheme>qharkas</grapheme><phoneme>ˈtʃɑːrkəz</phoneme></lexeme> <!-- charkas -->
@@ -23255,10 +23249,6 @@
   <lexeme><grapheme>qhatting</grapheme><phoneme>ˈtʃætɪŋ</phoneme></lexeme> <!-- chatting -->
   <lexeme><grapheme>qhatty</grapheme><phoneme>ˈtʃæti</phoneme></lexeme> <!-- chatty -->
   <lexeme><grapheme>qhatz</grapheme><phoneme>tʃæts</phoneme></lexeme> <!-- chats -->
-  <lexeme><grapheme>qhaufer</grapheme><phoneme>ˈʃɔːfər</phoneme></lexeme> <!-- chaufer -->
-  <lexeme><grapheme>qhaufers</grapheme><phoneme>ˈʃɔːfərz</phoneme></lexeme> <!-- chaufers -->
-  <lexeme><grapheme>qhauffer</grapheme><phoneme>ˈʃɔːfər</phoneme></lexeme> <!-- chauffer -->
-  <lexeme><grapheme>qhauffers</grapheme><phoneme>ˈʃɔːfərz</phoneme></lexeme> <!-- chauffers -->
   <lexeme><grapheme>qhaulmoogra</grapheme><phoneme>tʃɔːlˈmuːɡrə</phoneme></lexeme> <!-- chaulmoogra -->
   <lexeme><grapheme>qhaulmoogras</grapheme><phoneme>tʃɔːlˈmuːɡrəz</phoneme></lexeme> <!-- chaulmoogras -->
   <lexeme><grapheme>qhaunt</grapheme><phoneme>tʃɔːnt</phoneme></lexeme> <!-- chaunt -->
@@ -27779,6 +27769,8 @@
   <lexeme><grapheme>shal</grapheme><phoneme>ʃæl</phoneme></lexeme> <!-- shall -->
   <lexeme><grapheme>shaleh</grapheme><phoneme>ʃælˈeɪ</phoneme></lexeme> <!-- chalet -->
   <lexeme><grapheme>shalehs</grapheme><phoneme>ʃælˈeɪz</phoneme></lexeme> <!-- chalets -->
+  <lexeme><grapheme>shallie</grapheme><phoneme>ˈʃæli</phoneme></lexeme> <!-- challis -->
+  <lexeme><grapheme>shallies</grapheme><phoneme>ˈʃæliz</phoneme></lexeme> <!-- challises -->
   <lexeme><grapheme>shallowd</grapheme><phoneme>ˈʃæloʊd</phoneme></lexeme> <!-- shallowed -->
   <lexeme><grapheme>shallowz</grapheme><phoneme>ˈʃæloʊz</phoneme></lexeme> <!-- shallows -->
   <lexeme><grapheme>shamad</grapheme><phoneme>ʃəˈmɑːd</phoneme></lexeme> <!-- chamade -->
@@ -27864,6 +27856,8 @@
   <lexeme><grapheme>sharecropd</grapheme><phoneme>ˈʃɛrˌkrɑːpt</phoneme></lexeme> <!-- sharecropped -->
   <lexeme><grapheme>sharecropz</grapheme><phoneme>ˈʃɛrˌkrɑːps</phoneme></lexeme> <!-- sharecrops -->
   <lexeme><grapheme>sharez</grapheme><phoneme>ʃɛrz</phoneme></lexeme> <!-- shares -->
+  <lexeme><grapheme>sharivari</grapheme><phoneme>ˌʃɑːrɪˈvɑːri</phoneme></lexeme> <!-- charivari -->
+  <lexeme><grapheme>sharivaris</grapheme><phoneme>ˌʃɑːrɪˈvɑːriz</phoneme></lexeme> <!-- charivaris -->
   <lexeme><grapheme>sharkz</grapheme><phoneme>ʃɑːrks</phoneme></lexeme> <!-- sharks -->
   <lexeme><grapheme>sharlatan</grapheme><phoneme>ˈʃɑːrlətən</phoneme></lexeme> <!-- charlatan -->
   <lexeme><grapheme>sharlatanism</grapheme><phoneme>ˈʃɑːrlətənɪzəm</phoneme></lexeme> <!-- charlatanism -->
@@ -27904,6 +27898,10 @@
   <lexeme><grapheme>shatterproofd</grapheme><phoneme>ˈʃætərˌpruːft</phoneme></lexeme> <!-- shatterproofed -->
   <lexeme><grapheme>shatterproofz</grapheme><phoneme>ˈʃætərˌpruːfs</phoneme></lexeme> <!-- shatterproofs -->
   <lexeme><grapheme>shatterz</grapheme><phoneme>ˈʃætərz</phoneme></lexeme> <!-- shatters -->
+  <lexeme><grapheme>shaufer</grapheme><phoneme>ˈʃɔːfər</phoneme></lexeme> <!-- chaufer -->
+  <lexeme><grapheme>shaufers</grapheme><phoneme>ˈʃɔːfərz</phoneme></lexeme> <!-- chaufers -->
+  <lexeme><grapheme>shauffer</grapheme><phoneme>ˈʃɔːfər</phoneme></lexeme> <!-- chauffer -->
+  <lexeme><grapheme>shauffers</grapheme><phoneme>ˈʃɔːfərz</phoneme></lexeme> <!-- chauffers -->
   <lexeme><grapheme>shauffeur</grapheme><phoneme>ˈʃoʊfər</phoneme></lexeme> <!-- chauffeur -->
   <lexeme><grapheme>shauffeurd</grapheme><phoneme>ˈʃoʊfərd</phoneme></lexeme> <!-- chauffeured -->
   <lexeme><grapheme>shauffeuring</grapheme><phoneme>ˈʃoʊfərɪŋ</phoneme></lexeme> <!-- chauffeuring -->
@@ -34651,7 +34649,6 @@
   <lexeme><grapheme>weerds</grapheme><phoneme>wɪrdz</phoneme></lexeme> <!-- weirds -->
   <lexeme><grapheme>weerdy</grapheme><phoneme>ˈwɪrdi</phoneme></lexeme> <!-- weirdy -->
   <lexeme><grapheme>weerdz</grapheme><phoneme>wɪrdz</phoneme></lexeme> <!-- weirds -->
-  <lexeme><grapheme>weers</grapheme><phoneme>wɪrz</phoneme></lexeme> <!-- weirs -->
   <lexeme><grapheme>weetz</grapheme><phoneme>wits</phoneme></lexeme> <!-- weets -->
   <lexeme><grapheme>weevild</grapheme><phoneme>ˈwivəld</phoneme></lexeme> <!-- weeviled -->
   <lexeme><grapheme>weevily</grapheme><phoneme>ˈwivəli</phoneme></lexeme> <!-- weevilly -->

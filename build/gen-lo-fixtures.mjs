@@ -2,38 +2,18 @@
 // by the REAL JS engine (walkTextNodes + convert over a <p>), so the Python port
 // in libreoffice/euspell/engine.py can be checked against ground truth.
 //
-// Uses the same minimal DOM shim as tests/dom-walker.test.js (no jsdom). The
-// sentences deliberately avoid the ~70 semantic homographs and multi-word
-// phrases, which the v1 Python port does not handle.
+// Uses build/lib/dom-shim.js (no jsdom). The sentences deliberately avoid the
+// ~70 semantic homographs and multi-word phrases, which the v1 Python port does
+// not handle.
 //
 // Run: node build/gen-lo-fixtures.mjs
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-// --- minimal DOM shim (mirrors tests/dom-walker.test.js) --------------------
-const NodeFilter = { SHOW_TEXT: 4, FILTER_ACCEPT: 1, FILTER_REJECT: 2, FILTER_SKIP: 3 };
-const Node = { ELEMENT_NODE: 1, TEXT_NODE: 3 };
-class TextNode { constructor(v) { this.nodeType = 3; this.nodeValue = v; this.parentElement = null; } }
-class ElementNode {
-  constructor(tag) { this.nodeType = 1; this.tagName = tag.toUpperCase(); this.childNodes = []; this.parentElement = null; this._editable = false; }
-  append(...kids) { for (const k of kids) { k.parentElement = this; this.childNodes.push(k); } return this; }
-  get isContentEditable() { return this._editable || (this.parentElement?.isContentEditable ?? false); }
-}
-const el = (tag, ...kids) => new ElementNode(tag).append(...kids);
-const tx = (v) => new TextNode(v);
-function createTreeWalker(root, _show, filter) {
-  const out = [];
-  (function visit(node) {
-    if (node.nodeType === Node.TEXT_NODE) { if (filter.acceptNode(node) === NodeFilter.FILTER_ACCEPT) out.push(node); return; }
-    for (const c of node.childNodes) visit(c);
-  })(root);
-  let i = -1;
-  return { currentNode: root, nextNode() { return (this.currentNode = out[++i] ?? null); } };
-}
-globalThis.NodeFilter = NodeFilter;
-globalThis.Node = Node;
-globalThis.document = { createTreeWalker };
+import { installDomShim, el, tx } from './lib/dom-shim.js';
+
+installDomShim();
 
 const { walkTextNodes } = await import('../src/content/dom-walker.js');
 const { convert } = await import('../src/content/converter.js');
