@@ -63,12 +63,26 @@ you would rather be shelved next to language tools.
 
 **Store icon** — `icons/128.png` (already in the package).
 
-**Screenshots** — 1280×800 or 640×400, at least one, up to five. ⚠ **These do
-not exist, and the work is on hold** as of 14 August 2026: the planned
-disambiguation demo page would produce better imagery than a converted web page
-can, so shooting them now risks shooting them twice. The brief — which four
-shots, what to photograph, and the capture mechanics — moved to
+**Screenshots** — 1280×800, four of them, in `euspell_game/screenshots/`:
+
+| File | What it shows |
+| --- | --- |
+| `01-drill-scored.png` | The conversion drill, scored — every legend state in one frame, with the explanation panel open. The shot that has to teach |
+| `02-popup-records.png` | The popup over a converted page carrying both readings of `records`, next to the `012` encoding |
+| `03-pdf-viewer.png` | The bundled viewer converting a document live, toolbar intact |
+| `04-options.png` | The off switch, and the privacy note with its dictation exception |
+
+Plus `promo-tile.png` at 440×280 — optional, but required for any chance of
+being featured.
+
+Shot at 2× and downscaled. Reproduce with
+`tools/capture-shots.cjs` in `euspell_game`; the brief behind the choices is in
 `euspell_game/store-screenshots.md`.
+
+Two were captured by hand from a real Chrome, because rendering the popup or the
+viewer headless gives UI with no browser around it. **If the extension changes,
+re-capture those two before re-running the sizer** — the script resizes whatever
+file is there and cannot tell a stale capture from a fresh one.
 
 ---
 
@@ -192,10 +206,13 @@ to stumble into. To put the policy up alone, upload `out/privacy/` by itself.
 
 ## Blockers, in the order they bind
 
-1. **Screenshots** — at least one. **On hold** behind the demo page; brief in
-   `euspell_game/store-screenshots.md`. This is now the long pole, and it is
-   parked deliberately rather than forgotten.
-2. **Deploying the privacy policy** — the page is written; `euspell.org/privacy/`
+1. **Deploying the privacy policy** — the page is written; `euspell.org/privacy/`
    still 404s until the export is uploaded. It goes up with the site reveal, so
-   this is not a separate task.
-3. **Developer account registration** (US$5, one-time) if not already done.
+   this is not a separate task, but it is the one thing left that the listing
+   cannot be submitted without.
+2. **Developer account registration** (US$5, one-time) if not already done.
+
+~~Screenshots~~ — done, four of them, above. They were parked behind the
+disambiguation demo on the theory that it would produce a better first image
+than a converted web page could, and it did: the hero shot is the drill's own
+scored view.
