@@ -258,6 +258,7 @@ Product screenshots, a demo video, and a founder bio are available on request.
 - **Press contact:** [kamran@euspell.org](mailto:kamran@euspell.org)
 - **Website:** [euspell.org](https://euspell.org)
 - **Shop:** [shop.euspell.org](https://shop.euspell.org)
-- **Source:** github.com/ossiak/ *(currently private)*
+- **Source:** github.com/ossiak/euspell *(public — GPL-3.0-or-later)*. Eupub lives
+  in a separate repository that is still private.
 
 *Press are welcome to quote any text in this kit verbatim.*
