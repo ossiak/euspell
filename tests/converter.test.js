@@ -107,7 +107,12 @@ test('a verb-dominant heteronym defaults to the verb when context is silent', ()
   // noun-first default. Context still wins wherever it has an opinion — see the
   // determiner test above.
   assert.equal(conv([['they', ''], ['live', ''], ['here', '']], 'live'), 'liv');
-  assert.equal(conv([['they', ''], ['refuse', ''], ['to', ''], ['go', '']], 'refuse'), 'refuze');
+  // "refuse" was pinned here too until the -fuse family stopped being respelled.
+  // It is a genuine heteronym — /ˈrɛfjuːs/ the rubbish against /rɪˈfjuːz/ the
+  // verb — but with both readings now spelled "refuse" there is nothing for the
+  // default to choose between, and gen-vv0-prior.mjs drops any word that is not
+  // encoding 152. Restore the row and the set regenerates with it.
+  assert.equal(conv([['they', ''], ['reuse', ''], ['it', '']], 'reuse'), 'reuze');
   // "use" is NOT in the set — its context rule already beats its base rate — so
   // it keeps the noun-first default and both readings still resolve by context.
   assert.equal(conv([['the', ''], ['use', ''], ['of', ''], ['force', '']], 'use'), 'use');

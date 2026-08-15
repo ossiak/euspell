@@ -43,7 +43,7 @@ _KEEP_UNCHANGED = {"bach", "chis", "ravined"}
 # zero, instead of the global noun-first default — mirrors VV0_VERB_DEFAULT in
 # src/disambig/vv0-prior.js, which build/gen-vv0-prior.mjs learns from the
 # CLAWS corpus. Keep in step with that generated file.
-_VV0_VERB_DEFAULT = {"bear", "live", "mow", "refuse", "reuse"}
+_VV0_VERB_DEFAULT = {"bear", "live", "mow", "reuse"}
 
 # The ~70 surface words whose multi-spelling choice is decided by a semantic
 # (pronunciation) rule in the JS engine. Not ported in v1: route() defaults

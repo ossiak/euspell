@@ -27,7 +27,7 @@ var Euspell = (function () {
   // zero, instead of the global noun-first default — mirrors VV0_VERB_DEFAULT in
   // src/disambig/vv0-prior.js, which build/gen-vv0-prior.mjs learns from the
   // CLAWS corpus. Keep in step with that generated file.
-  var VV0_VERB_DEFAULT = { bear: 1, live: 1, mow: 1, refuse: 1, reuse: 1 };
+  var VV0_VERB_DEFAULT = { bear: 1, live: 1, mow: 1, reuse: 1 };
 
   // Surface words whose multi-spelling choice needs a semantic rule (not ported).
   var SEMANTIC_WORDS = {};

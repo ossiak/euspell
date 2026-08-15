@@ -17,8 +17,8 @@ REP 94
 REP s$ z
 REP ed$ d
 REP sed$ zed
-REP sing$ zing
 REP se$ ze
+REP sing$ zing
 REP ses$ zez
 REP es$ s
 REP ely$ ly
@@ -57,9 +57,9 @@ REP ghts$ htz
 REP re$ er
 REP owns$ uwns
 REP eable$ able
-REP sable$ zable
 REP omen$ imen
 REP urs$ rs
+REP sable$ zable
 REP owers$ uwers
 REP res$ ers
 REP ught$ ht
@@ -74,10 +74,10 @@ REP lk$ hk
 REP lers$ ers
 REP aemic$ emic
 REP ading$ dding
+REP uring$ ring
 REP inding$ ynding
 REP ches$ shes
 REP ear$ aer
-REP uring$ ring
 REP urs$ rz
 REP o$ u
 REP s$ es

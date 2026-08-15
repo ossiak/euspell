@@ -10,12 +10,11 @@
 // generator's header for why the prior is applied only on a zero vote rather
 // than as a bias added to the vote.
 //
-// encoding 152 | 5 of 17 words
-// held-out accuracy: rule 90.8% -> with default 94.4%
+// encoding 152 | 4 of 15 words
+// held-out accuracy: rule 91.3% -> with default 94.3%
 export const VV0_VERB_DEFAULT = new Set([
   "bear",
   "live",
   "mow",
-  "refuse",
   "reuse",
 ]);

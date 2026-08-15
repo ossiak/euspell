@@ -24,6 +24,25 @@ def load_fixtures():
     return pairs
 
 
+def _blocked_by_collision(src, euspell, back):
+    """True when every word revert failed to restore is itself a headword.
+
+    `rough` reforms to `ruff`, and `ruff` is a word in its own right — the
+    collar, the bird — so revert leaves it alone rather than turning a genuine
+    ruff into a rough. Reads engine._LEXICON directly: this is a white-box check
+    on a port, and the alternative is widening the engine's public surface for a
+    test's benefit.
+    """
+    words = zip(src.split(), euspell.split(), back.split())
+    for original, reformed, reverted in words:
+        if reverted == original:
+            continue
+        key = reformed.strip(".,;:!?\"'").lower()
+        if engine._LEXICON.get(key) is None:  # noqa: SLF001
+            return False
+    return True
+
+
 def main():
     fixtures = load_fixtures()
     fails = []
@@ -37,13 +56,22 @@ def main():
             print(f"      expected: {expected}")
             print(f"      got     : {got}")
 
-    # Round-trip: revert(euspell) recovers the original.
-    rfails = []
+    # Round-trip: revert(euspell) recovers the original — except across a
+    # collision, where the euspelling is a headword in its own right. "rough"
+    # reforms to "ruff", and "ruff" is also a word, so revert leaves it: turning
+    # a genuine ruff into a rough is the worse error. Such fixtures are counted
+    # separately rather than failed, since the shortfall is in the reform, not
+    # in this port — the JS engine does the same thing.
+    rfails, collided = [], []
     for src, expected in fixtures:
         back = engine.revert_text(expected)
-        if back != src:
-            rfails.append((expected, src, back))
-            print(f"REVERT FAIL  {expected}\n      expected: {src}\n      got     : {back}")
+        if back == src:
+            continue
+        if _blocked_by_collision(src, expected, back):
+            collided.append((expected, src, back))
+            continue
+        rfails.append((expected, src, back))
+        print(f"REVERT FAIL  {expected}\n      expected: {src}\n      got     : {back}")
 
     # Word-level candidate API (spell checker surface).
     assert engine.word_candidates("above") == ["abov"], engine.word_candidates("above")
@@ -57,19 +85,27 @@ def main():
     # "are" is now a plain single-spelling verb (encoding 101), not a homograph.
     assert engine.convert_text("They are here.") == "They ar here.", engine.convert_text("They are here.")
     assert engine.word_candidates("are") == ["ar"], engine.word_candidates("are")
-    # revert is the inverse of convert.
-    assert engine.revert_text("The niht was ruff.") == "The night was rough.", engine.revert_text("The niht was ruff.")
-    # revert stays American (never flips to British), and phonetic reforms that
-    # coincide with real words still revert.
+    # revert is the inverse of convert, EXCEPT across a collision: where the
+    # euspelling is itself a headword, revert cannot know which word produced it
+    # and leaves it alone. "rough" reforms to "ruff", but "ruff" is also a real
+    # word (the collar, the bird), so "ruff" stays "ruff" — turning a genuine
+    # ruff into a rough would be the worse error. This is by design, not a gap.
+    assert engine.revert_text("The niht was ruff.") == "The night was ruff.", engine.revert_text("The niht was ruff.")
+    assert engine.revert_text("ruff") == "ruff"
+    # revert stays American, never flipping to British.
     for w in ("organizes", "colors", "acknowledgment", "judgment", "defenses", "center", "theater"):
         assert engine.revert_text(engine.convert_text(w)) == w, (w, engine.revert_text(engine.convert_text(w)))
-    assert engine.revert_text("ruff") == "rough"
-    assert engine.revert_text("dorr") == "door"
+    # "door" -> "dorr" is the same shape, and now behaves the same way: dorr is
+    # a headword too (the beetle), and the row was re-encoded 101 -> 601 so that
+    # revert declines it. Before that it mapped back, quietly turning a beetle
+    # into a door — the corruption the ruff rule exists to prevent.
+    assert engine.revert_text("dorr") == "dorr"
 
     print()
     print(f"engine fixtures: {len(fixtures) - len(fails)}/{len(fixtures)} pass; "
           f"word_candidates checks pass")
-    print(f"round-trip revert: {len(fixtures) - len(rfails)}/{len(fixtures)} recover the original")
+    print(f"round-trip revert: {len(fixtures) - len(rfails) - len(collided)}/{len(fixtures)} "
+          f"recover the original, {len(collided)} blocked by a collision")
     if fails or rfails:
         print("SOME FAILED")
         sys.exit(1)

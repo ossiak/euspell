@@ -601,10 +601,7 @@
   <lexeme><grapheme>affrontivly</grapheme><phoneme>AH0 F R AH1 N T IH0 V L IY0</phoneme></lexeme> <!-- affrontively -->
   <lexeme><grapheme>affrontivness</grapheme><phoneme>AH0 F R AH1 N T IH0 V N AH0 S</phoneme></lexeme> <!-- affrontiveness -->
   <lexeme><grapheme>affrontz</grapheme><phoneme>AH0 F R AH1 N T S</phoneme></lexeme> <!-- affronts -->
-  <lexeme><grapheme>affuze</grapheme><phoneme>AH0 F Y UW1 Z</phoneme></lexeme> <!-- affuse -->
-  <lexeme><grapheme>affuzed</grapheme><phoneme>AH0 F Y UW1 Z D</phoneme></lexeme> <!-- affused -->
-  <lexeme><grapheme>affuzez</grapheme><phoneme>AH0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- affuses -->
-  <lexeme><grapheme>affuzing</grapheme><phoneme>AH0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- affusing -->
+  <lexeme><grapheme>affusez</grapheme><phoneme>AH0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- affuses -->
   <lexeme><grapheme>aforementiond</grapheme><phoneme>AH0 F AO1 R M EH0 N SH AH0 N D</phoneme></lexeme> <!-- aforementioned -->
   <lexeme><grapheme>aforethoht</grapheme><phoneme>AH0 F AO1 R TH AO0 T</phoneme></lexeme> <!-- aforethought -->
   <lexeme><grapheme>africanizez</grapheme><phoneme>AE1 F R IH0 K AH0 N AY2 Z IH0 Z</phoneme></lexeme> <!-- africanises -->
@@ -4037,8 +4034,8 @@
   <lexeme><grapheme>capushed</grapheme><phoneme>K AH0 P UW1 SH T</phoneme></lexeme> <!-- capuched -->
   <lexeme><grapheme>capushes</grapheme><phoneme>K AH0 P UW1 SH IH0 Z</phoneme></lexeme> <!-- capouches -->
   <lexeme><grapheme>capz</grapheme><phoneme>K AE1 P S</phoneme></lexeme> <!-- caps -->
-  <lexeme><grapheme>caqholong</grapheme><phoneme>K AE1 K AH0 L AA2 NG</phoneme></lexeme> <!-- cacholong -->
-  <lexeme><grapheme>caqholongs</grapheme><phoneme>K AE1 K AH0 L AA2 NG Z</phoneme></lexeme> <!-- cacholongs -->
+  <lexeme><grapheme>caqholong</grapheme><phoneme>K AE1 CH AH0 L AA2 NG</phoneme></lexeme> <!-- cacholong -->
+  <lexeme><grapheme>caqholongs</grapheme><phoneme>K AE1 CH AH0 L AA2 NG Z</phoneme></lexeme> <!-- cacholongs -->
   <lexeme><grapheme>caqhuqha</grapheme><phoneme>K AH0 CH UW1 CH AH0</phoneme></lexeme> <!-- cachucha -->
   <lexeme><grapheme>caqhuqhas</grapheme><phoneme>K AH0 CH UW1 CH AH0 Z</phoneme></lexeme> <!-- cachuchas -->
   <lexeme><grapheme>carabind</grapheme><phoneme>K AH0 R AE1 B IH0 N D</phoneme></lexeme> <!-- carabined -->
@@ -4406,10 +4403,7 @@
   <lexeme><grapheme>circulativ</grapheme><phoneme>S ER1 K Y AH0 L AH0 T IH0 V</phoneme></lexeme> <!-- circulative -->
   <lexeme><grapheme>circumambulatez</grapheme><phoneme>S ER2 K AH0 M AE1 M B Y AH0 L EY2 T S</phoneme></lexeme> <!-- circumambulates -->
   <lexeme><grapheme>circumcisez</grapheme><phoneme>S ER1 K AH0 M S AY2 Z AH0 Z</phoneme></lexeme> <!-- circumcises -->
-  <lexeme><grapheme>circumfuze</grapheme><phoneme>S ER2 K AH0 M F Y UW1 Z</phoneme></lexeme> <!-- circumfuse -->
-  <lexeme><grapheme>circumfuzed</grapheme><phoneme>S ER2 K AH0 M F Y UW1 Z D</phoneme></lexeme> <!-- circumfused -->
-  <lexeme><grapheme>circumfuzez</grapheme><phoneme>S ER2 K AH0 M F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- circumfuses -->
-  <lexeme><grapheme>circumfuzing</grapheme><phoneme>S ER2 K AH0 M F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- circumfusing -->
+  <lexeme><grapheme>circumfusez</grapheme><phoneme>S ER2 K AH0 M F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- circumfuses -->
   <lexeme><grapheme>circumnavigatez</grapheme><phoneme>S ER2 K AH0 M N AE1 V IH0 G EY2 T S</phoneme></lexeme> <!-- circumnavigates -->
   <lexeme><grapheme>circumscribez</grapheme><phoneme>S ER1 K AH0 M S K R AY2 B Z</phoneme></lexeme> <!-- circumscribes -->
   <lexeme><grapheme>circumstancez</grapheme><phoneme>S ER1 K AH0 M S T AE2 N S AH0 Z</phoneme></lexeme> <!-- circumstances -->
@@ -5183,15 +5177,9 @@
   <lexeme><grapheme>conformz</grapheme><phoneme>K AH0 N F AO1 R M Z</phoneme></lexeme> <!-- conforms -->
   <lexeme><grapheme>confoundz</grapheme><phoneme>K AH0 N F AW1 N D Z</phoneme></lexeme> <!-- confounds -->
   <lexeme><grapheme>confrontz</grapheme><phoneme>K AH0 N F R AH1 N T S</phoneme></lexeme> <!-- confronts -->
+  <lexeme><grapheme>confusez</grapheme><phoneme>K AH0 N F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- confuses -->
   <lexeme><grapheme>confutativ</grapheme><phoneme>K AH0 N F Y UW1 T AH0 T IH0 V</phoneme></lexeme> <!-- confutative -->
   <lexeme><grapheme>confutez</grapheme><phoneme>K AH0 N F Y UW1 T S</phoneme></lexeme> <!-- confutes -->
-  <lexeme><grapheme>confuze</grapheme><phoneme>K AH0 N F Y UW1 Z</phoneme></lexeme> <!-- confuse -->
-  <lexeme><grapheme>confuzed</grapheme><phoneme>K AH0 N F Y UW1 Z D</phoneme></lexeme> <!-- confused -->
-  <lexeme><grapheme>confuzedly</grapheme><phoneme>K AH0 N F Y UW1 Z AH0 D L IY0</phoneme></lexeme> <!-- confusedly -->
-  <lexeme><grapheme>confuzedness</grapheme><phoneme>K AH0 N F Y UW1 Z D N AH0 S</phoneme></lexeme> <!-- confusedness -->
-  <lexeme><grapheme>confuzez</grapheme><phoneme>K AH0 N F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- confuses -->
-  <lexeme><grapheme>confuzing</grapheme><phoneme>K AH0 N F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- confusing -->
-  <lexeme><grapheme>confuzingly</grapheme><phoneme>K AH0 N F Y UW1 Z IH0 NG L IY0</phoneme></lexeme> <!-- confusingly -->
   <lexeme><grapheme>congad</grapheme><phoneme>K AA1 NG G EY0 D</phoneme></lexeme> <!-- congaed -->
   <lexeme><grapheme>congaz</grapheme><phoneme>K AA1 NG G AH0 Z</phoneme></lexeme> <!-- congas -->
   <lexeme><grapheme>congeald</grapheme><phoneme>K AH0 N JH IY1 L D</phoneme></lexeme> <!-- congealed -->
@@ -6923,7 +6911,7 @@
   <lexeme><grapheme>defrockz</grapheme><phoneme>D IY0 F R AA1 K S</phoneme></lexeme> <!-- defrocks -->
   <lexeme><grapheme>defrostz</grapheme><phoneme>D IY0 F R AO1 S T S</phoneme></lexeme> <!-- defrosts -->
   <lexeme><grapheme>defundz</grapheme><phoneme>D IY0 F AH1 N D Z</phoneme></lexeme> <!-- defunds -->
-  <lexeme><grapheme>defuzez</grapheme><phoneme>D IY0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- defuses -->
+  <lexeme><grapheme>defusez</grapheme><phoneme>D IY0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- defuses -->
   <lexeme><grapheme>degasd</grapheme><phoneme>D IY0 G AE1 S T</phoneme></lexeme> <!-- degassed -->
   <lexeme><grapheme>degasez</grapheme><phoneme>D IY0 G AE1 S AH0 Z</phoneme></lexeme> <!-- degases -->
   <lexeme><grapheme>degassez</grapheme><phoneme>D IY0 G AE1 S AH0 Z</phoneme></lexeme> <!-- degasses -->
@@ -7497,20 +7485,10 @@
   <lexeme><grapheme>differentiatez</grapheme><phoneme>D IH2 F AH0 R EH1 N SH IY0 EY2 T S</phoneme></lexeme> <!-- differentiates -->
   <lexeme><grapheme>differz</grapheme><phoneme>D IH1 F ER0 Z</phoneme></lexeme> <!-- differs -->
   <lexeme><grapheme>diffractz</grapheme><phoneme>D IH0 F R AE1 K T S</phoneme></lexeme> <!-- diffracts -->
+  <lexeme><grapheme>diffusez</grapheme><phoneme>D IH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- diffuses -->
   <lexeme><grapheme>diffusiv</grapheme><phoneme>D IH0 F Y UW1 S IH0 V</phoneme></lexeme> <!-- diffusive -->
   <lexeme><grapheme>diffusivly</grapheme><phoneme>D IH0 F Y UW1 S IH0 V L IY0</phoneme></lexeme> <!-- diffusively -->
   <lexeme><grapheme>diffusivness</grapheme><phoneme>D IH0 F Y UW1 S IH0 V N AH0 S</phoneme></lexeme> <!-- diffusiveness -->
-  <lexeme><grapheme>diffuze</grapheme><phoneme>D IH0 F Y UW1 Z</phoneme></lexeme> <!-- diffuse -->
-  <lexeme><grapheme>diffuzed</grapheme><phoneme>D IH0 F Y UW1 Z D</phoneme></lexeme> <!-- diffused -->
-  <lexeme><grapheme>diffuzely</grapheme><phoneme>D IH0 F Y UW1 S L IY0</phoneme></lexeme> <!-- diffusely -->
-  <lexeme><grapheme>diffuzeness</grapheme><phoneme>D IH0 F Y UW1 S N AH0 S</phoneme></lexeme> <!-- diffuseness -->
-  <lexeme><grapheme>diffuzer</grapheme><phoneme>D IH0 F Y UW1 Z ER0</phoneme></lexeme> <!-- diffuser -->
-  <lexeme><grapheme>diffuzers</grapheme><phoneme>D IH0 F Y UW1 Z ER0 Z</phoneme></lexeme> <!-- diffusers -->
-  <lexeme><grapheme>diffuzez</grapheme><phoneme>D IH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- diffuses -->
-  <lexeme><grapheme>diffuzible</grapheme><phoneme>D IH0 F Y UW1 Z AH0 B AH0 L</phoneme></lexeme> <!-- diffusible -->
-  <lexeme><grapheme>diffuzing</grapheme><phoneme>D IH0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- diffusing -->
-  <lexeme><grapheme>diffuzor</grapheme><phoneme>D IH0 F Y UW1 Z ER0</phoneme></lexeme> <!-- diffusor -->
-  <lexeme><grapheme>diffuzors</grapheme><phoneme>D IH0 F Y UW1 Z ER0 Z</phoneme></lexeme> <!-- diffusors -->
   <lexeme><grapheme>digd</grapheme><phoneme>D IH1 G D</phoneme></lexeme> <!-- digged -->
   <lexeme><grapheme>digestiv</grapheme><phoneme>D AY0 JH EH1 S T IH0 V</phoneme></lexeme> <!-- digestive -->
   <lexeme><grapheme>digestivly</grapheme><phoneme>D AY0 JH EH1 S T IH0 V L IY0</phoneme></lexeme> <!-- digestively -->
@@ -8562,6 +8540,8 @@
   <lexeme><grapheme>dullz</grapheme><phoneme>D AH1 L Z</phoneme></lexeme> <!-- dulls -->
   <lexeme><grapheme>duma</grapheme><phoneme>D UW1 M AH0</phoneme></lexeme> <!-- douma -->
   <lexeme><grapheme>dumas</grapheme><phoneme>D UW1 M AH0 Z</phoneme></lexeme> <!-- doumas -->
+  <lexeme><grapheme>dume</grapheme><phoneme>D UW1 M</phoneme></lexeme> <!-- dume -->
+  <lexeme><grapheme>dumes</grapheme><phoneme>D UW1 M Z</phoneme></lexeme> <!-- dumes -->
   <lexeme><grapheme>dumm</grapheme><phoneme>D AH1 M</phoneme></lexeme> <!-- dumb -->
   <lexeme><grapheme>dummass</grapheme><phoneme>D AH1 M AE2 S</phoneme></lexeme> <!-- dumbass -->
   <lexeme><grapheme>dummasses</grapheme><phoneme>D AH1 M AE2 S AH0 Z</phoneme></lexeme> <!-- dumbasses -->
@@ -8893,13 +8873,10 @@
   <lexeme><grapheme>effeminizez</grapheme><phoneme>IH0 F EH1 M AH0 N AH0 S AY2 Z AH0 Z</phoneme></lexeme> <!-- effeminises -->
   <lexeme><grapheme>effervescez</grapheme><phoneme>EH2 F ER0 V EH1 S AH0 Z</phoneme></lexeme> <!-- effervesces -->
   <lexeme><grapheme>efflorescez</grapheme><phoneme>EH2 F L AH0 R EH1 S AH0 Z</phoneme></lexeme> <!-- effloresces -->
+  <lexeme><grapheme>effusez</grapheme><phoneme>IH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- effuses -->
   <lexeme><grapheme>effusiv</grapheme><phoneme>IH0 F Y UW1 S IH0 V</phoneme></lexeme> <!-- effusive -->
   <lexeme><grapheme>effusivly</grapheme><phoneme>IH0 F Y UW1 S IH0 V L IY0</phoneme></lexeme> <!-- effusively -->
   <lexeme><grapheme>effusivness</grapheme><phoneme>IH0 F Y UW1 S IH0 V N AH0 S</phoneme></lexeme> <!-- effusiveness -->
-  <lexeme><grapheme>effuze</grapheme><phoneme>IH0 F Y UW1 Z</phoneme></lexeme> <!-- effuse -->
-  <lexeme><grapheme>effuzed</grapheme><phoneme>IH0 F Y UW1 Z D</phoneme></lexeme> <!-- effused -->
-  <lexeme><grapheme>effuzez</grapheme><phoneme>IH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- effuses -->
-  <lexeme><grapheme>effuzing</grapheme><phoneme>IH0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- effusing -->
   <lexeme><grapheme>effz</grapheme><phoneme>EH1 F S</phoneme></lexeme> <!-- effs -->
   <lexeme><grapheme>egestiv</grapheme><phoneme>IH0 JH EH1 S T IH0 V</phoneme></lexeme> <!-- egestive -->
   <lexeme><grapheme>egestz</grapheme><phoneme>IH0 JH EH1 S T S</phoneme></lexeme> <!-- egests -->
@@ -12534,8 +12511,6 @@
   <lexeme><grapheme>greitz</grapheme><phoneme>G R EY1 T S</phoneme></lexeme> <!-- greits -->
   <lexeme><grapheme>grepd</grapheme><phoneme>G R EH1 P T</phoneme></lexeme> <!-- grepped -->
   <lexeme><grapheme>grepz</grapheme><phoneme>G R EH1 P S</phoneme></lexeme> <!-- greps -->
-  <lexeme><grapheme>greyd</grapheme><phoneme>G R EY1 D</phoneme></lexeme> <!-- greyed -->
-  <lexeme><grapheme>greyz</grapheme><phoneme>G R EY1 Z</phoneme></lexeme> <!-- greys -->
   <lexeme><grapheme>griddlez</grapheme><phoneme>G R IH1 D AH0 L Z</phoneme></lexeme> <!-- griddles -->
   <lexeme><grapheme>gridez</grapheme><phoneme>G R AY1 D Z</phoneme></lexeme> <!-- grides -->
   <lexeme><grapheme>gridlockd</grapheme><phoneme>G R IH1 D L AA2 K T</phoneme></lexeme> <!-- gridlocked -->
@@ -14708,16 +14683,8 @@
   <lexeme><grapheme>infractz</grapheme><phoneme>IH0 N F R AE1 K T S</phoneme></lexeme> <!-- infracts -->
   <lexeme><grapheme>infringez</grapheme><phoneme>IH0 N F R IH1 N JH IH0 Z</phoneme></lexeme> <!-- infringes -->
   <lexeme><grapheme>infuriatez</grapheme><phoneme>IH0 N F Y UH1 R IY0 EY2 T S</phoneme></lexeme> <!-- infuriates -->
+  <lexeme><grapheme>infusez</grapheme><phoneme>IH0 N F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- infuses -->
   <lexeme><grapheme>infusiv</grapheme><phoneme>IH0 N F Y UW1 S IH0 V</phoneme></lexeme> <!-- infusive -->
-  <lexeme><grapheme>infuze</grapheme><phoneme>IH0 N F Y UW1 Z</phoneme></lexeme> <!-- infuse -->
-  <lexeme><grapheme>infuzed</grapheme><phoneme>IH0 N F Y UW1 Z D</phoneme></lexeme> <!-- infused -->
-  <lexeme><grapheme>infuzer</grapheme><phoneme>IH0 N F Y UW1 Z ER0</phoneme></lexeme> <!-- infuser -->
-  <lexeme><grapheme>infuzers</grapheme><phoneme>IH0 N F Y UW1 Z ER0 Z</phoneme></lexeme> <!-- infusers -->
-  <lexeme><grapheme>infuzez</grapheme><phoneme>IH0 N F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- infuses -->
-  <lexeme><grapheme>infuzibility</grapheme><phoneme>IH0 N F Y UW2 Z AH0 B IH1 L IH0 T IY0</phoneme></lexeme> <!-- infusibility -->
-  <lexeme><grapheme>infuzible</grapheme><phoneme>IH0 N F Y UW1 Z AH0 B AH0 L</phoneme></lexeme> <!-- infusible -->
-  <lexeme><grapheme>infuzibleness</grapheme><phoneme>IH0 N F Y UW1 Z AH0 B AH0 L N AH0 S</phoneme></lexeme> <!-- infusibleness -->
-  <lexeme><grapheme>infuzing</grapheme><phoneme>IH0 N F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- infusing -->
   <lexeme><grapheme>ingatherd</grapheme><phoneme>IH1 N G AE2 DH ER0 D</phoneme></lexeme> <!-- ingathered -->
   <lexeme><grapheme>ingatherz</grapheme><phoneme>IH1 N G AE2 DH ER0 Z</phoneme></lexeme> <!-- ingathers -->
   <lexeme><grapheme>ingestiv</grapheme><phoneme>IH0 N JH EH1 S T IH0 V</phoneme></lexeme> <!-- ingestive -->
@@ -14948,10 +14915,7 @@
   <lexeme><grapheme>interdependz</grapheme><phoneme>IH2 N T ER0 D IH0 P EH1 N D Z</phoneme></lexeme> <!-- interdepends -->
   <lexeme><grapheme>interdictiv</grapheme><phoneme>IH2 N T ER0 D IH1 K T IH0 V</phoneme></lexeme> <!-- interdictive -->
   <lexeme><grapheme>interdictz</grapheme><phoneme>IH2 N T ER0 D IH1 K T S</phoneme></lexeme> <!-- interdicts -->
-  <lexeme><grapheme>interdiffuze</grapheme><phoneme>IH2 N T ER0 D IH0 F Y UW1 Z</phoneme></lexeme> <!-- interdiffuse -->
-  <lexeme><grapheme>interdiffuzed</grapheme><phoneme>IH2 N T ER0 D IH0 F Y UW1 Z D</phoneme></lexeme> <!-- interdiffused -->
-  <lexeme><grapheme>interdiffuzez</grapheme><phoneme>IH2 N T ER0 D IH0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- interdiffuses -->
-  <lexeme><grapheme>interdiffuzing</grapheme><phoneme>IH2 N T ER0 D IH0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- interdiffusing -->
+  <lexeme><grapheme>interdiffusez</grapheme><phoneme>IH2 N T ER0 D IH0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- interdiffuses -->
   <lexeme><grapheme>interdigitatez</grapheme><phoneme>IH2 N T ER0 D IH1 JH AH0 T EY2 T S</phoneme></lexeme> <!-- interdigitates -->
   <lexeme><grapheme>interestz</grapheme><phoneme>IH1 N T R AH0 S T S</phoneme></lexeme> <!-- interests -->
   <lexeme><grapheme>interfacez</grapheme><phoneme>IH1 N T ER0 F EY2 S IH0 Z</phoneme></lexeme> <!-- interfaces -->
@@ -14960,10 +14924,7 @@
   <lexeme><grapheme>interflowd</grapheme><phoneme>IH2 N T ER0 F L OW1 D</phoneme></lexeme> <!-- interflowed -->
   <lexeme><grapheme>interflowz</grapheme><phoneme>IH2 N T ER0 F L OW1 Z</phoneme></lexeme> <!-- interflows -->
   <lexeme><grapheme>interfoldz</grapheme><phoneme>IH2 N T ER0 F OW1 L D Z</phoneme></lexeme> <!-- interfolds -->
-  <lexeme><grapheme>interfuze</grapheme><phoneme>IH2 N T ER0 F Y UW1 Z</phoneme></lexeme> <!-- interfuse -->
-  <lexeme><grapheme>interfuzed</grapheme><phoneme>IH2 N T ER0 F Y UW1 Z D</phoneme></lexeme> <!-- interfused -->
-  <lexeme><grapheme>interfuzez</grapheme><phoneme>IH2 N T ER0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- interfuses -->
-  <lexeme><grapheme>interfuzing</grapheme><phoneme>IH2 N T ER0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- interfusing -->
+  <lexeme><grapheme>interfusez</grapheme><phoneme>IH2 N T ER0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- interfuses -->
   <lexeme><grapheme>intergradez</grapheme><phoneme>IH2 N T ER0 G R EY1 D Z</phoneme></lexeme> <!-- intergrades -->
   <lexeme><grapheme>intergraftz</grapheme><phoneme>IH2 N T ER0 G R AE1 F T S</phoneme></lexeme> <!-- intergrafts -->
   <lexeme><grapheme>interihland</grapheme><phoneme>IH2 N T ER0 AY1 L AH0 N D</phoneme></lexeme> <!-- interisland -->
@@ -15659,8 +15620,8 @@
   <lexeme><grapheme>juttiez</grapheme><phoneme>JH AH1 T IY0 Z</phoneme></lexeme> <!-- jutties -->
   <lexeme><grapheme>jutz</grapheme><phoneme>JH AH1 T S</phoneme></lexeme> <!-- juts -->
   <lexeme><grapheme>juw</grapheme><phoneme>JH AW1</phoneme></lexeme> <!-- jow -->
-  <lexeme><grapheme>juwar</grapheme><phoneme>JH AA0 UH1 AA0 R</phoneme></lexeme> <!-- jowar -->
-  <lexeme><grapheme>juwars</grapheme><phoneme>JH AA0 UH1 AA0 R Z</phoneme></lexeme> <!-- jowars -->
+  <lexeme><grapheme>juwar</grapheme><phoneme>JH AW0 AA1 R</phoneme></lexeme> <!-- jowar -->
+  <lexeme><grapheme>juwars</grapheme><phoneme>JH AW0 AA1 R Z</phoneme></lexeme> <!-- jowars -->
   <lexeme><grapheme>juwd</grapheme><phoneme>JH AW1 D</phoneme></lexeme> <!-- jowed -->
   <lexeme><grapheme>juwing</grapheme><phoneme>JH AW1 IH0 NG</phoneme></lexeme> <!-- jowing -->
   <lexeme><grapheme>juwl</grapheme><phoneme>JH AW1 L</phoneme></lexeme> <!-- jowl -->
@@ -21049,10 +21010,7 @@
   <lexeme><grapheme>performd</grapheme><phoneme>P ER0 F AO1 R M D</phoneme></lexeme> <!-- performed -->
   <lexeme><grapheme>performz</grapheme><phoneme>P ER0 F AO1 R M Z</phoneme></lexeme> <!-- performs -->
   <lexeme><grapheme>perfumez</grapheme><phoneme>P ER0 F Y UW1 M Z</phoneme></lexeme> <!-- perfumes -->
-  <lexeme><grapheme>perfuze</grapheme><phoneme>P ER0 F Y UW1 Z</phoneme></lexeme> <!-- perfuse -->
-  <lexeme><grapheme>perfuzed</grapheme><phoneme>P ER0 F Y UW1 Z D</phoneme></lexeme> <!-- perfused -->
-  <lexeme><grapheme>perfuzez</grapheme><phoneme>P ER0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- perfuses -->
-  <lexeme><grapheme>perfuzing</grapheme><phoneme>P ER0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- perfusing -->
+  <lexeme><grapheme>perfusez</grapheme><phoneme>P ER0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- perfuses -->
   <lexeme><grapheme>perild</grapheme><phoneme>P EH1 R IH0 L D</phoneme></lexeme> <!-- periled -->
   <lexeme><grapheme>periling</grapheme><phoneme>P EH1 R IH0 L IH0 NG</phoneme></lexeme> <!-- perilling -->
   <lexeme><grapheme>perilz</grapheme><phoneme>P EH1 R IH0 L Z</phoneme></lexeme> <!-- perils -->
@@ -21918,7 +21876,6 @@
   <lexeme><grapheme>poyu</grapheme><phoneme>P OY1 UW0</phoneme></lexeme> <!-- poyou -->
   <lexeme><grapheme>poyus</grapheme><phoneme>P OY1 UW0 Z</phoneme></lexeme> <!-- poyous -->
   <lexeme><grapheme>practicez</grapheme><phoneme>P R AE1 K T IH0 S IH0 Z</phoneme></lexeme> <!-- practices -->
-  <lexeme><grapheme>practisez</grapheme><phoneme>P R AE1 K T IH0 S IH0 Z</phoneme></lexeme> <!-- practises -->
   <lexeme><grapheme>praisez</grapheme><phoneme>P R EY1 Z IH0 Z</phoneme></lexeme> <!-- praises -->
   <lexeme><grapheme>prancez</grapheme><phoneme>P R AE1 N S IH0 Z</phoneme></lexeme> <!-- prances -->
   <lexeme><grapheme>prangd</grapheme><phoneme>P R AE1 NG D</phoneme></lexeme> <!-- pranged -->
@@ -22967,8 +22924,6 @@
   <lexeme><grapheme>qhamferz</grapheme><phoneme>CH AE1 M F ER0 Z</phoneme></lexeme> <!-- chamfers -->
   <lexeme><grapheme>qhamfron</grapheme><phoneme>CH AE1 M F R AH0 N</phoneme></lexeme> <!-- chamfron -->
   <lexeme><grapheme>qhamfrons</grapheme><phoneme>CH AE1 M F R AH0 N Z</phoneme></lexeme> <!-- chamfrons -->
-  <lexeme><grapheme>qhamiso</grapheme><phoneme>SH AH0 M IY1 S OW0</phoneme></lexeme> <!-- qhamiso -->
-  <lexeme><grapheme>qhamisos</grapheme><phoneme>SH AH0 M IY1 S OW0 Z</phoneme></lexeme> <!-- qhamisos -->
   <lexeme><grapheme>qhamp</grapheme><phoneme>CH AE1 M P</phoneme></lexeme> <!-- champ -->
   <lexeme><grapheme>qhampac</grapheme><phoneme>CH AE1 M P AE0 K</phoneme></lexeme> <!-- champac -->
   <lexeme><grapheme>qhampacs</grapheme><phoneme>CH AE1 M P AE0 K S</phoneme></lexeme> <!-- champacs -->
@@ -23227,8 +23182,6 @@
   <lexeme><grapheme>qhartist</grapheme><phoneme>CH AA1 R T IH0 S T</phoneme></lexeme> <!-- chartist -->
   <lexeme><grapheme>qhartists</grapheme><phoneme>CH AA1 R T IH0 S T S</phoneme></lexeme> <!-- chartists -->
   <lexeme><grapheme>qharts</grapheme><phoneme>CH AA1 R T S</phoneme></lexeme> <!-- charts -->
-  <lexeme><grapheme>qhartularies</grapheme><phoneme>K AA1 R T Y UH0 L EH0 R IY0 Z</phoneme></lexeme> <!-- qhartularies -->
-  <lexeme><grapheme>qhartulary</grapheme><phoneme>K AA1 R T Y UH0 L EH0 R IY0</phoneme></lexeme> <!-- qhartulary -->
   <lexeme><grapheme>qhartz</grapheme><phoneme>CH AA1 R T S</phoneme></lexeme> <!-- charts -->
   <lexeme><grapheme>qharwimen</grapheme><phoneme>CH AA1 R W UH2 M IH0 N</phoneme></lexeme> <!-- charwomen -->
   <lexeme><grapheme>qharwoman</grapheme><phoneme>CH AA1 R W UH2 M AH0 N</phoneme></lexeme> <!-- charwoman -->
@@ -23863,16 +23816,6 @@
   <lexeme><grapheme>qhitterz</grapheme><phoneme>CH IH1 T ER0 Z</phoneme></lexeme> <!-- chitters -->
   <lexeme><grapheme>qhitties</grapheme><phoneme>CH IH1 T IY0 Z</phoneme></lexeme> <!-- chitties -->
   <lexeme><grapheme>qhitty</grapheme><phoneme>CH IH1 T IY0</phoneme></lexeme> <!-- chitty -->
-  <lexeme><grapheme>qhivaree</grapheme><phoneme>SH IH2 V AH0 R IY1</phoneme></lexeme> <!-- qhivaree -->
-  <lexeme><grapheme>qhivareed</grapheme><phoneme>SH IH2 V AH0 R IY1 D</phoneme></lexeme> <!-- qhivareed -->
-  <lexeme><grapheme>qhivareeing</grapheme><phoneme>SH IH2 V AH0 R IY1 IH0 NG</phoneme></lexeme> <!-- qhivareeing -->
-  <lexeme><grapheme>qhivarees</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- qhivarees -->
-  <lexeme><grapheme>qhivareez</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- qhivareez -->
-  <lexeme><grapheme>qhivari</grapheme><phoneme>SH IH2 V AH0 R IY1</phoneme></lexeme> <!-- qhivari -->
-  <lexeme><grapheme>qhivarid</grapheme><phoneme>SH IH2 V AH0 R IY1 D</phoneme></lexeme> <!-- qhivarid -->
-  <lexeme><grapheme>qhivaries</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- qhivaries -->
-  <lexeme><grapheme>qhivariez</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- qhivariez -->
-  <lexeme><grapheme>qhivariing</grapheme><phoneme>SH IH2 V AH0 R IY1 IH0 NG</phoneme></lexeme> <!-- qhivariing -->
   <lexeme><grapheme>qhive</grapheme><phoneme>CH AY1 V</phoneme></lexeme> <!-- chive -->
   <lexeme><grapheme>qhives</grapheme><phoneme>CH AY1 V Z</phoneme></lexeme> <!-- chives -->
   <lexeme><grapheme>qhivied</grapheme><phoneme>CH IH1 V IY0 D</phoneme></lexeme> <!-- chivied -->
@@ -25366,19 +25309,8 @@
   <lexeme><grapheme>refurbishez</grapheme><phoneme>R IY0 F ER1 B IH0 SH IH0 Z</phoneme></lexeme> <!-- refurbishes -->
   <lexeme><grapheme>refurnishd</grapheme><phoneme>R IY0 F ER1 N IH0 SH T</phoneme></lexeme> <!-- refurnished -->
   <lexeme><grapheme>refurnishez</grapheme><phoneme>R IY0 F ER1 N IH0 SH IH0 Z</phoneme></lexeme> <!-- refurnishes -->
-  <lexeme><grapheme>refuse</grapheme><phoneme>R EH1 F Y UW0 S</phoneme></lexeme> <!-- refuse -->
+  <lexeme><grapheme>refusez</grapheme><phoneme>R IH0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- refuses -->
   <lexeme><grapheme>refutez</grapheme><phoneme>R IH0 F Y UW1 T S</phoneme></lexeme> <!-- refutes -->
-  <lexeme><grapheme>refuzable</grapheme><phoneme>R IH0 F Y UW1 Z AH0 B AH0 L</phoneme></lexeme> <!-- refusable -->
-  <lexeme><grapheme>refuzal</grapheme><phoneme>R IH0 F Y UW1 Z AH0 L</phoneme></lexeme> <!-- refusal -->
-  <lexeme><grapheme>refuzals</grapheme><phoneme>R IH0 F Y UW1 Z AH0 L Z</phoneme></lexeme> <!-- refusals -->
-  <lexeme><grapheme>refuze</grapheme><phoneme>R IH0 F Y UW1 Z</phoneme></lexeme> <!-- refuse -->
-  <lexeme><grapheme>refuzed</grapheme><phoneme>R IH0 F Y UW1 Z D</phoneme></lexeme> <!-- refused -->
-  <lexeme><grapheme>refuzenik</grapheme><phoneme>R IH0 F Y UW1 Z N IH0 K</phoneme></lexeme> <!-- refusenik -->
-  <lexeme><grapheme>refuzeniks</grapheme><phoneme>R IH0 F Y UW1 Z N IH0 K S</phoneme></lexeme> <!-- refuseniks -->
-  <lexeme><grapheme>refuzer</grapheme><phoneme>R IH0 F Y UW1 Z ER0</phoneme></lexeme> <!-- refuser -->
-  <lexeme><grapheme>refuzers</grapheme><phoneme>R IH0 F Y UW1 Z ER0 Z</phoneme></lexeme> <!-- refusers -->
-  <lexeme><grapheme>refuzez</grapheme><phoneme>R IH0 F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- refuses -->
-  <lexeme><grapheme>refuzing</grapheme><phoneme>R IH0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- refusing -->
   <lexeme><grapheme>refynd</grapheme><phoneme>R IY0 F AY1 N D</phoneme></lexeme> <!-- refind -->
   <lexeme><grapheme>refynding</grapheme><phoneme>R IY0 F AY1 N D IH0 NG</phoneme></lexeme> <!-- refinding -->
   <lexeme><grapheme>refyndz</grapheme><phoneme>R IY0 F AY1 N D Z</phoneme></lexeme> <!-- refinds -->
@@ -25448,8 +25380,7 @@
   <lexeme><grapheme>regrynd</grapheme><phoneme>R IY0 G R AY1 N D</phoneme></lexeme> <!-- regrind -->
   <lexeme><grapheme>regrynding</grapheme><phoneme>R IY0 G R AY1 N D IH0 NG</phoneme></lexeme> <!-- regrinding -->
   <lexeme><grapheme>regryndz</grapheme><phoneme>R IY0 G R AY1 N D Z</phoneme></lexeme> <!-- regrinds -->
-  <lexeme><grapheme>regularisez</grapheme><phoneme>R EH1 G Y AH0 L ER0 AY0 Z IH0 Z</phoneme></lexeme> <!-- regularises -->
-  <lexeme><grapheme>regularizez</grapheme><phoneme>R EH1 G Y AH0 L ER0 AY0 Z IH0 Z</phoneme></lexeme> <!-- regularizes -->
+  <lexeme><grapheme>regularizez</grapheme><phoneme>R EH1 G Y AH0 L ER0 AY0 Z IH0 Z</phoneme></lexeme> <!-- regularises -->
   <lexeme><grapheme>regulatez</grapheme><phoneme>R EH1 G Y AH0 L EY0 T S</phoneme></lexeme> <!-- regulates -->
   <lexeme><grapheme>regulativ</grapheme><phoneme>R EH1 G Y AH0 L AH0 T IH0 V</phoneme></lexeme> <!-- regulative -->
   <lexeme><grapheme>regulizez</grapheme><phoneme>R EH1 G Y AH0 L AY0 Z IH0 Z</phoneme></lexeme> <!-- regulises -->
@@ -25539,10 +25470,7 @@
   <lexeme><grapheme>reinforcez</grapheme><phoneme>R IY2 IH0 N F AO1 R S IH0 Z</phoneme></lexeme> <!-- reinforces -->
   <lexeme><grapheme>reinformd</grapheme><phoneme>R IY2 IH0 N F AO1 R M D</phoneme></lexeme> <!-- reinformed -->
   <lexeme><grapheme>reinformz</grapheme><phoneme>R IY2 IH0 N F AO1 R M Z</phoneme></lexeme> <!-- reinforms -->
-  <lexeme><grapheme>reinfuze</grapheme><phoneme>R IY2 IH0 N F Y UW1 Z</phoneme></lexeme> <!-- reinfuse -->
-  <lexeme><grapheme>reinfuzed</grapheme><phoneme>R IY2 IH0 N F Y UW1 Z D</phoneme></lexeme> <!-- reinfused -->
-  <lexeme><grapheme>reinfuzez</grapheme><phoneme>R IY2 IH0 N F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- reinfuses -->
-  <lexeme><grapheme>reinfuzing</grapheme><phoneme>R IY2 IH0 N F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- reinfusing -->
+  <lexeme><grapheme>reinfusez</grapheme><phoneme>R IY2 IH0 N F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- reinfuses -->
   <lexeme><grapheme>reinhabitz</grapheme><phoneme>R IY2 IH0 N HH AE1 B IH0 T S</phoneme></lexeme> <!-- reinhabits -->
   <lexeme><grapheme>reinitiatez</grapheme><phoneme>R IY2 IH0 N IH1 SH IH0 EY2 T S</phoneme></lexeme> <!-- reinitiates -->
   <lexeme><grapheme>reinjectz</grapheme><phoneme>R IY2 IH0 N JH EH1 K T S</phoneme></lexeme> <!-- reinjects -->
@@ -26582,11 +26510,11 @@
   <lexeme><grapheme>revaluez</grapheme><phoneme>R IY0 V AE1 L Y UW0 Z</phoneme></lexeme> <!-- revalues -->
   <lexeme><grapheme>revampd</grapheme><phoneme>R IY0 V AE1 M P T</phoneme></lexeme> <!-- revamped -->
   <lexeme><grapheme>revampz</grapheme><phoneme>R IY0 V AE1 M P S</phoneme></lexeme> <!-- revamps -->
-  <lexeme><grapheme>revanqh</grapheme><phoneme>R AH0 V AA1 N SH</phoneme></lexeme> <!-- revanqh -->
-  <lexeme><grapheme>revanqhes</grapheme><phoneme>R AH0 V AA1 N SH IH0 Z</phoneme></lexeme> <!-- revanqhes -->
-  <lexeme><grapheme>revanqhism</grapheme><phoneme>R AH0 V AA1 N SH IH0 Z AH0 M</phoneme></lexeme> <!-- revanqhism -->
-  <lexeme><grapheme>revanqhisms</grapheme><phoneme>R AH0 V AA1 N SH IH0 Z AH0 M Z</phoneme></lexeme> <!-- revanqhisms -->
-  <lexeme><grapheme>revanqhist</grapheme><phoneme>R AH0 V AA1 N SH IH0 S T</phoneme></lexeme> <!-- revanqhist -->
+  <lexeme><grapheme>revansh</grapheme><phoneme>R AH0 V AA1 N SH</phoneme></lexeme> <!-- revanche -->
+  <lexeme><grapheme>revanshes</grapheme><phoneme>R AH0 V AA1 N SH IH0 Z</phoneme></lexeme> <!-- revanches -->
+  <lexeme><grapheme>revanshism</grapheme><phoneme>R AH0 V AA1 N SH IH0 Z AH0 M</phoneme></lexeme> <!-- revanchism -->
+  <lexeme><grapheme>revanshisms</grapheme><phoneme>R AH0 V AA1 N SH IH0 Z AH0 M Z</phoneme></lexeme> <!-- revanchisms -->
+  <lexeme><grapheme>revanshist</grapheme><phoneme>R AH0 V AA1 N SH IH0 S T</phoneme></lexeme> <!-- revanchist -->
   <lexeme><grapheme>revd</grapheme><phoneme>R EH1 V D</phoneme></lexeme> <!-- revved -->
   <lexeme><grapheme>reveald</grapheme><phoneme>R IH0 V IY1 L D</phoneme></lexeme> <!-- revealed -->
   <lexeme><grapheme>revealz</grapheme><phoneme>R IH0 V IY1 L Z</phoneme></lexeme> <!-- reveals -->
@@ -27334,8 +27262,8 @@
   <lexeme><grapheme>scanz</grapheme><phoneme>S K AE1 N Z</phoneme></lexeme> <!-- scans -->
   <lexeme><grapheme>scapegoatz</grapheme><phoneme>S K EY1 P G OW0 T S</phoneme></lexeme> <!-- scapegoats -->
   <lexeme><grapheme>scapplez</grapheme><phoneme>S K AE1 P AH0 L Z</phoneme></lexeme> <!-- scapples -->
-  <lexeme><grapheme>scaramouqh</grapheme><phoneme>S K AE1 R AH0 M AW2 CH</phoneme></lexeme> <!-- scaramouqh -->
-  <lexeme><grapheme>scaramouqhes</grapheme><phoneme>S K AE1 R AH0 M UW2 SH IH0 Z</phoneme></lexeme> <!-- scaramouqhes -->
+  <lexeme><grapheme>scaramoosh</grapheme><phoneme>S K AE1 R AH0 M UW2 SH</phoneme></lexeme> <!-- scaramouch -->
+  <lexeme><grapheme>scaramooshes</grapheme><phoneme>S K AE1 R AH0 M UW2 SH IH0 Z</phoneme></lexeme> <!-- scaramouches -->
   <lexeme><grapheme>scard</grapheme><phoneme>S K AA1 R D</phoneme></lexeme> <!-- scarred -->
   <lexeme><grapheme>scarehedd</grapheme><phoneme>S K EH1 ER0 HH EH0 D</phoneme></lexeme> <!-- scarehead -->
   <lexeme><grapheme>scarehedds</grapheme><phoneme>S K EH1 ER0 HH EH0 D Z</phoneme></lexeme> <!-- scareheads -->
@@ -27850,6 +27778,8 @@
   <lexeme><grapheme>shamez</grapheme><phoneme>SH EY1 M Z</phoneme></lexeme> <!-- shames -->
   <lexeme><grapheme>shamise</grapheme><phoneme>SH AH0 M IY1 S</phoneme></lexeme> <!-- chamise -->
   <lexeme><grapheme>shamises</grapheme><phoneme>SH AH0 M IY1 S IH0 Z</phoneme></lexeme> <!-- chamises -->
+  <lexeme><grapheme>shamiso</grapheme><phoneme>SH AH0 M IY1 S OW0</phoneme></lexeme> <!-- chamiso -->
+  <lexeme><grapheme>shamisos</grapheme><phoneme>SH AH0 M IY1 S OW0 Z</phoneme></lexeme> <!-- chamisos -->
   <lexeme><grapheme>shammied</grapheme><phoneme>SH AE1 M OY0 D</phoneme></lexeme> <!-- shamoyed -->
   <lexeme><grapheme>shammies</grapheme><phoneme>SH AE1 M W IY0 Z</phoneme></lexeme> <!-- chamoises -->
   <lexeme><grapheme>shammiez</grapheme><phoneme>SH AE1 M W IY0 Z</phoneme></lexeme> <!-- chamoises -->
@@ -28106,7 +28036,16 @@
   <lexeme><grapheme>shivalrously</grapheme><phoneme>SH IH1 V AH0 L R AH0 S L IY0</phoneme></lexeme> <!-- chivalrously -->
   <lexeme><grapheme>shivalrousness</grapheme><phoneme>SH IH1 V AH0 L R AH0 S N AH0 S</phoneme></lexeme> <!-- chivalrousness -->
   <lexeme><grapheme>shivalry</grapheme><phoneme>SH IH1 V AH0 L R IY0</phoneme></lexeme> <!-- chivalry -->
+  <lexeme><grapheme>shivaree</grapheme><phoneme>SH IH2 V AH0 R IY1</phoneme></lexeme> <!-- chivaree -->
+  <lexeme><grapheme>shivareed</grapheme><phoneme>SH IH2 V AH0 R IY1 D</phoneme></lexeme> <!-- chivareed -->
+  <lexeme><grapheme>shivareeing</grapheme><phoneme>SH IH2 V AH0 R IY1 IH0 NG</phoneme></lexeme> <!-- chivareeing -->
+  <lexeme><grapheme>shivarees</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- chivarees -->
   <lexeme><grapheme>shivareez</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- chivarees -->
+  <lexeme><grapheme>shivari</grapheme><phoneme>SH IH2 V AH0 R IY1</phoneme></lexeme> <!-- chivari -->
+  <lexeme><grapheme>shivarid</grapheme><phoneme>SH IH2 V AH0 R IY1 D</phoneme></lexeme> <!-- chivaried -->
+  <lexeme><grapheme>shivaries</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- chivaries -->
+  <lexeme><grapheme>shivariez</grapheme><phoneme>SH IH2 V AH0 R IY1 Z</phoneme></lexeme> <!-- chivaries -->
+  <lexeme><grapheme>shivariing</grapheme><phoneme>SH IH2 V AH0 R IY1 IH0 NG</phoneme></lexeme> <!-- chivariing -->
   <lexeme><grapheme>shiverd</grapheme><phoneme>SH IH1 V ER0 D</phoneme></lexeme> <!-- shivered -->
   <lexeme><grapheme>shiverz</grapheme><phoneme>SH IH1 V ER0 Z</phoneme></lexeme> <!-- shivers -->
   <lexeme><grapheme>shleppd</grapheme><phoneme>SH L EH1 P T</phoneme></lexeme> <!-- shlepped -->
@@ -30079,11 +30018,8 @@
   <lexeme><grapheme>suffragett</grapheme><phoneme>S AH2 F R AH0 JH EH1 T</phoneme></lexeme> <!-- suffragette -->
   <lexeme><grapheme>suffragetts</grapheme><phoneme>S AH2 F R AH0 JH EH1 T S</phoneme></lexeme> <!-- suffragettes -->
   <lexeme><grapheme>suffs</grapheme><phoneme>S AW1 Z</phoneme></lexeme> <!-- soughs -->
+  <lexeme><grapheme>suffusez</grapheme><phoneme>S AH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- suffuses -->
   <lexeme><grapheme>suffusiv</grapheme><phoneme>S AH0 F Y UW1 S IH0 V</phoneme></lexeme> <!-- suffusive -->
-  <lexeme><grapheme>suffuze</grapheme><phoneme>S AH0 F Y UW1 Z</phoneme></lexeme> <!-- suffuse -->
-  <lexeme><grapheme>suffuzed</grapheme><phoneme>S AH0 F Y UW1 Z D</phoneme></lexeme> <!-- suffused -->
-  <lexeme><grapheme>suffuzez</grapheme><phoneme>S AH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- suffuses -->
-  <lexeme><grapheme>suffuzing</grapheme><phoneme>S AH0 F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- suffusing -->
   <lexeme><grapheme>suffz</grapheme><phoneme>S AW1 Z</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>sugarcoatz</grapheme><phoneme>SH UH1 G ER0 K OW2 T S</phoneme></lexeme> <!-- sugarcoats -->
   <lexeme><grapheme>sugard</grapheme><phoneme>SH UH1 G ER0 D</phoneme></lexeme> <!-- sugared -->
@@ -31415,12 +31351,7 @@
   <lexeme><grapheme>transformativ</grapheme><phoneme>T R AE0 N S F AO1 R M AH0 T IH0 V</phoneme></lexeme> <!-- transformative -->
   <lexeme><grapheme>transformd</grapheme><phoneme>T R AE0 N S F AO1 R M D</phoneme></lexeme> <!-- transformed -->
   <lexeme><grapheme>transformz</grapheme><phoneme>T R AE0 N S F AO1 R M Z</phoneme></lexeme> <!-- transforms -->
-  <lexeme><grapheme>transfuzable</grapheme><phoneme>T R AA0 N S F Y UW1 Z AH0 B AH0 L</phoneme></lexeme> <!-- transfusable -->
-  <lexeme><grapheme>transfuze</grapheme><phoneme>T R AE0 N S F Y UW1 Z</phoneme></lexeme> <!-- transfuse -->
-  <lexeme><grapheme>transfuzed</grapheme><phoneme>T R AE0 N S F Y UW1 Z D</phoneme></lexeme> <!-- transfused -->
-  <lexeme><grapheme>transfuzez</grapheme><phoneme>T R AE0 N S F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- transfuses -->
-  <lexeme><grapheme>transfuzible</grapheme><phoneme>T R AA0 N S F Y UW1 Z AH0 B AH0 L</phoneme></lexeme> <!-- transfusible -->
-  <lexeme><grapheme>transfuzing</grapheme><phoneme>T R AE0 N S F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- transfusing -->
+  <lexeme><grapheme>transfusez</grapheme><phoneme>T R AE0 N S F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- transfuses -->
   <lexeme><grapheme>transgenderz</grapheme><phoneme>T R AE0 N Z JH EH1 N D ER0 Z</phoneme></lexeme> <!-- transgenders -->
   <lexeme><grapheme>transgressd</grapheme><phoneme>T R AE0 N Z G R EH1 S T</phoneme></lexeme> <!-- transgressed -->
   <lexeme><grapheme>transgressez</grapheme><phoneme>T R AE0 N Z G R EH1 S AH0 Z</phoneme></lexeme> <!-- transgresses -->
@@ -32353,10 +32284,7 @@
   <lexeme><grapheme>unconfessd</grapheme><phoneme>AH1 N K AH1 N F EH1 S T</phoneme></lexeme> <!-- unconfessed -->
   <lexeme><grapheme>unconfirmd</grapheme><phoneme>AH1 N K AH1 N F ER1 M D</phoneme></lexeme> <!-- unconfirmed -->
   <lexeme><grapheme>unconfoundz</grapheme><phoneme>AH1 N K AH1 N F AW1 N D Z</phoneme></lexeme> <!-- unconfounds -->
-  <lexeme><grapheme>unconfuze</grapheme><phoneme>AH1 N K AH1 N F Y UW1 Z</phoneme></lexeme> <!-- unconfuse -->
-  <lexeme><grapheme>unconfuzed</grapheme><phoneme>AH1 N K AH1 N F Y UW1 Z D</phoneme></lexeme> <!-- unconfused -->
-  <lexeme><grapheme>unconfuzez</grapheme><phoneme>AH1 N K AH1 N F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- unconfuses -->
-  <lexeme><grapheme>unconfuzing</grapheme><phoneme>AH1 N K AH1 N F Y UW1 Z IH0 NG</phoneme></lexeme> <!-- unconfusing -->
+  <lexeme><grapheme>unconfusez</grapheme><phoneme>AH1 N K AH1 N F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- unconfuses -->
   <lexeme><grapheme>uncongeald</grapheme><phoneme>AH1 N K AH1 N JH IY1 L D</phoneme></lexeme> <!-- uncongealed -->
   <lexeme><grapheme>uncongealz</grapheme><phoneme>AH1 N K AH1 N JH IY1 L Z</phoneme></lexeme> <!-- uncongeals -->
   <lexeme><grapheme>unconqerable</grapheme><phoneme>AH1 N K AA1 NG K ER0 AH0 B AH0 L</phoneme></lexeme> <!-- unconquerable -->
@@ -34163,9 +34091,6 @@
   <lexeme><grapheme>vapulatez</grapheme><phoneme>V AE1 P Y AH0 L EY2 T S</phoneme></lexeme> <!-- vapulates -->
   <lexeme><grapheme>vaqero</grapheme><phoneme>V AA0 K EH1 R OW0</phoneme></lexeme> <!-- vaquero -->
   <lexeme><grapheme>vaqeros</grapheme><phoneme>V AA0 K EH1 R OW0 Z</phoneme></lexeme> <!-- vaqueros -->
-  <lexeme><grapheme>vaqher</grapheme><phoneme>V AE1 SH ER0</phoneme></lexeme> <!-- vaqher -->
-  <lexeme><grapheme>vaqhers</grapheme><phoneme>V AE1 SH ER0 Z</phoneme></lexeme> <!-- vaqhers -->
-  <lexeme><grapheme>vaqhery</grapheme><phoneme>V AE1 SH ER0 IY0</phoneme></lexeme> <!-- vaqhery -->
   <lexeme><grapheme>vaqita</grapheme><phoneme>V AA0 K IY1 T AH0</phoneme></lexeme> <!-- vaquita -->
   <lexeme><grapheme>vaqitas</grapheme><phoneme>V AA0 K IY1 T AH0 Z</phoneme></lexeme> <!-- vaquitas -->
   <lexeme><grapheme>variantz</grapheme><phoneme>V EH1 R IY0 AH0 N T S</phoneme></lexeme> <!-- variants -->
@@ -34188,6 +34113,9 @@
   <lexeme><grapheme>varveld</grapheme><phoneme>V AA1 R V AH0 L D</phoneme></lexeme> <!-- varveled -->
   <lexeme><grapheme>vascularizez</grapheme><phoneme>V AE1 S K Y AH0 L AH0 R AY2 Z AH0 Z</phoneme></lexeme> <!-- vascularises -->
   <lexeme><grapheme>vasectomizez</grapheme><phoneme>V AH0 S EH1 K T AH0 M AY2 Z AH0 Z</phoneme></lexeme> <!-- vasectomises -->
+  <lexeme><grapheme>vasher</grapheme><phoneme>V AE1 SH ER0</phoneme></lexeme> <!-- vacher -->
+  <lexeme><grapheme>vashers</grapheme><phoneme>V AE1 SH ER0 Z</phoneme></lexeme> <!-- vachers -->
+  <lexeme><grapheme>vashery</grapheme><phoneme>V AE1 SH ER0 IY0</phoneme></lexeme> <!-- vachery -->
   <lexeme><grapheme>vasoactiv</grapheme><phoneme>V EY2 Z OW0 AE1 K T IH0 V</phoneme></lexeme> <!-- vasoactive -->
   <lexeme><grapheme>vasoconstrictiv</grapheme><phoneme>V EY2 Z OW0 K AH0 N S T R IH1 K T IH0 V</phoneme></lexeme> <!-- vasoconstrictive -->
   <lexeme><grapheme>vasoformativ</grapheme><phoneme>V EY2 Z OW0 F AO1 R M AH0 T IH0 V</phoneme></lexeme> <!-- vasoformative -->

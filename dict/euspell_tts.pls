@@ -601,10 +601,7 @@
   <lexeme><grapheme>affrontivly</grapheme><phoneme>əˈfrʌntɪvli</phoneme></lexeme> <!-- affrontively -->
   <lexeme><grapheme>affrontivness</grapheme><phoneme>əˈfrʌntɪvnəs</phoneme></lexeme> <!-- affrontiveness -->
   <lexeme><grapheme>affrontz</grapheme><phoneme>əˈfrʌnts</phoneme></lexeme> <!-- affronts -->
-  <lexeme><grapheme>affuze</grapheme><phoneme>əˈfjuːz</phoneme></lexeme> <!-- affuse -->
-  <lexeme><grapheme>affuzed</grapheme><phoneme>əˈfjuːzd</phoneme></lexeme> <!-- affused -->
-  <lexeme><grapheme>affuzez</grapheme><phoneme>əˈfjuːzɪz</phoneme></lexeme> <!-- affuses -->
-  <lexeme><grapheme>affuzing</grapheme><phoneme>əˈfjuːzɪŋ</phoneme></lexeme> <!-- affusing -->
+  <lexeme><grapheme>affusez</grapheme><phoneme>əˈfjuːzɪz</phoneme></lexeme> <!-- affuses -->
   <lexeme><grapheme>aforementiond</grapheme><phoneme>əˈfɔrmɛnʃənd</phoneme></lexeme> <!-- aforementioned -->
   <lexeme><grapheme>aforethoht</grapheme><phoneme>əˈfɔrθɔt</phoneme></lexeme> <!-- aforethought -->
   <lexeme><grapheme>africanizez</grapheme><phoneme>ˈæfrɪkəˌnaɪzɪz</phoneme></lexeme> <!-- africanises -->
@@ -4041,8 +4038,8 @@
   <lexeme><grapheme>capushed</grapheme><phoneme>kəˈpuːʃt</phoneme></lexeme> <!-- capuched -->
   <lexeme><grapheme>capushes</grapheme><phoneme>kəˈpuːʃɪz</phoneme></lexeme> <!-- capouches -->
   <lexeme><grapheme>capz</grapheme><phoneme>kæps</phoneme></lexeme> <!-- caps -->
-  <lexeme><grapheme>caqholong</grapheme><phoneme>ˈkækəˌlɒŋ</phoneme></lexeme> <!-- cacholong -->
-  <lexeme><grapheme>caqholongs</grapheme><phoneme>ˈkækəˌlɒŋz</phoneme></lexeme> <!-- cacholongs -->
+  <lexeme><grapheme>caqholong</grapheme><phoneme>ˈkætʃəˌlɒŋ</phoneme></lexeme> <!-- cacholong -->
+  <lexeme><grapheme>caqholongs</grapheme><phoneme>ˈkætʃəˌlɒŋz</phoneme></lexeme> <!-- cacholongs -->
   <lexeme><grapheme>caqhuqha</grapheme><phoneme>kəˈtʃuːtʃə</phoneme></lexeme> <!-- cachucha -->
   <lexeme><grapheme>caqhuqhas</grapheme><phoneme>kəˈtʃuːtʃəz</phoneme></lexeme> <!-- cachuchas -->
   <lexeme><grapheme>carabind</grapheme><phoneme>kəˈræbɪnd</phoneme></lexeme> <!-- carabined -->
@@ -4410,10 +4407,7 @@
   <lexeme><grapheme>circulativ</grapheme><phoneme>ˈsɜːrkjələtɪv</phoneme></lexeme> <!-- circulative -->
   <lexeme><grapheme>circumambulatez</grapheme><phoneme>ˌsɜːrkəmˈæmbjəˌleɪts</phoneme></lexeme> <!-- circumambulates -->
   <lexeme><grapheme>circumcisez</grapheme><phoneme>ˈsɜːrkəmˌsaɪzəz</phoneme></lexeme> <!-- circumcises -->
-  <lexeme><grapheme>circumfuze</grapheme><phoneme>ˌsɜːrkəmˈfjuːz</phoneme></lexeme> <!-- circumfuse -->
-  <lexeme><grapheme>circumfuzed</grapheme><phoneme>ˌsɜːrkəmˈfjuːzd</phoneme></lexeme> <!-- circumfused -->
-  <lexeme><grapheme>circumfuzez</grapheme><phoneme>ˌsɜːrkəmˈfjuːzəz</phoneme></lexeme> <!-- circumfuses -->
-  <lexeme><grapheme>circumfuzing</grapheme><phoneme>ˌsɜːrkəmˈfjuːzɪŋ</phoneme></lexeme> <!-- circumfusing -->
+  <lexeme><grapheme>circumfusez</grapheme><phoneme>ˌsɜːrkəmˈfjuːzəz</phoneme></lexeme> <!-- circumfuses -->
   <lexeme><grapheme>circumnavigatez</grapheme><phoneme>ˌsɜːrkəmˈnævɪˌɡeɪts</phoneme></lexeme> <!-- circumnavigates -->
   <lexeme><grapheme>circumscribez</grapheme><phoneme>ˈsɜːrkəmˌskraɪbz</phoneme></lexeme> <!-- circumscribes -->
   <lexeme><grapheme>circumstancez</grapheme><phoneme>ˈsɜːrkəmˌstænsəz</phoneme></lexeme> <!-- circumstances -->
@@ -5189,13 +5183,7 @@
   <lexeme><grapheme>confrontz</grapheme><phoneme>kənˈfrʌnts</phoneme></lexeme> <!-- confronts -->
   <lexeme><grapheme>confutativ</grapheme><phoneme>kənˈfjuːtətɪv</phoneme></lexeme> <!-- confutative -->
   <lexeme><grapheme>confutez</grapheme><phoneme>kənˈfjuːts</phoneme></lexeme> <!-- confutes -->
-  <lexeme><grapheme>confuze</grapheme><phoneme>kənˈfjuːz</phoneme></lexeme> <!-- confuse -->
-  <lexeme><grapheme>confuzed</grapheme><phoneme>kənˈfjuːzd</phoneme></lexeme> <!-- confused -->
-  <lexeme><grapheme>confuzedly</grapheme><phoneme>kənˈfjuːzədli</phoneme></lexeme> <!-- confusedly -->
-  <lexeme><grapheme>confuzedness</grapheme><phoneme>kənˈfjuːzdnəs</phoneme></lexeme> <!-- confusedness -->
-  <lexeme><grapheme>confuzez</grapheme><phoneme>kənˈfjuːzəz</phoneme></lexeme> <!-- confuses -->
-  <lexeme><grapheme>confuzing</grapheme><phoneme>kənˈfjuːzɪŋ</phoneme></lexeme> <!-- confusing -->
-  <lexeme><grapheme>confuzingly</grapheme><phoneme>kənˈfjuːzɪŋli</phoneme></lexeme> <!-- confusingly -->
+  <lexeme><grapheme>confusez</grapheme><phoneme>kənˈfjuːzəz</phoneme></lexeme> <!-- confuses -->
   <lexeme><grapheme>congad</grapheme><phoneme>ˈkɑːŋɡeɪd</phoneme></lexeme> <!-- congaed -->
   <lexeme><grapheme>congaz</grapheme><phoneme>ˈkɑːŋɡəz</phoneme></lexeme> <!-- congas -->
   <lexeme><grapheme>congeald</grapheme><phoneme>kənˈdʒiːld</phoneme></lexeme> <!-- congealed -->
@@ -6927,7 +6915,7 @@
   <lexeme><grapheme>defrockz</grapheme><phoneme>diˈfrɑks</phoneme></lexeme> <!-- defrocks -->
   <lexeme><grapheme>defrostz</grapheme><phoneme>diˈfrɔsts</phoneme></lexeme> <!-- defrosts -->
   <lexeme><grapheme>defundz</grapheme><phoneme>diˈfʌndz</phoneme></lexeme> <!-- defunds -->
-  <lexeme><grapheme>defuzez</grapheme><phoneme>diˈfjuzəz</phoneme></lexeme> <!-- defuses -->
+  <lexeme><grapheme>defusez</grapheme><phoneme>diˈfjuzəz</phoneme></lexeme> <!-- defuses -->
   <lexeme><grapheme>degasd</grapheme><phoneme>diˈɡæst</phoneme></lexeme> <!-- degassed -->
   <lexeme><grapheme>degasez</grapheme><phoneme>diˈɡæsəz</phoneme></lexeme> <!-- degases -->
   <lexeme><grapheme>degassez</grapheme><phoneme>diˈɡæsəz</phoneme></lexeme> <!-- degasses -->
@@ -7504,17 +7492,7 @@
   <lexeme><grapheme>diffusiv</grapheme><phoneme>dɪˈfjusɪv</phoneme></lexeme> <!-- diffusive -->
   <lexeme><grapheme>diffusivly</grapheme><phoneme>dɪˈfjusɪvli</phoneme></lexeme> <!-- diffusively -->
   <lexeme><grapheme>diffusivness</grapheme><phoneme>dɪˈfjusɪvnəs</phoneme></lexeme> <!-- diffusiveness -->
-  <lexeme><grapheme>diffuze</grapheme><phoneme>dɪˈfjuz</phoneme></lexeme> <!-- diffuse -->
-  <lexeme><grapheme>diffuzed</grapheme><phoneme>dɪˈfjuzd</phoneme></lexeme> <!-- diffused -->
-  <lexeme><grapheme>diffuzely</grapheme><phoneme>dɪˈfjusli</phoneme></lexeme> <!-- diffusely -->
-  <lexeme><grapheme>diffuzeness</grapheme><phoneme>dɪˈfjusnəs</phoneme></lexeme> <!-- diffuseness -->
-  <lexeme><grapheme>diffuzer</grapheme><phoneme>dɪˈfjuzər</phoneme></lexeme> <!-- diffuser -->
-  <lexeme><grapheme>diffuzers</grapheme><phoneme>dɪˈfjuzərz</phoneme></lexeme> <!-- diffusers -->
-  <lexeme><grapheme>diffuzez</grapheme><phoneme>dɪˈfjuzəz</phoneme></lexeme> <!-- diffuses -->
-  <lexeme><grapheme>diffuzible</grapheme><phoneme>dɪˈfjuzəbəl</phoneme></lexeme> <!-- diffusible -->
-  <lexeme><grapheme>diffuzing</grapheme><phoneme>dɪˈfjuzɪŋ</phoneme></lexeme> <!-- diffusing -->
-  <lexeme><grapheme>diffuzor</grapheme><phoneme>dɪˈfjuzər</phoneme></lexeme> <!-- diffusor -->
-  <lexeme><grapheme>diffuzors</grapheme><phoneme>dɪˈfjuzərz</phoneme></lexeme> <!-- diffusors -->
+  <lexeme><grapheme>diffusez</grapheme><phoneme>dɪˈfjuzəz</phoneme></lexeme> <!-- diffuses -->
   <lexeme><grapheme>digd</grapheme><phoneme>dɪɡd</phoneme></lexeme> <!-- digged -->
   <lexeme><grapheme>digestiv</grapheme><phoneme>daɪˈdʒɛstɪv</phoneme></lexeme> <!-- digestive -->
   <lexeme><grapheme>digestivly</grapheme><phoneme>daɪˈdʒɛstɪvli</phoneme></lexeme> <!-- digestively -->
@@ -8566,6 +8544,8 @@
   <lexeme><grapheme>dullz</grapheme><phoneme>dʌlz</phoneme></lexeme> <!-- dulls -->
   <lexeme><grapheme>duma</grapheme><phoneme>ˈdumə</phoneme></lexeme> <!-- douma -->
   <lexeme><grapheme>dumas</grapheme><phoneme>ˈduməz</phoneme></lexeme> <!-- doumas -->
+  <lexeme><grapheme>dume</grapheme><phoneme>duːm</phoneme></lexeme>   <!-- doum -->
+  <lexeme><grapheme>dumes</grapheme><phoneme>duːmz</phoneme></lexeme> <!-- doums -->
   <lexeme><grapheme>dumm</grapheme><phoneme>dʌm</phoneme></lexeme> <!-- dumb -->
   <lexeme><grapheme>dummass</grapheme><phoneme>ˈdʌmˌæs</phoneme></lexeme> <!-- dumbass -->
   <lexeme><grapheme>dummasses</grapheme><phoneme>ˈdʌmˌæsəz</phoneme></lexeme> <!-- dumbasses -->
@@ -8900,10 +8880,7 @@
   <lexeme><grapheme>effusiv</grapheme><phoneme>ɪˈfjusɪv</phoneme></lexeme> <!-- effusive -->
   <lexeme><grapheme>effusivly</grapheme><phoneme>ɪˈfjusɪvli</phoneme></lexeme> <!-- effusively -->
   <lexeme><grapheme>effusivness</grapheme><phoneme>ɪˈfjusɪvnəs</phoneme></lexeme> <!-- effusiveness -->
-  <lexeme><grapheme>effuze</grapheme><phoneme>ɪˈfjuz</phoneme></lexeme> <!-- effuse -->
-  <lexeme><grapheme>effuzed</grapheme><phoneme>ɪˈfjuzd</phoneme></lexeme> <!-- effused -->
-  <lexeme><grapheme>effuzez</grapheme><phoneme>ɪˈfjuzəz</phoneme></lexeme> <!-- effuses -->
-  <lexeme><grapheme>effuzing</grapheme><phoneme>ɪˈfjuzɪŋ</phoneme></lexeme> <!-- effusing -->
+  <lexeme><grapheme>effusez</grapheme><phoneme>ɪˈfjuzəz</phoneme></lexeme> <!-- effuses -->
   <lexeme><grapheme>effz</grapheme><phoneme>ɛfs</phoneme></lexeme> <!-- effs -->
   <lexeme><grapheme>egestiv</grapheme><phoneme>ɪˈdʒɛstɪv</phoneme></lexeme> <!-- egestive -->
   <lexeme><grapheme>egestz</grapheme><phoneme>ɪˈdʒɛsts</phoneme></lexeme> <!-- egests -->
@@ -12538,8 +12515,6 @@
   <lexeme><grapheme>greitz</grapheme><phoneme>ɡreɪts</phoneme></lexeme> <!-- greits -->
   <lexeme><grapheme>grepd</grapheme><phoneme>ɡrɛpt</phoneme></lexeme> <!-- grepped -->
   <lexeme><grapheme>grepz</grapheme><phoneme>ɡrɛps</phoneme></lexeme> <!-- greps -->
-  <lexeme><grapheme>greyd</grapheme><phoneme>ɡreɪd</phoneme></lexeme> <!-- greyed -->
-  <lexeme><grapheme>greyz</grapheme><phoneme>ɡreɪz</phoneme></lexeme> <!-- greys -->
   <lexeme><grapheme>griddlez</grapheme><phoneme>ˈɡrɪdəlz</phoneme></lexeme> <!-- griddles -->
   <lexeme><grapheme>gridez</grapheme><phoneme>ɡraɪdz</phoneme></lexeme> <!-- grides -->
   <lexeme><grapheme>gridlockd</grapheme><phoneme>ˈɡrɪdˌlɑkt</phoneme></lexeme> <!-- gridlocked -->
@@ -14713,15 +14688,7 @@
   <lexeme><grapheme>infringez</grapheme><phoneme>ɪnˈfrɪndʒɪz</phoneme></lexeme> <!-- infringes -->
   <lexeme><grapheme>infuriatez</grapheme><phoneme>ɪnˈfjʊriˌeɪts</phoneme></lexeme> <!-- infuriates -->
   <lexeme><grapheme>infusiv</grapheme><phoneme>ɪnˈfjusɪv</phoneme></lexeme> <!-- infusive -->
-  <lexeme><grapheme>infuze</grapheme><phoneme>ɪnˈfjuz</phoneme></lexeme> <!-- infuse -->
-  <lexeme><grapheme>infuzed</grapheme><phoneme>ɪnˈfjuzd</phoneme></lexeme> <!-- infused -->
-  <lexeme><grapheme>infuzer</grapheme><phoneme>ɪnˈfjuzər</phoneme></lexeme> <!-- infuser -->
-  <lexeme><grapheme>infuzers</grapheme><phoneme>ɪnˈfjuzərz</phoneme></lexeme> <!-- infusers -->
-  <lexeme><grapheme>infuzez</grapheme><phoneme>ɪnˈfjuzɪz</phoneme></lexeme> <!-- infuses -->
-  <lexeme><grapheme>infuzibility</grapheme><phoneme>ɪnˌfjuzəˈbɪlɪti</phoneme></lexeme> <!-- infusibility -->
-  <lexeme><grapheme>infuzible</grapheme><phoneme>ɪnˈfjuzəbəl</phoneme></lexeme> <!-- infusible -->
-  <lexeme><grapheme>infuzibleness</grapheme><phoneme>ɪnˈfjuzəbəlnəs</phoneme></lexeme> <!-- infusibleness -->
-  <lexeme><grapheme>infuzing</grapheme><phoneme>ɪnˈfjuzɪŋ</phoneme></lexeme> <!-- infusing -->
+  <lexeme><grapheme>infusez</grapheme><phoneme>ɪnˈfjuzɪz</phoneme></lexeme> <!-- infuses -->
   <lexeme><grapheme>ingatherd</grapheme><phoneme>ˈɪnˌɡæðərd</phoneme></lexeme> <!-- ingathered -->
   <lexeme><grapheme>ingatherz</grapheme><phoneme>ˈɪnˌɡæðərz</phoneme></lexeme> <!-- ingathers -->
   <lexeme><grapheme>ingestiv</grapheme><phoneme>ɪnˈdʒɛstɪv</phoneme></lexeme> <!-- ingestive -->
@@ -14952,10 +14919,7 @@
   <lexeme><grapheme>interdependz</grapheme><phoneme>ˌɪntərdɪˈpɛndz</phoneme></lexeme> <!-- interdepends -->
   <lexeme><grapheme>interdictiv</grapheme><phoneme>ˌɪntərˈdɪktɪv</phoneme></lexeme> <!-- interdictive -->
   <lexeme><grapheme>interdictz</grapheme><phoneme>ˌɪntərˈdɪkts</phoneme></lexeme> <!-- interdicts -->
-  <lexeme><grapheme>interdiffuze</grapheme><phoneme>ˌɪntərdɪˈfjuz</phoneme></lexeme> <!-- interdiffuse -->
-  <lexeme><grapheme>interdiffuzed</grapheme><phoneme>ˌɪntərdɪˈfjuzd</phoneme></lexeme> <!-- interdiffused -->
-  <lexeme><grapheme>interdiffuzez</grapheme><phoneme>ˌɪntərdɪˈfjuzɪz</phoneme></lexeme> <!-- interdiffuses -->
-  <lexeme><grapheme>interdiffuzing</grapheme><phoneme>ˌɪntərdɪˈfjuzɪŋ</phoneme></lexeme> <!-- interdiffusing -->
+  <lexeme><grapheme>interdiffusez</grapheme><phoneme>ˌɪntərdɪˈfjuzɪz</phoneme></lexeme> <!-- interdiffuses -->
   <lexeme><grapheme>interdigitatez</grapheme><phoneme>ˌɪntərˈdɪdʒəˌteɪts</phoneme></lexeme> <!-- interdigitates -->
   <lexeme><grapheme>interestz</grapheme><phoneme>ˈɪntrəsts</phoneme></lexeme> <!-- interests -->
   <lexeme><grapheme>interfacez</grapheme><phoneme>ˈɪntərˌfeɪsɪz</phoneme></lexeme> <!-- interfaces -->
@@ -14964,10 +14928,7 @@
   <lexeme><grapheme>interflowd</grapheme><phoneme>ˌɪntərˈfloʊd</phoneme></lexeme> <!-- interflowed -->
   <lexeme><grapheme>interflowz</grapheme><phoneme>ˌɪntərˈfloʊz</phoneme></lexeme> <!-- interflows -->
   <lexeme><grapheme>interfoldz</grapheme><phoneme>ˌɪntərˈfoʊldz</phoneme></lexeme> <!-- interfolds -->
-  <lexeme><grapheme>interfuze</grapheme><phoneme>ˌɪntərˈfjuz</phoneme></lexeme> <!-- interfuse -->
-  <lexeme><grapheme>interfuzed</grapheme><phoneme>ˌɪntərˈfjuzd</phoneme></lexeme> <!-- interfused -->
-  <lexeme><grapheme>interfuzez</grapheme><phoneme>ˌɪntərˈfjuzɪz</phoneme></lexeme> <!-- interfuses -->
-  <lexeme><grapheme>interfuzing</grapheme><phoneme>ˌɪntərˈfjuzɪŋ</phoneme></lexeme> <!-- interfusing -->
+  <lexeme><grapheme>interfusez</grapheme><phoneme>ˌɪntərˈfjuzɪz</phoneme></lexeme> <!-- interfuses -->
   <lexeme><grapheme>intergradez</grapheme><phoneme>ˌɪntərˈɡreɪdz</phoneme></lexeme> <!-- intergrades -->
   <lexeme><grapheme>intergraftz</grapheme><phoneme>ˌɪntərˈɡræfts</phoneme></lexeme> <!-- intergrafts -->
   <lexeme><grapheme>interihland</grapheme><phoneme>ˌɪntərˈaɪlənd</phoneme></lexeme> <!-- interisland -->
@@ -15664,8 +15625,8 @@
   <lexeme><grapheme>juttiez</grapheme><phoneme>ˈdʒʌtiz</phoneme></lexeme> <!-- jutties -->
   <lexeme><grapheme>jutz</grapheme><phoneme>dʒʌts</phoneme></lexeme> <!-- juts -->
   <lexeme><grapheme>juw</grapheme><phoneme>dʒaʊ</phoneme></lexeme> <!-- jow -->
-  <lexeme><grapheme>juwar</grapheme><phoneme>dʒaˈʊɑr</phoneme></lexeme> <!-- jowar -->
-  <lexeme><grapheme>juwars</grapheme><phoneme>dʒaˈʊɑrz</phoneme></lexeme> <!-- jowars -->
+  <lexeme><grapheme>juwar</grapheme><phoneme>dʒaʊˈɑr</phoneme></lexeme> <!-- jowar -->
+  <lexeme><grapheme>juwars</grapheme><phoneme>dʒaʊˈɑrz</phoneme></lexeme> <!-- jowars -->
   <lexeme><grapheme>juwd</grapheme><phoneme>dʒaʊd</phoneme></lexeme> <!-- jowed -->
   <lexeme><grapheme>juwing</grapheme><phoneme>ˈdʒaʊɪŋ</phoneme></lexeme> <!-- jowing -->
   <lexeme><grapheme>juwl</grapheme><phoneme>dʒaʊl</phoneme></lexeme> <!-- jowl -->
@@ -21059,10 +21020,7 @@
   <lexeme><grapheme>performd</grapheme><phoneme>pərˈfɔːrmd</phoneme></lexeme> <!-- performed -->
   <lexeme><grapheme>performz</grapheme><phoneme>pərˈfɔːrmz</phoneme></lexeme> <!-- performs -->
   <lexeme><grapheme>perfumez</grapheme><phoneme>pərˈfjuːmz</phoneme></lexeme> <!-- perfumes -->
-  <lexeme><grapheme>perfuze</grapheme><phoneme>pərˈfjuːz</phoneme></lexeme> <!-- perfuse -->
-  <lexeme><grapheme>perfuzed</grapheme><phoneme>pərˈfjuːzd</phoneme></lexeme> <!-- perfused -->
-  <lexeme><grapheme>perfuzez</grapheme><phoneme>pərˈfjuːzɪz</phoneme></lexeme> <!-- perfuses -->
-  <lexeme><grapheme>perfuzing</grapheme><phoneme>pərˈfjuːzɪŋ</phoneme></lexeme> <!-- perfusing -->
+  <lexeme><grapheme>perfusez</grapheme><phoneme>pərˈfjuːzɪz</phoneme></lexeme> <!-- perfuses -->
   <lexeme><grapheme>perild</grapheme><phoneme>ˈpɛrɪld</phoneme></lexeme> <!-- periled -->
   <lexeme><grapheme>periling</grapheme><phoneme>ˈpɛrɪlɪŋ</phoneme></lexeme> <!-- perilling -->
   <lexeme><grapheme>perilz</grapheme><phoneme>ˈpɛrɪlz</phoneme></lexeme> <!-- perils -->
@@ -21928,7 +21886,6 @@
   <lexeme><grapheme>poyu</grapheme><phoneme>ˈpɔɪuː</phoneme></lexeme> <!-- poyou -->
   <lexeme><grapheme>poyus</grapheme><phoneme>ˈpɔɪuːz</phoneme></lexeme> <!-- poyous -->
   <lexeme><grapheme>practicez</grapheme><phoneme>ˈpræktɪsɪz</phoneme></lexeme> <!-- practices -->
-  <lexeme><grapheme>practisez</grapheme><phoneme>ˈpræktɪsɪz</phoneme></lexeme> <!-- practises -->
   <lexeme><grapheme>praisez</grapheme><phoneme>ˈpreɪzɪz</phoneme></lexeme> <!-- praises -->
   <lexeme><grapheme>prancez</grapheme><phoneme>ˈprænsɪz</phoneme></lexeme> <!-- prances -->
   <lexeme><grapheme>prangd</grapheme><phoneme>præŋd</phoneme></lexeme> <!-- pranged -->
@@ -22979,8 +22936,6 @@
   <lexeme><grapheme>qhamferz</grapheme><phoneme>ˈtʃæmfərz</phoneme></lexeme> <!-- chamfers -->
   <lexeme><grapheme>qhamfron</grapheme><phoneme>ˈtʃæmfrən</phoneme></lexeme> <!-- chamfron -->
   <lexeme><grapheme>qhamfrons</grapheme><phoneme>ˈtʃæmfrənz</phoneme></lexeme> <!-- chamfrons -->
-  <lexeme><grapheme>qhamiso</grapheme><phoneme>ʃəˈmiːsoʊ</phoneme></lexeme> <!-- chamiso -->
-  <lexeme><grapheme>qhamisos</grapheme><phoneme>ʃəˈmiːsoʊz</phoneme></lexeme> <!-- chamisos -->
   <lexeme><grapheme>qhamp</grapheme><phoneme>tʃæmp</phoneme></lexeme> <!-- champ -->
   <lexeme><grapheme>qhampac</grapheme><phoneme>ˈtʃæmpæk</phoneme></lexeme> <!-- champac -->
   <lexeme><grapheme>qhampacs</grapheme><phoneme>ˈtʃæmpæks</phoneme></lexeme> <!-- champacs -->
@@ -23239,8 +23194,6 @@
   <lexeme><grapheme>qhartist</grapheme><phoneme>ˈtʃɑːrtɪst</phoneme></lexeme> <!-- chartist -->
   <lexeme><grapheme>qhartists</grapheme><phoneme>ˈtʃɑːrtɪsts</phoneme></lexeme> <!-- chartists -->
   <lexeme><grapheme>qharts</grapheme><phoneme>tʃɑːrts</phoneme></lexeme> <!-- charts -->
-  <lexeme><grapheme>qhartularies</grapheme><phoneme>ˈkɑːrtjʊlɛriz</phoneme></lexeme> <!-- chartularies -->
-  <lexeme><grapheme>qhartulary</grapheme><phoneme>ˈkɑːrtjʊlɛri</phoneme></lexeme> <!-- chartulary -->
   <lexeme><grapheme>qhartz</grapheme><phoneme>tʃɑːrts</phoneme></lexeme> <!-- charts -->
   <lexeme><grapheme>qharwimen</grapheme><phoneme>ˈtʃɑːrˌwʊmɪn</phoneme></lexeme> <!-- charwomen -->
   <lexeme><grapheme>qharwoman</grapheme><phoneme>ˈtʃɑːrˌwʊmən</phoneme></lexeme> <!-- charwoman -->
@@ -23875,16 +23828,6 @@
   <lexeme><grapheme>qhitterz</grapheme><phoneme>ˈtʃɪtərz</phoneme></lexeme> <!-- chitters -->
   <lexeme><grapheme>qhitties</grapheme><phoneme>ˈtʃɪtiz</phoneme></lexeme> <!-- chitties -->
   <lexeme><grapheme>qhitty</grapheme><phoneme>ˈtʃɪti</phoneme></lexeme> <!-- chitty -->
-  <lexeme><grapheme>qhivaree</grapheme><phoneme>ˌʃɪvəˈriː</phoneme></lexeme> <!-- chivaree -->
-  <lexeme><grapheme>qhivareed</grapheme><phoneme>ˌʃɪvəˈriːd</phoneme></lexeme> <!-- chivareed -->
-  <lexeme><grapheme>qhivareeing</grapheme><phoneme>ˌʃɪvəˈriːɪŋ</phoneme></lexeme> <!-- chivareeing -->
-  <lexeme><grapheme>qhivarees</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivarees -->
-  <lexeme><grapheme>qhivareez</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivarees -->
-  <lexeme><grapheme>qhivari</grapheme><phoneme>ˌʃɪvəˈriː</phoneme></lexeme> <!-- chivari -->
-  <lexeme><grapheme>qhivarid</grapheme><phoneme>ˌʃɪvəˈriːd</phoneme></lexeme> <!-- chivaried -->
-  <lexeme><grapheme>qhivaries</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivaries -->
-  <lexeme><grapheme>qhivariez</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivaries -->
-  <lexeme><grapheme>qhivariing</grapheme><phoneme>ˌʃɪvəˈriːɪŋ</phoneme></lexeme> <!-- chivariing -->
   <lexeme><grapheme>qhive</grapheme><phoneme>tʃaɪv</phoneme></lexeme> <!-- chive -->
   <lexeme><grapheme>qhives</grapheme><phoneme>tʃaɪvz</phoneme></lexeme> <!-- chives -->
   <lexeme><grapheme>qhivied</grapheme><phoneme>ˈtʃɪvid</phoneme></lexeme> <!-- chivied -->
@@ -25378,19 +25321,8 @@
   <lexeme><grapheme>refurbishez</grapheme><phoneme>riːˈfɜːrbɪʃɪz</phoneme></lexeme> <!-- refurbishes -->
   <lexeme><grapheme>refurnishd</grapheme><phoneme>riːˈfɜːrnɪʃt</phoneme></lexeme> <!-- refurnished -->
   <lexeme><grapheme>refurnishez</grapheme><phoneme>riːˈfɜːrnɪʃɪz</phoneme></lexeme> <!-- refurnishes -->
-  <lexeme><grapheme>refuse</grapheme><phoneme>ˈrɛfjuːs</phoneme></lexeme> <!-- refuse -->
   <lexeme><grapheme>refutez</grapheme><phoneme>rɪˈfjuːts</phoneme></lexeme> <!-- refutes -->
-  <lexeme><grapheme>refuzable</grapheme><phoneme>rɪˈfjuːzəbəl</phoneme></lexeme> <!-- refusable -->
-  <lexeme><grapheme>refuzal</grapheme><phoneme>rɪˈfjuːzəl</phoneme></lexeme> <!-- refusal -->
-  <lexeme><grapheme>refuzals</grapheme><phoneme>rɪˈfjuːzəlz</phoneme></lexeme> <!-- refusals -->
-  <lexeme><grapheme>refuze</grapheme><phoneme>rɪˈfjuːz</phoneme></lexeme> <!-- refuse -->
-  <lexeme><grapheme>refuzed</grapheme><phoneme>rɪˈfjuːzd</phoneme></lexeme> <!-- refused -->
-  <lexeme><grapheme>refuzenik</grapheme><phoneme>rɪˈfjuːznɪk</phoneme></lexeme> <!-- refusenik -->
-  <lexeme><grapheme>refuzeniks</grapheme><phoneme>rɪˈfjuːznɪks</phoneme></lexeme> <!-- refuseniks -->
-  <lexeme><grapheme>refuzer</grapheme><phoneme>rɪˈfjuːzər</phoneme></lexeme> <!-- refuser -->
-  <lexeme><grapheme>refuzers</grapheme><phoneme>rɪˈfjuːzərz</phoneme></lexeme> <!-- refusers -->
-  <lexeme><grapheme>refuzez</grapheme><phoneme>rɪˈfjuːzɪz</phoneme></lexeme> <!-- refuses -->
-  <lexeme><grapheme>refuzing</grapheme><phoneme>rɪˈfjuːzɪŋ</phoneme></lexeme> <!-- refusing -->
+  <lexeme><grapheme>refusez</grapheme><phoneme>rɪˈfjuːzɪz</phoneme></lexeme> <!-- refuses -->
   <lexeme><grapheme>refynd</grapheme><phoneme>riːˈfaɪnd</phoneme></lexeme> <!-- refind -->
   <lexeme><grapheme>refynding</grapheme><phoneme>riːˈfaɪndɪŋ</phoneme></lexeme> <!-- refinding -->
   <lexeme><grapheme>refyndz</grapheme><phoneme>riːˈfaɪndz</phoneme></lexeme> <!-- refinds -->
@@ -25460,7 +25392,6 @@
   <lexeme><grapheme>regrynd</grapheme><phoneme>riːˈɡraɪnd</phoneme></lexeme> <!-- regrind -->
   <lexeme><grapheme>regrynding</grapheme><phoneme>riːˈɡraɪndɪŋ</phoneme></lexeme> <!-- regrinding -->
   <lexeme><grapheme>regryndz</grapheme><phoneme>riːˈɡraɪndz</phoneme></lexeme> <!-- regrinds -->
-  <lexeme><grapheme>regularisez</grapheme><phoneme>ˈrɛɡjələraɪzɪz</phoneme></lexeme> <!-- regularises -->
   <lexeme><grapheme>regularizez</grapheme><phoneme>ˈrɛɡjələraɪzɪz</phoneme></lexeme> <!-- regularizes -->
   <lexeme><grapheme>regulatez</grapheme><phoneme>ˈrɛɡjəleɪts</phoneme></lexeme> <!-- regulates -->
   <lexeme><grapheme>regulativ</grapheme><phoneme>ˈrɛɡjələtɪv</phoneme></lexeme> <!-- regulative -->
@@ -25551,10 +25482,7 @@
   <lexeme><grapheme>reinforcez</grapheme><phoneme>ˌriɪnfˈɔːrsɪz</phoneme></lexeme> <!-- reinforces -->
   <lexeme><grapheme>reinformd</grapheme><phoneme>ˌriɪnfˈɔːrmd</phoneme></lexeme> <!-- reinformed -->
   <lexeme><grapheme>reinformz</grapheme><phoneme>ˌriɪnfˈɔːrmz</phoneme></lexeme> <!-- reinforms -->
-  <lexeme><grapheme>reinfuze</grapheme><phoneme>ˌriɪnfjˈuːz</phoneme></lexeme> <!-- reinfuse -->
-  <lexeme><grapheme>reinfuzed</grapheme><phoneme>ˌriɪnfjˈuːzd</phoneme></lexeme> <!-- reinfused -->
-  <lexeme><grapheme>reinfuzez</grapheme><phoneme>ˌriɪnfjˈuːzɪz</phoneme></lexeme> <!-- reinfuses -->
-  <lexeme><grapheme>reinfuzing</grapheme><phoneme>ˌriɪnfjˈuːzɪŋ</phoneme></lexeme> <!-- reinfusing -->
+  <lexeme><grapheme>reinfusez</grapheme><phoneme>ˌriɪnfjˈuːzɪz</phoneme></lexeme> <!-- reinfuses -->
   <lexeme><grapheme>reinhabitz</grapheme><phoneme>ˌriɪnhˈæbɪts</phoneme></lexeme> <!-- reinhabits -->
   <lexeme><grapheme>reinitiatez</grapheme><phoneme>ˌriɪnˈɪʃɪˌeɪts</phoneme></lexeme> <!-- reinitiates -->
   <lexeme><grapheme>reinjectz</grapheme><phoneme>ˌriɪndʒˈɛkts</phoneme></lexeme> <!-- reinjects -->
@@ -26594,11 +26522,11 @@
   <lexeme><grapheme>revaluez</grapheme><phoneme>riːvˈæljuːz</phoneme></lexeme> <!-- revalues -->
   <lexeme><grapheme>revampd</grapheme><phoneme>riːvˈæmpt</phoneme></lexeme> <!-- revamped -->
   <lexeme><grapheme>revampz</grapheme><phoneme>riːvˈæmps</phoneme></lexeme> <!-- revamps -->
-  <lexeme><grapheme>revanqh</grapheme><phoneme>rəvˈɑːnʃ</phoneme></lexeme> <!-- revanche -->
-  <lexeme><grapheme>revanqhes</grapheme><phoneme>rəvˈɑːnʃɪz</phoneme></lexeme> <!-- revanches -->
-  <lexeme><grapheme>revanqhism</grapheme><phoneme>rəvˈɑːnʃɪzəm</phoneme></lexeme> <!-- revanchism -->
-  <lexeme><grapheme>revanqhisms</grapheme><phoneme>rəvˈɑːnʃɪzəmz</phoneme></lexeme> <!-- revanchisms -->
-  <lexeme><grapheme>revanqhist</grapheme><phoneme>rəvˈɑːnʃɪst</phoneme></lexeme> <!-- revanchist -->
+  <lexeme><grapheme>revansh</grapheme><phoneme>rəvˈɑːnʃ</phoneme></lexeme> <!-- revanche -->
+  <lexeme><grapheme>revanshes</grapheme><phoneme>rəvˈɑːnʃɪz</phoneme></lexeme> <!-- revanches -->
+  <lexeme><grapheme>revanshism</grapheme><phoneme>rəvˈɑːnʃɪzəm</phoneme></lexeme> <!-- revanchism -->
+  <lexeme><grapheme>revanshisms</grapheme><phoneme>rəvˈɑːnʃɪzəmz</phoneme></lexeme> <!-- revanchisms -->
+  <lexeme><grapheme>revanshist</grapheme><phoneme>rəvˈɑːnʃɪst</phoneme></lexeme> <!-- revanchist -->
   <lexeme><grapheme>revd</grapheme><phoneme>rɛvd</phoneme></lexeme> <!-- revved -->
   <lexeme><grapheme>reveald</grapheme><phoneme>rɪvˈiːld</phoneme></lexeme> <!-- revealed -->
   <lexeme><grapheme>revealz</grapheme><phoneme>rɪvˈiːlz</phoneme></lexeme> <!-- reveals -->
@@ -27346,8 +27274,8 @@
   <lexeme><grapheme>scanz</grapheme><phoneme>skænz</phoneme></lexeme> <!-- scans -->
   <lexeme><grapheme>scapegoatz</grapheme><phoneme>skˈeɪpɡoʊts</phoneme></lexeme> <!-- scapegoats -->
   <lexeme><grapheme>scapplez</grapheme><phoneme>skˈæpəlz</phoneme></lexeme> <!-- scapples -->
-  <lexeme><grapheme>scaramouqh</grapheme><phoneme>skˈærəmˌaʊtʃ</phoneme></lexeme> <!-- scaramouch -->
-  <lexeme><grapheme>scaramouqhes</grapheme><phoneme>skˈærəmˌuːʃɪz</phoneme></lexeme> <!-- scaramouches -->
+  <lexeme><grapheme>scaramoosh</grapheme><phoneme>skˈærəmˌuːʃ</phoneme></lexeme> <!-- scaramouch -->
+  <lexeme><grapheme>scaramooshes</grapheme><phoneme>skˈærəmˌuːʃɪz</phoneme></lexeme> <!-- scaramouches -->
   <lexeme><grapheme>scard</grapheme><phoneme>skɑːrd</phoneme></lexeme> <!-- scarred -->
   <lexeme><grapheme>scarehedd</grapheme><phoneme>skˈɛərhɛd</phoneme></lexeme> <!-- scarehead -->
   <lexeme><grapheme>scarehedds</grapheme><phoneme>skˈɛərhɛdz</phoneme></lexeme> <!-- scareheads -->
@@ -27862,6 +27790,8 @@
   <lexeme><grapheme>shamez</grapheme><phoneme>ʃeɪmz</phoneme></lexeme> <!-- shames -->
   <lexeme><grapheme>shamise</grapheme><phoneme>ʃəˈmiːs</phoneme></lexeme> <!-- chamise -->
   <lexeme><grapheme>shamises</grapheme><phoneme>ʃəˈmiːsɪz</phoneme></lexeme> <!-- chamises -->
+  <lexeme><grapheme>shamiso</grapheme><phoneme>ʃəˈmiːsoʊ</phoneme></lexeme> <!-- chamiso -->
+  <lexeme><grapheme>shamisos</grapheme><phoneme>ʃəˈmiːsoʊz</phoneme></lexeme> <!-- chamisos -->
   <lexeme><grapheme>shammied</grapheme><phoneme>ˈʃæmɔɪd</phoneme></lexeme> <!-- shamoyed -->
   <lexeme><grapheme>shammies</grapheme><phoneme>ˈʃæmwiz</phoneme></lexeme> <!-- chamoises -->
   <lexeme><grapheme>shammiez</grapheme><phoneme>ˈʃæmwiz</phoneme></lexeme> <!-- chamoises -->
@@ -28119,6 +28049,16 @@
   <lexeme><grapheme>shivalrousness</grapheme><phoneme>ˈʃɪvəlrəsnəs</phoneme></lexeme> <!-- chivalrousness -->
   <lexeme><grapheme>shivalry</grapheme><phoneme>ˈʃɪvəlri</phoneme></lexeme> <!-- chivalry -->
   <lexeme><grapheme>shivareez</grapheme><phoneme>ˌʃɪvəˈriz</phoneme></lexeme> <!-- shivarees -->
+  <lexeme><grapheme>shivaree</grapheme><phoneme>ˌʃɪvəˈriː</phoneme></lexeme> <!-- chivaree -->
+  <lexeme><grapheme>shivareed</grapheme><phoneme>ˌʃɪvəˈriːd</phoneme></lexeme> <!-- chivareed -->
+  <lexeme><grapheme>shivareeing</grapheme><phoneme>ˌʃɪvəˈriːɪŋ</phoneme></lexeme> <!-- chivareeing -->
+  <lexeme><grapheme>shivarees</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivarees -->
+  <lexeme><grapheme>shivareez</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivarees -->
+  <lexeme><grapheme>shivari</grapheme><phoneme>ˌʃɪvəˈriː</phoneme></lexeme> <!-- chivari -->
+  <lexeme><grapheme>shivarid</grapheme><phoneme>ˌʃɪvəˈriːd</phoneme></lexeme> <!-- chivaried -->
+  <lexeme><grapheme>shivaries</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivaries -->
+  <lexeme><grapheme>shivariez</grapheme><phoneme>ˌʃɪvəˈriːz</phoneme></lexeme> <!-- chivaries -->
+  <lexeme><grapheme>shivariing</grapheme><phoneme>ˌʃɪvəˈriːɪŋ</phoneme></lexeme> <!-- chivariing -->
   <lexeme><grapheme>shiverd</grapheme><phoneme>ˈʃɪvərd</phoneme></lexeme> <!-- shivered -->
   <lexeme><grapheme>shiverz</grapheme><phoneme>ˈʃɪvərz</phoneme></lexeme> <!-- shivers -->
   <lexeme><grapheme>shleppd</grapheme><phoneme>ʃlɛpt</phoneme></lexeme> <!-- shlepped -->
@@ -30096,10 +30036,7 @@
   <lexeme><grapheme>suffragetts</grapheme><phoneme>ˌsʌfrəˈdʒɛts</phoneme></lexeme> <!-- suffragettes -->
   <lexeme><grapheme>suffs</grapheme><phoneme>saʊz</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>suffusiv</grapheme><phoneme>səˈfjusɪv</phoneme></lexeme> <!-- suffusive -->
-  <lexeme><grapheme>suffuze</grapheme><phoneme>səˈfjuz</phoneme></lexeme> <!-- suffuse -->
-  <lexeme><grapheme>suffuzed</grapheme><phoneme>səˈfjuzd</phoneme></lexeme> <!-- suffused -->
-  <lexeme><grapheme>suffuzez</grapheme><phoneme>səˈfjuzəz</phoneme></lexeme> <!-- suffuses -->
-  <lexeme><grapheme>suffuzing</grapheme><phoneme>səˈfjuzɪŋ</phoneme></lexeme> <!-- suffusing -->
+  <lexeme><grapheme>suffusez</grapheme><phoneme>səˈfjuzəz</phoneme></lexeme> <!-- suffuses -->
   <lexeme><grapheme>suffz</grapheme><phoneme>saʊz</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>sugarcoatz</grapheme><phoneme>ˈʃʊɡərˌkoʊts</phoneme></lexeme> <!-- sugarcoats -->
   <lexeme><grapheme>sugard</grapheme><phoneme>ˈʃʊɡərd</phoneme></lexeme> <!-- sugared -->
@@ -31431,12 +31368,7 @@
   <lexeme><grapheme>transformativ</grapheme><phoneme>trænsˈfɔrmətɪv</phoneme></lexeme> <!-- transformative -->
   <lexeme><grapheme>transformd</grapheme><phoneme>trænsˈfɔrmd</phoneme></lexeme> <!-- transformed -->
   <lexeme><grapheme>transformz</grapheme><phoneme>trænsˈfɔrmz</phoneme></lexeme> <!-- transforms -->
-  <lexeme><grapheme>transfuzable</grapheme><phoneme>transˈfjuzəbəl</phoneme></lexeme> <!-- transfusable -->
-  <lexeme><grapheme>transfuze</grapheme><phoneme>trænsˈfjuz</phoneme></lexeme> <!-- transfuse -->
-  <lexeme><grapheme>transfuzed</grapheme><phoneme>trænsˈfjuzd</phoneme></lexeme> <!-- transfused -->
-  <lexeme><grapheme>transfuzez</grapheme><phoneme>trænsˈfjuzəz</phoneme></lexeme> <!-- transfuses -->
-  <lexeme><grapheme>transfuzible</grapheme><phoneme>transˈfjuzəbəl</phoneme></lexeme> <!-- transfusible -->
-  <lexeme><grapheme>transfuzing</grapheme><phoneme>trænsˈfjuzɪŋ</phoneme></lexeme> <!-- transfusing -->
+  <lexeme><grapheme>transfusez</grapheme><phoneme>trænsˈfjuzəz</phoneme></lexeme> <!-- transfuses -->
   <lexeme><grapheme>transgenderz</grapheme><phoneme>trænzˈdʒɛndərz</phoneme></lexeme> <!-- transgenders -->
   <lexeme><grapheme>transgressd</grapheme><phoneme>trænzˈɡrɛst</phoneme></lexeme> <!-- transgressed -->
   <lexeme><grapheme>transgressez</grapheme><phoneme>trænzˈɡrɛsəz</phoneme></lexeme> <!-- transgresses -->
@@ -32369,10 +32301,7 @@
   <lexeme><grapheme>unconfessd</grapheme><phoneme>ˈʌnˈkənˈfɛst</phoneme></lexeme> <!-- unconfessed -->
   <lexeme><grapheme>unconfirmd</grapheme><phoneme>ˈʌnˈkənˈfɜːrmd</phoneme></lexeme> <!-- unconfirmed -->
   <lexeme><grapheme>unconfoundz</grapheme><phoneme>ˈʌnˈkənˈfaʊndz</phoneme></lexeme> <!-- unconfounds -->
-  <lexeme><grapheme>unconfuze</grapheme><phoneme>ˈʌnˈkənˈfjuːz</phoneme></lexeme> <!-- unconfuse -->
-  <lexeme><grapheme>unconfuzed</grapheme><phoneme>ˈʌnˈkənˈfjuːzd</phoneme></lexeme> <!-- unconfused -->
-  <lexeme><grapheme>unconfuzez</grapheme><phoneme>ˈʌnˈkənˈfjuːzɪz</phoneme></lexeme> <!-- unconfuses -->
-  <lexeme><grapheme>unconfuzing</grapheme><phoneme>ˈʌnˈkənˈfjuːzɪŋ</phoneme></lexeme> <!-- unconfusing -->
+  <lexeme><grapheme>unconfusez</grapheme><phoneme>ˈʌnˈkənˈfjuːzɪz</phoneme></lexeme> <!-- unconfuses -->
   <lexeme><grapheme>uncongeald</grapheme><phoneme>ˈʌnˈkənˈdʒiːld</phoneme></lexeme> <!-- uncongealed -->
   <lexeme><grapheme>uncongealz</grapheme><phoneme>ˈʌnˈkənˈdʒiːlz</phoneme></lexeme> <!-- uncongeals -->
   <lexeme><grapheme>unconqerable</grapheme><phoneme>ˈʌnˈkɑːŋkərəbəl</phoneme></lexeme> <!-- unconquerable -->
@@ -34179,9 +34108,6 @@
   <lexeme><grapheme>vapulatez</grapheme><phoneme>ˈvæpjəˌleɪts</phoneme></lexeme> <!-- vapulates -->
   <lexeme><grapheme>vaqero</grapheme><phoneme>vɑˈkɛroʊ</phoneme></lexeme> <!-- vaquero -->
   <lexeme><grapheme>vaqeros</grapheme><phoneme>vɑˈkɛroʊz</phoneme></lexeme> <!-- vaqueros -->
-  <lexeme><grapheme>vaqher</grapheme><phoneme>ˈvæʃər</phoneme></lexeme> <!-- vacher -->
-  <lexeme><grapheme>vaqhers</grapheme><phoneme>ˈvæʃərz</phoneme></lexeme> <!-- vachers -->
-  <lexeme><grapheme>vaqhery</grapheme><phoneme>ˈvæʃəri</phoneme></lexeme> <!-- vachery -->
   <lexeme><grapheme>vaqita</grapheme><phoneme>vɑˈkiːtə</phoneme></lexeme> <!-- vaquita -->
   <lexeme><grapheme>vaqitas</grapheme><phoneme>vɑˈkiːtəz</phoneme></lexeme> <!-- vaquitas -->
   <lexeme><grapheme>variantz</grapheme><phoneme>ˈvɛriənts</phoneme></lexeme> <!-- variants -->
@@ -34204,6 +34130,9 @@
   <lexeme><grapheme>varveld</grapheme><phoneme>ˈvɑrvəld</phoneme></lexeme> <!-- varveled -->
   <lexeme><grapheme>vascularizez</grapheme><phoneme>ˈvæskjələˌraɪzəz</phoneme></lexeme> <!-- vascularises -->
   <lexeme><grapheme>vasectomizez</grapheme><phoneme>vəˈsɛktəˌmaɪzəz</phoneme></lexeme> <!-- vasectomises -->
+  <lexeme><grapheme>vasher</grapheme><phoneme>ˈvæʃər</phoneme></lexeme> <!-- vacher -->
+  <lexeme><grapheme>vashers</grapheme><phoneme>ˈvæʃərz</phoneme></lexeme> <!-- vachers -->
+  <lexeme><grapheme>vashery</grapheme><phoneme>ˈvæʃəri</phoneme></lexeme> <!-- vachery -->
   <lexeme><grapheme>vasoactiv</grapheme><phoneme>ˌveɪzoʊˈæktɪv</phoneme></lexeme> <!-- vasoactive -->
   <lexeme><grapheme>vasoconstrictiv</grapheme><phoneme>ˌveɪzoʊkənˈstrɪktɪv</phoneme></lexeme> <!-- vasoconstrictive -->
   <lexeme><grapheme>vasoformativ</grapheme><phoneme>ˌveɪzoʊˈfɔrmətɪv</phoneme></lexeme> <!-- vasoformative -->
