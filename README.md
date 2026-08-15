@@ -112,7 +112,17 @@ npm test        # node --test over tests/**/*.test.js
 
 ## License & privacy
 
-GPL-3.0-or-later. All conversion runs locally — no page text, no telemetry, and no
+GPL-3.0-or-later. Copyright (C) 2026 Kamran Ossia. The full licence text is in
+[LICENSE](LICENSE) — verbatim, so that a copy travels with every distribution
+rather than only being pointed at.
+
+**The lexicon data is licensed separately.** The files under `data/*.csv` are
+Creative Commons Attribution-ShareAlike 4.0 International
+([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)), not GPL. The
+reform is meant to be reusable by anyone building on it, including outside a
+GPL project; the code that applies it is not.
+
+All conversion runs locally — no page text, no telemetry, and no
 network requests leave the device.
 
 Dictation is the single exception, and worth stating plainly because the claim
