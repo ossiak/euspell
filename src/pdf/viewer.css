@@ -100,56 +100,6 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* Printing. The bar is screen furniture, and each page must land on its own
-   sheet at its natural size rather than being scaled by the page gap/shadow
-   layout the screen uses. Pages are rasterized canvases, so they print as
-   images — printAllPages() renders every one first, since the lazy renderer
-   would otherwise leave everything off screen blank. */
-@media print {
-  body {
-    background: #fff;
-  }
-
-  #bar {
-    display: none;
-  }
-
-  #pages {
-    display: block;
-    padding: 0;
-    gap: 0;
-  }
-
-  /* A page that never rendered is an empty placeholder — evict() empties it and
-     one that has not been reached yet was never filled. Printing it would put a
-     blank sheet in the output. The Print button and Ctrl+P both rasterize
-     everything first, so this only catches the browser's own menu, which cannot
-     be intercepted: better a short document than one padded with blanks. */
-  #pages > div:empty {
-    display: none;
-  }
-
-  #pages > div {
-    box-shadow: none;
-    margin: 0;
-    /* Never split one page across two sheets. */
-    break-inside: avoid;
-    page-break-inside: avoid;
-    break-after: page;
-    page-break-after: always;
-  }
-
-  #pages > div:last-child {
-    break-after: auto;
-    page-break-after: auto;
-  }
-
-  #pages canvas {
-    /* Fit the sheet without overflowing it, keeping the aspect ratio. */
-    max-width: 100%;
-    height: auto;
-  }
-}
 
 #pages {
   display: flex;
@@ -202,4 +152,91 @@ body {
 
 .textLayer ::selection {
   background: rgba(37, 99, 235, 0.3);
+}
+
+/* Printing. THIS BLOCK MUST STAY LAST IN THE FILE. Its selectors (#pages,
+   #pages > div, .textLayer) are the same specificity as the screen rules
+   above, so a screen rule placed after it silently wins and the print layout
+   reverts. That is exactly what happened while this block sat above them:
+   #pages kept display:flex and its 20px/60px padding, and the 80px of
+   padding pushed every document onto an extra sheet.
+
+   The bar is screen furniture, and each page must land on its own
+   sheet at its natural size rather than being scaled by the page gap/shadow
+   layout the screen uses. Pages are rasterized canvases, so they print as
+   images — printAllPages() renders every one first, since the lazy renderer
+   would otherwise leave everything off screen blank. */
+@media print {
+  body {
+    background: #fff;
+  }
+
+  #bar {
+    display: none;
+  }
+
+  #pages {
+    display: block;
+    padding: 0;
+    gap: 0;
+  }
+
+  /* A page that never rendered is an empty placeholder — evict() empties it and
+     one that has not been reached yet was never filled. Printing it would put a
+     blank sheet in the output. The Print button and Ctrl+P both rasterize
+     everything first, so this only catches the browser's own menu, which cannot
+     be intercepted: better a short document than one padded with blanks. */
+  #pages > div:empty {
+    display: none;
+  }
+
+  #pages > div {
+    box-shadow: none;
+    margin: 0;
+    /* The zoom implementation pins width/height INLINE on both this wrapper and
+       the canvas inside it, and an inline style beats a stylesheet rule that is
+       not !important. Without these the wrapper kept its on-screen height (1264px
+       at 100% zoom) on a 1123px A4 sheet, so every page overflowed onto a second,
+       near-blank sheet. */
+    width: auto !important;
+    height: auto !important;
+    /* Never split one page across two sheets. */
+    break-inside: avoid;
+    page-break-inside: avoid;
+    /* Break BEFORE each page rather than after. A forced break at the very start
+       of the document is suppressed by the fragmenter, so this needs no
+       :last-child reset — and that reset was fragile: the real last child is
+       usually an unrendered placeholder that the :empty rule above hides, which
+       left the forced break on the last *printed* page and added a trailing
+       blank sheet. */
+    break-before: page;
+    page-break-before: always;
+  }
+
+  #pages > div:first-child {
+    break-before: auto;
+    page-break-before: auto;
+  }
+
+  /* The text layer is a transparent overlay that exists so the reformed words can
+     be selected and copied; the visible text is drawn on the canvas. It carries
+     its own inline pixel size (set from the PDF's point dimensions), and being
+     absolutely positioned it keeps that size even as the canvas scales down to
+     the sheet — overflow that Chromium paginates into extra near-blank sheets.
+     Nothing in it is visible on paper, so it does not belong in the output. */
+  #pages .textLayer {
+    display: none;
+  }
+
+  #pages canvas {
+    /* Fit the sheet without overflowing it, keeping the aspect ratio. The canvas
+       has an intrinsic ratio from its width/height attributes, so clearing the
+       inline pixel sizes and capping both axes scales it to fit. Capping width
+       alone is not enough: an A4 page scaled to an A4 sheet's width lands about
+       half a pixel taller than the sheet. */
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100vh !important;
+  }
 }
