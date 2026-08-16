@@ -1,6 +1,6 @@
 {
   "name": "euspell",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Chrome extension for euspell English spelling reform",
   "type": "module",
   "engines": {
