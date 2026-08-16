@@ -47,9 +47,9 @@ the foot of an article.*
 > Mathematics from California State University, Fullerton.
 >
 > He spent his career as a software engineer in the nuclear power and medical
-> device industries — fields where correctness is not a matter of taste and a
-> system is judged by how it behaves in the cases nobody anticipated. He is now
-> retired, and works on Euspell.
+> device industries, and has a keen awareness of software quality and
+> reliability. He is now retired and working on personal projects, starting with
+> Euspell.
 
 ---
 
@@ -63,12 +63,12 @@ the foot of an article.*
   rendering, with the comma. The degree is in Applied Mathematics and is separate
   from the Electrical Engineering sequence; the phrasing keeps the two apart so a
   reader cannot merge them into one line of study.
-- **The closing sentence of the full version is editorial framing, not a quote.**
-  It connects a career in safety-critical software to a reform that argues
-  consistency is an engineering property rather than an act of collective will.
-  It is fair comment on published work, but he has not said it — treat it the way
-  [press-release.md](press-release.md) treats its proposed quotes, as wording to
-  approve, edit, or cut. The first two paragraphs stand on their own without it.
+- **Every sentence here is approved, including the closing one**, which he wrote.
+  Nothing in this file is a draft awaiting sign-off, so it can go out as it
+  stands. Anything added later should clear the same bar.
+- **"Starting with Euspell" implies others will follow.** It is accurate and he
+  chose it, but it will read oddly in a few years if nothing else appears. Worth
+  a glance whenever this bio is reused, rather than a change now.
 - **"Founder" is the press-kit's word; the kit's fact table says *Creator*.** Both
   are in use and neither is wrong. Euspell is not a company, so avoid titles that
   imply one — no CEO, no founder-and-CEO.
