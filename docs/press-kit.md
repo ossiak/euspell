@@ -249,9 +249,10 @@ phonetic spelling would disrupt hundreds of scientific words.
 | Logo — vector | SVG, transparent, no embedded fonts |
 | Logo — raster | PNG, 1250×1248, transparent background |
 | Founder bio | Text, in three lengths — [founder-bio.md](founder-bio.md) |
+| Animation — the reform in one loop | Animated GIF, 4 seconds, 1200 px, silent. 142 common words in traditional spelling, morphing to euspell and back |
+| Animation — long form | 7:13, scored, 142 words one at a time; and a 1:26 cut of 48, with a silent twin |
 
-Product screenshots and a demo video are available on request. There is no
-founder photograph.
+Product screenshots are available on request. There is no founder photograph.
 
 ---
 
