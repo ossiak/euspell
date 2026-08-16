@@ -1,9 +1,15 @@
 # Appendix C. Installing word processor add-ins
 
-*Draft for the white paper (*Spelling Reform: An Engineering Approach*), where
-Appendix C is currently a TODO. Condensed from
+*Draft for the white paper (*Spelling Reform: An Engineering Approach*),
+replacing the current Appendix C. Condensed from
 [installing-addins.md](installing-addins.md), which stays the maintained version —
 update that first, then re-condense here.*
+
+*Unlike Appendices [A](paper-appendix-a.md) and [B](paper-appendix-b.md), the
+published Appendix C never claimed a store listing, so it needs no correction on
+availability. Two things had drifted: the note on running a conversion twice
+overstated the risk, and the repository it tells the reader to clone can now be
+named.*
 
 ---
 
@@ -48,6 +54,8 @@ exposes no scriptable text selection.
 Clone the repository and install dependencies once:
 
 ```bash
+git clone https://github.com/ossiak/euspell.git
+cd euspell
 npm install
 ```
 
@@ -219,8 +227,15 @@ text boxes, shapes, and table cells is left alone.
 
 ## C.6 Behaviour common to all four
 
-- **Convert once.** A few reforms are not idempotent, so converting text that is
-  already in euspell can over-transform those words. Revert first if in doubt.
+- **Convert once.** Conversion is very nearly, but not exactly, repeatable. No
+  euspelling in the lexicon changes again unconditionally on a second pass; the
+  residual cases are context-dependent words, where a second pass re-runs the
+  disambiguation against text whose surrounding words have themselves changed.
+  Measured over 6,015 words of prose carrying 1,533 reforms, a second pass
+  altered **three** words — around one in five hundred of the words it had
+  changed — each one a plural noun re-read as a verb and given the verbal `-z`.
+  So a stray second conversion degrades the text rather than destroying it, but
+  it is still worth avoiding: revert first if in doubt.
 - **Converted paragraphs lose inline formatting.** Each add-in replaces a
   paragraph's text as a whole, which resets bold and italic runs to the
   paragraph's default. The add-ins are best suited to plain-text documents. In
