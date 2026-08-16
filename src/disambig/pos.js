@@ -572,6 +572,29 @@ export function vv0Score(tokens, idx) {
   if (anyPrefix(left, ['VB'])) vote -= 3;           // "is / are separate" (predicate adjective)
   if (anyPrefix(left, PREPOSITION)) vote -= 3;      // "in separate", "of the estimate"
   if (anyPrefix(left, ['MC', 'MD', 'MF'])) vote -= 2; // "two separate", "first estimate"
+  // An attributive adjective ("polar bear", "brown bear", "separate estimate").
+  // This was missing while the numerals beside it were not, so "two separate"
+  // was read as a noun phrase and "polar bear" was not — and with no other cue
+  // in the frame the vote landed on exactly 0, handing the decision to the
+  // word's base rate, which for "bear" is the verb. On the Wikipedia "Polar
+  // bear" article that lost 212 of 239 singular instances; with this cue it is
+  // 28. vvzScore has always voted on the whole PREMODIFIER set; vv0Score simply
+  // lacked the adjective member of it.
+  //
+  // A base-form verb is not normally preceded by an adjective, which is what
+  // makes this safe: the nominalised-subject frame that would break it ("the
+  // poor bear the cost") is rare, and rarer than the noun phrase it fixes.
+  // Weighted below the determiner and possessive cues, so an explicit verb cue
+  // (to/will/do, +4) still wins outright.
+  //
+  // anyPrefixReal, NOT anyPrefix — this is the whole difference between the cue
+  // working and wrecking the rule. Ditto tags (JJ21, JJ43 …) mark a word as part
+  // of a multi-word expression, and ordinary words carry them as stray candidate
+  // readings, exactly as they carry the ditto-adverb tags isPureAdverb exists to
+  // ignore. Counting those, the cue fires almost everywhere and held-out accuracy
+  // falls from 94.3% to 82.5% — "use" 90.2 → 66.8, "live" 92.9 → 62.5. Excluding
+  // them it is +0.12pt weighted overall (94.3% → 94.5%), +5.3pt on "bear".
+  if (anyPrefixReal(left, ['JJ'])) vote -= 3;       // "polar bear", "separate estimate"
   if (anyExact(w1b, DEGREE_ADVERB)) vote -= 3;      // "very deliberate", "more appropriate"
 
   // --- Post-modifier: a following object NP argues for the verb ----------

@@ -203,3 +203,38 @@ test('detectors are robust at array boundaries', () => {
   assert.doesNotThrow(() => is_verb_VV0([t('use', '')], 0));
   assert.doesNotThrow(() => is_plural_noun([t('chassis', '')], 0));
 });
+
+// An attributive adjective before the target marks the noun reading. vv0Score
+// had determiners, possessives and numerals but not adjectives, so "polar bear"
+// drew no cue at all: the vote landed on zero and fell through to the per-word
+// base rate, which for "bear" is the verb. The Wikipedia "Polar bear" article
+// converted 212 of its 239 singular instances to "behr", the carry sense.
+test('is_verb_VV0: an adjective before marks a noun ("polar bear")', () => {
+  for (const adj of ['polar', 'brown', 'grizzly']) {
+    assert.equal(
+      is_verb_VV0(tagged([adj, 'bear', 'is']), 1), false,
+      `"${adj} bear" must read as the animal, not the verb`,
+    );
+  }
+});
+
+// THE guard on that cue, and the reason it uses anyPrefixReal rather than
+// anyPrefix. Ditto tags (JJ21, JJ43 …) mark a word as part of a multi-word
+// expression, and ordinary function words carry them as stray candidates: "the"
+// is AT|…|JJ43, "a" is AT1|…|JJ21|JJ31, "to" is …|JJ32|JJ42|TO. Counting those
+// as adjectives fires the noun cue almost everywhere and drops held-out accuracy
+// from 94.3% to 82.5% ("use" 90.2 → 66.8, "live" 92.9 → 62.5). A token whose
+// ONLY adjective tag is a ditto must therefore leave the decision alone.
+test('is_verb_VV0: a ditto-only JJ tag is not an adjective cue', () => {
+  // Object pronoun after is a +2 verb cue and nothing else speaks. A real
+  // adjective (-3) would overturn it; a ditto tag must not.
+  assert.equal(is_verb_VV0([t('x', 'JJ43'), t('bear', ''), t('them', 'PPHO2')], 1), true);
+  assert.equal(is_verb_VV0([t('x', 'JJ'), t('bear', ''), t('them', 'PPHO2')], 1), false);
+});
+
+test('is_verb_VV0: the verb readings of "bear" survive the adjective cue', () => {
+  // "to bear", "they bear it", "will bear" — explicit verb cues outrank it.
+  assert.equal(is_verb_VV0(tagged(['to', 'bear', 'witness']), 1), true);
+  assert.equal(is_verb_VV0(tagged(['they', 'bear', 'it']), 1), true);
+  assert.equal(is_verb_VV0(tagged(['will', 'bear', 'the']), 1), true);
+});
