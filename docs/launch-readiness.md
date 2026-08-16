@@ -63,7 +63,7 @@ someone asks. These are what that promise owes:
 | Logo — transparent PNG | ✅ `euspell_ext/icons/euspell_logo.png` — 1250×1248 RGBA, 91 KB (re-encoded 31 July from an uncompressed 6.0 MB export; alpha unchanged) |
 | Product screenshots | ✅ Four at 1280×800 plus a 440×280 promo tile, in `euspell_game/screenshots/`. Shot for the store listing, but they are the press screenshots too — the hero is the conversion drill scored, which carries before, after and the reason in one frame |
 | Demo video / GIF | ❌ **Needed** — the reform is best understood in motion, and this is the asset with the longest lead time. The likeliest thing to slip |
-| Founder bio | ❌ Needed — text only; no photographs of the founder |
+| Founder bio | ✅ [founder-bio.md](founder-bio.md) — three lengths (one line, ~50 words, ~120 words), meant to be sent verbatim. Text only; no photographs of the founder |
 
 Two of the four screenshots were captured by hand from a real Chrome, because
 rendering the popup or the PDF viewer headless gives UI with no browser around

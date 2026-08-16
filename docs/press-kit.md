@@ -1,6 +1,6 @@
 # Euspell — Press Kit
 
-**Last updated:** 31 July 2026 · **Reform revision:** r1
+**Last updated:** 16 August 2026 · **Reform revision:** r1
 
 The primary source document is the white paper, *Spelling Reform: An Engineering
 Approach* (Kamran Ossia). Every spelling and figure below was read from the
@@ -248,8 +248,24 @@ phonetic spelling would disrupt hundreds of scientific words.
 | White paper — *Spelling Reform: An Engineering Approach* | The primary press document |
 | Logo — vector | SVG, transparent, no embedded fonts |
 | Logo — raster | PNG, 1250×1248, transparent background |
+| Founder bio | Text, in three lengths — [founder-bio.md](founder-bio.md) |
 
-Product screenshots, a demo video, and a founder bio are available on request.
+Product screenshots and a demo video are available on request. There is no
+founder photograph.
+
+---
+
+## Founder
+
+Kamran Ossia created Euspell. He received his Bachelor's degree from Sharif
+University of Technology and his Master's and PhD from the University of Toronto,
+all in Electrical Engineering, specializing in Control Systems, and holds a
+second Master's degree in Applied Mathematics from California State University,
+Fullerton. He worked as a software engineer in the nuclear power and medical
+device industries, and is now retired.
+
+*Longer and shorter forms are in [founder-bio.md](founder-bio.md), which is the
+maintained version.*
 
 ---
 
