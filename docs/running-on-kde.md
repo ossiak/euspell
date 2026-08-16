@@ -59,9 +59,11 @@ npm run run:firefox       # launches Firefox with the extension loaded
 Temporary add-ons are removed on restart. For a **permanent** unsigned install,
 use Firefox Developer Edition / Nightly / ESR, set
 `xpinstall.signatures.required = false` in `about:config`, then install
-`build/euspell-firefox.zip`. For everyday use the real path is installing the
-**signed** build from addons.mozilla.org (see the sign workflow in
-`.github/workflows/firefox-sign.yml`).
+`build/euspell-firefox.zip`. For everyday use the intended path is a **signed**
+build from addons.mozilla.org — but **there is no AMO listing yet**, so one of
+the two routes above is what you have today. The machinery is in place
+(`.github/workflows/firefox-sign.yml`, which submits to the listed channel on a
+published release); it has not been run against AMO.
 
 ## Chromium family on KDE (Chromium / Chrome / Brave / Vivaldi)
 

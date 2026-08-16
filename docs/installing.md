@@ -11,9 +11,15 @@ Google Docs, or Apple Pages — see
 
 ## Install
 
-1. Open the Euspell listing on the **Chrome Web Store**:
-   <https://chromewebstore.google.com/detail/euspell> *(replace with the real
-   listing URL once published)*
+> **The store listing is not live yet.** Euspell has been submitted to the Chrome
+> Web Store and is in review; until it is approved and published there is no
+> listing to install from, and the steps below cannot be followed yet. To use it
+> now, build it and load it unpacked — see "Build & load" in the
+> [README](../README.md), which is the supported route today.
+
+Once the listing is live:
+
+1. Open the Euspell listing on the **Chrome Web Store**.
 2. Click **Add to Chrome**.
 3. Chrome asks you to confirm. It will say Euspell can **"Read and change all
    your data on the websites you visit"** — click **Add extension**.
@@ -29,12 +35,15 @@ Google Docs, or Apple Pages — see
 
 ### Other browsers
 
-The same Chrome Web Store listing installs on **Edge**, **Brave**, **Opera**,
+The same Chrome Web Store listing will install on **Edge**, **Brave**, **Opera**,
 **Vivaldi**, and other Chromium browsers — Edge may first ask you to allow
-extensions from other stores. **Firefox** needs a different build (see
-`npm run build:firefox`), published separately on addons.mozilla.org; on Firefox
-site access is opt-in, so the welcome tab shows a **Grant access** button you
-must click before pages convert.
+extensions from other stores. In the meantime the unpacked build loads on all of
+them, Edge included.
+
+**Firefox** needs a different build (`npm run build:firefox`). It is **not on
+addons.mozilla.org** — no listing has been submitted — so load the built
+`.zip` as a temporary add-on for now. On Firefox site access is opt-in, so the
+welcome tab shows a **Grant access** button you must click before pages convert.
 
 **Safari** (macOS) ships as a small app you build once and enable in Safari's
 settings — there's no store listing yet. Web pages and remote PDFs convert just
