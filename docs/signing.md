@@ -119,10 +119,18 @@ header of [`firefox-sign.yml`](../.github/workflows/firefox-sign.yml), which run
 
 ### Step 2 — Claim the add-on ID
 
-[`build/gen-firefox.js`](../build/gen-firefox.js) writes a placeholder gecko id,
-`euspell@euspell.org`. It must match the ID of your actual AMO listing before the
-first signed upload — AMO binds the ID to your account on first submission, and
-it can never be changed afterwards.
+[`build/gen-firefox.js`](../build/gen-firefox.js) writes the gecko id
+**`kamran@euspell.org`**, settled on 16 August 2026. It is not a mailbox — a
+gecko id is only required to be a unique, stable string in email or GUID form,
+and one at a domain you control is the recommended shape.
+
+> **This is a one-way door.** AMO binds the ID to your account on first
+> submission and it can never be changed. A later change is not a rename but a
+> *different add-on*: installed copies will not update across it, and the old ID
+> stays claimed. Confirm it reads as intended before the first signed upload,
+> whichever channel that upload uses.
+
+It must also match the ID of the AMO listing if one is created.
 
 ### Step 3 — Declare Android compatibility (done)
 
@@ -134,7 +142,7 @@ of whether the code runs fine on a phone. `toFirefox()` in
 
 ```js
   m.browser_specific_settings = {
-    gecko: { id: 'euspell@euspell.org', strict_min_version: '128.0' },
+    gecko: { id: 'kamran@euspell.org', strict_min_version: '128.0' },
     gecko_android: {},
   };
 ```
