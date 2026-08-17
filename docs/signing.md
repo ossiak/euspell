@@ -20,8 +20,8 @@ covered below.
 | Target | Who signs | What you supply | Status |
 | --- | --- | --- | --- |
 | Chrome / Edge / Brave / Opera on **Windows** | Google (and Microsoft) sign the packed extension | a `.zip`, a developer account, store credentials | ready to submit |
-| Firefox on **Windows** | Mozilla (AMO) | the staged `build/firefox` zip + AMO API keys | ready to submit |
-| Firefox on **Android** | Mozilla (AMO) | the same package, plus the `gecko_android` manifest key | ready to submit |
+| Firefox on **Windows** | Mozilla (AMO) | the staged `build/firefox` zip + AMO API keys | ready to sign — needs only the credentials ([Step 1](#step-1--amo-credentials)) |
+| Firefox on **Android** | Mozilla (AMO) | the same package, plus the `gecko_android` manifest key | as above; untested on a real phone |
 | Chrome on **Android** | — | — | impossible: Chrome for Android has no extension support |
 | The LibreOffice / Word / Docs / Pages add-ins | nobody | — | not signed; see [Not signed, and why that's fine](#not-signed-and-why-thats-fine) |
 
@@ -182,29 +182,84 @@ promote the listing.
 
 ### Step 5 — Sign
 
-Either publish a GitHub release (the workflow fires automatically), run the
-workflow by hand from the **Actions** tab, or do it locally:
+Publish a GitHub release (the workflow fires automatically, **unlisted**), run
+the workflow by hand from the **Actions** tab and choose the channel, or do it
+locally:
 
 ```powershell
 npm run build:firefox
-npx web-ext sign --source-dir build/firefox --channel listed `
+npx web-ext sign --source-dir build/firefox --channel unlisted `
   --api-key $env:AMO_JWT_ISSUER --api-secret $env:AMO_JWT_SECRET
 ```
 
 **Bump `version` in [`manifest.json`](../manifest.json) before every run** — AMO
 rejects a version it has already accepted, and there is no way to replace one.
+This is also why the workflow never lists automatically: an accidental listed
+submission does not go to the wrong place, it spends that version permanently.
 
-### listed vs unlisted on Android
+### Choosing the channel
 
-| | listed | unlisted |
+| | unlisted | listed |
 | --- | --- | --- |
-| Signed | after human review (days) | immediately on upload |
-| Distribution | public AMO listing | you host the `.xpi` |
-| Installable on Android | **yes**, from the AMO listing | awkwardly — Firefox for Android cannot install an `.xpi` from a URL; the user must download the file and install it from local storage |
+| Signed | immediately on upload, minutes | after review, days to weeks |
+| Distribution | you host the `.xpi` | public AMO listing, searchable |
+| Updates | manual, unless you serve an `update_url` | automatic through AMO |
+| `data_collection_permissions` | not required | **required for new listings** |
+| Firefox floor | stays at **128** (current ESR) | forced to **140**, dropping ESR |
+| Source-code submission | not required | required — the package contains rollup output |
+| Listing metadata | none | name, summary, description, categories, screenshots, icon, licence, privacy policy URL |
+| Installable on Android | awkwardly — Firefox for Android cannot install an `.xpi` from a URL; the user downloads the file and installs it from local storage | **yes**, directly from the listing |
 
-For Android, **use the listed channel**. Unlisted is fine for desktop
-self-distribution and for handing a build to a tester, but it is not a
-distribution route for phone users.
+**Unlisted is the way to a working Firefox build quickly**, and it is what the
+workflow does by default. It is a real install on release Firefox — the signature
+is what matters, not the catalogue entry — and it keeps the ESR 128 floor that a
+listing would cost.
+
+**Listed is the way to reach people who have not heard of the project**, and the
+only practical route on Android. Take it when the two costs below are a
+considered choice rather than a deadline's side effect.
+
+### The unlisted route, end to end
+
+1. Set the credentials (Step 1). Nothing else is required.
+2. Run **Actions ▸ Sign Firefox add-on ▸ Run workflow**, channel `unlisted`.
+3. Download the **`firefox-xpi`** artifact from the run. Listed submissions
+   produce no file — this artifact is the point of the unlisted channel.
+4. Host the `.xpi` where users can reach it: attached to the GitHub release, or
+   under `public/` on the website.
+5. Users install it by opening the `.xpi` in Firefox, or dragging it onto the
+   window. It stays installed across restarts, which an unsigned temporary
+   add-on does not.
+
+> **Serve it as `application/x-xpi`.** A host that sends `text/plain` or
+> `application/octet-stream` makes Firefox download the file rather than offer to
+> install it, which reads to the user as a broken link. This is the one thing
+> that catches people out about self-hosting.
+
+For automatic updates, add `browser_specific_settings.gecko.update_url` pointing
+at a JSON manifest you host, listing each version and its `.xpi` URL. Without it
+the add-on is installed permanently but never updates itself, and users have to
+be told when a new version exists. Worth doing before the second release, not the
+first.
+
+### What a listed submission additionally needs
+
+- **`data_collection_permissions` in the manifest.** AMO requires it for new
+  listings. The key only exists from Firefox 140, so
+  [`build/gen-firefox.js`](../build/gen-firefox.js) omits it deliberately —
+  including it makes the add-on fail to load on anything older with "unexpected
+  property". Adding it therefore means raising `strict_min_version` from 128 to
+  140 in the same change, and **that drops the current ESR line**. Re-run
+  `npm run lint:firefox` afterwards; the standing
+  `MISSING_DATA_COLLECTION_PERMISSIONS` warning is the one this clears.
+- **A source-code submission.** The staged package contains rollup output, which
+  AMO treats as machine-generated code a reviewer cannot read. Supply the source
+  and the build instructions — `npm ci && npm run build:firefox`, Node 24 — which
+  is straightforward here because the repository is public, but it is a step most
+  people do not expect.
+- **The listing itself**: name, summary, description, categories, screenshots,
+  icon, licence (GPL-3.0-or-later), and a live privacy policy URL. Most of this
+  exists from the Chrome Web Store submission and can be reused.
 
 ## Not signed, and why that's fine
 
@@ -229,12 +284,12 @@ no signing step, on any platform:
   down or transferred, the extension ID and its signature go with it. The
   self-hosted `.crx` key in the Windows section is the only signing key this
   project would ever own, and only if you go the enterprise-policy route.
-- **AMO wants `data_collection_permissions` on new listings.** It only exists in
-  the manifest schema from Firefox 140+, so adding it means raising
-  `strict_min_version` to 140 — which also raises the Android floor. The
-  reasoning is already recorded in the comment in
-  [`build/gen-firefox.js`](../build/gen-firefox.js); decide it once, at
-  submission time, for both platforms together.
+- **`data_collection_permissions` is a listing cost, not a signing cost.** It is
+  required for new AMO *listings* and irrelevant to unlisted signing, which is
+  the distinction that decides whether the Firefox floor stays at 128. Full
+  reasoning in [What a listed submission additionally needs](#what-a-listed-submission-additionally-needs)
+  and in the comment in [`build/gen-firefox.js`](../build/gen-firefox.js); decide
+  it once, for desktop and Android together.
 - **One version number, four stores.** `manifest.json`'s `version` drives Chrome,
   Edge, Firefox desktop and Firefox Android. Bump it once per release and submit
   the same build everywhere, so a bug report's version string means something.

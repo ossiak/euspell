@@ -14,10 +14,22 @@
 #      that already exists.
 #
 # Channels:
+#   unlisted — self-distribution, and the DEFAULT here. AMO signs immediately and
+#              web-ext downloads the signed .xpi (uploaded as a build artifact
+#              below) for you to host. No review queue, and no
+#              data_collection_permissions requirement, so strict_min_version can
+#              stay at 128 and ESR keeps working.
 #   listed   — submits a new version to the public AMO listing (goes to review;
-#              AMO signs it after approval). Best for reaching KDE/Firefox users.
-#   unlisted — self-distribution: AMO signs immediately and web-ext downloads the
-#              signed .xpi (uploaded as a build artifact below) for you to host.
+#              AMO signs it after approval). Requires the listing metadata, a
+#              source-code submission (the package contains rollup output), and
+#              data_collection_permissions — which only exists in Firefox 140+,
+#              so it forces strict_min_version up and drops ESR 128.
+#
+# Listing is deliberate, never automatic. Publishing a GitHub release signs
+# UNLISTED; a listed submission has to be started by hand from the Actions tab
+# with channel=listed. This matters because AMO never accepts a version string
+# twice: an accidental listed submission does not merely go to the wrong place,
+# it spends that version permanently.
 name: Sign Firefox add-on
 
 on:
@@ -26,10 +38,10 @@ on:
   workflow_dispatch:
     inputs:
       channel:
-        description: AMO channel
+        description: AMO channel (listed goes to public review and cannot be undone)
         type: choice
-        options: [listed, unlisted]
-        default: listed
+        options: [unlisted, listed]
+        default: unlisted
 
 jobs:
   sign:
@@ -59,11 +71,25 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: node build/gen-firefox.js
+      # Without this the run gets as far as building, then fails inside web-ext
+      # with an authentication error that reads like an AMO outage rather than a
+      # missing secret. Checked after the build is cheap; checked before it is
+      # clearer, so it goes first.
+      - name: Check AMO credentials are present
+        env:
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+        run: |
+          if [ -z "$AMO_JWT_ISSUER" ] || [ -z "$AMO_JWT_SECRET" ]; then
+            echo "::error::AMO_JWT_ISSUER and AMO_JWT_SECRET are not set on this repository. Create an API key at https://addons.mozilla.org/developers/addon/api/key/ and add both under Settings > Secrets and variables > Actions. See docs/signing.md."
+            exit 1
+          fi
+
       - name: Sign & submit to AMO
         run: >
           npx web-ext sign
           --source-dir build/firefox
-          --channel ${{ github.event.inputs.channel || 'listed' }}
+          --channel ${{ inputs.channel || 'unlisted' }}
           --api-key "$AMO_JWT_ISSUER"
           --api-secret "$AMO_JWT_SECRET"
           --artifacts-dir web-ext-artifacts
