@@ -21,7 +21,7 @@ download, or link to as of that date:
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404 |
 | Source repositories | `ossiak/euspell` is **public** (GPL-3.0-or-later) as of 15 August. `ossiak/eupub` is a separate repository and remains **private** |
-| Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, v0.3.0 — which also serves Edge, Brave and Opera. **0.3.1 is built and needs uploading**: 0.3.0 predates the `bear` fix, so every install currently converts adjective-preceded nouns to the verb sense. The Safari build is development-signed only: no notarized or App Store build exists |
+| Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. **0.3.1 uploaded 17 August and in review**; until it is approved the store serves 0.3.0, which predates the `bear` fix and converts adjective-preceded nouns to the verb sense. The Safari build is development-signed only: no notarized or App Store build exists |
 | Eupub v0.2.3 | Released, but **on a private repo**, so downloads are not publicly reachable |
 
 **The site deploy is now the critical path.** It was already "the cheapest fix by
@@ -97,8 +97,9 @@ changes**.
   proposed quotes still need approving or rewriting; its own pre-send checklist
   tracks all of it.
 - **Version numbers.** Re-reconciled on 17 August: the kit states browser
-  extension **0.3.1** and Eupub **0.3.1**. Eupub 0.3.1 is released; the extension's
-  0.3.1 is built but **not yet uploaded**, so the store still serves 0.3.0 — the
-  kit is describing a version the public cannot get until that upload happens.
+  extension **0.3.1** and Eupub **0.3.1**. Eupub 0.3.1 is released and downloadable;
+  the extension's 0.3.1 is uploaded and **in review**, so the store serves 0.3.0
+  until it clears. The kit is accurate on the day the update is approved, and a
+  day early if review runs long — worth a glance before the kit is sent.
   Re-check both against the shipped builds on launch day — a rejected store
   upload burns a version number, so the extension's could still move.
