@@ -6,14 +6,19 @@ keystore to guard: the browser vendors sign the package themselves, and your job
 is to hand them a build that passes review and to keep the credentials that prove
 the upload came from you.
 
-Which is not to say there's nothing to do — for **Android** in particular the
-current build is *not yet installable at all*, for a one-line manifest reason
-covered below.
-
-> Eupub, the standalone e-reader, is a different story: it's a real signed binary
-> on both platforms, with an Authenticode certificate and an Android keystore to
-> look after. That's documented in its own repo, in `docs/windows-signing.md` and
-> `docs/android-signing.md`.
+> **Firefox for Android is deferred, decided 16 August 2026.** The extension is
+> not shipping on Android in this release, so everything in the [Android](#android)
+> section below is preparation rather than pending work. It is kept because the
+> package is already ready for it — `gecko_android` is declared and costs nothing
+> to leave in place — and because the AMO steps there are the same ones desktop
+> signing uses.
+>
+> **Eupub is the Android story for this release.** The standalone e-reader is a
+> different kind of signing altogether: a real signed binary on both platforms,
+> with an Authenticode certificate and an Android keystore to look after. It is
+> documented in its own repository — `docs/windows-signing.md`,
+> `docs/android-signing.md`, and `docs/android-play-submission.md` for what
+> distribution beyond a sideloaded apk requires.
 
 ## The short version
 
