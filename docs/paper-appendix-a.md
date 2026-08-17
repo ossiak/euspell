@@ -43,6 +43,10 @@ conversion is performed locally.
 download links for whichever tools have reached a store or a release, and it is
 the one address worth writing down.
 
+The browser extension is on the **Chrome Web Store**, which also covers Edge,
+Brave, Opera and other Chromium browsers:
+<https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja>
+
 The software and its documentation are in two public repositories:
 
 | Repository | What it holds |
@@ -72,9 +76,9 @@ and a Linux AppImage — are attached to each release at
 Stated as of **August 2026**, and deliberately not in detail, because this is the
 part that dates fastest.
 
-- **The browser extension** has been submitted to the Chrome Web Store. Until a
-  listing is live — and on Firefox and Safari, which have no listing — it is
-  built from source and loaded unpacked, which takes two commands and a
+- **The browser extension** is on the Chrome Web Store, which also serves Edge,
+  Brave, Opera and other Chromium browsers. On Firefox and Safari, which have no
+  listing, it is built from source and loaded unpacked — two commands and a
   developer-mode toggle.
 - **The word-processor add-ins** have no marketplace listing on any of the four
   platforms and are built from source. They are one-pass converters rather than

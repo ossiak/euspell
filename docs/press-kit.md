@@ -58,7 +58,9 @@ Three lengths, ready to paste.
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
 | **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |
 | **Shop** | [shop.euspell.org](https://shop.euspell.org) — live; logo tees and hoodies, fulfilled by Fourthwall |
-| **Current versions** | Browser extension 0.3.0 (unreleased); Eupub 0.2.3 |
+| **Current versions** | Browser extension 0.3.1; Eupub 0.3.1 |
+| **Chrome Web Store** | [Euspell](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) — published 17 August 2026; the same listing serves Edge, Brave, Opera and other Chromium browsers |
+| **Eupub downloads** | [github.com/ossiak/eupub/releases](https://github.com/ossiak/eupub/releases) — Windows, macOS, Linux and Android |
 | **Contact** | [kamran@euspell.org](mailto:kamran@euspell.org) |
 
 ---

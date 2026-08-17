@@ -21,22 +21,23 @@ download, or link to as of that date:
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404 |
 | Source repositories | `ossiak/euspell` is **public** (GPL-3.0-or-later) as of 15 August. `ossiak/eupub` is a separate repository and remains **private** |
-| Browser extension | **Submitted** to the Chrome Web Store on 15 August, v0.3.0, with publishing deferred so approval does not put the listing live before the reveal. Review pending. The Safari build is development-signed only: no notarized or App Store build exists |
+| Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, v0.3.0 — which also serves Edge, Brave and Opera. **0.3.1 is built and needs uploading**: 0.3.0 predates the `bear` fix, so every install currently converts adjective-preceded nouns to the verb sense. The Safari build is development-signed only: no notarized or App Store build exists |
 | Eupub v0.2.3 | Released, but **on a private repo**, so downloads are not publicly reachable |
 
 **The site deploy is now the critical path.** It was already "the cheapest fix by
 far" — the writing is done — and with the repository and the extension both
-handled it is the only remaining gap that is fully within our control. The
-extension is out of our hands until review returns.
+handled it is **the only remaining gap that is fully within our control, and now
+the only thing on the critical path**. Every store is done or out of our hands.
 
 **The paper's hold condition is satisfied.** It was deliberately held until the
 repositories were public, which was the right order; `ossiak/euspell` now is. The
 kit becomes sendable once the content pages are deployed.
 
-**Minimum before outreach:** deploy the content pages, and put real product links
-in the kit (the store URL exists only once the listing is published). Until then
-the strongest realistic play is a private preview — the kit, the white paper, and
-a demo video, sent directly.
+**Minimum before outreach:** deploy the content pages. That is now the whole
+list — the product links the kit was waiting for exist: the Chrome listing is
+live, Eupub ships four signed assets per release, and both repositories are
+public. Until the pages are up, the strongest realistic play is a private
+preview — the kit, the white paper, and the animation, sent directly.
 
 **One claim to keep honest.** The live privacy policy says the source for *every*
 tool is at `github.com/ossiak/euspell`. That is not true of Eupub, which is a
@@ -90,12 +91,14 @@ changes**.
 - **No founder photograph.** Deliberate — the kit and release offer a written bio
   only. Do not add one, and decline photo requests rather than treating them as a
   gap to fill.
-- **Placeholders in the release.** [press-release.md](press-release.md) carries a
-  bracketed dateline, store URL, repository URL and paper URL, plus two proposed
-  quotes that need approving or rewriting. Its own pre-send checklist tracks
-  these. The repository URL can now be filled in; the store URL cannot, until the
-  listing is published.
-- **Version numbers.** Reconciled on 15 August: the kit states browser extension
-  0.3.0 and Eupub 0.2.3, which match `manifest.json` and Eupub's `package.json`.
+- **Placeholders in the release.** [press-release.md](press-release.md) is down to
+  three: the dateline city, the launch date, and `[PAPER URL]` — which depends on
+  the site deploy. The store, download and repository URLs are filled in. Two
+  proposed quotes still need approving or rewriting; its own pre-send checklist
+  tracks all of it.
+- **Version numbers.** Re-reconciled on 17 August: the kit states browser
+  extension **0.3.1** and Eupub **0.3.1**. Eupub 0.3.1 is released; the extension's
+  0.3.1 is built but **not yet uploaded**, so the store still serves 0.3.0 — the
+  kit is describing a version the public cannot get until that upload happens.
   Re-check both against the shipped builds on launch day — a rejected store
   upload burns a version number, so the extension's could still move.

@@ -67,10 +67,14 @@ for grammar checkers — addressing a cost of English orthography that falls on
 software as much as on readers.
 
 Euspell and Eupub are available today at
-[euspell.org](https://euspell.org). The browser extension is at
-`[CHROME WEB STORE URL]`, and the source is at `[github.com/ossiak/…]`. The white
-paper describing the reform in full, *Spelling Reform: An Engineering Approach*,
-is at `[PAPER URL]`.
+[euspell.org](https://euspell.org). The browser extension is on the
+[Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja),
+which also serves Edge, Brave and Opera; Eupub for Windows, macOS, Linux and
+Android is at
+[github.com/ossiak/eupub/releases](https://github.com/ossiak/eupub/releases). The
+source is at [github.com/ossiak/euspell](https://github.com/ossiak/euspell). The
+white paper describing the reform in full, *Spelling Reform: An Engineering
+Approach*, is at `[PAPER URL]`.
 
 ### About Euspell
 
@@ -122,8 +126,9 @@ journalists generally welcome it.*
 
 - [ ] Dateline city and launch date filled in
 - [ ] Both quotes approved or rewritten by Kamran Ossia
-- [ ] Repositories actually public — the release links to them
-- [ ] Extension live in the Chrome Web Store, or that sentence cut
+- [x] Repositories actually public — the release links to them
+- [x] Extension live in the Chrome Web Store (published 17 August 2026)
+- [ ] `[PAPER URL]` filled in — depends on the site deploy below
 - [ ] Website content pages deployed (currently 404 — see
       [launch-readiness.md](launch-readiness.md#availability-the-honest-status))
 - [ ] White paper published at a real URL

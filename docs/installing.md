@@ -11,13 +11,12 @@ Google Docs, or Apple Pages — see
 
 ## Install
 
-> **The store listing is not live yet.** Euspell has been submitted to the Chrome
-> Web Store and is in review; until it is approved and published there is no
-> listing to install from, and the steps below cannot be followed yet. To use it
-> now, build it and load it unpacked — see "Build & load" in the
-> [README](../README.md), which is the supported route today.
+**Euspell is on the Chrome Web Store**, published 17 August 2026:
 
-Once the listing is live:
+<https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja>
+
+The same listing installs on Edge, Brave, Opera, Vivaldi and other Chromium
+browsers. Firefox and Safari are built from source — see below.
 
 1. Open the Euspell listing on the **Chrome Web Store**.
 2. Click **Add to Chrome**.
