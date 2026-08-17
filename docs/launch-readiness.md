@@ -5,14 +5,14 @@
 has to be true before either of those can be sent. Nothing here should ever reach
 a journalist — it is an inventory of gaps, and reads like one.
 
-**Last updated:** 15 August 2026
+**Last updated:** 17 August 2026
 
 ---
 
 ## Availability: the honest status
 
-Two of the three blocking gaps closed on 15 August. What a journalist can read,
-download, or link to as of that date:
+All three blocking gaps are closed. What a journalist can read, download, or
+link to today:
 
 | | |
 | --- | --- |
@@ -20,9 +20,9 @@ download, or link to as of that date:
 | Shop | [shop.euspell.org](https://shop.euspell.org) is **live** — a Fourthwall storefront selling logo tees and hoodies. It carries no explanation of what euspell is |
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404 |
-| Source repositories | `ossiak/euspell` is **public** (GPL-3.0-or-later) as of 15 August. `ossiak/eupub` is a separate repository and remains **private** |
+| Source repositories | Both **public** under GPL-3.0-or-later: `ossiak/euspell` since 15 August, `ossiak/eupub` since 16 August |
 | Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. **0.3.1 uploaded 17 August and in review**; until it is approved the store serves 0.3.0, which predates the `bear` fix and converts adjective-preceded nouns to the verb sense. The Safari build is development-signed only: no notarized or App Store build exists |
-| Eupub v0.2.3 | Released, but **on a private repo**, so downloads are not publicly reachable |
+| Eupub | **v0.3.1 released and publicly downloadable** — four signed assets per release: Windows installer (Authenticode), macOS disk image (notarized), Linux AppImage, and an Android APK. iOS is submitted to the App Store and in review |
 
 **The site deploy is now the critical path.** It was already "the cheapest fix by
 far" — the writing is done — and with the repository and the extension both
@@ -40,13 +40,15 @@ public. Until the pages are up, the strongest realistic play is a private
 preview — the kit, the white paper, and the animation, sent directly.
 
 **One claim to keep honest.** The live privacy policy says the source for *every*
-tool is at `github.com/ossiak/euspell`. That is not true of Eupub, which is a
-separate private repository — the sentence is being narrowed rather than left to
-be discovered. Publishing Eupub would also make it true, but that has its own
-prerequisites: it has **no LICENSE file** despite declaring GPL-3.0-or-later, and
-it is not independently buildable, importing the engine across the repo boundary
-(`../../../euspell_ext/src/content/converter.js`), so a fresh clone cannot build
-without `euspell` checked out as a sibling.
+tool is at `github.com/ossiak/euspell`. Eupub is a second public repository, so
+the sentence is narrow rather than untrue — but it still names one address for
+two. Worth widening when the privacy page is next touched.
+
+**One thing Eupub still is not.** It is public and it carries its LICENSE, but it
+is not independently buildable: it imports the engine across the repo boundary
+(`../../../euspell_ext/...`), so a fresh clone cannot build without `euspell`
+checked out as a sibling. That blocks nothing today and is the one real obstacle
+to an F-Droid listing.
 
 ---
 
@@ -62,7 +64,7 @@ someone asks. These are what that promise owes:
 | Logo (800×800 JPG) | ✅ Available |
 | Logo — SVG | ✅ `euspell_ext/icons/euspell_logo.svg` — potrace paths, no `<text>`, so no font dependency |
 | Logo — transparent PNG | ✅ `euspell_ext/icons/euspell_logo.png` — 1250×1248 RGBA, 91 KB (re-encoded 31 July from an uncompressed 6.0 MB export; alpha unchanged) |
-| Product screenshots | ✅ Four at 1280×800 plus a 440×280 promo tile, in `euspell_game/screenshots/`. Shot for the store listing, but they are the press screenshots too — the hero is the conversion drill scored, which carries before, after and the reason in one frame |
+| Product screenshots | ✅ Four at 1280×800 plus a 440×280 promo tile, in `euspell_game/screenshots/`. Shot for the store listing, but they are the press screenshots too — the hero is the conversion game scored, which carries before, after and the reason in one frame |
 | Demo video / GIF | ✅ **`Videos/euspell_two_state.gif`** — 142 words in traditional spelling, a half-second morph, the same 142 in euspell, and a morph back. 4.0 s, 1.58 MB, 1200 px, silent, loops. Rendered by [`euspell_yt/render_two_state.py`](../../euspell_yt/render_two_state.py). Two longer cuts of the sequential animation exist as well — `Euspell_word_animation.mp4` (7:13, the standalone YouTube piece) and `Euspell_word_animation_cutB_48.mp4` (1:26, scored, with a silent twin) |
 | Founder bio | ✅ [founder-bio.md](founder-bio.md) — three lengths (one line, ~50 words, ~120 words), meant to be sent verbatim. Text only; no photographs of the founder |
 

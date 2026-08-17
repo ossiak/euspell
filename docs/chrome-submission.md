@@ -67,7 +67,7 @@ you would rather be shelved next to language tools.
 
 | File | What it shows |
 | --- | --- |
-| `01-drill-scored.png` | The conversion drill, scored — every legend state in one frame, with the explanation panel open. The shot that has to teach |
+| `01-game-scored.png` | The conversion game, scored — every legend state in one frame, with the explanation panel open. The shot that has to teach |
 | `02-popup-records.png` | The popup over a converted page carrying both readings of `records`, next to the `012` encoding |
 | `03-pdf-viewer.png` | The bundled viewer converting a document live, toolbar intact |
 | `04-options.png` | The off switch, and the privacy note with its dictation exception |
@@ -214,5 +214,5 @@ to stumble into. To put the policy up alone, upload `out/privacy/` by itself.
 
 ~~Screenshots~~ — done, four of them, above. They were parked behind the
 disambiguation demo on the theory that it would produce a better first image
-than a converted web page could, and it did: the hero shot is the drill's own
+than a converted web page could, and it did: the hero shot is the game's own
 scored view.

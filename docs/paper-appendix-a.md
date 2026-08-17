@@ -21,14 +21,10 @@ Edge, Firefox, and Safari", §Epub and text says Eupub is "available for … iOS
 and "also handles PDF files on mobile devices" — PDF is handled on all five
 platforms, not only mobile, and the iOS build has not been published.*
 
-***One entry here is not yet true.*** *Every URL in this appendix was checked and
-resolves, except that the conversion drill has no public address: its repository,
-`ossiak/euspell-game`, is private, and the drill is not yet hosted on
-euspell.org. It is described below as reachable through the site, which is where
-it is intended to go and is the only address that will not need changing
-afterwards. **Before the paper is published, either host the drill on euspell.org
-or make the repository public** — otherwise cut §A.3's drill bullet and its row
-from the table in §A.2, rather than shipping a pointer to nothing.*
+*Every URL in this appendix was checked and resolves, with one dependency: the
+conversion game is staged into the website at `/game/` and goes live with the
+site deploy. Until the content pages are up, that address 404s along with the
+rest of them.*
 
 ---
 
@@ -65,7 +61,7 @@ are right and the paper is out of date.
 | The **browser extension** — Chrome, Edge, Brave, Opera, Vivaldi, Firefox, Safari | [`docs/installing.md`](https://github.com/ossiak/euspell/blob/master/docs/installing.md) in `ossiak/euspell` |
 | The **word-processor add-ins** — Microsoft Word, LibreOffice Writer, Google Docs, Apple Pages | [`docs/installing-addins.md`](https://github.com/ossiak/euspell/blob/master/docs/installing-addins.md) in `ossiak/euspell` |
 | **Eupub**, the e-reader — Windows, macOS, Linux, Android, iOS | [`docs/installing.md`](https://github.com/ossiak/eupub/blob/main/docs/installing.md) in `ossiak/eupub` |
-| **The conversion drill** — any modern browser | Nothing to install; it is linked from [euspell.org](https://euspell.org) |
+| **The conversion game** — any modern browser | Nothing to install: [euspell.org/game/](https://euspell.org/game/) |
 
 Released Eupub builds — a signed Windows installer, a notarized macOS disk image,
 and a Linux AppImage — are attached to each release at
@@ -87,7 +83,7 @@ part that dates fastest.
 - **Eupub** ships prebuilt for the three desktop platforms. Neither mobile build
   is published, so Android and iOS are built from source and installed on your
   own hardware.
-- **The conversion drill** is the one item with nothing to install: a single web
+- **The conversion game** is the one item with nothing to install: a single web
   page that asks the reader to rewrite a passage in euspell by hand and scores
   what they produce against the engine's own output. It needs no server, no
   build, and no network, and it is the quickest way to find out whether the
