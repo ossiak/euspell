@@ -2550,8 +2550,6 @@
   <lexeme><grapheme>birqhbark</grapheme><phoneme>B ER1 CH B AA0 R K</phoneme></lexeme> <!-- birchbark -->
   <lexeme><grapheme>birqhd</grapheme><phoneme>B ER1 CH T</phoneme></lexeme> <!-- birched -->
   <lexeme><grapheme>birqhen</grapheme><phoneme>B ER1 CH AH0 N</phoneme></lexeme> <!-- birchen -->
-  <lexeme><grapheme>birqher</grapheme><phoneme>B ER1 CH ER0</phoneme></lexeme> <!-- bircher -->
-  <lexeme><grapheme>birqhers</grapheme><phoneme>B ER1 CH ER0 Z</phoneme></lexeme> <!-- birchers -->
   <lexeme><grapheme>birqhes</grapheme><phoneme>B ER1 CH IH0 Z</phoneme></lexeme> <!-- birches -->
   <lexeme><grapheme>birqhez</grapheme><phoneme>B ER1 CH IH0 Z</phoneme></lexeme> <!-- birches -->
   <lexeme><grapheme>birqhing</grapheme><phoneme>B ER1 CH IH0 NG</phoneme></lexeme> <!-- birching -->
@@ -11624,10 +11622,8 @@
   <lexeme><grapheme>fuwlz</grapheme><phoneme>F AW1 L Z</phoneme></lexeme> <!-- fowls -->
   <lexeme><grapheme>fuze</grapheme><phoneme>F Y UW1 Z</phoneme></lexeme> <!-- fuze -->
   <lexeme><grapheme>fuzed</grapheme><phoneme>F Y UW1 Z D</phoneme></lexeme> <!-- fuzed -->
-  <lexeme><grapheme>fuzeless</grapheme><phoneme>F Y UW1 S L AH0 S</phoneme></lexeme> <!-- fuzeless -->
   <lexeme><grapheme>fuzes</grapheme><phoneme>F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- fuzes -->
   <lexeme><grapheme>fuzez</grapheme><phoneme>F Y UW1 Z IH0 Z</phoneme></lexeme> <!-- fuzes -->
-  <lexeme><grapheme>fuzible</grapheme><phoneme>F Y UW1 Z AH0 B AH0 L</phoneme></lexeme> <!-- fuzible -->
   <lexeme><grapheme>fuzzd</grapheme><phoneme>F AH1 Z D</phoneme></lexeme> <!-- fuzzed -->
   <lexeme><grapheme>fuzzez</grapheme><phoneme>F AH1 Z IH0 Z</phoneme></lexeme> <!-- fuzzes -->
   <lexeme><grapheme>fuzzlez</grapheme><phoneme>F AH1 Z AH0 L Z</phoneme></lexeme> <!-- fuzzles -->
@@ -17036,9 +17032,6 @@
   <lexeme><grapheme>maqhicolatez</grapheme><phoneme>M AH0 CH IH1 K AH0 L EY0 T S</phoneme></lexeme> <!-- machicolates -->
   <lexeme><grapheme>maqhicolating</grapheme><phoneme>M AH0 CH IH1 K AH0 L EY0 T IH0 NG</phoneme></lexeme> <!-- machicolating -->
   <lexeme><grapheme>maqhicolation</grapheme><phoneme>M AH0 CH IH0 K AH0 L EY1 SH AH0 N</phoneme></lexeme> <!-- machicolation -->
-  <lexeme><grapheme>maqhicolations</grapheme><phoneme>M AH0 CH IH0 K AH0 L EY1 SH AH0 N Z</phoneme></lexeme> <!-- machicolations -->
-  <lexeme><grapheme>maqhiculis</grapheme><phoneme>M AE2 SH IH0 K UW1 L IY0</phoneme></lexeme> <!-- maqhiculis -->
-  <lexeme><grapheme>maqhiculises</grapheme><phoneme>M AE2 SH IH0 K UW1 L IH0 Z</phoneme></lexeme> <!-- maqhiculises -->
   <lexeme><grapheme>maqhismo</grapheme><phoneme>M AA0 CH IY1 Z M OW0</phoneme></lexeme> <!-- machismo -->
   <lexeme><grapheme>maqhismos</grapheme><phoneme>M AA0 CH IY1 Z M OW0 Z</phoneme></lexeme> <!-- machismos -->
   <lexeme><grapheme>maqho</grapheme><phoneme>M AA1 CH OW0</phoneme></lexeme> <!-- macho -->
@@ -17145,6 +17138,9 @@
   <lexeme><grapheme>mashete</grapheme><phoneme>M AH0 SH EH1 T IY0</phoneme></lexeme> <!-- machete -->
   <lexeme><grapheme>mashetes</grapheme><phoneme>M AH0 SH EH1 T IY0 Z</phoneme></lexeme> <!-- machetes -->
   <lexeme><grapheme>mashez</grapheme><phoneme>M AE1 SH IH0 Z</phoneme></lexeme> <!-- mashes -->
+  <lexeme><grapheme>mashicolations</grapheme><phoneme>M AH0 CH IH0 K AH0 L EY1 SH AH0 N Z</phoneme></lexeme> <!-- mashicolations -->
+  <lexeme><grapheme>mashiculis</grapheme><phoneme>M AE2 SH IH0 K UW1 L IY0</phoneme></lexeme> <!-- machicoulis -->
+  <lexeme><grapheme>mashiculises</grapheme><phoneme>M AE2 SH IH0 K UW1 L IH0 Z</phoneme></lexeme> <!-- machicoulises -->
   <lexeme><grapheme>mashinabilities</grapheme><phoneme>M AH0 SH IY2 N AH0 B IH1 L IH0 T IY0 Z</phoneme></lexeme> <!-- machinabilities -->
   <lexeme><grapheme>mashinability</grapheme><phoneme>M AH0 SH IY2 N AH0 B IH1 L IH0 T IY0</phoneme></lexeme> <!-- machinability -->
   <lexeme><grapheme>mashinable</grapheme><phoneme>M AH0 SH IY1 N AH0 B AH0 L</phoneme></lexeme> <!-- machinable -->
@@ -22903,8 +22899,6 @@
   <lexeme><grapheme>qhallengez</grapheme><phoneme>CH AE1 L IH0 N JH IH0 Z</phoneme></lexeme> <!-- challenges -->
   <lexeme><grapheme>qhallenging</grapheme><phoneme>CH AE1 L IH0 N JH IH0 NG</phoneme></lexeme> <!-- challenging -->
   <lexeme><grapheme>qhallengingly</grapheme><phoneme>CH AE1 L IH0 N JH IH0 NG L IY0</phoneme></lexeme> <!-- challengingly -->
-  <lexeme><grapheme>qhallis</grapheme><phoneme>SH AE1 L IY0</phoneme></lexeme> <!-- qhallis -->
-  <lexeme><grapheme>qhallises</grapheme><phoneme>SH AE1 L IY0 Z</phoneme></lexeme> <!-- qhallises -->
   <lexeme><grapheme>qhamber</grapheme><phoneme>CH EY1 M B ER0</phoneme></lexeme> <!-- chamber -->
   <lexeme><grapheme>qhamberd</grapheme><phoneme>CH EY1 M B ER0 D</phoneme></lexeme> <!-- chambered -->
   <lexeme><grapheme>qhambering</grapheme><phoneme>CH EY1 M B ER0 IH0 NG</phoneme></lexeme> <!-- chambering -->
@@ -23033,8 +23027,6 @@
   <lexeme><grapheme>qhanty</grapheme><phoneme>CH AE1 N T IY0</phoneme></lexeme> <!-- chanty -->
   <lexeme><grapheme>qhantz</grapheme><phoneme>CH AE1 N T S</phoneme></lexeme> <!-- chants -->
   <lexeme><grapheme>qhap</grapheme><phoneme>CH AE1 P</phoneme></lexeme> <!-- chap -->
-  <lexeme><grapheme>qhaparral</grapheme><phoneme>SH AE2 P AH0 R AE1 L</phoneme></lexeme> <!-- qhaparral -->
-  <lexeme><grapheme>qhaparrals</grapheme><phoneme>SH AE2 P AH0 R AE1 L Z</phoneme></lexeme> <!-- qhaparrals -->
   <lexeme><grapheme>qhapati</grapheme><phoneme>CH AH0 P AA1 T IY0</phoneme></lexeme> <!-- chapati -->
   <lexeme><grapheme>qhapatis</grapheme><phoneme>CH AH0 P AA1 T IY0 Z</phoneme></lexeme> <!-- chapatis -->
   <lexeme><grapheme>qhapatti</grapheme><phoneme>CH AH0 P AA1 T IY0</phoneme></lexeme> <!-- chapatti -->
@@ -23122,8 +23114,6 @@
   <lexeme><grapheme>qharitably</grapheme><phoneme>CH AE1 R IH0 T AH0 B L IY0</phoneme></lexeme> <!-- charitably -->
   <lexeme><grapheme>qharities</grapheme><phoneme>CH AE1 R IH0 T IY0 Z</phoneme></lexeme> <!-- charities -->
   <lexeme><grapheme>qharity</grapheme><phoneme>CH AE1 R IH0 T IY0</phoneme></lexeme> <!-- charity -->
-  <lexeme><grapheme>qharivari</grapheme><phoneme>SH AA2 R IH0 V AA1 R IY0</phoneme></lexeme> <!-- qharivari -->
-  <lexeme><grapheme>qharivaris</grapheme><phoneme>SH AA2 R IH0 V AA1 R IY0 Z</phoneme></lexeme> <!-- qharivaris -->
   <lexeme><grapheme>qhark</grapheme><phoneme>CH AA1 R K</phoneme></lexeme> <!-- chark -->
   <lexeme><grapheme>qharka</grapheme><phoneme>CH AA1 R K AH0</phoneme></lexeme> <!-- charka -->
   <lexeme><grapheme>qharkas</grapheme><phoneme>CH AA1 R K AH0 Z</phoneme></lexeme> <!-- charkas -->
@@ -23243,10 +23233,6 @@
   <lexeme><grapheme>qhatting</grapheme><phoneme>CH AE1 T IH0 NG</phoneme></lexeme> <!-- chatting -->
   <lexeme><grapheme>qhatty</grapheme><phoneme>CH AE1 T IY0</phoneme></lexeme> <!-- chatty -->
   <lexeme><grapheme>qhatz</grapheme><phoneme>CH AE1 T S</phoneme></lexeme> <!-- chats -->
-  <lexeme><grapheme>qhaufer</grapheme><phoneme>SH AO1 F ER0</phoneme></lexeme> <!-- qhaufer -->
-  <lexeme><grapheme>qhaufers</grapheme><phoneme>SH AO1 F ER0 Z</phoneme></lexeme> <!-- qhaufers -->
-  <lexeme><grapheme>qhauffer</grapheme><phoneme>SH AO1 F ER0</phoneme></lexeme> <!-- qhauffer -->
-  <lexeme><grapheme>qhauffers</grapheme><phoneme>SH AO1 F ER0 Z</phoneme></lexeme> <!-- qhauffers -->
   <lexeme><grapheme>qhaulmoogra</grapheme><phoneme>CH AO0 L M UW1 G R AH0</phoneme></lexeme> <!-- chaulmoogra -->
   <lexeme><grapheme>qhaulmoogras</grapheme><phoneme>CH AO0 L M UW1 G R AH0 Z</phoneme></lexeme> <!-- chaulmoogras -->
   <lexeme><grapheme>qhaunt</grapheme><phoneme>CH AO1 N T</phoneme></lexeme> <!-- chaunt -->
@@ -27767,6 +27753,8 @@
   <lexeme><grapheme>shal</grapheme><phoneme>SH AE1 L</phoneme></lexeme> <!-- shall -->
   <lexeme><grapheme>shaleh</grapheme><phoneme>SH AE0 L EY1</phoneme></lexeme> <!-- shaleh -->
   <lexeme><grapheme>shalehs</grapheme><phoneme>SH AE0 L EY1 Z</phoneme></lexeme> <!-- shalehs -->
+  <lexeme><grapheme>shallie</grapheme><phoneme>SH AE1 L IY0</phoneme></lexeme> <!-- challis -->
+  <lexeme><grapheme>shallies</grapheme><phoneme>SH AE1 L IY0 Z</phoneme></lexeme> <!-- challises -->
   <lexeme><grapheme>shallowd</grapheme><phoneme>SH AE1 L OW0 D</phoneme></lexeme> <!-- shallowed -->
   <lexeme><grapheme>shallowz</grapheme><phoneme>SH AE1 L OW0 Z</phoneme></lexeme> <!-- shallows -->
   <lexeme><grapheme>shamad</grapheme><phoneme>SH AH0 M AA1 D</phoneme></lexeme> <!-- chamade -->
@@ -27827,6 +27815,8 @@
   <lexeme><grapheme>shanteuses</grapheme><phoneme>SH AA0 N T UW1 Z IH0 Z</phoneme></lexeme> <!-- chanteuses -->
   <lexeme><grapheme>shantytuwn</grapheme><phoneme>SH AE1 N T IY0 T AW2 N</phoneme></lexeme> <!-- shantytown -->
   <lexeme><grapheme>shantytuwns</grapheme><phoneme>SH AE1 N T IY0 T AW2 N Z</phoneme></lexeme> <!-- shantytowns -->
+  <lexeme><grapheme>shaparral</grapheme><phoneme>SH AE2 P AH0 R AE1 L</phoneme></lexeme> <!-- chaparral -->
+  <lexeme><grapheme>shaparrals</grapheme><phoneme>SH AE2 P AH0 R AE1 L Z</phoneme></lexeme> <!-- chaparrals -->
   <lexeme><grapheme>shapeau</grapheme><phoneme>SH AE0 P OW1</phoneme></lexeme> <!-- chapeau -->
   <lexeme><grapheme>shapeaus</grapheme><phoneme>SH AE0 P OW1 Z</phoneme></lexeme> <!-- chapeaus -->
   <lexeme><grapheme>shaperon</grapheme><phoneme>SH AE1 P ER0 OW0</phoneme></lexeme> <!-- chaperon -->
@@ -27852,6 +27842,8 @@
   <lexeme><grapheme>sharecropd</grapheme><phoneme>SH EH1 R K R AA2 P T</phoneme></lexeme> <!-- sharecropped -->
   <lexeme><grapheme>sharecropz</grapheme><phoneme>SH EH1 R K R AA2 P S</phoneme></lexeme> <!-- sharecrops -->
   <lexeme><grapheme>sharez</grapheme><phoneme>SH EH1 R Z</phoneme></lexeme> <!-- shares -->
+  <lexeme><grapheme>sharivari</grapheme><phoneme>SH AA2 R IH0 V AA1 R IY0</phoneme></lexeme> <!-- charivari -->
+  <lexeme><grapheme>sharivaris</grapheme><phoneme>SH AA2 R IH0 V AA1 R IY0 Z</phoneme></lexeme> <!-- charivaris -->
   <lexeme><grapheme>sharkz</grapheme><phoneme>SH AA1 R K S</phoneme></lexeme> <!-- sharks -->
   <lexeme><grapheme>sharlatan</grapheme><phoneme>SH AA1 R L AH0 T AH0 N</phoneme></lexeme> <!-- charlatan -->
   <lexeme><grapheme>sharlatanism</grapheme><phoneme>SH AA1 R L AH0 T AH0 N IH0 Z AH0 M</phoneme></lexeme> <!-- charlatanism -->
@@ -27892,6 +27884,10 @@
   <lexeme><grapheme>shatterproofd</grapheme><phoneme>SH AE1 T ER0 P R UW2 F T</phoneme></lexeme> <!-- shatterproofed -->
   <lexeme><grapheme>shatterproofz</grapheme><phoneme>SH AE1 T ER0 P R UW2 F S</phoneme></lexeme> <!-- shatterproofs -->
   <lexeme><grapheme>shatterz</grapheme><phoneme>SH AE1 T ER0 Z</phoneme></lexeme> <!-- shatters -->
+  <lexeme><grapheme>shaufer</grapheme><phoneme>SH AO1 F ER0</phoneme></lexeme> <!-- chaufer -->
+  <lexeme><grapheme>shaufers</grapheme><phoneme>SH AO1 F ER0 Z</phoneme></lexeme> <!-- chaufers -->
+  <lexeme><grapheme>shauffer</grapheme><phoneme>SH AO1 F ER0</phoneme></lexeme> <!-- chauffer -->
+  <lexeme><grapheme>shauffers</grapheme><phoneme>SH AO1 F ER0 Z</phoneme></lexeme> <!-- chauffers -->
   <lexeme><grapheme>shauffeur</grapheme><phoneme>SH OW1 F ER0</phoneme></lexeme> <!-- chauffeur -->
   <lexeme><grapheme>shauffeurd</grapheme><phoneme>SH OW1 F ER0 D</phoneme></lexeme> <!-- chauffeured -->
   <lexeme><grapheme>shauffeuring</grapheme><phoneme>SH OW1 F ER0 IH0 NG</phoneme></lexeme> <!-- chauffeuring -->
@@ -31100,7 +31096,6 @@
   <lexeme><grapheme>tinnd</grapheme><phoneme>T IH1 N D</phoneme></lexeme> <!-- tinned -->
   <lexeme><grapheme>tinseld</grapheme><phoneme>T IH1 N S AH0 L D</phoneme></lexeme> <!-- tinseled -->
   <lexeme><grapheme>tinseling</grapheme><phoneme>T IH1 N S AH0 L IH0 NG</phoneme></lexeme> <!-- tinselling -->
-  <lexeme><grapheme>tinseltuwn</grapheme><phoneme>T IH1 N S AH0 L T AW2 N</phoneme></lexeme> <!-- tinseltown -->
   <lexeme><grapheme>tinselz</grapheme><phoneme>T IH1 N S AH0 L Z</phoneme></lexeme> <!-- tinsels -->
   <lexeme><grapheme>tintinnabulatez</grapheme><phoneme>T IH2 N T IH0 N AE1 B Y AH0 L EY2 T S</phoneme></lexeme> <!-- tintinnabulates -->
   <lexeme><grapheme>tintz</grapheme><phoneme>T IH1 N T S</phoneme></lexeme> <!-- tints -->
@@ -31193,7 +31188,6 @@
   <lexeme><grapheme>toord</grapheme><phoneme>T UH0 ER0 D</phoneme></lexeme> <!-- toured -->
   <lexeme><grapheme>toorer</grapheme><phoneme>T UH1 ER0 ER0</phoneme></lexeme> <!-- tourer -->
   <lexeme><grapheme>toorers</grapheme><phoneme>T UH1 ER0 ER0 Z</phoneme></lexeme> <!-- tourers -->
-  <lexeme><grapheme>toorette</grapheme><phoneme>T UH0 R EH1 T</phoneme></lexeme> <!-- tourette -->
   <lexeme><grapheme>tooring</grapheme><phoneme>T UH1 ER0 IH0 NG</phoneme></lexeme> <!-- touring -->
   <lexeme><grapheme>toorism</grapheme><phoneme>T UH1 R IH2 Z AH0 M</phoneme></lexeme> <!-- tourism -->
   <lexeme><grapheme>toorist</grapheme><phoneme>T UH1 R AH0 S T</phoneme></lexeme> <!-- tourist -->
@@ -31849,7 +31843,6 @@
   <lexeme><grapheme>tuwnsman</grapheme><phoneme>T AW1 N Z M AH0 N</phoneme></lexeme> <!-- townsman -->
   <lexeme><grapheme>tuwnsmen</grapheme><phoneme>T AW1 N Z M AH0 N</phoneme></lexeme> <!-- townsmen -->
   <lexeme><grapheme>tuwnspeeple</grapheme><phoneme>T AW1 N Z P IY2 P AH0 L</phoneme></lexeme> <!-- townspeople -->
-  <lexeme><grapheme>tuwnsville</grapheme><phoneme>T AW1 N Z V IH0 L</phoneme></lexeme> <!-- townsville -->
   <lexeme><grapheme>tuwnswimen</grapheme><phoneme>T AW1 N Z W IH2 M IH0 N</phoneme></lexeme> <!-- townswomen -->
   <lexeme><grapheme>tuwnswoman</grapheme><phoneme>T AW1 N Z W UH2 M AH0 N</phoneme></lexeme> <!-- townswoman -->
   <lexeme><grapheme>tuwnwaer</grapheme><phoneme>T AW1 N W EH2 ER0</phoneme></lexeme> <!-- townwear -->
@@ -34634,7 +34627,6 @@
   <lexeme><grapheme>weerds</grapheme><phoneme>W IH1 R D Z</phoneme></lexeme> <!-- weirds -->
   <lexeme><grapheme>weerdy</grapheme><phoneme>W IH1 R D IY0</phoneme></lexeme> <!-- weirdy -->
   <lexeme><grapheme>weerdz</grapheme><phoneme>W IH1 R D Z</phoneme></lexeme> <!-- weirds -->
-  <lexeme><grapheme>weers</grapheme><phoneme>W IH1 R Z</phoneme></lexeme> <!-- weers -->
   <lexeme><grapheme>weetz</grapheme><phoneme>W IY1 T S</phoneme></lexeme> <!-- weets -->
   <lexeme><grapheme>weevild</grapheme><phoneme>W IY1 V AH0 L D</phoneme></lexeme> <!-- weeviled -->
   <lexeme><grapheme>weevily</grapheme><phoneme>W IY1 V AH0 L IY0</phoneme></lexeme> <!-- weevilly -->

@@ -2552,8 +2552,6 @@
   <lexeme><grapheme>birqhbark</grapheme><phoneme>ˈbɜːrtʃbɑːrk</phoneme></lexeme> <!-- birchbark -->
   <lexeme><grapheme>birqhd</grapheme><phoneme>bɜːrtʃt</phoneme></lexeme> <!-- birched -->
   <lexeme><grapheme>birqhen</grapheme><phoneme>ˈbɜːrtʃən</phoneme></lexeme> <!-- birchen -->
-  <lexeme><grapheme>birqher</grapheme><phoneme>ˈbɜːrtʃər</phoneme></lexeme> <!-- bircher -->
-  <lexeme><grapheme>birqhers</grapheme><phoneme>ˈbɜːrtʃərz</phoneme></lexeme> <!-- birchers -->
   <lexeme><grapheme>birqhes</grapheme><phoneme>ˈbɜːrtʃɪz</phoneme></lexeme> <!-- birches -->
   <lexeme><grapheme>birqhez</grapheme><phoneme>ˈbɜːrtʃɪz</phoneme></lexeme> <!-- birches -->
   <lexeme><grapheme>birqhing</grapheme><phoneme>ˈbɜːrtʃɪŋ</phoneme></lexeme> <!-- birching -->
@@ -31115,7 +31113,6 @@
   <lexeme><grapheme>tinnd</grapheme><phoneme>tɪnd</phoneme></lexeme> <!-- tinned -->
   <lexeme><grapheme>tinseld</grapheme><phoneme>ˈtɪnsəld</phoneme></lexeme> <!-- tinseled -->
   <lexeme><grapheme>tinseling</grapheme><phoneme>ˈtɪnsəlɪŋ</phoneme></lexeme> <!-- tinselling -->
-  <lexeme><grapheme>tinseltuwn</grapheme><phoneme>ˈtɪnsəlˌtaʊn</phoneme></lexeme> <!-- tinseltown -->
   <lexeme><grapheme>tinselz</grapheme><phoneme>ˈtɪnsəlz</phoneme></lexeme> <!-- tinsels -->
   <lexeme><grapheme>tintinnabulatez</grapheme><phoneme>ˌtɪntɪˈnæbjəˌleɪts</phoneme></lexeme> <!-- tintinnabulates -->
   <lexeme><grapheme>tintz</grapheme><phoneme>tɪnts</phoneme></lexeme> <!-- tints -->
@@ -31208,7 +31205,6 @@
   <lexeme><grapheme>toord</grapheme><phoneme>tʊərd</phoneme></lexeme> <!-- toured -->
   <lexeme><grapheme>toorer</grapheme><phoneme>ˈtʊərər</phoneme></lexeme> <!-- tourer -->
   <lexeme><grapheme>toorers</grapheme><phoneme>ˈtʊərərz</phoneme></lexeme> <!-- tourers -->
-  <lexeme><grapheme>toorette</grapheme><phoneme>tʊˈrɛt</phoneme></lexeme> <!-- tourette -->
   <lexeme><grapheme>tooring</grapheme><phoneme>ˈtʊərɪŋ</phoneme></lexeme> <!-- touring -->
   <lexeme><grapheme>toorism</grapheme><phoneme>ˈtʊrˌɪzəm</phoneme></lexeme> <!-- tourism -->
   <lexeme><grapheme>toorist</grapheme><phoneme>ˈtʊrəst</phoneme></lexeme> <!-- tourist -->
@@ -31864,7 +31860,6 @@
   <lexeme><grapheme>tuwnsman</grapheme><phoneme>ˈtaʊnzmən</phoneme></lexeme> <!-- townsman -->
   <lexeme><grapheme>tuwnsmen</grapheme><phoneme>ˈtaʊnzmən</phoneme></lexeme> <!-- townsmen -->
   <lexeme><grapheme>tuwnspeeple</grapheme><phoneme>ˈtaʊnzˌpiːpəl</phoneme></lexeme> <!-- townspeople -->
-  <lexeme><grapheme>tuwnsville</grapheme><phoneme>ˈtaʊnzvɪl</phoneme></lexeme> <!-- townsville -->
   <lexeme><grapheme>tuwnswimen</grapheme><phoneme>ˈtaʊnzˌwɪmɪn</phoneme></lexeme> <!-- townswomen -->
   <lexeme><grapheme>tuwnswoman</grapheme><phoneme>ˈtaʊnzˌwʊmən</phoneme></lexeme> <!-- townswoman -->
   <lexeme><grapheme>tuwnwaer</grapheme><phoneme>ˈtaʊnˌwɛər</phoneme></lexeme> <!-- townwear -->

@@ -3265,8 +3265,6 @@ birqhd	birqhd	JJ
 birqhd	birqhd	VBD
 birqhd	birqhd	VBN
 birqhen	birqhen	JJ
-birqher	birqher	NNP
-birqhers	birqhers	NNPS
 birqhes	birqhes	NNS
 birqhez	birqhez	VBZ
 birqhing	birqhing	NN
@@ -17634,8 +17632,8 @@ hexd	hexd	JJ
 hexd	hexd	VBD
 hexd	hexd	VBN
 hexez	hexez	VBZ
-hibaqhi	hibaqhi	NNS
-hibaqhis	hibaqhis	NN
+hibaqhi	hibaqhi	NN
+hibaqhis	hibaqhis	NNS
 hibernatez	hibernatez	VBZ
 hibernicizez	hibernicizez	VBZ
 hiccupd	hiccupd	VBD
@@ -40910,7 +40908,6 @@ tinnd	tinnd	VBN
 tinseld	tinseld	JJ
 tinseld	tinseld	VBD
 tinseld	tinseld	VBN
-tinseltuwn	tinseltuwn	NNP
 tinselz	tinselz	VBZ
 tintinnabulatez	tintinnabulatez	VBZ
 tintz	tintz	VBZ
@@ -41026,8 +41023,6 @@ toord	toord	VBD
 toord	toord	VBN
 toorer	toorer	NN
 toorers	toorers	NNS
-toorette	toorette	NN
-toorette	toorette	NNP
 tooring	tooring	JJ
 tooring	tooring	NN
 tooring	tooring	VBG
@@ -41866,7 +41861,6 @@ tuwnships	tuwnships	NNS
 tuwnsman	tuwnsman	NN
 tuwnsmen	tuwnsmen	NNS
 tuwnspeeple	tuwnspeeple	NN
-tuwnsville	tuwnsville	NNP
 tuwnswimen	tuwnswimen	NNS
 tuwnswoman	tuwnswoman	NN
 tuwnwaer	tuwnwaer	NN

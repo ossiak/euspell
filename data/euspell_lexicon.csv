@@ -18532,8 +18532,8 @@ birch,NN|NN1|VV0,101,birqh
 birchbark,NN1,101,birqhbark
 birched,JJ|VVD|VVN,121,birqhd
 birchen,JJ,101,birqhen
-bircher,NP1,101,birqher
-birchers,NP2,101,birqhers
+bircher,NP1,000,[]
+birchers,NP2,000,[]
 birches,NN2|VVZ,112,birqhes|birqhez
 birching,NN1|VVG,101,birqhing
 birchwood,NN|NN1,101,birqhwood
@@ -44942,6 +44942,8 @@ demonstrativeness,NN,101,demonstrativness
 demonstratives,NN2,101,demonstrativs
 demonstrator,NN1,000,[]
 demonstrators,NN2,000,[]
+demonym,NN1,000,[]
+demonyms,NN2,000,[]
 demoralisation,NN|NN1,601,demoralization
 demoralisations,NN2,601,demoralizations
 demoralise,VV0,601,demoralize
@@ -82554,8 +82556,8 @@ hiations,NN2,500,[]
 hiatus,NN|NN1,000,[]
 hiatuses,NN2,000,[]
 hiawatha,NP,000,[]
-hibachi,NN2,101,hibaqhi
-hibachis,NN1,101,hibaqhis
+hibachi,NN1,101,hibaqhi
+hibachis,NN2,101,hibaqhis
 hibakusha,NN1|NN2,000,[]
 hibernacle,NN1,000,[]
 hibernacles,NN2,000,[]
@@ -183973,7 +183975,7 @@ tinselled,JJ|VVD|VVN,021,tinseld
 tinselling,NN|VVG,631,tinseling
 tinselly,JJ,000,[]
 tinsels,NN2|VVZ,012,tinsels|tinselz
-tinseltown,NP,101,tinseltuwn
+tinseltown,NP,000,[]
 tinsmith,NN1,000,[]
 tinsmithing,NN,000,[]
 tinsmiths,NN2,000,[]
@@ -185208,7 +185210,7 @@ tourbillons,NN2,701,toorbillions
 toured,VVD|VVN,121,toord
 tourer,NN1,101,toorer
 tourers,NN2,101,toorers
-tourette,NN|NP,101,toorette
+tourette,NP,000,[]
 touring,JJ|NN|VVG,101,tooring
 tourism,NN,101,toorism
 tourist,NN1,101,toorist
@@ -185323,7 +185325,7 @@ townships,NN2,101,tuwnships
 townsman,NN1,101,tuwnsman
 townsmen,NN2,101,tuwnsmen
 townspeople,NN,101,tuwnspeeple
-townsville,NP,101,tuwnsville
+townsville,NP,000,[]
 townswoman,NN1,101,tuwnswoman
 townswomen,NN2,101,tuwnswimen
 townwear,NN,101,tuwnwaer
