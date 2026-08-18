@@ -64,7 +64,7 @@ are right and the paper is out of date.
 | **The conversion game** — any modern browser | Nothing to install: [euspell.org/game/](https://euspell.org/game/) |
 
 Released Eupub builds — a signed Windows installer, a notarized macOS disk image,
-and a Linux AppImage — are attached to each release at
+a Linux AppImage, and a signed Android APK — are attached to each release at
 [github.com/ossiak/eupub/releases](https://github.com/ossiak/eupub/releases).
 
 ## A.3 What a reader can expect to find there
@@ -73,16 +73,19 @@ Stated as of **August 2026**, and deliberately not in detail, because this is th
 part that dates fastest.
 
 - **The browser extension** is on the Chrome Web Store, which also serves Edge,
-  Brave, Opera and other Chromium browsers. On Firefox and Safari, which have no
-  listing, it is built from source and loaded unpacked — two commands and a
-  developer-mode toggle.
+  Brave, Opera and other Chromium browsers. Safari has no store listing but does
+  have a signed, notarized app to download, drag to Applications, and switch on
+  in Safari's settings. Firefox is the one that still needs building from source,
+  where it loads as a temporary add-on that lasts until the browser restarts.
 - **The word-processor add-ins** have no marketplace listing on any of the four
-  platforms and are built from source. They are one-pass converters rather than
+  platforms. Three are built from source; Word can instead be pointed at a hosted
+  manifest and needs no build at all. They are one-pass converters rather than
   live spell-checkers: a command rewrites the document, and nothing is underlined
   as you type.
-- **Eupub** ships prebuilt for the three desktop platforms. Neither mobile build
-  is published, so Android and iOS are built from source and installed on your
-  own hardware.
+- **Eupub** ships prebuilt for the three desktop platforms and for Android, whose
+  APK is signed with the release key and installs directly. iOS is the exception:
+  it is in App Store review, and until that clears, an iPhone build has to be made
+  from source on your own hardware.
 - **The conversion game** is the one item with nothing to install: a single web
   page that asks the reader to rewrite a passage in euspell by hand and scores
   what they produce against the engine's own output. It needs no server, no
