@@ -79,12 +79,43 @@ per-extension "allow file access" grant as there is on Chrome. The shared
 runtime already detects the `safari-web-extension:` origin and deliberately
 leaves local content alone rather than hijacking the native viewer and erroring.
 
+## Distribution (notarized)
+
+To hand the extension to someone who doesn't have Xcode, package the host app
+for direct distribution — archive, export with your **Developer ID**, notarize,
+and staple — in one command:
+
+```bash
+EUSPELL_NOTARY_KEY=/path/to/AuthKey_XXXXXXXXXX.p8 \
+EUSPELL_NOTARY_KEY_ID=XXXXXXXXXX \
+EUSPELL_NOTARY_ISSUER=<issuer-uuid> \
+npm run build:safari:dist
+```
+
+The result is `dist/safari/Euspell-<version>-macos.zip`, a Gatekeeper-approved
+build: recipients unzip it, move `Euspell.app` to Applications, open it once,
+and enable the extension in **Safari ▸ Settings ▸ Extensions** — with no
+"Allow Unsigned Extensions" step, because the app and its extension are signed
+and notarized.
+
+- Requires a **Developer ID Application** certificate in your keychain.
+- Credentials are read **by path**, so nothing secret is written into the repo.
+  Instead of the three API-key variables you can point at a stored notarytool
+  profile with `EUSPELL_NOTARY_PROFILE` (see `xcrun notarytool
+  store-credentials`).
+- The signing team defaults to the project's; override with `EUSPELL_TEAM_ID`.
+- The zip is named by the app's actual `CFBundleShortVersionString`, so it
+  tracks the project's `MARKETING_VERSION`.
+
+The **Mac App Store** is the alternative route (submit the host app instead of
+shipping the `.app`); it needs its own app record and review and isn't covered
+here.
+
 ## Notes
 
-- **Not yet distributed.** There is no App Store / notarized build; this is a
-  build-from-source, development-signed extension. Distributing it would mean
-  archiving the app, notarizing it, and either shipping the `.app` or submitting
-  to the App Store.
+- **Two ways to install.** Build-from-source (above) for local development, or a
+  notarized Developer ID build via `npm run build:safari:dist` for handing out
+  — see [Distribution](#distribution-notarized).
 - **The Resources folder is generated.** Xcode references `dist/`, `src/`, and
   `icons/` inside it as *folder references*, so it copies whatever
   `build:safari` last staged — no per-file Xcode bookkeeping.
