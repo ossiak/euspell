@@ -485,7 +485,33 @@ export function is_verbal_s(tokens, idx) {
   // The head can sit two slots out when modifiers stack ("the man's really nice
   // car", "today's widely featured article"), so scan the modifier run rather
   // than testing one slot.
-  if (anyPrefixReal(w1a, AMBIGUOUS_MODIFIER)) {
+  // ...but only when the word is a modifier and nothing else. A word with a noun
+  // reading of its own is the head, not a modifier stacked before one, so the
+  // clitic is a genitive and the two-slots-ahead scan must not run.
+  //
+  // Without this guard the branch captured every noun that also carries JJ —
+  // "the shepherd's head", "the family's home", "the horse's back" — and,
+  // finding no second noun after them, returned "predicative, hence verb".
+  // The locative guard below was written to keep exactly those words on the
+  // genitive default and never saw them, because JJ matched two branches
+  // earlier. NN/NP rather than isNounHead: the adverbial exclusion is what puts
+  // "home" and "back" here in the first place.
+  //
+  // Participles are exempt from the guard, because a gerund ALWAYS carries a
+  // noun reading ("coming" is JJ|NN|NN1|VVG) and would otherwise be read as a
+  // head — losing "anybody's coming along", which is the case the branch exists
+  // for. So the noun reading only wins when it is not also a participle.
+  // The guard is also lifted when the possessor is an indefinite pronoun, since
+  // "everyone's ready" and "anybody's coming" are predicative where "the
+  // shepherd's head" is not. PN1 is deliberately absent from SUBJECT_PRON above,
+  // because it does take genitives ("anybody's guess") — but those are a plain
+  // noun after the clitic, which never reaches this branch at all.
+  const participle = anyPrefixReal(w1a, ['VVG', 'VVN']);
+  const pronounPossessor = anyPrefixReal(w1b, ['PN']);
+  if (
+    anyPrefixReal(w1a, AMBIGUOUS_MODIFIER)
+    && (participle || pronounPossessor || !anyPrefixReal(w1a, ['NN', 'NP']))
+  ) {
     for (const w of [w2a, w3a]) {
       if (isNounHead(w)) return false;                  // attributive → genitive
       if (!anyPrefixReal(w, AMBIGUOUS_MODIFIER)) break; // run ended without a head

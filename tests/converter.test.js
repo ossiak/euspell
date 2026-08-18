@@ -85,7 +85,16 @@ test("whole-word possessive contractions route the clitic like the bare 's", () 
   assert.equal(conv([["someone's", ''], ['house', 'NN1']], "someone's"), "somwun's"); // genitive
   assert.equal(conv([["nobody's", ''], ['business', 'NN1']], "nobody's"), "nobody's");// genitive
   assert.equal(conv([["nobody's", ''], ['looking', 'VVG']], "nobody's"), "nobody'z"); // is/has
-  assert.equal(conv([["everyone's", ''], ['ready', 'JJ']], "everyone's"), "evrywun'z");// predicate → is
+  // A bare adjective is the one case this hand-built stream cannot decide, and
+  // the gap the comment above warns about is exactly why. "ready" is JJ|NN|VV0,
+  // and a following word with a noun reading now marks the clitic a genitive —
+  // the fix for "the shepherd's head". What overrides that is an indefinite
+  // pronoun BEFORE the clitic, which the real tokenizer supplies as its own
+  // pseudo-token (everyone's -> [PN1][GE|VBZ|VHZ]) and this one-token stream
+  // does not. Through the tokenizer "Everyone's ready." converts to
+  // "Evrywun'z reddy." — asserted in dom-walker.test.js, which is where the
+  // real-path guarantee lives.
+  assert.equal(conv([["everyone's", ''], ['ready', 'JJ']], "everyone's"), "evrywun's");// no pronoun in this stream → genitive
   assert.equal(conv([["everyone's", ''], ['here', 'RL']], "everyone's"), "evrywun'z"); // locative → is
   assert.equal(conv([["someone's", ''], ['there', 'EX']], "someone's"), "somwun'z");   // existential → is
 });

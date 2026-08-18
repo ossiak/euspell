@@ -167,6 +167,24 @@ test('is_verbal_s: an attributive participle + noun keeps the genitive', () => {
   assert.equal(is_verbal_s([t('the', 'AT'), t('author', 'NN1'), t("'s", 'GE'), t('published', 'VVN'), t('works', 'NN2')], 2), false);
 });
 
+test('is_verbal_s: a noun that also carries JJ is the head, not a modifier', () => {
+  // The bug this guards: "head" (JJ|NN1|VV0), "home" (JJ|NN1|RL|VV0) and "back"
+  // (II32|JJ|NN1|RP|VV0) matched the ambiguous-modifier branch on their JJ tag,
+  // which then looked two slots ahead for a noun, found a verb, and called the
+  // clitic predicative. "The shepherd's head turned" came out "shepherd'z" —
+  // the possessive the press kit uses as its worked example of what euspell
+  // distinguishes. A word with a noun reading of its own is the head.
+  assert.equal(is_verbal_s([t('the', 'AT'), t('shepherd', 'NN1'), t("'s", 'GE'), t('head', 'JJ|NN1|VV0'), t('turned', 'VVD')], 2), false);
+  assert.equal(is_verbal_s([t('the', 'AT'), t('family', 'NN1'), t("'s", 'GE'), t('home', 'JJ|NN1|RL|VV0'), t('was', 'VBDZ')], 2), false);
+  assert.equal(is_verbal_s([t('the', 'AT'), t('horse', 'NN1'), t("'s", 'GE'), t('back', 'II32|JJ|NN1|RP|VV0'), t('was', 'VBDZ')], 2), false);
+  // A participle is exempt: a gerund always carries a noun reading, so guarding
+  // on "has a noun tag" alone would lose the case the branch exists for.
+  assert.equal(is_verbal_s([t('anybody', 'PN1'), t("'s", 'GE'), t('coming', 'JJ|NN|NN1|VVG'), t('along', 'II|RP')], 1), true);
+  // So is an indefinite-pronoun possessor: "everyone's ready" is predicative,
+  // where the same adjective after a noun possessor would be a genitive.
+  assert.equal(is_verbal_s([t('everyone', 'PN1'), t("'s", 'GE'), t('ready', 'JJ|NN|VV0')], 1), true);
+});
+
 test('is_verbal_s: a predicative participle or pronoun marks the contracted verb', () => {
   // "he's gone" — contracted has
   assert.equal(is_verbal_s([t('he', 'PPHS1'), t("'s", 'GE'), t('gone', 'VVN')], 1), true);
