@@ -149,7 +149,7 @@ and re-saving the paper doesn't raise a false alarm.
       the publish script is the model if this is ever worth warning about too.
 - [ ] **Extension install instructions** — blocked. The Chrome/Edge and Firefox
       packages are ready to submit but not submitted, so there are no store URLs
-      to print, and the Safari build is development-signed only. See
+      to print. The Safari build is a notarized download. See
       [signing.md](signing.md).
 - [ ] **Eupub install instructions** — blocked on the same thing from the other
       side: Eupub *is* a real signed binary (Authenticode + Android keystore),

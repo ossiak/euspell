@@ -176,7 +176,7 @@ One engine, many surfaces. None of them re-implement the reform.
 | Product | Platforms | Status |
 | --- | --- | --- |
 | **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | Built, **not yet published to any store** |
-| **Safari extension** | macOS — an Xcode host app built once and enabled in Safari's settings | Built; **not distributed** (no notarized or App Store build) |
+| **Safari extension** | macOS — a signed, Apple-notarized app that carries the extension, enabled in Safari's settings | **Released as a direct download** ([notarized DMG](https://euspell.org/downloads/Euspell-Safari-0.3.1-macOS.dmg)); no App Store listing |
 | **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts, with its own zoom and print | Ships with the extension |
 | **Eupub e-reader** | Windows (signed), macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.3 released** |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
