@@ -92,11 +92,18 @@ EUSPELL_NOTARY_ISSUER=<issuer-uuid> \
 npm run build:safari:dist
 ```
 
-The result is `dist/safari/Euspell-<version>-macos.zip`, a Gatekeeper-approved
-build: recipients unzip it, move `Euspell.app` to Applications, open it once,
-and enable the extension in **Safari ▸ Settings ▸ Extensions** — with no
-"Allow Unsigned Extensions" step, because the app and its extension are signed
-and notarized.
+This emits two Gatekeeper-approved artifacts in `dist/safari/`, each notarized
+and stapled:
+
+- `Euspell-<version>-macos.dmg` — a drag-to-Applications disk image (the
+  conventional Mac presentation), signed with Developer ID and notarized as its
+  own container.
+- `Euspell-<version>-macos.zip` — the same stapled app, zipped with `ditto`.
+
+Recipients open either, move `Euspell.app` to Applications, open it once, and
+enable the extension in **Safari ▸ Settings ▸ Extensions** — with no "Allow
+Unsigned Extensions" step, because the app and its extension are signed and
+notarized.
 
 - Requires a **Developer ID Application** certificate in your keychain.
 - Credentials are read **by path**, so nothing secret is written into the repo.
@@ -104,8 +111,10 @@ and notarized.
   profile with `EUSPELL_NOTARY_PROFILE` (see `xcrun notarytool
   store-credentials`).
 - The signing team defaults to the project's; override with `EUSPELL_TEAM_ID`.
-- The zip is named by the app's actual `CFBundleShortVersionString`, so it
-  tracks the project's `MARKETING_VERSION`.
+- Both artifacts are named by the app's actual `CFBundleShortVersionString`, so
+  they track the project's `MARKETING_VERSION`.
+- The disk image is notarized in a **second** submission (a `.dmg` is a new
+  signed artifact), so the pipeline waits on Apple twice.
 
 The **Mac App Store** is the alternative route (submit the host app instead of
 shipping the `.app`); it needs its own app record and review and isn't covered
