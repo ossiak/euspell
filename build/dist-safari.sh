@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #
 # Package the macOS Safari host app (safari/Euspell.xcodeproj) for DIRECT
-# distribution: archive -> export with Developer ID -> notarize -> staple.
-# The result is a Gatekeeper-approved Euspell.app users can double-click to
-# install, with the extension already signed (no "Allow Unsigned Extensions").
+# distribution: archive -> export with Developer ID -> notarize -> staple,
+# emitting both a .zip and a drag-to-Applications .dmg (each notarized and
+# stapled). The result is a Gatekeeper-approved Euspell.app users can install,
+# with the extension already signed (no "Allow Unsigned Extensions").
 #
 # Run the whole pipeline (stages the extension payload first):
 #
@@ -107,7 +108,37 @@ DIST_ZIP="$OUT/Euspell-$VERSION-macos.zip"
 ditto -c -k --keepParent "$APP" "$DIST_ZIP"
 rm -f "$OUT/Euspell-notarize.zip"
 
+# --- DMG (the conventional Mac presentation) ------------------------------
+# A drag-to-Applications disk image built from the stapled app, then signed
+# with Developer ID, notarized (the .dmg is its own signed artifact, so it
+# needs its own submission), and stapled — so the download validates offline
+# and Gatekeeper admits the image on mount. The app inside is already stapled,
+# so both the container and its contents carry a ticket.
+echo "==> Building DMG"
+DIST_DMG="$OUT/Euspell-$VERSION-macos.dmg"
+STAGE="$OUT/dmg-stage"
+rm -rf "$STAGE"; mkdir -p "$STAGE"
+ditto "$APP" "$STAGE/Euspell.app"          # ditto keeps the signature + staple
+ln -s /Applications "$STAGE/Applications"  # the drag-install target
+rm -f "$DIST_DMG"
+hdiutil create -volname "Euspell" -srcfolder "$STAGE" -fs HFS+ -format UDZO -ov "$DIST_DMG" >/dev/null
+
+echo "==> Signing DMG (Developer ID)"
+DEVID="$(security find-identity -v -p codesigning | awk '/Developer ID Application/ && /'"$TEAM"'/ {print $2; exit}')"
+[[ -n "$DEVID" ]] || { echo "error: no 'Developer ID Application' identity for team $TEAM in the keychain." >&2; exit 1; }
+codesign --force --timestamp --sign "$DEVID" "$DIST_DMG"
+
+echo "==> Notarizing DMG (waits for Apple; usually 1-5 min)"
+xcrun notarytool submit "$DIST_DMG" "${NOTARY_AUTH[@]}" --wait
+
+echo "==> Stapling DMG"
+xcrun stapler staple "$DIST_DMG"
+xcrun stapler validate "$DIST_DMG"
+spctl -a -vvv -t open --context context:primary-signature "$DIST_DMG" 2>&1 || true
+rm -rf "$STAGE"
+
 echo
 echo "Done. Distributable, notarized + stapled:"
 echo "  app: $APP"
 echo "  zip: $DIST_ZIP"
+echo "  dmg: $DIST_DMG"
