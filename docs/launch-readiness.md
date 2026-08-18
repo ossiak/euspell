@@ -16,10 +16,10 @@ link to today:
 
 | | |
 | --- | --- |
-| Website | [euspell.org](https://euspell.org) is **live**, but still serves only a "Coming soon" splash. `www.euspell.org` now resolves too (it did not on 31 July) |
+| Website | [euspell.org](https://euspell.org) is **live**. The home page is still the "Coming soon" splash, but three things now sit behind it: [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/) and `/downloads/`. `www.euspell.org` resolves too (it did not on 31 July) |
 | Shop | [shop.euspell.org](https://shop.euspell.org) is **live** — a Fourthwall storefront selling logo tees and hoodies. It carries no explanation of what euspell is |
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
-| Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404 |
+| Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404, re-checked 18 August. What *is* live beyond the splash: [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/), and `/downloads/` carrying the Safari DMG |
 | Source repositories | Both **public** under GPL-3.0-or-later: `ossiak/euspell` since 15 August, `ossiak/eupub` since 16 August |
 | Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. **0.3.1 uploaded 17 August and in review**; until it is approved the store serves 0.3.0, which predates the `bear` fix and converts adjective-preceded nouns to the verb sense. The Safari build is now a signed, **Apple-notarized** DMG, live at [euspell.org/downloads](https://euspell.org/downloads/Euspell-Safari-0.3.1-macOS.dmg) since 18 August; no App Store listing |
 | Eupub | **v0.3.1 released and publicly downloadable** — four signed assets per release: Windows installer (Authenticode), macOS disk image (notarized), Linux AppImage, and an Android APK. iOS is submitted to the App Store and in review |

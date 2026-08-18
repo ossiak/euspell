@@ -56,7 +56,7 @@ Three lengths, ready to paste.
 | **Privacy** | No account, no server, no telemetry. The lexicon ships inside each product; text never leaves the device. Dictation is the one exception — it uses the browser's built-in speech recognition, which transcribes in the cloud |
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
-| **Website** | [euspell.org](https://euspell.org) — live, currently a splash page |
+| **Website** | [euspell.org](https://euspell.org) — live; the splash page, plus [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/) and the downloads directory |
 | **Shop** | [shop.euspell.org](https://shop.euspell.org) — live; logo tees and hoodies, fulfilled by Fourthwall |
 | **Current versions** | Browser extension 0.3.1; Eupub 0.3.1 |
 | **Chrome Web Store** | [Euspell](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) — published 17 August 2026; the same listing serves Edge, Brave, Opera and other Chromium browsers |
@@ -175,14 +175,15 @@ One engine, many surfaces. None of them re-implement the reform.
 
 | Product | Platforms | Status |
 | --- | --- | --- |
-| **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | Built, **not yet published to any store** |
+| **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | **Live on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja)** since 17 August, which serves every Chromium browser. The Firefox build is not yet signed |
 | **Safari extension** | macOS — a signed, Apple-notarized app that carries the extension, enabled in Safari's settings | **Released as a direct download** ([notarized DMG](https://euspell.org/downloads/Euspell-Safari-0.3.1-macOS.dmg)); no App Store listing |
 | **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts, with its own zoom and print | Ships with the extension |
-| **Eupub e-reader** | Windows (signed), macOS (signed + notarized), Linux, Android (preview); iOS in progress | **v0.2.3 released** |
+| **Eupub e-reader** | Windows (signed), macOS (signed + notarized, arm64), Linux, Android (signed APK); iOS in App Store review | **v0.3.1 released** — four signed assets per release |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
 | **LibreOffice Writer** | Windows, Linux, macOS | Built, source-install |
 | **Google Docs** | Any browser (Apps Script) | Built, source-install |
 | **Apple Pages** | macOS (JXA automation) | Built, source-install |
+| **Conversion game** | Any browser, desktop or phone — convert a passage by hand and be scored on it | **Live** at [euspell.org/game/](https://euspell.org/game/) |
 | **Dictionary exports** | Hunspell, LibreOffice `.oxt`, Word custom dictionary, Harper, TTS `.pls` | Generated from the lexicon |
 
 Also notable: **in-browser dictation** that types in reformed spelling at the

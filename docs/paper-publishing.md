@@ -147,16 +147,19 @@ and re-saving the paper doesn't raise a false alarm.
       carry `/Alt` on 0 of 6 figures, which is the one real accessibility gap in
       the paper — everything else is already tagged. `pdfHasDocumentTitle()` in
       the publish script is the model if this is ever worth warning about too.
-- [ ] **Extension install instructions** — blocked. The Chrome/Edge and Firefox
-      packages are ready to submit but not submitted, so there are no store URLs
-      to print. The Safari build is a notarized download. See
-      [signing.md](signing.md).
-- [ ] **Eupub install instructions** — blocked on the same thing from the other
-      side: Eupub *is* a real signed binary (Authenticode + Android keystore),
-      but v0.2.2 sits on a private repo, so there is no download link that works
-      for a reader.
-- [ ] **Re-check the GPL-3 source URLs** the paper prints. They 404 for everyone
-      but the author today; the paper should not ship again until they resolve.
+- [x] **Extension install instructions** — unblocked. The Chrome Web Store
+      listing went live on 17 August and serves every Chromium browser, and the
+      Safari build is a notarized DMG. Only Firefox is still unsigned. The paper
+      no longer prints steps at all: Appendix A points readers online instead,
+      so a store URL changing does not strand a printed edition. See
+      [paper-appendix-a.md](paper-appendix-a.md) and [signing.md](signing.md).
+- [x] **Eupub install instructions** — unblocked. `ossiak/eupub` is public and
+      v0.3.1 ships four signed assets per release (Authenticode installer,
+      notarized DMG, AppImage, signed APK), so every platform has a download
+      link that works for a reader. iOS remains in App Store review.
+- [x] **Re-check the GPL-3 source URLs** the paper prints. Both repositories are
+      public and return 200: `ossiak/euspell` since 15 August, `ossiak/eupub`
+      since 16 August.
 - [ ] **Re-export after any figure change.** LibreOffice names extracted images
       by content hash, so an edited figure lands under a new filename — the
       publish script clears `public/paper/` first, which is what keeps orphaned
