@@ -16,7 +16,8 @@ Google Docs, or Apple Pages — see
 <https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja>
 
 The same listing installs on Edge, Brave, Opera, Vivaldi and other Chromium
-browsers. Firefox and Safari are built from source — see below.
+browsers. Safari has a signed, notarized download, and Firefox is built from
+source — see below.
 
 1. Open the Euspell listing on the **Chrome Web Store**.
 2. Click **Add to Chrome**.
@@ -44,11 +45,16 @@ addons.mozilla.org** — no listing has been submitted — so load the built
 `.zip` as a temporary add-on for now. On Firefox site access is opt-in, so the
 welcome tab shows a **Grant access** button you must click before pages convert.
 
-**Safari** (macOS) ships as a small app you build once and enable in Safari's
-settings — there's no store listing yet. Web pages and remote PDFs convert just
-as on Chrome; the only platform limits are that Safari extensions can't read
-local `file://` pages or PDFs (those stay in Safari's own viewer). Full steps
-are in [safari/README.md](../safari/README.md).
+**Safari** (macOS) is a signed, **notarized** app you download and enable in
+Safari's settings — there's no App Store listing yet. Get
+[Euspell-Safari-0.3.1-macOS.dmg](https://euspell.org/downloads/Euspell-Safari-0.3.1-macOS.dmg),
+open the disk image, drag **Euspell.app** to Applications, open it once to
+register the extension, then turn **Euspell** on in **Safari ▸ Settings ▸
+Extensions** and allow it on the sites you want. Web pages and remote PDFs
+convert just as on Chrome; the only platform limits are that Safari extensions
+can't read local `file://` pages or PDFs (those stay in Safari's own viewer).
+Building it from source instead is documented in
+[safari/README.md](../safari/README.md).
 
 > **Not the Google Play Store.** Play distributes Android apps, not browser
 > extensions. (Eupub, the standalone euspell e-reader, *is* an Android app — a
