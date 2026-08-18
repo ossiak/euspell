@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generates dist/euspell.dic and dist/euspell.aff for Hunspell.
+ * Generates dict/euspell.dic and dict/euspell.aff for Hunspell.
  *
  * Run: node build/gen-wordlist.js
  *
@@ -14,7 +14,7 @@
  * multi-word entries in a basic .dic. Use LanguageTool rules for phrase checking.
  *
  * To install in LibreOffice: Tools → Language → Writing Aids → Add → select .oxt
- * (package dist/euspell.aff + dist/euspell.dic into a .oxt ZIP with a description.xml)
+ * (package dict/euspell.aff + dict/euspell.dic into a .oxt ZIP with a description.xml)
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -23,9 +23,9 @@ import { parse } from 'csv-parse/sync';
 
 const ROOT = new URL('..', import.meta.url);
 const DATA = new URL('data/', ROOT);
-const DIST = new URL('dict/', ROOT);
+const DICT = new URL('dict/', ROOT);
 
-mkdirSync(fileURLToPath(DIST), { recursive: true });
+mkdirSync(fileURLToPath(DICT), { recursive: true });
 
 // REP rules are only emitted for patterns appearing in >= MIN_REP_FREQ words.
 // High threshold = only systematic morphological patterns (not one-off stem changes).
@@ -131,7 +131,7 @@ for (const row of parseCsv('euspell_lexicon_contractions.csv', true)) {
 
 const sorted = [...validWords].sort((a, b) => a.localeCompare(b, 'en'));
 const dicContent = `${[sorted.length.toString(), ...sorted].join('\n')}\n`;
-writeFileSync(fileURLToPath(new URL('euspell.dic', DIST)), dicContent, 'utf8');
+writeFileSync(fileURLToPath(new URL('euspell.dic', DICT)), dicContent, 'utf8');
 console.log(`[euspell-build] dict/euspell.dic  — ${sorted.length.toLocaleString()} words`);
 
 // ---------------------------------------------------------------------------
@@ -174,5 +174,5 @@ REP ${repRules.length}
 ${repRules.join('\n')}
 `;
 
-writeFileSync(fileURLToPath(new URL('euspell.aff', DIST)), affContent, 'utf8');
+writeFileSync(fileURLToPath(new URL('euspell.aff', DICT)), affContent, 'utf8');
 console.log(`[euspell-build] dict/euspell.aff  — ${repRules.length} REP rules`);
