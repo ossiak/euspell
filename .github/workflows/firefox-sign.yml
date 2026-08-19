@@ -46,6 +46,13 @@ on:
 jobs:
   sign:
     runs-on: ubuntu-latest
+    # A release that already carries a signed .xpi has nothing to sign: AMO never
+    # accepts a version twice, so the attempt could only fail. That happens when a
+    # version is signed by hand from the Actions tab first and the release is cut
+    # afterwards to host the result, which is how 0.3.1 shipped.
+    if: >-
+      github.event_name != 'release' ||
+      !contains(join(github.event.release.assets.*.name, ','), '.xpi')
     steps:
       - uses: actions/checkout@v4
 
