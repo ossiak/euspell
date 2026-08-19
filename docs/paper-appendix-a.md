@@ -75,8 +75,9 @@ part that dates fastest.
 - **The browser extension** is on the Chrome Web Store, which also serves Edge,
   Brave, Opera and other Chromium browsers. Safari has no store listing but does
   have a signed, notarized app to download, drag to Applications, and switch on
-  in Safari's settings. Firefox is the one that still needs building from source,
-  where it loads as a temporary add-on that lasts until the browser restarts.
+  in Safari's settings. Firefox has neither a listing nor a build step: its
+  Mozilla-signed `.xpi` is published with the releases, and opening that file in
+  Firefox installs it permanently.
 - **The word-processor add-ins** have no marketplace listing on any of the four
   platforms. Three are built from source; Word can instead be pointed at a hosted
   manifest and needs no build at all. They are one-pass converters rather than

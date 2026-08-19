@@ -175,11 +175,21 @@ npm run build:firefox
 npm run lint:firefox      # web-ext lint --source-dir build/firefox
 ```
 
-As of the `gecko_android` change the linter reports **0 errors** and three
-warnings, none of them Android-specific: the known
-`MISSING_DATA_COLLECTION_PERMISSIONS` (see the Notes below) and two pre-existing
-`UNSAFE_VAR_ASSIGNMENT` notices about dynamic `import()` calls. So nothing blocks
-submission — but *lint passing is not the same as working on a phone*. The popup,
+The linter reports **one error and three warnings**, and the error is expected:
+
+- **`MANIFEST_UPDATE_URL` — "update_url is not allowed."** `web-ext lint` applies
+  the rules for *Mozilla-hosted* add-ons whatever channel you are targeting, and
+  those forbid `update_url`. We self-distribute, where Mozilla's own
+  documentation says the opposite: *"If your extension is not hosted on AMO, you
+  must specify the location of your update manifest in your extension."* So the
+  error is the linter guessing the wrong channel. **It does mean a listed
+  submission would be rejected as-is** — going listed means dropping
+  `update_url` from [`gen-firefox.js`](../build/gen-firefox.js) first.
+- `MISSING_DATA_COLLECTION_PERMISSIONS` (see the Notes below) and two
+  `UNSAFE_VAR_ASSIGNMENT` notices about dynamic `import()` calls, none of them
+  Android-specific.
+
+So nothing blocks an unlisted submission — but *lint passing is not the same as working on a phone*. The popup,
 the `commands` keyboard shortcut (phones have no `Ctrl+Shift+9`), and the PDF
 viewer are the parts most likely to need mobile-specific handling, and none of
 them are covered by the desktop test suite. Test on a real device before you
@@ -241,11 +251,19 @@ considered choice rather than a deadline's side effect.
 > install it, which reads to the user as a broken link. This is the one thing
 > that catches people out about self-hosting.
 
-For automatic updates, add `browser_specific_settings.gecko.update_url` pointing
-at a JSON manifest you host, listing each version and its `.xpi` URL. Without it
-the add-on is installed permanently but never updates itself, and users have to
-be told when a new version exists. Worth doing before the second release, not the
-first.
+Automatic updates are wired up. `gecko.update_url` points at
+<https://ossiak.github.io/euspell/updates.json>, whose source is
+[`firefox/updates.json`](../firefox/updates.json); `pages.yml` copies it onto the
+Pages origin beside the Word add-in manifest.
+
+**Every signed release needs an entry added there**, with its version, the
+release asset URL, and an `update_hash` of `sha256:<hex>` — Firefox polls the
+file and installs the highest version it can run. Nothing regenerates it, so a
+release whose entry is missing simply never reaches anyone.
+
+One thing it cannot fix retroactively: **0.3.1 was signed before `update_url`
+existed**, so copies installed from it will never check for an update. Updating
+starts working from 0.3.2 onward.
 
 ### What a listed submission additionally needs
 

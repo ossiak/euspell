@@ -1,0 +1,17 @@
+{
+  "_comment": "Firefox update manifest for the self-distributed build. Published to GitHub Pages by .github/workflows/pages.yml and pointed at by browser_specific_settings.gecko.update_url in build/gen-firefox.js. Add one entry per signed release, newest last; Firefox picks the highest version it can install. update_link must be the signed .xpi, and https. Self-distribution only: AMO rejects update_url on a listed add-on.",
+  "addons": {
+    "euspell@euspell.org": {
+      "updates": [
+        {
+          "version": "0.3.1",
+          "update_link": "https://github.com/ossiak/euspell/releases/download/v0.3.1/euspell-0.3.1.xpi",
+          "update_hash": "sha256:016fd81bc5d113d9d8a87dd45bb23a3bb748c47c7842752e710e4d53bfb4ba27",
+          "browser_specific_settings": {
+            "gecko": { "strict_min_version": "128.0" }
+          }
+        }
+      ]
+    }
+  }
+}

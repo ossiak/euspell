@@ -40,10 +40,14 @@ The same Chrome Web Store listing will install on **Edge**, **Brave**, **Opera**
 extensions from other stores. In the meantime the unpacked build loads on all of
 them, Edge included.
 
-**Firefox** needs a different build (`npm run build:firefox`). It is **not on
-addons.mozilla.org** — no listing has been submitted — so load the built
-`.zip` as a temporary add-on for now. On Firefox site access is opt-in, so the
-welcome tab shows a **Grant access** button you must click before pages convert.
+**Firefox** has a **Mozilla-signed** build, distributed by us rather than through
+the Add-ons catalogue — no listing has been submitted. Download
+[`euspell-0.3.1.xpi`](https://github.com/ossiak/euspell/releases/latest) and open
+it in Firefox, or drag it onto the window. Being signed, it installs permanently
+rather than vanishing on restart the way a temporary add-on does. It needs
+**Firefox 128** or later, and it does not update itself — re-download for a newer
+version. On Firefox site access is opt-in, so the welcome tab shows a **Grant
+access** button you must click before pages convert.
 
 **Safari** (macOS) is a signed, **notarized** app you download and enable in
 Safari's settings — there's no App Store listing yet. Get

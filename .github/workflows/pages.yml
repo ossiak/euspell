@@ -13,6 +13,7 @@ on:
     branches: [master]
     paths:
       - 'word-addin/**'
+      - 'firefox/updates.json'
       - 'build/gen-word.js'
       - 'build/gen-lo.js'
       - 'data/euspell_lexicon*.csv'
@@ -48,6 +49,11 @@ jobs:
           BASE: ${{ steps.pages.outputs.base_url }}
         run: |
           node -e "const fs=require('fs');const base=process.env.BASE.replace(/\/+$/,'');let m=fs.readFileSync('word-addin/manifest.xml','utf8');m=m.split('https://localhost:3000').join(base);fs.writeFileSync('word-addin/manifest.xml',m);console.log('manifest base ->',base);"
+      # The Firefox update manifest rides along on the same origin. It is not part
+      # of the Word add-in, so it is copied in rather than kept under word-addin/.
+      - name: Add the Firefox update manifest
+        run: cp firefox/updates.json word-addin/updates.json
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: word-addin

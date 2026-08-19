@@ -149,7 +149,8 @@ and re-saving the paper doesn't raise a false alarm.
       the publish script is the model if this is ever worth warning about too.
 - [x] **Extension install instructions** — unblocked. The Chrome Web Store
       listing went live on 17 August and serves every Chromium browser, and the
-      Safari build is a notarized DMG. Only Firefox is still unsigned. The paper
+      Safari build is a notarized DMG. Firefox is Mozilla-signed and published
+      with the releases. The paper
       no longer prints steps at all: Appendix A points readers online instead,
       so a store URL changing does not strand a printed edition. See
       [paper-appendix-a.md](paper-appendix-a.md) and [signing.md](signing.md).

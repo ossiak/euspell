@@ -29,6 +29,12 @@ function toFirefox(manifest) {
       // before 128 Firefox treated MV3 host_permissions as opt-in — an AMO
       // install there would never run the content script and look dead.
       strict_min_version: '128.0',
+      // Self-distributed builds are not updated by AMO, so Firefox has to be told
+      // where to look. It polls this JSON (see firefox/updates.json, published to
+      // Pages) and installs the highest version listed that it can run. AMO
+      // rejects update_url on a LISTED add-on, so this and channel=listed are
+      // mutually exclusive.
+      update_url: 'https://ossiak.github.io/euspell/updates.json',
       // NOTE: `data_collection_permissions` is intentionally omitted. It only
       // exists in the manifest schema from Firefox 140+, so including it makes
       // the add-on fail to load on anything older ("unexpected property
