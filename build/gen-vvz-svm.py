@@ -114,6 +114,7 @@ def neighbor(toks, idx, off):
 # forces the optimizer to put more weight on context, restoring those vetoes.
 LAMBDA = float(os.environ.get("LAMBDA", LAMBDA))
 EPOCHS = int(os.environ.get("EPOCHS", EPOCHS))
+SEED = int(os.environ.get("SEED", SEED))
 WORD_SCALE = float(os.environ.get("WORD_SCALE", 0.45))
 # Experiment toggle: map a lexicon-unknown neighbor to the NN family instead of
 # its own UNK feature. OUT override lets an experiment run avoid clobbering the
