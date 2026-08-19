@@ -143,12 +143,20 @@ export function vvzScore(tokens, idx) {
   let vote = 0; // > 0 ⇒ VVZ (verb); ≤ 0 ⇒ NN2 (noun)
 
   // --- BEFORE: an unambiguous subject before argues for the verb. ----------
+  const relSubject = anyPrefix(left, REL_SUBJECT);
   if (anyExact(left, SUBJECT_3SG)) vote += 3;                 // "it records"
-  else if (anyPrefix(left, REL_SUBJECT)) vote += 2;          // "device which records"
+  else if (relSubject) vote += 2;                            // "device which records"
   else if (anyPrefix(left, ['NP'])) vote += 2;              // "John records" — proper-noun subject
 
-  // Noun-phrase context before → the plural-noun reading (the default).
-  if (anyExact(left, DETERMINER) || anyPrefix(left, PREMODIFIER)) vote -= 3; // "the/old/two tools"
+  // Noun-phrase context before → the plural-noun reading (the default). A
+  // relativiser is exempt: "that" is tagged CS22|CST|DD1|REX21|REX41|RG, so it
+  // matched the relativiser bonus (CST, +2) and the determiner penalty (DD1, -3)
+  // at once and came out at -1 — enough for the veto in is_VVZ_svm to overrule a
+  // learned verb call. The two readings are exclusive, and the determiner one is
+  // not even available here: DD1 is singular ("that map"), while this scorer only
+  // runs on plural NN2|VVZ forms, where "that maps" can only be the relativiser.
+  // "those maps" keeps its penalty — DD2 is a determiner and not a relativiser.
+  if (!relSubject && (anyExact(left, DETERMINER) || anyPrefix(left, PREMODIFIER))) vote -= 3; // "the/old/two tools"
   if (anyPrefix(left, PREPOSITION)) vote -= 3;               // "of tools"
   if (anyPrefix(left, ['NN'])) vote -= 2;                    // "learning tools" — compound modifier
   if (anyExact(left, ['VM', 'TO'])) vote -= 3;               // "will/to tool(s)" — never VVZ
