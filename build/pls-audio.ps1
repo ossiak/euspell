@@ -55,12 +55,26 @@ $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Speech
 
 $root = Split-Path $PSScriptRoot -Parent
-if ($Pls -ne '') { $pls = $Pls } else { $pls = Join-Path $root 'dict/euspell_tts.pls' }
+if ($Pls -ne '') {
+  if (-not [System.IO.Path]::IsPathRooted($Pls)) { $Pls = Join-Path (Get-Location).Path $Pls }
+  $pls = [System.IO.Path]::GetFullPath($Pls)
+} else {
+  $pls = Join-Path $root 'dict/euspell_tts.pls'
+}
 $ffmpeg = 'e:/Projects/Euspell/Videos/ffmpeg.exe'
 if (-not (Test-Path $pls))    { throw "not found: $pls" }
 if (-not (Test-Path $ffmpeg)) { throw "ffmpeg not found: $ffmpeg" }
 
 if ($Out -eq '') { $Out = Join-Path $root 'dict/pls-audio.mp3' }
+# Resolve -Out against PowerShell's location, not .NET's. The two are separate:
+# Set-Location moves the former and leaves the latter wherever the process
+# started, so a relative path handed straight to System.IO resolves against
+# something like C:\ and fails with a denial that names a path the caller never
+# typed. Same reasoning for ffmpeg, which inherits the process directory.
+if (-not [System.IO.Path]::IsPathRooted($Out)) { $Out = Join-Path (Get-Location).Path $Out }
+$Out = [System.IO.Path]::GetFullPath($Out)
+$dir = Split-Path $Out -Parent
+if (-not (Test-Path $dir)) { throw "output directory does not exist: $dir" }
 $pcm = [System.IO.Path]::ChangeExtension($Out, '.pcm')
 $tsv = [System.IO.Path]::ChangeExtension($Out, '.tsv')
 
