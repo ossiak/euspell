@@ -23,7 +23,7 @@ function toFirefox(manifest) {
       // The add-on's permanent identity. AMO binds this to the account on first
       // submission and it can never be changed afterwards — a different id is a
       // different add-on, which existing installs will not update across.
-      id: 'kamran@euspell.org',
+      id: 'euspell@euspell.org',
       // 128 (the current ESR line) is the real floor, for two reasons: the
       // bundled PDF.js v6 uses Promise.withResolvers (Firefox 121+), and
       // before 128 Firefox treated MV3 host_permissions as opt-in — an AMO

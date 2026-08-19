@@ -125,7 +125,7 @@ header of [`firefox-sign.yml`](../.github/workflows/firefox-sign.yml), which run
 ### Step 2 — Claim the add-on ID
 
 [`build/gen-firefox.js`](../build/gen-firefox.js) writes the gecko id
-**`kamran@euspell.org`**, settled on 16 August 2026. It is not a mailbox — a
+**`euspell@euspell.org`**, settled on 18 August 2026. It is not a mailbox — a
 gecko id is only required to be a unique, stable string in email or GUID form,
 and one at a domain you control is the recommended shape.
 
@@ -147,7 +147,7 @@ of whether the code runs fine on a phone. `toFirefox()` in
 
 ```js
   m.browser_specific_settings = {
-    gecko: { id: 'kamran@euspell.org', strict_min_version: '128.0' },
+    gecko: { id: 'euspell@euspell.org', strict_min_version: '128.0' },
     gecko_android: {},
   };
 ```

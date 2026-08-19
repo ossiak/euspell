@@ -7,7 +7,7 @@
 #      secrets (Settings ▸ Secrets and variables ▸ Actions):
 #        AMO_JWT_ISSUER  — the "JWT issuer"
 #        AMO_JWT_SECRET  — the "JWT secret"
-#   2. Nothing to set: the gecko id in build/gen-firefox.js is kamran@euspell.org
+#   2. Nothing to set: the gecko id in build/gen-firefox.js is euspell@euspell.org
 #      and is permanent — AMO binds it on the first submission. If an AMO listing
 #      is created, its ID must be this one.
 #   3. Bump "version" in manifest.json before each run — AMO rejects a version
