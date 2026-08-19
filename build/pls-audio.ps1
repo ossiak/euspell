@@ -58,8 +58,9 @@ param(
   [double] $Gap = 0.5,
   [ValidateSet('OneCore', 'Sapi', 'Espeak')]
   [string] $Engine = 'OneCore',
-  # OneCore: David, Zira, Mark.  Sapi: David, Zira.  Ignored by Espeak.
-  [string] $Voice = 'Mark',
+  # OneCore: Mark (default), David, Zira.  Sapi: David (default), Zira.
+  # Ignored by Espeak. Matched as a substring against the installed names.
+  [string] $Voice = '',
   [string] $Out = '',
   # Alternate lexicon file; defaults to dict/euspell_tts.pls.
   [string] $Pls = '',
@@ -82,6 +83,11 @@ if ($DryRun) {
   $Engine = 'Espeak'
   if (-not $PSBoundParameters.ContainsKey('Take')) { $Take = [int]::MaxValue }
 }
+
+# Mark is the best of the Windows voices for hearing stress, but it exists only
+# in the OneCore set -- carrying it over as a default broke -Engine Sapi with a
+# flat "no matching voice is installed". So the default follows the engine.
+if ($Voice -eq '') { $Voice = if ($Engine -eq 'Sapi') { 'David' } else { 'Mark' } }
 
 $root = Split-Path $PSScriptRoot -Parent
 if ($Pls -ne '') {
@@ -181,7 +187,10 @@ $script:rate = 22050
 if ($Engine -eq 'Sapi') {
   Add-Type -AssemblyName System.Speech
   $synth = New-Object System.Speech.Synthesis.SpeechSynthesizer
-  $synth.SelectVoice("Microsoft $Voice Desktop")
+  $installed = @($synth.GetInstalledVoices() | ForEach-Object { $_.VoiceInfo.Name })
+  $pick = $installed | Where-Object { $_ -like "*$Voice*" } | Select-Object -First 1
+  if (-not $pick) { throw ("voice '$Voice' is not available to Sapi. Installed: " + ($installed -join ', ')) }
+  $synth.SelectVoice($pick)
   $fmt = New-Object System.Speech.AudioFormat.SpeechAudioFormatInfo(
     22050, [System.Speech.AudioFormat.AudioBitsPerSample]::Sixteen,
     [System.Speech.AudioFormat.AudioChannel]::Mono)
