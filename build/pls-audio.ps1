@@ -40,6 +40,10 @@
 .EXAMPLE
   # a flat slice, IPA only, half-second gaps
   ./build/pls-audio.ps1 -Skip 4000 -Take 200
+
+.EXAMPLE
+  # every transcription in the file the espeak map cannot express, in seconds
+  ./build/pls-audio.ps1 -DryRun
 #>
 [CmdletBinding()]
 param(
@@ -62,10 +66,22 @@ param(
   # Only the lexemes whose line differs from HEAD -- staged or not. Turns this
   # from a browsing tool into a check on the edit you just made. Implies no
   # -Take limit unless one is given explicitly.
-  [switch] $Changed
+  [switch] $Changed,
+  # Translate but do not speak: lists every selected entry the espeak map cannot
+  # express, and writes no audio. Pure computation, so it covers all 35,000
+  # lexemes in seconds where synthesizing them would take eleven hours. Implies
+  # no -Take limit unless one is given, and reports through the espeak table
+  # whichever -Engine is named, that being the only check possible without
+  # actually synthesizing.
+  [switch] $DryRun
 )
 
 $ErrorActionPreference = 'Stop'
+
+if ($DryRun) {
+  $Engine = 'Espeak'
+  if (-not $PSBoundParameters.ContainsKey('Take')) { $Take = [int]::MaxValue }
+}
 
 $root = Split-Path $PSScriptRoot -Parent
 if ($Pls -ne '') {
@@ -218,7 +234,7 @@ if ($Engine -eq 'Sapi') {
     return ,$w.Pcm
   }
 } else {
-  if (-not (Test-Path $espeakExe)) { throw "espeak-ng not found: $espeakExe" }
+  if (-not $DryRun -and -not (Test-Path $espeakExe)) { throw "espeak-ng not found: $espeakExe" }
   $mapFile = Join-Path $root 'build/espeak-ipa-map.tsv'
   if (-not (Test-Path $mapFile)) { throw "missing $mapFile (run build/gen-espeak-map.py)" }
   $norm = New-Object System.Collections.Generic.List[object]
@@ -268,7 +284,14 @@ if ($Engine -eq 'Sapi') {
     while ($i -lt $s.Length) {
       $hit = $false
       foreach ($k in $segs) {
-        if ($i + $k.Length -le $s.Length -and $s.Substring($i, $k.Length) -eq $k) {
+        # CompareOrdinal, not -eq. PowerShell compares strings with the culture's
+        # collation, which folds the combining vertical line below (U+0329,
+        # syllabic) into the modifier letter low vertical line (U+02CC, secondary
+        # stress) when they sit in context -- so "l̩iː" matched the key
+        # "ˌiː" and the translator invented a stress mark that was not in
+        # the transcription. -ceq does not help; only an ordinal test does.
+        if ($i + $k.Length -le $s.Length -and
+            [string]::CompareOrdinal($s, $i, $k, 0, $k.Length) -eq 0) {
           [void]$outSb.Append($seg[$k]); $i += $k.Length; $hit = $true; break
         }
       }
@@ -316,6 +339,34 @@ if ($Engine -eq 'Sapi') {
     $silence = New-Object byte[] ([int]($w.Rate * 2 * $Gap))
     return ,($trimmed + $silence)
   }
+}
+
+# --- dry run -----------------------------------------------------------------
+if ($DryRun) {
+  $bad = New-Object System.Collections.Generic.List[object]
+  foreach ($e in $sel) {
+    $t = & $ToEspeak $e.Ipa
+    if ($t.Bad -ne '') {
+      $bad.Add([pscustomobject]@{ Grapheme = $e.Grapheme; Word = $e.Word; Ipa = $e.Ipa; Unmapped = $t.Bad })
+    }
+  }
+  Write-Host ""
+  Write-Host ("{0} of {1} selected entries cannot be expressed in espeak's phonemes" -f $bad.Count, $sel.Count)
+  if ($bad.Count -gt 0) {
+    Write-Host ""
+    Write-Host ("  {0,-18} {1,-18} {2,-24} {3}" -f 'grapheme', 'word', 'ipa', 'unmapped')
+    foreach ($b in $bad) {
+      $codes = (([char[]]$b.Unmapped) | ForEach-Object { 'U+{0:X4}' -f [int]$_ }) -join ' '
+      Write-Host ("  {0,-18} {1,-18} {2,-24} {3}" -f $b.Grapheme, $b.Word, $b.Ipa, $codes)
+    }
+    $rep = New-Object System.Collections.Generic.List[string]
+    $rep.Add("grapheme`tword`tipa`tunmapped")
+    foreach ($b in $bad) { $rep.Add(("{0}`t{1}`t{2}`t{3}" -f $b.Grapheme, $b.Word, $b.Ipa, $b.Unmapped)) }
+    [System.IO.File]::WriteAllLines($tsv, $rep, (New-Object System.Text.UTF8Encoding($false)))
+    Write-Host ""
+    Write-Host ("list {0}" -f $tsv)
+  }
+  return
 }
 
 # --- synthesize --------------------------------------------------------------
