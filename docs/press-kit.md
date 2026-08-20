@@ -178,7 +178,7 @@ One engine, many surfaces. None of them re-implement the reform.
 | **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | **Live on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja)** since 17 August, which serves every Chromium browser. The Firefox build is not yet signed |
 | **Safari extension** | macOS — a signed, Apple-notarized app that carries the extension, enabled in Safari's settings | **Released as a direct download** ([notarized DMG](https://euspell.org/downloads/Euspell-Safari-0.3.1-macOS.dmg)); no App Store listing |
 | **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts, with its own zoom and print | Ships with the extension |
-| **Eupub e-reader** | Windows (signed), macOS (signed + notarized, arm64), Linux, Android (signed APK); iOS in App Store review | **v0.3.1 released** — four signed assets per release |
+| **Eupub e-reader** | Windows (signed), macOS (signed + notarized, arm64), Linux, Android (signed APK); iPhone on the **[App Store](https://apps.apple.com/us/app/eupub/id6801994679)** (free, iOS 17+) | **v0.3.1 released** — four signed assets per release. The App Store listing reads 0.2.3: the same iOS code under the version string it carried at submission |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
 | **LibreOffice Writer** | Windows, Linux, macOS | Built, source-install |
 | **Google Docs** | Any browser (Apps Script) | Built, source-install |

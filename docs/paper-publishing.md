@@ -157,7 +157,7 @@ and re-saving the paper doesn't raise a false alarm.
 - [x] **Eupub install instructions** — unblocked. `ossiak/eupub` is public and
       v0.3.1 ships four signed assets per release (Authenticode installer,
       notarized DMG, AppImage, signed APK), so every platform has a download
-      link that works for a reader. iOS remains in App Store review.
+      link that works for a reader. iOS is on the App Store as of 20 August.
 - [x] **Re-check the GPL-3 source URLs** the paper prints. Both repositories are
       public and return 200: `ossiak/euspell` since 15 August, `ossiak/eupub`
       since 16 August.

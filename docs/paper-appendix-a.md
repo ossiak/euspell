@@ -83,10 +83,9 @@ part that dates fastest.
   manifest and needs no build at all. They are one-pass converters rather than
   live spell-checkers: a command rewrites the document, and nothing is underlined
   as you type.
-- **Eupub** ships prebuilt for the three desktop platforms and for Android, whose
-  APK is signed with the release key and installs directly. iOS is the exception:
-  it is in App Store review, and until that clears, an iPhone build has to be made
-  from source on your own hardware.
+- **Eupub** ships prebuilt for the three desktop platforms, for Android, whose
+  APK is signed with the release key and installs directly, and for iPhone from
+  the App Store, free, on iOS 17 or later.
 - **The conversion game** is the one item with nothing to install: a single web
   page that asks the reader to rewrite a passage in euspell by hand and scores
   what they produce against the engine's own output. It needs no server, no
