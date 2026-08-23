@@ -38,7 +38,8 @@ Three lengths, ready to paste.
 > and each word's silhouette preserved (*night → niht*). One engine drives a
 > browser extension, the Eupub e-reader, and word-processor add-ins, plus
 > machine-readable lexicons for speech synthesis and grammar checking. It is open
-> source under the GPL, and every conversion happens on the user's own device.
+> source — the programs under the GPL, the lexicon data under CC BY-SA 4.0 —
+> and every conversion happens on the user's own device.
 
 ---
 
@@ -51,7 +52,7 @@ Three lengths, ready to paste.
 | **Creator** | Kamran Ossia |
 | **Contributors** | Kevin Ossia (first browser-extension version), Roya Ossia (lexicon), both testing |
 | **In development since** | June 2026 |
-| **License** | GPL-3.0-or-later (all source and lexicons) |
+| **License** | Programs GPL-3.0-or-later; lexicon data [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | **Price** | Free |
 | **Privacy** | No account, no server, no telemetry. The lexicon ships inside each product; text never leaves the device. Dictation is the one exception — it uses the browser's built-in speech recognition, which transcribes in the cloud |
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
@@ -278,7 +279,7 @@ maintained version.*
 - **Press contact:** [kamran@euspell.org](mailto:kamran@euspell.org)
 - **Website:** [euspell.org](https://euspell.org)
 - **Shop:** [shop.euspell.org](https://shop.euspell.org)
-- **Source:** github.com/ossiak/euspell *(public — GPL-3.0-or-later)*. Eupub lives
-  in a separate repository that is still private.
+- **Source:** github.com/ossiak/euspell and github.com/ossiak/eupub, both public.
+  Programs GPL-3.0-or-later; the lexicon CSVs CC BY-SA 4.0.
 
 *Press are welcome to quote any text in this kit verbatim.*
