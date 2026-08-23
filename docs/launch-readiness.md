@@ -5,7 +5,7 @@
 has to be true before either of those can be sent. Nothing here should ever reach
 a journalist — it is an inventory of gaps, and reads like one.
 
-**Last updated:** 17 August 2026
+**Last updated:** 23 August 2026 — launch moved to 28 August
 
 ---
 
@@ -19,19 +19,22 @@ link to today:
 | Website | [euspell.org](https://euspell.org) is **live**. The home page is still the "Coming soon" splash, but three things now sit behind it: [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/) and `/downloads/`. `www.euspell.org` resolves too (it did not on 31 July) |
 | Shop | [shop.euspell.org](https://shop.euspell.org) is **live** — a Fourthwall storefront selling logo tees and hoodies. It carries no explanation of what euspell is |
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
-| Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404, re-checked 18 August. What *is* live beyond the splash: [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/), and `/downloads/` carrying the Safari DMG |
+| Site content | **Deployed 23 August** — all 22 routes return 200, checked after upload. The deploy also carried the republished paper with the corrected Appendix D counts, the Safari 0.3.2 disk image, and an `.htaccess` that fixes the disk-image MIME type and points 404s at the site's own page rather than the host's |
 | Source repositories | Both **public** under GPL-3.0-or-later: `ossiak/euspell` since 15 August, `ossiak/eupub` since 16 August |
 | Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. The store now serves **0.3.1** (listing checked 23 August), so the `bear` fix is out and adjective-preceded nouns no longer convert to the verb sense. **0.3.2**, built from the corrected lexicon, was submitted 23 August and is in review; the same permission set cleared review for 0.3.1, so the host-permission warning on submission is routine rather than new. The Safari build is a signed, **Apple-notarized** DMG at [euspell.org/downloads](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg), rebuilt from the settled lexicon; no App Store listing |
 | Eupub | **v0.3.1 released and publicly downloadable** — four signed assets per release: Windows installer (Authenticode), macOS disk image (notarized), Linux AppImage, and an Android APK. **iOS is live on the [App Store](https://apps.apple.com/us/app/eupub/id6801994679)** since 20 August — free, iPhone-only, iOS 17+. The listing reads 0.2.3 against 0.3.1 elsewhere: the same iOS sources, submitted before the mobile version strings were derived from `package.json` |
 
-**The site deploy is now the critical path.** It was already "the cheapest fix by
-far" — the writing is done — and with the repository and the extension both
-handled it is **the only remaining gap that is fully within our control, and now
-the only thing on the critical path**. Every store is done or out of our hands.
+**The site is deployed, so nothing is on the critical path that we control.**
+What remains is waiting: the Chrome store is reviewing 0.3.2, and Eupub 0.3.2
+is committed but untagged — pushing the tag is a decision rather than work,
+since CI builds and publishes all four signed assets on its own. The two extra
+days bought by moving to 28 August are slack against Chrome review, which is
+the one queue nobody here can hurry.
 
 **The paper's hold condition is satisfied.** It was deliberately held until the
 repositories were public, which was the right order; `ossiak/euspell` now is. The
-kit becomes sendable once the content pages are deployed.
+kit is sendable: the content pages are live, and its licensing and repository
+claims were corrected on 23 August.
 
 **Minimum before outreach:** deploy the content pages. That is now the whole
 list — the product links the kit was waiting for exist: the Chrome listing is
