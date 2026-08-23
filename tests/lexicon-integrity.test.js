@@ -27,11 +27,19 @@ const DEFINED = new Set(
   fs.readFileSync(new URL('../data/euspell_encoding.csv', import.meta.url), 'utf8')
     .split(/\r?\n/).filter(Boolean).map((l) => l.split(',')[0]),
 );
-/** Raw encoding text per file, to check the literal three digits (not the parsed int). */
+/** Raw encoding text per file, to check the literal three digits (not the parsed int).
+ *
+ * The header row is dropped by name, not by asking whether the code parses as a
+ * number. It used to be `!Number.isNaN(+c[2])`, which drops the header — and
+ * every malformed code with it, since NaN is exactly what a bad code produces.
+ * The guard below therefore exempted the one shape it exists to catch, and
+ * `coiffeuses,NN2,7-1,cwaffeuses` reached a signed extension, a store
+ * submission, an APK and four Eupub builds carrying encoding 7, which no rule
+ * in the engine answers to. parseInt('7-1') is 7, and nothing said otherwise. */
 const rawCodes = Object.entries(SOURCES).flatMap(([source, path]) =>
   fs.readFileSync(new URL(path, import.meta.url), 'utf8')
     .split(/\r?\n/).filter(Boolean).map((l) => l.split(','))
-    .filter((c) => c.length >= 4 && !Number.isNaN(+c[2]))
+    .filter((c) => c.length >= 4 && c[2] !== 'Encoding')
     .map((c) => ({ source, word: c[0], code: c[2] })));
 
 const label = (e) => `${e.source}:${e.word}`;
