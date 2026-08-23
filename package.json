@@ -19,6 +19,7 @@
     "lint:firefox": "web-ext lint --source-dir build/firefox",
     "build:safari": "npm run build && node build/gen-safari.js",
     "build:safari:dist": "npm run build:safari && bash build/dist-safari.sh",
+    "build:safari:appstore": "npm run build:safari && bash build/appstore-safari.sh",
     "run:firefox": "web-ext run --source-dir build/firefox",
     "gen:svm": "python build/gen-vvz-svm.py",
     "gen:corpus:vv0": "node build/gen-corpus-vv0.mjs",
