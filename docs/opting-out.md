@@ -62,4 +62,4 @@ Covered by `tests/dom-walker.test.js` and `tests/service-worker.test.js`.
 
 The white paper is published with both markers in place; how that publish works,
 and what re-exporting the ODT would otherwise silently drop, is in
-[paper-publishing.md](paper-publishing.md).
+the internal paper-publishing note.

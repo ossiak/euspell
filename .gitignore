@@ -45,3 +45,11 @@ word-addin/assets/
 # Local Claude Code state: an auto-accumulated allowlist full of absolute paths
 # from individual sessions, so it is personal to one machine, not project config.
 .claude/
+
+# Internal working notes: kept locally, not published.
+# They are inventories of gaps, unsent drafts and store-dashboard answers --
+# launch-readiness.md opens by saying it must never reach a journalist.
+docs/launch-readiness.md
+docs/press-release.md
+docs/paper-publishing.md
+docs/chrome-submission.md

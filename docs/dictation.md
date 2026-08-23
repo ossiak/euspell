@@ -18,7 +18,7 @@ euspell locally after it comes back. But it means the blanket "nothing is ever
 sent to a server" that fits the rest of the project is **false while dictation is
 running**, and every user-facing claim now says so — the README, the onboarding
 page, the press kit, and the Chrome Web Store privacy disclosure
-([chrome-submission.md](chrome-submission.md)). Audio is captured only while the
+(the store listing states it). Audio is captured only while the
 user has started a dictation session.
 
 ## Why this is not a speech problem

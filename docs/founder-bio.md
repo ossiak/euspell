@@ -1,11 +1,11 @@
 # Founder bio
 
 *The maintained version. [press-kit.md](press-kit.md) carries the short form and
-points here; [press-release.md](press-release.md) can take the one-line form in
+points here; the launch-day press release can take the one-line form in
 its boilerplate. Update this file first, then the copies.*
 
 **Text only. There is no founder photograph, and that is deliberate** — see
-[launch-readiness.md](launch-readiness.md#loose-ends-in-the-kit-itself). Decline
+the internal launch-readiness note. Decline
 photo requests rather than treating them as a gap to fill.
 
 Three lengths follow. Send whichever fits; they are meant to be used verbatim.
