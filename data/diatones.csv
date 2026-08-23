@@ -199,7 +199,8 @@ interdicts,NN2|VVZ,012,interdicts|interdictz
 interlocks,NN2|VVZ,012,interlocks|interlockz
 intermediate,JJ|NN1|VV0,102,intermediat|intermediate
 interns,NN2|VVZ,012,interns|internz
-intimate,JJ|VV0,102,intimat|intimate
+intimate,JJ|NN1|VV0,102,intimat|intimate
+intimates,NN2|VVZ,012,intimats|intimatez
 invaginate,JJ|VV0,102,invaginat|invaginate
 isolate,JJ|NN1|VV0,102,isolat|isolate
 italianate,JJ|VV0,102,italianat|italianate
@@ -262,7 +263,7 @@ predicates,NN2|VVZ,112,predicats|predicatez
 prefixes,NN2|VVZ,012,prefixes|prefixez
 preludes,NN2|VVZ,012,preludes|preludez
 premises,NN2|VVZ,012,premises|premisez
-preponderate,JJ|VV0,102,preponerat|preponderate
+preponderate,JJ|VV0,102,preponderat|preponderate
 presages,NN2|VVZ,012,presages|presagez
 presents,NN2|VVZ,012,presents|presentz
 proceeds,NN2|VVZ,012,proceeds|proceedz
