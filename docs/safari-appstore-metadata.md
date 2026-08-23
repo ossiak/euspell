@@ -141,10 +141,11 @@ to read the reformed words in the shot.
 ---
 
 ## Likely review snags to pre-empt
-- **Host-app minimum functionality (Guideline 4.2).** A host app that only
-  carries the extension and shows a blank window can be rejected. The host app
-  should present a simple screen telling the user how to enable Euspell in Safari
-  (the Xcode Safari-extension template does this). If ours is bare, add a minimal
-  window with the enable steps before submitting — worth checking first.
+- **Host-app minimum functionality (Guideline 4.2) — checked, OK.** The host app
+  uses the standard Xcode Safari-extension window: it shows whether Euspell's
+  extension is on or off and offers a "Quit and Open Safari Extensions
+  Preferences…" button (`Euspell/Resources/Base.lproj/Main.html`). That's the
+  Apple-provided template Apple accepts for 4.2, so no extra host-app UI is
+  needed.
 - **Enable flow.** The review notes above are what stop a reviewer from seeing
   "nothing happens" and rejecting; keep them accurate to the shipping build.
