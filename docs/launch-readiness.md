@@ -21,7 +21,7 @@ link to today:
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
 | Site content | **Written but not deployed** — 17 pages (rationale, principles, encoding, disambiguation, per-tool guides) exist in the codebase; every one still returns 404, re-checked 18 August. What *is* live beyond the splash: [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/), and `/downloads/` carrying the Safari DMG |
 | Source repositories | Both **public** under GPL-3.0-or-later: `ossiak/euspell` since 15 August, `ossiak/eupub` since 16 August |
-| Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. The store now serves **0.3.1** (listing checked 23 August), so the `bear` fix is out and adjective-preceded nouns no longer convert to the verb sense. **0.3.2** is built and zipped from the corrected lexicon; whether it has been uploaded to the store is not recorded here. The Safari build is a signed, **Apple-notarized** DMG at [euspell.org/downloads](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg), rebuilt from the settled lexicon; no App Store listing |
+| Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. The store now serves **0.3.1** (listing checked 23 August), so the `bear` fix is out and adjective-preceded nouns no longer convert to the verb sense. **0.3.2**, built from the corrected lexicon, was submitted 23 August and is in review; the same permission set cleared review for 0.3.1, so the host-permission warning on submission is routine rather than new. The Safari build is a signed, **Apple-notarized** DMG at [euspell.org/downloads](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg), rebuilt from the settled lexicon; no App Store listing |
 | Eupub | **v0.3.1 released and publicly downloadable** — four signed assets per release: Windows installer (Authenticode), macOS disk image (notarized), Linux AppImage, and an Android APK. **iOS is live on the [App Store](https://apps.apple.com/us/app/eupub/id6801994679)** since 20 August — free, iPhone-only, iOS 17+. The listing reads 0.2.3 against 0.3.1 elsewhere: the same iOS sources, submitted before the mobile version strings were derived from `package.json` |
 
 **The site deploy is now the critical path.** It was already "the cheapest fix by
@@ -101,9 +101,9 @@ changes**.
 - **Version numbers.** Re-reconciled on 23 August: the kit states browser
   extension **0.3.2** and Eupub **0.3.1**. Eupub 0.3.1 is released and downloadable.
   The extension's 0.3.1 cleared review and the Chrome Web Store now serves it, so
-  the `bear` fix is out; 0.3.2 is built and zipped from the corrected lexicon, and
-  whether it has been uploaded is not recorded here. Until it is, the kit's 0.3.2
-  describes the Safari download and the source release rather than what a Chrome
-  user receives — worth a glance before the kit is sent.
+  the `bear` fix is out; 0.3.2 was submitted on 23 August and is in
+  review. Until it clears, the kit's 0.3.2 describes the Safari download and the
+  source release rather than what a Chrome user receives — worth a glance before
+  the kit is sent.
   Re-check both against the shipped builds on launch day — a rejected store
   upload burns a version number, so the extension's could still move.
