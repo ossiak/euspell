@@ -16,20 +16,23 @@ link to today:
 
 | | |
 | --- | --- |
-| Website | [euspell.org](https://euspell.org) is **live**. The home page is still the "Coming soon" splash, but three things now sit behind it: [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/) and `/downloads/`. `www.euspell.org` resolves too (it did not on 31 July) |
+| Website | [euspell.org](https://euspell.org) is **live and complete**. The splash is gone: the home page is the real one, and all 22 routes answer 200, re-checked 23 August. `www.euspell.org` resolves too (it did not on 31 July) |
 | Shop | [shop.euspell.org](https://shop.euspell.org) is **live** — a Fourthwall storefront selling logo tees and hoodies. It carries no explanation of what euspell is |
 | Privacy policy | **Live** at [euspell.org/privacy/](https://euspell.org/privacy/), deployed ahead of the reveal as a standalone page so the Chrome listing could cite it. It is the only content page currently reachable |
 | Site content | **Deployed 23 August** — all 22 routes return 200, checked after upload. The deploy also carried the republished paper with the corrected Appendix D counts, the Safari 0.3.2 disk image, and an `.htaccess` that fixes the disk-image MIME type and points 404s at the site's own page rather than the host's |
-| Source repositories | Both **public** under GPL-3.0-or-later: `ossiak/euspell` since 15 August, `ossiak/eupub` since 16 August |
-| Browser extension | **Live** on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) since 17 August, which also serves Edge, Brave and Opera. The store now serves **0.3.1** (listing checked 23 August), so the `bear` fix is out and adjective-preceded nouns no longer convert to the verb sense. **0.3.2**, built from the corrected lexicon, was submitted 23 August and is in review; the same permission set cleared review for 0.3.1, so the host-permission warning on submission is routine rather than new. The Safari build is a signed, **Apple-notarized** DMG at [euspell.org/downloads](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg), rebuilt from the settled lexicon; no App Store listing |
-| Eupub | **v0.3.1 released and publicly downloadable** — four signed assets per release: Windows installer (Authenticode), macOS disk image (notarized), Linux AppImage, and an Android APK. **iOS is live on the [App Store](https://apps.apple.com/us/app/eupub/id6801994679)** since 20 August — free, iPhone-only, iOS 17+. The listing reads 0.2.3 against 0.3.1 elsewhere: the same iOS sources, submitted before the mobile version strings were derived from `package.json` |
+| Source repositories | Both **public**, confirmed against the API on 23 August: `ossiak/euspell` since 15 August, `ossiak/eupub` since 16 August. Programs GPL-3.0-or-later; the lexicon CSVs [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), so the reform can be reused outside the GPL |
+| Browser extension | **0.3.2 on every channel.** The [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) serves 0.3.2 — submitted and cleared on 23 August, the listing checked the same day — which also covers Edge, Brave and Opera. **Firefox** 0.3.2 is Mozilla-signed and self-distributed from the [v0.3.2 release](https://github.com/ossiak/euspell/releases/tag/v0.3.2), listed in `updates.json` so it updates itself; 0.3.1 installs cannot, having been signed before that key existed, and need one manual install. **Safari** is a signed, Apple-notarized DMG at [euspell.org/downloads](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg); no App Store listing |
+| Eupub | **v0.3.2 released**, built against the corrected lexicon — four signed assets: Windows installer (Authenticode), notarized macOS disk image, Linux AppImage, and an Android APK carrying v2/v3 signatures. Android ships by direct download rather than Play, decided 16 August. **iOS is live on the [App Store](https://apps.apple.com/us/app/eupub/id6801994679)** — free, iPhone-only, iOS 17+ — and stays at **0.2.3**: it is not in the release matrix, and a fresh review would not land before the 28th |
 
-**The site is deployed, so nothing is on the critical path that we control.**
-What remains is waiting: the Chrome store is reviewing 0.3.2, and Eupub 0.3.2
-is committed but untagged — pushing the tag is a decision rather than work,
-since CI builds and publishes all four signed assets on its own. The two extra
-days bought by moving to 28 August are slack against Chrome review, which is
-the one queue nobody here can hurry.
+**Nothing is outstanding.** Every channel carries 0.3.2 as of 23 August: Chrome
+cleared review the day it was submitted, Firefox is signed and self-distributed,
+Safari is notarized and hosted, and Eupub's four assets built from the tag. The
+site is deployed and verified. The two days gained by moving to 28 August were
+slack against Chrome review, and Chrome did not need them.
+
+What is left is not work but judgement: whether to send the press kit before the
+28th, and whether iOS at 0.2.3 beside 0.3.2 everywhere else needs explaining to
+anyone who notices.
 
 **The paper's hold condition is satisfied.** It was deliberately held until the
 repositories were public, which was the right order; `ossiak/euspell` now is. The
@@ -101,12 +104,10 @@ changes**.
   the site deploy. The store, download and repository URLs are filled in. Two
   proposed quotes still need approving or rewriting; its own pre-send checklist
   tracks all of it.
-- **Version numbers.** Re-reconciled on 23 August: the kit states browser
-  extension **0.3.2** and Eupub **0.3.1**. Eupub 0.3.1 is released and downloadable.
-  The extension's 0.3.1 cleared review and the Chrome Web Store now serves it, so
-  the `bear` fix is out; 0.3.2 was submitted on 23 August and is in
-  review. Until it clears, the kit's 0.3.2 describes the Safari download and the
-  source release rather than what a Chrome user receives — worth a glance before
-  the kit is sent.
-  Re-check both against the shipped builds on launch day — a rejected store
-  upload burns a version number, so the extension's could still move.
+- **Version numbers.** Reconciled against the live channels on 23 August, not
+  against the repo: browser extension **0.3.2** on Chrome, Firefox and Safari,
+  and Eupub **0.3.2** on all four desktop and Android assets. The kit says the
+  same. **iOS is the one exception at 0.2.3**, which the kit states rather than
+  implies.
+  Re-check on launch day anyway — a rejected store upload burns a version
+  number, so a figure that is right today can move without anyone acting.
