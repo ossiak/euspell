@@ -57,9 +57,9 @@ Three lengths, ready to paste.
 | **Privacy** | No account, no server, no telemetry. The lexicon ships inside each product; text never leaves the device. Dictation is the one exception — it uses the browser's built-in speech recognition, which transcribes in the cloud |
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
-| **Website** | [euspell.org](https://euspell.org) — live; the splash page, plus [/game/](https://euspell.org/game/), [/privacy/](https://euspell.org/privacy/) and the downloads directory |
+| **Website** | [euspell.org](https://euspell.org) — live; twenty pages covering the [encoding rules](https://euspell.org/system/encoding/), the [rationale](https://euspell.org/about/rationale/), one page per tool, the [white paper](https://euspell.org/paper/) and the [privacy policy](https://euspell.org/privacy/), plus the [conversion game](https://euspell.org/game/) |
 | **Shop** | [shop.euspell.org](https://shop.euspell.org) — live; logo tees and hoodies, fulfilled by Fourthwall |
-| **Current versions** | Browser extension 0.3.2; Eupub 0.3.1. The Chrome Web Store serves 0.3.1 until 0.3.2 clears review, submitted 23 August |
+| **Current versions** | Browser extension 0.3.2; Eupub 0.3.2. The Chrome Web Store serves 0.3.2, submitted and cleared 23 August. The iPhone build on the App Store reads 0.2.3 |
 | **Chrome Web Store** | [Euspell](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) — published 17 August 2026; the same listing serves Edge, Brave, Opera and other Chromium browsers |
 | **Eupub downloads** | [github.com/ossiak/eupub/releases](https://github.com/ossiak/eupub/releases) — Windows, macOS, Linux and Android |
 | **Contact** | [kamran@euspell.org](mailto:kamran@euspell.org) |
@@ -176,10 +176,10 @@ One engine, many surfaces. None of them re-implement the reform.
 
 | Product | Platforms | Status |
 | --- | --- | --- |
-| **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | **Live on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja)** since 17 August, which serves every Chromium browser. The Firefox build is not yet signed |
+| **Browser extension** | Chrome, Edge, Brave, Opera, Vivaldi; separate Firefox build | **Live on the [Chrome Web Store](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja)** since 17 August, which serves every Chromium browser. The Firefox build is Mozilla-signed and self-distributed from the [v0.3.2 release](https://github.com/ossiak/euspell/releases/tag/v0.3.2), not listed on addons.mozilla.org |
 | **Safari extension** | macOS — a signed, Apple-notarized app that carries the extension, enabled in Safari's settings | **Released as a direct download** ([notarized DMG](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg)); no App Store listing |
 | **Built-in PDF viewer** | Desktop, inside the extension — reforms PDFs while keeping real layout, graphics and fonts, with its own zoom and print | Ships with the extension |
-| **Eupub e-reader** | Windows (signed), macOS (signed + notarized, arm64), Linux, Android (signed APK); iPhone on the **[App Store](https://apps.apple.com/us/app/eupub/id6801994679)** (free, iOS 17+) | **v0.3.1 released** — four signed assets per release. The App Store listing reads 0.2.3: the same iOS code under the version string it carried at submission |
+| **Eupub e-reader** | Windows (signed), macOS (signed + notarized, arm64), Linux, Android (signed APK); iPhone on the **[App Store](https://apps.apple.com/us/app/eupub/id6801994679)** (free, iOS 17+) | **v0.3.2 released** — four signed assets per release. The App Store listing reads 0.2.3: the same iOS code under the version string it carried at submission |
 | **Microsoft Word** | Windows, macOS, web (Office.js task pane) | Built, source-install |
 | **LibreOffice Writer** | Windows, Linux, macOS | Built, source-install |
 | **Google Docs** | Any browser (Apps Script) | Built, source-install |
