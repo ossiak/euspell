@@ -34,7 +34,7 @@ that is more regular and closer to how words sound — reformed in place, right 
 Safari, leaving the page's layout, images, and links untouched.
 
 Flip the toolbar switch and the page you're reading is respelled. Every word is
-looked up in a 205,000-word lexicon bundled inside the extension and converted by
+looked up in a 205000-word lexicon bundled inside the extension and converted by
 a context-aware engine, so words whose spelling depends on how they're used —
 "read", "wind", "bow" — reform correctly for the sentence they're in. It's not a
 blind find-and-replace. Turn it off and the page returns to traditional spelling
@@ -120,7 +120,7 @@ TO ENABLE AND TEST:
 5. To see PDF support, open any remote (http/s) PDF — it renders in the bundled
    viewer with its text reformed.
 
-There is no account or login. The ~205,000-word lexicon is bundled in the
+There is no account or login. The ~205000-word lexicon is bundled in the
 extension and conversion runs locally; the extension makes no analytics or
 tracking requests. Safari extensions cannot read local file:// content, so those
 stay in Safari's native viewer by design.

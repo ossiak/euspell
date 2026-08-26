@@ -21,7 +21,7 @@ Three lengths, ready to paste.
 ### Short (≈50 words)
 
 > Euspell is a reformed English spelling delivered as software rather than a
-> proposal. A 205,000-word lexicon and a context-aware converter rewrite English
+> proposal. A 205000-word lexicon and a context-aware converter rewrite English
 > into a more predictable spelling — in the browser, in EPUBs and PDFs, and in
 > Word, LibreOffice and Apple Pages. Everything runs locally; no text is ever
 > uploaded.
@@ -30,7 +30,7 @@ Three lengths, ready to paste.
 
 > Euspell is a reform of English spelling built as an engineering project rather
 > than a manifesto. Where past reforms handed people tables of rules to apply by
-> hand, Euspell compiles the reform into a program: a 205,000-word lexicon in
+> hand, Euspell compiles the reform into a program: a 205000-word lexicon in
 > which every word carries its parts of speech and its reformed spelling, plus a
 > classifier that reads the surrounding words to settle the hard cases — so
 > *records* the noun and *recordz* the verb come out right automatically. It is
@@ -47,21 +47,21 @@ Three lengths, ready to paste.
 
 | | |
 | --- | --- |
-| **Name** | Euspell (the reform and the browser extension); **Eupub** (the e-reader) |
+| **Name** | Euspell™ (the reform and the browser extension); **Eupub** (the e-reader) |
 | **Tagline** | Spelling Reform: An Engineering Approach |
 | **Creator** | Kamran Ossia |
-| **Contributors** | Kevin Ossia (first browser-extension version), Roya Ossia (lexicon), both testing |
 | **In development since** | June 2026 |
 | **License** | Programs GPL-3.0-or-later; lexicon data [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) |
 | **Price** | Free |
 | **Privacy** | No account, no server, no telemetry. The lexicon ships inside each product; text never leaves the device. Dictation is the one exception — it uses the browser's built-in speech recognition, which transcribes in the cloud |
 | **Logo** | ჱ — Unicode U+10F1, the Georgian letter "archaic he", in blue (#0000FF) |
 | **Reform revision** | r1 — the spelling standard is versioned independently of the apps |
+| **Trademark** | EUSPELL is a trademark of Kamran Ossia; United States registration is pending. The mark identifies the project and its software. Using the word for the spelling itself needs no permission and is not restricted |
 | **Website** | [euspell.org](https://euspell.org) — live; twenty pages covering the [encoding rules](https://euspell.org/system/encoding/), the [rationale](https://euspell.org/about/rationale/), one page per tool, the [white paper](https://euspell.org/paper/) and the [privacy policy](https://euspell.org/privacy/), plus the [conversion game](https://euspell.org/game/) |
 | **Shop** | [shop.euspell.org](https://shop.euspell.org) — live; logo tees and hoodies, fulfilled by Fourthwall |
 | **Current versions** | Browser extension 0.3.2; Eupub 0.3.2. The Chrome Web Store serves 0.3.2, submitted and cleared 23 August. The iPhone build on the App Store reads 0.2.3 |
 | **Chrome Web Store** | [Euspell](https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja) — published 17 August 2026; the same listing serves Edge, Brave, Opera and other Chromium browsers |
-| **Eupub downloads** | [github.com/ossiak/eupub/releases](https://github.com/ossiak/eupub/releases) — Windows, macOS, Linux and Android |
+| **Downloads** | [euspell.org/downloads](https://euspell.org/downloads/) — every build on one page: Eupub for Windows, macOS, Linux and Android, the Firefox `.xpi` and the Safari disk image, and links out to the Chrome Web Store and the App Store |
 | **Contact** | [kamran@euspell.org](mailto:kamran@euspell.org) |
 
 ---
@@ -151,15 +151,15 @@ niht*, *friend → frend*, *people → peeple*, *one → wun*.
 
 | | |
 | --- | --- |
-| Lexicon entries | **205,500** |
-| Entries whose spelling changes | **41,310** — about **1 in 5** |
-| — of which merge into an existing American spelling (*colour → color*) | 6,065 |
-| — leaving genuinely **new** spellings | ≈ 35,000 |
-| Entries left exactly as they are | **164,190** (79.9%) |
-| Words needing context to choose between spellings | **5,905** |
+| Lexicon entries | **205505** |
+| Entries whose spelling changes | **41403** — about **1 in 5** |
+| — of which merge into an existing American spelling (*colour → color*) | 6329 |
+| — leaving genuinely **new** spellings | ≈ 35000 |
+| Entries left exactly as they are | **164102** (79.9%) |
+| Words needing context to choose between spellings | **5919** |
 | Noun/verb `-s` disambiguation accuracy | **94%** (SVM) |
-| Pronunciation lexicon (PLS/XML, with IPA) | **34,000+** words |
-| Part-of-speech lexicon (Penn Treebank, for grammar checkers) | **46,000+** entries |
+| Pronunciation lexicon (PLS/XML, with IPA) | **35000+** words |
+| Part-of-speech lexicon (Penn Treebank, for grammar checkers) | **46000+** entries |
 | Part-of-speech tagset | CLAWS-7 (138 tags), University of Lancaster |
 | Automated tests · cross-engine fixtures | 251 · 43/43 per port |
 
@@ -205,11 +205,12 @@ single switch restores original spelling).
 - **Restraint as the design story.** Four fifths of the dictionary is untouched;
   the engineering went into deciding what *not* to change. No new letters, no
   diacritics, proper nouns left alone.
-- **The machine-readability angle.** A 34,000-word IPA pronunciation lexicon and
-  a 46,000-entry Penn Treebank POS lexicon make this a text-to-speech and NLP
+- **The machine-readability angle.** A 35000-word IPA pronunciation lexicon and
+  a 46000-entry Penn Treebank POS lexicon make this a text-to-speech and NLP
   story, not only a literacy one.
-- **Built with AI assistance, disclosed.** The paper credits Claude Opus 4.8 and
-  Fable 5 for software development, website design and video — unusually explicit
+- **Built with AI assistance, disclosed.** The paper credits Claude Opus 4.8/5
+  and Fable 5 for software development, revisions to sections of the paper,
+  installation instructions, website design and video — unusually explicit
   provenance for a project of this scope.
 
 ---
@@ -222,7 +223,7 @@ purity for legibility: change only what earns it, keep the word's shape, and
 leave scientific and technical vocabulary largely alone.
 
 **Doesn't it create new confusions?** Collisions are treated as disqualifying. Of
-roughly 35,000 new spellings, only a couple collide with rare existing words
+roughly 35000 new spellings, only a couple collide with rare existing words
 (*heart → hart*, *weather → wether*), and both are separable from context. Where
 a collision threatened, the spelling was changed to avoid it — *could/should/
 would* become *coodd/shoodd/woodd* precisely so they don't collide.
@@ -247,16 +248,26 @@ phonetic spelling would disrupt hundreds of scientific words.
 
 ## Assets
 
-| Asset | |
-| --- | --- |
-| White paper — *Spelling Reform: An Engineering Approach* | The primary press document |
-| Logo — vector | SVG, transparent, no embedded fonts |
-| Logo — raster | PNG, 1250×1248, transparent background |
-| Founder bio | Text, in three lengths — [founder-bio.md](founder-bio.md) |
-| Animation — the reform in one loop | Animated GIF, 4 seconds, 1200 px, silent. 142 common words in traditional spelling, morphing to euspell and back |
-| Animation — long form | 7:13, scored, 142 words one at a time; and a 1:26 cut of 48, with a silent twin |
+Everything below is hosted at
+[euspell.org/press](https://euspell.org/press/) — that page is the address to
+put in a story, because a URL survives a forward and an attachment does not.
 
-Product screenshots are available on request. There is no founder photograph.
+| Asset | | Address |
+| --- | --- | --- |
+| White paper — *Spelling Reform: An Engineering Approach* | The primary press document. Reads in the browser, downloads as a PDF | [euspell.org/paper](https://euspell.org/paper/) |
+| Animation — the reform in one loop | GIF, 1200 px, 4 s, silent, loops. 142 common words in euspell, morphing to traditional spelling and back. It opens on euspell so that a mail client showing only the first frame still shows the reform | [euspell_two_state.gif](https://euspell.org/media/euspell_two_state.gif) |
+| Logo — vector | SVG, outlined paths, no font dependency | [euspell_logo.svg](https://euspell.org/media/euspell_logo.svg) |
+| Logo — transparent | PNG, 1250×1248, transparent background | [euspell_logo.png](https://euspell.org/media/euspell_logo.png) |
+| Logo — square | JPG, 800×800, white on blue | [Euspell_logo_800x800.jpg](https://euspell.org/Euspell_logo_800x800.jpg) |
+| Screenshot — the conversion game, scored | 1280×800. Before, after and the reason in one frame | [01-game-scored.png](https://euspell.org/media/01-game-scored.png) |
+| Screenshot — the extension deciding | 1280×800. *records* the noun beside *recordz* the verb | [02-popup-records.png](https://euspell.org/media/02-popup-records.png) |
+| Screenshot — a PDF reformed in place | 1280×800 | [03-pdf-viewer.png](https://euspell.org/media/03-pdf-viewer.png) |
+| Screenshot — options | 1280×800. What a reader can switch off or exempt | [04-options.png](https://euspell.org/media/04-options.png) |
+| Promo tile | 440×280 | [promo-tile.png](https://euspell.org/media/promo-tile.png) |
+| Founder bio | Text, in three lengths — [founder-bio.md](founder-bio.md) | On request |
+| Animation — long form | 7:13, scored, 142 words one at a time; and a 1:26 cut of 48, with a silent twin | On request |
+
+There is no founder photograph, and there will not be one.
 
 ---
 
@@ -279,7 +290,9 @@ maintained version.*
 - **Press contact:** [kamran@euspell.org](mailto:kamran@euspell.org)
 - **Website:** [euspell.org](https://euspell.org)
 - **Shop:** [shop.euspell.org](https://shop.euspell.org)
-- **Source:** github.com/ossiak/euspell and github.com/ossiak/eupub, both public.
-  Programs GPL-3.0-or-later; the lexicon CSVs CC BY-SA 4.0.
+- **Source:** three public repositories — github.com/ossiak/euspell for the
+  engine, lexicon, extension and add-ins; github.com/ossiak/eupub for the
+  reader; github.com/ossiak/euspell-game for the conversion game. Programs
+  GPL-3.0-or-later; the lexicon CSVs CC BY-SA 4.0.
 
 *Press are welcome to quote any text in this kit verbatim.*

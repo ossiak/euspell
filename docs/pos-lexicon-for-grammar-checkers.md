@@ -123,8 +123,8 @@ aahz       aahz       VBZ      # single-spelling reform, full POS
 aardwolvs  aardwolvs  NNS
 ```
 
-Current run: **35,209 reformed words → 35,943 new spellings → 46,786 tagged lines**
-(11,289 unchanged members skipped). **No tag-occurrence is unmapped** — the
+Current run: **35236 reformed words → 35989 new spellings → 46735 tagged lines**.
+**No tag-occurrence is unmapped** — the
 non-standard and typo'd tags this once reported (`VVF`, `VVNK`, `1VVG`, `III`,
 `N1`) have since been corrected in the lexicon. The build still reports any that
 reappear, and `tests/lexicon-integrity.test.js` now validates the whole PoS column
@@ -178,7 +178,7 @@ writing `dict/euspell-harper.json` keyed by spelling:
 
 A verb accumulates every form its readings carry (`ment` = *meant* is past **and**
 past-participle); a spelling that is several parts of speech gets one object with
-each (`separat` = adjective and noun). Current run: **34,371 spellings** (duplicate
+each (`separat` = adjective and noun). Current run: **34398 spellings** (duplicate
 spellings across headwords merge to one key), no unmapped tags.
 
 Two caveats specific to Harper:

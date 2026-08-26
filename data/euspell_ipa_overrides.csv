@@ -237,3 +237,14 @@ deddbolts,ˈdɛdˌboʊlts,deadbolts
 deddbolz,ˈdɛdˌboʊlts,deadbolts
 hemolyses,hiˈmɑləsiːz,haemolyses
 hemolyzez,ˈhiməˌlaɪzɪz,haemolyses
+
+# --- French -e nouns whose verb homograph reads differently --------------
+# expose/resume/frappe split into a noun in -eh and a verb keeping its own
+# spelling; the shared reading gen-pls.js would give them is the verb's.
+exposeh,ˌɛkspoʊˈzeɪ,expose (the noun)
+exposehs,ˌɛkspoʊˈzeɪz,exposes (the noun)
+resumehs,ˈrɛzəˌmeɪz,resumes (the noun)
+frappehd,fræˈpeɪd,frapped (chilled, not lashed)
+exposez,ɪkˈspoʊzɪz,exposes (the verb)
+resumez,rɪˈzuːmz,resumes (the verb)
+frapd,fræpt,frapped (lashed, not chilled)

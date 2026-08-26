@@ -72,7 +72,3 @@ the foot of an article.*
 - **"Founder" is the press-kit's word; the kit's fact table says *Creator*.** Both
   are in use and neither is wrong. Euspell is not a company, so avoid titles that
   imply one — no CEO, no founder-and-CEO.
-- **Contributors are credited separately** in the kit's fact table (Kevin Ossia,
-  first browser-extension version; Roya Ossia, lexicon; both testing). A bio that
-  reads as though one person did everything would be inaccurate, so leave that
-  credit where it is rather than folding it in here.

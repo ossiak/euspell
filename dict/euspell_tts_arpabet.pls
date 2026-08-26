@@ -2462,6 +2462,8 @@
   <lexeme><grapheme>bickerz</grapheme><phoneme>B IH1 K ER0 Z</phoneme></lexeme> <!-- bickers -->
   <lexeme><grapheme>bicolord</grapheme><phoneme>B AY1 K AH2 L ER0 D</phoneme></lexeme> <!-- bicolored -->
   <lexeme><grapheme>bicyclez</grapheme><phoneme>B AY1 S IH0 K AH0 L Z</phoneme></lexeme> <!-- bicycles -->
+  <lexeme><grapheme>bideh</grapheme><phoneme>B IH0 D EY1</phoneme></lexeme> <!-- bidet -->
+  <lexeme><grapheme>bidehs</grapheme><phoneme>B IH0 D EY1 Z</phoneme></lexeme> <!-- bidets -->
   <lexeme><grapheme>bidez</grapheme><phoneme>B AY1 D Z</phoneme></lexeme> <!-- bides -->
   <lexeme><grapheme>bidz</grapheme><phoneme>B IH1 D Z</phoneme></lexeme> <!-- bids -->
   <lexeme><grapheme>bieldz</grapheme><phoneme>B IY1 L D Z</phoneme></lexeme> <!-- bields -->
@@ -2672,6 +2674,7 @@
   <lexeme><grapheme>blarez</grapheme><phoneme>B L EH1 R Z</phoneme></lexeme> <!-- blares -->
   <lexeme><grapheme>blarneyd</grapheme><phoneme>B L AA1 R N IY0 D</phoneme></lexeme> <!-- blarneyed -->
   <lexeme><grapheme>blarneyz</grapheme><phoneme>B L AA1 R N IY0 Z</phoneme></lexeme> <!-- blarneys -->
+  <lexeme><grapheme>blaseh</grapheme><phoneme>B L AA0 Z EY1</phoneme></lexeme> <!-- blase -->
   <lexeme><grapheme>blasphemez</grapheme><phoneme>B L AE0 S F IY1 M Z</phoneme></lexeme> <!-- blasphemes -->
   <lexeme><grapheme>blastz</grapheme><phoneme>B L AE1 S T S</phoneme></lexeme> <!-- blasts -->
   <lexeme><grapheme>blatherd</grapheme><phoneme>B L AE1 DH ER0 D</phoneme></lexeme> <!-- blathered -->
@@ -3947,6 +3950,8 @@
   <lexeme><grapheme>canalizez</grapheme><phoneme>K AE1 N AH0 L AY0 Z IH0 Z</phoneme></lexeme> <!-- canalises -->
   <lexeme><grapheme>canalling</grapheme><phoneme>K AH0 N AE1 L IH0 NG</phoneme></lexeme> <!-- canaling -->
   <lexeme><grapheme>canalz</grapheme><phoneme>K AH0 N AE1 L Z</phoneme></lexeme> <!-- canals -->
+  <lexeme><grapheme>canapeh</grapheme><phoneme>K AE1 N AH0 P EY2</phoneme></lexeme> <!-- canape -->
+  <lexeme><grapheme>canapehs</grapheme><phoneme>K AE1 N AH0 P EY2 Z</phoneme></lexeme> <!-- canapes -->
   <lexeme><grapheme>cancelation</grapheme><phoneme>K AE2 N S AH0 L EY1 SH AH0 N</phoneme></lexeme> <!-- cancellation -->
   <lexeme><grapheme>cancelations</grapheme><phoneme>K AE2 N S AH0 L EY1 SH AH0 N Z</phoneme></lexeme> <!-- cancellations -->
   <lexeme><grapheme>canceld</grapheme><phoneme>K AE1 N S AH0 L D</phoneme></lexeme> <!-- canceled -->
@@ -5278,6 +5283,8 @@
   <lexeme><grapheme>consociatez</grapheme><phoneme>K AH0 N S OW1 SH IY0 EY2 T S</phoneme></lexeme> <!-- consociates -->
   <lexeme><grapheme>consolez</grapheme><phoneme>K AA1 N S AH0 L Z</phoneme></lexeme> <!-- consoles -->
   <lexeme><grapheme>consolidatez</grapheme><phoneme>K N S AA1 L IH0 D EY2 T S</phoneme></lexeme> <!-- consolidates -->
+  <lexeme><grapheme>consommeh</grapheme><phoneme>K AA2 N S AH0 M EY1</phoneme></lexeme> <!-- consomme -->
+  <lexeme><grapheme>consommehs</grapheme><phoneme>K AA2 N S AH0 M EY1 Z</phoneme></lexeme> <!-- consommes -->
   <lexeme><grapheme>consorts</grapheme><phoneme>K AA1 N S AO0 R T S</phoneme></lexeme> <!-- consorts -->
   <lexeme><grapheme>consortz</grapheme><phoneme>K AH0 N S AO1 R T S</phoneme></lexeme> <!-- consorts -->
   <lexeme><grapheme>conspirez</grapheme><phoneme>K AH0 N S P AY1 ER0 Z</phoneme></lexeme> <!-- conspires -->
@@ -6689,6 +6696,7 @@
   <lexeme><grapheme>decoctz</grapheme><phoneme>D IH0 K AA1 K T S</phoneme></lexeme> <!-- decocts -->
   <lexeme><grapheme>decodez</grapheme><phoneme>D IY0 K OW1 D Z</phoneme></lexeme> <!-- decodes -->
   <lexeme><grapheme>decollatez</grapheme><phoneme>D IY0 K AA1 L EY2 T S</phoneme></lexeme> <!-- decollates -->
+  <lexeme><grapheme>decolleteh</grapheme><phoneme>D EY0 K AA2 L T EY1</phoneme></lexeme> <!-- decollete -->
   <lexeme><grapheme>decolonizez</grapheme><phoneme>D IY0 K AA1 L AH0 N AY2 Z AH0 Z</phoneme></lexeme> <!-- decolonises -->
   <lexeme><grapheme>decolord</grapheme><phoneme>D IY0 K AH1 L ER0 D</phoneme></lexeme> <!-- decolored -->
   <lexeme><grapheme>decolorizez</grapheme><phoneme>D IY0 K AH1 L AH0 R AY2 Z AH0 Z</phoneme></lexeme> <!-- decolorises -->
@@ -6924,6 +6932,7 @@
   <lexeme><grapheme>defrostz</grapheme><phoneme>D IY0 F R AO1 S T S</phoneme></lexeme> <!-- defrosts -->
   <lexeme><grapheme>defundz</grapheme><phoneme>D IY0 F AH1 N D Z</phoneme></lexeme> <!-- defunds -->
   <lexeme><grapheme>defusez</grapheme><phoneme>D IY0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- defuses -->
+  <lexeme><grapheme>degageh</grapheme><phoneme>D EY2 G AA0 ZH EY1</phoneme></lexeme> <!-- degage -->
   <lexeme><grapheme>degasd</grapheme><phoneme>D IY0 G AE1 S T</phoneme></lexeme> <!-- degassed -->
   <lexeme><grapheme>degasez</grapheme><phoneme>D IY0 G AE1 S AH0 Z</phoneme></lexeme> <!-- degases -->
   <lexeme><grapheme>degassez</grapheme><phoneme>D IY0 G AE1 S AH0 Z</phoneme></lexeme> <!-- degasses -->
@@ -7059,6 +7068,7 @@
   <lexeme><grapheme>demobilizez</grapheme><phoneme>D IY0 M OW1 B AH0 L AY2 Z AH0 Z</phoneme></lexeme> <!-- demobilises -->
   <lexeme><grapheme>demobz</grapheme><phoneme>D IY0 M AA1 B Z</phoneme></lexeme> <!-- demobs -->
   <lexeme><grapheme>democratizez</grapheme><phoneme>D IH0 K AA1 M R AH0 T AY2 Z AH0 Z</phoneme></lexeme> <!-- democratises -->
+  <lexeme><grapheme>demodeh</grapheme><phoneme>D EY2 M OW0 D EY1</phoneme></lexeme> <!-- demode -->
   <lexeme><grapheme>demodulatez</grapheme><phoneme>D IY0 M AA1 JH AH0 L EY2 T S</phoneme></lexeme> <!-- demodulates -->
   <lexeme><grapheme>demolishd</grapheme><phoneme>D IH0 M AA1 L IH0 SH T</phoneme></lexeme> <!-- demolished -->
   <lexeme><grapheme>demolishez</grapheme><phoneme>D IH0 M AA1 L IH0 SH AH0 Z</phoneme></lexeme> <!-- demolishes -->
@@ -9076,6 +9086,8 @@
   <lexeme><grapheme>emendz</grapheme><phoneme>IH0 M EH1 N D Z</phoneme></lexeme> <!-- emends -->
   <lexeme><grapheme>emergez</grapheme><phoneme>IH0 M ER1 JH IH0 Z</phoneme></lexeme> <!-- emerges -->
   <lexeme><grapheme>emigratez</grapheme><phoneme>EH1 M IH0 G R EY2 T S</phoneme></lexeme> <!-- emigrates -->
+  <lexeme><grapheme>emigreh</grapheme><phoneme>EH1 M IH0 G R EY2</phoneme></lexeme> <!-- emigre -->
+  <lexeme><grapheme>emigrehs</grapheme><phoneme>EH1 M IH0 G R EY2 Z</phoneme></lexeme> <!-- emigres -->
   <lexeme><grapheme>emissiv</grapheme><phoneme>IH0 M IH1 S IH0 V</phoneme></lexeme> <!-- emissive -->
   <lexeme><grapheme>emitz</grapheme><phoneme>IH0 M IH1 T S</phoneme></lexeme> <!-- emits -->
   <lexeme><grapheme>emmenagog</grapheme><phoneme>AH0 M EH1 N AH0 G AO2 G</phoneme></lexeme> <!-- emmenagogue -->
@@ -9896,7 +9908,9 @@
   <lexeme><grapheme>exponentiatez</grapheme><phoneme>EH2 K S P OW0 N EH1 N SH IY0 EY2 T S</phoneme></lexeme> <!-- exponentiates -->
   <lexeme><grapheme>exports</grapheme><phoneme>EH1 K S P AO0 R T S</phoneme></lexeme> <!-- exports -->
   <lexeme><grapheme>exportz</grapheme><phoneme>IH0 K S P AO1 R T S</phoneme></lexeme> <!-- exports -->
-  <lexeme><grapheme>exposez</grapheme><phoneme>IH0 K S P OW1 Z IH0 Z</phoneme></lexeme> <!-- exposes -->
+  <lexeme><grapheme>exposeh</grapheme><phoneme>EH2 K S P OW0 Z EY1</phoneme></lexeme> <!-- expose (the noun) -->
+  <lexeme><grapheme>exposehs</grapheme><phoneme>EH2 K S P OW0 Z EY1 Z</phoneme></lexeme> <!-- exposes (the noun) -->
+  <lexeme><grapheme>exposez</grapheme><phoneme>IH0 K S P OW1 Z IH0 Z</phoneme></lexeme> <!-- exposes (the verb) -->
   <lexeme><grapheme>expositiv</grapheme><phoneme>IH0 K S P AA1 Z IH0 T IH0 V</phoneme></lexeme> <!-- expositive -->
   <lexeme><grapheme>expositz</grapheme><phoneme>IH0 K S P AA1 Z IH0 T S</phoneme></lexeme> <!-- exposits -->
   <lexeme><grapheme>expostulatez</grapheme><phoneme>IH0 K S P AA1 S CH AH0 L EY2 T S</phoneme></lexeme> <!-- expostulates -->
@@ -10318,6 +10332,8 @@
   <lexeme><grapheme>fewterd</grapheme><phoneme>F Y UW1 T ER0 D</phoneme></lexeme> <!-- fewtered -->
   <lexeme><grapheme>fewterz</grapheme><phoneme>F Y UW1 T ER0 Z</phoneme></lexeme> <!-- fewters -->
   <lexeme><grapheme>fezd</grapheme><phoneme>F EH1 Z D</phoneme></lexeme> <!-- fezzed -->
+  <lexeme><grapheme>fianceh</grapheme><phoneme>F IY2 AA0 N S EY1</phoneme></lexeme> <!-- fiance -->
+  <lexeme><grapheme>fiancehs</grapheme><phoneme>F IY2 AA0 N S EY1 Z</phoneme></lexeme> <!-- fiances -->
   <lexeme><grapheme>fianchettoz</grapheme><phoneme>F IY2 AH0 N K EH1 T OW0 Z</phoneme></lexeme> <!-- fianchettos -->
   <lexeme><grapheme>fibd</grapheme><phoneme>F IH1 B D</phoneme></lexeme> <!-- fibbed -->
   <lexeme><grapheme>fiberd</grapheme><phoneme>F AY1 B ER0 D</phoneme></lexeme> <!-- fibered -->
@@ -11281,7 +11297,13 @@
   <lexeme><grapheme>franqhising</grapheme><phoneme>F R AE1 N CH AY0 Z IH0 NG</phoneme></lexeme> <!-- franchising -->
   <lexeme><grapheme>franqhisor</grapheme><phoneme>F R AE1 N CH AY0 Z ER0</phoneme></lexeme> <!-- franchisor -->
   <lexeme><grapheme>franqhisors</grapheme><phoneme>F R AE1 N CH AY0 Z ER0 Z</phoneme></lexeme> <!-- franchisors -->
-  <lexeme><grapheme>frapd</grapheme><phoneme>F R AE1 P T</phoneme></lexeme> <!-- frapped -->
+  <lexeme><grapheme>frapd</grapheme><phoneme>F R AE1 P T</phoneme></lexeme> <!-- frapped (lashed -->
+  <lexeme><grapheme>frapez</grapheme><phoneme>F R EY1 P S</phoneme></lexeme> <!-- frapes -->
+  <lexeme><grapheme>frappeh</grapheme><phoneme>F R AE0 P EY1</phoneme></lexeme> <!-- frappe -->
+  <lexeme><grapheme>frappehd</grapheme><phoneme>F R AE0 P EY1 D</phoneme></lexeme> <!-- frapped (chilled -->
+  <lexeme><grapheme>frappehing</grapheme><phoneme>F R AE0 P EY1 IH0 NG</phoneme></lexeme> <!-- frappeing -->
+  <lexeme><grapheme>frappehs</grapheme><phoneme>F R AE0 P EY1 Z</phoneme></lexeme> <!-- frappes -->
+  <lexeme><grapheme>frappehz</grapheme><phoneme>F R AE0 P EY1 Z</phoneme></lexeme> <!-- frappes -->
   <lexeme><grapheme>frapz</grapheme><phoneme>F R AE1 P S</phoneme></lexeme> <!-- fraps -->
   <lexeme><grapheme>frash</grapheme><phoneme>F R AA1 SH</phoneme></lexeme> <!-- frache -->
   <lexeme><grapheme>frashes</grapheme><phoneme>F R AA0 SH IH0 Z</phoneme></lexeme> <!-- fraches -->
@@ -16899,6 +16921,8 @@
   <lexeme><grapheme>macez</grapheme><phoneme>M EY1 S IH0 Z</phoneme></lexeme> <!-- maces -->
   <lexeme><grapheme>machinatez</grapheme><phoneme>M AE1 K AH0 N EY0 T S</phoneme></lexeme> <!-- machinates -->
   <lexeme><grapheme>macklez</grapheme><phoneme>M AE1 K AH0 L Z</phoneme></lexeme> <!-- mackles -->
+  <lexeme><grapheme>macrameh</grapheme><phoneme>M AE1 K R AH0 M EY2</phoneme></lexeme> <!-- macrame -->
+  <lexeme><grapheme>macramehs</grapheme><phoneme>M AE1 K R AH0 M EY2 Z</phoneme></lexeme> <!-- macrames -->
   <lexeme><grapheme>macroaggregat</grapheme><phoneme>M AE2 K R OW0 AE1 G R IH0 G AH0 T</phoneme></lexeme> <!-- macroaggregate -->
   <lexeme><grapheme>macroaggregats</grapheme><phoneme>M AE2 K R OW0 AE1 G R IH0 G AH0 T S</phoneme></lexeme> <!-- macroaggregates -->
   <lexeme><grapheme>macruridae</grapheme><phoneme>M AE0 K R UH1 ER0 IH0 D EY0</phoneme></lexeme> <!-- macrouridae -->
@@ -17209,6 +17233,8 @@
   <lexeme><grapheme>materializez</grapheme><phoneme>M AH0 T IH1 ER0 IY0 AH0 L AY0 Z IH0 Z</phoneme></lexeme> <!-- materialises -->
   <lexeme><grapheme>matez</grapheme><phoneme>M EY1 T S</phoneme></lexeme> <!-- mates -->
   <lexeme><grapheme>mathematizez</grapheme><phoneme>M AE2 TH AH0 M AH0 T AY1 Z IH0 Z</phoneme></lexeme> <!-- mathematises -->
+  <lexeme><grapheme>matineh</grapheme><phoneme>M AE2 T AH0 N EY1</phoneme></lexeme> <!-- matinee -->
+  <lexeme><grapheme>matinehs</grapheme><phoneme>M AE2 T AH0 N EY1 Z</phoneme></lexeme> <!-- matinees -->
   <lexeme><grapheme>matriarchat</grapheme><phoneme>M EY2 T R IY0 AA1 R K AH0 T</phoneme></lexeme> <!-- matriarchate -->
   <lexeme><grapheme>matriarchats</grapheme><phoneme>M EY2 T R IY0 AA1 R K AH0 T S</phoneme></lexeme> <!-- matriarchates -->
   <lexeme><grapheme>matriculat</grapheme><phoneme>M AH0 T R IH1 K Y UH0 L IH0 T</phoneme></lexeme> <!-- matriculate -->
@@ -19243,6 +19269,7 @@
   <lexeme><grapheme>ookz</grapheme><phoneme>UH1 K S</phoneme></lexeme> <!-- ooks -->
   <lexeme><grapheme>oompahd</grapheme><phoneme>UH1 M P AA0 D</phoneme></lexeme> <!-- oompahed -->
   <lexeme><grapheme>oompahz</grapheme><phoneme>UH1 M P AA0 Z</phoneme></lexeme> <!-- oompahs -->
+  <lexeme><grapheme>ootreh</grapheme><phoneme>UW0 T R EY1</phoneme></lexeme> <!-- outre -->
   <lexeme><grapheme>oozd</grapheme><phoneme>UW1 Z D</phoneme></lexeme> <!-- oozed -->
   <lexeme><grapheme>oozel</grapheme><phoneme>UW1 Z AH0 L</phoneme></lexeme> <!-- ousel -->
   <lexeme><grapheme>oozels</grapheme><phoneme>UW1 Z AH0 L Z</phoneme></lexeme> <!-- ousels -->
@@ -20764,6 +20791,7 @@
   <lexeme><grapheme>pasquinadez</grapheme><phoneme>P AE2 S K W IH0 N EY1 D Z</phoneme></lexeme> <!-- pasquinades -->
   <lexeme><grapheme>passagez</grapheme><phoneme>P AE1 S IH0 JH IH0 Z</phoneme></lexeme> <!-- passages -->
   <lexeme><grapheme>passd</grapheme><phoneme>P AE1 S T</phoneme></lexeme> <!-- passed -->
+  <lexeme><grapheme>passeh</grapheme><phoneme>P AE0 S EY1</phoneme></lexeme> <!-- passe -->
   <lexeme><grapheme>passez</grapheme><phoneme>P AE1 S IH0 Z</phoneme></lexeme> <!-- passes -->
   <lexeme><grapheme>passionat</grapheme><phoneme>P AE1 SH AH0 N AH0 T</phoneme></lexeme> <!-- passionate -->
   <lexeme><grapheme>passionatly</grapheme><phoneme>P AE1 SH AH0 N AH0 T L IY0</phoneme></lexeme> <!-- passionately -->
@@ -20793,6 +20821,8 @@
   <lexeme><grapheme>patchez</grapheme><phoneme>P AE1 CH IH0 Z</phoneme></lexeme> <!-- patches -->
   <lexeme><grapheme>patchuli</grapheme><phoneme>P AH0 CH UW1 L IY0</phoneme></lexeme> <!-- pachouli -->
   <lexeme><grapheme>patchulis</grapheme><phoneme>P AH0 CH UW1 L IY0 Z</phoneme></lexeme> <!-- pachoulis -->
+  <lexeme><grapheme>pateh</grapheme><phoneme>P AA0 T EY1</phoneme></lexeme> <!-- pate -->
+  <lexeme><grapheme>patehs</grapheme><phoneme>P AA0 T EY1 Z</phoneme></lexeme> <!-- pates -->
   <lexeme><grapheme>patentz</grapheme><phoneme>P AE1 T AH0 N T S</phoneme></lexeme> <!-- patents -->
   <lexeme><grapheme>pathbraeking</grapheme><phoneme>P AE1 TH B R EY2 K IH0 NG</phoneme></lexeme> <!-- pathbreaking -->
   <lexeme><grapheme>pathfynder</grapheme><phoneme>P AE1 TH F AY2 N D ER0</phoneme></lexeme> <!-- pathfinder -->
@@ -21510,6 +21540,8 @@
   <lexeme><grapheme>plihtz</grapheme><phoneme>P L AY1 T S</phoneme></lexeme> <!-- plights -->
   <lexeme><grapheme>plinkd</grapheme><phoneme>P L IH1 NG K T</phoneme></lexeme> <!-- plinked -->
   <lexeme><grapheme>plinkz</grapheme><phoneme>P L IH1 NG K S</phoneme></lexeme> <!-- plinks -->
+  <lexeme><grapheme>plisseh</grapheme><phoneme>P L IH0 S EY1</phoneme></lexeme> <!-- plisse -->
+  <lexeme><grapheme>plissehs</grapheme><phoneme>P L IH0 S EY1 Z</phoneme></lexeme> <!-- plisses -->
   <lexeme><grapheme>plodz</grapheme><phoneme>P L AA1 D Z</phoneme></lexeme> <!-- plods -->
   <lexeme><grapheme>plonkd</grapheme><phoneme>P L AA1 NG K T</phoneme></lexeme> <!-- plonked -->
   <lexeme><grapheme>plonkz</grapheme><phoneme>P L AA1 NG K S</phoneme></lexeme> <!-- plonks -->
@@ -26326,7 +26358,10 @@
   <lexeme><grapheme>resubmitz</grapheme><phoneme>R IY0 S AH0 B M IH1 T S</phoneme></lexeme> <!-- resubmits -->
   <lexeme><grapheme>resultiv</grapheme><phoneme>R IH0 Z AH1 L T IH0 V</phoneme></lexeme> <!-- resultive -->
   <lexeme><grapheme>resultz</grapheme><phoneme>R IH0 Z AH1 L T S</phoneme></lexeme> <!-- results -->
-  <lexeme><grapheme>resumez</grapheme><phoneme>R IH0 Z UW1 M Z</phoneme></lexeme> <!-- resumes -->
+  <lexeme><grapheme>resume</grapheme><phoneme>R IH0 Z UW1 M</phoneme></lexeme> <!-- resume -->
+  <lexeme><grapheme>resumeh</grapheme><phoneme>R EH1 Z AH0 M EY2</phoneme></lexeme> <!-- resume -->
+  <lexeme><grapheme>resumehs</grapheme><phoneme>R EH1 Z AH0 M EY2 Z</phoneme></lexeme> <!-- resumes (the noun) -->
+  <lexeme><grapheme>resumez</grapheme><phoneme>R IH0 Z UW1 M Z</phoneme></lexeme> <!-- resumes (the verb) -->
   <lexeme><grapheme>resummond</grapheme><phoneme>R IY0 S AH1 M AH0 N D</phoneme></lexeme> <!-- resummoned -->
   <lexeme><grapheme>resummonz</grapheme><phoneme>R IY0 S AH1 M AH0 N Z</phoneme></lexeme> <!-- resummons -->
   <lexeme><grapheme>resumptiv</grapheme><phoneme>R IH0 Z AH1 M P T IH0 V</phoneme></lexeme> <!-- resumptive -->

@@ -52,9 +52,9 @@ const variants = entry.encoding % 10;
   the context calls for, and *that* is where the hundreds and tens digits start
   to matter, because they say what kind of question is being asked.
 
-This split is why conversion is fast despite the lexicon being large. Of 205,500
-entries, 164,190 are unchanged and 35,405 have a single spelling — 97% of the
-lexicon is resolved without ever consulting a tagger. Only 5,905 entries, under
+This split is why conversion is fast despite the lexicon being large. Of 205505
+entries, 164102 are unchanged and 35484 have a single spelling — 97% of the
+lexicon is resolved without ever consulting a tagger. Only 5919 entries, under
 3%, are ambiguous enough to need one.
 
 ## The full scheme
@@ -67,10 +67,10 @@ The regular cases: either nothing changes, or only an inflectional ending does.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `000` | no new spelling | 158,885 | `cat`, `the` |
-| `011` | `VVZ` ending | 5,975 | `abandons` → `abandonz` |
-| `012` | `NN2\|VVZ` ending — **two spellings** | 4,929 | `records` → `records` / `recordz` |
-| `021` | `JJ\|VVD\|VVN` ending | 4,713 | `abandoned` → `abandond` |
+| `000` | no new spelling | 158851 | `cat`, `the` |
+| `011` | `VVZ` ending | 5984 | `abandons` → `abandonz` |
+| `012` | `NN2\|VVZ` ending — **two spellings** | 4916 | `records` → `records` / `recordz` |
+| `021` | `JJ\|VVD\|VVN` ending | 4703 | `abandoned` → `abandond` |
 | `022` | `JJ\|VVD\|VVN` ending — **two spellings** | 5 | `blessed` → `blessd` / `blessed` |
 | `041` | doubling consonant before the ending | 3 | `reneging` → `renegging` |
 
@@ -91,24 +91,24 @@ The stem changes, optionally along with an ending.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `101` | stem | 14,851 | `abductive` → `abductiv` |
-| `102` | stem, **two spellings**, one of them `VV0` | 150 | `separate` → `separat` / `separate` |
+| `101` | stem | 14567 | `abductive` → `abductiv` |
+| `102` | stem, **two spellings**, one of them `VV0` | 154 | `separate` → `separat` / `separate` |
 | `103` | stem, **three spellings** | 5 | `slough` → `sloff` / `slouh` / `sluh` |
-| `111` | stem + `NN2\|VVZ` ending | 1,470 | `absolves` → `absolvz` |
-| `112` | stem + `NN2\|VVZ` ending, **two spellings** | 728 | `abuses` → `abuses` / `abuzez` |
+| `111` | stem + `NN2\|VVZ` ending | 1459 | `absolves` → `absolvz` |
+| `112` | stem + `NN2\|VVZ` ending, **two spellings** | 746 | `abuses` → `abuses` / `abuzez` |
 | `113` | stem + `NN2\|VVZ` ending, **three spellings** | 3 | `winds` → `winds` / `windz` / `wyndz` |
-| `114` | stem + `NN2\|VVZ` ending, **four spellings** | 4 | `bows` → `bows` / `bowz` / `buws` / `buwz` |
-| `121` | stem + `JJ\|VVD\|VVN` ending | 945 | `achieved` → `aqhievd` |
+| `114` | stem + `NN2\|VVZ` ending, **four spellings** | 5 | `bows` → `bows` / `bowz` / `buws` / `buwz` |
+| `121` | stem + `JJ\|VVD\|VVN` ending | 949 | `achieved` → `aqhievd` |
 | `123` | stem + `JJ\|VVD\|VVN` ending, **three spellings** | 1 | `sloughed` → `sloffd` / `slouhd` / `sluhd` |
-| `131` | stem + undoubling consonant before the ending | 22 | `channelling` → `qhanneling` |
-| `152` | stem, **two spellings**, one `VV0`, *not* the `-ate` pattern | 17 | `abuse` → `abuse` / `abuze` |
+| `131` | stem + undoubling consonant before the ending | 21 | `channelling` → `qhanneling` |
+| `152` | stem, **two spellings**, one `VV0`, *not* the `-ate` pattern | 15 | `abuse` → `abuse` / `abuze` |
 
 `102` and `152` deserve a note, because the split between them is recent and
 deliberate. Both are part-of-speech heteronyms where one reading is a base-form
 verb (`VV0`), so both ask the engine the same question. But `102` is now
 exactly the English `-ate` stress alternation — *separate*, *adulterate*,
 *advocate*, where the verb ends /eɪt/ and the adjective or noun reduces to /ət/.
-That is a productive, regular pattern covering 150 words. The 17 words in `152`
+That is a productive, regular pattern covering 154 words. The 15 words in `152`
 are the leftovers that merely happen to share the shape: *use*, *abuse*, *bear*,
 *refuse*, *live*, *buffet*. They have nothing in common phonologically and are
 worth tracking separately so the regular pattern's statistics aren't polluted by
@@ -122,7 +122,7 @@ digit ambiguous.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `202` | stem, **two spellings**, decided case-by-case | 55 | `wind` → `wind` / `wynd` |
+| `202` | stem, **two spellings**, decided case-by-case | 60 | `wind` → `wind` / `wynd` |
 
 This is the escape hatch, and its gloss in the CSV is literally "case-by-case".
 These are the words where the spelling follows *meaning* rather than part of
@@ -136,8 +136,8 @@ hand-written rule under `src/disambig/semantic/`.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `500` | no new spelling | 5,098 | — |
-| `501` | one new spelling | 91 | `affright` → `affriht` |
+| `500` | no new spelling | 5087 | — |
+| `501` | one new spelling | 85 | `affright` → `affriht` |
 | `511` | `VVZ` ending | 295 | `abegges` → `abeggez` |
 | `521` | `JJ\|VVD\|VVN` ending | 131 | — |
 
@@ -149,9 +149,9 @@ accept these spellings without a word-frequency list suggesting them.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `601` | merges with an existing word | 5,716 | `abolitionise` → `abolitionize` |
-| `631` | merge + undoubling consonant | 308 | `anvilling` → `anviling` |
-| `641` | merge + doubling consonant | 41 | `alloted` → `allotted` |
+| `601` | merges with an existing word | 5980 | `abolitionise` → `abolitionize` |
+| `631` | merge + undoubling consonant | 307 | `anvilling` → `anviling` |
+| `641` | merge + doubling consonant | 42 | `alloted` → `allotted` |
 
 The `6xx` class is where the reform *removes* a distinction rather than adding
 one: two currently-distinct spellings converge on a single euspelling. Most of
@@ -163,11 +163,11 @@ can look unreformed, because the euspelling it lands on is already a word.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `700` | no new spelling | 124 | — |
-| `701` | stem | 805 | `aboideau` → `abodeau` |
-| `702` | **two spellings**, all `NN1\|NN2` | 8 | `chassis` → `shassi` / `shassis` |
+| `700` | no new spelling | 121 | — |
+| `701` | stem | 880 | `aboideau` → `abodeau` |
+| `702` | **two spellings**, all `NN1\|NN2` | 9 | `chassis` → `shassi` / `shassis` |
 | `711` | `VVZ` ending | 4 | `uncoifs` → `uncwafz` |
-| `721` | `JJ\|VVD\|VVN` ending | 27 | `avalanched` → `avalanshd` |
+| `721` | `JJ\|VVD\|VVN` ending | 26 | `avalanched` → `avalanshd` |
 
 `702` is a small but distinctive class: French loanwords whose singular and
 plural are spelled identically in English but pronounced differently — *chassis*,

@@ -3149,6 +3149,8 @@ bickerd	bickerd	VBN
 bickerz	bickerz	VBZ
 bicolord	bicolord	JJ
 bicyclez	bicyclez	VBZ
+bideh	bideh	NN
+bidehs	bidehs	NNS
 bidez	bidez	VBZ
 bidz	bidz	VBZ
 bieldz	bieldz	VBZ
@@ -3434,6 +3436,7 @@ blarneyd	blarneyd	JJ
 blarneyd	blarneyd	VBD
 blarneyd	blarneyd	VBN
 blarneyz	blarneyz	VBZ
+blaseh	blaseh	JJ
 blasphemez	blasphemez	VBZ
 blastz	blastz	VBZ
 blatherd	blatherd	JJ
@@ -5191,6 +5194,8 @@ canald	canald	VBD
 canald	canald	VBN
 canalizez	canalizez	VBZ
 canalz	canalz	VBZ
+canapeh	canapeh	NN
+canapehs	canapehs	NNS
 canceld	canceld	JJ
 canceld	canceld	VBD
 canceld	canceld	VBN
@@ -6893,6 +6898,8 @@ consistz	consistz	VBZ
 consociatez	consociatez	VBZ
 consolez	consolez	VBZ
 consolidatez	consolidatez	VBZ
+consommeh	consommeh	NN
+consommehs	consommehs	NNS
 consortz	consortz	VBZ
 conspirez	conspirez	VBZ
 constativ	constativ	JJ
@@ -8368,6 +8375,7 @@ cwaffd	cwaffd	VBN
 cwaffeur	cwaffeur	NN
 cwaffeurs	cwaffeurs	NNS
 cwaffeuse	cwaffeuse	NN
+cwaffeuses	cwaffeuses	NNS
 cwaffing	cwaffing	VBG
 cwaffs	cwaffs	NNS
 cwaffure	cwaffure	NN
@@ -8735,6 +8743,7 @@ declinez	declinez	VBZ
 decoctz	decoctz	VBZ
 decodez	decodez	VBZ
 decollatez	decollatez	VBZ
+decolleteh	decolleteh	JJ
 decolonizez	decolonizez	VBZ
 decolord	decolord	JJ
 decolord	decolord	VBD
@@ -9062,6 +9071,7 @@ defrostz	defrostz	VBZ
 defundz	defundz	VBZ
 defusez	defusez	VBZ
 defuzez	defuzez	VBZ
+degageh	degageh	JJ
 degasd	degasd	VBD
 degasd	degasd	VBN
 degasez	degasez	VBZ
@@ -9231,6 +9241,7 @@ demobd	demobd	VBN
 demobilizez	demobilizez	VBZ
 demobz	demobz	VBZ
 democratizez	democratizez	VBZ
+demodeh	demodeh	JJ
 demodulatez	demodulatez	VBZ
 demolishd	demolishd	JJ
 demolishd	demolishd	VBD
@@ -11947,6 +11958,8 @@ emendatez	emendatez	VBZ
 emendz	emendz	VBZ
 emergez	emergez	VBZ
 emigratez	emigratez	VBZ
+emigreh	emigreh	NN
+emigrehs	emigrehs	NNS
 emissiv	emissiv	JJ
 emitz	emitz	VBZ
 emmenagog	emmenagog	NN
@@ -12966,6 +12979,8 @@ explosivness	explosivness	NN
 explosivs	explosivs	NNS
 exponentiatez	exponentiatez	VBZ
 exportz	exportz	VBZ
+exposeh	exposeh	NN
+exposehs	exposehs	NNS
 exposez	exposez	VBZ
 expositiv	expositiv	JJ
 expositz	expositz	VBZ
@@ -13498,6 +13513,8 @@ fewterd	fewterd	VBD
 fewterd	fewterd	VBN
 fewterz	fewterz	VBZ
 fezd	fezd	JJ
+fianceh	fianceh	NN
+fiancehs	fiancehs	NNS
 fianchettoz	fianchettoz	VBZ
 fibd	fibd	VBD
 fibd	fibd	VBN
@@ -14814,8 +14831,19 @@ franqhising	franqhising	NN
 franqhising	franqhising	VBG
 franqhisor	franqhisor	NN
 franqhisors	franqhisors	NNS
+frapd	frapd	JJ
 frapd	frapd	VBD
 frapd	frapd	VBN
+frapez	frapez	VBZ
+frappeh	frappeh	NN
+frappeh	frappeh	VB
+frappeh	frappeh	VBP
+frappehd	frappehd	JJ
+frappehd	frappehd	VBD
+frappehd	frappehd	VBN
+frappehing	frappehing	VBG
+frappehs	frappehs	NNS
+frappehz	frappehz	VBZ
 frapz	frapz	VBZ
 frash	frash	NN
 frashes	frashes	NNS
@@ -21925,6 +21953,8 @@ maceratez	maceratez	VBZ
 macez	macez	VBZ
 machinatez	machinatez	VBZ
 macklez	macklez	VBZ
+macrameh	macrameh	NN
+macramehs	macramehs	NNS
 macroaggregat	macroaggregat	NN
 macroaggregats	macroaggregats	NNS
 maculatez	maculatez	VBZ
@@ -22326,6 +22356,8 @@ matchez	matchez	VBZ
 materializez	materializez	VBZ
 matez	matez	VBZ
 mathematizez	mathematizez	VBZ
+matineh	matineh	NN
+matinehs	matinehs	NNS
 matriarchat	matriarchat	NN
 matriarchats	matriarchats	NNS
 matriculat	matriculat	NN
@@ -24916,6 +24948,7 @@ ookz	ookz	VBZ
 oompahd	oompahd	VBD
 oompahd	oompahd	VBN
 oompahz	oompahz	VBZ
+ootreh	ootreh	JJ
 oozd	oozd	VBD
 oozd	oozd	VBN
 oozel	oozel	NN
@@ -27007,6 +27040,7 @@ passagez	passagez	VBZ
 passd	passd	JJ
 passd	passd	VBD
 passd	passd	VBN
+passeh	passeh	JJ
 passez	passez	VBZ
 passionat	passionat	JJ
 passionatly	passionatly	RB
@@ -27038,6 +27072,8 @@ patchd	patchd	VBN
 patchez	patchez	VBZ
 patchuli	patchuli	NN
 patchulis	patchulis	NNS
+pateh	pateh	NN
+patehs	patehs	NNS
 patentz	patentz	VBZ
 pathbraeking	pathbraeking	JJ
 pathfynder	pathfynder	NN
@@ -27978,6 +28014,9 @@ plihtz	plihtz	VBZ
 plinkd	plinkd	VBD
 plinkd	plinkd	VBN
 plinkz	plinkz	VBZ
+plisseh	plisseh	JJ
+plisseh	plisseh	NN
+plissehs	plissehs	NNS
 plodz	plodz	VBZ
 plonkd	plonkd	JJ
 plonkd	plonkd	VBD
@@ -34458,6 +34497,8 @@ resublimez	resublimez	VBZ
 resubmitz	resubmitz	VBZ
 resultiv	resultiv	JJ
 resultz	resultz	VBZ
+resumeh	resumeh	NN
+resumehs	resumehs	NNS
 resumez	resumez	VBZ
 resummond	resummond	VBD
 resummond	resummond	VBN

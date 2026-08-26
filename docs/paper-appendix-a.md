@@ -8,23 +8,22 @@ instructions online.*
 *This is a deliberate reduction in what the paper claims. The published
 appendices ran to several pages of install steps and were wrong in both
 directions within weeks: they walked readers through SmartScreen and Gatekeeper
-overrides for binaries that are now signed and notarized, while announcing an App
-Store listing and a Firefox listing that were never submitted. Install routes
-change on store-review time and platform time, neither of which is paper time.
+overrides for binaries that are now signed and notarized, while announcing a
+Firefox listing that was never submitted and an App Store listing that arrived
+only later. Install routes change on store-review time and platform time,
+neither of which is paper time.
 The instructions now live beside the code, are updated in the same commit as the
 thing they describe, and are quoted here only far enough to tell a reader where
 to go.*
 
-*Three claims in the paper's body are outside this appendix's reach and still
-need correcting: §Browser extensions says the extension is "available for Chrome,
-Edge, Firefox, and Safari", §Epub and text says Eupub is "available for … iOS"
-and "also handles PDF files on mobile devices" — PDF is handled on all five
-platforms, not only mobile, and the iOS build has not been published.*
+*Nothing in the paper's body is left for this appendix to flag. The three claims
+earlier drafts listed have all been settled: §Browser extensions promising the
+extension "available for Chrome, Edge, Firefox, and Safari" and §Epub and text
+promising Eupub "available for … iOS" have both come true, and §Epub and text no
+longer confines PDF handling to mobile devices.*
 
-*Every URL in this appendix was checked and resolves, with one dependency: the
-conversion game is staged into the website at `/game/` and goes live with the
-site deploy. Until the content pages are up, that address 404s along with the
-rest of them.*
+*Every URL in this appendix — the conversion game and each download link
+included — was checked against the live site on 25 August 2026 and resolves.*
 
 ---
 
@@ -35,20 +34,22 @@ conversion is performed locally.
 
 ## A.1 Where to start
 
-**[euspell.org](https://euspell.org)** is the front door. It carries the current
-download links for whichever tools have reached a store or a release, and it is
-the one address worth writing down.
+**[euspell.org](https://euspell.org)** is the front door, and for most readers
+the only address worth writing down: every build is downloaded from the site
+itself rather than from a repository, and the two store listings are linked from
+the same page.
 
 The browser extension is on the **Chrome Web Store**, which also covers Edge,
 Brave, Opera and other Chromium browsers:
 <https://chromewebstore.google.com/detail/euspell/jijbndkdmbmomfmgblomkkejjgdnemja>
 
-The software and its documentation are in two public repositories:
+The software and its documentation are in three public repositories:
 
 | Repository | What it holds |
 | --- | --- |
 | [github.com/ossiak/euspell](https://github.com/ossiak/euspell) | The lexicon, the conversion engine, the browser extension, and the word-processor add-ins |
 | [github.com/ossiak/eupub](https://github.com/ossiak/eupub) | Eupub, the standalone EPUB, PDF and plain-text reader |
+| [github.com/ossiak/euspell-game](https://github.com/ossiak/euspell-game) | The conversion game served at [euspell.org/game/](https://euspell.org/game/) |
 
 ## A.2 The maintained instructions
 
@@ -63,9 +64,15 @@ are right and the paper is out of date.
 | **Eupub**, the e-reader — Windows, macOS, Linux, Android, iOS | [`docs/installing.md`](https://github.com/ossiak/eupub/blob/main/docs/installing.md) in `ossiak/eupub` |
 | **The conversion game** — any modern browser | Nothing to install: [euspell.org/game/](https://euspell.org/game/) |
 
-Released Eupub builds — a signed Windows installer, a notarized macOS disk image,
-a Linux AppImage, and a signed Android APK — are attached to each release at
-[github.com/ossiak/eupub/releases](https://github.com/ossiak/eupub/releases).
+The builds themselves come from the site.
+[euspell.org/downloads](https://euspell.org/downloads/) gathers every one of them
+on a single page: for the browser extension, the Mozilla-signed Firefox `.xpi`
+and the notarized Safari disk image, beside a link to the Chrome Web Store
+listing; for Eupub, a signed Windows installer, a notarized macOS disk image, a
+Linux AppImage and a signed Android APK, beside a link to the App Store listing
+for iPhone. The same files stay attached to the tagged release in each
+repository, which is where the site takes them from, so a reader who prefers the
+repository loses nothing by going there instead.
 
 ## A.3 What a reader can expect to find there
 
@@ -74,18 +81,19 @@ part that dates fastest.
 
 - **The browser extension** is on the Chrome Web Store, which also serves Edge,
   Brave, Opera and other Chromium browsers. Safari has no store listing but does
-  have a signed, notarized app to download, drag to Applications, and switch on
-  in Safari's settings. Firefox has neither a listing nor a build step: its
-  Mozilla-signed `.xpi` is published with the releases, and opening that file in
-  Firefox installs it permanently.
+  have a signed, notarized app to download from the site, drag to Applications,
+  and switch on in Safari's settings. Firefox has neither a listing nor a build
+  step: its Mozilla-signed `.xpi` comes off the same page, and opening that file
+  in Firefox installs it permanently.
 - **The word-processor add-ins** have no marketplace listing on any of the four
   platforms. Three are built from source; Word can instead be pointed at a hosted
   manifest and needs no build at all. They are one-pass converters rather than
   live spell-checkers: a command rewrites the document, and nothing is underlined
   as you type.
-- **Eupub** ships prebuilt for the three desktop platforms, for Android, whose
-  APK is signed with the release key and installs directly, and for iPhone from
-  the App Store, free, on iOS 17 or later.
+- **Eupub** ships prebuilt for the three desktop platforms and for Android,
+  whose APK is signed with the release key and installs directly — all four
+  downloaded from the site — and for iPhone from the App Store, free, on iOS 17
+  or later.
 - **The conversion game** is the one item with nothing to install: a single web
   page that asks the reader to rewrite a passage in euspell by hand and scores
   what they produce against the engine's own output. It needs no server, no
@@ -97,7 +105,8 @@ part that dates fastest.
 
 The repositories are the durable anchor, and each is self-sufficient: the
 instructions live in the `docs/` directory of the repository they describe, so a
-clone or a downloaded ZIP carries the software and its documentation together. A
-reader who can reach either repository needs nothing else from this appendix, and
-one who can reach neither will find the project's current address through a
-search for *euspell*.
+clone or a downloaded ZIP carries the software and its documentation together,
+and each tagged release carries the same signed builds the site serves. A reader
+who can reach any one of them needs nothing else from this appendix, and one who
+can reach none will find the project's current address through a search for
+*euspell*.

@@ -161,7 +161,7 @@ longer exists: the lexicon was once built one encoding category at a time into
 have been removed — nothing read them any more — and the PLS is no longer
 generated at all.
 
-`dict/euspell_tts.pls` is **hand-maintained**, 35,503 lexemes, General American
+`dict/euspell_tts.pls` is **hand-maintained**, 35466 lexemes, General American
 throughout. `npm run gen:pls` does not write it. What that command now does:
 
 - reads the PLS and the lexicon and prints a **drift report** — spellings the

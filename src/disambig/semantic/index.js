@@ -30,6 +30,7 @@ import { disambiguate_filleted } from './filleted.js';
 import { disambiguate_filleting } from './filleting.js';
 import { disambiguate_fillets } from './fillets.js';
 import { disambiguate_foreread } from './foreread.js';
+import { disambiguate_frapped } from './frapped.js';
 import { disambiguate_gets } from './gets.js';
 import { disambiguate_jagged } from './jagged.js';
 import { disambiguate_lead } from './lead.js';
@@ -109,6 +110,7 @@ export const SEMANTIC = new Map([
   ['filleting', disambiguate_filleting],
   ['fillets', disambiguate_fillets],
   ['foreread', disambiguate_foreread],
+  ['frapped', disambiguate_frapped],
   ['gets', disambiguate_gets],
   ['jagged', disambiguate_jagged],
   ['lead', disambiguate_lead],

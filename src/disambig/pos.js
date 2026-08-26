@@ -106,8 +106,10 @@ function isPureAdverb(token) {
  * Returns true if the token at `idx` is functioning as a 3rd-person-singular
  * present-tense verb (CLAWS7: VVZ) rather than a plural noun (NN2).
  *
- * Scoped to words tagged exactly `NN2|VVZ` in the lexicon (diatones such as
- * "records", "tools", "functions"). The plural noun is the unmarked default —
+ * Scoped to words tagged exactly `NN2|VVZ` in the lexicon ("records", "tools",
+ * "functions"). What qualifies is the tag pair, not a stress shift, so most of
+ * them are not diatones: only "records" of those three is one. The plural noun
+ * is the unmarked default —
  * the verb is taken only when the context confirms it — because the commonest
  * source of error is a noun-modifier compound ("learning tools", "computer
  * functions", "bank accounts"), where a noun sits right before the target and
@@ -379,7 +381,7 @@ function endsIsolatedNounPhrase(tokens, idx) {
 }
 
 /**
- * The production decision for an NN2|VVZ diatone: the linear SVM score
+ * The production decision for an NN2|VVZ ambiguity: the linear SVM score
  * (vvz-svm.js, trained on the fiction + non-fiction _corpus_012_112*.txt by
  * build/gen-vvz-svm.py) blended with the hand rule's NEGATIVE (noun) votes:
  *
@@ -394,7 +396,7 @@ function endsIsolatedNounPhrase(tokens, idx) {
  * on the held-out split: 94.5% accuracy with precision 93.3% → 95.2% vs the
  * SVM alone — the false-verb rate nearly halves for a ~0.1pt accuracy cost,
  * the right trade for a converter whose noun spelling is the safe default.
- * A diatone unseen in training has no "w=" weight and falls back to the
+ * A word unseen in training has no "w=" weight and falls back to the
  * learned context weights.
  *
  * A target heading an isolated noun phrase (a heading, title, cell or label)

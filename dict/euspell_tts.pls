@@ -2464,6 +2464,8 @@
   <lexeme><grapheme>bickerz</grapheme><phoneme>ˈbɪkərz</phoneme></lexeme> <!-- bickers -->
   <lexeme><grapheme>bicolord</grapheme><phoneme>ˈbaɪˌkʌlərd</phoneme></lexeme> <!-- bicolored -->
   <lexeme><grapheme>bicyclez</grapheme><phoneme>ˈbaɪsɪkəlz</phoneme></lexeme> <!-- bicycles -->
+  <lexeme><grapheme>bideh</grapheme><phoneme>bɪˈdeɪ</phoneme></lexeme> <!-- bidet -->
+  <lexeme><grapheme>bidehs</grapheme><phoneme>bɪˈdeɪz</phoneme></lexeme> <!-- bidets -->
   <lexeme><grapheme>bidez</grapheme><phoneme>baɪdz</phoneme></lexeme> <!-- bides -->
   <lexeme><grapheme>bidz</grapheme><phoneme>bɪdz</phoneme></lexeme> <!-- bids -->
   <lexeme><grapheme>bieldz</grapheme><phoneme>biːldz</phoneme></lexeme> <!-- bields -->
@@ -2674,6 +2676,7 @@
   <lexeme><grapheme>blarez</grapheme><phoneme>blɛrz</phoneme></lexeme> <!-- blares -->
   <lexeme><grapheme>blarneyd</grapheme><phoneme>ˈblɑːrnid</phoneme></lexeme> <!-- blarneyed -->
   <lexeme><grapheme>blarneyz</grapheme><phoneme>ˈblɑːrniz</phoneme></lexeme> <!-- blarneys -->
+  <lexeme><grapheme>blaseh</grapheme><phoneme>blɑːˈzeɪ</phoneme></lexeme> <!-- blase -->
   <lexeme><grapheme>blasphemez</grapheme><phoneme>blæsˈfiːmz</phoneme></lexeme> <!-- blasphemes -->
   <lexeme><grapheme>blastz</grapheme><phoneme>blæsts</phoneme></lexeme> <!-- blasts -->
   <lexeme><grapheme>blatherd</grapheme><phoneme>ˈblæðərd</phoneme></lexeme> <!-- blathered -->
@@ -3949,6 +3952,8 @@
   <lexeme><grapheme>canalizez</grapheme><phoneme>ˈkænəlaɪzɪz</phoneme></lexeme> <!-- canalises -->
   <lexeme><grapheme>canalling</grapheme><phoneme>kəˈnælɪŋ</phoneme></lexeme> <!-- canaling -->
   <lexeme><grapheme>canalz</grapheme><phoneme>kəˈnælz</phoneme></lexeme> <!-- canals -->
+  <lexeme><grapheme>canapeh</grapheme><phoneme>ˈkænəˌpeɪ</phoneme></lexeme> <!-- canape -->
+  <lexeme><grapheme>canapehs</grapheme><phoneme>ˈkænəˌpeɪz</phoneme></lexeme> <!-- canapes -->
   <lexeme><grapheme>cancelation</grapheme><phoneme>ˌkænsəˈleɪʃən</phoneme></lexeme> <!-- cancellation -->
   <lexeme><grapheme>cancelations</grapheme><phoneme>ˌkænsəˈleɪʃənz</phoneme></lexeme> <!-- cancellations -->
   <lexeme><grapheme>canceld</grapheme><phoneme>ˈkænsəld</phoneme></lexeme> <!-- canceled -->
@@ -5280,6 +5285,8 @@
   <lexeme><grapheme>consociatez</grapheme><phoneme>kənˈsoʊʃiˌeɪts</phoneme></lexeme> <!-- consociates -->
   <lexeme><grapheme>consolez</grapheme><phoneme>ˈkɑːnsəlz</phoneme></lexeme> <!-- consoles -->
   <lexeme><grapheme>consolidatez</grapheme><phoneme>knˈsɑːlɪˌdeɪts</phoneme></lexeme> <!-- consolidates -->
+  <lexeme><grapheme>consommeh</grapheme><phoneme>ˌkɑːnsəˈmeɪ</phoneme></lexeme> <!-- consomme -->
+  <lexeme><grapheme>consommehs</grapheme><phoneme>ˌkɑːnsəˈmeɪz</phoneme></lexeme> <!-- consommes -->
   <lexeme><grapheme>consorts</grapheme><phoneme>ˈkɑːnsɔːrts</phoneme></lexeme> <!-- consorts -->
   <lexeme><grapheme>consortz</grapheme><phoneme>kənˈsɔːrts</phoneme></lexeme> <!-- consorts -->
   <lexeme><grapheme>conspirez</grapheme><phoneme>kənˈspaɪərz</phoneme></lexeme> <!-- conspires -->
@@ -6691,6 +6698,7 @@
   <lexeme><grapheme>decoctz</grapheme><phoneme>dɪˈkɑkts</phoneme></lexeme> <!-- decocts -->
   <lexeme><grapheme>decodez</grapheme><phoneme>diˈkoʊdz</phoneme></lexeme> <!-- decodes -->
   <lexeme><grapheme>decollatez</grapheme><phoneme>diˈkɑˌleɪts</phoneme></lexeme> <!-- decollates -->
+  <lexeme><grapheme>decolleteh</grapheme><phoneme>deɪˌkɑːlˈteɪ</phoneme></lexeme> <!-- decollete -->
   <lexeme><grapheme>decolonizez</grapheme><phoneme>diˈkɑləˌnaɪzəz</phoneme></lexeme> <!-- decolonises -->
   <lexeme><grapheme>decolord</grapheme><phoneme>diˈkʌlərd</phoneme></lexeme> <!-- decolored -->
   <lexeme><grapheme>decolorizez</grapheme><phoneme>diˈkʌləˌraɪzəz</phoneme></lexeme> <!-- decolorises -->
@@ -6926,6 +6934,7 @@
   <lexeme><grapheme>defrostz</grapheme><phoneme>diˈfrɔsts</phoneme></lexeme> <!-- defrosts -->
   <lexeme><grapheme>defundz</grapheme><phoneme>diˈfʌndz</phoneme></lexeme> <!-- defunds -->
   <lexeme><grapheme>defusez</grapheme><phoneme>diˈfjuzəz</phoneme></lexeme> <!-- defuses -->
+  <lexeme><grapheme>degageh</grapheme><phoneme>ˌdeɪɡɑːˈʒeɪ</phoneme></lexeme> <!-- degage -->
   <lexeme><grapheme>degasd</grapheme><phoneme>diˈɡæst</phoneme></lexeme> <!-- degassed -->
   <lexeme><grapheme>degasez</grapheme><phoneme>diˈɡæsəz</phoneme></lexeme> <!-- degases -->
   <lexeme><grapheme>degassez</grapheme><phoneme>diˈɡæsəz</phoneme></lexeme> <!-- degasses -->
@@ -7061,6 +7070,7 @@
   <lexeme><grapheme>demobilizez</grapheme><phoneme>diˈmoʊbəˌlaɪzəz</phoneme></lexeme> <!-- demobilises -->
   <lexeme><grapheme>demobz</grapheme><phoneme>diˈmɑbz</phoneme></lexeme> <!-- demobs -->
   <lexeme><grapheme>democratizez</grapheme><phoneme>dɪˈkɑmrəˌtaɪzəz</phoneme></lexeme> <!-- democratises -->
+  <lexeme><grapheme>demodeh</grapheme><phoneme>ˌdeɪmoʊˈdeɪ</phoneme></lexeme> <!-- demode -->
   <lexeme><grapheme>demodulatez</grapheme><phoneme>diˈmɑdʒəˌleɪts</phoneme></lexeme> <!-- demodulates -->
   <lexeme><grapheme>demolishd</grapheme><phoneme>dɪˈmɑlɪʃt</phoneme></lexeme> <!-- demolished -->
   <lexeme><grapheme>demolishez</grapheme><phoneme>dɪˈmɑlɪʃəz</phoneme></lexeme> <!-- demolishes -->
@@ -9078,6 +9088,8 @@
   <lexeme><grapheme>emendz</grapheme><phoneme>ɪˈmɛndz</phoneme></lexeme> <!-- emends -->
   <lexeme><grapheme>emergez</grapheme><phoneme>ɪˈmɜːrdʒɪz</phoneme></lexeme> <!-- emerges -->
   <lexeme><grapheme>emigratez</grapheme><phoneme>ˈɛmɪˌɡreɪts</phoneme></lexeme> <!-- emigrates -->
+  <lexeme><grapheme>emigreh</grapheme><phoneme>ˈɛmɪˌɡreɪ</phoneme></lexeme> <!-- emigre -->
+  <lexeme><grapheme>emigrehs</grapheme><phoneme>ˈɛmɪˌɡreɪz</phoneme></lexeme> <!-- emigres -->
   <lexeme><grapheme>emissiv</grapheme><phoneme>ɪˈmɪsɪv</phoneme></lexeme> <!-- emissive -->
   <lexeme><grapheme>emitz</grapheme><phoneme>ɪˈmɪts</phoneme></lexeme> <!-- emits -->
   <lexeme><grapheme>emmenagog</grapheme><phoneme>əˈmɛnəˌɡɔːɡ</phoneme></lexeme> <!-- emmenagogue -->
@@ -9898,6 +9910,8 @@
   <lexeme><grapheme>exponentiatez</grapheme><phoneme>ˌɛkspoʊˈnɛnʃiˌeɪts</phoneme></lexeme> <!-- exponentiates -->
   <lexeme><grapheme>exports</grapheme><phoneme>ˈɛkspɔrts</phoneme></lexeme> <!-- exports -->
   <lexeme><grapheme>exportz</grapheme><phoneme>ɪkˈspɔːrts</phoneme></lexeme> <!-- exports -->
+  <lexeme><grapheme>exposeh</grapheme><phoneme>ˌɛkspoʊˈzeɪ</phoneme></lexeme> <!-- expose -->
+  <lexeme><grapheme>exposehs</grapheme><phoneme>ˌɛkspoʊˈzeɪz</phoneme></lexeme> <!-- exposes -->
   <lexeme><grapheme>exposez</grapheme><phoneme>ɪkˈspoʊzɪz</phoneme></lexeme> <!-- exposes -->
   <lexeme><grapheme>expositiv</grapheme><phoneme>ɪkˈspɒzɪtɪv</phoneme></lexeme> <!-- expositive -->
   <lexeme><grapheme>expositz</grapheme><phoneme>ɪkˈspɒzɪts</phoneme></lexeme> <!-- exposits -->
@@ -10320,6 +10334,8 @@
   <lexeme><grapheme>fewterd</grapheme><phoneme>ˈfjuːtərd</phoneme></lexeme> <!-- fewtered -->
   <lexeme><grapheme>fewterz</grapheme><phoneme>ˈfjuːtərz</phoneme></lexeme> <!-- fewters -->
   <lexeme><grapheme>fezd</grapheme><phoneme>fɛzd</phoneme></lexeme> <!-- fezzed -->
+  <lexeme><grapheme>fianceh</grapheme><phoneme>ˌfiːɑːnˈseɪ</phoneme></lexeme> <!-- fiance -->
+  <lexeme><grapheme>fiancehs</grapheme><phoneme>ˌfiːɑːnˈseɪz</phoneme></lexeme> <!-- fiances -->
   <lexeme><grapheme>fianchettoz</grapheme><phoneme>ˌfiənˈkɛtoʊz</phoneme></lexeme> <!-- fianchettos -->
   <lexeme><grapheme>fibd</grapheme><phoneme>fɪbd</phoneme></lexeme> <!-- fibbed -->
   <lexeme><grapheme>fiberd</grapheme><phoneme>ˈfaɪbərd</phoneme></lexeme> <!-- fibered -->
@@ -11284,6 +11300,12 @@
   <lexeme><grapheme>franqhisor</grapheme><phoneme>ˈfræntʃaɪzər</phoneme></lexeme> <!-- franchisor -->
   <lexeme><grapheme>franqhisors</grapheme><phoneme>ˈfræntʃaɪzərz</phoneme></lexeme> <!-- franchisors -->
   <lexeme><grapheme>frapd</grapheme><phoneme>fræpt</phoneme></lexeme> <!-- frapped -->
+  <lexeme><grapheme>frapez</grapheme><phoneme>freɪps</phoneme></lexeme> <!-- frapes -->
+  <lexeme><grapheme>frappeh</grapheme><phoneme>fræˈpeɪ</phoneme></lexeme> <!-- frappe -->
+  <lexeme><grapheme>frappehd</grapheme><phoneme>fræˈpeɪd</phoneme></lexeme> <!-- frapped -->
+  <lexeme><grapheme>frappehing</grapheme><phoneme>fræˈpeɪɪŋ</phoneme></lexeme> <!-- frappeing -->
+  <lexeme><grapheme>frappehs</grapheme><phoneme>fræˈpeɪz</phoneme></lexeme> <!-- frappes -->
+  <lexeme><grapheme>frappehz</grapheme><phoneme>fræˈpeɪz</phoneme></lexeme> <!-- frappes -->
   <lexeme><grapheme>frapz</grapheme><phoneme>fræps</phoneme></lexeme> <!-- fraps -->
   <lexeme><grapheme>frash</grapheme><phoneme>frɑʃ</phoneme></lexeme> <!-- frache -->
   <lexeme><grapheme>frashes</grapheme><phoneme>frɑʃɪz</phoneme></lexeme> <!-- fraches -->
@@ -16905,6 +16927,8 @@
   <lexeme><grapheme>macez</grapheme><phoneme>ˈmeɪsɪz</phoneme></lexeme> <!-- maces -->
   <lexeme><grapheme>machinatez</grapheme><phoneme>ˈmækəneɪts</phoneme></lexeme> <!-- machinates -->
   <lexeme><grapheme>macklez</grapheme><phoneme>ˈmækəlz</phoneme></lexeme> <!-- mackles -->
+  <lexeme><grapheme>macrameh</grapheme><phoneme>ˈmækrəˌmeɪ</phoneme></lexeme> <!-- macrame -->
+  <lexeme><grapheme>macramehs</grapheme><phoneme>ˈmækrəˌmeɪz</phoneme></lexeme> <!-- macrames -->
   <lexeme><grapheme>macroaggregat</grapheme><phoneme>ˌmækroʊˈæɡrɪɡət</phoneme></lexeme> <!-- macroaggregate -->
   <lexeme><grapheme>macroaggregats</grapheme><phoneme>ˌmækroʊˈæɡrɪɡəts</phoneme></lexeme> <!-- macroaggregates -->
   <lexeme><grapheme>macruridae</grapheme><phoneme>mæˈkrʊərɪdeɪː</phoneme></lexeme> <!-- macrouridae -->
@@ -17215,6 +17239,8 @@
   <lexeme><grapheme>materializez</grapheme><phoneme>məˈtɪəriəlaɪzɪz</phoneme></lexeme> <!-- materialises -->
   <lexeme><grapheme>matez</grapheme><phoneme>meɪts</phoneme></lexeme> <!-- mates -->
   <lexeme><grapheme>mathematizez</grapheme><phoneme>ˌmæθəməˈtaɪzɪz</phoneme></lexeme> <!-- mathematises -->
+  <lexeme><grapheme>matineh</grapheme><phoneme>ˌmætəˈneɪ</phoneme></lexeme> <!-- matinee -->
+  <lexeme><grapheme>matinehs</grapheme><phoneme>ˌmætəˈneɪz</phoneme></lexeme> <!-- matinees -->
   <lexeme><grapheme>matriarchat</grapheme><phoneme>ˌmeɪtriˈɑːrkət</phoneme></lexeme> <!-- matriarchate -->
   <lexeme><grapheme>matriarchats</grapheme><phoneme>ˌmeɪtriˈɑːrkəts</phoneme></lexeme> <!-- matriarchates -->
   <lexeme><grapheme>matriculat</grapheme><phoneme>məˈtrɪkjʊlɪt</phoneme></lexeme> <!-- matriculate -->
@@ -19249,6 +19275,7 @@
   <lexeme><grapheme>ookz</grapheme><phoneme>ʊks</phoneme></lexeme> <!-- ooks -->
   <lexeme><grapheme>oompahd</grapheme><phoneme>ˈʊmpɑd</phoneme></lexeme> <!-- oompahed -->
   <lexeme><grapheme>oompahz</grapheme><phoneme>ˈʊmpɑz</phoneme></lexeme> <!-- oompahs -->
+  <lexeme><grapheme>ootreh</grapheme><phoneme>uːˈtreɪ</phoneme></lexeme> <!-- outre -->
   <lexeme><grapheme>oozd</grapheme><phoneme>uzd</phoneme></lexeme> <!-- oozed -->
   <lexeme><grapheme>oozel</grapheme><phoneme>ˈuzəl</phoneme></lexeme> <!-- ousel -->
   <lexeme><grapheme>oozels</grapheme><phoneme>ˈuzəlz</phoneme></lexeme> <!-- ousels -->
@@ -20770,6 +20797,7 @@
   <lexeme><grapheme>pasquinadez</grapheme><phoneme>ˌpæskwɪˈneɪdz</phoneme></lexeme> <!-- pasquinades -->
   <lexeme><grapheme>passagez</grapheme><phoneme>ˈpæsɪdʒɪz</phoneme></lexeme> <!-- passages -->
   <lexeme><grapheme>passd</grapheme><phoneme>pæst</phoneme></lexeme> <!-- passed -->
+  <lexeme><grapheme>passeh</grapheme><phoneme>pæˈseɪ</phoneme></lexeme> <!-- passe -->
   <lexeme><grapheme>passez</grapheme><phoneme>ˈpæsɪz</phoneme></lexeme> <!-- passes -->
   <lexeme><grapheme>passionat</grapheme><phoneme>ˈpæʃənət</phoneme></lexeme> <!-- passionate -->
   <lexeme><grapheme>passionatly</grapheme><phoneme>ˈpæʃənətli</phoneme></lexeme> <!-- passionately -->
@@ -20799,6 +20827,8 @@
   <lexeme><grapheme>patchez</grapheme><phoneme>ˈpætʃɪz</phoneme></lexeme> <!-- patches -->
   <lexeme><grapheme>patchuli</grapheme><phoneme>pəˈtʃuːli</phoneme></lexeme> <!-- pachouli -->
   <lexeme><grapheme>patchulis</grapheme><phoneme>pəˈtʃuːliz</phoneme></lexeme> <!-- pachoulis -->
+  <lexeme><grapheme>pateh</grapheme><phoneme>pɑːˈteɪ</phoneme></lexeme> <!-- pate -->
+  <lexeme><grapheme>patehs</grapheme><phoneme>pɑːˈteɪz</phoneme></lexeme> <!-- pates -->
   <lexeme><grapheme>patentz</grapheme><phoneme>ˈpætənts</phoneme></lexeme> <!-- patents -->
   <lexeme><grapheme>pathbraeking</grapheme><phoneme>ˈpæθˌbreɪkɪŋ</phoneme></lexeme> <!-- pathbreaking -->
   <lexeme><grapheme>pathfynder</grapheme><phoneme>ˈpæθˌfaɪndər</phoneme></lexeme> <!-- pathfinder -->
@@ -21516,6 +21546,8 @@
   <lexeme><grapheme>plihtz</grapheme><phoneme>plaɪts</phoneme></lexeme> <!-- plights -->
   <lexeme><grapheme>plinkd</grapheme><phoneme>plɪŋkt</phoneme></lexeme> <!-- plinked -->
   <lexeme><grapheme>plinkz</grapheme><phoneme>plɪŋks</phoneme></lexeme> <!-- plinks -->
+  <lexeme><grapheme>plisseh</grapheme><phoneme>plɪˈseɪ</phoneme></lexeme> <!-- plisse -->
+  <lexeme><grapheme>plissehs</grapheme><phoneme>plɪˈseɪz</phoneme></lexeme> <!-- plisses -->
   <lexeme><grapheme>plodz</grapheme><phoneme>plɒdz</phoneme></lexeme> <!-- plods -->
   <lexeme><grapheme>plonkd</grapheme><phoneme>plɒŋkt</phoneme></lexeme> <!-- plonked -->
   <lexeme><grapheme>plonkz</grapheme><phoneme>plɒŋks</phoneme></lexeme> <!-- plonks -->
@@ -26337,6 +26369,9 @@
   <lexeme><grapheme>resubmitz</grapheme><phoneme>riːsəbˈmɪts</phoneme></lexeme> <!-- resubmits -->
   <lexeme><grapheme>resultiv</grapheme><phoneme>rɪˈzʌltɪv</phoneme></lexeme> <!-- resultive -->
   <lexeme><grapheme>resultz</grapheme><phoneme>rɪˈzʌlts</phoneme></lexeme> <!-- results -->
+  <lexeme><grapheme>resume</grapheme><phoneme>rɪˈzuːm</phoneme></lexeme> <!-- resume -->
+  <lexeme><grapheme>resumeh</grapheme><phoneme>ˈrɛzəˌmeɪ</phoneme></lexeme> <!-- resume -->
+  <lexeme><grapheme>resumehs</grapheme><phoneme>ˈrɛzəˌmeɪz</phoneme></lexeme> <!-- resumes -->
   <lexeme><grapheme>resumez</grapheme><phoneme>rɪˈzuːmz</phoneme></lexeme> <!-- resumes -->
   <lexeme><grapheme>resummond</grapheme><phoneme>riːˈsʌmənd</phoneme></lexeme> <!-- resummoned -->
   <lexeme><grapheme>resummonz</grapheme><phoneme>riːˈsʌmənz</phoneme></lexeme> <!-- resummons -->
