@@ -14197,6 +14197,7 @@
   <lexeme><grapheme>ignifiez</grapheme><phoneme>ˈɪɡnəˌfaɪz</phoneme></lexeme> <!-- ignifies -->
   <lexeme><grapheme>ignitez</grapheme><phoneme>ɪɡˈnaɪts</phoneme></lexeme> <!-- ignites -->
   <lexeme><grapheme>ignorez</grapheme><phoneme>ɪɡˈnɔrz</phoneme></lexeme> <!-- ignores -->
+  <lexeme><grapheme>ih</grapheme><phoneme>aɪ</phoneme></lexeme> <!-- I -->
   <lexeme><grapheme>ih'd</grapheme><phoneme>aɪd</phoneme></lexeme> <!-- I'd -->
   <lexeme><grapheme>ih'd'v</grapheme><phoneme>ˈaɪdəv</phoneme></lexeme> <!-- I'd've -->
   <lexeme><grapheme>ih'll</grapheme><phoneme>aɪl</phoneme></lexeme> <!-- I'll -->
@@ -21992,8 +21993,8 @@
   <lexeme><grapheme>precieu</grapheme><phoneme>ˈpreɪsɪɜː</phoneme></lexeme> <!-- precieux -->
   <lexeme><grapheme>precih</grapheme><phoneme>preɪˈsiː</phoneme></lexeme> <!-- precis -->
   <lexeme><grapheme>precihs</grapheme><phoneme>preɪˈsiːz</phoneme></lexeme> <!-- precises -->
-  <lexeme><grapheme>precipe</grapheme><phoneme>priːˈsɪpɪ</phoneme></lexeme> <!-- praecipe -->
-  <lexeme><grapheme>precipes</grapheme><phoneme>priːˈsɪpɪz</phoneme></lexeme> <!-- praecipes -->
+  <lexeme><grapheme>precipee</grapheme><phoneme>priːˈsɪpɪ</phoneme></lexeme> <!-- praecipe -->
+  <lexeme><grapheme>precipees</grapheme><phoneme>priːˈsɪpɪz</phoneme></lexeme> <!-- praecipes -->
   <lexeme><grapheme>precipitat</grapheme><phoneme>prɪˈsɪpɪtət</phoneme></lexeme> <!-- precipitate -->
   <lexeme><grapheme>precipitate</grapheme><phoneme>prɪˈsɪpɪˌteɪt</phoneme></lexeme> <!-- precipitate -->
   <lexeme><grapheme>precipitatez</grapheme><phoneme>prɪˈsɪpɪteɪts</phoneme></lexeme> <!-- precipitates -->
@@ -30071,10 +30072,10 @@
   <lexeme><grapheme>suffocativ</grapheme><phoneme>ˈsʌfəˌkeɪtɪv</phoneme></lexeme> <!-- suffocative -->
   <lexeme><grapheme>suffragett</grapheme><phoneme>ˌsʌfrəˈdʒɛt</phoneme></lexeme> <!-- suffragette -->
   <lexeme><grapheme>suffragetts</grapheme><phoneme>ˌsʌfrəˈdʒɛts</phoneme></lexeme> <!-- suffragettes -->
-  <lexeme><grapheme>suffs</grapheme><phoneme>saʊz</phoneme></lexeme> <!-- soughs -->
+  <lexeme><grapheme>suffs</grapheme><phoneme>sʌfz</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>suffusiv</grapheme><phoneme>səˈfjusɪv</phoneme></lexeme> <!-- suffusive -->
   <lexeme><grapheme>suffusez</grapheme><phoneme>səˈfjuzəz</phoneme></lexeme> <!-- suffuses -->
-  <lexeme><grapheme>suffz</grapheme><phoneme>saʊz</phoneme></lexeme> <!-- soughs -->
+  <lexeme><grapheme>suffz</grapheme><phoneme>sʌfz</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>sugarcoatz</grapheme><phoneme>ˈʃʊɡərˌkoʊts</phoneme></lexeme> <!-- sugarcoats -->
   <lexeme><grapheme>sugard</grapheme><phoneme>ˈʃʊɡərd</phoneme></lexeme> <!-- sugared -->
   <lexeme><grapheme>sugd</grapheme><phoneme>sʌɡd</phoneme></lexeme> <!-- sugged -->

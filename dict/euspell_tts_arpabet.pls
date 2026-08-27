@@ -10394,13 +10394,13 @@
   <lexeme><grapheme>filleh</grapheme><phoneme>F IH0 L EY1</phoneme></lexeme> <!-- fillet -->
   <lexeme><grapheme>fillehd</grapheme><phoneme>F IH0 L EY1 D</phoneme></lexeme> <!-- filleted -->
   <lexeme><grapheme>fillehing</grapheme><phoneme>F IH0 L EY1 IH0 NG</phoneme></lexeme> <!-- filleting -->
-  <lexeme><grapheme>fillehs</grapheme><phoneme>F IH0 L EY1 Z</phoneme></lexeme> <!-- fillehs -->
-  <lexeme><grapheme>fillehz</grapheme><phoneme>F IH0 L EY1 Z</phoneme></lexeme> <!-- fillehz -->
+  <lexeme><grapheme>fillehs</grapheme><phoneme>F IH0 L EY1 Z</phoneme></lexeme> <!-- fillets (the noun) -->
+  <lexeme><grapheme>fillehz</grapheme><phoneme>F IH0 L EY1 Z</phoneme></lexeme> <!-- fillets (the verb) -->
   <lexeme><grapheme>fillet</grapheme><phoneme>F IH1 L IH0 T</phoneme></lexeme> <!-- fillet -->
   <lexeme><grapheme>filleted</grapheme><phoneme>F IH1 L IH0 T IH0 D</phoneme></lexeme> <!-- filleted -->
   <lexeme><grapheme>filleting</grapheme><phoneme>F IH1 L IH0 T IH0 NG</phoneme></lexeme> <!-- filleting -->
   <lexeme><grapheme>fillets</grapheme><phoneme>F IH1 L IH0 T S</phoneme></lexeme> <!-- fillets -->
-  <lexeme><grapheme>filletz</grapheme><phoneme>F IH1 L IH0 T S</phoneme></lexeme> <!-- filletz -->
+  <lexeme><grapheme>filletz</grapheme><phoneme>F IH1 L IH0 T S</phoneme></lexeme> <!-- fillets (the anglicised verb) -->
   <lexeme><grapheme>fillibusterd</grapheme><phoneme>F IH1 L AH0 B AH2 S T ER0 D</phoneme></lexeme> <!-- fillibustered -->
   <lexeme><grapheme>fillibusterz</grapheme><phoneme>F IH1 L AH0 B AH2 S T ER0 Z</phoneme></lexeme> <!-- fillibusters -->
   <lexeme><grapheme>fillipd</grapheme><phoneme>F IH1 L IH0 P T</phoneme></lexeme> <!-- filliped -->
@@ -14195,6 +14195,7 @@
   <lexeme><grapheme>ignifiez</grapheme><phoneme>IH1 G N AH0 F AY2 Z</phoneme></lexeme> <!-- ignifies -->
   <lexeme><grapheme>ignitez</grapheme><phoneme>IH0 G N AY1 T S</phoneme></lexeme> <!-- ignites -->
   <lexeme><grapheme>ignorez</grapheme><phoneme>IH0 G N AO1 R Z</phoneme></lexeme> <!-- ignores -->
+  <lexeme><grapheme>ih</grapheme><phoneme>AY1</phoneme></lexeme> <!-- ih -->
   <lexeme><grapheme>ih'd</grapheme><phoneme>AY1 D</phoneme></lexeme> <!-- ih'd -->
   <lexeme><grapheme>ih'd'v</grapheme><phoneme>AY1 D AH0 V</phoneme></lexeme> <!-- ih'd'v -->
   <lexeme><grapheme>ih'll</grapheme><phoneme>AY1 L</phoneme></lexeme> <!-- ih'll -->
@@ -21986,8 +21987,8 @@
   <lexeme><grapheme>precieu</grapheme><phoneme>P R EY1 S IH0 ER0</phoneme></lexeme> <!-- precieux -->
   <lexeme><grapheme>precih</grapheme><phoneme>P R EY0 S IY1</phoneme></lexeme> <!-- precis -->
   <lexeme><grapheme>precihs</grapheme><phoneme>P R EY0 S IY1 Z</phoneme></lexeme> <!-- precises -->
-  <lexeme><grapheme>precipe</grapheme><phoneme>P R IY0 S IH1 P IH0</phoneme></lexeme> <!-- precipe -->
-  <lexeme><grapheme>precipes</grapheme><phoneme>P R IY0 S IH1 P IH0 Z</phoneme></lexeme> <!-- precipes -->
+  <lexeme><grapheme>precipee</grapheme><phoneme>P R IY0 S IH1 P IH0</phoneme></lexeme> <!-- praecipe -->
+  <lexeme><grapheme>precipees</grapheme><phoneme>P R IY0 S IH1 P IH0 Z</phoneme></lexeme> <!-- praecipes -->
   <lexeme><grapheme>precipitat</grapheme><phoneme>P R IH0 S IH1 P IH0 T AH0 T</phoneme></lexeme> <!-- precipitate -->
   <lexeme><grapheme>precipitate</grapheme><phoneme>P R IH0 S IH1 P IH0 T EY2 T</phoneme></lexeme> <!-- precipitate -->
   <lexeme><grapheme>precipitatez</grapheme><phoneme>P R IH0 S IH1 P IH0 T EY0 T S</phoneme></lexeme> <!-- precipitates -->
@@ -30060,10 +30061,10 @@
   <lexeme><grapheme>suffocativ</grapheme><phoneme>S AH1 F AH0 K EY2 T IH0 V</phoneme></lexeme> <!-- suffocative -->
   <lexeme><grapheme>suffragett</grapheme><phoneme>S AH2 F R AH0 JH EH1 T</phoneme></lexeme> <!-- suffragette -->
   <lexeme><grapheme>suffragetts</grapheme><phoneme>S AH2 F R AH0 JH EH1 T S</phoneme></lexeme> <!-- suffragettes -->
-  <lexeme><grapheme>suffs</grapheme><phoneme>S AW1 Z</phoneme></lexeme> <!-- soughs -->
+  <lexeme><grapheme>suffs</grapheme><phoneme>S AH1 F Z</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>suffusez</grapheme><phoneme>S AH0 F Y UW1 Z AH0 Z</phoneme></lexeme> <!-- suffuses -->
   <lexeme><grapheme>suffusiv</grapheme><phoneme>S AH0 F Y UW1 S IH0 V</phoneme></lexeme> <!-- suffusive -->
-  <lexeme><grapheme>suffz</grapheme><phoneme>S AW1 Z</phoneme></lexeme> <!-- soughs -->
+  <lexeme><grapheme>suffz</grapheme><phoneme>S AH1 F Z</phoneme></lexeme> <!-- soughs -->
   <lexeme><grapheme>sugarcoatz</grapheme><phoneme>SH UH1 G ER0 K OW2 T S</phoneme></lexeme> <!-- sugarcoats -->
   <lexeme><grapheme>sugard</grapheme><phoneme>SH UH1 G ER0 D</phoneme></lexeme> <!-- sugared -->
   <lexeme><grapheme>sugd</grapheme><phoneme>S AH1 G D</phoneme></lexeme> <!-- sugged -->

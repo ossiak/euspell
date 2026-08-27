@@ -1,12 +1,12 @@
 Encoding,Description,Count
-000,unchanged common word,158851
+000,unchanged common word,158849
 011,unambiguous VVZ ending -s → -z,5984
 012,NN2|VVZ -s ending disambiguated,4916
 021,JJ|VVD|VVN ending -ed → -d when warranted,4703
 022,JJ|VVD|VVN ending disambiguated e.g. blessd/blessed,5
 041,doubling consonant before ending,3
-101,stem change,14567
-102,stem disambiguated: ending in -ate,154
+101,stem change,14568
+102,stem disambiguated: ending in -ate,155
 103,stem disambiguated three ways,5
 111,stem change + unambiguous VVZ ending -s → -z,1459
 112,stem change + NN2|VVZ ending: disambiguated,746

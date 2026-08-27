@@ -57,6 +57,10 @@ function reachesDisambiguator(e) {
     e.pos.some((reading) => reading.split(/\s+/).pop() === 'GE') ||
     (e.encoding === 702 && e.pos.includes('NN2')) ||
     ((e.encoding === 102 || e.encoding === 152) && e.pos.includes('VV0')) ||
+    // The pronoun "I": a 102 with no VV0, so the clause above cannot reach it.
+    // route() gives it its own branch, answered by convert()'s isPronounI() for
+    // the capitalized pronoun and by the branch itself for the lowercase letter.
+    (e.encoding === 102 && e.pos.includes('PPIS1')) ||
     SEMANTIC.has(k) ||
     KEEP_UNCHANGED.has(k)
   );

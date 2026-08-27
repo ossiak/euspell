@@ -53,8 +53,8 @@ const variants = entry.encoding % 10;
   to matter, because they say what kind of question is being asked.
 
 This split is why conversion is fast despite the lexicon being large. Of 205505
-entries, 164102 are unchanged and 35484 have a single spelling — 97% of the
-lexicon is resolved without ever consulting a tagger. Only 5919 entries, under
+entries, 164100 are unchanged and 35485 have a single spelling — 97% of the
+lexicon is resolved without ever consulting a tagger. Only 5920 entries, under
 3%, are ambiguous enough to need one.
 
 ## The full scheme
@@ -67,7 +67,7 @@ The regular cases: either nothing changes, or only an inflectional ending does.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `000` | no new spelling | 158851 | `cat`, `the` |
+| `000` | no new spelling | 158849 | `cat`, `the` |
 | `011` | `VVZ` ending | 5984 | `abandons` → `abandonz` |
 | `012` | `NN2\|VVZ` ending — **two spellings** | 4916 | `records` → `records` / `recordz` |
 | `021` | `JJ\|VVD\|VVN` ending | 4703 | `abandoned` → `abandond` |
@@ -91,28 +91,39 @@ The stem changes, optionally along with an ending.
 
 | Code | Meaning | Count | Example |
 | --- | --- | ---: | --- |
-| `101` | stem | 14567 | `abductive` → `abductiv` |
-| `102` | stem, **two spellings**, one of them `VV0` | 154 | `separate` → `separat` / `separate` |
-| `103` | stem, **three spellings** | 5 | `slough` → `sloff` / `slouh` / `sluh` |
+| `101` | stem | 14568 | `abductive` → `abductiv` |
+| `102` | stem, **two spellings**, one of them `VV0` | 155 | `separate` → `separat` / `separate` |
+| `103` | stem, **three spellings** | 5 | `slough` → `sluff` / `slouh` / `sluh` |
 | `111` | stem + `NN2\|VVZ` ending | 1459 | `absolves` → `absolvz` |
 | `112` | stem + `NN2\|VVZ` ending, **two spellings** | 746 | `abuses` → `abuses` / `abuzez` |
 | `113` | stem + `NN2\|VVZ` ending, **three spellings** | 3 | `winds` → `winds` / `windz` / `wyndz` |
 | `114` | stem + `NN2\|VVZ` ending, **four spellings** | 5 | `bows` → `bows` / `bowz` / `buws` / `buwz` |
 | `121` | stem + `JJ\|VVD\|VVN` ending | 949 | `achieved` → `aqhievd` |
-| `123` | stem + `JJ\|VVD\|VVN` ending, **three spellings** | 1 | `sloughed` → `sloffd` / `slouhd` / `sluhd` |
+| `123` | stem + `JJ\|VVD\|VVN` ending, **three spellings** | 1 | `sloughed` → `sluffd` / `slouhd` / `sluhd` |
 | `131` | stem + undoubling consonant before the ending | 21 | `channelling` → `qhanneling` |
 | `152` | stem, **two spellings**, one `VV0`, *not* the `-ate` pattern | 15 | `abuse` → `abuse` / `abuze` |
 
 `102` and `152` deserve a note, because the split between them is recent and
 deliberate. Both are part-of-speech heteronyms where one reading is a base-form
-verb (`VV0`), so both ask the engine the same question. But `102` is now
-exactly the English `-ate` stress alternation — *separate*, *adulterate*,
-*advocate*, where the verb ends /eɪt/ and the adjective or noun reduces to /ət/.
-That is a productive, regular pattern covering 154 words. The 15 words in `152`
-are the leftovers that merely happen to share the shape: *use*, *abuse*, *bear*,
-*refuse*, *live*, *buffet*. They have nothing in common phonologically and are
-worth tracking separately so the regular pattern's statistics aren't polluted by
-them.
+verb (`VV0`), so both ask the engine the same question. `102` is very nearly the
+English `-ate` stress alternation — *separate*, *adulterate*, *advocate*, where
+the verb ends /eɪt/ and the adjective or noun reduces to /ət/ — a productive,
+regular pattern covering 152 of its 155 words. The 15 words in `152` are the
+leftovers that merely happen to share the shape: *use*, *abuse*, *bear*, *house*,
+*live*, *buffet*. They have nothing in common phonologically and are worth
+tracking separately so the regular pattern's statistics aren't polluted by them.
+
+**Three rows in `102` are not `-ate` words**, and they are worth knowing about
+because the class is otherwise so uniform:
+
+| Word | Spellings | Why it is here |
+| --- | --- | --- |
+| `expose` | `exposeh` / `expose` | A French `-e` loanword split from its verb on 26 Aug; the noun takes the `-eh` grapheme, the verb keeps its spelling |
+| `resume` | `resumeh` / `resume` | The same split, same day |
+| `i` | `ih` / `i` | The *Singletons* pronoun, added 27 Aug: `ih` for the pronoun, `i` for the letter and the Roman numeral |
+
+The first two still ask the `VV0` question and reach `is_verb_VV0` normally. `i`
+does not — see the caveat under **Which encodings need disambiguation**.
 
 The tens digit `5` was chosen for this class because `4` was already taken by
 "doubling consonant" (`041`, `641`), and reusing it would have made the tens
@@ -166,8 +177,8 @@ can look unreformed, because the euspelling it lands on is already a word.
 | `700` | no new spelling | 121 | — |
 | `701` | stem | 880 | `aboideau` → `abodeau` |
 | `702` | **two spellings**, all `NN1\|NN2` | 9 | `chassis` → `shassi` / `shassis` |
-| `711` | `VVZ` ending | 4 | `uncoifs` → `uncwafz` |
-| `721` | `JJ\|VVD\|VVN` ending | 26 | `avalanched` → `avalanshd` |
+| `711` | `VVZ` ending | 4 | `uncoifs` → `uncwaffz` |
+| `721` | `JJ\|VVD\|VVN` ending | 26 | `avalanched` → `avalanqhd` |
 
 `702` is a small but distinctive class: French loanwords whose singular and
 plural are spelled identically in English but pronounced differently — *chassis*,
@@ -217,7 +228,7 @@ spelling with an abbreviation, so their main-lexicon rows stay `000`.
 
 ## Which encodings need disambiguation
 
-Only seven codes reach the disambiguation layer, and each is routed to a
+Eleven codes reach the disambiguation layer, and each is routed to a
 different mechanism:
 
 | Encoding | Question asked | Resolved by |
@@ -232,6 +243,24 @@ different mechanism:
 The engine dispatches on the encoding rather than on the tag pattern, because
 the same `NN2|VVZ` tag set appears in several classes that need different
 handling. `converter.js` documents each branch at its `if`.
+
+**The pronoun `I` is routed by a case of its own**, because it is the one `102`
+whose split is not verb-versus-noun: `i,PPIS1|ZZ1,102,ih|i` has no `VV0` reading,
+so the `is_verb_VV0` branch cannot reach it. Two things answer it between them:
+
+- `convert()` intercepts the surface form `I` **before** the lexicon is
+  consulted, because it is the one word whose capitalization is recomputed rather
+  than copied — `ih` mid-sentence, `Ih` at a sentence start — and `isPronounI`
+  tells the pronoun from the numeral in *Section I* and the letter in *I-beam*.
+- `route()` then answers everything else, which is a lowercase *i*: the letter,
+  as in *dot the i* or *i before e*. It keeps its spelling.
+
+Added 27 Aug 2026. Before it, the row fell through to `route()`'s `return 0` and
+took `ih` unconditionally, so *dot the i* came out *dot the ih*. The same branch
+is mirrored in `libreoffice/euspell/engine.py` and
+`apps-script/euspell-engine.gs`, which re-implement the dispatch, and in
+`lexicon-integrity.test.js`, which asserts every multi-spelling row reaches a
+mechanism.
 
 ## Notes for editing the lexicon
 
@@ -248,9 +277,17 @@ handling. `converter.js` documents each branch at its `if`.
 
   The `9xx` skip is what makes this exact — abbreviations hold an expansion in
   that column, not a spelling, so they are the one class where the count is
-  meaningless. Excluding them, the sweep currently returns **nothing**, which is
-  the point: any output at all is now a real defect. Before `900` existed it
-  returned 40 rows of noise and a genuine bug could hide in it.
+  meaningless. Before `900` existed the sweep returned 40 rows of noise and a
+  genuine bug could hide in it; excluding them, any output at all is now a real
+  defect. It **currently returns nothing**, which is the point.
+
+  It last returned something on 27 Aug 2026, and that row was a real defect:
+  `garrote,NN1|VV0,000,garrott` — a units digit of `0` beside a euspelling, so
+  column 4 was never read and *garrote* alone passed through unchanged while its
+  siblings `garote`, `garotte` and `garrotte` all reformed to `garrott`. It
+  arrived with the 23 Aug pronunciation pass and was re-coded `101`, matching
+  them, the same day it was found. Worth keeping as the worked example of what
+  this sweep is for.
 - **Multi-spelling entries are order-sensitive.** The pipe-separated spellings
   line up positionally with what the disambiguation rule returns; reordering
   them inverts the decision.

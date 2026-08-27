@@ -150,7 +150,8 @@ exiles,NN2|VVZ,012,exiles|exilez
 expatriate,JJ|NN1|VV0,102,expatriat|expatriate
 exploits,NN2|VVZ,012,exploits|exploitz
 exports,NN2|VVZ,012,exports|exportz
-exposes,NN2|VVZ,012,exposes|exposez
+expose,NN1|VV0,102,exposeh|expose
+exposes,NN2|VVZ,112,exposehs|exposez
 extracts,NN2|VVZ,012,extracts|extractz
 ferments,NN2|VVZ,012,ferments|fermentz
 festinate,JJ|VV0,102,festinat|festinate
@@ -171,6 +172,7 @@ graduate,NN1|VV0,102,graduat|graduate
 graduates,NN2|VVZ,112,graduats|graduatez
 granulate,JJ|NN|VV0,102,granulat|granulate
 guesstimate,NN1|VV0,102,ghesstimat|ghesstimate
+i,PPIS1|ZZ1,102,ih|i
 illegitimate,JJ|NN1|VV0,102,illegitimat|illegitimate
 imbricate,JJ|VV0,102,imbricat|imbricate
 immunoprecipitate,NN1|VV0,102,immunoprecipitat|immunoprecipitate
@@ -296,6 +298,7 @@ remakes,NN2|VVZ,012,remakes|remakez
 replays,NN2|VVZ,012,replays|replayz
 replicate,JJ|NN1|VV0,102,replicat|replicate
 reruns,NN2|VVZ,012,reruns|rerunz
+resume,NN1|VV0,102,resumeh|resume
 reticulate,JJ|VV0,102,reticulat|reticulate
 saturate,JJ|NN1|VV0,102,saturat|saturate
 separate,JJ|NN1|VV0,102,separat|separate

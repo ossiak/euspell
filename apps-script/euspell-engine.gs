@@ -470,6 +470,13 @@ var Euspell = (function () {
   }
   function route(key, entry, tokens, idx) {
     var pos = entry.pos, enc = entry.encoding;
+    // The pronoun "I" (102, PoS PPIS1|ZZ1): [0] "ih" for the pronoun, [1] the
+    // retained "i" for the letter and the Roman numeral. A 102 with no VV0, so
+    // the verb-vs-noun clause below cannot reach it. The pronoun is answered in
+    // convert() before the lexicon is consulted; anything arriving here is a
+    // lowercase "i" — the letter — and keeps its spelling. Mirrors route() in
+    // src/content/converter.js.
+    if (enc === 102 && pos.indexOf('PPIS1') !== -1) return 1;
     if ((enc === 12 || enc === 112) && pos.indexOf('VVZ') !== -1 && !SEMANTIC_WORDS[key]) {
       return isVvzSvm(tokens, idx) ? 1 : 0;
     }

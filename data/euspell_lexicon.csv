@@ -71313,7 +71313,7 @@ garrisons,NN2|VVZ,012,garrisons|garrisonz
 garron,NN1,000,[]
 garrons,NN2,000,[]
 garrot,NN1,101,garrott
-garrote,NN1|VV0,000,garrott
+garrote,NN1|VV0,101,garrott
 garroted,JJ|VVD|VVN,601,garrotted
 garroter,NN1,601,garrotter
 garroters,NN2,601,garrotters
@@ -87233,7 +87233,7 @@ hyte,JJ,500,[]
 hythe,NN1,000,[]
 hythes,NN2,500,[]
 hyundai,NP,000,[]
-i,ZZ1,000,[]
+i,PPIS1|ZZ1,102,ih|i
 ia,NP,000,[]
 iago,NP,000,[]
 iamatology,NN,500,[]
@@ -139739,7 +139739,7 @@ preciouses,NN2,000,[]
 preciously,RR,000,[]
 preciousness,NN,000,[]
 precipe,NN1,101,precipee
-precipes,NN2,101,precipee
+precipes,NN2,101,precipees
 precipice,NN1,000,[]
 precipices,NN2,000,[]
 precipitable,JJ,000,[]

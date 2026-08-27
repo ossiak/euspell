@@ -631,6 +631,14 @@ def _route(key, entry, tokens, idx):
     leaves it unchanged and the callers offer its spellings as choices instead."""
     pos = entry["pos"]
     enc = entry["encoding"]
+    # The pronoun "I" (102, PoS PPIS1|ZZ1): [0] "ih" for the pronoun, [1] the
+    # retained "i" for the letter and the Roman numeral. A 102 with no VV0, so
+    # the verb-vs-noun clause below cannot reach it. The pronoun is answered in
+    # _convert() before the lexicon is consulted; anything arriving here is a
+    # lowercase "i" -- the letter -- and keeps its spelling. Mirrors route() in
+    # src/content/converter.js.
+    if enc == 102 and "PPIS1" in pos:
+        return 1
     if (enc == 12 or enc == 112) and "VVZ" in pos and key not in _SEMANTIC_WORDS:
         return 1 if _is_vvz_svm(tokens, idx) else 0
     if "GE" in pos:

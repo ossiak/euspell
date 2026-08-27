@@ -93,6 +93,22 @@ function leadsWithPronounI(entry) {
  */
 function route(key, entry, tokens, idx) {
   const { pos } = entry;
+  // The pronoun "I" (encoding 102, PoS PPIS1|ZZ1): spellings[0] is "ih" for the
+  // pronoun, spellings[1] the retained "i" for the letter and the Roman numeral.
+  // It is a 102 whose split is not the verb-vs-noun one the class otherwise
+  // describes, so it needs its own branch — is_verb_VV0 below is only reached by
+  // an entry carrying VV0, and this one has no verb reading at all.
+  //
+  // The pronoun never arrives here. convert() answers it before the lexicon is
+  // consulted, because "I" is the one word whose capitalization is recomputed
+  // rather than copied from the source, and isPronounI() is what tells it from
+  // the numeral in "Section I" and the letter in "I-beam". So every word
+  // reaching this line is a lowercase "i" — "dot the i", "i before e", "the
+  // letter i" — which is the letter and keeps its spelling. A pronoun written
+  // lowercase is a typo, and respelling it would cost every real lowercase "i"
+  // to catch: isPronounI cannot help here, since it reads binding and label
+  // nouns, and "the i" in "dot the i" passes both of its tests.
+  if (entry.encoding === 102 && pos.includes('PPIS1')) return 1;
   // NN2|VVZ diatones (encodings 012 and 112, e.g. "records", "anchors"): a plural
   // noun (spellings[0], the -s ending) vs a 3rd-sg-present verb (spellings[1], the
   // -z ending). 012 keeps the stem and changes only the ending; 112 also respells

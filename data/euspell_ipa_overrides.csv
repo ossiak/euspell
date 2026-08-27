@@ -181,13 +181,13 @@ ragd,ɹæɡd,ragged
 #
 # --- retained spellings ------------------------------------------------------
 # Added 10 Aug 2026 with the gen-pls.js change that emits a traditional spelling
-# when the reform keeps it as one half of a split. Twenty-seven of the
-# thirty-four route correctly on their own; these are the seven that do not, plus
+# when the reform keeps it as one half of a split. Twenty-eight of the
+# thirty-four route correctly on their own; these are the six that do not, plus
 # the words whose second reading is missing from the source entirely.
 #
-# refuse: the retained spelling is the NOUN (rubbish). The -ate heuristic reads a
-# final e as the verb, which is right for graduate and wrong here.
-refuse,ˈɹɛfjuːs,refuse
+# refuse was the seventh, removed 27 Aug 2026: its lexicon row went to 000, so
+# the reform no longer keeps a spelling for the override to correct.
+#
 # subordinate/syndicate: the source tags only the verb, via the (V:) form, so the
 # entry never registers as a heteronym and both spellings take the first reading.
 subordinate,səˈbɔɹdənˌeɪt,subordinate
@@ -234,7 +234,12 @@ attaqhez,əˈtætʃɪz,attaches
 buffehs,bəˈfeɪz,buffets
 buffetz,ˈbʌfɪts,buffets
 deddbolts,ˈdɛdˌboʊlts,deadbolts
-deddbolz,ˈdɛdˌboʊlts,deadbolts
+# deddbolz was here until 27 Aug 2026: a typo for deddboltz, so it matched no
+# grapheme and corrected nothing. deddboltz needs no override -- the generated
+# reading is already the /ts/ one, the z spelling being grammatical not phonetic.
+fillehs,fɪˈleɪz,fillets (the noun)
+fillehz,fɪˈleɪz,fillets (the verb)
+filletz,ˈfɪlɪts,fillets (the anglicised verb)
 hemolyses,hiˈmɑləsiːz,haemolyses
 hemolyzez,ˈhiməˌlaɪzɪz,haemolyses
 
