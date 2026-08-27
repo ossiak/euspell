@@ -30,22 +30,76 @@ for (const [src, expected] of fixtures) {
   if (!ok) { fail++; console.log('FAIL', JSON.stringify(src), '\n   expected', JSON.stringify(expected), '\n   got     ', JSON.stringify(got)); }
 }
 
+// The lexicon's headwords, parsed from the same CSV the engine reads. The Python
+// port asks engine._LEXICON for this; the .gs closes over its map, and widening
+// the engine's public surface for a test's benefit is the worse trade, so the
+// CSV is read a second time here.
+const HEADWORDS = new Set(
+  EUSPELL_LEXICON_CSV.split('\n').map((l) => l.split(',')[0]).filter(Boolean),
+);
+
+/**
+ * True when every word revert failed to restore is itself a headword — the
+ * shape revert declines on purpose. Mirrors _blocked_by_collision in
+ * libreoffice/tests/test_engine.py.
+ */
+function blockedByCollision(src, euspell, back) {
+  const a = src.split(/\s+/), b = euspell.split(/\s+/), c = back.split(/\s+/);
+  const n = Math.min(a.length, b.length, c.length); // zip(): stop at the shortest
+  for (let i = 0; i < n; i++) {
+    if (c[i] === a[i]) continue;
+    const key = b[i].replace(/^[.,;:!?"']+|[.,;:!?"']+$/g, '').toLowerCase();
+    if (!HEADWORDS.has(key)) return false;
+  }
+  return true;
+}
+
 // Round-trip: reverting the euspell output recovers the original text. (These
 // curated fixtures avoid the British/American variants where reverse normalizes.)
+// EXCEPT across a collision, where the euspelling is a headword in its own right:
+// "rough" reforms to "ruff", and "ruff" is also a word, so revert leaves it —
+// turning a genuine ruff into a rough is the worse error. Such fixtures are
+// counted separately rather than failed, since the shortfall is in the reform and
+// not in this port; the Python port counts them the same way.
 let rfail = 0;
+const collided = [];
 for (const [src, expected] of fixtures) {
   const back = Euspell.revertText(expected);
-  if (back !== src) { rfail++; console.log('REVERT FAIL', JSON.stringify(expected), '\n   expected', JSON.stringify(src), '\n   got     ', JSON.stringify(back)); }
+  if (back === src) continue;
+  if (blockedByCollision(src, expected, back)) { collided.push(expected); continue; }
+  rfail++;
+  console.log('REVERT FAIL', JSON.stringify(expected), '\n   expected', JSON.stringify(src), '\n   got     ', JSON.stringify(back));
 }
-console.log(`round-trip revert: ${fixtures.length - rfail}/${fixtures.length} recover the original`);
+console.log(`round-trip revert: ${fixtures.length - rfail - collided.length}/${fixtures.length} `
+  + `recover the original, ${collided.length} blocked by a collision`);
 
 // American-consistent revert: convert -> revert never flips an American spelling
-// to British; ruff/dorr (phonetic reforms that coincide with real words) still revert.
+// to British.
 let afail = 0;
 for (const w of ['organizes', 'colors', 'acknowledgment', 'judgment', 'defenses', 'catalog', 'center', 'theater', 'meter']) {
   if (Euspell.revertText(Euspell.convertText(w)) !== w) { afail++; console.log('AMERICAN FAIL', w, '->', Euspell.revertText(Euspell.convertText(w))); }
 }
-if (Euspell.revertText('ruff') !== 'rough' || Euspell.revertText('dorr') !== 'door') { afail++; console.log('COLLISION-REVERT FAIL'); }
+// revert is the inverse of convert, EXCEPT across a collision: where the
+// euspelling is itself a headword, revert cannot know which word produced it and
+// leaves it alone. "rough" reforms to "ruff", but "ruff" is also a real word (the
+// collar, the bird), so "ruff" stays "ruff". "door" -> "dorr" is the same shape:
+// dorr is the beetle. Both rows were re-encoded 101 -> 601 on 14 Aug 2026 so that
+// revert would decline them; before that they mapped back, quietly turning a
+// beetle into a door. By design, not a gap — and asserted identically in
+// libreoffice/tests/test_engine.py, which is the point of running both.
+//
+// This check read the other way round until 27 Aug 2026, having been written on
+// 30 June when reverting them WAS the policy. It went on asserting the
+// superseded intent for the thirteen days between the two.
+const collisionChecks = [
+  ['The niht was ruff.', 'The night was ruff.'], // the rest of the sentence still reverts
+  ['ruff', 'ruff'],
+  ['dorr', 'dorr'],
+];
+for (const [input, want] of collisionChecks) {
+  const got = Euspell.revertText(input);
+  if (got !== want) { afail++; console.log('COLLISION-REVERT FAIL', JSON.stringify(input), '\n   expected', JSON.stringify(want), '\n   got     ', JSON.stringify(got)); }
+}
 console.log(`american-consistent revert: ${afail === 0 ? 'pass' : `${afail} FAILED`}`);
 
 // Word-level candidates (parity with the Python port's checks).
