@@ -30481,7 +30481,7 @@
   <lexeme><grapheme>swobd</grapheme><phoneme>S W AA1 B D</phoneme></lexeme> <!-- swobbed -->
   <lexeme><grapheme>swobz</grapheme><phoneme>S W AA1 B Z</phoneme></lexeme> <!-- swobs -->
   <lexeme><grapheme>swoond</grapheme><phoneme>S W UW1 N D</phoneme></lexeme> <!-- swooned -->
-  <lexeme><grapheme>swoonz</grapheme><phoneme>S W UW1 N D</phoneme></lexeme> <!-- swoons -->
+  <lexeme><grapheme>swoonz</grapheme><phoneme>S W UW1 N Z</phoneme></lexeme> <!-- swoons -->
   <lexeme><grapheme>swoopd</grapheme><phoneme>S W UW1 P T</phoneme></lexeme> <!-- swooped -->
   <lexeme><grapheme>swoopz</grapheme><phoneme>S W UW1 P T</phoneme></lexeme> <!-- swoops -->
   <lexeme><grapheme>swooshd</grapheme><phoneme>S W UH1 SH T</phoneme></lexeme> <!-- swooshed -->

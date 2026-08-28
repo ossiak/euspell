@@ -15598,8 +15598,8 @@
   <lexeme><grapheme>jumblez</grapheme><phoneme>ˈdʒʌmbəlz</phoneme></lexeme> <!-- jumbles -->
   <lexeme><grapheme>jumpd</grapheme><phoneme>dʒʌmpt</phoneme></lexeme> <!-- jumped -->
   <lexeme><grapheme>jumpstartz</grapheme><phoneme>ˈdʒʌmpˌstɑrts</phoneme></lexeme> <!-- jumpstarts -->
-  <lexeme><grapheme>jumpsuht</grapheme><phoneme>ˈdʒʌmpˌsut</phoneme></lexeme> <!-- jumpsuit -->
-  <lexeme><grapheme>jumpsuhts</grapheme><phoneme>ˈdʒʌmpˌsuts</phoneme></lexeme> <!-- jumpsuits -->
+  <lexeme><grapheme>jumpsuht</grapheme><phoneme>ˈdʒʌmpˌsuːt</phoneme></lexeme> <!-- jumpsuit -->
+  <lexeme><grapheme>jumpsuhts</grapheme><phoneme>ˈdʒʌmpˌsuːts</phoneme></lexeme> <!-- jumpsuits -->
   <lexeme><grapheme>jumpz</grapheme><phoneme>dʒʌmps</phoneme></lexeme> <!-- jumps -->
   <lexeme><grapheme>juniorat</grapheme><phoneme>ˈdʒunjərət</phoneme></lexeme> <!-- juniorate -->
   <lexeme><grapheme>juniorats</grapheme><phoneme>ˈdʒunjərəts</phoneme></lexeme> <!-- juniorates -->
@@ -16166,8 +16166,8 @@
   <lexeme><grapheme>lawbraeking</grapheme><phoneme>ˈlɔˌbreɪkɪŋ</phoneme></lexeme> <!-- lawbreaking -->
   <lexeme><grapheme>lawbraekings</grapheme><phoneme>ˈlɔˌbreɪkɪŋz</phoneme></lexeme> <!-- lawbreakings -->
   <lexeme><grapheme>lawd</grapheme><phoneme>lɔd</phoneme></lexeme> <!-- lawed -->
-  <lexeme><grapheme>lawsuht</grapheme><phoneme>ˈlɔˌsut</phoneme></lexeme> <!-- lawsuit -->
-  <lexeme><grapheme>lawsuhts</grapheme><phoneme>ˈlɔˌsuts</phoneme></lexeme> <!-- lawsuits -->
+  <lexeme><grapheme>lawsuht</grapheme><phoneme>ˈlɔˌsuːt</phoneme></lexeme> <!-- lawsuit -->
+  <lexeme><grapheme>lawsuhts</grapheme><phoneme>ˈlɔˌsuːts</phoneme></lexeme> <!-- lawsuits -->
   <lexeme><grapheme>lawyerd</grapheme><phoneme>ˈlɔjərd</phoneme></lexeme> <!-- lawyered -->
   <lexeme><grapheme>lawyerz</grapheme><phoneme>ˈlɔjərz</phoneme></lexeme> <!-- lawyers -->
   <lexeme><grapheme>laxativ</grapheme><phoneme>ˈlæksətɪv</phoneme></lexeme> <!-- laxative -->
@@ -18961,11 +18961,11 @@
   <lexeme><grapheme>nonsteddy</grapheme><phoneme>ˌnɑnˈstɛdi</phoneme></lexeme> <!-- nonsteady -->
   <lexeme><grapheme>nonsubjectiv</grapheme><phoneme>ˌnɑnsəbˈdʒɛktɪv</phoneme></lexeme> <!-- nonsubjective -->
   <lexeme><grapheme>nonsubmissiv</grapheme><phoneme>ˌnɑnsəbˈmɪsɪv</phoneme></lexeme> <!-- nonsubmissive -->
-  <lexeme><grapheme>nonsuht</grapheme><phoneme>ˈnɑnˈsut</phoneme></lexeme> <!-- nonsuit -->
+  <lexeme><grapheme>nonsuht</grapheme><phoneme>ˈnɑnˈsuːt</phoneme></lexeme> <!-- nonsuit -->
   <lexeme><grapheme>nonsuhted</grapheme><phoneme>ˈnɑnˈsutəd</phoneme></lexeme> <!-- nonsuited -->
   <lexeme><grapheme>nonsuhting</grapheme><phoneme>ˈnɑnˈsutɪŋ</phoneme></lexeme> <!-- nonsuiting -->
-  <lexeme><grapheme>nonsuhts</grapheme><phoneme>ˈnɑnˈsuts</phoneme></lexeme> <!-- nonsuits -->
-  <lexeme><grapheme>nonsuhtz</grapheme><phoneme>ˈnɑnˈsuts</phoneme></lexeme> <!-- nonsuits -->
+  <lexeme><grapheme>nonsuhts</grapheme><phoneme>ˈnɑnˈsuːts</phoneme></lexeme> <!-- nonsuits -->
+  <lexeme><grapheme>nonsuhtz</grapheme><phoneme>ˈnɑnˈsuːts</phoneme></lexeme> <!-- nonsuits -->
   <lexeme><grapheme>nonsuqh</grapheme><phoneme>ˈnɑnˌsətʃ</phoneme></lexeme> <!-- nonsuch -->
   <lexeme><grapheme>nonsuqhes</grapheme><phoneme>ˈnɑnˌsətʃɪz</phoneme></lexeme> <!-- nonsuches -->
   <lexeme><grapheme>nonteaqhing</grapheme><phoneme>ˌnɑnˈtitʃɪŋ</phoneme></lexeme> <!-- nonteaching -->
@@ -30084,14 +30084,14 @@
   <lexeme><grapheme>suggestivness</grapheme><phoneme>səɡˈdʒɛstɪvnəs</phoneme></lexeme> <!-- suggestiveness -->
   <lexeme><grapheme>suggestz</grapheme><phoneme>səɡˈdʒɛsts</phoneme></lexeme> <!-- suggests -->
   <lexeme><grapheme>sugz</grapheme><phoneme>sʌɡz</phoneme></lexeme> <!-- sugs -->
-  <lexeme><grapheme>suht</grapheme><phoneme>sut</phoneme></lexeme> <!-- suit -->
+  <lexeme><grapheme>suht</grapheme><phoneme>suːt</phoneme></lexeme> <!-- suit -->
   <lexeme><grapheme>suhtabilities</grapheme><phoneme>ˌsutəˈbɪlətiz</phoneme></lexeme> <!-- suitabilities -->
   <lexeme><grapheme>suhtability</grapheme><phoneme>ˌsutəˈbɪlɪti</phoneme></lexeme> <!-- suitability -->
   <lexeme><grapheme>suhtable</grapheme><phoneme>ˈsutəbəl</phoneme></lexeme> <!-- suitable -->
   <lexeme><grapheme>suhtableness</grapheme><phoneme>ˈsutəbəlnəs</phoneme></lexeme> <!-- suitableness -->
   <lexeme><grapheme>suhtably</grapheme><phoneme>ˈsutəbli</phoneme></lexeme> <!-- suitably -->
-  <lexeme><grapheme>suhtcase</grapheme><phoneme>ˈsutˌkeɪs</phoneme></lexeme> <!-- suitcase -->
-  <lexeme><grapheme>suhtcases</grapheme><phoneme>ˈsutˌkeɪsəz</phoneme></lexeme> <!-- suitcases -->
+  <lexeme><grapheme>suhtcase</grapheme><phoneme>ˈsuːtˌkeɪs</phoneme></lexeme> <!-- suitcase -->
+  <lexeme><grapheme>suhtcases</grapheme><phoneme>ˈsuːtˌkeɪsəz</phoneme></lexeme> <!-- suitcases -->
   <lexeme><grapheme>suhted</grapheme><phoneme>ˈsutəd</phoneme></lexeme> <!-- suited -->
   <lexeme><grapheme>suhter</grapheme><phoneme>ˈsutər</phoneme></lexeme> <!-- suiter -->
   <lexeme><grapheme>suhters</grapheme><phoneme>ˈsutərz</phoneme></lexeme> <!-- suiters -->
@@ -30100,8 +30100,8 @@
   <lexeme><grapheme>suhtlike</grapheme><phoneme>ˈsutˌlaɪk</phoneme></lexeme> <!-- suitlike -->
   <lexeme><grapheme>suhtor</grapheme><phoneme>ˈsutər</phoneme></lexeme> <!-- suitor -->
   <lexeme><grapheme>suhtors</grapheme><phoneme>ˈsutərz</phoneme></lexeme> <!-- suitors -->
-  <lexeme><grapheme>suhts</grapheme><phoneme>suts</phoneme></lexeme> <!-- suits -->
-  <lexeme><grapheme>suhtz</grapheme><phoneme>suts</phoneme></lexeme> <!-- suits -->
+  <lexeme><grapheme>suhts</grapheme><phoneme>suːts</phoneme></lexeme> <!-- suits -->
+  <lexeme><grapheme>suhtz</grapheme><phoneme>suːts</phoneme></lexeme> <!-- suits -->
   <lexeme><grapheme>suicidez</grapheme><phoneme>ˈsuəˌsaɪdz</phoneme></lexeme> <!-- suicides -->
   <lexeme><grapheme>sulfates</grapheme><phoneme>ˈsʌlfeɪts</phoneme></lexeme> <!-- sulphates -->
   <lexeme><grapheme>sulfatez</grapheme><phoneme>ˈsʌlfeɪts</phoneme></lexeme> <!-- sulfates -->
@@ -30491,8 +30491,8 @@
   <lexeme><grapheme>swizzlez</grapheme><phoneme>ˈswɪzəlz</phoneme></lexeme> <!-- swizzles -->
   <lexeme><grapheme>swobd</grapheme><phoneme>swɑbd</phoneme></lexeme> <!-- swobbed -->
   <lexeme><grapheme>swobz</grapheme><phoneme>swɑbz</phoneme></lexeme> <!-- swobs -->
-  <lexeme><grapheme>swoond</grapheme><phoneme>swund</phoneme></lexeme> <!-- swooned -->
-  <lexeme><grapheme>swoonz</grapheme><phoneme>swund</phoneme></lexeme> <!-- swoons -->
+  <lexeme><grapheme>swoond</grapheme><phoneme>swuːnd</phoneme></lexeme> <!-- swooned -->
+  <lexeme><grapheme>swoonz</grapheme><phoneme>swuːnz</phoneme></lexeme> <!-- swoons -->
   <lexeme><grapheme>swoopd</grapheme><phoneme>swupt</phoneme></lexeme> <!-- swooped -->
   <lexeme><grapheme>swoopz</grapheme><phoneme>swupt</phoneme></lexeme> <!-- swoops -->
   <lexeme><grapheme>swooshd</grapheme><phoneme>swʊʃt</phoneme></lexeme> <!-- swooshed -->

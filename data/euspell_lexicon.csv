@@ -106406,7 +106406,7 @@ maker,NN1,000,[]
 makereadies,NN2,101,makereddies
 makeready,NN1,101,makereddy
 makers,NN2,000,[]
-makes,NN2|VVZ,202,makes|makez
+makes,NN2|VVZ,012,makes|makez
 makeshift,JJ|NN1,000,[]
 makeshifts,NN2,000,[]
 makeup,NN|NN1,000,[]
