@@ -7,7 +7,7 @@ exists.
 
 Bundle ID: `org.euspell.Euspell` (host) + `org.euspell.Euspell.Extension` ·
 Team 5ZTUW79KSB · Platform: macOS · Category: **Productivity** · Price: Free ·
-Age rating: 4+ · Version: **0.3.2**
+Age rating: 4+ · Version: **0.3.3**
 
 ---
 
@@ -83,7 +83,7 @@ https://euspell.org
 2026 Kamran Ossia
 
 ## Version
-`0.3.2` — must match the uploaded build's CFBundleShortVersionString (the Safari
+`0.3.3` — must match the uploaded build's CFBundleShortVersionString (the Safari
 project's MARKETING_VERSION). CURRENT_PROJECT_VERSION (build number) must rise on
 every upload of the same version.
 

@@ -51,7 +51,7 @@ access** button you must click before pages convert.
 
 **Safari** (macOS) is a signed, **notarized** app you download and enable in
 Safari's settings — there's no App Store listing yet. Get
-[Euspell-Safari-0.3.2-macOS.dmg](https://euspell.org/downloads/Euspell-Safari-0.3.2-macOS.dmg),
+[Euspell-Safari-0.3.3-macOS.dmg](https://euspell.org/downloads/Euspell-Safari-0.3.3-macOS.dmg),
 open the disk image, drag **Euspell.app** to Applications, open it once to
 register the extension, then turn **Euspell** on in **Safari ▸ Settings ▸
 Extensions** and allow it on the sites you want. Web pages and remote PDFs
