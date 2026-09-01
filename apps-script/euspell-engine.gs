@@ -117,6 +117,10 @@ var Euspell = (function () {
     function addFrom(map) {
       for (var key in map) {
         var entry = map[key];
+        // Accented aliases (façade -> facade, from euspell_lexicon_accents.csv)
+        // are ways IN, not revert targets: reverting `fasade` must give the ASCII
+        // headword. Every real lexicon key is ASCII, so that is the test.
+        if (/[^\x00-\x7F]/.test(key)) continue;
         var sp = entry.spellings;
         for (var i = 0; i < sp.length; i++) {
           var e = sp[i];

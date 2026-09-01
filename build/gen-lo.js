@@ -16,6 +16,8 @@ import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { VVZ_SVM } from '../src/disambig/vvz-svm.js';
+import { data as compiled } from '../dist/lexicon.js';
+import { accentAliases, aliasCsvLines } from './lib/accents.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DATA = join(root, 'data');
@@ -32,6 +34,29 @@ for (const [src, dst] of copies) {
   copyFileSync(join(DATA, src), join(OUT, dst));
 }
 
+// 1b. Append the accented spellings to the copied lexicon, so the Python engine
+// here — and the Apps Script engine that Docs, Pages and the Word add-in are all
+// generated from — convert `façade` too. The extension and Eupub get these from
+// the compiled Map; these engines parse a CSV, so they need them as rows.
+//
+// The aliases are derived against the compiled Map, which already contains them,
+// so `has` is asked of the CSV rows alone — otherwise every alias would be
+// rejected as shadowing itself.
+const lexPath = join(OUT, 'lexicon.csv');
+const csvWords = new Set(
+  readFileSync(join(DATA, 'euspell_lexicon.csv'), 'utf8')
+    .split(/\r?\n/).slice(1).filter(Boolean).map((l) => l.slice(0, l.indexOf(','))),
+);
+const aliasLines = aliasCsvLines(
+  accentAliases(join(DATA, 'euspell_lexicon_accents.csv'), compiled, (k) => csvWords.has(k)),
+);
+const lexText = readFileSync(lexPath, 'utf8');
+writeFileSync(
+  lexPath,
+  `${lexText.replace(/\r?\n$/, '')}\n${aliasLines.join('\n')}\n`,
+  'utf8',
+);
+
 // 2. Export the SVM weights to TSV. Feature keys never contain a tab or newline
 // (they are 'bias', 'cap', '<int>=<FAMILY>', 'w=<lowercase-word>').
 const lines = [];
@@ -39,5 +64,5 @@ for (const [feat, weight] of VVZ_SVM) lines.push(`${feat}\t${weight}`);
 writeFileSync(join(OUT, 'vvz_svm.tsv'), `${lines.join('\n')}\n`, 'utf8');
 
 console.log(`[gen-lo] data ready in ${OUT}`);
-console.log(`[gen-lo]   lexicon.csv, abbreviations.csv, contractions.csv copied`);
+console.log(`[gen-lo]   lexicon.csv (+${aliasLines.length} accented aliases), abbreviations.csv, contractions.csv copied`);
 console.log(`[gen-lo]   vvz_svm.tsv — ${lines.length} weights`);

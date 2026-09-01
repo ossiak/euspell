@@ -146,6 +146,11 @@ def _build_reverse():
     maps to itself (colors), is left as-is. Among variant sources the American
     spelling wins. Contraction clitics ('z -> 's) included."""
     for key, entry in _LEXICON.items():
+        # Accented aliases (façade -> facade, from euspell_lexicon_accents.csv)
+        # are ways IN, not revert targets: reverting `fasade` must give the
+        # ASCII headword. Every real lexicon key is ASCII, so that is the test.
+        if not key.isascii():
+            continue
         for e in entry["spellings"]:
             if e == key:
                 continue

@@ -55,13 +55,21 @@ test('tokenize keeps accented words whole (no ASCII-fragment splitting)', () => 
   assert.deepEqual(words("don't read James' book"), ["don't", 'read', 'James', 'book']);
 });
 
-test('walkTextNodes leaves accented words unconverted as whole tokens', () => {
-  // Whole accented words miss the (ASCII) lexicon and must pass through — never
-  // converted piecemeal because an ASCII fragment happened to be English.
+test('accented words are handled whole — converted or passed through, never in pieces', () => {
+  // The invariant is that an accented word is one token: it is never converted
+  // piecemeal because some ASCII fragment of it happened to be English.
+  //
+  // Until 1 Sep 2026 that showed up as "accented words pass through", because
+  // data/euspell_lexicon_accents.csv was written and never wired in, so every
+  // one of them missed a lexicon keyed on ASCII. They convert now, via alias
+  // keys in the compiled Map (build/lib/accents.js) — so this asserts both
+  // halves: `café` reforms whole, and `naïve`, which the bridge does not carry,
+  // still comes back untouched rather than half-converted.
   const node = tx('the naïve café owner');
   walkTextNodes(el('p', node), convert);
   assert.match(node.nodeValue, /naïve/);
-  assert.match(node.nodeValue, /café/);
+  assert.match(node.nodeValue, /\bcafeh\b/);
+  assert.doesNotMatch(node.nodeValue, /café/);
 });
 
 test('walkTextNodes converts text in place', () => {

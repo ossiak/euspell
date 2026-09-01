@@ -5,7 +5,12 @@
  *
  * Output files (auto-generated — do not edit):
  *   dist/lexicon.js        — 205k-entry word map (ES module; used by the Eupub
- *                            desktop reader and the sqlite compiler)
+ *                            desktop reader and the sqlite compiler). Includes
+ *                            the accented spellings from
+ *                            euspell_lexicon_accents.csv as alias keys, so a
+ *                            word written with its diacritics converts — see
+ *                            build/lib/accents.js for why they are resolved
+ *                            here rather than in each engine.
  *   dist/lexicon.data      — the same map as a JSON [key, entry] array, shipped
  *                            once as a web-accessible resource and fetched at
  *                            runtime by the browser extension + PDF viewer, so
@@ -20,6 +25,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'csv-parse/sync';
+import { accentAliases } from './lib/accents.js';
 
 const ROOT = new URL('..', import.meta.url);
 const DATA = new URL('data/', ROOT);
@@ -78,11 +84,22 @@ function writeData(filename, entries) {
   console.log(`[euspell-build] Wrote dist/${filename} (${entries.length} entries)`);
 }
 
-// Lexicon
+// Lexicon, plus the accented spellings as alias keys. The aliases are appended
+// rather than merged into the CSV: data/euspell_lexicon.csv stays the source of
+// record at its quoted row count, and an accented spelling is a way in, not a
+// new lexeme.
 const lexiconRows = parseCsv('euspell_lexicon.csv');
 const lexiconEntries = lexiconRows.map((row) => [row.Word, rowToEntry(row)]);
-writeModule('lexicon.js', lexiconEntries);
-writeData('lexicon.data', lexiconEntries);
+const byWord = new Map(lexiconEntries);
+const aliases = accentAliases(
+  fileURLToPath(new URL('euspell_lexicon_accents.csv', DATA)),
+  byWord,
+  (k) => byWord.has(k),
+);
+const withAliases = [...lexiconEntries, ...aliases];
+writeModule('lexicon.js', withAliases);
+writeData('lexicon.data', withAliases);
+console.log(`[euspell-build]   including ${aliases.length} accented alias keys`);
 
 // Abbreviations
 const abbrevRows = parseCsv('euspell_lexicon_abbreviations.csv');

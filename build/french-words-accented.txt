@@ -53,6 +53,7 @@ When written in standard French, the following words from your list carry diacri
 * **garcon / garcons** (garçon, garçons — *cedilla*)
 * **gateau / gateaus** (gâteau, gâteaux — *circumflex*)
 * **glace** (glacé — *acute accent*)
+* **limacon / limacons** (limaçon, limaçons — *cedilla*)
 * **macrame / macrames** (macramé, macramés — *acute accent*)
 * **manque** (manqué — *acute accent*)
 * **matinee / matinees** (matinée, matinées — *acute accent*)
