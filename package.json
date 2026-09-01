@@ -48,6 +48,7 @@
     "gen:word-exclude": "node build/gen-word-exclude.js",
     "word:serve": "node word-addin/server.js",
     "gen:diatones": "node build/gen-diatones.js",
+    "gen:accents": "python build/gen-lexicon-accents.py",
     "watch": "rollup -c --watch"
   },
   "devDependencies": {
