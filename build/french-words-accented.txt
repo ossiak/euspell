@@ -42,6 +42,7 @@ When written in standard French, the following words from your list carry diacri
 * **emigre / emigres** (émigré, émigrés — *acute accents*)
 * **entree / entrees** (entrée, entrées — *acute accent*)
 * **etouffee / etouffees** (étouffée, étouffées — *acute accents*)
+* **facade / facades** (façade, façades — *cedilla*)
 * **fiance / fiances** (fiancé, fiancés — *acute accent*)
 * **flambe / flambee / flambeed / flambeing** (flambé, flambée — *acute accent*)
 * **fleche / fleches** (flèche, flèches — *grave accent*)

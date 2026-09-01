@@ -1086,6 +1086,8 @@
   <lexeme><grapheme>anywun'z</grapheme><phoneme>ˈɛniˌwʌnz</phoneme></lexeme> <!-- anyone's -->
   <lexeme><grapheme>aodad</grapheme><phoneme>ˈaʊˌdæd</phoneme></lexeme> <!-- aoudad -->
   <lexeme><grapheme>aodads</grapheme><phoneme>ˈaʊˌdædz</phoneme></lexeme> <!-- aoudads -->
+  <lexeme><grapheme>apersu</grapheme><phoneme>ˌæpərˈsuː</phoneme></lexeme> <!-- apercu -->
+  <lexeme><grapheme>apersus</grapheme><phoneme>ˌæpərˈsuːz</phoneme></lexeme> <!-- apercus -->
   <lexeme><grapheme>apez</grapheme><phoneme>eɪps</phoneme></lexeme> <!-- apes -->
   <lexeme><grapheme>aphorizez</grapheme><phoneme>ˈæfəˌraɪzɪz</phoneme></lexeme> <!-- aphorises -->
   <lexeme><grapheme>apiculat</grapheme><phoneme>əˈpɪkjəlɪt</phoneme></lexeme> <!-- apiculate -->
@@ -6604,6 +6606,7 @@
   <lexeme><grapheme>debitz</grapheme><phoneme>ˈdɛbɪts</phoneme></lexeme> <!-- debits -->
   <lexeme><grapheme>debonez</grapheme><phoneme>diˈboʊnz</phoneme></lexeme> <!-- debones -->
   <lexeme><grapheme>deboosheh</grapheme><phoneme>dɛbuˈʃeɪ</phoneme></lexeme> <!-- debouche -->
+  <lexeme><grapheme>debooshehs</grapheme><phoneme>dɛbuˈʃeɪz</phoneme></lexeme> <!-- debouches -->
   <lexeme><grapheme>debouqh</grapheme><phoneme>dɪˈbaʊtʃ</phoneme></lexeme> <!-- debouch -->
   <lexeme><grapheme>debouqhd</grapheme><phoneme>dɪˈbaʊtʃt</phoneme></lexeme> <!-- debouched -->
   <lexeme><grapheme>debouqhes</grapheme><phoneme>dɪˈbaʊtʃɪz</phoneme></lexeme> <!-- debouches -->
@@ -10095,6 +10098,8 @@
   <lexeme><grapheme>farthermoste</grapheme><phoneme>ˈfɑːrðərmoʊst</phoneme></lexeme> <!-- farthermost -->
   <lexeme><grapheme>fartherz</grapheme><phoneme>ˈfɑːrðərz</phoneme></lexeme> <!-- farthers -->
   <lexeme><grapheme>fartz</grapheme><phoneme>fɑːrts</phoneme></lexeme> <!-- farts -->
+  <lexeme><grapheme>fasade</grapheme><phoneme>fəˈsɑːd</phoneme></lexeme> <!-- facade -->
+  <lexeme><grapheme>fasades</grapheme><phoneme>fəˈsɑːdz</phoneme></lexeme> <!-- facades -->
   <lexeme><grapheme>fasciatez</grapheme><phoneme>ˈfæʃiˌeɪts</phoneme></lexeme> <!-- fasciates -->
   <lexeme><grapheme>fasciculat</grapheme><phoneme>fəˈsɪkjəlɪt</phoneme></lexeme> <!-- fasciculate -->
   <lexeme><grapheme>fascinatez</grapheme><phoneme>ˈfæsɪˌneɪts</phoneme></lexeme> <!-- fascinates -->
@@ -11846,6 +11851,8 @@
   <lexeme><grapheme>garrotted</grapheme><phoneme>ɡəˈrɑtɪd</phoneme></lexeme> <!-- garroted -->
   <lexeme><grapheme>garrotts</grapheme><phoneme>ɡəˈrɑts</phoneme></lexeme> <!-- garrotes -->
   <lexeme><grapheme>garrottz</grapheme><phoneme>ɡəˈrɑts</phoneme></lexeme> <!-- garrotes -->
+  <lexeme><grapheme>garson</grapheme><phoneme>ɡɑrˈsɒn</phoneme></lexeme> <!-- garcon -->
+  <lexeme><grapheme>garsons</grapheme><phoneme>ɡɑrˈsɒnz</phoneme></lexeme> <!-- garcons -->
   <lexeme><grapheme>garterd</grapheme><phoneme>ˈɡɑrtərd</phoneme></lexeme> <!-- gartered -->
   <lexeme><grapheme>garterz</grapheme><phoneme>ˈɡɑrtərz</phoneme></lexeme> <!-- garters -->
   <lexeme><grapheme>gasconadez</grapheme><phoneme>ˌɡæskəˈneɪdz</phoneme></lexeme> <!-- gasconades -->
@@ -16558,6 +16565,8 @@
   <lexeme><grapheme>likenz</grapheme><phoneme>ˈlaɪkənz</phoneme></lexeme> <!-- likens -->
   <lexeme><grapheme>likez</grapheme><phoneme>laɪks</phoneme></lexeme> <!-- likes -->
   <lexeme><grapheme>liltz</grapheme><phoneme>lɪlts</phoneme></lexeme> <!-- lilts -->
+  <lexeme><grapheme>limason</grapheme><phoneme>ˈlɪməsɒn</phoneme></lexeme> <!-- limacon -->
+  <lexeme><grapheme>limasons</grapheme><phoneme>ˈlɪməsɒnz</phoneme></lexeme> <!-- limacons -->
   <lexeme><grapheme>limberd</grapheme><phoneme>ˈlɪmbərd</phoneme></lexeme> <!-- limbered -->
   <lexeme><grapheme>limberz</grapheme><phoneme>ˈlɪmbərz</phoneme></lexeme> <!-- limbers -->
   <lexeme><grapheme>limeliht</grapheme><phoneme>ˈlaɪmlaɪt</phoneme></lexeme> <!-- limelight -->
@@ -29098,6 +29107,8 @@
   <lexeme><grapheme>soundproofz</grapheme><phoneme>ˈsaʊndˌpruːfs</phoneme></lexeme> <!-- soundproofs -->
   <lexeme><grapheme>soundz</grapheme><phoneme>saʊndz</phoneme></lexeme> <!-- sounds -->
   <lexeme><grapheme>soupd</grapheme><phoneme>suːpt</phoneme></lexeme> <!-- souped -->
+  <lexeme><grapheme>soupson</grapheme><phoneme>ˈsuːpsɒn</phoneme></lexeme> <!-- soupcon -->
+  <lexeme><grapheme>soupsons</grapheme><phoneme>ˈsuːpsɒnz</phoneme></lexeme> <!-- soupcons -->
   <lexeme><grapheme>soupz</grapheme><phoneme>suːps</phoneme></lexeme> <!-- soups -->
   <lexeme><grapheme>sourd</grapheme><phoneme>ˈsaʊərd</phoneme></lexeme> <!-- soured -->
   <lexeme><grapheme>sourdoh</grapheme><phoneme>ˈsaʊərˌdoʊ</phoneme></lexeme> <!-- sourdough -->

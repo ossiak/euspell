@@ -1086,6 +1086,8 @@
   <lexeme><grapheme>anywun'z</grapheme><phoneme>EH1 N IY0 W AH2 N Z</phoneme></lexeme> <!-- anywun'z -->
   <lexeme><grapheme>aodad</grapheme><phoneme>AW1 D AE2 D</phoneme></lexeme> <!-- aoudad -->
   <lexeme><grapheme>aodads</grapheme><phoneme>AW1 D AE2 D Z</phoneme></lexeme> <!-- aoudads -->
+  <lexeme><grapheme>apersu</grapheme><phoneme>AE2 P ER0 S UW1</phoneme></lexeme> <!-- apercu -->
+  <lexeme><grapheme>apersus</grapheme><phoneme>AE2 P ER0 S UW1 Z</phoneme></lexeme> <!-- apercus -->
   <lexeme><grapheme>apez</grapheme><phoneme>EY1 P S</phoneme></lexeme> <!-- apes -->
   <lexeme><grapheme>aphorizez</grapheme><phoneme>AE1 F AH0 R AY2 Z IH0 Z</phoneme></lexeme> <!-- aphorises -->
   <lexeme><grapheme>apiculat</grapheme><phoneme>AH0 P IH1 K Y AH0 L IH0 T</phoneme></lexeme> <!-- apiculate -->
@@ -6602,10 +6604,11 @@
   <lexeme><grapheme>debitz</grapheme><phoneme>D EH1 B IH0 T S</phoneme></lexeme> <!-- debits -->
   <lexeme><grapheme>debonez</grapheme><phoneme>D IY0 B OW1 N Z</phoneme></lexeme> <!-- debones -->
   <lexeme><grapheme>deboosheh</grapheme><phoneme>D EH0 B UW0 SH EY1</phoneme></lexeme> <!-- debouche -->
+  <lexeme><grapheme>debooshehs</grapheme><phoneme>D EH0 B UW0 SH EY1 Z</phoneme></lexeme> <!-- debooshehs -->
   <lexeme><grapheme>debouqh</grapheme><phoneme>D IH0 B AW1 CH</phoneme></lexeme> <!-- debouch -->
   <lexeme><grapheme>debouqhd</grapheme><phoneme>D IH0 B AW1 CH T</phoneme></lexeme> <!-- debouched -->
-  <lexeme><grapheme>debouqhes</grapheme><phoneme>D IH0 B AW1 CH IH0 Z</phoneme></lexeme> <!-- debouches -->
-  <lexeme><grapheme>debouqhez</grapheme><phoneme>D IH0 B AW1 CH IH0 Z</phoneme></lexeme> <!-- debouches -->
+  <lexeme><grapheme>debouqhes</grapheme><phoneme>D IH0 B AW1 CH IH0 Z</phoneme></lexeme> <!-- debouqhes -->
+  <lexeme><grapheme>debouqhez</grapheme><phoneme>D IH0 B AW1 CH IH0 Z</phoneme></lexeme> <!-- debouqhez -->
   <lexeme><grapheme>debouqhing</grapheme><phoneme>D IH0 B AW1 CH IH0 NG</phoneme></lexeme> <!-- debouching -->
   <lexeme><grapheme>debouqhment</grapheme><phoneme>D IH0 B AW1 CH M AH0 N T</phoneme></lexeme> <!-- debouchment -->
   <lexeme><grapheme>debouqhments</grapheme><phoneme>D IH0 B AW1 CH M AH0 N T S</phoneme></lexeme> <!-- debouchments -->
@@ -10093,6 +10096,8 @@
   <lexeme><grapheme>farthermoste</grapheme><phoneme>F AA1 R DH ER0 M OW0 S T</phoneme></lexeme> <!-- farthermost -->
   <lexeme><grapheme>fartherz</grapheme><phoneme>F AA1 R DH ER0 Z</phoneme></lexeme> <!-- farthers -->
   <lexeme><grapheme>fartz</grapheme><phoneme>F AA1 R T S</phoneme></lexeme> <!-- farts -->
+  <lexeme><grapheme>fasade</grapheme><phoneme>F AH0 S AA1 D</phoneme></lexeme> <!-- facade -->
+  <lexeme><grapheme>fasades</grapheme><phoneme>F AH0 S AA1 D Z</phoneme></lexeme> <!-- facades -->
   <lexeme><grapheme>fasciatez</grapheme><phoneme>F AE1 SH IY0 EY2 T S</phoneme></lexeme> <!-- fasciates -->
   <lexeme><grapheme>fasciculat</grapheme><phoneme>F AH0 S IH1 K Y AH0 L IH0 T</phoneme></lexeme> <!-- fasciculate -->
   <lexeme><grapheme>fascinatez</grapheme><phoneme>F AE1 S IH0 N EY2 T S</phoneme></lexeme> <!-- fascinates -->
@@ -11844,6 +11849,8 @@
   <lexeme><grapheme>garrotted</grapheme><phoneme>G AH0 R AA1 T IH0 D</phoneme></lexeme> <!-- garrotted -->
   <lexeme><grapheme>garrotts</grapheme><phoneme>G AH0 R AA1 T S</phoneme></lexeme> <!-- garotes -->
   <lexeme><grapheme>garrottz</grapheme><phoneme>G AH0 R AA1 T S</phoneme></lexeme> <!-- garotes -->
+  <lexeme><grapheme>garson</grapheme><phoneme>G AA0 R S AA1 N</phoneme></lexeme> <!-- garcon -->
+  <lexeme><grapheme>garsons</grapheme><phoneme>G AA0 R S AA1 N Z</phoneme></lexeme> <!-- garcons -->
   <lexeme><grapheme>garterd</grapheme><phoneme>G AA1 R T ER0 D</phoneme></lexeme> <!-- gartered -->
   <lexeme><grapheme>garterz</grapheme><phoneme>G AA1 R T ER0 Z</phoneme></lexeme> <!-- garters -->
   <lexeme><grapheme>gasconadez</grapheme><phoneme>G AE2 S K AH0 N EY1 D Z</phoneme></lexeme> <!-- gasconades -->
@@ -16552,6 +16559,8 @@
   <lexeme><grapheme>likenz</grapheme><phoneme>L AY1 K AH0 N Z</phoneme></lexeme> <!-- likens -->
   <lexeme><grapheme>likez</grapheme><phoneme>L AY1 K S</phoneme></lexeme> <!-- likes -->
   <lexeme><grapheme>liltz</grapheme><phoneme>L IH1 L T S</phoneme></lexeme> <!-- lilts -->
+  <lexeme><grapheme>limason</grapheme><phoneme>L IH1 M AH0 S AA0 N</phoneme></lexeme> <!-- limacon -->
+  <lexeme><grapheme>limasons</grapheme><phoneme>L IH1 M AH0 S AA0 N Z</phoneme></lexeme> <!-- limacons -->
   <lexeme><grapheme>limberd</grapheme><phoneme>L IH1 M B ER0 D</phoneme></lexeme> <!-- limbered -->
   <lexeme><grapheme>limberz</grapheme><phoneme>L IH1 M B ER0 Z</phoneme></lexeme> <!-- limbers -->
   <lexeme><grapheme>limeliht</grapheme><phoneme>L AY1 M L AY0 T</phoneme></lexeme> <!-- limelight -->
@@ -29087,6 +29096,8 @@
   <lexeme><grapheme>soundproofz</grapheme><phoneme>S AW1 N D P R UW2 F S</phoneme></lexeme> <!-- soundproofs -->
   <lexeme><grapheme>soundz</grapheme><phoneme>S AW1 N D Z</phoneme></lexeme> <!-- sounds -->
   <lexeme><grapheme>soupd</grapheme><phoneme>S UW1 P T</phoneme></lexeme> <!-- souped -->
+  <lexeme><grapheme>soupson</grapheme><phoneme>S UW1 P S AA0 N</phoneme></lexeme> <!-- soupcon -->
+  <lexeme><grapheme>soupsons</grapheme><phoneme>S UW1 P S AA0 N Z</phoneme></lexeme> <!-- soupcons -->
   <lexeme><grapheme>soupz</grapheme><phoneme>S UW1 P S</phoneme></lexeme> <!-- soups -->
   <lexeme><grapheme>sourd</grapheme><phoneme>S AW1 ER0 D</phoneme></lexeme> <!-- soured -->
   <lexeme><grapheme>sourdoh</grapheme><phoneme>S AW1 ER0 D OW2</phoneme></lexeme> <!-- sourdough -->

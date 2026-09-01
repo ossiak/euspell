@@ -9433,8 +9433,8 @@ apelles,NN2|NP2,000,[]
 apennine,JJ,000,[]
 apennines,NP2,000,[]
 aper,NN1,000,[]
-apercu,NN1,700,[]
-apercus,NN2,700,[]
+apercu,NN1,701,apersu
+apercus,NN2,701,apersus
 aperient,JJ|NN1,000,[]
 aperients,NN2,000,[]
 aperies,NN2,000,[]
@@ -61294,8 +61294,8 @@ fabulousness,NN,000,[]
 faburden,NN1,000,[]
 faburdens,NN2,000,[]
 fac,NN1,000,[]
-facade,NN1,000,[]
-facades,NN2,000,[]
+facade,NN1,701,fasade
+facades,NN2,701,fasades
 face,II32|NN1|NN122|VV0,000,[]
 faceable,JJ,000,[]
 facebook,NP,000,[]
@@ -71167,8 +71167,8 @@ garbs,NN2|VVZ,012,garbs|garbz
 garcia,NP,000,[]
 garcinia,NN1|NP,000,[]
 garcinias,NN2,000,[]
-garcon,NN1,700,[]
-garcons,NN2,700,[]
+garcon,NN1,701,garson
+garcons,NN2,701,garsons
 gardant,JJ|NN1,000,[]
 gardants,NN2,000,[]
 garden,NN1|VV0,000,[]
@@ -102860,8 +102860,8 @@ lim,NP,000,[]
 lima,NN1|NP,000,[]
 limacidae,NP,000,[]
 limacine,JJ,000,[]
-limacon,NN1,000,[]
-limacons,NN2,000,[]
+limacon,NN1,701,limason
+limacons,NN2,701,limasons
 liman,NN1,000,[]
 limans,NN2,000,[]
 limas,NN2,000,[]
@@ -170492,8 +170492,8 @@ soundstages,NN2,000,[]
 soundtrack,NN1,000,[]
 soundtracks,NN2,000,[]
 soup,NN1|VV0,000,[]
-soupcon,NN1,700,[]
-soupcons,NN2,700,[]
+soupcon,NN1,701,soupson
+soupcons,NN2,701,soupsons
 souped,JJ|VVD|VVN,021,soupd
 soupier,JJR,000,[]
 soupiest,JJT,000,[]
