@@ -1276,6 +1276,8 @@ anyhuw	anyhuw	RB
 anywun	anywun	NN
 aodad	aodad	NN
 aodads	aodads	NNS
+apersu	apersu	NN
+apersus	apersus	NNS
 apez	apez	VBZ
 aphorizez	aphorizez	VBZ
 apiculat	apiculat	JJ
@@ -8612,12 +8614,16 @@ debilitativ	debilitativ	JJ
 debitz	debitz	VBZ
 debonez	debonez	VBZ
 deboosheh	deboosheh	NN
+debooshehs	debooshehs	NNS
+debooshehs	debooshehs	VBZ
 debouqh	debouqh	NN
 debouqh	debouqh	VB
 debouqh	debouqh	VBP
 debouqhd	debouqhd	VBD
 debouqhd	debouqhd	VBN
 debouqhes	debouqhes	NNS
+debouqhes	debouqhes	VBZ
+debouqhez	debouqhez	NNS
 debouqhez	debouqhez	VBZ
 debouqhing	debouqhing	NN
 debouqhing	debouqhing	VBG
@@ -13202,6 +13208,8 @@ fartherd	fartherd	VBN
 farthermoste	farthermoste	JJ
 fartherz	fartherz	VBZ
 fartz	fartz	VBZ
+fasade	fasade	NN
+fasades	fasades	NNS
 fasciatez	fasciatez	VBZ
 fasciculat	fasciculat	JJ
 fascinatez	fascinatez	VBZ
@@ -15547,6 +15555,8 @@ garrott	garrott	VB
 garrott	garrott	VBP
 garrotts	garrotts	NNS
 garrottz	garrottz	VBZ
+garson	garson	NN
+garsons	garsons	NNS
 garterd	garterd	JJ
 garterd	garterd	VBD
 garterd	garterd	VBN
@@ -21483,6 +21493,8 @@ likend	likend	VBN
 likenz	likenz	VBZ
 likez	likez	VBZ
 liltz	liltz	VBZ
+limason	limason	NN
+limasons	limasons	NNS
 limberd	limberd	VBD
 limberd	limberd	VBN
 limberz	limberz	VBZ
@@ -22019,7 +22031,6 @@ makereddies	makereddies	NNS
 makereddy	makereddy	NN
 makeweiht	makeweiht	NN
 makeweihts	makeweihts	NNS
-makez	makez	NNS
 makez	makez	VBZ
 maladaptiv	maladaptiv	JJ
 maladjustiv	maladjustiv	JJ
@@ -38232,6 +38243,8 @@ soundz	soundz	VBZ
 soupd	soupd	JJ
 soupd	soupd	VBD
 soupd	soupd	VBN
+soupson	soupson	NN
+soupsons	soupsons	NNS
 soupz	soupz	VBZ
 sourd	sourd	JJ
 sourd	sourd	VBD
