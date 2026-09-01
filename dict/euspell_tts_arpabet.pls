@@ -18465,6 +18465,8 @@
   <lexeme><grapheme>nabz</grapheme><phoneme>N AE1 B Z</phoneme></lexeme> <!-- nabs -->
   <lexeme><grapheme>nagd</grapheme><phoneme>N AE1 G D</phoneme></lexeme> <!-- nagged -->
   <lexeme><grapheme>nagz</grapheme><phoneme>N AE1 G Z</phoneme></lexeme> <!-- nags -->
+  <lexeme><grapheme>naiif</grapheme><phoneme>N AA0 IY1 F</phoneme></lexeme> <!-- naif -->
+  <lexeme><grapheme>naiifs</grapheme><phoneme>N AA0 IY1 F S</phoneme></lexeme> <!-- naifs -->
   <lexeme><grapheme>naiiv</grapheme><phoneme>N AA0 IY1 V</phoneme></lexeme> <!-- naive -->
   <lexeme><grapheme>naiiver</grapheme><phoneme>N AA0 IY1 V ER0</phoneme></lexeme> <!-- naiver -->
   <lexeme><grapheme>naiivest</grapheme><phoneme>N AA0 IY1 V AH0 S T</phoneme></lexeme> <!-- naivest -->

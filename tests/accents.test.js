@@ -62,10 +62,11 @@ test('a whole inflected family is bridged, not just its base', () => {
   assert.equal(conv([['her', 'APPGE'], ['naïveté', 'NN1']], 'naïveté'), 'naiiveteh');
   assert.equal(conv([['the', 'AT'], ['naïvetés', 'NN2']], 'naïvetés'), 'naiivetehs');
   assert.equal(conv([['the', 'AT'], ['naïvest', 'JJT'], ['answer', 'NN1']], 'naïvest'), 'naiivest');
-  // `naif` is 000, so its accented form maps to a row that changes nothing —
-  // still worth having, because the alias is what gives the tagger a PoS for the
-  // accented token, and that decides its neighbours.
-  assert.equal(conv([['a', 'AT1'], ['naïf', 'NN1']], 'naïf'), 'naïf');
+  // The masculine takes the same doubled i. It sat at 000 until 1 Sep 2026 —
+  // `naive` reformed and `naif` did not, which is the shape of gap a family is
+  // worth checking for whenever one member of it moves.
+  assert.equal(conv([['a', 'AT1'], ['naïf', 'NN1']], 'naïf'), 'naiif');
+  assert.equal(conv([['two', 'MC'], ['naïfs', 'NN2']], 'naïfs'), 'naiifs');
 });
 
 test('the ligature is bridged too — NFD alone would miss it', () => {

@@ -18471,6 +18471,8 @@
   <lexeme><grapheme>nabz</grapheme><phoneme>næbz</phoneme></lexeme> <!-- nabs -->
   <lexeme><grapheme>nagd</grapheme><phoneme>næɡd</phoneme></lexeme> <!-- nagged -->
   <lexeme><grapheme>nagz</grapheme><phoneme>næɡz</phoneme></lexeme> <!-- nags -->
+  <lexeme><grapheme>naiif</grapheme><phoneme>nɑˈif</phoneme></lexeme> <!-- naif -->
+  <lexeme><grapheme>naiifs</grapheme><phoneme>nɑˈifs</phoneme></lexeme> <!-- naifs -->
   <lexeme><grapheme>naiiv</grapheme><phoneme>nɑˈiv</phoneme></lexeme> <!-- naive -->
   <lexeme><grapheme>naiiver</grapheme><phoneme>nɑˈivər</phoneme></lexeme> <!-- naiver -->
   <lexeme><grapheme>naiivest</grapheme><phoneme>nɑˈivəst</phoneme></lexeme> <!-- naivest -->

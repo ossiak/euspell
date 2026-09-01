@@ -1,5 +1,5 @@
 Encoding,Description,Count
-000,unchanged common word,158845
+000,unchanged common word,158843
 011,unambiguous VVZ ending -s → -z,5984
 012,NN2|VVZ -s ending disambiguated,4917
 021,JJ|VVD|VVN ending -ed → -d when warranted,4703
@@ -25,7 +25,7 @@ Encoding,Description,Count
 631,merges with existing word: undoubling consonant before ending,307
 641,merges with existing word: doubling consonant before ending,42
 700,unchanged word – French pronunciation,115
-701,stem change – French pronunciation,890
+701,stem change – French pronunciation,892
 702,NN1|NN2 disambiguation – French pronunciation,9
 711,VVZ ending -s → -z – French pronunciation,4
 721,JJ|VVD|VVN ending -ed → -d when warranted – French pronunciation,26

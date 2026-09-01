@@ -116752,8 +116752,8 @@ naiad,NN1,000,[]
 naiades,NN2,000,[]
 naiads,NN2,000,[]
 naiant,JJ,000,[]
-naif,NN1,000,[]
-naifs,NN2,000,[]
+naif,JJ|NN1,701,naiif
+naifs,NN2,701,naiifs
 naik,NN1,000,[]
 naiks,NN2,000,[]
 nail,NN1|VV0,000,[]
