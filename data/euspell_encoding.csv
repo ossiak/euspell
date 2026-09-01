@@ -9,8 +9,8 @@ Encoding,Description,Count
 102,stem disambiguated: ending in -ate,155
 103,stem disambiguated three ways,5
 111,stem change + unambiguous VVZ ending -s → -z,1459
-112,stem change + NN2|VVZ ending: disambiguated,746
-113,stem change + NN2|VVZ ending: disambiguated three ways,3
+112,stem change + NN2|VVZ ending: disambiguated,745
+113,stem change + NN2|VVZ ending: disambiguated three ways,4
 114,stem change + NN2|VVZ ending: disambiguated four ways,5
 121,stem change + JJ|VVD|VVN ending -ed → -d when warranted,949
 123,stem change + JJ|VVD|VVN ending: disambiguated three ways,1

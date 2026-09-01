@@ -22,6 +22,7 @@ import { disambiguate_close } from './close.js';
 import { disambiguate_closer } from './closer.js';
 import { disambiguate_conch } from './conch.js';
 import { disambiguate_copyread } from './copyread.js';
+import { disambiguate_debouches } from './debouches.js';
 import { disambiguate_does } from './does.js';
 import { disambiguate_dogged } from './dogged.js';
 import { disambiguate_dove } from './dove.js';
@@ -102,6 +103,7 @@ export const SEMANTIC = new Map([
   ['closer', disambiguate_closer],
   ['conch', disambiguate_conch],
   ['copyread', disambiguate_copyread],
+  ['debouches', disambiguate_debouches],
   ['does', disambiguate_does],
   ['dogged', disambiguate_dogged],
   ['dove', disambiguate_dove],

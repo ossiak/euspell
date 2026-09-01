@@ -49,6 +49,8 @@
     "word:serve": "node word-addin/server.js",
     "gen:diatones": "node build/gen-diatones.js",
     "gen:accents": "python build/gen-lexicon-accents.py",
+    "gen:corpus:debouches": "node build/gen-debouches-corpus.mjs",
+    "eval:debouches": "node build/rule-debouches.mjs",
     "watch": "rollup -c --watch"
   },
   "devDependencies": {
