@@ -1022,6 +1022,7 @@
   <lexeme><grapheme>anthologizez</grapheme><phoneme>ænˈθɑləˌdʒaɪzɪz</phoneme></lexeme> <!-- anthologises -->
   <lexeme><grapheme>anthropomorphizez</grapheme><phoneme>ˌænθrəpəˈmɔrfˌaɪzɪz</phoneme></lexeme> <!-- anthropomorphizes -->
   <lexeme><grapheme>antialiasd</grapheme><phoneme>ˌæntɪˈeɪliəst</phoneme></lexeme> <!-- antialiased -->
+  <lexeme><grapheme>antibisness</grapheme><phoneme>ˌæntiˈbɪznəs</phoneme></lexeme> <!-- antibusiness -->
   <lexeme><grapheme>anticigarett</grapheme><phoneme>ˌæntɪˈsɪɡəˌrɛt</phoneme></lexeme> <!-- anticigarette -->
   <lexeme><grapheme>anticipatez</grapheme><phoneme>ænˈtɪsəˌpeɪts</phoneme></lexeme> <!-- anticipates -->
   <lexeme><grapheme>anticompetitiv</grapheme><phoneme>ˌæntɪkəmˈpɛtətɪv</phoneme></lexeme> <!-- anticompetitive -->
@@ -1341,8 +1342,13 @@
   <lexeme><grapheme>aryanizez</grapheme><phoneme>ˈɛriəˌnaɪzɪz</phoneme></lexeme> <!-- aryanises -->
   <lexeme><grapheme>ascendz</grapheme><phoneme>əˈsɛndz</phoneme></lexeme> <!-- ascends -->
   <lexeme><grapheme>ascensiv</grapheme><phoneme>əˈsɛnsɪv</phoneme></lexeme> <!-- ascensive -->
-  <lexeme><grapheme>ascertaind</grapheme><phoneme>ˌæsərˈteɪnd</phoneme></lexeme> <!-- ascertained -->
-  <lexeme><grapheme>ascertainz</grapheme><phoneme>ˌæsərˈteɪnz</phoneme></lexeme> <!-- ascertains -->
+  <lexeme><grapheme>ascertan</grapheme><phoneme>ˌæsərˈteɪn</phoneme></lexeme> <!-- ascertain -->
+  <lexeme><grapheme>ascertanable</grapheme><phoneme>ˌæsərˈteɪnəbəl</phoneme></lexeme> <!-- ascertainable -->
+  <lexeme><grapheme>ascertand</grapheme><phoneme>ˌæsərˈteɪnd</phoneme></lexeme> <!-- ascertained -->
+  <lexeme><grapheme>ascertaning</grapheme><phoneme>ˌæsərˈteɪnɪŋ</phoneme></lexeme> <!-- ascertaining -->
+  <lexeme><grapheme>ascertanment</grapheme><phoneme>ˌæsərˈteɪnmənt</phoneme></lexeme> <!-- ascertainment -->
+  <lexeme><grapheme>ascertanments</grapheme><phoneme>ˌæsərˈteɪnmənts</phoneme></lexeme> <!-- ascertainments -->
+  <lexeme><grapheme>ascertanz</grapheme><phoneme>ˌæsərˈteɪnz</phoneme></lexeme> <!-- ascertains -->
   <lexeme><grapheme>ascribez</grapheme><phoneme>əˈskraɪbz</phoneme></lexeme> <!-- ascribes -->
   <lexeme><grapheme>ascriptiv</grapheme><phoneme>əˈskrɪptɪv</phoneme></lexeme> <!-- ascriptive -->
   <lexeme><grapheme>ashamez</grapheme><phoneme>əˈʃeɪmz</phoneme></lexeme> <!-- ashames -->
@@ -3003,9 +3009,9 @@
   <lexeme><grapheme>boodlez</grapheme><phoneme>ˈbuːdəlz</phoneme></lexeme> <!-- boodles -->
   <lexeme><grapheme>boodwar</grapheme><phoneme>ˈbuːdwɑːr</phoneme></lexeme> <!-- boudoir -->
   <lexeme><grapheme>boodwars</grapheme><phoneme>ˈbuːdwɑːrz</phoneme></lexeme> <!-- boudoirs -->
-  <lexeme><grapheme>boofants</grapheme><phoneme>ˈbuːfɑːnts</phoneme></lexeme> <!-- bouffants -->
   <lexeme><grapheme>booff</grapheme><phoneme>buːf</phoneme></lexeme> <!-- bouffe -->
   <lexeme><grapheme>booffant</grapheme><phoneme>ˈbuːfɑːnt</phoneme></lexeme> <!-- bouffant -->
+  <lexeme><grapheme>booffants</grapheme><phoneme>ˈbuːfɑːnts</phoneme></lexeme> <!-- bouffants -->
   <lexeme><grapheme>booffs</grapheme><phoneme>buːfs</phoneme></lexeme> <!-- bouffes -->
   <lexeme><grapheme>booganvillea</grapheme><phoneme>ˌbuːɡɪnˈvɪliə</phoneme></lexeme> <!-- bougainvillaea -->
   <lexeme><grapheme>booganvilleas</grapheme><phoneme>ˌbuːɡɪnˈvɪliəz</phoneme></lexeme> <!-- bougainvillaeas -->
@@ -4676,8 +4682,11 @@
   <lexeme><grapheme>coalescez</grapheme><phoneme>ˌkoʊəˈlɛsəz</phoneme></lexeme> <!-- coalesces -->
   <lexeme><grapheme>coalifiez</grapheme><phoneme>koʊˈæləˌfaɪz</phoneme></lexeme> <!-- coalifies -->
   <lexeme><grapheme>coalz</grapheme><phoneme>koʊlz</phoneme></lexeme> <!-- coals -->
-  <lexeme><grapheme>coanchord</grapheme><phoneme>ˌkoʊˈæŋkərd</phoneme></lexeme> <!-- coanchored -->
-  <lexeme><grapheme>coanchorz</grapheme><phoneme>ˌkoʊˈæŋkərz</phoneme></lexeme> <!-- coanchors -->
+  <lexeme><grapheme>coancor</grapheme><phoneme>ˌkoʊˈæŋkər</phoneme></lexeme> <!-- coanchor -->
+  <lexeme><grapheme>coancord</grapheme><phoneme>ˌkoʊˈæŋkərd</phoneme></lexeme> <!-- coanchored -->
+  <lexeme><grapheme>coancoring</grapheme><phoneme>ˌkoʊˈæŋkərɪŋ</phoneme></lexeme> <!-- coanchoring -->
+  <lexeme><grapheme>coancors</grapheme><phoneme>ˌkoʊˈæŋkərz</phoneme></lexeme> <!-- coanchors -->
+  <lexeme><grapheme>coancorz</grapheme><phoneme>ˌkoʊˈæŋkərz</phoneme></lexeme> <!-- coanchors -->
   <lexeme><grapheme>coannexd</grapheme><phoneme>ˌkoʊəˈnɛkst</phoneme></lexeme> <!-- coannexed -->
   <lexeme><grapheme>coannexez</grapheme><phoneme>ˌkoʊəˈnɛksəz</phoneme></lexeme> <!-- coannexes -->
   <lexeme><grapheme>coappeard</grapheme><phoneme>ˌkoʊəˈpɪərd</phoneme></lexeme> <!-- coappeared -->
@@ -6274,10 +6283,10 @@
   <lexeme><grapheme>curriers</grapheme><phoneme>ˈkʊriərz</phoneme></lexeme> <!-- couriers -->
   <lexeme><grapheme>curriez</grapheme><phoneme>ˈkɜːriz</phoneme></lexeme> <!-- curries -->
   <lexeme><grapheme>currycohm</grapheme><phoneme>ˈkɜːriˌkoʊm</phoneme></lexeme> <!-- currycomb -->
+  <lexeme><grapheme>currycohmd</grapheme><phoneme>ˈkɜːriˌkoʊmd</phoneme></lexeme> <!-- currycombed -->
   <lexeme><grapheme>currycohming</grapheme><phoneme>ˈkɜːriˌkoʊmɪŋ</phoneme></lexeme> <!-- currycombing -->
   <lexeme><grapheme>currycohms</grapheme><phoneme>ˈkɜːriˌkoʊmz</phoneme></lexeme> <!-- currycombs -->
   <lexeme><grapheme>currycohmz</grapheme><phoneme>ˈkɜːriˌkoʊmz</phoneme></lexeme> <!-- currycombs -->
-  <lexeme><grapheme>currycomhd</grapheme><phoneme>ˈkɜːriˌkoʊmd</phoneme></lexeme> <!-- currycombed -->
   <lexeme><grapheme>currz</grapheme><phoneme>kɜːrz</phoneme></lexeme> <!-- currs -->
   <lexeme><grapheme>cursez</grapheme><phoneme>ˈkɜːrsəz</phoneme></lexeme> <!-- curses -->
   <lexeme><grapheme>cursiv</grapheme><phoneme>ˈkɜːrsɪv</phoneme></lexeme> <!-- cursive -->
@@ -7625,8 +7634,10 @@
   <lexeme><grapheme>disalluwing</grapheme><phoneme>dɪsəˈlaʊɪŋ</phoneme></lexeme> <!-- disallowing -->
   <lexeme><grapheme>disalluwz</grapheme><phoneme>dɪsəˈlaʊz</phoneme></lexeme> <!-- disallows -->
   <lexeme><grapheme>disambiguatez</grapheme><phoneme>dɪsæmˈbɪɡjuˌeɪts</phoneme></lexeme> <!-- disambiguates -->
-  <lexeme><grapheme>disanchord</grapheme><phoneme>dɪsˈæŋkərd</phoneme></lexeme> <!-- disanchored -->
-  <lexeme><grapheme>disanchorz</grapheme><phoneme>dɪsˈæŋkərz</phoneme></lexeme> <!-- disanchors -->
+  <lexeme><grapheme>disancor</grapheme><phoneme>dɪsˈæŋkər</phoneme></lexeme> <!-- disanchor -->
+  <lexeme><grapheme>disancord</grapheme><phoneme>dɪsˈæŋkərd</phoneme></lexeme> <!-- disanchored -->
+  <lexeme><grapheme>disancoring</grapheme><phoneme>dɪsˈæŋkərɪŋ</phoneme></lexeme> <!-- disanchoring -->
+  <lexeme><grapheme>disancorz</grapheme><phoneme>dɪsˈæŋkərz</phoneme></lexeme> <!-- disanchors -->
   <lexeme><grapheme>disanimatez</grapheme><phoneme>dɪsˈænəˌmeɪts</phoneme></lexeme> <!-- disanimates -->
   <lexeme><grapheme>disannexd</grapheme><phoneme>dɪsəˈnɛkst</phoneme></lexeme> <!-- disannexed -->
   <lexeme><grapheme>disannexez</grapheme><phoneme>dɪsəˈnɛksəz</phoneme></lexeme> <!-- disannexes -->
@@ -9974,7 +9985,6 @@
   <lexeme><grapheme>extollment</grapheme><phoneme>ɪkˈstoʊlmənt</phoneme></lexeme> <!-- extolment -->
   <lexeme><grapheme>extollments</grapheme><phoneme>ɪkˈstoʊlmənts</phoneme></lexeme> <!-- extolments -->
   <lexeme><grapheme>extollz</grapheme><phoneme>ɪkˈstoʊlz</phoneme></lexeme> <!-- extolls -->
-  <lexeme><grapheme>extolz</grapheme><phoneme>ɪkˈstoʊlz</phoneme></lexeme> <!-- extols -->
   <lexeme><grapheme>extortionat</grapheme><phoneme>ɪkˈstɔːrʃənɪt</phoneme></lexeme> <!-- extortionate -->
   <lexeme><grapheme>extortionatly</grapheme><phoneme>ɪkˈstɔːrʃənɪtli</phoneme></lexeme> <!-- extortionately -->
   <lexeme><grapheme>extortiv</grapheme><phoneme>ɪkˈstɔːrtɪv</phoneme></lexeme> <!-- extortive -->
@@ -17495,6 +17505,8 @@
   <lexeme><grapheme>micturatez</grapheme><phoneme>ˈmɪktʃʊreɪts</phoneme></lexeme> <!-- micturates -->
   <lexeme><grapheme>midcorse</grapheme><phoneme>ˈmɪdkɔːrs</phoneme></lexeme> <!-- midcourse -->
   <lexeme><grapheme>midcort</grapheme><phoneme>ˈmɪdkɔːrt</phoneme></lexeme> <!-- midcourt -->
+  <lexeme><grapheme>middlebruw</grapheme><phoneme>ˈmɪdəlbraʊ</phoneme></lexeme> <!-- middlebrow -->
+  <lexeme><grapheme>middlebruws</grapheme><phoneme>ˈmɪdəlbraʊz</phoneme></lexeme> <!-- middlebrows -->
   <lexeme><grapheme>middleweiht</grapheme><phoneme>ˈmɪdəlweɪt</phoneme></lexeme> <!-- middleweight -->
   <lexeme><grapheme>middleweihts</grapheme><phoneme>ˈmɪdəlweɪts</phoneme></lexeme> <!-- middleweights -->
   <lexeme><grapheme>midmoste</grapheme><phoneme>ˈmɪdmoʊst</phoneme></lexeme> <!-- midmost -->
@@ -20006,6 +20018,7 @@
   <lexeme><grapheme>overbilld</grapheme><phoneme>ˌoʊvərˈbɪld</phoneme></lexeme> <!-- overbilled -->
   <lexeme><grapheme>overbillz</grapheme><phoneme>ˌoʊvərˈbɪlz</phoneme></lexeme> <!-- overbills -->
   <lexeme><grapheme>overbilt</grapheme><phoneme>ˌoʊvərˈbɪlt</phoneme></lexeme> <!-- overbuilt -->
+  <lexeme><grapheme>overbisy</grapheme><phoneme>ˌoʊvərˈbɪzi</phoneme></lexeme> <!-- overbusy -->
   <lexeme><grapheme>overbleaqh</grapheme><phoneme>ˌoʊvərˈblitʃ</phoneme></lexeme> <!-- overbleach -->
   <lexeme><grapheme>overbleaqhd</grapheme><phoneme>ˌoʊvərˈblitʃt</phoneme></lexeme> <!-- overbleached -->
   <lexeme><grapheme>overbleaqhez</grapheme><phoneme>ˌoʊvərˈblitʃɪz</phoneme></lexeme> <!-- overbleaches -->
@@ -20624,6 +20637,8 @@
   <lexeme><grapheme>palfreyd</grapheme><phoneme>ˈpɔːlfrid</phoneme></lexeme> <!-- palfreyed -->
   <lexeme><grapheme>palisadez</grapheme><phoneme>ˌpælɪˈseɪdz</phoneme></lexeme> <!-- palisades -->
   <lexeme><grapheme>palladiumizez</grapheme><phoneme>pəˈleɪdiəmaɪzɪz</phoneme></lexeme> <!-- palladiumizes -->
+  <lexeme><grapheme>pallbehrer</grapheme><phoneme>ˈpɔːlˌbɛrər</phoneme></lexeme> <!-- pallbearer -->
+  <lexeme><grapheme>pallbehrers</grapheme><phoneme>ˈpɔːlˌbɛrərz</phoneme></lexeme> <!-- pallbearers -->
   <lexeme><grapheme>palld</grapheme><phoneme>pɔːld</phoneme></lexeme> <!-- palled -->
   <lexeme><grapheme>palletizez</grapheme><phoneme>ˈpælɪtaɪzɪz</phoneme></lexeme> <!-- palletises -->
   <lexeme><grapheme>pallett</grapheme><phoneme>ˈpælɪt</phoneme></lexeme> <!-- pallette -->
@@ -29911,6 +29926,8 @@
   <lexeme><grapheme>subbranqh</grapheme><phoneme>ˈsʌbˌbræntʃ</phoneme></lexeme> <!-- subbranch -->
   <lexeme><grapheme>subbranqhes</grapheme><phoneme>ˈsʌbˌbræntʃəz</phoneme></lexeme> <!-- subbranches -->
   <lexeme><grapheme>subcategorizez</grapheme><phoneme>ˌsʌbˈkætəɡəˌraɪzəz</phoneme></lexeme> <!-- subcategorises -->
+  <lexeme><grapheme>subceeling</grapheme><phoneme>ˈsʌbˌsiːlɪŋ</phoneme></lexeme> <!-- subceiling -->
+  <lexeme><grapheme>subceelings</grapheme><phoneme>ˈsʌbˌsiːlɪŋz</phoneme></lexeme> <!-- subceilings -->
   <lexeme><grapheme>subclassd</grapheme><phoneme>ˈsʌbˌklæst</phoneme></lexeme> <!-- subclassed -->
   <lexeme><grapheme>subclassez</grapheme><phoneme>ˈsʌbˌklæsəz</phoneme></lexeme> <!-- subclasses -->
   <lexeme><grapheme>subclassifiez</grapheme><phoneme>ˌsʌbˈklæsəfaɪz</phoneme></lexeme> <!-- subclassifies -->
@@ -32069,8 +32086,10 @@
   <lexeme><grapheme>unalivez</grapheme><phoneme>ˈʌnəˈlaɪvz</phoneme></lexeme> <!-- unalives -->
   <lexeme><grapheme>unalloyd</grapheme><phoneme>ˈʌnəˈlɔɪd</phoneme></lexeme> <!-- unalloyed -->
   <lexeme><grapheme>unalterd</grapheme><phoneme>ˈʌnˈɔːltərd</phoneme></lexeme> <!-- unaltered -->
-  <lexeme><grapheme>unanchord</grapheme><phoneme>ˈʌnˈæŋkərd</phoneme></lexeme> <!-- unanchored -->
-  <lexeme><grapheme>unanchorz</grapheme><phoneme>ˈʌnˈæŋkərz</phoneme></lexeme> <!-- unanchors -->
+  <lexeme><grapheme>unancor</grapheme><phoneme>ˈʌnˈæŋkər</phoneme></lexeme> <!-- unanchor -->
+  <lexeme><grapheme>unancord</grapheme><phoneme>ˈʌnˈæŋkərd</phoneme></lexeme> <!-- unanchored -->
+  <lexeme><grapheme>unancoring</grapheme><phoneme>ˈʌnˈæŋkərɪŋ</phoneme></lexeme> <!-- unanchoring -->
+  <lexeme><grapheme>unancorz</grapheme><phoneme>ˈʌnˈæŋkərz</phoneme></lexeme> <!-- unanchors -->
   <lexeme><grapheme>unanimat</grapheme><phoneme>ˈʌnˈænəmɪt</phoneme></lexeme> <!-- unanimate -->
   <lexeme><grapheme>unanserability</grapheme><phoneme>ˈʌnˌænsərəˈbɪlɪti</phoneme></lexeme> <!-- unanswerability -->
   <lexeme><grapheme>unanserable</grapheme><phoneme>ˈʌnˈænsərəbəl</phoneme></lexeme> <!-- unanswerable -->
@@ -32157,6 +32176,8 @@
   <lexeme><grapheme>unbilds</grapheme><phoneme>ˈʌnˈbɪldz</phoneme></lexeme> <!-- unbuilds -->
   <lexeme><grapheme>unbilld</grapheme><phoneme>ˈʌnˈbɪld</phoneme></lexeme> <!-- unbilled -->
   <lexeme><grapheme>unbilt</grapheme><phoneme>ˈʌnˈbɪlt</phoneme></lexeme> <!-- unbuilt -->
+  <lexeme><grapheme>unbisied</grapheme><phoneme>ˈʌnˈbɪzid</phoneme></lexeme> <!-- unbusied -->
+  <lexeme><grapheme>unbisnesslike</grapheme><phoneme>ˈʌnˈbɪznəslaɪk</phoneme></lexeme> <!-- unbusinesslike -->
   <lexeme><grapheme>unbisy</grapheme><phoneme>ˈʌnˈbɪzi</phoneme></lexeme> <!-- unbusy -->
   <lexeme><grapheme>unbitz</grapheme><phoneme>ˈʌnˈbɪts</phoneme></lexeme> <!-- unbits -->
   <lexeme><grapheme>unbleaqhd</grapheme><phoneme>ˈʌnˈbliːtʃt</phoneme></lexeme> <!-- unbleached -->

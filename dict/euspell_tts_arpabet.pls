@@ -1022,6 +1022,7 @@
   <lexeme><grapheme>anthologizez</grapheme><phoneme>AE0 N TH AA1 L AH0 JH AY2 Z IH0 Z</phoneme></lexeme> <!-- anthologises -->
   <lexeme><grapheme>anthropomorphizez</grapheme><phoneme>AE2 N TH R AH0 P AH0 M AO1 R F AY2 Z IH0 Z</phoneme></lexeme> <!-- anthropomorphizes -->
   <lexeme><grapheme>antialiasd</grapheme><phoneme>AE2 N T IH0 EY1 L IY0 AH0 S T</phoneme></lexeme> <!-- antialiased -->
+  <lexeme><grapheme>antibisness</grapheme><phoneme>AE2 N T IY0 B IH1 Z N AH0 S</phoneme></lexeme> <!-- antibusiness -->
   <lexeme><grapheme>anticigarett</grapheme><phoneme>AE2 N T IH0 S IH1 G AH0 R EH2 T</phoneme></lexeme> <!-- anticigarette -->
   <lexeme><grapheme>anticipatez</grapheme><phoneme>AE0 N T IH1 S AH0 P EY2 T S</phoneme></lexeme> <!-- anticipates -->
   <lexeme><grapheme>anticompetitiv</grapheme><phoneme>AE2 N T IH0 K AH0 M P EH1 T AH0 T IH0 V</phoneme></lexeme> <!-- anticompetitive -->
@@ -1341,8 +1342,13 @@
   <lexeme><grapheme>aryanizez</grapheme><phoneme>EH1 R IY0 AH0 N AY2 Z IH0 Z</phoneme></lexeme> <!-- aryanises -->
   <lexeme><grapheme>ascendz</grapheme><phoneme>AH0 S EH1 N D Z</phoneme></lexeme> <!-- ascends -->
   <lexeme><grapheme>ascensiv</grapheme><phoneme>AH0 S EH1 N S IH0 V</phoneme></lexeme> <!-- ascensive -->
-  <lexeme><grapheme>ascertaind</grapheme><phoneme>AE2 S ER0 T EY1 N D</phoneme></lexeme> <!-- ascertained -->
-  <lexeme><grapheme>ascertainz</grapheme><phoneme>AE2 S ER0 T EY1 N Z</phoneme></lexeme> <!-- ascertains -->
+  <lexeme><grapheme>ascertan</grapheme><phoneme>AE2 S ER0 T EY1 N</phoneme></lexeme> <!-- ascertain -->
+  <lexeme><grapheme>ascertanable</grapheme><phoneme>AE2 S ER0 T EY1 N AH0 B AH0 L</phoneme></lexeme> <!-- ascertainable -->
+  <lexeme><grapheme>ascertand</grapheme><phoneme>AE2 S ER0 T EY1 N D</phoneme></lexeme> <!-- ascertained -->
+  <lexeme><grapheme>ascertaning</grapheme><phoneme>AE2 S ER0 T EY1 N IH0 NG</phoneme></lexeme> <!-- ascertaining -->
+  <lexeme><grapheme>ascertanment</grapheme><phoneme>AE2 S ER0 T EY1 N M AH0 N T</phoneme></lexeme> <!-- ascertainment -->
+  <lexeme><grapheme>ascertanments</grapheme><phoneme>AE2 S ER0 T EY1 N M AH0 N T S</phoneme></lexeme> <!-- ascertainments -->
+  <lexeme><grapheme>ascertanz</grapheme><phoneme>AE2 S ER0 T EY1 N Z</phoneme></lexeme> <!-- ascertains -->
   <lexeme><grapheme>ascribez</grapheme><phoneme>AH0 S K R AY1 B Z</phoneme></lexeme> <!-- ascribes -->
   <lexeme><grapheme>ascriptiv</grapheme><phoneme>AH0 S K R IH1 P T IH0 V</phoneme></lexeme> <!-- ascriptive -->
   <lexeme><grapheme>ashamez</grapheme><phoneme>AH0 SH EY1 M Z</phoneme></lexeme> <!-- ashames -->
@@ -3001,9 +3007,9 @@
   <lexeme><grapheme>boodlez</grapheme><phoneme>B UW1 D AH0 L Z</phoneme></lexeme> <!-- boodles -->
   <lexeme><grapheme>boodwar</grapheme><phoneme>B UW1 D W AA0 R</phoneme></lexeme> <!-- boudoir -->
   <lexeme><grapheme>boodwars</grapheme><phoneme>B UW1 D W AA0 R Z</phoneme></lexeme> <!-- boudoirs -->
-  <lexeme><grapheme>boofants</grapheme><phoneme>B UW1 F AA0 N T S</phoneme></lexeme> <!-- bouffants -->
   <lexeme><grapheme>booff</grapheme><phoneme>B UW1 F</phoneme></lexeme> <!-- bouffe -->
   <lexeme><grapheme>booffant</grapheme><phoneme>B UW1 F AA0 N T</phoneme></lexeme> <!-- bouffant -->
+  <lexeme><grapheme>booffants</grapheme><phoneme>B UW1 F AA0 N T S</phoneme></lexeme> <!-- bouffants -->
   <lexeme><grapheme>booffs</grapheme><phoneme>B UW1 F S</phoneme></lexeme> <!-- bouffes -->
   <lexeme><grapheme>booganvillea</grapheme><phoneme>B UW2 G IH0 N V IH1 L IY0 AH0</phoneme></lexeme> <!-- bougainvillaea -->
   <lexeme><grapheme>booganvilleas</grapheme><phoneme>B UW2 G IH0 N V IH1 L IY0 AH0 Z</phoneme></lexeme> <!-- bougainvillaeas -->
@@ -4674,8 +4680,11 @@
   <lexeme><grapheme>coalescez</grapheme><phoneme>K OW2 AH0 L EH1 S AH0 Z</phoneme></lexeme> <!-- coalesces -->
   <lexeme><grapheme>coalifiez</grapheme><phoneme>K OW0 AE1 L AH0 F AY2 Z</phoneme></lexeme> <!-- coalifies -->
   <lexeme><grapheme>coalz</grapheme><phoneme>K OW1 L Z</phoneme></lexeme> <!-- coals -->
-  <lexeme><grapheme>coanchord</grapheme><phoneme>K OW2 AE1 NG K ER0 D</phoneme></lexeme> <!-- coanchored -->
-  <lexeme><grapheme>coanchorz</grapheme><phoneme>K OW2 AE1 NG K ER0 Z</phoneme></lexeme> <!-- coanchors -->
+  <lexeme><grapheme>coancor</grapheme><phoneme>K OW2 AE1 NG K ER0</phoneme></lexeme> <!-- coanchor -->
+  <lexeme><grapheme>coancord</grapheme><phoneme>K OW2 AE1 NG K ER0 D</phoneme></lexeme> <!-- coanchored -->
+  <lexeme><grapheme>coancoring</grapheme><phoneme>K OW2 AE1 NG K ER0 IH0 NG</phoneme></lexeme> <!-- coanchoring -->
+  <lexeme><grapheme>coancors</grapheme><phoneme>K OW2 AE1 NG K ER0 Z</phoneme></lexeme> <!-- coanchors -->
+  <lexeme><grapheme>coancorz</grapheme><phoneme>K OW2 AE1 NG K ER0 Z</phoneme></lexeme> <!-- coanchors -->
   <lexeme><grapheme>coannexd</grapheme><phoneme>K OW2 AH0 N EH1 K S T</phoneme></lexeme> <!-- coannexed -->
   <lexeme><grapheme>coannexez</grapheme><phoneme>K OW2 AH0 N EH1 K S AH0 Z</phoneme></lexeme> <!-- coannexes -->
   <lexeme><grapheme>coappeard</grapheme><phoneme>K OW2 AH0 P IH1 ER0 D</phoneme></lexeme> <!-- coappeared -->
@@ -6272,10 +6281,10 @@
   <lexeme><grapheme>curriers</grapheme><phoneme>K UH1 R IY0 ER0 Z</phoneme></lexeme> <!-- couriers -->
   <lexeme><grapheme>curriez</grapheme><phoneme>K ER1 IY0 Z</phoneme></lexeme> <!-- curries -->
   <lexeme><grapheme>currycohm</grapheme><phoneme>K ER1 IY0 K OW2 M</phoneme></lexeme> <!-- currycomb -->
+  <lexeme><grapheme>currycohmd</grapheme><phoneme>K ER1 IY0 K OW2 M D</phoneme></lexeme> <!-- currycombed -->
   <lexeme><grapheme>currycohming</grapheme><phoneme>K ER1 IY0 K OW2 M IH0 NG</phoneme></lexeme> <!-- currycombing -->
   <lexeme><grapheme>currycohms</grapheme><phoneme>K ER1 IY0 K OW2 M Z</phoneme></lexeme> <!-- currycombs -->
   <lexeme><grapheme>currycohmz</grapheme><phoneme>K ER1 IY0 K OW2 M Z</phoneme></lexeme> <!-- currycombs -->
-  <lexeme><grapheme>currycomhd</grapheme><phoneme>K ER1 IY0 K OW2 M D</phoneme></lexeme> <!-- currycombed -->
   <lexeme><grapheme>currz</grapheme><phoneme>K ER1 Z</phoneme></lexeme> <!-- currs -->
   <lexeme><grapheme>cursez</grapheme><phoneme>K ER1 S AH0 Z</phoneme></lexeme> <!-- curses -->
   <lexeme><grapheme>cursiv</grapheme><phoneme>K ER1 S IH0 V</phoneme></lexeme> <!-- cursive -->
@@ -7623,8 +7632,10 @@
   <lexeme><grapheme>disalluwing</grapheme><phoneme>D IH0 S AH0 L AW1 IH0 NG</phoneme></lexeme> <!-- disallowing -->
   <lexeme><grapheme>disalluwz</grapheme><phoneme>D IH0 S AH0 L AW1 Z</phoneme></lexeme> <!-- disallows -->
   <lexeme><grapheme>disambiguatez</grapheme><phoneme>D IH0 S AE0 M B IH1 G Y UW0 EY2 T S</phoneme></lexeme> <!-- disambiguates -->
-  <lexeme><grapheme>disanchord</grapheme><phoneme>D IH0 S AE1 NG K ER0 D</phoneme></lexeme> <!-- disanchored -->
-  <lexeme><grapheme>disanchorz</grapheme><phoneme>D IH0 S AE1 NG K ER0 Z</phoneme></lexeme> <!-- disanchors -->
+  <lexeme><grapheme>disancor</grapheme><phoneme>D IH0 S AE1 NG K ER0</phoneme></lexeme> <!-- disanchor -->
+  <lexeme><grapheme>disancord</grapheme><phoneme>D IH0 S AE1 NG K ER0 D</phoneme></lexeme> <!-- disanchored -->
+  <lexeme><grapheme>disancoring</grapheme><phoneme>D IH0 S AE1 NG K ER0 IH0 NG</phoneme></lexeme> <!-- disanchoring -->
+  <lexeme><grapheme>disancorz</grapheme><phoneme>D IH0 S AE1 NG K ER0 Z</phoneme></lexeme> <!-- disanchors -->
   <lexeme><grapheme>disanimatez</grapheme><phoneme>D IH0 S AE1 N AH0 M EY2 T S</phoneme></lexeme> <!-- disanimates -->
   <lexeme><grapheme>disannexd</grapheme><phoneme>D IH0 S AH0 N EH1 K S T</phoneme></lexeme> <!-- disannexed -->
   <lexeme><grapheme>disannexez</grapheme><phoneme>D IH0 S AH0 N EH1 K S AH0 Z</phoneme></lexeme> <!-- disannexes -->
@@ -9972,7 +9983,6 @@
   <lexeme><grapheme>extollment</grapheme><phoneme>IH0 K S T OW1 L M AH0 N T</phoneme></lexeme> <!-- extolment -->
   <lexeme><grapheme>extollments</grapheme><phoneme>IH0 K S T OW1 L M AH0 N T S</phoneme></lexeme> <!-- extolments -->
   <lexeme><grapheme>extollz</grapheme><phoneme>IH0 K S T OW1 L Z</phoneme></lexeme> <!-- extolls -->
-  <lexeme><grapheme>extolz</grapheme><phoneme>IH0 K S T OW1 L Z</phoneme></lexeme> <!-- extols -->
   <lexeme><grapheme>extortionat</grapheme><phoneme>IH0 K S T AO1 R SH AH0 N IH0 T</phoneme></lexeme> <!-- extortionate -->
   <lexeme><grapheme>extortionatly</grapheme><phoneme>IH0 K S T AO1 R SH AH0 N IH0 T L IY0</phoneme></lexeme> <!-- extortionately -->
   <lexeme><grapheme>extortiv</grapheme><phoneme>IH0 K S T AO1 R T IH0 V</phoneme></lexeme> <!-- extortive -->
@@ -17489,6 +17499,8 @@
   <lexeme><grapheme>micturatez</grapheme><phoneme>M IH1 K CH UH0 R EY0 T S</phoneme></lexeme> <!-- micturates -->
   <lexeme><grapheme>midcorse</grapheme><phoneme>M IH1 D K AO0 R S</phoneme></lexeme> <!-- midcourse -->
   <lexeme><grapheme>midcort</grapheme><phoneme>M IH1 D K AO0 R T</phoneme></lexeme> <!-- midcourt -->
+  <lexeme><grapheme>middlebruw</grapheme><phoneme>M IH1 D AH0 L B R AW0</phoneme></lexeme> <!-- middlebrow -->
+  <lexeme><grapheme>middlebruws</grapheme><phoneme>M IH1 D AH0 L B R AW0 Z</phoneme></lexeme> <!-- middlebrows -->
   <lexeme><grapheme>middleweiht</grapheme><phoneme>M IH1 D AH0 L W EY0 T</phoneme></lexeme> <!-- middleweight -->
   <lexeme><grapheme>middleweihts</grapheme><phoneme>M IH1 D AH0 L W EY0 T S</phoneme></lexeme> <!-- middleweights -->
   <lexeme><grapheme>midmoste</grapheme><phoneme>M IH1 D M OW0 S T</phoneme></lexeme> <!-- midmost -->
@@ -20000,6 +20012,7 @@
   <lexeme><grapheme>overbilld</grapheme><phoneme>OW2 V ER0 B IH1 L D</phoneme></lexeme> <!-- overbilled -->
   <lexeme><grapheme>overbillz</grapheme><phoneme>OW2 V ER0 B IH1 L Z</phoneme></lexeme> <!-- overbills -->
   <lexeme><grapheme>overbilt</grapheme><phoneme>OW2 V ER0 B IH1 L T</phoneme></lexeme> <!-- overbuilt -->
+  <lexeme><grapheme>overbisy</grapheme><phoneme>OW2 V ER0 B IH1 Z IY0</phoneme></lexeme> <!-- overbusy -->
   <lexeme><grapheme>overbleaqh</grapheme><phoneme>OW2 V ER0 B L IY1 CH</phoneme></lexeme> <!-- overbleach -->
   <lexeme><grapheme>overbleaqhd</grapheme><phoneme>OW2 V ER0 B L IY1 CH T</phoneme></lexeme> <!-- overbleached -->
   <lexeme><grapheme>overbleaqhez</grapheme><phoneme>OW2 V ER0 B L IY1 CH IH0 Z</phoneme></lexeme> <!-- overbleaches -->
@@ -20618,6 +20631,8 @@
   <lexeme><grapheme>palfreyd</grapheme><phoneme>P AO1 L F R IY0 D</phoneme></lexeme> <!-- palfreyed -->
   <lexeme><grapheme>palisadez</grapheme><phoneme>P AE2 L IH0 S EY1 D Z</phoneme></lexeme> <!-- palisades -->
   <lexeme><grapheme>palladiumizez</grapheme><phoneme>P AH0 L EY1 D IY0 AH0 M AY0 Z IH0 Z</phoneme></lexeme> <!-- palladiumizes -->
+  <lexeme><grapheme>pallbehrer</grapheme><phoneme>P AO1 L B EH2 R ER0</phoneme></lexeme> <!-- pallbearer -->
+  <lexeme><grapheme>pallbehrers</grapheme><phoneme>P AO1 L B EH2 R ER0 Z</phoneme></lexeme> <!-- pallbearers -->
   <lexeme><grapheme>palld</grapheme><phoneme>P AO1 L D</phoneme></lexeme> <!-- palled -->
   <lexeme><grapheme>palletizez</grapheme><phoneme>P AE1 L IH0 T AY0 Z IH0 Z</phoneme></lexeme> <!-- palletises -->
   <lexeme><grapheme>pallett</grapheme><phoneme>P AE1 L IH0 T</phoneme></lexeme> <!-- pallette -->
@@ -29900,6 +29915,8 @@
   <lexeme><grapheme>subbranqh</grapheme><phoneme>S AH1 B B R AE2 N CH</phoneme></lexeme> <!-- subbranch -->
   <lexeme><grapheme>subbranqhes</grapheme><phoneme>S AH1 B B R AE2 N CH AH0 Z</phoneme></lexeme> <!-- subbranches -->
   <lexeme><grapheme>subcategorizez</grapheme><phoneme>S AH2 B K AE1 T AH0 G AH0 R AY2 Z AH0 Z</phoneme></lexeme> <!-- subcategorises -->
+  <lexeme><grapheme>subceeling</grapheme><phoneme>S AH1 B S IY2 L IH0 NG</phoneme></lexeme> <!-- subceiling -->
+  <lexeme><grapheme>subceelings</grapheme><phoneme>S AH1 B S IY2 L IH0 NG Z</phoneme></lexeme> <!-- subceilings -->
   <lexeme><grapheme>subclassd</grapheme><phoneme>S AH1 B K L AE2 S T</phoneme></lexeme> <!-- subclassed -->
   <lexeme><grapheme>subclassez</grapheme><phoneme>S AH1 B K L AE2 S AH0 Z</phoneme></lexeme> <!-- subclasses -->
   <lexeme><grapheme>subclassifiez</grapheme><phoneme>S AH2 B K L AE1 S AH0 F AY0 Z</phoneme></lexeme> <!-- subclassifies -->
@@ -32058,8 +32075,10 @@
   <lexeme><grapheme>unalivez</grapheme><phoneme>AH1 N AH0 L AY1 V Z</phoneme></lexeme> <!-- unalives -->
   <lexeme><grapheme>unalloyd</grapheme><phoneme>AH1 N AH0 L OY1 D</phoneme></lexeme> <!-- unalloyed -->
   <lexeme><grapheme>unalterd</grapheme><phoneme>AH1 N AO1 L T ER0 D</phoneme></lexeme> <!-- unaltered -->
-  <lexeme><grapheme>unanchord</grapheme><phoneme>AH1 N AE1 NG K ER0 D</phoneme></lexeme> <!-- unanchored -->
-  <lexeme><grapheme>unanchorz</grapheme><phoneme>AH1 N AE1 NG K ER0 Z</phoneme></lexeme> <!-- unanchors -->
+  <lexeme><grapheme>unancor</grapheme><phoneme>AH1 N AE1 NG K ER0</phoneme></lexeme> <!-- unanchor -->
+  <lexeme><grapheme>unancord</grapheme><phoneme>AH1 N AE1 NG K ER0 D</phoneme></lexeme> <!-- unanchored -->
+  <lexeme><grapheme>unancoring</grapheme><phoneme>AH1 N AE1 NG K ER0 IH0 NG</phoneme></lexeme> <!-- unanchoring -->
+  <lexeme><grapheme>unancorz</grapheme><phoneme>AH1 N AE1 NG K ER0 Z</phoneme></lexeme> <!-- unanchors -->
   <lexeme><grapheme>unanimat</grapheme><phoneme>AH1 N AE1 N AH0 M IH0 T</phoneme></lexeme> <!-- unanimate -->
   <lexeme><grapheme>unanserability</grapheme><phoneme>AH1 N AE2 N S ER0 AH0 B IH1 L IH0 T IY0</phoneme></lexeme> <!-- unanswerability -->
   <lexeme><grapheme>unanserable</grapheme><phoneme>AH1 N AE1 N S ER0 AH0 B AH0 L</phoneme></lexeme> <!-- unanswerable -->
@@ -32146,6 +32165,8 @@
   <lexeme><grapheme>unbilds</grapheme><phoneme>AH1 N B IH1 L D Z</phoneme></lexeme> <!-- unbuilds -->
   <lexeme><grapheme>unbilld</grapheme><phoneme>AH1 N B IH1 L D</phoneme></lexeme> <!-- unbilled -->
   <lexeme><grapheme>unbilt</grapheme><phoneme>AH1 N B IH1 L T</phoneme></lexeme> <!-- unbuilt -->
+  <lexeme><grapheme>unbisied</grapheme><phoneme>AH1 N B IH1 Z IY0 D</phoneme></lexeme> <!-- unbusied -->
+  <lexeme><grapheme>unbisnesslike</grapheme><phoneme>AH1 N B IH1 Z N AH0 S L AY0 K</phoneme></lexeme> <!-- unbusinesslike -->
   <lexeme><grapheme>unbisy</grapheme><phoneme>AH1 N B IH1 Z IY0</phoneme></lexeme> <!-- unbusy -->
   <lexeme><grapheme>unbitz</grapheme><phoneme>AH1 N B IH1 T S</phoneme></lexeme> <!-- unbits -->
   <lexeme><grapheme>unbleaqhd</grapheme><phoneme>AH1 N B L IY1 CH T</phoneme></lexeme> <!-- unbleached -->
