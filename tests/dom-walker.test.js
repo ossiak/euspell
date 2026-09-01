@@ -63,13 +63,17 @@ test('accented words are handled whole — converted or passed through, never in
   // data/euspell_lexicon_accents.csv was written and never wired in, so every
   // one of them missed a lexicon keyed on ASCII. They convert now, via alias
   // keys in the compiled Map (build/lib/accents.js) — so this asserts both
-  // halves: `café` reforms whole, and `naïve`, which the bridge does not carry,
-  // still comes back untouched rather than half-converted.
-  const node = tx('the naïve café owner');
+  // halves: a word the bridge carries reforms whole, and one it does not comes
+  // back untouched rather than half-converted.
+  const node = tx('the señor and the naïve café owner');
   walkTextNodes(el('p', node), convert);
-  assert.match(node.nodeValue, /naïve/);
+  // Spanish, so never in a bridge built from a list of French loanwords.
+  assert.match(node.nodeValue, /señor/);
+  // Both of these are in the bridge, and both reform whole. `naïve` was the
+  // counter-example here until 1 Sep 2026, when its family was added.
+  assert.match(node.nodeValue, /\bnaiiv\b/);
   assert.match(node.nodeValue, /\bcafeh\b/);
-  assert.doesNotMatch(node.nodeValue, /café/);
+  assert.doesNotMatch(node.nodeValue, /café|naïve/);
 });
 
 test('walkTextNodes converts text in place', () => {

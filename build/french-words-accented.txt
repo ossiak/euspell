@@ -59,6 +59,7 @@ When written in standard French, the following words from your list carry diacri
 * **matinee / matinees** (matinée, matinées — *acute accent*)
 * **metier / metiers** (métier, métiers — *acute accent*)
 * **mouille** (mouillé — *acute accent*)
+* **naif / naifs / naive / naively / naiveness / naiver / naives / naivest / naivete / naivetes / naiveties / naivety** (naïf, naïve, naïveté — *tréma / diaeresis*)
 * **outre** (outré — *acute accent*)
 * **passe** (passé — *acute accent*)
 * **pate / pates** (pâté, pâtés — *circumflex and acute accent*)

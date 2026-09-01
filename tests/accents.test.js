@@ -50,6 +50,24 @@ test('an accented word converts through its headword', () => {
   assert.equal(conv([['a', 'AT1'], ['crèche', 'NN1']], 'crèche'), 'cresh');
 });
 
+test('a whole inflected family is bridged, not just its base', () => {
+  // `naive` reforms to `naiiv` and the lexicon carries ten derived forms; every
+  // one of them can be written with the tréma, so every one needs a row. The
+  // source names three and the generator derives the rest by substituting the
+  // longest matched base, then checks each derivation by de-accenting it back —
+  // which is what makes `naivetes` → `naïvetés` safe to generate rather than
+  // type, since that one carries both a tréma and an acute.
+  assert.equal(conv([['a', 'AT1'], ['naïve', 'JJ']], 'naïve'), 'naiiv');
+  assert.equal(conv([['he', 'PPHS1'], ['acted', 'VVD'], ['naïvely', 'RR']], 'naïvely'), 'naiivly');
+  assert.equal(conv([['her', 'APPGE'], ['naïveté', 'NN1']], 'naïveté'), 'naiiveteh');
+  assert.equal(conv([['the', 'AT'], ['naïvetés', 'NN2']], 'naïvetés'), 'naiivetehs');
+  assert.equal(conv([['the', 'AT'], ['naïvest', 'JJT'], ['answer', 'NN1']], 'naïvest'), 'naiivest');
+  // `naif` is 000, so its accented form maps to a row that changes nothing —
+  // still worth having, because the alias is what gives the tagger a PoS for the
+  // accented token, and that decides its neighbours.
+  assert.equal(conv([['a', 'AT1'], ['naïf', 'NN1']], 'naïf'), 'naïf');
+});
+
 test('the ligature is bridged too — NFD alone would miss it', () => {
   // `œ` carries no combining mark, so a de-accenting rule built on unicodedata
   // never touches it. It is a row in the map for exactly that reason. `boeuf`
