@@ -40,6 +40,13 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      # gen-lo.js imports dist/lexicon.js (it appends the accented alias rows to
+      # the CSV the LibreOffice and Apps Script engines read), and dist/ is
+      # gitignored — so on a clean checkout the module is simply absent and
+      # gen:word dies with ERR_MODULE_NOT_FOUND before writing anything. Only the
+      # lexicon is needed here, not the full build: no rollup bundle or pdf.js
+      # copy takes part in generating the add-in.
+      - run: npm run build:lexicon
       - run: npm run gen:word
       - name: Configure Pages
         id: pages
