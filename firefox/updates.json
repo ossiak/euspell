@@ -26,6 +26,14 @@
           "browser_specific_settings": {
             "gecko": { "strict_min_version": "128.0" }
           }
+        },
+        {
+          "version": "0.3.4",
+          "update_link": "https://github.com/ossiak/euspell/releases/download/v0.3.4/euspell-0.3.4.xpi",
+          "update_hash": "sha256:393c7fafd1b09bc67a98874a063eb444f24c16e6f5144d56feb555336a71c772",
+          "browser_specific_settings": {
+            "gecko": { "strict_min_version": "128.0" }
+          }
         }
       ]
     }
