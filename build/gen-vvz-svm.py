@@ -214,8 +214,43 @@ print(f"corpora={[g for g, _ in CORPORA]}  features={D}  train={len(tr)}  test={
 def score_of(w, wcol, ctx):
     return WORD_SCALE * w[wcol] + w[ctx].sum()
 
+# --- importance weighting toward the deployment prior -------------------------
+# The training corpora were assembled from per-class pools and run about 53%
+# verb. Running text, measured over 1.18M targets from the same books without
+# that selection, runs 2.6% verb (build/natural-vvz.mjs). A model fitted on the
+# first and asked about the second says "verb" far too readily.
+#
+# DEPLOY_VERB_RATE reweights each example by P_deploy(class)/P_train(class), so
+# the hinge loss optimises for the distribution the converter actually meets.
+# Set it to 0 (the default) to train unweighted, exactly as before.
+#
+# This is NOT the same lever as VERB_THRESHOLD in pos.js, though they pull the
+# same way. A threshold shifts one number after the fact and so penalises a
+# short fragment ("which records the data", few features fired, thin margin)
+# exactly as hard as a genuinely doubtful one. Reweighting changes the fitted
+# weights, which lets strong verb cues grow to compensate. Whether that actually
+# rescues the short frames is the open question this exists to answer — measure
+# it, do not assume it.
+DEPLOY_VERB_RATE = float(os.environ.get("DEPLOY_VERB_RATE", "0"))
+
+def class_weights(data):
+    """(weight for verbs, weight for nouns), normalised to mean 1."""
+    if not DEPLOY_VERB_RATE:
+        return 1.0, 1.0
+    v = sum(1 for label, *_ in data if label > 0)
+    n = len(data) - v
+    p_tr_v = v / len(data)
+    wv = DEPLOY_VERB_RATE / p_tr_v
+    wn = (1 - DEPLOY_VERB_RATE) / (1 - p_tr_v)
+    mean = (wv * v + wn * n) / len(data)
+    return wv / mean, wn / mean
+
 def pegasos(data):
     rng = np.random.default_rng(SEED)
+    wv, wn = class_weights(data)
+    if DEPLOY_VERB_RATE:
+        print(f"  reweighting to a {DEPLOY_VERB_RATE:.3f} verb prior: "
+              f"verb x{wv:.4f}, noun x{wn:.4f}", file=sys.stderr)
     w = np.zeros(D); n = len(data); t = 0
     for ep in range(EPOCHS):
         for k in rng.permutation(n):
@@ -223,8 +258,12 @@ def pegasos(data):
             label, wcol, ctx = data[k]
             w *= (1 - eta * LAMBDA)
             if label * score_of(w, wcol, ctx) < 1:
-                w[ctx] += eta * label
-                w[wcol] += eta * label * WORD_SCALE
+                # The class weight scales the gradient step, not the margin: a
+                # verb example still wants margin 1, it just pulls proportionally
+                # less hard when verbs are rare where this will be deployed.
+                g = eta * label * (wv if label > 0 else wn)
+                w[ctx] += g
+                w[wcol] += g * WORD_SCALE
         print(f"  epoch {ep+1}/{EPOCHS}", file=sys.stderr)
     return w
 

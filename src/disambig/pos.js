@@ -310,7 +310,7 @@ function slotFams(tok) {
  *
  * @param {Token[]} tokens @param {number} idx @returns {string[]}
  */
-function svmFeatures(tokens, idx) {
+export function svmFeatures(tokens, idx) {
   const win = contextWindow(tokens, idx);
   const word = tokens[idx]?.word ?? '';
   const feats = ['bias', `w=${word.toLowerCase()}`];
@@ -338,9 +338,82 @@ function svmFeatures(tokens, idx) {
 
 // How much one hand-rule vote point counts against the SVM score in the
 // blended decision below. Rule cues come in ±3 steps, so one strong noun cue
-// (a determiner or preposition before, a finite past verb after) can veto
-// about half a unit of SVM confidence; two cues about a full unit.
-const RULE_VETO = 0.16;
+// (a determiner or preposition before, a finite past verb after) shifts the
+// score by about 0.36, and the strongest noun evidence the rule can muster by
+// 0.72 — enough to settle the frames the corpus under-represents, while the
+// SVM's confident calls (|score| > 2) stand.
+// TUNED AGAINST THE CURRENT WEIGHTS, from the regression frames rather than
+// from accuracy: re-derive it with `VETO_SWEEP=1 npm run eval:vvz` after every
+// `npm run gen:svm`. See the trade-off on is_VVZ_svm below.
+export const RULE_VETO = 0.12;
+
+/**
+ * The score a blended decision must clear to return the verb.
+ *
+ * Zero would be right if the model met text shaped like the corpus it was
+ * fitted on. It does not. `_corpus_012_112*.txt` were assembled from separate
+ * per-class pools and run 52.8% verb; running text, measured over 1,180,299
+ * targets from the same books without that selection, runs **2.6%** verb. A
+ * model calibrated for the first and deployed on the second says "verb" far too
+ * readily, and every such mistake is a visible one — "recordz" where "records"
+ * was right.
+ *
+ * Measured by build/natural-vvz.mjs on running text, moving the threshold with
+ * no retraining at all:
+ *
+ *   t      verb F1   verbP   verbR   false verbs   err/10k
+ *   0.00      72.6    61.2    89.1        17,192       174
+ *   0.50      80.4    78.9    81.9         6,671       103
+ *   0.75      81.1    85.3    77.3         4,048        93
+ *   1.00      79.9    90.0    71.9         2,436        93
+ *   1.50      74.0    95.2    60.5           932       110
+ *
+ * 0.75 is the F1 optimum on running text. **It is not what is set here, and the
+ * gap is a real unresolved tension rather than a rounding choice.** The
+ * regression frames in tests/pos.test.js cap the threshold far lower:
+ *
+ *   lowest verb frame    0.167   "which records the data"
+ *   then                 0.643   "John records"
+ *   then                 0.872   "the device records everything"
+ *   highest noun frame  -0.217   "The phone calls stopped at midnight"
+ *   usable range        -0.217 < t < 0.167
+ *
+ * Those assertions are correct, but the frames are genuinely borderline, and it
+ * is worth being precise about why — the obvious explanation is wrong. It is
+ * NOT that they are short:
+ *
+ *   words  feats  score   frame
+ *       4      5  0.167   which records the data
+ *       4      5  2.798   she records the song
+ *       2      3  1.695   He records
+ *
+ * "He records" fires three features and scores 1.695; "which records the data"
+ * fires five and scores 0.167. What separates them is which cue fires. "she"
+ * contributes -1=SUBJ3SG at +2.07; "which" contributes -1=DET at -0.56, because
+ * a determiner before the target is a NOUN cue and "which records…" is a
+ * question at least as often as a relative clause. The model is being
+ * appropriately unconfident. The test asserts a reading a human takes from
+ * wider context, and no threshold can recover it.
+ *
+ * So 0.15 is the largest value the suite permits. Raising it further does not
+ * trade away noise, it trades away genuinely ambiguous constructions the tests
+ * have decided in the verb's favour.
+ *
+ * Retraining with deployment-matched class weights was tried and does NOT help
+ * — see DEPLOY_VERB_RATE in build/gen-vvz-svm.py. It shifts every score down
+ * together rather than re-ranking them, so it is the same lever as this one.
+ * What remains untried is making the decision context-sensitive rather than a
+ * single scalar cut.
+ *
+ * Note what this costs on the enriched corpus, where verbs are half the data:
+ * accuracy there FALLS, because on that distribution a generous threshold is
+ * correct. That is the point — the enriched corpus is the wrong place to judge
+ * it. See docs/paper-evaluation.md section 4.
+ *
+ * Like RULE_VETO, this is tuned against one set of weights and does not retune
+ * itself: re-derive it with `npm run eval:natural` after every `npm run gen:svm`.
+ */
+export const VERB_THRESHOLD = 0.15;
 
 // Heads that can anchor a clause subject before the target: a determiner or
 // possessive opens a subject NP, a subject pronoun or relativiser is one
@@ -366,7 +439,7 @@ const SUBJECT_HEAD = [
  *
  * @param {Token[]} tokens @param {number} idx @returns {boolean}
  */
-function endsIsolatedNounPhrase(tokens, idx) {
+export function endsIsolatedNounPhrase(tokens, idx) {
   if (idx + 1 < tokens.length && !crossesSentenceBreak(tokens, idx, idx + 1)) return false;
   // Walk back to the start of this sentence. Testing breakAfter directly is
   // equivalent to crossesSentenceBreak(k, idx) here — every slot between k and
@@ -387,15 +460,53 @@ function endsIsolatedNounPhrase(tokens, idx) {
  *
  *   svm(tokens, idx) + RULE_VETO · min(0, vvzScore(tokens, idx)) > 0  ⇒ VVZ
  *
- * The SVM carries the decision — 94.6% held-out accuracy alone vs the rule's
- * 88.5% — but its rare false verbs are weak positives on noun-compound frames
- * the corpus under-represents ("the call records between…" +0.3), where the
- * rule has categorical noun evidence (vote ≤ −3). Letting only the rule's
- * negative votes count keeps its role to that veto: the SVM's verb recall is
- * already high, so positive rule votes would add nothing but noise. Measured
- * on the held-out split: 94.5% accuracy with precision 93.3% → 95.2% vs the
- * SVM alone — the false-verb rate nearly halves for a ~0.1pt accuracy cost,
- * the right trade for a converter whose noun spelling is the safe default.
+ * The SVM carries the decision, and by a wider margin than the rule's own
+ * numbers suggest. Measured by build/rule-vvz.mjs on the held-out fifth:
+ *
+ *   always the commoner class      52.8%
+ *   per-word prior, no context     88.8%   ← the baseline that matters
+ *   vvzScore, the hand rule        75.9%   (verb recall 60.7%)
+ *   SVM alone                      94.6%   (verb P 96.5 / R 93.1)
+ *   this function                  93.8%   (verb P 97.3 / R 90.8)
+ *
+ * Note the third line. The hand rule scores BELOW a context-free per-word
+ * lookup — it more than doubles that error — because it carries no per-word
+ * bias at all, applying one noun-first default to "makes" (99.8% verb) and
+ * "eyes" (0.6% verb) alike. Its cues are precise but it misses two verbs in
+ * five. It is kept as the interpretable reference and as the veto below; it is
+ * not a fallback the model could be swapped back to.
+ *
+ * The veto exists for the SVM's rare false verbs: weak positives on
+ * noun-compound frames the corpus under-represents ("the call records
+ * between…"), where the rule has categorical noun evidence (vote ≤ −3).
+ * Only the rule's NEGATIVE votes count — the SVM's verb recall is already
+ * high, so positive rule votes would add nothing but noise.
+ *
+ * RULE_VETO is NOT set from held-out accuracy, which falls monotonically as the
+ * veto rises — by that measure the right value would be zero. It is set from
+ * the regression frames in tests/pos.test.js, which are the shapes the veto
+ * exists for and which the corpus under-represents precisely because they are
+ * headlines, compounds and clipped NPs rather than running prose. Aggregate
+ * accuracy is the wrong instrument for them.
+ *
+ * The binding case is "The phone calls stopped at midnight" — the noun as
+ * subject of a past-tense verb. The SVM alone scores it +0.50 (wrong); the rule
+ * votes −6; so it needs veto ≥ 0.084 to resolve. 0.12 clears that with headroom
+ * rather than hugging it, which matters because raw scores move between
+ * retrains: "the call records between…" went from +0.3 under the July 2026
+ * weights to −0.33 under these, a swing of 0.6.
+ *
+ * The cost of that choice, measured: 0.74pt of accuracy for 0.8pt of verb
+ * precision (96.5% → 97.3%), with recall 93.1% → 90.8%. The right direction for
+ * a converter whose noun spelling is the safe default — a false verb is the
+ * visible error — but it IS a cost, and it should be re-derived rather than
+ * assumed. The previous 0.16 was tuned against the July weights, whose SVM was
+ * 3pt less precise; against these it costs 1.09pt for 1.0pt.
+ *
+ * So: after any `npm run gen:svm`, run `VETO_SWEEP=1 npm run eval:vvz` for the
+ * trade-off curve, re-check the regression frames for the floor, and re-pick.
+ * The constant does not retune itself when the weights beneath it change.
+ *
  * A word unseen in training has no "w=" weight and falls back to the
  * learned context weights.
  *
@@ -416,7 +527,7 @@ export function is_VVZ_svm(tokens, idx) {
   if (endsIsolatedNounPhrase(tokens, idx)) return false;
   let score = 0;
   for (const f of svmFeatures(tokens, idx)) score += VVZ_SVM.get(f) ?? 0;
-  return score + RULE_VETO * Math.min(0, vvzScore(tokens, idx)) > 0;
+  return score + RULE_VETO * Math.min(0, vvzScore(tokens, idx)) > VERB_THRESHOLD;
 }
 
 // Subject pronouns — a preceding one marks the clitic 's as a contracted verb.
