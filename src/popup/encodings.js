@@ -14,7 +14,7 @@ export const descriptions = new Map([
   [22, "JJ|VVD|VVN ending disambiguated e.g. blessd/blessed"],
   [41, "doubling consonant before ending"],
   [101, "stem change"],
-  [102, "stem disambiguated: ending in -ate"],
+  [102, "stem disambiguated: most ending in -ate"],
   [103, "stem disambiguated three ways"],
   [111, "stem change + unambiguous VVZ ending -s → -z"],
   [112, "stem change + NN2|VVZ ending: disambiguated"],
