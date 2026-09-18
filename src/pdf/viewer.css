@@ -101,10 +101,23 @@ body {
 }
 
 
+/* A page wider than the container — any zoom past a fit-to-width host's 100%,
+   or a narrow window at the extension's fixed 1.5 — must stay REACHABLE. Plain
+   `center` overflows a flex item symmetrically, putting its left edge at a
+   negative offset that no scroll can reach: a 1200px page in an 800px window
+   measured -215px, with scrollLeft pinned at 0 and scrollWidth (985px) not even
+   accounting for the lost strip. `safe` falls back to flex-start exactly when
+   centring would overflow, so the left edge lands on the padding and the page
+   scrolls into view; a page that fits is still centred.
+
+   Both declarations, in this order, on purpose: an engine that doesn't parse the
+   `safe` keyword drops the second and keeps ordinary centring rather than
+   falling back to `stretch`, which would left-align every page. */
 #pages {
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-items: safe center;
   gap: 16px;
   padding: 20px 12px 60px;
 }

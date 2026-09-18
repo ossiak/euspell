@@ -137,9 +137,9 @@ export function onConversionChange(_cb) {}
 export const wantsNav = true;
 
 /**
- * Report to the reader: kind 'ready' with { pages, outline }, or 'position' with
- * { page, pct }. Posts to the parent frame (self when somehow un-embedded, which
- * is harmless — nothing listens).
+ * Report to the reader: kind 'ready' with { pages, outline, zoomLevels }, or
+ * 'position' with { page, pct }. Posts to the parent frame (self when somehow
+ * un-embedded, which is harmless — nothing listens).
  *
  * @param {'ready' | 'position'} kind
  * @param {object} payload
@@ -149,8 +149,11 @@ export function reportNav(kind, payload) {
 }
 
 /**
- * Subscribe to nav commands from the reader (currently { goto: pageIndex }).
- * @param {(cmd: { goto?: number }) => void} cb
+ * Subscribe to nav commands from the reader: { goto: pageIndex } to jump, and
+ * { zoom: factor } to magnify — the host owns the zoom, because this build has
+ * no bar to keep it on and its frame is rebuilt on every open.
+ *
+ * @param {(cmd: { goto?: number, zoom?: number }) => void} cb
  */
 export function onNavCommand(cb) {
   window.addEventListener('message', (e) => {

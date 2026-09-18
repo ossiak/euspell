@@ -59,7 +59,7 @@ import { walkTextNodes } from '../content/dom-walker.js';
 import { fileParam, isAllowedViewerUrl, pdfFileName } from './pdf-url.js';
 import { padToFit } from './fit-text.js';
 import { sampleColors } from './sample-colors.js';
-import { createPageState } from './render-state.js';
+import { createPageState, planEvictions, lookaheadPages } from './render-state.js';
 import { texGeneric, nameBold, nameBlack, nameItalic } from './font-style.js';
 import {
   assetURL, prepareLexicon, renderScale, wantsNav, reportNav, onNavCommand, bypassNextRedirect,
@@ -125,13 +125,118 @@ function containerWidth() {
 // stop is a round percentage instead of 156%.
 //
 // The top is bounded because the raster grows with the square of the zoom: the
-// canvas is viewport.width * dpr, so 3x on a 2x-dpr display is 9x the linear
-// size of scale 1 and ~81x the pixels, which is where large pages start meeting
-// the browser's maximum canvas dimensions.
+// canvas is the viewport times the backing ratio, so 3x on a 2x-dpr display is
+// 9x the linear size of scale 1 and ~81x the pixels, which is where large pages
+// start meeting the browser's maximum canvas dimensions. Past that bound,
+// rasterRatio below gives up resolution rather than the page.
 const ZOOM_LEVELS = [0.5, 0.75, 1, 1.25, 1.5, 2, 2.5, 3];
 const ZOOM_DEFAULT = ZOOM_LEVELS.indexOf(1);
 let zoomIdx = ZOOM_DEFAULT;
 let zoom = ZOOM_LEVELS[zoomIdx];
+
+/**
+ * The ladder stop nearest a zoom FACTOR, for an embedding host that drives zoom
+ * over the nav channel (Eupub's A−/A+ buttons — its bar-less build has none of
+ * the controls below).
+ *
+ * A factor rather than an index because that is what such a host can safely
+ * persist: the ladder lives here, so a stored index would be silently
+ * reinterpreted the day it changes, turning a reader's saved 100% into 125%.
+ * Nearest rather than exact so a factor from an older ladder — or a corrupt
+ * one — still lands somewhere sensible instead of being refused.
+ *
+ * @param {number} factor
+ * @returns {number} an index into ZOOM_LEVELS
+ */
+function zoomIndexFor(factor) {
+  if (!Number.isFinite(factor)) return ZOOM_DEFAULT;
+  let best = ZOOM_DEFAULT;
+  for (let i = 0; i < ZOOM_LEVELS.length; i++) {
+    if (Math.abs(ZOOM_LEVELS[i] - factor) < Math.abs(ZOOM_LEVELS[best] - factor)) best = i;
+  }
+  return best;
+}
+
+// The backing store is what a rendered page actually costs, and zoom drives it
+// quadratically: the canvas is viewport x raster on each axis, and the pristine
+// snapshot renderPage takes is a SECOND copy of the same size, so peak memory
+// per page is twice what these numbers say.
+//
+// At the top of the ladder that stops being affordable on a high-dpr device: a
+// tablet-sized container asks for 88-188 Mpx per page, i.e. 350-750 MB of canvas
+// plus as much again of snapshot.
+//
+// MEASURED, so the reasoning is not guesswork: a Pixel 9 Pro (Android 15, dpr
+// 2.5) allocated and drew a single 187 Mpx / 715 MB canvas without complaint, so
+// on a flagship it is NOT the per-canvas allocation that fails. What fails is the
+// aggregate — the lazy renderer's keep window holds ~8 live canvases (its
+// rootMargin is in page-heights, so the COUNT stays flat while each canvas grows
+// with the square of the zoom), and 8 uncapped tablet pages would be ~5.7 GB.
+// The same device at max zoom on a phone-sized container peaked at 252 MB across
+// 8 canvases, which is the shape this is bounding.
+//
+// Browsers also refuse a canvas past some per-side limit and do it SILENTLY —
+// blank pixels rather than a throw — but that limit is far above 16384 on the
+// hardware measured (20000px wide still drew), so treat MAX_CANVAS_DIM as a
+// floor for old or low-end devices rather than as the binding constraint.
+//
+// So the raster is capped, and the shortfall comes out of resolution, never out
+// of layout. The page keeps its CSS size, so the scroll position, the text
+// layer, and the geometry every reformed word is measured and drawn from are
+// all untouched — a capped page is simply grainier. It binds only on a page
+// already magnified well past its natural size, where trading some sharpness
+// for a page that renders at all is plainly the right way round.
+//
+// 40 Mpx is set just above the worst case that works today — a letter page at
+// max zoom on a dpr-2 desktop is 39 Mpx — so nothing that currently renders
+// well gets coarser, and only the cases that would fail or thrash are pulled in.
+const MAX_CANVAS_DIM = 16384; // per-side limit browsers enforce
+const MAX_CANVAS_PX = 40e6; // ~160 MB of canvas, plus the same again in snapshot
+
+// The per-canvas cap above bounds ONE page. It bounds nothing in aggregate,
+// because the lazy renderer deliberately keeps a window of pages either side of
+// the viewport, and that window's rootMargin is expressed in page-heights — so
+// the COUNT of live canvases stays flat (~8 was measured) while each one grows
+// with the square of the zoom. At the top of the ladder that window alone
+// reached 252 MB on a Pixel 9 Pro, and a tablet-sized container would reach
+// ~1.28 GB with every canvas already at MAX_CANVAS_PX.
+//
+// So the total is bounded as well, and the surplus is paid in RE-RENDERING
+// rather than in resolution: pages furthest from the viewport are evicted until
+// the live total fits. That is the same trade the keep window already makes,
+// driven by memory instead of distance.
+//
+// 96 Mpx (~384 MB at 4 bytes per pixel) sits above the largest window measured
+// healthy on real hardware — the Pixel's 252 MB at max zoom — so ordinary
+// reading is untouched and the phone behaviour verified on device does not
+// change. It binds only where a single canvas is large, which is to say at high
+// zoom on a large container, and there it held the window to 2 pages / 80 Mpx
+// against the ~491 Mpx the same layout asked for uncapped.
+//
+// HOW FAR THAT IS VERIFIED: the large-container figures come from CDP
+// device-metrics emulation (1024x1366 at dpr 2.5) on the same phone, so the
+// layout, the canvas allocations and the eviction path are all real, and it is
+// what caught the render/evict loop lookaheadPages now prevents. What emulation
+// cannot show is a real tablet's memory ceiling and GPU behaviour, so the
+// BEHAVIOUR here is tested and the HEADROOM on tablet hardware is not. Retest
+// on a physical tablet before trusting the margin rather than the mechanism.
+//
+// At 100% a full window is a few tens of MB on any device and this never fires.
+const MAX_LIVE_CANVAS_PX = 96e6;
+
+/**
+ * Device pixels per CSS px to back a `w` x `h` page with: `dpr`, reduced as far
+ * as the caps above require. Returns dpr unchanged for any page that fits.
+ *
+ * @param {number} dpr  the display's device pixel ratio
+ * @param {number} w  page width in CSS px
+ * @param {number} h  page height in CSS px
+ * @returns {number}
+ */
+function rasterRatio(dpr, w, h) {
+  if (!(w > 0) || !(h > 0)) return dpr; // pre-layout: nothing to bound
+  return Math.min(dpr, MAX_CANVAS_DIM / w, MAX_CANVAS_DIM / h, Math.sqrt(MAX_CANVAS_PX / (w * h)));
+}
 
 /**
  * The scale to rasterize a page at. Asked per page rather than fixed once: pages
@@ -207,13 +312,17 @@ async function renderPage(pdf, n, dpr, wrap) {
   wrap.style.width = `${viewport.width}px`;
   wrap.style.height = `${viewport.height}px`;
 
+  // How finely to back this page — dpr, unless that would ask for a canvas the
+  // browser or the device can't give us. See rasterRatio.
+  const raster = rasterRatio(dpr, viewport.width, viewport.height);
+
   const canvas = document.createElement('canvas');
-  canvas.width = Math.floor(viewport.width * dpr);
-  canvas.height = Math.floor(viewport.height * dpr);
+  canvas.width = Math.floor(viewport.width * raster);
+  canvas.height = Math.floor(viewport.height * raster);
   canvas.style.width = `${viewport.width}px`;
   canvas.style.height = `${viewport.height}px`;
   const ctx = canvas.getContext('2d');
-  ctx.scale(dpr, dpr);
+  ctx.scale(raster, raster);
 
   const textLayerDiv = document.createElement('div');
   textLayerDiv.className = 'textLayer';
@@ -321,10 +430,13 @@ async function renderPage(pdf, n, dpr, wrap) {
     const text = spans[i].textContent;
     if (text === o.text || o.w <= 0 || o.h <= 0) continue;
 
+    // Backing-store pixels, not CSS px: getImageData works in the canvas's own
+    // grid, so this must use the SAME ratio the canvas was sized with, which is
+    // not always dpr (see rasterRatio).
     const { ink, paper } = sampleColors(
       snapshot.data, canvas.width, canvas.height,
-      Math.round(o.x * dpr), Math.round(o.y * dpr),
-      Math.round(o.w * dpr), Math.round(o.h * dpr),
+      Math.round(o.x * raster), Math.round(o.y * raster),
+      Math.round(o.w * raster), Math.round(o.h * raster),
     );
 
     // Paint over the original glyphs with the page's own background colour.
@@ -484,6 +596,41 @@ async function main() {
     renderIO.observe(wrap); // re-arm — coming back into view renders it again
   }
 
+  /**
+   * Evict rendered pages, furthest from the viewport first, until the live
+   * canvas total is back inside MAX_LIVE_CANVAS_PX.
+   *
+   * A page overlapping the viewport is never evicted. The reader is looking at
+   * it, and blanking what is on screen to save memory trades a visible page for
+   * an invisible one — so a single page bigger than the whole budget is still
+   * shown, and bounding THAT case is what the per-canvas cap is for.
+   *
+   * Furthest-first matters for more than fairness: the render lookahead is
+   * narrower than the keep window, so the pages just rendered ahead of the
+   * reader are near the viewport. Evicting from the far end takes the pages
+   * already read, instead of immediately undoing the lookahead and re-rendering
+   * it the moment it is scrolled into view.
+   */
+  function enforceCanvasBudget() {
+    if (printing) return; // printing needs every page at once; evict() no-ops anyway
+    if (pages.livePx() <= MAX_LIVE_CANVAS_PX) return;
+
+    // Geometry read here, policy decided in planEvictions (render-state.js).
+    const rendered = [];
+    for (const wrap of wraps) {
+      if (!pages.isRendered(wrap)) continue;
+      const canvas = wrap.querySelector('canvas');
+      rendered.push({
+        id: wrap,
+        px: canvas ? canvas.width * canvas.height : 0,
+        top: wrap.offsetTop,
+        height: wrap.offsetHeight,
+      });
+    }
+    const viewport = { top: window.scrollY, bottom: window.scrollY + window.innerHeight };
+    for (const wrap of planEvictions(rendered, viewport, MAX_LIVE_CANVAS_PX)) evict(wrap);
+  }
+
   /** Drop every raster: they are all at the wrong scale, or the wrong spelling. */
   function invalidateAll() {
     for (const wrap of wraps) {
@@ -510,8 +657,12 @@ async function main() {
         // it again at the current one. Or a fast scroll left it queued until it
         // was already far behind, and evictIO won't fire again for something
         // that never re-entered the keep window, so it would be kept forever.
-        const fresh = pages.finish(wrap);
+        // Measured from the canvas actually attached, so the accounting cannot
+        // drift from what rasterRatio decided for this page.
+        const canvas = wrap.querySelector('canvas');
+        const fresh = pages.finish(wrap, canvas ? canvas.width * canvas.height : 0);
         if (!fresh || !pages.isNear(wrap)) evict(wrap);
+        else enforceCanvasBudget(); // this page's cost may have put the window over
       } catch (e) {
         pages.clear(wrap); // failed, so it holds no canvas — relayout may retry
         const err = document.createElement('div');
@@ -531,7 +682,21 @@ async function main() {
     renderIO?.disconnect();
     evictIO?.disconnect();
 
-    // ~2 estimated pages of lookahead, so reading pace never catches the renderer.
+    // How far ahead to render. Normally ~2 estimated pages, so reading pace never
+    // catches the renderer — but never further than the memory budget can hold,
+    // or the two policies fight and the same pages are rendered and evicted in a
+    // loop (see lookaheadPages). Recomputed here because `observe` is rebuilt on
+    // every relayout, which is exactly when the page size — and so the number of
+    // canvases the budget affords — has changed.
+    const ratio = rasterRatio(dpr, estimate.width, estimate.height);
+    const perPagePx = estimate.width * ratio * (estimate.height * ratio);
+    const affordable = perPagePx > 0 ? Math.max(1, Math.floor(MAX_LIVE_CANVAS_PX / perPagePx)) : 1;
+    const onScreen = Math.ceil(window.innerHeight / Math.max(1, estimate.height)) + 1;
+    const lookahead = lookaheadPages(affordable, onScreen);
+    // The keep window stays WIDER than the lookahead — see below — so it follows
+    // it rather than being clamped on its own.
+    const keep = Math.min(3, lookahead + 1);
+
     renderIO = new IntersectionObserver(
       // Unobserve through the callback's OWN observer, not the renderIO binding:
       // relayout replaces it, and a queued callback from the old one would
@@ -544,7 +709,7 @@ async function main() {
           enqueueRender(entry.target, wraps.indexOf(entry.target) + 1);
         }
       },
-      { rootMargin: `${Math.ceil(estimate.height * 2)}px 0px` },
+      { rootMargin: `${Math.ceil(estimate.height * lookahead)}px 0px` },
     );
 
     // The keep window is deliberately WIDER than the render lookahead. If they
@@ -558,7 +723,7 @@ async function main() {
           if (!entry.isIntersecting) evict(entry.target);
         }
       },
-      { rootMargin: `${Math.ceil(estimate.height * 3)}px 0px` },
+      { rootMargin: `${Math.ceil(estimate.height * keep)}px 0px` },
     );
 
     for (const wrap of wraps) {
@@ -853,10 +1018,17 @@ async function main() {
       { passive: true },
     );
 
-    // Jump to a page (TOC click or position restore). Scrolling to a placeholder
-    // works before it renders — the render observer fills it in. Registered
-    // BEFORE reporting 'ready', so a restore command can't outrun the listener.
+    // Jump to a page (TOC click or position restore), and set the zoom the host
+    // holds. Scrolling to a placeholder works before it renders — the render
+    // observer fills it in. Registered BEFORE reporting 'ready', so a restore
+    // command can't outrun the listener.
+    //
+    // Zoom is applied before any goto in the same command: relayout() keeps the
+    // anchor page and the fraction into it, so either order lands on the right
+    // page, but doing the scale first leaves goto's scroll as the last word.
+    // A host that sends the two as separate messages gets the same result.
     onNavCommand((c) => {
+      if (c.zoom != null) setZoom(zoomIndexFor(c.zoom));
       if (c.goto != null && wraps[c.goto]) {
         wraps[c.goto].scrollIntoView();
         reportPosition();
@@ -883,7 +1055,10 @@ async function main() {
     } catch {
       /* no outline / malformed — report an empty one */
     }
-    reportNav('ready', { pages: wraps.length, outline });
+    // zoomLevels goes with 'ready' so the ladder has ONE source of truth. A host
+    // that offers zoom buttons has to step it, and hardcoding a copy over there
+    // would be a second ladder to keep in sync across two repos.
+    reportNav('ready', { pages: wraps.length, outline, zoomLevels: ZOOM_LEVELS });
     reportPosition(); // starting page, before any scroll
   }
 }
