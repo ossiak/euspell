@@ -33,6 +33,7 @@ const MAX_LIVE_CANVAS_PX = num('MAX_LIVE_CANVAS_PX');
 const rasterRatio = (() => {
   const m = /\nfunction rasterRatio\(dpr, w, h\) \{[\s\S]*?\n\}/.exec(js);
   assert.ok(m, 'rasterRatio must be declared in viewer.js');
+  // eslint-disable-next-line no-new-func
   return new Function('MAX_CANVAS_DIM', 'MAX_CANVAS_PX', `${m[0]}\nreturn rasterRatio;`)(
     MAX_CANVAS_DIM,
     MAX_CANVAS_PX,
@@ -53,6 +54,7 @@ const backing = (dpr, w, h) => {
 const zoomIndexFor = (() => {
   const m = /\nfunction zoomIndexFor\(factor\) \{[\s\S]*?\n\}/.exec(js);
   assert.ok(m, 'zoomIndexFor must be declared in viewer.js');
+  // eslint-disable-next-line no-new-func
   return new Function('ZOOM_LEVELS', 'ZOOM_DEFAULT', `${m[0]}\nreturn zoomIndexFor;`)(
     ZOOM_LEVELS,
     ZOOM_LEVELS.indexOf(1),
