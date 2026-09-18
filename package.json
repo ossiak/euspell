@@ -16,7 +16,7 @@
     "build:pdf:mobile": "rollup -c rollup.pdf.mobile.config.js",
     "build:chrome": "npm run build && node build/gen-chrome.js",
     "build:firefox": "npm run build && node build/gen-firefox.js",
-    "lint:firefox": "web-ext lint --source-dir build/firefox",
+    "lint:firefox": "web-ext lint --source-dir build/firefox --self-hosted",
     "build:safari": "npm run build && node build/gen-safari.js",
     "build:safari:dist": "npm run build:safari && bash build/dist-safari.sh",
     "build:safari:appstore": "npm run build:safari && bash build/appstore-safari.sh",

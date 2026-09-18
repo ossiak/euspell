@@ -34,6 +34,15 @@ function toFirefox(manifest) {
       // Pages) and installs the highest version listed that it can run. AMO
       // rejects update_url on a LISTED add-on, so this and channel=listed are
       // mutually exclusive.
+      //
+      // This is also why `npm run lint:firefox` passes --self-hosted. web-ext
+      // lint assumes an AMO-listed add-on unless told otherwise and reports this
+      // key as MANIFEST_UPDATE_URL, an error, which fails CI for doing exactly
+      // what self-distribution requires. Dropping the flag is the right move ONLY
+      // as part of moving to channel=listed, alongside removing this key and
+      // adding data_collection_permissions below. Nothing is lost by silencing it
+      // meanwhile: AMO itself rejects update_url at submission, so a listed
+      // upload is still caught where it actually matters.
       update_url: 'https://ossiak.github.io/euspell/updates.json',
       // NOTE: `data_collection_permissions` is intentionally omitted. It only
       // exists in the manifest schema from Firefox 140+, so including it makes
