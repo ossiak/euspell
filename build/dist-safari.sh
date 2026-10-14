@@ -61,6 +61,23 @@ else
   exit 1
 fi
 
+# Both Developer ID certificates share an identical CN, so only the issuer OU
+# distinguishes G2 from the retiring sub-CA (expires 2027-02-01). Xcode's
+# automatic signing can't be pinned, so verify the chain after the fact.
+require_g2() {
+  local target="$1" tmp
+  tmp="$(mktemp -d)"
+  codesign -d --extract-certificates="$tmp/c" "$target" >/dev/null 2>&1
+  if ! openssl x509 -inform DER -in "$tmp/c1" -noout -subject 2>/dev/null | grep -q "OU=G2"; then
+    echo "error: $target was signed via the pre-G2 sub-CA (expires 2027-02-01)." >&2
+    echo "       re-check the signing identity; see docs/macos-signing.md" >&2
+    rm -rf "$tmp"
+    exit 1
+  fi
+  rm -rf "$tmp"
+  echo "    signing chain ok (G2 sub-CA)"
+}
+
 echo "==> Euspell for Safari  (team $TEAM)"
 rm -rf "$OUT"
 mkdir -p "$OUT"
@@ -88,6 +105,8 @@ xcodebuild -exportArchive \
   -exportOptionsPlist "$OUT/ExportOptions.plist" \
   -exportPath "$EXPORT" \
   -allowProvisioningUpdates >/dev/null
+
+require_g2 "$APP"
 
 echo "==> Notarizing (this waits for Apple; usually 1-5 min)"
 ditto -c -k --keepParent "$APP" "$OUT/Euspell-notarize.zip"
@@ -124,9 +143,17 @@ rm -f "$DIST_DMG"
 hdiutil create -volname "Euspell" -srcfolder "$STAGE" -fs HFS+ -format UDZO -ov "$DIST_DMG" >/dev/null
 
 echo "==> Signing DMG (Developer ID)"
-DEVID="$(security find-identity -v -p codesigning | awk '/Developer ID Application/ && /'"$TEAM"'/ {print $2; exit}')"
+# Pinned to the G2-issued certificate: both Developer ID certs carry the same
+# display name, and keychain order otherwise selects the one expiring
+# 2027-02-01. Override with EUSPELL_SIGN_ID; falls back to a name match (which
+# require_g2 below then validates) so the script still works on other machines.
+DEVID="${EUSPELL_SIGN_ID:-2F7B40FF48B2C7AA0B282F9D3FAEABBB214007E2}"
+if ! security find-identity -v -p codesigning | grep -q "$DEVID"; then
+  DEVID="$(security find-identity -v -p codesigning | awk '/Developer ID Application/ && /'"$TEAM"'/ {print $2; exit}')"
+fi
 [[ -n "$DEVID" ]] || { echo "error: no 'Developer ID Application' identity for team $TEAM in the keychain." >&2; exit 1; }
 codesign --force --timestamp --sign "$DEVID" "$DIST_DMG"
+require_g2 "$DIST_DMG"
 
 echo "==> Notarizing DMG (waits for Apple; usually 1-5 min)"
 xcrun notarytool submit "$DIST_DMG" "${NOTARY_AUTH[@]}" --wait
