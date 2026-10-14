@@ -35,9 +35,13 @@ export function readVerbReading(tokens, idx) {
       break;
     }
     if (isPre(t, ['CS'])) break;                                  // subordinator boundary
+    // Before the adverb skip: the lexicon gives "to" adverb tags too (RL31,
+    // RR43), so testing adverbs first skipped every infinitive marker and
+    // "want to read the book" came out past.
+    if (isAny(t, ['TO'])) return 'base';                         // "to read"
     if (isPre(t, ['R']) || isAny(t, ['XX']) || isPre(t, ['PP'])) continue; // adv/neg/subject
     if (isPre(t, ['VH', 'VB'])) return 'past';                   // perfect/passive participle
-    if (isAny(t, ['TO']) || isPre(t, ['VM'])) return 'base';     // "to read" / "can read"
+    if (isPre(t, ['VM'])) return 'base';                         // "can read"
     if (isAny(t, ['VD0', 'VDI', 'VDZ'])) return 'base';          // "do/does … read"
     if (isAny(t, ['VDD', 'VDN'])) return 'past';                 // "did … read"
     if (isAny(t, ['VVD'])) return 'past';                        // "paused … read" (serial past)

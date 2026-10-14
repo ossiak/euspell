@@ -55,6 +55,16 @@ test('two-way semantic words (tear, wound)', () => {
   assert.equal(conv([['a', 'AT1'], ['ragged', 'JJ'], ['tear', ''], ['in', 'II'], ['the', 'AT'], ['cloth', 'NN1']], 'tear'), 'taer'); // rip
 });
 
+test('read after "to" is the infinitive, though "to" also carries adverb tags', () => {
+  // On a page "to" is tagged with every reading the lexicon gives it, RL31 and
+  // RR43 among them. The scan used to skip it as an adverb, walk on to the word
+  // before, and call "want to read the book" past.
+  const to = lexicon.get('to').pos.join('|');
+  assert.equal(conv([['I', 'PPIS1'], ['want', 'NN|NN1|VV0'], ['to', to], ['read', ''], ['the', 'AT'], ['book', 'NN1']], 'read'), 'read');
+  assert.equal(conv([['was', 'VBDZ'], ['hard', 'JJ|RR'], ['to', to], ['read', '']], 'read'), 'read');
+  assert.equal(conv([['she', 'PPHS1'], ['has', 'VHZ'], ['read', ''], ['it', 'PPH1']], 'read'), 'redd');
+});
+
 // --- Every rule's declared spellings must still exist in the lexicon. --------
 // route() maps a rule's return value back through spellings.indexOf() and falls
 // back to index 0 on -1, so a rule that returns a spelling the lexicon no longer
