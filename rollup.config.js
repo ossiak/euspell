@@ -41,4 +41,15 @@ export default [
     },
     plugins: [aliasRuntimeLexicon, nodeResolve()],
   },
+  // euspell.org/try (classic iife, one global). Not part of the extension: the
+  // site copies it and dist/lexicon.data into its public/try/.
+  {
+    input: 'src/web/try-engine.js',
+    output: {
+      file: 'dist/try-engine.js',
+      format: 'iife',
+      sourcemap: false,
+    },
+    plugins: [aliasRuntimeLexicon, nodeResolve()],
+  },
 ];
